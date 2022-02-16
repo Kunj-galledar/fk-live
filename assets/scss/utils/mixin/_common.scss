@@ -1,0 +1,40 @@
+/* ======= Color Pallet Start ======= */
+$theme-color: (sky: #e5fcfa,
+    orange: #fff2ec,
+    blue: #e3f5fb,
+    purple: #fcf1ff,
+    theme: #e8fcf9,
+    yellow: #fff9d8,
+    red: #fce9e9,
+    green: #f1fae5,
+    sky-blue:#f3fbfa,
+    cyan:rgba(11, 175, 154, 0.05));
+
+@each $color,
+$hex in $theme-color {
+    .bg-light-#{$color} {
+        background-color: $hex !important;
+    }
+
+    .border-light-#{$color} {
+        border: 1px solid darken($hex, 20%) !important;
+    }
+}
+
+/* ======= Color Pallet End ======= */
+
+/* ======= Display Flex Css Start ======= */
+@mixin flex_common ($dis: flex, $align: center, $justify: center) {
+    display: $dis;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+/* ======= Display Flex Css End ======= */
+
+/* ======= Font Awesome Sart ======= */
+// @mixin font_awesome($family:) {
+
+// }
+/* ======= Font Awesome End ======= */
+/* ======= Display Flex Css End ======= */
