@@ -294,3 +294,45 @@ $(document).ready(function () {
         $(this).addClass("active");
     });
 });
+
+/*=====================
+  14. btn-cart open close js
+   ==========================*/
+$(document).ready(function () {
+    $('.button-item').on("click", function () {
+        $('.item-section').addClass("active");
+    });
+
+    $('.close-button').on("click", function () {
+        $('.item-section').removeClass("active");
+    });
+
+    $('.btn-cart').on("click", function () {
+        setTimeout(function () {
+            $('.item-section').addClass("active")
+        }, 1500);
+        setTimeout(function () {
+            $('.item-section').removeClass('active');
+        }, 5000);
+    });
+});
+
+
+var input = $('.quantity'),
+    minValue = parseInt(input.attr('min')),
+    maxValue = parseInt(input.attr('max'));
+
+
+$('.plus').on('click', function () {
+    var inputValue = input.val();
+    if (inputValue < maxValue) {
+        input.val(parseInt(inputValue) + 1);
+    }
+});
+
+$('.minus').on('click', function () {
+    var inputValue = input.val();
+    if (inputValue < maxValue) {
+        input.val(parseInt(inputValue) - 1);
+    }
+});

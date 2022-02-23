@@ -93,9 +93,7 @@
 
                .shape-text {
                     position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                    @include center(both);
                     color: $white;
 
                     h6 {
@@ -150,9 +148,7 @@
 
                .option {
                     position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                    @include center(both);
                     @include flex_common;
                     margin: 0 -4px;
 
@@ -181,12 +177,10 @@
                          }
 
                          &:before {
-                              content: "";
-                              position: absolute;
+                              @include pos;
+                              @include pseudowh;
                               top: 0;
                               left: 0;
-                              width: 100%;
-                              height: 100%;
                               background-color: var(--theme-color);
                               opacity: .1;
                               z-index: -1;
@@ -213,20 +207,6 @@
                }
           }
 
-          // .discount {
-          //      position: absolute;
-          //      top: 20px;
-          //      left: 20px;
-          //      background-color: var(--theme-color);
-          //      color: $white;
-          //      padding: 4px 10px;
-          //      border-radius: 4px;
-
-          //      label {
-          //           margin: -2px 0;
-          //      }
-          // }
-
           .product-detail {
                text-align: left;
                margin-top: 15px;
@@ -237,6 +217,7 @@
                }
 
                .name {
+                    width: 70%;
                     margin-top: 5px;
                     text-transform: capitalize;
                     -webkit-line-clamp: 1;
@@ -295,11 +276,58 @@
                     }
                }
 
-               .buy-box {
+               .counter-number-box {
                     position: absolute;
                     bottom: 0;
                     right: 0;
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid $dark-yellow;
+                    border-radius: 5px;
+                    background-color: rgba($dark-yellow, $alpha: 0.1);
+                    padding: 5px;
+
+                    span {
+                         margin-right: 6px;
+                    }
+
+                    input {
+                         border: none;
+                         background-color: unset;
+                         width: 27px;
+                         height: unset;
+                         background-color: transparent;
+                         position: relative;
+                         border-left: 1px solid $dark-yellow;
+                    }
+
+                    .counter-arrow {
+                         background-color: $dark-yellow;
+                         color: $white;
+                         padding: 3px 6px;
+
+                         .down,
+                         .up {
+                              border: unset;
+                              width: unset;
+                              height: unset;
+                              font-size: unset;
+                              background-color: transparent;
+                              padding: 0;
+                              color: $white;
+
+                              &:hover {
+                                   color: $white;
+                              }
+                         }
+                    }
+               }
+
+               .buy-box {
                     @include flex_common;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
 
                     @include mq-max(xs) {
                          position: relative;
@@ -367,9 +395,8 @@
                     }
 
                     img {
+                         @include pseudowh;
                          margin: 0;
-                         width: 100%;
-                         height: 100%;
                          object-fit: contain;
                     }
                }
@@ -378,7 +405,6 @@
                     text-align: left;
                     padding-left: 25px;
                     position: relative;
-                    // width: calc(100% - 25px);
 
                     .name {
                          font-weight: 500;
@@ -389,8 +415,8 @@
                          color: var(--theme-color);
                          font-weight: 500;
 
-                         span {
-                              color: $content-color;
+                         del {
+                              color: $light-color;
                               font-weight: 400;
                               margin-left: 5px;
                          }
@@ -398,9 +424,8 @@
 
                     .option {
                          position: absolute;
-                         top: 50%;
+                         @include center(vertical);
                          left: 25px;
-                         transform: translateY(-50%);
                          width: fit-content;
                          height: 100%;
                          background-color: $white;
@@ -436,12 +461,10 @@
                               }
 
                               &:before {
-                                   content: "";
-                                   position: absolute;
+                                   @include pos;
+                                   @include pseudowh;
                                    top: 0;
                                    left: 0;
-                                   width: 100%;
-                                   height: 100%;
                                    background-color: var(--theme-color);
                                    opacity: .1;
                                    z-index: -1;
@@ -489,8 +512,7 @@
                text-align: left;
 
                &:after {
-                    content: "";
-                    position: absolute;
+                    @include pos;
                     top: 0;
                     right: -10px;
                     width: 1px;
@@ -553,15 +575,6 @@
                     }
                }
 
-               // .name {
-               //      @include mq-max(xs) {
-               //           -webkit-line-clamp: 1;
-               //           -webkit-box-orient: vertical;
-               //           display: -webkit-box;
-               //           overflow: hidden;
-               //      }
-               // }
-
                .price {
                     @include mq-max(xs) {
                          margin: 5px 0;
@@ -580,6 +593,51 @@
                     @include mq-max(xs) {
                          width: 100%;
                          margin-bottom: 0;
+                    }
+               }
+          }
+     }
+}
+
+@mixin product_3 {
+     .product-box {
+          .product-image {
+               img {
+                    width: 88%;
+               }
+          }
+
+          .product-detail {
+               .price {
+                    font-weight: 600;
+
+                    del {
+                         font-size: 14px;
+                         display: flex;
+                         align-items: flex-end;
+                         margin-left: 5px;
+                         color: $content-color;
+                    }
+               }
+
+               .buy-box {
+                    position: absolute;
+                    bottom: 10px;
+                    border-radius: 100%;
+
+                    @include mq-max(xs) {
+                         position: relative;
+                         bottom: unset;
+                         right: unset;
+                         border-radius: 5px;
+                         background-color: var(--theme-color);
+                         color: $white;
+                         margin-top: 6px;
+                    }
+
+                    i {
+                         line-height: 1px;
+                         font-size: 14px;
                     }
                }
           }

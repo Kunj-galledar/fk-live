@@ -12,24 +12,17 @@
         .home-contain {
             position: relative;
 
-            // img {
-            //     height: calc(220px + (640 - 220) * ((100vw - 320px) / (1920 - 320)));
-            //     object-fit: cover;
-            // }
-
             .circle-image {
                 .circle-1 {
                     position: absolute;
-                    top: 50%;
+                    @include center(vertical);
                     right: 8%;
-                    transform: translateY(-50%);
                 }
 
                 .circle-2 {
                     position: absolute;
-                    top: 50%;
+                    @include center(vertical);
                     right: 10%;
-                    transform: translateY(-50%);
                 }
             }
 
@@ -37,8 +30,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 padding: 20px calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
 
                 @include mq-max(md) {
@@ -51,14 +43,12 @@
                     display: block;
 
                     &::before {
-                        content: "";
-                        position: absolute;
+                        @include pos;
+                        @include pseudowh;
                         top: 0;
                         left: 0;
                         background-color: var(--theme-color);
                         opacity: .05;
-                        width: 100%;
-                        height: 100%;
                     }
 
                     h3 {
@@ -98,6 +88,8 @@
     }
 }
 
-// @mixin home_3{
-
-// }
+@mixin home_3 {
+    .home-section-3 {
+        background-image: unset;
+    }
+}

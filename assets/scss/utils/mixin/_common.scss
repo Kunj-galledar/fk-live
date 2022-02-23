@@ -32,9 +32,33 @@ $hex in $theme-color {
 
 /* ======= Display Flex Css End ======= */
 
-/* ======= Font Awesome Sart ======= */
-// @mixin font_awesome($family:) {
+/*======= position css starts  ======= */
+@mixin pos($pos: absolute, $content: "") {
+    content: $content;
+    position: $pos;
+}
 
-// }
-/* ======= Font Awesome End ======= */
-/* ======= Display Flex Css End ======= */
+@mixin pseudowh($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+}
+
+@mixin center($position) {
+    @if $position=="vertical" {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @else if $position=="horizontal" {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @else if $position=="both" {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/*======= position css ends  ======= */

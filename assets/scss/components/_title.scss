@@ -4,6 +4,10 @@
 .title {
     margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
 
+    &-4 {
+        margin-bottom: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+    }
+
     h2 {
         font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
         color: $title-color;
@@ -76,10 +80,9 @@
                 position: absolute;
                 background-color: $white;
                 bottom: -6px;
-                left: 50%;
+                @include center(horizontal);
                 width: 40px;
                 height: 15px;
-                transform: translateX(-50%);
 
                 span {
                     background: var(--theme-color);
@@ -106,10 +109,9 @@
             position: absolute;
             background-color: $white;
             bottom: -6px;
-            left: 50%;
+            @include center(horizontal);
             width: 40px;
             height: 15px;
-            transform: translateX(-50%);
 
             span {
                 background: var(--theme-color);
@@ -124,11 +126,9 @@
         }
 
         &::before {
-            position: absolute;
-            content: "";
+            @include pos;
+            @include center(horizontal);
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
             width: 60%;
             height: 1px;
             background-color: var(--theme-color);
@@ -156,13 +156,12 @@
         position: relative;
 
         .shape-box {
-            transform: translateX(-50%);
+            @include flex_common;
+            @include center(horizontal);
             position: absolute;
-            left: 50%;
             bottom: -5px;
             background-color: $white;
-            width: 72px;
-            @include flex_common;
+            width: calc(52px + (72 - 52) * ((100vw - 320px) / (1920 - 320)));
 
             .fas {
                 color: var(--theme-color);
@@ -177,12 +176,10 @@
         }
 
         &::before {
-            position: absolute;
-            content: "";
+            @include pos;
+            @include center(horizontal);
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 220px;
+            width: calc(150px + (220 - 150) * ((100vw - 320px) / (1920 - 320)));
             height: 3px;
             background-color: var(--theme-color);
             border-radius: 100%;

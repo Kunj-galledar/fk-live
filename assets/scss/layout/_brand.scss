@@ -6,14 +6,12 @@
         position: relative;
 
         &::before {
-            content: "";
-            position: absolute;
+            @include pos;
+            @include pseudowh;
             top: 0;
             left: 0;
             background-color: var(--theme-color);
             opacity: 0.05;
-            width: 100%;
-            height: 100%;
         }
 
         .brand-image {

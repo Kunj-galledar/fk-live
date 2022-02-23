@@ -134,8 +134,7 @@
                               border-radius: 50px;
 
                               &::before {
-                                   content: '';
-                                   position: absolute;
+                                   @include pos;
                                    width: 0;
                                    height: 0;
                                    display: inline-block;
@@ -206,7 +205,7 @@
                          position: absolute;
                          left: 26px;
                          top: 30px;
-                         box-shadow: $boxshadow;
+                         box-shadow: 0px 3px 4px rgba($black, .14);
                     }
                }
 
@@ -580,7 +579,7 @@
                          }
 
                          .dropdown-column {
-                              margin: 5px 5px 5px 5px;
+                              margin: 5px;
                               position: relative;
                          }
 
@@ -606,9 +605,8 @@
                                    padding-right: 1.625rem;
 
                                    &::after {
+                                        @include pos;
                                         display: block;
-                                        content: "";
-                                        position: absolute;
                                         top: 50%;
                                         right: 10px;
                                         width: 7px;

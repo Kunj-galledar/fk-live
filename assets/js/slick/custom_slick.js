@@ -49,6 +49,50 @@ $('.category-slider').slick({
   ]
 });
 
+$('.category-slider-1').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 8,
+  slidesToScroll: 1,
+  responsive: [{
+      breakpoint: 1661,
+      settings: {
+        slidesToShow: 7,
+      }
+    },
+    {
+      breakpoint: 1461,
+      settings: {
+        slidesToShow: 6,
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 4,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+  ]
+});
+
 $('.three-slider').slick({
   arrows: true,
   infinite: true,
@@ -75,7 +119,7 @@ $('.three-slider-1').slick({
   arrows: true,
   infinite: true,
   slidesToShow: 3,
-  slidesToScroll: 3,
+  slidesToScroll: 1,
 
   responsive: [{
       breakpoint: 1660,
@@ -100,11 +144,17 @@ $('.slider-1').slick({
   slidesToScroll: 1,
 })
 
-$('.slider-1_1').slick({
+$('.review-slider-1').slick({
   arrows: true,
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
+  responsive: [{
+    breakpoint: 768,
+    settings: {
+      arrows: false,
+    }
+  }]
 })
 
 $('.slider-5').slick({

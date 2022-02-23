@@ -8,8 +8,7 @@
         position: relative;
 
         .newsletter-detail {
-            width: 100%;
-            height: 100%;
+            @include pseudowh;
             padding: calc(50px + (20 - 50) * ((100vw - 320px) / (1920 - 320))) calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
             z-index: 1;
 
@@ -61,18 +60,15 @@
             text-align: center;
 
             &:after {
-                content: "";
-                position: absolute;
+                @include pos;
+                @include pseudowh;
                 background-image: url(../images/vegetable/shape/circle.png);
-                animation: rounded infinite 30s linear;
+                background-repeat: no-repeat;
                 background-size: contain;
-                position: absolute;
-                width: 100%;
-                height: 100%;
+                background-position: center;
+                animation: rounded infinite 30s linear;
                 right: 0;
                 top: 0;
-                background-repeat: no-repeat;
-                background-position: center;
                 z-index: -1;
             }
         }

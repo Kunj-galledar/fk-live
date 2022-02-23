@@ -19,6 +19,17 @@
           background-color: $white !important;
           color: var(--theme-color) !important;
      }
+
+     &-yellow {
+          background-color: $dark-yellow;
+          color: $black;
+          border-radius: 8px;
+          font-size: 16px;
+          letter-spacing: 0.4px;
+          padding: 8px 20px;
+          font-weight: 700;
+          font-family: $quicksand;
+     }
 }
 
 .btn-sm {
@@ -44,12 +55,11 @@
      border-radius: 5px;
 
      &:after {
+          @include pos;
           background: $white;
-          content: "";
           height: 155px;
           left: -75px;
           opacity: 0.2;
-          position: absolute;
           top: -50px;
           transform: rotate(35deg);
           transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);

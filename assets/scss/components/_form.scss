@@ -27,8 +27,7 @@
     &:before {
         transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
         transform: rotate(-45deg) scale(0, 0);
-        content: "";
-        position: absolute;
+        @include pos;
         left: 4px;
         top: 4px;
         z-index: 1;
@@ -40,8 +39,7 @@
     }
 
     &:after {
-        content: "";
-        position: absolute;
+        @include pos;
         top: -2px;
         left: 0;
         width: 21px;
@@ -51,8 +49,10 @@
         cursor: pointer;
     }
 
-    &:checked:before {
-        transform: rotate(-45deg) scale(1, 1);
+    &:checked {
+        &:before {
+            transform: rotate(-45deg) scale(1, 1);
+        }
     }
 }
 
