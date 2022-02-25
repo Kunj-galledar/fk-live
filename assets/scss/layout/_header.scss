@@ -73,14 +73,11 @@
 
                .dropdown {
                     @include flex_common;
+                    z-index: 0;
 
-                    @include mq-max(xl) {
-                         background-color: var(--theme-color);
-                         margin-left: 20px;
-                         padding: 12px 20px;
-                         border-radius: 5px;
-                         color: $white;
-                    }
+                    // @include mq-max(xl) {
+                    //      display: none;
+                    // }
 
                     .dropdown-toggle {
                          padding-left: 0;
@@ -100,19 +97,19 @@
                               color: $black;
                               margin-left: 5px;
 
-                              @include mq-max(xl) {
-                                   color: $white;
-                              }
+                              // @include mq-max(xl) {
+                              //      color: $white;
+                              // }
                          }
 
-                         @include mq-max(xl) {
-                              color: $white;
+                         // @include mq-max(xl) {
+                         //      color: $white;
 
-                              &::after {
-                                   float: right;
-                                   margin-top: 10px;
-                              }
-                         }
+                         //      &::after {
+                         //           float: right;
+                         //           margin-top: 10px;
+                         //      }
+                         // }
                     }
 
                     .dropdown-menu {
@@ -237,7 +234,7 @@
 
                .middle-box {
                     display: inline-block;
-                    margin-left: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
+                    margin-left: calc(16px + (29 - 16) * ((100vw - 320px) / (1920 - 320)));
 
                     @include mq-max(2xl) {
                          margin-left: 25px;
@@ -248,7 +245,7 @@
                     }
 
                     @include mq-max(xl) {
-                         margin-left: auto;
+                         margin-left: 15px;
                     }
 
                     @include mq-max(lg) {
@@ -277,7 +274,8 @@
                               right: 23px;
                               font-size: 25px;
                               cursor: pointer;
-                              color: $black;
+                              color: $content-color;
+                              background-color: $white;
                          }
 
                          input {
@@ -289,7 +287,39 @@
                               font-size: 16px;
 
                               @include mq-max(4xl) {
-                                   width: 380px;
+                                   width: 630px;
+                              }
+
+                              @media (max-width: 1586px) {
+                                   width: 550px;
+                              }
+
+                              @media (max-width: 1494px) {
+                                   width: 500px;
+                              }
+
+                              @media (max-width: 1420px) {
+                                   width: 460px;
+                              }
+
+                              @media (max-width: 1370px) {
+                                   width: 420px;
+                              }
+
+                              @media (max-width: 1325px) {
+                                   width: 390px;
+                              }
+
+                              @media (max-width: 1283px) {
+                                   width: 370px;
+                              }
+
+                              @media (max-width: 1250px) {
+                                   width: 330px;
+                              }
+
+                              @media (max-width: 1210px) {
+                                   width: 310px;
                               }
 
                               @include mq-max(xl) {
@@ -315,21 +345,22 @@
                align-items: center;
                margin-left: auto;
 
-               @include mq-max(xl) {
-                    display: none;
-               }
+               // @include mq-max(xl) {
+               //      display: none;
+               // }
 
                .dropdown-dollar {
                     display: flex;
                     align-items: center;
                     margin-right: 22px;
 
-                    @include mq-max(2xl) {
+                    @include mq-max(lg) {
                          display: none;
                     }
 
                     .dropdown {
                          position: relative;
+                         z-index: 0;
 
                          .dropdown-toggle {
                               padding-left: 0;
@@ -340,12 +371,11 @@
                               letter-spacing: 0.5px;
                               position: relative;
                               margin-top: 4px;
-                              margin-right: 24px;
+                              margin-right: 10px;
 
                               &::before {
                                    content: "\f107";
-                                   font-family: $fontawesome;
-                                   font-weight: 900;
+                                   @include font;
                                    position: absolute;
                                    @include center(vertical);
                                    right: 0;
@@ -410,6 +440,43 @@
                               }
                          }
 
+                         &.swap-icon {
+                              margin-left: 0;
+
+                              &::after {
+                                   content: none;
+                              }
+                         }
+
+                         &.bag-icon {
+                              display: block;
+
+                              @include mq-max(xs) {
+                                   display: none;
+                              }
+                         }
+
+                         &.search-icon {
+                              display: none;
+
+                              @include mq-max(xl) {
+                                   display: block;
+
+                                   +.header-icon {
+                                        margin-left: 38px;
+
+                                        &::after {
+                                             @include pos;
+                                             @include center(vertical);
+                                             left: -50%;
+                                             width: 1px;
+                                             height: 100%;
+                                             background-color: $border-color;
+                                        }
+                                   }
+                              }
+                         }
+
                          .badge-number {
                               position: absolute;
                               top: -10px;
@@ -467,7 +534,7 @@
                align-items: center;
                margin-left: auto;
 
-               @include mq-max(xl) {
+               @include mq-max(2xl) {
                     display: none;
                }
 
@@ -475,7 +542,7 @@
                     display: flex;
                     align-items: center;
 
-                    @include mq-max(3xl) {
+                    @include mq-max(4xl) {
                          display: none;
                     }
 
@@ -607,7 +674,7 @@
           .dropdown-category {
                @include flex_common;
 
-               @include mq-max(xl) {
+               @include mq-max(lg) {
                     display: none;
                }
 
@@ -794,13 +861,11 @@
           position: fixed;
           bottom: 0;
           padding: 10px;
-          width: -webkit-fill-available;
+          width: 100%;
           background-color: var(--theme-color);
           z-index: 3;
           overflow: hidden;
           box-shadow: 0 -3px 10px 0px rgba($black, .08);
-          border-radius: 8px;
-          margin: 0 12px 10px;
 
           [dir="rtl"] & {
                left: 0;

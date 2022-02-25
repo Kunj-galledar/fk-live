@@ -620,24 +620,87 @@
                     }
                }
 
-               .buy-box {
-                    position: absolute;
-                    bottom: 10px;
-                    border-radius: 100%;
+               // .buy-box {
+               //      position: absolute;
+               //      bottom: 10px;
 
-                    @include mq-max(xs) {
-                         position: relative;
-                         bottom: unset;
-                         right: unset;
-                         border-radius: 5px;
-                         background-color: var(--theme-color);
-                         color: $white;
-                         margin-top: 6px;
+               //      @include mq-max(xs) {
+               //           position: relative;
+               //           bottom: unset;
+               //           right: unset;
+               //           border-radius: 5px;
+               //           background-color: var(--theme-color);
+               //           color: $white;
+               //           margin-top: 6px;
+               //      }
+
+               //      i {
+               //           line-height: 1px;
+               //           font-size: 14px;
+               //      }
+               // }
+
+               .addtocart_btn {
+                    // display: inline-block;
+                    // position: absolute;
+                    // right: 0;
+                    // bottom: 0;
+                    // width: auto;
+                    // text-align: right;
+
+                    .add-button,
+                    .add_cart {
+                         transition: all 0.3s ease;
+                         // width: 120px;
+                         // border-color: transparent;
+                         // color: black;
+                         // background-color: #f9f9f9;
+                         // text-transform: capitalize;
+                         // cursor: pointer;
+                         // box-shadow: 0 2px 4px 0 #dedede;
+
+                         span {
+                              position: absolute;
+                              left: 8px;
+                              right: 0;
+                              bottom: -21px;
+                              font-size: 12px;
+                         }
                     }
 
-                    i {
-                         line-height: 1px;
-                         font-size: 14px;
+                    .qty-box {
+                         display: none;
+                         transition: all 0.3s ease;
+
+                         &.open {
+                              display: block;
+                              position: absolute;
+                              right: 0;
+                              bottom: 0;
+                              width: 100%;
+                              transition: all 0.3s ease;
+                         }
+                    }
+
+                    .input-group {
+                         box-shadow: 0 2px 4px 0 #dedede;
+
+                         .btn {
+                              padding: 12px 16px;
+                              font-size: 10px;
+                              line-height: 1;
+                              background-color: $grey-light;
+
+                              i {
+                                   font-size: 15px;
+                              }
+                         }
+
+                         .form-control {
+                              padding: 2px;
+                              text-align: center;
+                              border-color: #f9f9f9;
+                         }
                     }
                }
           }

@@ -317,22 +317,17 @@ $(document).ready(function () {
     });
 });
 
-
-var input = $('.quantity'),
-    minValue = parseInt(input.attr('min')),
-    maxValue = parseInt(input.attr('max'));
-
-
-$('.plus').on('click', function () {
-    var inputValue = input.val();
-    if (inputValue < maxValue) {
-        input.val(parseInt(inputValue) + 1);
+$('.qty-box .quantity-right-plus').on('click', function () {
+    var $qty = $(this).parents(".qty-box").find(".input-number");
+    var currentVal = parseInt($qty.val(), 10);
+    if (!isNaN(currentVal)) {
+        $qty.val(currentVal + 1);
     }
 });
-
-$('.minus').on('click', function () {
-    var inputValue = input.val();
-    if (inputValue < maxValue) {
-        input.val(parseInt(inputValue) - 1);
+$('.qty-box .quantity-left-minus').on('click', function () {
+    var $qty = $(this).parents(".qty-box").find(".input-number");
+    var currentVal = parseInt($qty.val(), 10);
+    if (!isNaN(currentVal) && currentVal > 1) {
+        $qty.val(currentVal - 1);
     }
 });

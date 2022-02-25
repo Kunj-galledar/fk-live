@@ -62,3 +62,23 @@ $hex in $theme-color {
 }
 
 /*======= position css ends  ======= */
+
+/*======= font awesome css start  ======= */
+@mixin font($weight: 900, $family: $fontawesome) {
+    font-weight: $weight;
+    font-family: $family;
+}
+
+/*======= font awesome css ends  ======= */
+
+/*======= align css starts  ======= */
+@mixin rtl($property, $ltr-value, $rtl-value) {
+    #{$property}: $ltr-value;
+
+    [dir="rtl"] & {
+        #{$property}: $rtl-value;
+    }
+}
+
+// @include rtl(float, left, right);
+/*======= align css ends  ======= */
