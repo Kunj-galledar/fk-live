@@ -423,12 +423,12 @@
                          border-radius: 100%;
                          padding: 10px;
                          position: relative;
-                         width: 45px;
-                         height: 45px;
+                         width: calc(35px + (45 - 35) * ((100vw - 320px) / (1920 - 320)));
+                         height: calc(35px + (45 - 35) * ((100vw - 320px) / (1920 - 320)));
                          @include flex_common;
 
                          +.header-icon {
-                              margin-left: 38px;
+                              margin-left: calc(22px + (38 - 22) * ((100vw - 320px) / (1920 - 320)));
 
                               &::after {
                                    @include pos;
@@ -460,7 +460,7 @@
                               display: none;
 
                               @include mq-max(xl) {
-                                   display: block;
+                                   display: flex;
 
                                    +.header-icon {
                                         margin-left: 38px;
