@@ -152,7 +152,7 @@
 
                .nav-logo {
                     display: inline-block;
-                    font-size: 35px;
+                    font-size: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320)));
                     color: var(--theme-color);
                     font-weight: bolder;
                     font-family: $quicksand;
@@ -271,8 +271,8 @@
                          .iconly-Search {
                               position: absolute;
                               @include center(vertical);
-                              right: 23px;
-                              font-size: 25px;
+                              left: 15px;
+                              font-size: calc(18px + (25 - 18) * ((100vw - 320px) / (1920 - 320)));
                               cursor: pointer;
                               color: $content-color;
                               background-color: $white;
@@ -281,7 +281,7 @@
                          input {
                               width: 685px;
                               height: 52px;
-                              padding: 8px 25px;
+                              padding: 8px 25px 8px 60px;
                               color: $title-color;
                               border-color: var(--theme-color);
                               font-size: 16px;
@@ -428,7 +428,7 @@
                          @include flex_common;
 
                          +.header-icon {
-                              margin-left: calc(22px + (38 - 22) * ((100vw - 320px) / (1920 - 320)));
+                              margin-left: 38px;
 
                               &::after {
                                    @include pos;
@@ -456,7 +456,8 @@
                               }
                          }
 
-                         &.search-icon {
+                         &.search-icon,
+                         &.user-icon {
                               display: none;
 
                               @include mq-max(xl) {
@@ -477,6 +478,14 @@
                               }
                          }
 
+                         // &.search-icon,
+                         // &.cart-icon,
+                         // &.wishlist {
+                         //      @include mq-max(md) {
+                         //           display: none;
+                         //      }
+                         // }
+
                          .badge-number {
                               position: absolute;
                               top: -10px;
@@ -492,7 +501,7 @@
 
                          .icli {
                               color: $black;
-                              font-size: 22px;
+                              font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
 
                               &.iconly-Swap {
                                    transform: rotate(90deg);
