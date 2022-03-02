@@ -1,38 +1,49 @@
 /**=====================
-     Slider css start
+     tab css start
 ==========================**/
-.tab-style-color {
-    border: none;
-    margin: -5px;
+.tab-wrap {
+    .nav-tabs {
+        justify-content: center;
+        border-bottom: 2px solid $demo1-bg;
 
-    .nav-item {
-        margin: 5px;
+        @include mq-max(lg) {
+            display: -webkit-box;
+            justify-content: center;
+            flex-wrap: inherit;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
 
         .nav-link {
-            border: none;
-            color: $title-color;
+            font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+            line-height: 1;
+            color: $font-light;
             font-weight: 500;
-            transition: all .3s ease-in-out;
+            padding: 0 20px 20px;
+            background: transparent;
+            border: none;
+            border-bottom: 4px solid transparent;
 
-            &.active {
-                background-image: url(../images/shape.png);
-                background-size: contain;
-                background-clip: border-box;
-                background-position: 0 0;
-                animation: shape 15s linear infinite;
+            @include mq-max(lg) {
+                padding: 0 10px 15px;
             }
 
-            &:hover {
-                background-image: url(../images/shape.png);
-                background-size: contain;
-                background-clip: border-box;
-                background-position: 0 0;
-                animation: shape 15s linear infinite;
+            &:hover,
+            &:active,
+            &:focus {
+                border: none;
             }
 
-            img {
-                margin-right: 5px;
+            &.active,
+            &:active {
+                border-bottom: 4px solid var(--theme-color);
+                color: $black1;
             }
         }
+    }
+
+    .tab-content {
+        margin-top: 30px;
     }
 }

@@ -1,167 +1,94 @@
 /**=====================
      reset css start
 ==========================**/
-.col-xxl-3-1 {
-    width: 20%;
-
-    @include mq-max(4xl) {
-        display: none;
-    }
-
-}
-
-.col-xxl-9-1 {
-    width: 80%;
-
-    @include mq-max(4xl) {
-        width: 100%;
-    }
-}
-
-.fw-300 {
-    font-weight: 300;
-}
-
-.section-small-space {
-    padding: calc(18px + (42 - 18) * ((100vw - 320px) / (1920 - 320))) 0;
-}
-
-.section-big-space {
-    padding: calc(20px + (160 - 20) * ((100vw - 320px) / (1920 - 320))) 0;
-}
 
 section,
 .section-t-space {
-    padding-top: calc(30px + (80 - 30) * ((100vw - 320px) / (1920 - 320)));
+    padding-top: 80px;
+
+    @include mq-max(3xl) {
+        padding-top: 70px;
+    }
+
+    @include mq-max(xl) {
+        padding-top: 60px;
+    }
+
+    @include mq-max(lg) {
+        padding-top: 50px;
+    }
+
+    @include mq-max(md) {
+        padding-top: 40px;
+    }
+
+    @include mq-max(sm) {
+        padding-top: 30px;
+    }
 }
 
 .section-b-space {
-    padding-bottom: calc(30px + (80 - 30) * ((100vw - 320px) / (1920 - 320)));
+    padding-bottom: 80px;
+
+    @include mq-max(3xl) {
+        padding-bottom: 70px;
+    }
+
+    @include mq-max(xl) {
+        padding-bottom: 60px;
+    }
+
+    @include mq-max(lg) {
+        padding-bottom: 50px;
+    }
+
+    @include mq-max(md) {
+        padding-bottom: 40px;
+    }
+
+    @include mq-max(sm) {
+        padding-bottom: 30px;
+    }
 }
 
-.container-fluid-lg {
-    padding: 0 calc(12px + (162 - 12) * ((100vw - 320px) / (1920 - 320)));
+.media {
+    .media-body {
+        flex: 1;
+    }
 }
 
-// Position Top
-.p-top-left {
-    display: flex;
-    justify-content: flex-start;
+.rating {
+    li {
+        i.orange {
+            color: $rating-color;
+        }
+    }
 }
 
-.p-top-center {
-    display: flex;
-    justify-content: center;
-}
-
-.p-top-right {
-    display: flex;
-    justify-content: flex-end;
-}
-
-// Position Center
-.p-center-left {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.p-center {
-    @include flex_common;
-    text-align: center;
-}
-
-.p-center-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-// Position Bottom
-.p-bottom-left {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-}
-
-.p-bottom-center {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.p-bottom-right {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
-.ls-expanded {
-    letter-spacing: 12px;
-}
-
-.ls-resize-expanded {
-    letter-spacing: calc(4px + (10 - 4) * ((100vw - 320px) / (1920 - 320)));
-}
-
-.g-8 {
-    margin: -8px;
+.g-18 {
+    margin: -18px;
 
     >div {
-        padding: 8px;
+        padding: 18px;
     }
 }
 
-// Svg Width
-.icon-width {
-    width: 25px;
-    height: 25px;
-}
+.custom-gy-5 {
+    margin-top: calc(-16px + (-20 - -16) * ((100vw - 320px) / (1920 - 320)));
+    margin-bottom: calc(-16px + (-20 - -16) * ((100vw - 320px) / (1920 - 320)));
 
-// Rating
-.rating {
-    display: flex;
-
-    @include mq-max(2xs) {
-        display: flex;
-        align-items: center;
-
-        li {
-            +li {
-                margin-left: 1px;
-            }
-        }
-    }
-
-    li {
-        .feather {
-            stroke: $rating-color;
-            width: 16px;
-
-            &.fill {
-                fill: $rating-color;
-            }
-        }
+    >div {
+        margin-top: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+        margin-bottom: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
     }
 }
 
-// colors
-.text-theme {
-    color: var(--theme-color);
+.light-gray-bg {
+    background-color: $light-blue;
 }
 
-.text-title {
-    color: $title-color;
-}
-
-.text-content {
-    color: $content-color;
-}
-
-.text-light {
-    color: $light-color !important;
-}
-
-.text-dark-yellow {
-    color: $dark-yellow !important;
+@include mq-min(xl) {
+    .custom-col {
+        width: calc(33.33333% + 4.16%);
+    }
 }
