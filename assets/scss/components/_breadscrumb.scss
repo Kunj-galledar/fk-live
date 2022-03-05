@@ -1,0 +1,48 @@
+/**=====================
+     breadscrumb css start
+==========================**/
+.breadscrumb-section {
+    background-color: var(--theme-color);
+
+    .breadscrumb-contain {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        font-family: $quicksand;
+
+        h2 {
+            font-weight: 700;
+            font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)))
+        }
+
+        nav {
+            .breadcrumb {
+                @include flex_common;
+
+                .breadcrumb-item {
+                    font-weight: 700;
+
+                    i {
+                        color: $white;
+                    }
+
+                    &.active {
+                        color: $white;
+                    }
+
+                    +.breadcrumb-item {
+                        position: relative;
+
+                        &::before {
+                            content: "\f105";
+                            @include font;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

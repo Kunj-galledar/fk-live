@@ -1,40 +1,37 @@
 /**=====================
-    label css start
+     Label css start
 ==========================**/
-.label {
-    font-size: 12px;
-    padding: 6px 10px;
-    text-transform: uppercase;
-    color: $white;
-    display: inline-block;
-    font-weight: 500;
+.label-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    @include mq-max(sm) {
-        padding: 4px 6px;
-        font-size: 10px;
-    }
-
-    &-block {
+    .discount {
         position: absolute;
-        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
         top: 0;
-        width: 100%;
-        z-index: 1;
-    }
+        left: 0;
+        background-color: var(--theme-color);
+        color: $white;
+        padding: 4px calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
+        border-radius: 4px;
 
-    &-dark {
-        background-color: $black;
-    }
+        &.sm-discount {
+            label {
+                font-size: 12px;
+            }
+        }
 
-    &-black {
-        background-color: $black;
-
-        [dir="rtl"] & {
-            float: right;
+        label {
+            margin: -2px 0;
+            @include flex_common;
         }
     }
 
-    &-theme {
-        background-color: var(--theme-color);
+    .wishlist {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+        color: $content-color;
     }
 }

@@ -1,9 +1,38 @@
-/**=====================
-    common mixins css start
-==========================**/
+/* ======= Color Pallet Start ======= */
+$theme-color: (sky: #e5fcfa,
+    orange: #fff2ec,
+    blue: #e3f5fb,
+    purple: #fcf1ff,
+    theme: #e8fcf9,
+    yellow: #fff9d8,
+    red: #fce9e9,
+    green: #f1fae5,
+    sky-blue:#f3fbfa,
+    cyan:rgba(11, 175, 154, 0.05));
+
+@each $color,
+$hex in $theme-color {
+    .bg-light-#{$color} {
+        background-color: $hex !important;
+    }
+
+    .border-light-#{$color} {
+        border: 1px solid darken($hex, 20%) !important;
+    }
+}
+
+/* ======= Color Pallet End ======= */
+
+/* ======= Display Flex Css Start ======= */
+@mixin flex_common ($dis: flex, $align: center, $justify: center) {
+    display: $dis;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+/* ======= Display Flex Css End ======= */
 
 /*======= position css starts  ======= */
-
 @mixin pos($pos: absolute, $content: "") {
     content: $content;
     position: $pos;
@@ -34,78 +63,13 @@
 
 /*======= position css ends  ======= */
 
-/*======= display flex css starts  ======= */
-@mixin flex_common($dis: flex, $align: center, $justify: center) {
-    display: $dis;
-    align-items: $align;
-    justify-content: $justify;
+/*======= font awesome css start  ======= */
+@mixin font($weight: 900, $family: $fontawesome) {
+    font-family: $family;
+    font-weight: $weight;
 }
 
-/*======= display flex css ends  ======= */
-
-/*======= Font-color css starts  ======= */
-$text-name: default,
-dark,
-light,
-dark-30;
-$txt-color: $theme-font-color,
-$font-dark,
-$font-light,
-$font-dark-30;
-
-@each $var in $text-name {
-    $i: index($text-name, $var);
-
-    .font-#{$var} {
-        color: nth($txt-color, $i) !important;
-    }
-}
-
-/*======= Font-color css end  ======= */
-
-/*======= buttons css starts  ======= */
-@each $btn-name,
-$btn-color in (dark, $theme-font-color),
-(light, $light-button),
-(default, var(--theme-color)) {
-    .btn-solid-#{$btn-name} {
-        color: $white;
-        background-color: unset;
-        border: 1px solid $btn-color;
-
-        &::before {
-            @include pos;
-            @include pseudowh;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background-color: $btn-color;
-            transition: all 0.5s;
-        }
-
-        &:hover {
-            color: $theme-font-color;
-
-            &::before {
-                opacity: 0;
-                transform: scale(0.5, 0.5);
-            }
-        }
-
-        @if ($btn-name=="light") {
-            color: $white;
-
-            &:hover,
-            &:focus,
-            &:active,
-            &.active {
-                color: $black;
-            }
-        }
-    }
-}
-
-/*======= buttons css end  ======= */
+/*======= font awesome css ends  ======= */
 
 /*======= align css starts  ======= */
 @mixin rtl($property, $ltr-value, $rtl-value) {
@@ -116,17 +80,5 @@ $btn-color in (dark, $theme-font-color),
     }
 }
 
+// @include rtl(float, left, right);
 /*======= align css ends  ======= */
-
-// repeated css mixins
-@mixin back-light {
-    @include pos;
-    @include pseudowh;
-    background-color: var(--theme-color);
-    opacity: 0.1;
-    border-radius: 100%;
-    transition: all 0.5s;
-    z-index: -1;
-}
-
-/*======= breakpoint css ends  ======= */

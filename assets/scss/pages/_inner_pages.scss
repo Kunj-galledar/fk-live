@@ -1,0 +1,172 @@
+/**=====================
+     404 CSS Start
+==========================**/
+.section-404 {
+    .image-404 {
+        text-align: center;
+
+        img {
+            width: 30%;
+
+            @include mq-max(3xl) {
+                width: 40%;
+            }
+
+            @include mq-max(lg) {
+                width: 50%;
+            }
+
+            @include mq-max(sm) {
+                width: 70%;
+            }
+
+            @include mq-max(2xl) {
+                width: 85%;
+            }
+        }
+    }
+
+    .contain-404 {
+        width: 50%;
+        text-align: center;
+        margin: calc(20px + (45 - 20) * ((100vw - 320px) / (1920 - 320))) auto 0;
+        font-family: $quicksand;
+
+        @include mq-max(4xl) {
+            width: 60%;
+        }
+
+        @include mq-max(xl) {
+            width: 80%;
+        }
+
+        @include mq-max(md) {
+            width: 100%;
+        }
+
+        h3 {
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        button {
+            margin-top: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+}
+
+/**=====================
+     Cart CSS Start
+==========================**/
+.cart-section {
+    .cart-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 42px;
+        margin-bottom: calc(26px + (42 - 26) * ((100vw - 320px) / (1920 - 320)));
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 42px;
+        padding-bottom: calc(12px + (42 - 12) * ((100vw - 320px) / (1920 - 320)));
+
+        h2 {
+            letter-spacing: 0.6px;
+        }
+    }
+
+    .cart-table {
+        table {
+            thead {
+                tr {
+                    text-align: center;
+
+                    th {
+                        font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+                        border-bottom: 1px solid $border-color;
+                        font-weight: 400;
+                        color: $content-color;
+
+                        &:first-child {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        min-width: 150px;
+                        vertical-align: middle;
+                        text-align: center;
+
+                        &.product-table {
+                            display: flex;
+                            align-items: center;
+                            padding: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320))) 10px;
+                            // width: 270px;
+                            display: block;
+                            text-align: left;
+
+                            .product-image {
+                                width: 90px;
+                                display: inline-block;
+                                // background-color: $dark-gray;
+                                // padding: calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
+                                // border-radius: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                            }
+
+                            .product-contain {
+                                margin-left: 20px;
+                                display: inline-block;
+                                vertical-align: middle;
+
+                                h4 {
+                                    span {
+                                        font-size: 16px;
+                                    }
+                                }
+
+                                h5,
+                                p {
+                                    margin-top: 8px;
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+
+                        .fw-500 {
+                            font-weight: 500;
+                        }
+
+                        &.quenty-price {
+                            // width: 350px;
+
+                            .qty-box {
+                                width: 40%;
+                                margin: 0 auto;
+
+                                .input-group {
+                                    button {
+                                        background-color: var(--theme-color);
+                                        color: $white;
+                                        border: none;
+                                        width: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+                                        height: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+                                        border-radius: 5px !important;
+                                    }
+
+                                    .qty-input {
+                                        padding: 0;
+                                        text-align: center;
+                                        border: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

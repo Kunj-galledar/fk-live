@@ -1,41 +1,16 @@
 /**=====================
      form css start
   ==========================**/
-.form-control {
-    font-size: 14px;
-    padding: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))) calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+.newsletter-form {
+    .form-control {
+        background-color: transparent;
+        padding: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320)));
 
-    &.subscribe-input {
-        border: none;
-        border-radius: 0;
-    }
+        &::placeholder {
+            color: $white;
+            font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+        }
 
-    [dir="rtl"] & {
-        text-align: right;
-    }
-
-    &:focus {
-        background-color: $light-blue;
-        border-color: $border-color;
-        box-shadow: none;
-        color: $black1;
-    }
-}
-
-.form-select {
-    font-size: 14px;
-
-    &:focus {
-        background-color: $gray;
-        border-color: $border-color;
-        box-shadow: none;
-        color: $black1;
-    }
-}
-
-.input-group {
-    .btn {
-        z-index: 1;
     }
 }
 
@@ -70,7 +45,7 @@
         width: 21px;
         height: 21px;
         background: $white;
-        border: 2px solid $gray-light;
+        border: 2px solid $border-color;
         cursor: pointer;
     }
 
@@ -78,5 +53,43 @@
         &:before {
             transform: rotate(-45deg) scale(1, 1);
         }
+    }
+}
+
+.form-control {
+    font-size: 14px;
+    padding: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))) calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+    &.subscribe-input {
+        border: none;
+        border-radius: 0;
+    }
+
+    [dir="rtl"] & {
+        text-align: right;
+    }
+
+    &:focus {
+        background-color: $grey-light;
+        border-color: $border-color;
+        box-shadow: none;
+        color: $black;
+    }
+}
+
+.form-select {
+    font-size: 14px;
+
+    &:focus {
+        background-color: $dark-gray;
+        border-color: $border-color;
+        box-shadow: none;
+        color: $black;
+    }
+}
+
+.input-group {
+    .btn {
+        z-index: 1;
     }
 }

@@ -1,49 +1,38 @@
 /**=====================
-     tab css start
+     Slider css start
 ==========================**/
-.tab-wrap {
-    .nav-tabs {
-        justify-content: center;
-        border-bottom: 2px solid $demo1-bg;
+.tab-style-color {
+    border: none;
+    margin: -5px;
 
-        @include mq-max(lg) {
-            display: -webkit-box;
-            justify-content: center;
-            flex-wrap: inherit;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            white-space: nowrap;
-        }
+    .nav-item {
+        margin: 5px;
 
         .nav-link {
-            font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
-            line-height: 1;
-            color: $font-light;
-            font-weight: 500;
-            padding: 0 20px 20px;
-            background: transparent;
             border: none;
-            border-bottom: 4px solid transparent;
+            color: $title-color;
+            font-weight: 500;
+            transition: all .3s ease-in-out;
 
-            @include mq-max(lg) {
-                padding: 0 10px 15px;
+            &.active {
+                background-image: url(../images/shape.png);
+                background-size: contain;
+                background-clip: border-box;
+                background-position: 0 0;
+                animation: shape 15s linear infinite;
             }
 
-            &:hover,
-            &:active,
-            &:focus {
-                border: none;
+            &:hover {
+                background-image: url(../images/shape.png);
+                background-size: contain;
+                background-clip: border-box;
+                background-position: 0 0;
+                animation: shape 15s linear infinite;
             }
 
-            &.active,
-            &:active {
-                border-bottom: 4px solid var(--theme-color);
-                color: $black1;
+            img {
+                margin-right: 5px;
             }
         }
-    }
-
-    .tab-content {
-        margin-top: 30px;
     }
 }
