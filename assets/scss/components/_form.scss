@@ -10,7 +10,42 @@
             color: $white;
             font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
         }
+    }
+}
 
+// .theme-form-select {
+//     &:focus {
+//         background-color: $white;
+//     }
+// }
+
+.theme-form-floating {
+
+    >.form-control:focus,
+    >.form-control:not(:placeholder-shown),
+    >.form-select {
+        ~label {
+            top: -5px;
+            left: 10px;
+            height: 31px;
+            background-color: $white;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .form-control {
+        &:focus {
+            background-color: $white;
+        }
+    }
+
+    label {
+        font-size: 16px;
+        color: $content-color;
     }
 }
 
@@ -97,11 +132,13 @@
 .form-select {
     font-size: 14px;
 
-    &:focus {
-        background-color: $dark-gray;
-        border-color: $border-color;
-        box-shadow: none;
-        color: $black;
+    &.theme-form-select {
+        &:focus {
+            background-color: $white;
+            border-color: $border-color;
+            box-shadow: none;
+            color: $black;
+        }
     }
 }
 
