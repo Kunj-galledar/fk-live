@@ -12,9 +12,18 @@
         color: $white;
         font-family: $quicksand;
 
+        @include mq-max(xs) {
+            display: block;
+        }
+
         h2 {
             font-weight: 700;
-            font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)))
+            font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
+
+            @include mq-max(xs) {
+                text-align: center;
+                margin-bottom: 8px;
+            }
         }
 
         nav {
