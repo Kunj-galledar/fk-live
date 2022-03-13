@@ -823,8 +823,8 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-pills nav-justified custom-navtab" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <div class="nav-link active" id="shopping-cart" data-bs-toggle="tab"
-                                data-bs-target="#s-cart" type="button" role="tab">
+                            <div class="nav-link" id="shopping-cart" data-bs-toggle="tab" data-bs-target="#s-cart"
+                                type="button" role="tab">
                                 <div class="nav-item-box">
                                     <span>STEP 1</span>
                                     <h4>Shopping Cart</h4>
@@ -832,11 +832,6 @@
                                         trigger="loop-on-hover"
                                         colors="primary:#121331,secondary:#646e78,tertiary:#0baf9a" class="lord-icon">
                                     </lord-icon>
-
-                                    <!-- <lord-icon src="https://cdn.lordicon.com/ggihhudh.json" trigger="hover"
-                                        colors="primary:#121331,secondary:#646e78,tertiary:#0baf9a"
-                                        style="width:250px;height:250px">
-                                    </lord-icon> -->
                                 </div>
                             </div>
                         </li>
@@ -870,8 +865,8 @@
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <div class="nav-link" id="payment-option" data-bs-toggle="tab" data-bs-target="#p-options"
-                                type="button" role="tab">
+                            <div class="nav-link active" id="payment-option" data-bs-toggle="tab"
+                                data-bs-target="#p-options" type="button" role="tab">
                                 <div class="nav-item-box">
                                     <span>STEP 4</span>
                                     <h4>Payment Options</h4>
@@ -888,7 +883,7 @@
                 <div class="col-xxl-9 col-lg-8">
                     <!-- Tab panes -->
                     <div class="tab-content" id="progressBar">
-                        <div class="tab-pane active" id="s-cart" role="tabpanel" aria-labelledby="shopping-cart">
+                        <div class="tab-pane" id="s-cart" role="tabpanel" aria-labelledby="shopping-cart">
                             <h2 class="tab-title">Shopping Cart</h2>
                             <div class="cart-table">
                                 <div class="table-responsive-xl">
@@ -930,7 +925,7 @@
                                                                     <h5 class="saving theme-color">Saving : $20.68</h5>
                                                                 </li>
 
-                                                                <li class="quantity">
+                                                                <!-- <li class="quantity">
                                                                     <div class="quantity-price">
                                                                         <div class="cart_qty">
                                                                             <div class="input-group">
@@ -951,6 +946,28 @@
                                                                                         aria-hidden="true"></i>
                                                                                 </button>
                                                                             </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li> -->
+
+                                                                <li class="quenty-price-box">
+                                                                    <div class="cart_qty">
+                                                                        <div class="input-group">
+                                                                            <button type="button"
+                                                                                class="btn qty-left-minus"
+                                                                                data-type="minus" data-field="">
+                                                                                <i class="fa fa-minus"
+                                                                                    aria-hidden="true"></i>
+                                                                            </button>
+                                                                            <input
+                                                                                class="form-control input-number qty-input"
+                                                                                type="text" name="quantity" value="1">
+                                                                            <button type="button"
+                                                                                class="btn qty-right-plus"
+                                                                                data-type="plus" data-field="">
+                                                                                <i class="fa fa-plus"
+                                                                                    aria-hidden="true"></i>
+                                                                            </button>
                                                                         </div>
                                                                     </div>
                                                                 </li>
@@ -1193,29 +1210,21 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-
-                                        <!-- <tfoot>
-                                        <tr>
-                                            <td colspan="3"></td>
-                                            <td>Subtotal</td>
-                                            <td>$65.24</td>
-                                            <td></td>
-                                        </tr>
-                                    </tfoot> -->
                                     </table>
                                 </div>
                             </div>
 
-                            <!-- <div class="button-group mt-3">
-                                <button onclick="location.href = 'index.html';" class="btn btn-light shopping-button"><i
-                                        class="fa-solid fa-arrow-left-long"></i>Return To Shopping</button>
-                                <button class="btn btn-animation proceed-btn">Select Delivery Address</button>
-                            </div> -->
+                            <div class="button-group">
+                                <ul>
+                                    <li>
+                                        <button class="btn btn-light shopping-button backward-btn"><i
+                                                class="fa-solid fa-arrow-left-long"></i>Return To Shopping Cart</button>
+                                    </li>
 
-                            <div class="button-group mt-4">
-                                <button onclick="location.href = 'index.html';" class="btn btn-light shopping-button"><i
-                                        class="fa-solid fa-arrow-left-long"></i>Return To Shopping</button>
-                                <button class="btn btn-animation proceed-btn">Select Delivery Address</button>
+                                    <li>
+                                        <button class="btn btn-animation proceed-btn">Continue Delivery Option</button>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
@@ -1223,7 +1232,10 @@
                             <div class="d-flex align-items-center mb-3">
                                 <h2 class="tab-title mb-0">Delivery Address</h2>
                                 <button class="btn btn-animation ms-auto" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#add-address">Add New Address</button>
+                                    data-bs-target="#add-address">
+                                    <i class="fa-solid fa-plus d-block d-sm-none"></i>
+                                    <span class="d-none d-sm-block">Add New Address</span>
+                                </button>
                             </div>
 
                             <div class="row g-4">
@@ -1352,16 +1364,18 @@
                                 </div> -->
                             </div>
 
-                            <div class="button-group mt-4">
-                                <!-- <button class="btn btn-light shopping-button backward-btn"><i
-                                        class="fa-solid fa-arrow-left-long"></i>Return To Shopping</button>
-                                <button class="btn btn-animation proceed-btn">Continue Delivery Option</button> -->
-                            </div>
+                            <div class="button-group">
+                                <ul>
+                                    <li>
+                                        <button class="btn btn-light shopping-button backward-btn"><i
+                                                class="fa-solid fa-arrow-left-long"></i>Return To Shopping Cart</button>
+                                    </li>
 
-                            <div class="button-group mt-4">
-                                <button class="btn btn-light shopping-button backward-btn"><i
-                                        class="fa-solid fa-arrow-left-long"></i>Return To Shopping Cart</button>
-                                <button class="btn btn-animation proceed-btn">Continue Delivery Option</button>
+                                    <li>
+                                        <button class="btn btn-animation proceed-btn">Continue Delivery Option</button>
+                                    </li>
+                                </ul>
+
                             </div>
                         </div>
 
@@ -1386,17 +1400,14 @@
 
                                             <div class="col-xxl-4 col-sm-6">
                                                 <div class="delivery-items">
-                                                    <div>
-                                                        <h5 class="items text-content"><span>3 Items</span> @ $693.48
-                                                        </h5>
-                                                        <h5 class="charge text-content">Delivery Charge $28.12
-                                                            <button type="button" class="btn p-0"
-                                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Extra Charge">
-                                                                <i class="fa-solid fa-circle-exclamation"></i>
-                                                            </button>
-                                                        </h5>
-                                                    </div>
+                                                    <h5 class="items text-content"><span>3 Items</span> @ $693.48
+                                                    </h5>
+                                                    <h5 class="charge text-content">Delivery Charge $28.12
+                                                        <button type="button" class="btn p-0" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Extra Charge">
+                                                            <i class="fa-solid fa-circle-exclamation"></i>
+                                                        </button>
+                                                    </h5>
                                                 </div>
                                             </div>
 
@@ -1434,17 +1445,14 @@
 
                                             <div class="col-xxl-4 col-sm-6">
                                                 <div class="delivery-items">
-                                                    <div>
-                                                        <h5 class="items text-content"><span>3 Items</span> @ $693.48
-                                                        </h5>
-                                                        <h5 class="charge text-content">Delivery Charge $32.15
-                                                            <button type="button" class="btn p-0"
-                                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Extra Charge">
-                                                                <i class="fa-solid fa-circle-exclamation"></i>
-                                                            </button>
-                                                        </h5>
-                                                    </div>
+                                                    <h5 class="items text-content"><span>3 Items</span> @ $693.48
+                                                    </h5>
+                                                    <h5 class="charge text-content">Delivery Charge $32.15
+                                                        <button type="button" class="btn p-0" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Extra Charge">
+                                                            <i class="fa-solid fa-circle-exclamation"></i>
+                                                        </button>
+                                                    </h5>
                                                 </div>
                                             </div>
 
@@ -1483,24 +1491,22 @@
 
                                             <div class="col-xxl-4 col-sm-6">
                                                 <div class="delivery-items">
-                                                    <div>
-                                                        <h5 class="items text-content"><span>3 Items</span> @ $693.48
-                                                        </h5>
-                                                        <h5 class="charge text-content">Delivery Charge $34.67
-                                                            <button type="button" class="btn p-0"
-                                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Extra Charge">
-                                                                <i class="fa-solid fa-circle-exclamation"></i>
-                                                            </button>
-                                                        </h5>
-                                                    </div>
+                                                    <h5 class="items text-content"><span>3 Items</span> @ $693.48
+                                                    </h5>
+                                                    <h5 class="charge text-content">Delivery Charge $34.67
+                                                        <button type="button" class="btn p-0" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Extra Charge">
+                                                            <i class="fa-solid fa-circle-exclamation"></i>
+                                                        </button>
+                                                    </h5>
                                                 </div>
                                             </div>
 
                                             <div class="col-xxl-4 col-md-12">
-                                                <form class="form-floating theme-form-floating">
-                                                    <input type="date" class="form-control js-ui-datepicker" id="date"
+                                                <form class="form-floating theme-form-floating date-box">
+                                                    <input type="text" class="form-control" id="date"
                                                         placeholder="name@example.com">
+                                                    <i class="fa-solid fa-calendar"></i>
                                                     <label for="date">Select Date</label>
                                                 </form>
                                             </div>
@@ -1509,19 +1515,25 @@
                                 </div>
                             </div>
 
+                            <div class="button-group">
+                                <ul>
+                                    <li>
+                                        <button class="btn btn-light shopping-button backward-btn"><i
+                                                class="fa-solid fa-arrow-left-long"></i>Return To Shopping Cart</button>
+                                    </li>
 
-                            <div class="button-group mt-4">
-                                <button class="btn btn-light shopping-button backward-btn"><i
-                                        class="fa-solid fa-arrow-left-long"></i>Return To Delivery Address</button>
-                                <button class="btn btn-animation proceed-btn">Continue To Delivery Option</button>
+                                    <li>
+                                        <button class="btn btn-animation proceed-btn">Continue Delivery Option</button>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
-                        <div class="tab-pane" id="p-options" role="tabpanel" aria-labelledby="payment-option">
+                        <div class="tab-pane active" id="p-options" role="tabpanel" aria-labelledby="payment-option">
                             <h2 class="tab-title">Payment Option</h2>
                             <div class="row g-sm-4 g-2">
-                                <div class="col-xxl-4 col-xl-5 order-xl-2">
-                                    <div class="table-responsive summery-table">
+                                <div class="col-xxl-4 col-xl-5 col-lg-12 col-md-5 order-md-2">
+                                    <!-- <div class="table-responsive summery-table">
                                         <table class="table">
                                             <thead>
                                                 <tr>
@@ -1580,10 +1592,76 @@
                                                 </tr>
                                             </tfoot>
                                         </table>
+                                    </div> -->
+
+                                    <div class="summery-box">
+                                        <div class="summery-header">
+                                            <h3>Order Summery</h3>
+                                            <a href="cart.html">Edit Cart</a>
+                                        </div>
+
+                                        <ul class="summery-contain">
+                                            <li>
+                                                <h4>Bell pepper <span>X 1</span></h4>
+                                                <h4 class="price">$32.34</h4>
+                                            </li>
+
+                                            <li>
+                                                <h4>Eggplant <span>X 3</span></h4>
+                                                <h4 class="price">$12.23</h4>
+                                            </li>
+
+                                            <li>
+                                                <h4>Onion <span>X 2</span></h4>
+                                                <h4 class="price">$18.27</h4>
+                                            </li>
+
+                                            <li>
+                                                <h4>Potato <span>X 1</span></h4>
+                                                <h4 class="price">$26.90</h4>
+                                            </li>
+
+                                            <li>
+                                                <h4>Baby Chili <span>X 1</span></h4>
+                                                <h4 class="price">$19.28</h4>
+                                            </li>
+
+                                            <li>
+                                                <h4>Broccoli <span>X 2</span></h4>
+                                                <h4 class="price">$29.69</h4>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="summery-total">
+                                            <li>
+                                                <h4>Subtotal</h4>
+                                                <h4 class="price">$111.81</h4>
+                                            </li>
+
+                                            <li>
+                                                <h4>Shipping</h4>
+                                                <h4 class="price">$8.90</h4>
+                                            </li>
+
+                                            <li>
+                                                <h4>Tax</h4>
+                                                <h4 class="price">$29.498</h4>
+                                            </li>
+
+                                            <li>
+                                                <h4>Coupon/Code</h4>
+                                                <h4 class="price">$-23.10</h4>
+                                            </li>
+
+                                            <li class="list-total">
+                                                <h4>Total (USD)</h4>
+                                                <h4 class="price">$19.28</h4>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
 
-                                <div class="col-xxl-8 col-xl-7 order-xl-1">
+                                <div class="col-xxl-8 col-xl-7 col-lg-12 col-md-7 order-md-1">
                                     <div class="accordion accordion-flush custom-accordion" id="accordionFlushExample">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingOne">
@@ -1842,9 +1920,17 @@
                                 </div>
                             </div>
 
-                            <div class="button-group mt-4">
-                                <button class="btn btn-light shopping-button backward-btn"><i
-                                        class="fa-solid fa-arrow-left-long"></i>Return To Delivery Option</button>
+                            <div class="button-group">
+                                <ul>
+                                    <li>
+                                        <button class="btn btn-light shopping-button backward-btn"><i
+                                                class="fa-solid fa-arrow-left-long"></i>Return To Shopping Cart</button>
+                                    </li>
+
+                                    <li>
+                                        <button class="btn btn-animation proceed-btn">Continue Delivery Option</button>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
