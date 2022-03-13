@@ -779,7 +779,16 @@
                .offcanvas {
                     z-index: 0;
                     -webkit-box-flex: 1;
+
+                    @include mq-max(xl) {
+                         z-index: 2;
+                         -webkit-box-flex: 2;
+                    }
                }
+          }
+
+          .offcanvas-backdrop {
+               z-index: 1;
           }
 
           @media (max-width:1200px) {
