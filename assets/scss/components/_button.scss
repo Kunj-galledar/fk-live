@@ -3,13 +3,15 @@
 ==========================**/
 .btn {
      position: relative;
-     padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(15px + (25 - 15) * ((100vw - 320px) / (1920 - 320)));
+     padding: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
      z-index: 1;
-     transition: all 0.5s;
+     transition: all .3s ease;
      border-radius: 0;
      font-weight: bold;
-     font-size: calc(12px + (13 - 12) * ((100vw - 320px) / (1920 - 320)));
+     font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
      border-radius: 5px;
+     color: $white;
+     font-weight: 500;
 
      &:focus {
           box-shadow: none;
@@ -28,7 +30,7 @@
           letter-spacing: 0.4px;
           padding: 8px 20px;
           font-weight: 700;
-          font-family: $quicksand;
+          font-family: $public-sans;
      }
 
      &-lg {
@@ -55,30 +57,14 @@
      border: none;
      overflow: hidden;
      position: relative;
-     background-color: var(--theme-color);
+     background: linear-gradient(90deg, #ff6b6b 0%, #ff4f4f 69.38%);
      color: $white;
      border-radius: 5px;
-
-     &:after {
-          @include pos;
-          background: $white;
-          height: 155px;
-          left: -75px;
-          opacity: 0.2;
-          top: -50px;
-          transform: rotate(35deg);
-          transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-          width: 50px;
-          z-index: -10;
-     }
+     transition: all .3s ease;
 
      &:hover {
           color: $white;
-
-          &::after {
-               left: 120%;
-               transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-          }
+          background: linear-gradient(90deg, #ff4f4f 0%, #ff6b6b 69.38%);
      }
 
      &-white {
