@@ -1,0 +1,76 @@
+/* =====================
+    Blog CSS Start 
+ ========================== */
+.newsletter-section {
+    .newsletter-box {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        .newsletter-detail {
+            @include pseudowh;
+            padding: calc(50px + (20 - 50) * ((100vw - 320px) / (1920 - 320))) calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
+            z-index: 1;
+
+            h2 {
+                font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 10px;
+            }
+
+            h4 {
+                margin-bottom: 8px;
+                font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+                line-height: 1.3;
+                font-weight: 300;
+            }
+
+            .download-app {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                @include mq-max(md) {
+                    display: block;
+                }
+
+                h3 {
+                    margin-right: 15px;
+                    font-weight: 400;
+
+                    @include mq-max(md) {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .download-app-image {
+                    margin: 0 -3px;
+                    display: flex;
+
+                    li {
+                        margin: 0 3px;
+                        display: flex;
+                    }
+                }
+            }
+        }
+
+        .shape-box {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+
+            &:after {
+                @include pos;
+                @include pseudowh;
+                background-image: url(../images/vegetable/shape/circle.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                animation: rounded infinite 30s linear;
+                right: 0;
+                top: 0;
+                z-index: -1;
+            }
+        }
+    }
+}

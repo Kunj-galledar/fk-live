@@ -1,0 +1,67 @@
+/**=====================
+     buttons css start
+==========================**/
+.btn {
+  color: $title-color;
+  // border-radius: 5px;
+  padding: calc(7px + (14 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 500;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  // background: #ff6b6b;
+  // background: linear-gradient(90deg, #ff6b6b 0%, #ff4f4f 100%);
+  border: none;
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+  z-index: 1;
+
+  &-animation {
+    color: $white;
+    border-radius: 5px;
+    // padding: 20px 36px;
+    font-weight: 600;
+    background: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ff6b6b;
+    background: linear-gradient(90deg, #ff6b6b 0%, #ff4f4f 100%);
+    border: none;
+    // font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+    z-index: 1;
+
+    i {
+      transition: .3s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 5px;
+      background: #ff4f4f;
+      background: linear-gradient(90deg, #ff4f4f 0%, #ff6b6b 100%);
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      color: $white;
+
+      i {
+        transform: translateX(3px);
+      }
+
+      &::after {
+        top: 0;
+        height: 100%;
+      }
+    }
+  }
+}
