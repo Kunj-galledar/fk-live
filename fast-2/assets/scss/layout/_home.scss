@@ -1,6 +1,5 @@
 @mixin home_common {
   .home-contain {
-    // border-radius: 10px;
     overflow: hidden;
     position: relative;
 
@@ -15,10 +14,13 @@
         padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) !important;
       }
 
+      &.home-p-medium {
+        padding: 50px calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))) !important;
+      }
+
       h2 {
-        font-size: calc(16px + (40 - 16) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(16px + (38 - 16) * ((100vw - 320px) / (1920 - 320)));
         margin-bottom: calc(0px + (10 - 0) * ((100vw - 320px) / (1920 - 320)));
-        // line-height: 1.4;
 
         &.poster-1 {
           line-height: calc(23px + (68 - 23) * ((100vw - 320px) / (1920 - 320)));
@@ -55,12 +57,16 @@
       h6 {
         font-size: 14px;
         letter-spacing: 0.1px;
-        // margin-bottom: calc(7px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
         text-transform: uppercase;
         color: #4a5568;
 
         @include mq-max(2xs) {
           margin-bottom: 5px;
+        }
+
+        &.home-banner {
+          margin-bottom: 10px;
+          font-weight: 500;
         }
 
         span {
@@ -71,7 +77,7 @@
               rgba(255, 114, 114, 0.15) 0%,
               rgba(255, 114, 114, 0) 79%);
           border-radius: 50px;
-          color: #ff4f4f;
+          color: $danger-color;
           margin-left: calc(2px + (9 - 2) * ((100vw - 320px) / (1920 - 320)));
 
           @include mq-max(2xs) {
@@ -81,9 +87,8 @@
       }
 
       p {
-        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        // font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         margin-bottom: 0;
-        // line-height: 1.5;
         color: $content-color;
         letter-spacing: .8px;
         line-height: calc(19px + (27 - 19) * ((100vw - 320px) / (1920 - 320)));
@@ -91,7 +96,6 @@
         -webkit-box-orient: vertical;
         display: -webkit-box;
         overflow: hidden;
-        // margin-top: 10px;
 
         &.organic {
           width: 70%;
@@ -118,91 +122,21 @@
       }
     }
   }
+
+  .price-box {
+    position: absolute;
+    top: 200px;
+    right: 29px;
+    text-align: center;
+
+    h6 {
+      color: $title-color;
+      margin-bottom: 3px;
+    }
+
+    h3 {
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
 }
-
-// @mixin home_2 {
-//   .home-section-2 {
-//     .home-contain {
-//       position: relative;
-
-//       .circle-image {
-//         .circle-1 {
-//           position: absolute;
-//           @include center(vertical);
-//           right: 8%;
-//         }
-
-//         .circle-2 {
-//           position: absolute;
-//           @include center(vertical);
-//           right: 10%;
-//         }
-//       }
-
-//       .home-detail {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         @include pseudowh;
-//         padding: 20px calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
-
-//         @include mq-max(md) {
-//           position: relative;
-//           top: unset;
-//           left: unset;
-//           padding: 20px calc(10px + (130 - 10) * ((100vw - 320px) / (1920 - 320)));
-//           background-color: $white;
-//           text-align: center;
-//           display: block;
-
-//           &::before {
-//             @include pos;
-//             @include pseudowh;
-//             top: 0;
-//             left: 0;
-//             background-color: var(--theme-color);
-//             opacity: 0.05;
-//           }
-
-//           h3 {
-//             margin: 7px 0;
-//           }
-
-//           h5 {
-//             margin-bottom: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
-
-//             @include mq-max(xs) {
-//               display: none;
-//             }
-//           }
-//         }
-
-//         h2 {
-//           font-size: calc(22px + (50 - 22) * ((100vw - 320px) / (1920 - 320)));
-//           margin: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320))) 0 calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
-//         }
-
-//         h3 {
-//           font-size: calc(18px + (40 - 19) * ((100vw - 320px) / (1920 - 320)));
-//           font-weight: 300;
-//         }
-
-//         h5 {
-//           margin-top: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
-//         }
-
-//         h6 {
-//           @include mq-max(xs) {
-//             letter-spacing: 7px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @mixin home_3 {
-//   .home-section-3 {
-//     background-image: unset;
-//   }
-// }

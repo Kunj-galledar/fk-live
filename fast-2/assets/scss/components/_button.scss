@@ -3,7 +3,6 @@
 ==========================**/
 .btn {
   color: $title-color;
-  // border-radius: 5px;
   padding: calc(7px + (14 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 500;
   background: transparent;
@@ -11,16 +10,17 @@
   position: relative;
   display: flex;
   align-items: center;
-  // background: #ff6b6b;
-  // background: linear-gradient(90deg, #ff6b6b 0%, #ff4f4f 100%);
   border: none;
   font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
   z-index: 1;
 
+  i {
+    margin-left: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
+  }
+
   &-animation {
     color: $white;
     border-radius: 5px;
-    // padding: 20px 36px;
     font-weight: 600;
     background: transparent;
     transition: all 0.3s ease;
@@ -30,7 +30,6 @@
     background: #ff6b6b;
     background: linear-gradient(90deg, #ff6b6b 0%, #ff4f4f 100%);
     border: none;
-    // font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
     z-index: 1;
 
     i {
@@ -38,8 +37,7 @@
     }
 
     &::after {
-      content: "";
-      position: absolute;
+      @include pos;
       width: 100%;
       height: 0;
       bottom: 0;
@@ -63,5 +61,17 @@
         height: 100%;
       }
     }
+  }
+
+  &-md {
+    padding: 11px 24px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &-sm {
+    padding: 7px 11px;
+    font-size: 14px;
+    font-weight: 500;
   }
 }

@@ -1,26 +1,33 @@
 /**=====================
      alert css start
 ==========================**/
-@mixin service_common {
-    .service-contain {
+.service-contain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .service-box {
         display: flex;
         align-items: center;
-        padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320)));
-        border-radius: 5px;
-        background-color: rgba($light-color, $alpha: .2);
+        position: relative;
 
-        svg {
-            width: 42px;
-            height: 42px;
+        +.service-box {
+            &::before {
+                @include pos;
+                @include center(vertical);
+                left: -104px;
+                width: 1px;
+                height: 50%;
+                border: 1px dashed rgba(74, 85, 104, 0.5);
+            }
         }
 
         .service-detail {
-            margin-left: 25px;
+            margin-left: 20px;
 
-            h3 {
-                letter-spacing: 0.8px;
-                margin-bottom: 5px;
-                font-weight: 600;
+            h5 {
+                font-weight: 500;
+                color: $title-color;
             }
         }
     }
