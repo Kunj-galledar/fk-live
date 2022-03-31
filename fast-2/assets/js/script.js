@@ -45,38 +45,38 @@
     /*=====================
         02. dropdown category function js
     ==========================*/
-    $(function () {
-        var list = $(".js-dropdown-list");
-        var link = $(".js-link");
-        link.click(function (e) {
-            e.preventDefault();
-            list.slideToggle(200);
-        });
-        list.find("li").click(function () {
-            var text = $(this).html();
-            var icon = '<i class="fa fa-chevron-down"></i>';
-            link.html(text + icon);
-            list.slideToggle(200);
-        });
-    });
+    // $(function () {
+    //     var list = $(".js-dropdown-list");
+    //     var link = $(".js-link");
+    //     link.click(function (e) {
+    //         e.preventDefault();
+    //         list.slideToggle(200);
+    //     });
+    //     list.find("li").click(function () {
+    //         var text = $(this).html();
+    //         var icon = '<i class="fa fa-chevron-down"></i>';
+    //         link.html(text + icon);
+    //         list.slideToggle(200);
+    //     });
+    // });
 
     /*=====================
        03. search box function js
     ==========================*/
-    $(".search-box").on("click", function () {
-        $(".search-full").addClass("open");
-    });
-    $(window).on("load resize", function () {
-        // open searchbox
-        $(".search-type").on("click", function () {
-            $(this).parents(".search-full").addClass("show");
-        });
+    // $(".search-box").on("click", function () {
+    //     $(".search-full").addClass("open");
+    // });
+    // $(window).on("load resize", function () {
+    //     // open searchbox
+    //     $(".search-type").on("click", function () {
+    //         $(this).parents(".search-full").addClass("show");
+    //     });
 
-        // close seach
-        $(".close-search").on("click", function () {
-            $(".search-full").removeClass("open");
-        });
-    });
+    //     // close seach
+    //     $(".close-search").on("click", function () {
+    //         $(".search-full").removeClass("open");
+    //     });
+    // });
 
 })(jQuery);
 
@@ -86,7 +86,7 @@
 var contentwidth = $(window).width();
 if (contentwidth < "576") {
     $(".footer-title h4").append(
-        '<span class="according-menu"><i class="fas fa-chevron-down"></i></span>'
+        '<span class="according-menu"><i class="fas fa-chevron-down ms-3"></i></span>'
     );
     $(".footer-title").on("click", function () {
         $(".footer-title")
@@ -120,159 +120,159 @@ if (contentwidth < "576") {
 /*=====================
    05. search box function js
    ==========================*/
-$(".search-box").on("click", function () {
-    $(".search-full").addClass("open");
-});
-$(window).on("load resize", function () {
-    // open searchbox
-    $(".search-type").on("click", function () {
-        $(this).parents(".search-full").addClass("show");
-    });
+// $(".search-box").on("click", function () {
+//     $(".search-full").addClass("open");
+// });
+// $(window).on("load resize", function () {
+//     // open searchbox
+//     $(".search-type").on("click", function () {
+//         $(this).parents(".search-full").addClass("show");
+//     });
 
-    // close seach
-    $(".close-search").on("click", function () {
-        $(".search-full").removeClass("open");
-    });
-});
+//     // close seach
+//     $(".close-search").on("click", function () {
+//         $(".search-full").removeClass("open");
+//     });
+// });
 
 /*=====================
     06. Add to Cart js
     ==========================*/
-$(function () {
-    $(".btn-cart").on("click", function () {
-        $.notify({
-            title: "<strong>Success</strong>",
-            message: "Item Successfully added in Cart",
-            icon: "fas fa-check"
-        }, {
-            type: "success",
-            allow_dismiss: true,
-            delay: 3000,
-            placement: {
-                from: "top",
-                align: "right"
-            }
-        });
-    });
-});
+// $(function () {
+//     $(".btn-cart").on("click", function () {
+//         $.notify({
+//             title: "<strong>Success</strong>",
+//             message: "Item Successfully added in Cart",
+//             icon: "fas fa-check"
+//         }, {
+//             type: "success",
+//             allow_dismiss: true,
+//             delay: 3000,
+//             placement: {
+//                 from: "top",
+//                 align: "right"
+//             }
+//         });
+//     });
+// });
 
 /*=====================
     07. Add to wishlist js
     ==========================*/
-$(function () {
-    $(".btn-wishlist").on("click", function () {
-        $.notify({
-            title: "<strong>Success</strong>",
-            message: "Item Successfully added in wishlist",
-            icon: "fas fa-check"
-        }, {
-            type: "danger",
-            allow_dismiss: true,
-            delay: 3000,
-            placement: {
-                from: "top",
-                align: "right"
-            }
-        });
-    });
-});
+// $(function () {
+//     $(".btn-wishlist").on("click", function () {
+//         $.notify({
+//             title: "<strong>Success</strong>",
+//             message: "Item Successfully added in wishlist",
+//             icon: "fas fa-check"
+//         }, {
+//             type: "danger",
+//             allow_dismiss: true,
+//             delay: 3000,
+//             placement: {
+//                 from: "top",
+//                 align: "right"
+//             }
+//         });
+//     });
+// });
 
 /*=====================
   08. category menu js
    ==========================*/
-$(".toggle-category").on("click", function () {
-    $(".category-dropdown").addClass("open");
-    $(".bg-overlay").addClass("show");
-});
-$(".back-category, .bg-overlay").on("click", function () {
-    $(".category-dropdown").removeClass("open");
-    $(".bg-overlay").removeClass("show");
-});
-var contentwidth = $(window).width();
-if (contentwidth < "1200") {
-    $(".category-menu li.submenu >a").append(
-        '<span class="according-menu">+</span>'
-    );
-    $(".category-menu li.submenu >a").on("click", function () {
-        $(".category-menu li.submenu >a")
-            .removeClass("active")
-            .find("span")
-            .replaceWith('<span class="according-menu">+</span>');
-        $(".category-mega-menu").slideUp("normal");
-        if ($(this).next().is(":hidden") == true) {
-            $(this).addClass("active");
-            $(this)
-                .find("span")
-                .replaceWith('<span class="according-menu">-</span>');
-            $(this).next().slideDown("normal");
-        } else {
-            $(this)
-                .find("span")
-                .replaceWith('<span class="according-menu">+</span>');
-        }
-    });
-    $(".category-mega-menu").hide();
-}
+// $(".toggle-category").on("click", function () {
+//     $(".category-dropdown").addClass("open");
+//     $(".bg-overlay").addClass("show");
+// });
+// $(".back-category, .bg-overlay").on("click", function () {
+//     $(".category-dropdown").removeClass("open");
+//     $(".bg-overlay").removeClass("show");
+// });
+// var contentwidth = $(window).width();
+// if (contentwidth < "1200") {
+//     $(".category-menu li.submenu >a").append(
+//         '<span class="according-menu">+</span>'
+//     );
+//     $(".category-menu li.submenu >a").on("click", function () {
+//         $(".category-menu li.submenu >a")
+//             .removeClass("active")
+//             .find("span")
+//             .replaceWith('<span class="according-menu">+</span>');
+//         $(".category-mega-menu").slideUp("normal");
+//         if ($(this).next().is(":hidden") == true) {
+//             $(this).addClass("active");
+//             $(this)
+//                 .find("span")
+//                 .replaceWith('<span class="according-menu">-</span>');
+//             $(this).next().slideDown("normal");
+//         } else {
+//             $(this)
+//                 .find("span")
+//                 .replaceWith('<span class="according-menu">+</span>');
+//         }
+//     });
+//     $(".category-mega-menu").hide();
+// }
 
-var contentwidth = $(window).width();
-if (contentwidth < "1200") {
-    $(".title-category").append('<span class="according-menu">+</span>');
-    $(".title-category").on("click", function () {
-        $(".title-category")
-            .removeClass("active")
-            .find("span")
-            .replaceWith('<span class="according-menu">+</span>');
-        $(".category-childmenu ul").slideUp("normal");
-        if ($(this).next().is(":hidden") == true) {
-            $(this).addClass("active");
-            $(this)
-                .find("span")
-                .replaceWith('<span class="according-menu">-</span>');
-            $(this).next().slideDown("normal");
-        } else {
-            $(this)
-                .find("span")
-                .replaceWith('<span class="according-menu">+</span>');
-        }
-    });
-    $(".category-childmenu ul").hide();
-}
+// var contentwidth = $(window).width();
+// if (contentwidth < "1200") {
+//     $(".title-category").append('<span class="according-menu">+</span>');
+//     $(".title-category").on("click", function () {
+//         $(".title-category")
+//             .removeClass("active")
+//             .find("span")
+//             .replaceWith('<span class="according-menu">+</span>');
+//         $(".category-childmenu ul").slideUp("normal");
+//         if ($(this).next().is(":hidden") == true) {
+//             $(this).addClass("active");
+//             $(this)
+//                 .find("span")
+//                 .replaceWith('<span class="according-menu">-</span>');
+//             $(this).next().slideDown("normal");
+//         } else {
+//             $(this)
+//                 .find("span")
+//                 .replaceWith('<span class="according-menu">+</span>');
+//         }
+//     });
+//     $(".category-childmenu ul").hide();
+// }
 
 /*=====================
     09. Wishlist Button js
    ==========================*/
-$(".button").click(function () {
-    if ($(this).hasClass("deactivate")) {
-        $(this).removeClass("deactivate")
-    }
-    if ($(this).hasClass("active")) {
-        $(this).addClass("deactivate")
-    }
-    $(this).toggleClass("animate");
-    $(this).toggleClass("active");
-    $(this).toggleClass("inactive");
-});
+// $(".button").click(function () {
+//     if ($(this).hasClass("deactivate")) {
+//         $(this).removeClass("deactivate")
+//     }
+//     if ($(this).hasClass("active")) {
+//         $(this).addClass("deactivate")
+//     }
+//     $(this).toggleClass("animate");
+//     $(this).toggleClass("active");
+//     $(this).toggleClass("inactive");
+// });
 
 /*=====================
   10. Counter Number js
    ==========================*/
-function increaseCount(e, el) {
-    var input = el.previousElementSibling;
-    var value = parseInt(input.value, 10);
-    value = isNaN(value) ? 0 : value;
-    value++;
-    input.value = value;
-}
+// function increaseCount(e, el) {
+//     var input = el.previousElementSibling;
+//     var value = parseInt(input.value, 10);
+//     value = isNaN(value) ? 0 : value;
+//     value++;
+//     input.value = value;
+// }
 
-function decreaseCount(e, el) {
-    var input = el.nextElementSibling;
-    var value = parseInt(input.value, 10);
-    if (value > 1) {
-        value = isNaN(value) ? 0 : value;
-        value--;
-        input.value = value;
-    }
-}
+// function decreaseCount(e, el) {
+//     var input = el.nextElementSibling;
+//     var value = parseInt(input.value, 10);
+//     if (value > 1) {
+//         value = isNaN(value) ? 0 : value;
+//         value--;
+//         input.value = value;
+//     }
+// }
 
 /*=====================
   11. feather js
@@ -282,9 +282,9 @@ feather.replace();
 /*=====================
   12. Bootstrap tooltip js
    ==========================*/
-$(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-});
+// $(function () {
+//     $('[data-bs-toggle="tooltip"]').tooltip()
+// });
 
 /*=====================
   13. mobile menu active class js

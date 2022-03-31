@@ -5,6 +5,7 @@ footer {
     background: rgb(248, 248, 248);
     background: linear-gradient(90deg, rgba(248, 248, 248, 1) 0%, rgba(246, 246, 246, 1) 100%);
     position: relative;
+    z-index: 0;
 
     &::after {
         @include pos;
@@ -14,7 +15,7 @@ footer {
         background-image: url(../images/vegetable/footer-shape.png);
         height: 100%;
         background-repeat: no-repeat;
-        z-index: 0;
+        z-index: -1;
     }
 
     &:before {
@@ -29,20 +30,20 @@ footer {
     }
 
     .main-footer {
-        border-top: 1px dashed rgba(74, 85, 104, 0.5);
+        border-top: 1px dashed rgba($content-color, 0.5);
 
         .footer-title {
-            margin-bottom: 20px;
+            margin-bottom: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
 
             h4 {
-                font-size: 20px;
+                font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 600;
             }
         }
 
         .footer-contain {
             p {
-                font-size: 16px;
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 color: $content-color;
                 line-height: 27px;
                 margin-bottom: 0;
@@ -50,7 +51,7 @@ footer {
 
             ul {
                 &.address {
-                    margin-top: 30px;
+                    margin-top: calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
 
                     li {
                         display: flex;
@@ -73,10 +74,10 @@ footer {
 
                 li {
                     display: block;
-                    font-size: 16px;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                     +li {
-                        margin-top: 15px;
+                        margin-top: calc(4px + (15 - 4) * ((100vw - 320px) / (1920 - 320)));
                     }
                 }
             }
@@ -143,8 +144,10 @@ footer {
                         }
 
                         ul {
+                            margin: -4px;
+
                             li {
-                                margin-bottom: 0;
+                                margin: 4px;
                                 display: inline-block;
 
                                 &::before {
@@ -162,7 +165,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-top: 1px dashed rgba(74, 85, 104, 0.5);
+        border-top: 1px dashed rgba($content-color, 0.5);
         padding: 30px 0;
 
         .social-link {
