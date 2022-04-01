@@ -36,7 +36,7 @@ footer {
             margin-bottom: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
 
             h4 {
-                font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 600;
             }
         }
@@ -120,6 +120,10 @@ footer {
                         right: 40px;
                         width: 70%;
                         border-bottom: 1px dashed $content-color;
+
+                        @include mq-max(2xs) {
+                            width: 77%;
+                        }
                     }
 
                     .footer-number {
@@ -173,6 +177,10 @@ footer {
         justify-content: space-between;
         border-top: 1px dashed rgba($content-color, 0.5);
         padding: 30px 0;
+
+        @include mq-max(lg) {
+            display: block;
+        }
 
         .social-link {
             display: flex;

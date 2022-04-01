@@ -93,28 +93,28 @@ if (contentwidth < "576") {
             .removeClass("active")
             .find("span")
             .replaceWith(
-                '<span class="according-menu"><i class="fas fa-chevron-down"></i></span>'
+                '<span class="according-menu"><i class="fas fa-chevron-down ms-3"></i></span>'
             );
-        $(".footer-list, .footer-address").slideUp("normal");
+        $(".footer-contact, .footer-contain").slideUp("normal");
         if ($(this).next().is(":hidden") == true) {
             $(this).addClass("active");
             $(this)
                 .find("span")
                 .replaceWith(
-                    '<span class="according-menu"><i class="fas fa-chevron-up"></i></span>'
+                    '<span class="according-menu"><i class="fas fa-chevron-up ms-3"></i></span>'
                 );
             $(this).next().slideDown("normal");
         } else {
             $(this)
                 .find("span")
                 .replaceWith(
-                    '<span class="according-menu"><i class="fas fa-chevron-down"></i></span>'
+                    '<span class="according-menu"><i class="fas fa-chevron-down ms-3"></i></span>'
                 );
         }
     });
-    $(".footer-list, .footer-address").hide();
+    $(".footer-contact, .footer-contain").hide();
 } else {
-    $(".footer-list, .footer-address").show();
+    $(".footer-contact, .footer-contain").show();
 }
 
 /*=====================
