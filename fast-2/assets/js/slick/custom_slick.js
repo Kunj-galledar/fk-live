@@ -170,6 +170,8 @@ $('.slider-9').slick({
     breakpoint: 1630,
     settings: {
       slidesToShow: 8,
+      autoplay: true,
+      autoplaySpeed: 3500,
     }
   },
   {
