@@ -71,6 +71,15 @@
           border-radius: 10px;
           overflow: hidden;
 
+          .slider-5-1 {
+               .slick-slide {
+                    >.row {
+                         border-right: 1px solid rgba($content-color, 0.3);
+                         margin-left: 0;
+                    }
+               }
+          }
+
           >.row {
                >div {
                     &:nth-child(-n+5) {
@@ -239,7 +248,7 @@
                     margin-top: calc(12px + (22 - 12) * ((100vw - 320px) / (1920 - 320)));
 
                     .input-group {
-                         background-color: #F1F1F1;
+                         background-color: #f1f1f1;
                          border-radius: 50px;
                          padding: 4px;
                          width: 62%;
@@ -419,7 +428,7 @@
      }
 
      .product-category {
-          padding: 36px 25px;
+          padding: calc(19px + (36 - 19) * ((100vw - 320px) / (1920 - 320))) calc(16px + (25 - 16) * ((100vw - 320px) / (1920 - 320)));
           background-color: #f8f8f8;
           width: 100%;
           height: 100%;
@@ -430,8 +439,7 @@
                li {
                     display: block;
                     padding-left: 22px;
-                    // background-color: antiquewhite;
-                    font-size: 16px;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     color: $content-color;
                     position: relative;
 
@@ -440,19 +448,23 @@
                          top: 50%;
                          transform: rotate(45deg) translateY(-50%);
                          left: 0;
-                         width: 5px;
-                         height: 5px;
-                         border: 1px solid #4a5568;
+                         width: 7px;
+                         height: 7px;
+                         border: 1px solid $content-color;
                     }
 
                     +li {
-                         margin-top: 26px;
+                         margin-top: calc(14px + (26 - 14) * ((100vw - 320px) / (1920 - 320)));
                     }
 
                     &:last-child {
                          a {
                               display: flex;
                               align-items: center;
+
+                              &:hover {
+                                   color: var(--theme-color);
+                              }
 
                               i {
                                    margin-left: 8px;
@@ -476,7 +488,7 @@
                backdrop-filter: blur(4px);
                width: 90%;
                margin: -50px auto 0;
-               padding: 25px 30px;
+               padding: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320))) calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
                border-radius: 5px;
                box-shadow: 0px 4px 10px rgba(47, 88, 80, .05);
                background-color: rgba($white, 0.8);
@@ -487,16 +499,16 @@
 
                h3 {
                     font-weight: 600;
-                    margin-bottom: 10px;
+                    margin-bottom: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
                }
 
                h5 {
-                    margin-bottom: 10px;
+                    margin-bottom: calc(4px + (10 - 4) * ((100vw - 320px) / (1920 - 320)));
                     color: $content-color;
                }
 
                h6 {
-                    margin-top: 10px;
+                    margin-top: calc(4px + (10 - 4) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 500;
                }
 
@@ -504,6 +516,13 @@
                     position: absolute;
                     bottom: 0;
                     right: 0;
+
+                    @include mq-max(2xs) {
+                         position: relative;
+                         margin-top: 10px;
+                         width: 100%;
+                         justify-content: center;
+                    }
                }
           }
      }
@@ -511,8 +530,8 @@
      .top-selling-box {
           .top-selling-title {
                border-bottom: 1px solid #E0E2E7;
-               padding-bottom: 22px;
-               margin-bottom: 44px;
+               padding-bottom: calc(12px + (22 - 12) * ((100vw - 320px) / (1920 - 320)));
+               margin-bottom: calc(24px + (44 - 24) * ((100vw - 320px) / (1920 - 320)));
                position: relative;
 
                &::after {
@@ -525,9 +544,8 @@
                }
 
                h3 {
-                    font-size: 22px;
+                    font-size: calc(19px + (22 - 19) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 600;
-                    color: #222;
                }
           }
 
@@ -543,7 +561,7 @@
                          @include pos;
                          top: -15px;
                          right: 0;
-                         width: 68%;
+                         width: calc(100% - 118px);
                          border: 1px dashed rgba($content-color, 0.3);
                     }
                }
@@ -562,7 +580,7 @@
                     width: calc(100% - 100px);
 
                     h5 {
-                         margin-bottom: 5px;
+                         margin-bottom: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
                          font-weight: 600;
                          -webkit-line-clamp: 1;
                          -webkit-box-orient: vertical;
@@ -571,7 +589,7 @@
                     }
 
                     h6 {
-                         margin-top: 13px;
+                         margin-top: calc(7px + (13 - 7) * ((100vw - 320px) / (1920 - 320)));
                          font-weight: 600;
                          color: var(--theme-color);
                     }

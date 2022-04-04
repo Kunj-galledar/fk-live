@@ -32,8 +32,65 @@ footer {
     .main-footer {
         border-top: 1px dashed rgba($content-color, 0.5);
 
+        .footer-theme {
+            .footer-theme-contain {
+                margin-top: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
+
+                p {
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    color: $content-color;
+                    line-height: 27px;
+                    margin-bottom: 0;
+                }
+
+                ul {
+                    &.address {
+                        margin-top: calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
+
+                        li {
+                            display: flex;
+                            align-items: center;
+
+                            .feather {
+                                width: 18px;
+                                height: 18px;
+                                stroke: $content-color;
+                            }
+
+                            p {
+                                margin-bottom: 0;
+                                margin-left: 10px;
+                                margin-top: 1px;
+                                color: $content-color;
+                            }
+                        }
+                    }
+
+                    li {
+                        display: block;
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                        a {
+                            &:hover {
+                                color: $content-color;
+                            }
+                        }
+
+                        +li {
+                            margin-top: calc(4px + (15 - 4) * ((100vw - 320px) / (1920 - 320)));
+                        }
+                    }
+                }
+            }
+        }
+
         .footer-title {
-            margin-bottom: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
+
+            // &-2 {
+            //     @include mq-max(sm) {
+            //         margin-bottom: 0;
+            //     }
+            // }
 
             h4 {
                 font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
@@ -42,6 +99,8 @@ footer {
         }
 
         .footer-contain {
+            margin-top: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
+
             p {
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 color: $content-color;
@@ -107,23 +166,21 @@ footer {
         }
 
         .footer-contact {
+            margin-top: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
+
             ul {
                 li {
                     display: block;
                     // padding-bottom: 25px;
-                    margin-bottom: 50px;
+                    margin-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
                     position: relative;
 
                     &::before {
                         @include pos;
-                        bottom: -24px;
+                        bottom: calc(-15px + (-24 - 15) * ((100vw - 320px) / (1920 - 320)));
                         right: 40px;
-                        width: 70%;
+                        width: calc(100% - 70px);
                         border-bottom: 1px dashed $content-color;
-
-                        @include mq-max(2xs) {
-                            width: 77%;
-                        }
                     }
 
                     .footer-number {
@@ -172,35 +229,49 @@ footer {
     }
 
     .sub-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         border-top: 1px dashed rgba($content-color, 0.5);
-        padding: 30px 0;
+        padding: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320))) 0;
 
-        @include mq-max(lg) {
-            display: block;
-        }
-
-        .social-link {
+        ul {
+            margin: -6px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
 
-            h6 {
-                margin-right: 10px;
+            @include mq-max(lg) {
+                display: block;
+                text-align: center;
             }
 
-            ul {
-                display: flex;
-                align-items: center;
+            li {
+                margin: 6px;
+                display: block;
 
-                li {
-                    i {
-                        color: $content-color;
+                &.social-link {
+                    display: flex;
+                    align-items: center;
+
+                    @include mq-max(lg) {
+                        justify-content: center;
                     }
 
-                    +li {
-                        margin-left: 8px;
+                    h6 {
+                        margin-right: 10px;
+                    }
+
+                    ul {
+                        display: flex;
+                        align-items: center;
+
+                        li {
+                            i {
+                                color: $content-color;
+                            }
+
+                            +li {
+                                margin-left: 8px;
+                            }
+                        }
                     }
                 }
             }

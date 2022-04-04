@@ -86,14 +86,14 @@
 var contentwidth = $(window).width();
 if (contentwidth < "576") {
     $(".footer-title h4").append(
-        '<span class="according-menu"><i class="fas fa-chevron-down ms-3"></i></span>'
+        '<span class="according-menu float-end"><i class="fas fa-chevron-down"></i></span>'
     );
     $(".footer-title").on("click", function () {
         $(".footer-title")
             .removeClass("active")
             .find("span")
             .replaceWith(
-                '<span class="according-menu"><i class="fas fa-chevron-down ms-3"></i></span>'
+                '<span class="according-menu float-end"><i class="fas fa-chevron-down"></i></span>'
             );
         $(".footer-contact, .footer-contain").slideUp("normal");
         if ($(this).next().is(":hidden") == true) {
@@ -101,14 +101,14 @@ if (contentwidth < "576") {
             $(this)
                 .find("span")
                 .replaceWith(
-                    '<span class="according-menu"><i class="fas fa-chevron-up ms-3"></i></span>'
+                    '<span class="according-menu float-end"><i class="fas fa-chevron-up"></i></span>'
                 );
             $(this).next().slideDown("normal");
         } else {
             $(this)
                 .find("span")
                 .replaceWith(
-                    '<span class="according-menu"><i class="fas fa-chevron-down ms-3"></i></span>'
+                    '<span class="according-menu float-end"><i class="fas fa-chevron-down"></i></span>'
                 );
         }
     });
