@@ -1,0 +1,129 @@
+/**=====================
+    service section css start
+==========================**/
+
+@mixin service_common {
+  .service-section {
+    @include mq-max(3xl) {
+      margin-bottom: -3px;
+    }
+    .service-wrap {
+      display: flex;
+      align-items: center;
+      // background-color: red;
+
+      .service-icon {
+        svg {
+          width: 55px;
+          height: 55px;
+          margin-right: 20px;
+          fill: var(--theme-color);
+          stroke: var(--theme-color);
+          @include mq-max(3xl) {
+            width: 40px;
+            height: 40px;
+          }
+          @include mq-max(md) {
+            width: 35px;
+            height: 35px;
+          }
+        }
+      }
+      .service-content {
+        h3 {
+          @include mq-max(xl) {
+            margin-bottom: 2px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin service_style_1 {
+  .service-section {
+    .service-wrap {
+      display: flex;
+      .service-icon {
+        margin-right: 20px;
+        [dir="rtl"] & {
+          margin-right: unset !important;
+          margin-left: 20px;
+        }
+        @include mq-max(3xl) {
+          margin-right: 15px;
+          [dir="rtl"] & {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin service_style_2 {
+  .service-style-2 {
+    .service-wrap {
+      display: block;
+      text-align: center;
+      margin-bottom: -2px;
+      .service-icon {
+        margin-bottom: 20px;
+      }
+    }
+    .row {
+      > div {
+        position: relative;
+        + div {
+          &::before {
+            @include pos;
+            @include center(vertical);
+            width: 2px;
+            height: 50px;
+            background-color: $demo1-bg;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin service_style_3 {
+  .services-section {
+    .service-details {
+      display: flex !important;
+      align-items: center;
+
+      img {
+        width: calc(55px + (60 - 55) * ((100vw - 320px) / (1920 - 320)));
+        // padding: 5px;
+        margin-right: 18px;
+      }
+
+      .custome-details {
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 100%;
+
+        h4 {
+          font-size: calc(14px + (22 - 14) * ((100vw - 320px) / (1920 - 320)));
+          font-weight: 600;
+          margin-bottom: 0.25rem;
+          color: $black1;
+        }
+
+        p {
+          font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+          color: $light-text;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+    service section css end
+==========================**/

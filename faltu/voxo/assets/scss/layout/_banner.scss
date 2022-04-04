@@ -1,0 +1,907 @@
+/**=====================
+     banner css start
+==========================**/
+
+@mixin banner_common {
+  .timer-banner {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .collection-banner {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    .contain-banner {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      &.contain-center {
+        justify-content: center;
+      }
+
+      .banner-content {
+        padding: 45px 80px;
+
+        @include mq-max(3xl) {
+          padding: 30px 60px;
+        }
+
+        @include mq-max(2xl) {
+          padding: 30px 40px;
+        }
+
+        @include mq-max(xl) {
+          padding: 20px 15px;
+        }
+
+        @include mq-max(lg) {
+          padding: 40px;
+        }
+
+        @include mq-max(sm) {
+          padding: 30px;
+        }
+
+        @include mq-max(2xs) {
+          padding: 20px;
+        }
+
+        &.with-bg {
+          background-color: rgba($theme-font-color, 0.93);
+          color: $white;
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 5px;
+
+          @include mq-max(xl) {
+            letter-spacing: 3px;
+          }
+        }
+      }
+    }
+    .banner-img {
+      height: 100%;
+    }
+    &.p-center {
+      .contain-banner,
+      .banner-text {
+        justify-content: center;
+      }
+    }
+
+    &.p-right {
+      .contain-banner,
+      .banner-text {
+        justify-content: flex-end;
+      }
+
+      .banner-content {
+        text-align: right;
+      }
+    }
+
+    &.p-left {
+      .contain-banner,
+      .banner-text {
+        justify-content: flex-start;
+      }
+    }
+
+    &.p-bottom {
+      .contain-banner {
+        align-items: flex-end;
+      }
+    }
+
+    .banner-text {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .banner-content {
+        padding: 50px;
+        width: 70%;
+
+        span {
+          font-weight: 600;
+        }
+
+        h2 {
+          margin: 20px 0;
+          font-size: calc(28px + (46 - 28) * ((100vw - 320px) / (1920 - 320)));
+          line-height: 1.32;
+        }
+
+        h3 {
+          font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
+          line-height: 1.45;
+          margin-bottom: 20px;
+        }
+
+        .btn {
+          font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+        }
+      }
+    }
+  }
+
+  .banner-title {
+    .banner-text {
+      .banner-content {
+        width: 56%;
+      }
+    }
+  }
+
+  .collection-center {
+    position: relative;
+    padding: 50px;
+    background-color: $demo1-bg;
+
+    @include mq-max(3xl) {
+      padding: 40px;
+    }
+
+    @include mq-max(sm) {
+      padding: 30px;
+    }
+
+    @include mq-max(2xs) {
+      padding: 20px;
+    }
+
+    h2 {
+      line-height: 1.3;
+    }
+  }
+}
+
+@mixin timer_banner {
+  .timer-banner {
+    overflow: hidden;
+
+    .round-circle {
+      position: absolute;
+      animation: rounded 10s infinite linear;
+      z-index: 0;
+      width: 90%;
+    }
+
+    .veg-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .social-media {
+      // background-color: red;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      display: flex;
+      align-items: center;
+
+      @include mq-max(2xs) {
+        bottom: 0;
+        position: absolute;
+        // background-color: red;
+        writing-mode: horizontal-tb;
+        top: unset;
+      }
+
+      .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        + .social-icon {
+          margin-top: 10px;
+          // background-color: red;
+
+          @include mq-max(2xs) {
+            margin-top: 0;
+            margin-left: 5px;
+          }
+        }
+
+        img {
+          transform: rotate(90deg);
+          margin-bottom: 10px;
+
+          @include mq-max(2xs) {
+            transform: rotate(0deg);
+            margin-bottom: 0;
+          }
+        }
+
+        h6 {
+          // background-color: green;
+          font-weight: 600;
+          font-size: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320)));
+
+          @include mq-max(xl) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.bg-size {
+      &::before {
+        @include mq-max(sm) {
+          padding-top: 58%;
+        }
+
+        @include mq-max(xs) {
+          padding-top: 64%;
+        }
+
+        @include mq-max(2xs) {
+          padding-top: 94%;
+        }
+      }
+    }
+
+    .coupon-code {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 20px;
+      position: absolute;
+      top: 30px;
+      @include center(horizontal);
+
+      &::after {
+        @include pos;
+        @include pseudowh;
+        border: 1px dashed var(--theme-color);
+        left: 0;
+        top: 0;
+        opacity: 0.2;
+
+        [dir="rtl"] & {
+          left: unset;
+          right: 0;
+        }
+      }
+
+      @include mq-max(xl) {
+        top: 20px;
+        left: unset;
+        transform: unset;
+        right: 20px;
+      }
+
+      @include mq-max(sm) {
+        padding: 4px 10px;
+      }
+
+      @include mq-max(xs) {
+        top: 15px;
+        right: 15px;
+      }
+    }
+
+    .timer {
+      display: inline-flex;
+      z-index: 1;
+      backdrop-filter: blur(10px);
+
+      ul {
+        padding: 30px 50px;
+
+        &.light-color {
+          background-color: rgba(81, 152, 60, 0.7);
+          backdrop-filter: blur(8px);
+        }
+        @include mq-max(xl) {
+          padding: 30px;
+        }
+
+        @include mq-max(md) {
+          padding: 20px;
+        }
+
+        @include mq-max(xs) {
+          padding: 15px;
+        }
+
+        li {
+          h2 {
+            margin-bottom: 6px;
+
+            @include mq-max(xs) {
+              margin-bottom: 2px;
+              font-size: 20px;
+            }
+          }
+
+          + li {
+            margin-left: 80px;
+
+            [dir="rtl"] & {
+              margin-left: unset !important;
+              margin-right: 80px;
+            }
+
+            @include mq-max(md) {
+              margin-left: 50px;
+
+              [dir="rtl"] & {
+                margin-right: 50px;
+              }
+            }
+
+            @include mq-max(xs) {
+              margin-left: 30px;
+
+              [dir="rtl"] & {
+                margin-right: 30px;
+              }
+            }
+
+            &::before {
+              left: -42px;
+              border-left: 2px solid rgba($white, 0.2);
+
+              [dir="rtl"] & {
+                left: unset !important;
+                right: -42px;
+                border-right: 2px solid rgba($white, 0.2);
+                border-left: unset;
+              }
+
+              @include mq-max(md) {
+                left: -28px;
+
+                [dir="rtl"] & {
+                  right: -28px;
+                }
+              }
+
+              @include mq-max(xs) {
+                left: -18px;
+
+                [dir="rtl"] & {
+                  right: -18px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .discount-offer {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      position: absolute;
+      left: 30px;
+      transform: translateY(-50%) rotate(180deg) !important;
+      z-index: 1;
+      @include center(vertical);
+
+      [dir="rtl"] & {
+        left: unset !important;
+        right: 30px;
+      }
+
+      @include mq-max(xl) {
+        left: 20px;
+        top: 20px;
+        writing-mode: unset;
+        text-orientation: initial;
+        transform: rotate(0) !important;
+        transform: unset;
+
+        [dir="rtl"] & {
+          right: 20px;
+        }
+      }
+
+      @include mq-max(xs) {
+        left: 15px;
+        top: 15px;
+
+        [dir="rtl"] & {
+          right: 15px;
+        }
+      }
+
+      h5 {
+        @include mq-max(3xl) {
+          font-size: 14px;
+        }
+        @include mq-max(xs) {
+          font-size: 10px;
+        }
+      }
+
+      .wishlist-icon {
+        padding: 7px 7px 8px 4px;
+        position: relative;
+
+        [dir="rtl"] & {
+          padding: 7px 4px 8px 7px;
+        }
+
+        @include mq-max(3xl) {
+          padding: 0;
+        }
+
+        @include mq-max(xl) {
+          padding: 4px 4px 2px;
+          margin-top: 0 !important;
+          margin-left: 5px;
+        }
+
+        @include mq-max(xs) {
+          display: none;
+        }
+
+        &::after {
+          @include pos;
+          @include pseudowh;
+          @include center(both);
+          background-color: var(--theme-color);
+          opacity: 0.1;
+          border-radius: 100%;
+
+          @include mq-max(3xl) {
+            display: none;
+          }
+
+          @include mq-max(xl) {
+            display: block;
+          }
+        }
+
+        i {
+          font-size: 13px;
+          transform: rotate(90deg);
+          @include mq-max(xl) {
+            transform: unset;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .small-banner {
+    .collection-banner {
+      display: flex !important;
+      align-items: flex-end;
+      justify-content: center;
+      height: 100%;
+
+      @include mq-max(xl) {
+        padding: 20px;
+      }
+
+      &.bg-size {
+        &:before {
+          @include mq-max(xs) {
+            padding-top: 74%;
+          }
+
+          @include mq-max(2xs) {
+            padding-top: 86%;
+          }
+        }
+      }
+    }
+  }
+
+  .banner-btn-grup {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+
+    [dir="rtl"] & {
+      left: unset;
+      right: 0;
+    }
+
+    button {
+      + button {
+        margin-left: -1px;
+
+        [dir="rtl"] & {
+          margin-right: -1px;
+          margin-left: unset;
+        }
+      }
+    }
+  }
+}
+
+@mixin timer_banner_style_2 {
+  .timer-banner-style-2 {
+    .timer-title {
+      font-size: calc(28px + (46 - 28) * ((100vw - 320px) / (1920 - 320)));
+      line-height: 1.32;
+      margin: 20px auto 10px;
+      width: 80%;
+    }
+
+    h3 {
+      margin-top: 30px;
+    }
+
+    .heart-wishlist {
+      margin: 0 auto;
+    }
+
+    .timer-bg {
+      position: absolute;
+      padding: 30px;
+      left: 0;
+      z-index: 1;
+      color: $white;
+
+      &::after {
+        position: absolute;
+        content: "";
+        @include pos;
+        @include pseudowh;
+        background-color: var(--theme-color);
+        opacity: 0.8;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      span {
+        font-size: 12px;
+        letter-spacing: 5px;
+      }
+
+      h3 {
+        margin-bottom: 5px;
+      }
+    }
+
+    .timer {
+      margin-bottom: 30px;
+
+      ul {
+        background-color: transparent;
+        color: $theme-font-color;
+        z-index: 2;
+
+        li {
+          .counter {
+            padding: 15px 20px;
+            background: $white;
+            min-width: 90px;
+
+            h2 {
+              color: var(--theme-color);
+              margin-bottom: 5px;
+            }
+          }
+
+          + li {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin banner_2 {
+  .banner-style-2 {
+    .collection-banner {
+      position: relative;
+      cursor: pointer;
+
+      .banner-img {
+        min-height: 390px;
+        object-fit: cover;
+
+        @include mq-max(3xl) {
+          min-height: 330px;
+        }
+
+        @include mq-max(xl) {
+          min-height: 300px;
+        }
+
+        @include mq-max(2xs) {
+          min-height: 240px;
+        }
+      }
+
+      .banner-detail {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 30px;
+
+        @include mq-max(sm) {
+          padding: 20px;
+        }
+
+        .font-dark-30 {
+          font-weight: 800;
+          transition: all 0.5s ease;
+        }
+
+        .heart-wishlist {
+          .far {
+            color: rgba($theme-font-color, 0.6);
+          }
+
+          &::after {
+            opacity: 0;
+            transition: 0.5;
+          }
+        }
+      }
+
+      .contain-banner {
+        top: unset;
+        bottom: 60px;
+
+        &.contain-center {
+          top: 0;
+          bottom: 0;
+        }
+
+        @include mq-max(xl) {
+          bottom: 30px;
+        }
+
+        .banner-content {
+          padding: 40px;
+          width: calc(100% - 120px);
+          transition: all 0.5s;
+          backdrop-filter: blur(4px);
+
+          &.banner-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            backdrop-filter: blur(5px);
+          }
+
+          @include mq-max(3xl) {
+            padding: 30px;
+            width: unset;
+          }
+
+          @include mq-max(sm) {
+            padding: 20px;
+          }
+
+          span {
+            @include mq-max(3xl) {
+              letter-spacing: 3px;
+            }
+          }
+        }
+      }
+
+      &.ratio2_1 {
+        .bg-size {
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+      &:hover {
+        .contain-banner {
+          .banner-content {
+            &.banner-center {
+              backdrop-filter: blur(5px);
+            }
+            &.with-bg {
+              background-color: var(--theme-color);
+              opacity: 0.9;
+              transition: all 0.5s;
+              color: $white;
+            }
+          }
+        }
+
+        .banner-detail {
+          .heart-wishlist {
+            .far {
+              color: var(--theme-color);
+            }
+
+            &::after {
+              opacity: 0.1;
+              transition: 0.5;
+            }
+          }
+
+          .font-dark-30 {
+            color: $theme-font-color !important;
+            transition: all 0.5s ease;
+
+            span {
+              color: var(--theme-color) !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.offer-banner {
+      .collection-banner {
+        .banner-img {
+          min-height: unset;
+        }
+
+        .contain-banner {
+          @include center(vertical);
+          bottom: unset;
+
+          .banner-content {
+            padding: 40px;
+
+            span {
+              letter-spacing: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin banner_3 {
+  .banner-section {
+    .banner-image {
+      position: relative;
+
+      &:hover {
+        .banner-shop {
+          opacity: 1;
+        }
+      }
+
+      .banner-details {
+        .heart-button {
+          position: absolute;
+          top: 25px;
+          left: 25px;
+          background-color: $demo-4;
+          width: 28px;
+          height: 28px;
+          // padding: 8px;
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: ripple-1 0.7s linear infinite;
+
+          .feather {
+            border-radius: 50%;
+            fill: $demo-light-4;
+            stroke: $demo-light-4;
+            width: 13px;
+            height: 13px;
+          }
+        }
+
+        h4 {
+          position: absolute;
+          top: 35px;
+          right: 45px;
+          font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
+
+          @include mq-max(3xl) {
+            top: 20px;
+            right: 25px;
+          }
+
+          @include mq-max(lg) {
+            top: 15px;
+            right: 18px;
+          }
+        }
+
+        .banner-price {
+          position: absolute;
+          bottom: 35px;
+          right: 45px;
+          text-align: right;
+
+          @include mq-max(3xl) {
+            bottom: 20px;
+            right: 25px;
+          }
+
+          @include mq-max(lg) {
+            bottom: 15px;
+            right: 18px;
+          }
+
+          h2 {
+            font-size: calc(
+              18px + (28 - 18) * ((100vw - 320px) / (1920 - 320))
+            );
+          }
+        }
+      }
+
+      .banner-shop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba($demo-4, $alpha: 0.8);
+        // filter: blur(2px);
+        width: 60%;
+        height: 40%;
+        backdrop-filter: blur(10px);
+        color: $white;
+        opacity: 0;
+        transition: 0.5s ease;
+        border-radius: 0.45rem;
+
+        @include mq-max(3xl) {
+          height: 55%;
+        }
+
+        @include mq-max(lg) {
+          height: 40%;
+          padding: 50px 10px;
+        }
+
+        @include mq-max(xs) {
+          height: 30%;
+          padding: 50px 30px;
+        }
+        p {
+          letter-spacing: 5px;
+
+          @include mq-max(2xl) {
+            letter-spacing: 3px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+     banner css end
+==========================**/

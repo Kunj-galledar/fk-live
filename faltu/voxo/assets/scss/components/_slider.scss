@@ -1,0 +1,292 @@
+/**=====================
+     slider css start
+==========================**/
+
+.slick-initialized {
+  .slick-arrow {
+    z-index: 1;
+    transition: 0.5s;
+    &:before {
+      transition: 0.5s;
+    }
+    &:hover {
+      transition: 0.5s;
+      &:before {
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+.slick-slider {
+  overflow: hidden;
+  .slick-list {
+    margin: 0 -12px;
+    overflow: visible;
+    @include mq-max(sm) {
+      margin: 0 -6px;
+    }
+    .slick-slide {
+      > div {
+        margin: 0 12px;
+        @include mq-max(sm) {
+          margin: 0 6px;
+        }
+      }
+    }
+  }
+  &.slick-dotted {
+    margin-bottom: 0;
+  }
+}
+
+.slide-6 {
+  .slick-list {
+    margin: 0;
+  }
+}
+
+.classic-arrow {
+  .custom-arrow {
+    position: absolute;
+    bottom: 50px;
+    z-index: 1;
+    transition: 0.5s;
+    cursor: pointer;
+    @include mq-max(lg) {
+      bottom: 90px;
+    }
+    @include mq-max(sm) {
+      bottom: 10px;
+    }
+    &:hover {
+      color: var(--theme-color);
+      transition: 0.5s;
+    }
+    i {
+      font-size: 12px;
+      vertical-align: 1px;
+      @include mq-max(sm) {
+        margin: 0 !important;
+        padding: 8px;
+        background-color: $white;
+        &:hover {
+          background-color: var(--theme-color);
+          color: $white;
+        }
+      }
+    }
+    &.prev {
+      right: 20%;
+      [dir="rtl"] & {
+        right: unset;
+        left: 20%;
+      }
+      @include mq-max(lg) {
+        right: unset;
+        left: 5%;
+        [dir="rtl"] & {
+          left: unset;
+          right: 5%;
+        }
+      }
+      @include mq-max(sm) {
+        right: 10%;
+        left: unset;
+        [dir="rtl"] & {
+          left: 10%;
+          right: unset;
+        }
+      }
+      @include mq-max(2xs) {
+        right: 12%;
+        left: unset;
+        [dir="rtl"] & {
+          left: 12%;
+          right: unset;
+        }
+      }
+    }
+    &.next {
+      right: 13%;
+      [dir="rtl"] & {
+        right: unset;
+        left: 13%;
+      }
+      @include mq-max(xl) {
+        right: 11%;
+        [dir="rtl"] & {
+          right: unset;
+          left: 11%;
+        }
+      }
+      @include mq-max(lg) {
+        right: unset;
+        left: 16%;
+        [dir="rtl"] & {
+          left: unset;
+          right: 16%;
+        }
+      }
+      @include mq-max(md) {
+        left: 20%;
+        [dir="rtl"] & {
+          left: unset;
+          right: 20%;
+        }
+      }
+      @include mq-max(sm) {
+        left: unset;
+        right: 3%;
+        [dir="rtl"] & {
+          left: 3%;
+          right: unset;
+        }
+      }
+      &::before {
+        @include pos;
+        @include pseudowh;
+        border-left: 2px solid rgba($black, 0.1);
+        left: -28px;
+        top: 0;
+        [dir="rtl"] & {
+          right: -28px;
+          left: unset;
+        }
+        @include mq-max(4xl) {
+          display: none;
+        }
+      }
+    }
+    span {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 16px;
+      @include mq-max(md) {
+        font-size: 14px;
+      }
+      @include mq-max(sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+.light-arrow,
+.white-arrow {
+  .slick-arrow {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    @include mq-max(lg) {
+      width: 30px;
+      height: 30px;
+    }
+    &:before {
+      font-size: 12px;
+      font-family: $font-awesome;
+      font-weight: 900;
+    }
+  }
+  .slick-prev {
+    z-index: 1;
+    &:before {
+      content: "\f053";
+    }
+  }
+  .slick-next {
+    &:before {
+      content: "\f054";
+    }
+  }
+}
+
+.light-arrow {
+  .slick-arrow {
+    background-color: $demo1-bg;
+    &:before {
+      color: $theme-font-color;
+    }
+    &:hover {
+      background-color: var(--theme-color);
+      &:before {
+        color: $white;
+      }
+    }
+  }
+}
+
+.bottom-space {
+  margin-bottom: -4px;
+}
+
+.white-arrow {
+  .slick-arrow {
+    background-color: rgba($white, 0.2);
+    width: 30px;
+    height: 30px;
+    &:before {
+      color: $white;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $white;
+      &:before {
+        color: var(--theme-color);
+      }
+    }
+  }
+}
+
+.category-slider {
+  .slick-prev {
+    left: -120px;
+  }
+  .slick-next {
+    right: unset;
+    left: -80px;
+  }
+}
+
+.brand-image {
+  img {
+    margin: 0 auto;
+  }
+}
+
+.dot-dark {
+  .slick-dots {
+    bottom: unset;
+    width: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    left: unset;
+    li {
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 5px;
+      button {
+        width: 10px;
+        height: 10px;
+        background: $theme-font-color;
+        font-size: 10px;
+        border-radius: 100%;
+        &:before {
+          display: none;
+        }
+      }
+      &.slick-active {
+        button {
+          background-color: var(--theme-color);
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+   slider css end
+==========================**/
