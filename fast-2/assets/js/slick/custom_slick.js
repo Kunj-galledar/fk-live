@@ -50,19 +50,19 @@ $('.slider-4').slick({
       autoplaySpeed: 2000,
     }
   },
-    {
-      breakpoint: 1190,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1,
-        fade: true,
-      }
-    },
+  {
+    breakpoint: 1190,
+    settings: {
+      slidesToShow: 2,
+    }
+  },
+  {
+    breakpoint: 767,
+    settings: {
+      slidesToShow: 1,
+      fade: true,
+    }
+  },
   ]
 });
 
@@ -79,19 +79,19 @@ $('.slider-4-1').slick({
       autoplaySpeed: 3500,
     }
   },
-    {
-      breakpoint: 1092,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 665,
-      settings: {
-        slidesToShow: 1,
-        fade: true,
-      }
-    },
+  {
+    breakpoint: 1092,
+    settings: {
+      slidesToShow: 2,
+    }
+  },
+  {
+    breakpoint: 665,
+    settings: {
+      slidesToShow: 1,
+      fade: true,
+    }
+  },
   ]
 });
 
@@ -140,18 +140,18 @@ $('.slider-5-1').slick({
       autoplaySpeed: 3500,
     }
   },
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-      }
-    },
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
+  {
+    breakpoint: 1200,
+    settings: {
+      slidesToShow: 3,
+    }
+  },
+  {
+    breakpoint: 992,
+    settings: {
+      slidesToShow: 2,
+    }
+  },
     // {
     //   breakpoint: 576,
     //   settings: {
