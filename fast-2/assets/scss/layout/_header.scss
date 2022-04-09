@@ -220,9 +220,7 @@
         @include mq-max(2xl) {
           margin-left: 25px;
           float: right;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          @include flex_common ($dis: flex, $align: center, $justify: space-between);
         }
 
         @include mq-max(xl) {
@@ -723,9 +721,9 @@
               }
 
               // &:focus,
-// &:hover {
-//   background-color: $border-color;
-// }
+              // &:hover {
+              //   background-color: $border-color;
+              // }
             }
           }
         }
@@ -976,9 +974,7 @@
         color: $white;
 
         .header-top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
           .nav-free {
             @include mq-max(sm) {

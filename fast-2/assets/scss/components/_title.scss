@@ -25,7 +25,7 @@
 }
 
 .title {
-    margin-bottom: 14px;
+    margin-bottom: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
     display: inline-block;
     position: relative;
 
@@ -53,9 +53,7 @@
     }
 
     &-flex {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
         @include mq-max(lg) {
             display: block;
@@ -79,6 +77,12 @@
                     -webkit-text-stroke: 1px $white;
                     color: transparent;
                     margin-right: 9px;
+                }
+
+                .feather {
+                    margin-right: 9px;
+                    width: 17px;
+                    height: 17px;
                 }
 
                 .name {

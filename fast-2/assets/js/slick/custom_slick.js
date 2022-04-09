@@ -36,6 +36,40 @@ $('.category-slider').slick({
   ]
 });
 
+$('.slider-3').slick({
+  infinite: true,
+  slidesToScroll: 1,
+  slidesToShow: 3,
+  arrows: false,
+  // responsive: [{
+  //   breakpoint: 1400,
+  //   settings: {
+  //     slidesToShow: 4,
+  //     autoplay: true,
+  //     autoplaySpeed: 3500,
+  //   }
+  // },
+  // {
+  //   breakpoint: 1200,
+  //   settings: {
+  //     slidesToShow: 3,
+  //   }
+  // },
+  // {
+  //   breakpoint: 992,
+  //   settings: {
+  //     slidesToShow: 2,
+  //   }
+  // },
+  //   // {
+  //   //   breakpoint: 576,
+  //   //   settings: {
+  //   //     slidesToShow: 2,
+  //   //   }
+  //   // },
+  // ]
+});
+
 $('.slider-4').slick({
   arrows: false,
   infinite: true,

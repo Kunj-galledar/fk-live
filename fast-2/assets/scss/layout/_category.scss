@@ -10,7 +10,7 @@
         text-align: center;
         border-radius: 5px;
         overflow: hidden;
-        transition: all .5s ease-in-out;
+        transition: all .3s ease-in-out;
         position: relative;
         padding: calc(15px + (35 - 15) * ((100vw - 320px) / (1920 - 320))) 8px;
 
@@ -26,6 +26,7 @@
             background-color: var(--theme-color);
             opacity: 0;
             z-index: -1;
+            transition: all .3s ease-in-out;
         }
 
         &:hover {
@@ -35,9 +36,18 @@
                 opacity: 1;
             }
 
-            img,
-            h5 {
+            img {
                 filter: invert(1);
+            }
+
+            h5 {
+                color: $white;
+            }
+        }
+
+        &-2 {
+            &::after {
+                background-image: url(../images/cake/bg.jpg);
             }
         }
 
