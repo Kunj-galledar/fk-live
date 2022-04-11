@@ -26,7 +26,7 @@ footer {
         background-image: url(../images/vegetable/footer-shape-2.png);
         height: 100%;
         background-repeat: no-repeat;
-        z-index: 0;
+        z-index: -1;
     }
 
     .main-footer {
@@ -171,13 +171,12 @@ footer {
             ul {
                 li {
                     display: block;
-                    // padding-bottom: 25px;
                     margin-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
                     position: relative;
 
                     &::before {
                         @include pos;
-                        bottom: calc(-15px + (-24 - 15) * ((100vw - 320px) / (1920 - 320)));
+                        bottom: -24px;
                         right: 40px;
                         width: calc(100% - 70px);
                         border-bottom: 1px dashed $content-color;
@@ -231,6 +230,35 @@ footer {
     .sub-footer {
         border-top: 1px dashed rgba($content-color, 0.5);
         padding: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320))) 0;
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+        .social-link {
+            display: flex;
+            align-items: center;
+
+            @include mq-max(lg) {
+                justify-content: center;
+            }
+
+            h6 {
+                margin-right: 10px;
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+
+                li {
+                    i {
+                        color: $content-color;
+                    }
+
+                    +li {
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
 
         ul {
             margin: -6px;
@@ -244,34 +272,6 @@ footer {
             li {
                 margin: 6px;
                 display: block;
-
-                &.social-link {
-                    display: flex;
-                    align-items: center;
-
-                    @include mq-max(lg) {
-                        justify-content: center;
-                    }
-
-                    h6 {
-                        margin-right: 10px;
-                    }
-
-                    ul {
-                        display: flex;
-                        align-items: center;
-
-                        li {
-                            i {
-                                color: $content-color;
-                            }
-
-                            +li {
-                                margin-left: 8px;
-                            }
-                        }
-                    }
-                }
             }
         }
     }
