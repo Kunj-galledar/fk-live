@@ -1,0 +1,324 @@
+/**=====================
+     Shop Page Scss
+==========================**/
+.shop-banner-contain {
+     position: relative;
+     border-radius: 8px;
+
+     .shop-banner-details {
+          // position: absolute;
+          // top: 0;
+          // left: 0;
+          // width: 100%;
+          // height: 100%;
+          padding: 40px 80px;
+
+          h5 {
+               font-size: 18px;
+               letter-spacing: 1.5px;
+          }
+
+          h2 {
+               font-size: 70px;
+               margin: 12px 0;
+               line-height: 1.1;
+               font-weight: 700;
+          }
+
+          h6 {
+               font-size: 17px;
+               font-weight: 400;
+               color: #897b9a;
+               line-height: 1.5;
+          }
+     }
+}
+
+.banner-description {
+     margin-top: 28px;
+
+     p {
+          margin-bottom: 0;
+          font-size: 15px;
+          line-height: 1.6;
+     }
+}
+
+.shop-section {
+     .left-box {
+          position: sticky;
+          top: 0;
+
+          @include mq-max(lg) {
+               position: fixed;
+               top: 0;
+               left: 0;
+               background-color: $white;
+               z-index: 3;
+               width: 320px;
+               height: 100%;
+               transition: all 0.5s ease;
+               overflow-x: scroll;
+               overflow-y: auto;
+          }
+
+          .shop-left-sidebar {
+               padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+               border-radius: 8px;
+               box-shadow: 0 0 10px rgba($title-color, .12);
+
+               .back-button {
+                    display: none;
+
+                    @include mq-max(lg) {
+                         display: block;
+                         margin-bottom: 26px;
+                    }
+
+                    h3 {
+                         display: flex;
+                         align-items: center;
+                         font-weight: 600;
+
+                         i {
+                              margin-right: 10px;
+                         }
+                    }
+               }
+
+               .custome-accordion {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 30px;
+
+                    .accordion-item {
+                         border: none;
+                         width: 100%;
+
+                         .accordion-header {
+                              .accordion-button {
+                                   font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+                                   padding: 0;
+                                   font-weight: 600;
+                                   padding-bottom: 8px;
+
+                                   &:focus {
+                                        border-color: unset;
+                                        box-shadow: none;
+                                   }
+
+                                   &::after {
+                                        content: none;
+                                   }
+
+                                   &::before {
+                                        content: "\f107";
+                                        @include font;
+                                        position: absolute;
+                                        top: 0;
+                                        right: 10px;
+                                        width: 26px;
+                                        height: 26px;
+                                        background-color: #f7f6f4;
+                                        font-size: 15px;
+                                        border-radius: 100%;
+                                        @include flex_common;
+                                   }
+
+                                   &:not(.collapsed) {
+                                        color: var(--theme-color);
+                                        background-color: transparent;
+                                   }
+
+                                   span {
+                                        position: relative;
+
+                                        &::before {
+                                             @include pos;
+                                             bottom: -8px;
+                                             left: 0;
+                                             width: 100%;
+                                             height: 1px;
+                                             background-color: var(--theme-color);
+                                        }
+                                   }
+                              }
+                         }
+
+                         .accordion-collapse {
+                              .accordion-body {
+                                   padding: 16px 0 0;
+
+                                   .custom-padding {
+                                        padding-right: 10px;
+                                   }
+
+                                   .category-list {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
+
+                                        li {
+                                             display: block;
+                                             width: 100%;
+
+                                             .category-list-box {
+                                                  display: flex;
+                                                  align-items: center;
+
+                                                  input {
+                                                       margin-top: -4px;
+                                                  }
+
+                                                  .form-check-label {
+                                                       @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                                                       width: 100%;
+
+                                                       .name {
+                                                            font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+                                                            color: $title-color;
+                                                            -webkit-line-clamp: 1;
+                                                            -webkit-box-orient: vertical;
+                                                            display: -webkit-box;
+                                                            overflow: hidden;
+                                                       }
+
+                                                       .number {
+                                                            color: #777;
+                                                            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                                            // margin-left: 8px;
+                                                       }
+                                                  }
+                                             }
+
+                                             // &:hover {
+                                             //      a {
+                                             //           font-weight: 600;
+                                             //           color: var(--theme-color);
+                                             //      }
+                                             // }
+                                        }
+                                   }
+                              }
+                         }
+                    }
+               }
+
+               .left-title {
+                    margin-bottom: 20px;
+                    margin-top: 32px;
+
+                    h3 {
+                         font-weight: 700;
+                         // font-size: 24px;
+                    }
+               }
+
+               .custom-height {
+                    height: 190px;
+                    overflow-y: auto;
+
+                    &::-webkit-scrollbar-track {
+                         border-radius: 10px;
+                         background-color: rgba($color: #555, $alpha: .14);
+                    }
+
+                    &::-webkit-scrollbar {
+                         width: 4px;
+                         background-color: #f5f5f5;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                         border-radius: 10px;
+                         background-color: rgba($color: #555, $alpha: .5);
+                    }
+               }
+          }
+     }
+
+     .show-button {
+          margin-bottom: 14px;
+
+          .filter-button {
+               display: block;
+               color: $white;
+
+               a {
+                    font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 600;
+                    padding: 8px 12px;
+                    background-color: var(--theme-color);
+                    border-radius: 5px;
+                    display: inline-block;
+               }
+          }
+
+          .filter-dropdown {
+               display: flex;
+               align-items: center;
+               flex-wrap: wrap;
+               gap: 8px;
+          }
+
+          .top-filter-menu {
+               @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+               .category-dropdown {
+                    display: flex;
+                    align-items: center;
+
+                    .dropdown {
+                         margin-left: 10px;
+
+                         .dropdown-toggle {
+                              border: none;
+                              background-color: #f6f5f2;
+                              font-size: 15px;
+                              padding: 10px 35px 10px 18px;
+                              border-radius: 5px;
+                              color: #777;
+
+                              &::after {
+                                   content: none;
+                              }
+
+                              &::before {
+                                   content: "\f107";
+                                   position: absolute;
+                                   @include center(vertical);
+                                   right: 15px;
+                                   @include font;
+                              }
+                         }
+
+                         .dropdown-menu {
+                              li {
+                                   display: block;
+                              }
+                         }
+                    }
+               }
+
+               .grid-option {
+                    ul {
+                         display: flex;
+                         align-items: center;
+                         flex-wrap: wrap;
+                         gap: 5px;
+
+                         li {
+                              width: 35px;
+                              height: 35px;
+                              border-radius: 5px;
+                              background: linear-gradient(149.8deg, #F6F5F2 17.21%, #FBFAF9 79.21%);
+
+                              a {
+                                   @include flex_common;
+                                   @include pseudowh;
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}

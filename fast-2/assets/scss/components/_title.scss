@@ -1,0 +1,209 @@
+/**=====================
+     title css start
+==========================**/
+.title-leaf {
+    width: 140px;
+    text-align: center;
+    margin-top: 7px;
+    position: relative;
+
+    &::before {
+        @include pos;
+        @include center(vertical);
+        left: 0;
+        background-color: var(--theme-color);
+        width: 100%;
+        height: 1px;
+        z-index: -1;
+    }
+
+    svg {
+        background-color: $white;
+        width: 45px;
+        z-index: 1;
+    }
+}
+
+.title {
+    margin-bottom: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
+    display: inline-block;
+    position: relative;
+
+    h2 {
+        font-size: calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 700;
+        color: $title-color;
+        position: relative;
+
+        // &::before {
+        //     @include pos;
+        //     bottom: -18px;
+        //     left: 0;
+        //     width: 70%;
+        //     height: 1px;
+        //     background-color: var(--theme-color);
+        // }
+    }
+
+    p {
+        line-height: 1.5;
+        margin: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320))) 0 0;
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        color: $content-color;
+    }
+
+    &-flex {
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+        @include mq-max(lg) {
+            display: block;
+        }
+
+        .timing-box {
+            display: inline-block;
+
+            .timing {
+                @include flex_common;
+                background-color: $danger-color;
+                color: $white;
+                padding: 12px 11px;
+                border-radius: 5px;
+
+                @include mq-max(lg) {
+                    margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                i {
+                    -webkit-text-stroke: 1px $white;
+                    color: transparent;
+                    margin-right: 9px;
+                }
+
+                .feather {
+                    margin-right: 9px;
+                    width: 17px;
+                    height: 17px;
+                }
+
+                .name {
+                    font-weight: 600;
+                    margin-right: 8px;
+                }
+
+                .time {
+                    ul {
+                        display: flex;
+                        align-items: center;
+
+                        // @include mq-max(2xs) {
+                        //     justify-content: space-between;
+                        // }
+
+                        // @include mq-max(sm) {
+                        //     margin-top: 12px;
+                        //     justify-content: center;
+                        // }
+
+                        li {
+                            position: relative;
+                            @include flex_common;
+                            // width: 20px;
+                            // height: 50px;
+                            // background-color: $border-color;
+                            // padding: 8px;
+                            // border-radius: 5px;
+
+                            // @include mq-max(sm) {
+                            //     width: 40px;
+                            //     height: 40px;
+                            // }
+
+                            +li {
+                                margin-left: 15px;
+
+                                &::after {
+                                    content: ":";
+                                    font-weight: bolder;
+                                    position: absolute;
+                                    @include center(vertical);
+                                    left: -10px;
+                                }
+                            }
+
+                            .counter {
+                                h6 {
+                                    font-weight: 600;
+
+                                    // @include mq-max(sm) {
+                                    //     font-size: 15px;
+                                    // }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product-tabs {
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .nav-item {
+            position: relative;
+
+            .nav-link {
+                border: none;
+                border-radius: unset;
+                color: $content-color;
+                position: relative;
+                font-weight: 400;
+                font-size: 16px;
+
+                &.active {
+                    font-weight: 500;
+                    color: var(--theme-color);
+
+                    &::before {
+                        @include pos;
+                        bottom: 0;
+                        left: 17px;
+                        width: 50px;
+                        height: 2px;
+                        border-radius: 50px;
+                        background-color: var(--theme-color);
+                    }
+
+                    &::after {
+                        @include pos;
+                        bottom: 0;
+                        left: 75px;
+                        width: 4px;
+                        height: 2px;
+                        border-radius: 50px;
+                        background-color: var(--theme-color);
+                    }
+                }
+            }
+
+            +.nav-item {
+                margin-left: 10px;
+
+                &::before {
+                    @include pos;
+                    top: 9px;
+                    left: -11px;
+                    width: 13px;
+                    height: 13px;
+                    background-image: url(../svg/bag.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}

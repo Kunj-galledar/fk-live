@@ -1,0 +1,189 @@
+/**=====================
+     reset css start
+==========================**/
+.col-xxl-3-1 {
+  width: 20%;
+
+  @include mq-max(4xl) {
+    display: none;
+  }
+}
+
+.col-xxl-9-1 {
+  width: 80%;
+
+  @include mq-max(4xl) {
+    width: 100%;
+  }
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.section-small-space {
+  padding: calc(18px + (42 - 18) * ((100vw - 320px) / (1920 - 320))) 0;
+}
+
+.section-big-space {
+  padding: calc(20px + (160 - 20) * ((100vw - 320px) / (1920 - 320))) 0;
+}
+
+section,
+.section-t-space {
+  padding-top: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.section-b-space {
+  padding-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.container-fluid-lg {
+  padding: 0 calc(12px + (160 - 12) * ((100vw - 320px) / (1920 - 320)));
+}
+
+// Position Top
+.p-top-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.p-top-center {
+  display: flex;
+  justify-content: center;
+}
+
+.p-top-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// Position Center
+.p-center-left {
+  @include flex_common ($dis: flex, $align: center, $justify: flex-start);
+}
+
+.p-center {
+  @include flex_common;
+}
+
+.p-center-right {
+  @include flex_common ($dis: flex, $align: center, $justify: flex-end);
+}
+
+// Position Bottom
+.p-bottom-left {
+  @include flex_common ($dis: flex, $align: flex-end, $justify: flex-start);
+}
+
+.p-bottom-center {
+  @include flex_common ($dis: flex, $align: flex-end, $justify: center);
+}
+
+.p-bottom-right {
+  @include flex_common ($dis: flex, $align: flex-end, $justify: flex-end);
+}
+
+.ls-expanded {
+  letter-spacing: 12px;
+}
+
+.ls-resize-expanded {
+  letter-spacing: calc(4px + (10 - 4) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.g-8 {
+  margin: -8px;
+
+  >div {
+    padding: 8px;
+  }
+}
+
+// Svg Width
+.icon-width {
+  width: 25px;
+  height: 25px;
+}
+
+// Rating
+.rating {
+  display: flex;
+  align-items: center;
+
+  @include mq-max(2xs) {
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    line-height: 0;
+
+    +li {
+      margin-left: 2px;
+    }
+
+    .feather {
+      stroke: $rating-color;
+      width: 14px;
+      height: 14px;
+
+      &.fill {
+        fill: $rating-color;
+      }
+    }
+  }
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+
+  span {
+    color: $content-color;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+// colors
+.text-theme {
+  color: var(--theme-color);
+}
+
+.text-title {
+  color: $title-color;
+}
+
+.text-content {
+  color: $content-color;
+}
+
+.text-yellow {
+  color: $rating-color !important;
+}
+
+.text-danger {
+  color: $danger-color !important;
+}
+
+// Font Family
+.text-neucha {
+  font-family: $neucha-sarif;
+}
+
+.text-russo {
+  font-family: $russo-sarif;
+}
+
+.text-pacifico {
+  font-family: $pacifico;
+}
+
+.text-kaushan {
+  font-family: $kaushan;
+}
