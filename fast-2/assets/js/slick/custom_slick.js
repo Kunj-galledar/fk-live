@@ -36,11 +36,19 @@ $('.category-slider').slick({
   ]
 });
 
+// $('.slider-1').slick({
+//   infinite: true,
+//   slidesToScroll: 1,
+//   slidesToShow: 1,
+//   arrows: false,
+//   dots: true,
+// });
+
 $('.slider-1').slick({
-  infinite: true,
-  slidesToScroll: 1,
-  slidesToShow: 1,
   arrows: false,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
   dots: true,
 });
 

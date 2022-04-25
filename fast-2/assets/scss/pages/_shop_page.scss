@@ -48,6 +48,7 @@
      .left-box {
           position: sticky;
           top: 0;
+          border-right: 1px solid #ddd;
 
           @include mq-max(lg) {
                position: fixed;
@@ -63,9 +64,8 @@
           }
 
           .shop-left-sidebar {
-               padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
-               border-radius: 8px;
-               box-shadow: 0 0 10px rgba($title-color, .12);
+               padding-right: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+               // padding-left: 0;
 
                .back-button {
                     display: none;
@@ -86,10 +86,30 @@
                     }
                }
 
+               .search-box {
+                    position: relative;
+                    margin-bottom: 30px;
+
+                    &::after {
+                         content: "\f002";
+                         @include font;
+                         position: absolute;
+                         @include center(vertical);
+                         right: 0;
+                         border-left: 1px solid #ddd;
+                         font-size: 15px;
+                         padding: 0 18px;
+                         height: 60%;
+                         display: flex;
+                         align-items: center;
+                         color: $content-color;
+                    }
+               }
+
                .custome-accordion {
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 30px;
+                    gap: 40px;
 
                     .accordion-item {
                          border: none;
@@ -97,10 +117,10 @@
 
                          .accordion-header {
                               .accordion-button {
-                                   font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
-                                   padding: 0;
+                                   font-size: 18px;
+                                   padding: 0 0 8px 0;
                                    font-weight: 600;
-                                   padding-bottom: 8px;
+                                   margin-bottom: 9px;
 
                                    &:focus {
                                         border-color: unset;
@@ -116,7 +136,7 @@
                                         @include font;
                                         position: absolute;
                                         top: 0;
-                                        right: 10px;
+                                        right: 5px;
                                         width: 26px;
                                         height: 26px;
                                         background-color: #f7f6f4;
@@ -126,8 +146,9 @@
                                    }
 
                                    &:not(.collapsed) {
-                                        color: var(--theme-color);
+                                        color: $title-color;
                                         background-color: transparent;
+                                        box-shadow: none;
                                    }
 
                                    span {
@@ -199,6 +220,327 @@
                                              // }
                                         }
                                    }
+
+                                   // ========== Price Range Slider =============
+                                   .irs {
+                                        position: relative;
+                                        display: block;
+                                        user-select: none;
+                                        height: 55px;
+
+                                        .irs-line {
+                                             position: relative;
+                                             display: block;
+                                             overflow: hidden;
+                                             outline: none !important;
+                                             height: 10px;
+                                             top: 33px;
+                                             background: #EEE;
+                                             background: linear-gradient(to bottom, #DDD -50%, $white 150%);
+                                             border: 1px solid #CCC;
+                                             border-radius: 16px;
+                                        }
+
+                                        .irs-line-left {
+                                             position: absolute;
+                                             display: block;
+                                             top: 0;
+                                             left: 0;
+                                             width: 11%;
+                                             height: 8px;
+                                        }
+
+                                        .irs-line-mid {
+                                             position: absolute;
+                                             display: block;
+                                             top: 0;
+                                             left: 9%;
+                                             width: 82%;
+                                             height: 8px;
+                                        }
+
+                                        .irs-line-right {
+                                             position: absolute;
+                                             display: block;
+                                             top: 0;
+                                             right: 0;
+                                             width: 11%;
+                                             height: 8px;
+                                        }
+
+                                        .irs-bar {
+                                             position: absolute;
+                                             display: block;
+                                             left: 0;
+                                             width: 0;
+                                             height: 10px;
+                                             top: 33px;
+                                             // border-top: 1px solid #428bca;
+                                             // border-bottom: 1px solid #428bca;
+                                             background-color: var(--theme-color);
+                                             // background: linear-gradient(to top, #428bca 0%, #7fc3e8 100%);
+                                        }
+
+                                        .irs-bar-edge {
+                                             position: absolute;
+                                             display: block;
+                                             top: 0;
+                                             left: 0;
+                                             height: 10px;
+                                             top: 33px;
+                                             width: 14px;
+                                             border: 1px solid #428bca;
+                                             border-right: 0;
+                                             background: #428bca;
+                                             background: linear-gradient(to top, #428bca 0%, #7fc3e8 100%);
+                                             border-radius: 16px 0 0 16px;
+                                        }
+
+                                        .irs-shadow {
+                                             position: absolute;
+                                             display: none;
+                                             left: 0;
+                                             width: 0;
+                                             height: 2px;
+                                             top: 38px;
+                                             background: $title-color;
+                                             opacity: 0.3;
+                                             border-radius: 5px;
+                                        }
+
+                                        .irs-slider {
+                                             position: absolute;
+                                             display: block;
+                                             cursor: default;
+                                             z-index: 1;
+                                             top: 25px;
+                                             width: 27px;
+                                             height: 27px;
+                                             border: 3px solid $white;
+                                             background: var(--theme-color);
+                                             border-radius: 100%;
+                                             cursor: pointer;
+
+                                             // &:hover {//      background: $white;
+                                             // }
+
+                                             .irs-slider {
+                                                  &.type_last {
+                                                       z-index: 2;
+                                                  }
+                                             }
+
+                                             .irs-min {
+                                                  position: absolute;
+                                                  display: block;
+                                                  left: 0;
+                                                  cursor: default;
+                                                  color: #333;
+                                                  font-size: 12px;
+                                                  line-height: 1.333;
+                                                  text-shadow: none;
+                                                  top: 0;
+                                                  padding: 1px 5px;
+                                                  background: rgba($title-color, 0.1);
+                                                  border-radius: 3px;
+                                             }
+                                        }
+
+                                        .irs-max {
+                                             position: absolute;
+                                             display: block;
+                                             right: 0;
+                                             cursor: default;
+                                             color: #333;
+                                             font-size: 12px;
+                                             line-height: 1.333;
+                                             text-shadow: none;
+                                             top: 0;
+                                             padding: 3px 7px;
+                                             background: rgba($title-color, 0.1);
+                                             border-radius: 3px;
+                                             font-weight: 600;
+                                        }
+
+                                        .irs-from {
+                                             position: absolute;
+                                             display: block;
+                                             top: 0;
+                                             left: 0;
+                                             cursor: default;
+                                             white-space: nowrap;
+                                             color: $white;
+                                             font-size: 13px;
+                                             line-height: 1.333;
+                                             text-shadow: none;
+                                             padding: 3px 7px;
+                                             background: var(--theme-color);
+                                             border-radius: 3px;
+                                             font-weight: 600;
+                                        }
+
+                                        .irs-to {
+                                             position: absolute;
+                                             display: block;
+                                             top: 0;
+                                             left: 0;
+                                             cursor: default;
+                                             white-space: nowrap;
+                                             color: $white;
+                                             font-size: 13px;
+                                             line-height: 1.333;
+                                             text-shadow: none;
+                                             padding: 3px 7px;
+                                             background: var(--theme-color);
+                                             border-radius: 3px;
+                                             font-weight: 600;
+                                        }
+
+                                        .irs-single {
+                                             position: absolute;
+                                             display: block;
+                                             top: 0;
+                                             left: 0;
+                                             cursor: default;
+                                             white-space: nowrap;
+                                             color: $white;
+                                             font-size: 14px;
+                                             line-height: 1.333;
+                                             text-shadow: none;
+                                             padding: 1px 5px;
+                                             background: #428bca;
+                                             border-radius: 3px;
+                                        }
+
+                                        .irs-grid {
+                                             position: absolute;
+                                             display: none;
+                                             bottom: 0;
+                                             left: 0;
+                                             width: 100%;
+                                             height: 20px;
+                                             height: 27px;
+                                        }
+
+                                        .irs-with-grid {
+                                             height: 75px;
+
+                                             .irs-grid {
+                                                  display: block;
+                                             }
+                                        }
+
+                                        .irs-grid-pol {
+                                             position: absolute;
+                                             top: 0;
+                                             left: 0;
+                                             width: 1px;
+                                             height: 8px;
+                                             background: $title-color;
+                                             opacity: 0.5;
+                                             background: #428bca;
+
+                                             &.small {
+                                                  height: 4px;
+                                                  background: #999;
+                                             }
+                                        }
+
+                                        .irs-grid-text {
+                                             position: absolute;
+                                             bottom: 0;
+                                             left: 0;
+                                             white-space: nowrap;
+                                             text-align: center;
+                                             font-size: 9px;
+                                             line-height: 9px;
+                                             padding: 0 3px;
+                                             color: $title-color;
+                                             bottom: 5px;
+                                             color: #99a4ac;
+                                        }
+
+                                        .irs-disable-mask {
+                                             position: absolute;
+                                             display: block;
+                                             top: 0;
+                                             left: -1%;
+                                             width: 102%;
+                                             height: 100%;
+                                             cursor: default;
+                                             z-index: 2;
+                                        }
+
+                                        .irs-disabled {
+                                             opacity: 0.4;
+                                        }
+
+                                        .irs-hidden-input {
+                                             position: absolute !important;
+                                             display: block !important;
+                                             top: 0 !important;
+                                             left: 0 !important;
+                                             width: 0 !important;
+                                             height: 0 !important;
+                                             font-size: 0 !important;
+                                             line-height: 0 !important;
+                                             padding: 0 !important;
+                                             margin: 0 !important;
+                                             outline: none !important;
+                                             z-index: -9999 !important;
+                                             background: none !important;
+                                             border-style: solid !important;
+                                             border-color: transparent !important;
+                                        }
+
+                                        .lt-ie9 {
+                                             .irs-disable-mask {
+                                                  background: $title-color;
+                                                  filter: alpha(opacity=0);
+                                                  cursor: not-allowed;
+                                             }
+
+                                             .irs-shadow {
+                                                  filter: alpha(opacity=30);
+                                             }
+
+                                             .irs-min {
+                                                  background: #ccc;
+                                             }
+
+                                             .irs-max {
+                                                  background: #ccc;
+                                             }
+
+                                             .irs-from {
+                                                  background: #999;
+                                             }
+
+                                             .irs-to {
+                                                  background: #999;
+                                             }
+
+                                             .irs-single {
+                                                  background: #999;
+                                             }
+                                        }
+
+                                        .irs-slider {
+                                             &.state_hover {
+                                                  background: $white;
+                                             }
+                                        }
+                                   }
+
+                                   .js-range-slider {
+                                        margin-top: 15px;
+                                        padding: 10px;
+                                        border-radius: 5px;
+                                        border: 1px solid #ddd;
+                                        color: $title-color;
+                                   }
+
+                                   // ========== Price Range Slider =============
                               }
                          }
                     }
