@@ -50,6 +50,11 @@
           top: 0;
           border-right: 1px solid #ddd;
 
+          &.right-box {
+               border-right: unset;
+               border-left: 1px solid #ddd;
+          }
+
           @include mq-max(lg) {
                position: fixed;
                top: 0;
@@ -66,6 +71,11 @@
           .shop-left-sidebar {
                padding-right: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                // padding-left: 0;
+
+               &.shop-right-sidebar {
+                    padding-left: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    padding-right: unset;
+               }
 
                .back-button {
                     display: none;
@@ -92,8 +102,8 @@
 
                     &::after {
                          content: "\f002";
-                         @include font;
                          position: absolute;
+                         @include font;
                          @include center(vertical);
                          right: 0;
                          border-left: 1px solid #ddd;
@@ -103,6 +113,52 @@
                          display: flex;
                          align-items: center;
                          color: $content-color;
+                    }
+               }
+
+               .filter-category {
+                    margin-bottom: 40px;
+
+                    .filter-title {
+                         display: flex;
+                         justify-content: space-between;
+                         margin-bottom: 0;
+                         padding: 0 0 8px 0;
+
+                         h2 {
+                              font-size: 18px;
+                              padding: 0 0 8px 0;
+                              font-weight: 600;
+                              border-bottom: 1px solid var(--theme-color);
+                         }
+                    }
+
+                    ul {
+                         padding-top: 16px;
+                         display: flex;
+                         gap: 15px;
+                         flex-wrap: wrap;
+
+                         li {
+                              padding: 9px 34px 9px 11px;
+                              background-color: #f9f8f6;
+                              position: relative;
+                              border-radius: 4px;
+
+                              &:before {
+                                   content: "\f00d";
+                                   position: absolute;
+                                   @include center(vertical);
+                                   right: 13px;
+                                   @include font;
+                                   color: #777;
+                                   cursor: pointer;
+                              }
+
+                              a {
+                                   color: #777;
+                              }
+                         }
                     }
                }
 
@@ -194,6 +250,7 @@
                                                   .form-check-label {
                                                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
                                                        width: 100%;
+                                                       margin-left: 8px;
 
                                                        .name {
                                                             font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
@@ -235,10 +292,10 @@
                                              outline: none !important;
                                              height: 10px;
                                              top: 33px;
-                                             background: #EEE;
-                                             background: linear-gradient(to bottom, #DDD -50%, $white 150%);
-                                             border: 1px solid #CCC;
-                                             border-radius: 16px;
+                                             background-color: #f9f8f6;
+                                             // background: linear-gradient(to bottom, #DDD -50%, $white 150%);
+                                             // border: 1px solid #CCC;
+                                             border-radius: 50px;
                                         }
 
                                         .irs-line-left {
@@ -313,9 +370,9 @@
                                              display: block;
                                              cursor: default;
                                              z-index: 1;
-                                             top: 25px;
-                                             width: 27px;
-                                             height: 27px;
+                                             top: 28px;
+                                             width: 20px;
+                                             height: 20px;
                                              border: 3px solid $white;
                                              background: var(--theme-color);
                                              border-radius: 100%;
@@ -575,6 +632,55 @@
                          background-color: rgba($color: #555, $alpha: .5);
                     }
                }
+
+               .custom-nav-tab {
+                    gap: 20px;
+
+                    .nav-item {
+                         width: 100%;
+                         background-color: #f7f6f3;
+                         border-radius: 6px;
+                         height: 60px;
+                         display: flex;
+                         overflow: hidden;
+
+                         .nav-link {
+                              width: 100%;
+                              text-align: left;
+                              font-size: 18px;
+                              font-weight: 500;
+                              color: $title-color;
+                              border-radius: unset;
+                              position: relative;
+
+                              &.active {
+                                   color: $white;
+                                   background: linear-gradient(90.56deg, #0E947A 8.46%, #0DA487 62.97%);
+                                   font-size: 19px;
+                                   font-weight: 600;
+
+                                   img {
+                                        position: absolute;
+                                        @include center(vertical);
+                                        right: -10px;
+                                        width: 90px;
+                                        height: 90px;
+                                        filter: invert(1);
+                                        opacity: 0.4;
+                                   }
+                              }
+
+                              img {
+                                   position: absolute;
+                                   @include center(vertical);
+                                   right: -10px;
+                                   width: 70px;
+                                   height: 70px;
+                                   opacity: 0.1;
+                              }
+                         }
+                    }
+               }
           }
      }
 
@@ -603,7 +709,8 @@
           }
 
           .top-filter-menu {
-               @include flex_common ($dis: flex, $align: center, $justify: space-between);
+               display: flex;
+               align-items: center;
 
                .category-dropdown {
                     display: flex;
@@ -642,6 +749,8 @@
                }
 
                .grid-option {
+                    margin-left: auto;
+
                     ul {
                          display: flex;
                          align-items: center;
@@ -658,6 +767,38 @@
                                    @include flex_common;
                                    @include pseudowh;
                               }
+                         }
+                    }
+               }
+          }
+
+          .filter-category {
+               margin-bottom: 25px;
+
+               ul {
+                    padding-top: 16px;
+                    display: flex;
+                    gap: 15px;
+                    flex-wrap: wrap;
+
+                    li {
+                         padding: 9px 34px 9px 11px;
+                         background-color: #f9f8f6;
+                         position: relative;
+                         border-radius: 4px;
+
+                         &:before {
+                              content: "\f00d";
+                              position: absolute;
+                              @include center(vertical);
+                              right: 13px;
+                              @include font;
+                              color: #777;
+                              cursor: pointer;
+                         }
+
+                         a {
+                              color: #777;
                          }
                     }
                }
