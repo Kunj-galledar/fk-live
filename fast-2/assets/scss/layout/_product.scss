@@ -933,7 +933,12 @@
 
      .product-header {
           position: relative;
+          width: 180px;
+
           // overflow: hidden;
+          @include mq-max(sm) {
+               width: 100%;
+          }
 
           .product-image {
                text-align: center;
@@ -996,6 +1001,7 @@
                     background-color: $white;
                     box-shadow: 0 3px 3px rgba($title-color, .24);
                     border-radius: 100%;
+                    z-index: 0;
 
                     .feather {
                          width: 15px;
@@ -1118,6 +1124,26 @@
 
                span {
                     font-size: 16px;
+               }
+          }
+     }
+
+     &.product-list-box {
+          display: flex;
+          align-items: center;
+
+          @include mq-max(lg) {
+               display: block;
+          }
+
+          .product-footer {
+               padding-left: 20px;
+               width: calc(100% - 180px);
+
+               @include mq-max(lg) {
+                    padding: 0;
+                    width: 100%;
+                    margin-top: 20px;
                }
           }
      }

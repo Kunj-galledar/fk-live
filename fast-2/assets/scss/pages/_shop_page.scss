@@ -50,26 +50,44 @@
           top: 0;
           border-right: 1px solid #ddd;
 
+          @include mq-max(lg) {
+               border-right: unset;
+          }
+
           &.right-box {
                border-right: unset;
                border-left: 1px solid #ddd;
+
+               @include mq-max(lg) {
+                    border-left: unset;
+               }
           }
 
           @include mq-max(lg) {
                position: fixed;
                top: 0;
-               left: 0;
+               left: -350px;
                background-color: $white;
                z-index: 3;
-               width: 320px;
+               width: 300px;
                height: 100%;
                transition: all 0.5s ease;
                overflow-x: scroll;
                overflow-y: auto;
+               transition: all .3s ease-in-out;
+          }
+
+          &.show {
+               left: 0;
           }
 
           .shop-left-sidebar {
                padding-right: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+
+               @include mq-max(lg) {
+                    padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+               }
+
                // padding-left: 0;
 
                &.shop-right-sidebar {
@@ -408,7 +426,7 @@
                                              display: block;
                                              right: 0;
                                              cursor: default;
-                                             color: #333;
+                                             color: #777;
                                              font-size: 12px;
                                              line-height: 1.333;
                                              text-shadow: none;
@@ -416,7 +434,7 @@
                                              padding: 3px 7px;
                                              background: rgba($title-color, 0.1);
                                              border-radius: 3px;
-                                             font-weight: 600;
+                                             font-weight: 500;
                                         }
 
                                         .irs-from {
@@ -687,17 +705,36 @@
      .show-button {
           margin-bottom: 14px;
 
-          .filter-button {
-               display: block;
-               color: $white;
+          .filter-button-group {
+               display: flex;
+               align-items: center;
 
-               a {
-                    font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
-                    font-weight: 600;
-                    padding: 8px 12px;
-                    background-color: var(--theme-color);
-                    border-radius: 5px;
-                    display: inline-block;
+               .filter-button {
+                    display: block;
+                    color: $white;
+
+                    a {
+                         font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+                         font-weight: 600;
+                         padding: 8px 12px;
+                         background-color: var(--theme-color);
+                         border-radius: 5px;
+                         display: inline-block;
+                    }
+               }
+
+               .sort-by-button {
+                    color: $white;
+                    margin-left: auto;
+
+                    a {
+                         font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+                         font-weight: 600;
+                         padding: 8px 12px;
+                         background-color: var(--theme-color);
+                         border-radius: 5px;
+                         display: inline-block;
+                    }
                }
           }
 
@@ -711,6 +748,18 @@
           .top-filter-menu {
                display: flex;
                align-items: center;
+
+               @include mq-max(lg) {
+                    // margin-top: 18px;
+                    margin-top: -37px;
+                    display: none;
+                    transition: all .3s ease-in-out;
+               }
+
+               &.show {
+                    display: flex;
+                    margin-top: 18px;
+               }
 
                .category-dropdown {
                     display: flex;
