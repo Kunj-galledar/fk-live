@@ -36,14 +36,6 @@ $('.category-slider').slick({
   ]
 });
 
-// $('.slider-1').slick({
-//   infinite: true,
-//   slidesToScroll: 1,
-//   slidesToShow: 1,
-//   arrows: false,
-//   dots: true,
-// });
-
 $('.slider-1').slick({
   arrows: false,
   infinite: true,
