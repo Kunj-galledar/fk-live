@@ -203,6 +203,14 @@ $('.slider-5-1').slick({
   ]
 });
 
+$('.slider-7').slick({
+  // arrows: false,
+  infinite: true,
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  // dots: true,
+});
+
 $('.slider-9').slick({
   arrows: false,
   infinite: true,
