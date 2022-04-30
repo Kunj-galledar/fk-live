@@ -332,7 +332,7 @@ $('.product-main').slick({
   asNavFor: '.left-slider-image'
 });
 $('.left-slider-image').slick({
-  slidesToShow: 4,
+  slidesToShow: 3,
   slidesToScroll: 1,
   asNavFor: '.product-main',
   // dots: true,

@@ -2,6 +2,54 @@
      Product css start
 ==========================**/
 @mixin product_common {
+     .deal-timer {
+          margin: 11px 0;
+
+          &.product-deal-timer {
+               width: 30%;
+               margin-top: 24px;
+          }
+
+          .deal-title {
+               font-weight: 600;
+               margin-bottom: 7px;
+               letter-spacing: 0.4px;
+          }
+
+          ul {
+               @include flex_common ($dis: flex, $align: center, $justify: space-between);
+               padding: 8px 12px;
+               border: 1px dashed var(--theme-color);
+               text-align: center;
+
+               li {
+                    position: relative;
+
+                    +li {
+                         &::before {
+                              content: ":";
+                              position: absolute;
+                              @include center(vertical);
+                              left: -20px;
+
+                         }
+                    }
+
+                    .counter {
+                         h5 {
+                              font-weight: 600;
+                              margin-bottom: 4px;
+                         }
+
+                         h6 {
+                              color: $content-color;
+                              font-size: 13px;
+                         }
+                    }
+               }
+          }
+     }
+
      .category-menu {
           background: linear-gradient(187.77deg, #fafafa 5.52%, #f8f8f8 94%);
           padding: calc(12px + (33 - 12) * ((100vw - 320px) / (1920 - 320)));
@@ -846,43 +894,6 @@
                          margin-left: 2px;
                          color: $danger-color;
                          font-weight: 600;
-                    }
-               }
-
-               .deal-timer {
-                    padding: 8px 12px;
-                    border: 1px dashed var(--theme-color);
-                    margin: 11px 0;
-
-                    ul {
-                         @include flex_common ($dis: flex, $align: center, $justify: space-between);
-                         text-align: center;
-
-                         li {
-                              position: relative;
-
-                              +li {
-                                   &::before {
-                                        content: ":";
-                                        position: absolute;
-                                        @include center(vertical);
-                                        left: -20px;
-
-                                   }
-                              }
-
-                              .counter {
-                                   h5 {
-                                        font-weight: 600;
-                                        margin-bottom: 4px;
-                                   }
-
-                                   h6 {
-                                        color: $content-color;
-                                        font-size: 13px;
-                                   }
-                              }
-                         }
                     }
                }
 

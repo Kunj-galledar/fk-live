@@ -175,7 +175,7 @@
                             </div>
                         </div>
 
-                        <div class="procuct-contain">
+                        <div class="procuct-contain border-bottom pb-3">
                             <h4>Short Description</h4>
                             <p>Lollipop oat cake chocolate chocolate cake dessert jujubes. Shortbread sugar plum dessert
                                 powder cookie sweet brownie. Cake cookie apple pie dessert sugar plum muffin cheesecake.
@@ -183,7 +183,7 @@
                         </div>
 
                         <div class="product-packege">
-                            <h4>Select Packege</h4>
+                            <h4>Weight</h4>
                             <ul class="select-packege">
                                 <li>
                                     <a href="javascript:void(0)">1/2 KG</a>
@@ -203,25 +203,103 @@
                             </ul>
                         </div>
 
-                        <div class="buy-box">
-                            <div class="cart_qty qty-box product-qty">
-                                <div class="input-group">
-                                    <button type="button" class="qty-left-minus" data-type="minus" data-field="">
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </button>
-                                    <input class="form-control input-number qty-input" type="text" name="quantity"
-                                        value="1">
-                                    <button type="button" class="qty-right-plus" data-type="plus" data-field="">
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </button>
-                                </div>
+                        <div class="time deal-timer product-deal-timer">
+                            <h4 class="deal-title">Hurry up! Sales Ends In</h4>
+                            <ul>
+                                <li>
+                                    <div class="counter">
+                                        <div>
+                                            <h5 id="days2"></h5>
+                                            <h6>Days</h6>
+                                        </div>
+                                    </div>
+                                    </li=>
+                                <li>
+                                    <div class="counter">
+                                        <div>
+                                            <h5 id="hours2"></h5>
+                                            <h6>Hours</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="counter">
+                                        <div>
+                                            <h5 id="minutes2"></h5>
+                                            <h6>Min</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="counter">
+                                        <div>
+                                            <h5 id="seconds2"></h5>
+                                            <h6>Sec</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="note-box product-packege">
+                            <h4>Notes</h4>
+                            <div class="form-floating theme-form-floating my-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                    style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Comments</label>
                             </div>
 
-                            <button class="btn buy-button btn-md fw-bold ms-4">Buy Now</button>
-                            <button class="btn add-cart-button btn-md fw-bold ms-2">Add To Cart</button>
-                            <button class="wishlist-button">
+                            <div class="d-flex">
+                                <div class="cart_qty qty-box product-qty">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="1">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="btn add-cart-button btn-md ms-2 bg-dark  btn-sm text-white">Add
+                                    To Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="buy-box">
+                            <a href="wishlist.html">
                                 <i data-feather="heart"></i>
-                            </button>
+                                <span>Add to Wishlist</span>
+                            </a>
+
+                            <a href="compare.html">
+                                <i data-feather="shuffle"></i>
+                                <span>Add to Compare</span>
+                            </a>
+                        </div>
+
+                        <div class="form-check mt-4 p-0">
+                            <input class="checkbox_animated" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label text-content" for="flexCheckDefault">
+                                <span class="color color-1"></span> I agree with terms and conditions.</label>
+                        </div>
+
+                        <button class="btn add-cart-button btn-md mt-4 gradient-bg-theme text-white w-100">Buy It
+                            Now</button>
+
+                        <div class="pickup-box">
+                            <div class="pickup-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                            <div class="pickup-detail">
+                                <h4 class="text-content">Pickup available at Store</h4>
+                                <h6 class="text-content">Usually ready in 24 hours</h6>
+                                <a href="javascript:void(0)" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">View
+                                    store information</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -493,6 +571,35 @@
     </footer>
     <!-- Footer Section End -->
 
+    <!-- Backdrop Modal Start -->
+    <div class="offcanvas pickup-offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop"
+        aria-labelledby="offcanvasWithBackdropLabel">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title" id="offcanvasWithBackdropLabel">Creamy Chocolate Cake <span>White / 40</span>
+            </h4>
+            <button type="button" class="btn-close text-reset m-0" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="offcanvas-title">
+                <h3 class="fw-light">Store</h3>
+            </div>
+
+            <div class="check-box">
+                <h6><i class="fa-solid fa-check theme-color"></i> Pickup available, usually ready in 24 hours</h6>
+            </div>
+
+            <div class="address-box">
+                <ul>
+                    <li>Store Street</li>
+                    <li>London 54000</li>
+                    <li>United Kingdom</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Backdrop Modal End -->
+
     <!-- Quick View Modal Start -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -552,6 +659,9 @@
 
     <!-- Quantity js -->
     <script src="assets/js/quantity.js"></script>
+
+    <!-- Timer Js -->
+    <script src="assets/js/timer1.js"></script>
 
     <!-- notify js -->
     <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
