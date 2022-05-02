@@ -1,7 +1,22 @@
 /**=====================
      Product Page Scss
 ==========================**/
+.product-title {
+    margin-top: 20px;
+
+    h4 {
+        font-weight: 600;
+        margin-bottom: 7px;
+        letter-spacing: 0.4px;
+    }
+}
+
 .product-section {
+    .product-left-box {
+        position: sticky;
+        top: 0;
+    }
+
     .left-slider-image {
         // height: 582px;// overflow-y: auto;
         // overflow-x: hidden;
@@ -70,13 +85,11 @@
         }
 
         .procuct-contain {
-            margin-top: 20px;
-
-            h4 {
-                font-weight: 600;
-                margin-bottom: 7px;
-                letter-spacing: 0.4px;
-            }
+            // margin-top: 20px;// h4 {
+            //     font-weight: 600;
+            //     margin-bottom: 7px;
+            //     letter-spacing: 0.4px;
+            // }
 
             p {
                 color: $content-color;
@@ -86,13 +99,11 @@
         }
 
         .product-packege {
-            margin-top: 20px;
-
-            h4 {
-                font-weight: 600;
-                margin-bottom: 7px;
-                letter-spacing: 0.4px;
-            }
+            // margin-top: 20px;// h4 {
+            //     font-weight: 600;
+            //     margin-bottom: 7px;
+            //     letter-spacing: 0.4px;
+            // }
 
             .select-packege {
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 13px);
@@ -111,49 +122,36 @@
         }
 
         .note-box {
+            align-items: center;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
+
             .product-qty {
-                width: 140px;
-
-                button {
-                    border: none;
-                    border-radius: 100% !important;
-                    width: 40px;
-                    height: 40px;
-                    @include flex_common;
-                    background: var(--theme-color2);
-                    color: $white;
-
-                    i {
-                        margin-top: 3px;
-                    }
-                }
-
-                input {
-                    height: auto;
-                    border: none;
-                    padding: 0;
-                    text-align: center;
-                    background-color: transparent;
-                }
+                width: 22%;
+                margin-top: 0;
             }
 
-            .add-cart-button {
-                width: calc(100% - 140px - 0.5rem);
+            .buy-button {
+                width: 59%;
             }
         }
 
         .buy-box {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 28px);
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
             align-items: center;
-            margin-top: 30px;
+            margin-top: 20px;
 
             a {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 7px);
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
                 align-items: center;
+                // width: 43px;
+                // height: 43px;
                 color: $content-color;
+                // border: 1px solid $content-color;
+                // border-radius: 100%;
+                padding-bottom: 16px;
 
                 .feather {
-                    width: 19px;
+                    width: 17px;
                     height: auto;
                 }
             }
@@ -186,7 +184,7 @@
 
         .pickup-box {
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
-            margin-top: 24px;
+            margin-top: 20px;
             align-items: flex-start;
 
             .pickup-icon {
@@ -207,9 +205,39 @@
 
                 a {
                     margin-top: 10px;
+                    // display: block;
+                    color: var(--theme-color);
+                    border-bottom: 1px solid var(--theme-color);
+                    display: inline-block;
+                }
+            }
+        }
+
+        .paymnet-option {
+            ul {
+                align-items: center;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
+            }
+        }
+
+        .share-option {
+            padding-bottom: 16px;
+
+            ul {
+                // align-items: center;// justify-content: space-between;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
+
+                li {
                     display: block;
-                    color: $content-color;
-                    text-decoration: underline;
+                    // width: 100%;
+
+                    a {
+                        display: block;
+                        // padding: 8px;
+                        text-align: center;
+                        font-size: 17px;
+                        color: $content-color;
+                    }
                 }
             }
         }

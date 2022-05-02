@@ -307,23 +307,6 @@ $('.slider-9').slick({
   ]
 });
 
-// $('.left-slider-image').slick({
-//   slidesToShow: 3,
-//   slidesToScroll: 1,
-//   arrows: false,
-//   fade: true,
-//   vertical: true;
-//   asNavFor: '.product-main'
-// });
-// $('.product-main').slick({
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   asNavFor: '.left-slider-image',
-//   dots: true,
-//   centerMode: true,
-//   focusOnSelect: true
-// });
-
 $('.product-main').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -335,8 +318,8 @@ $('.left-slider-image').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   asNavFor: '.product-main',
-  // dots: true,
-  // centerMode: true,
+  dots: false,
+  centerMode: true,
   focusOnSelect: true,
   vertical: true,
 });
