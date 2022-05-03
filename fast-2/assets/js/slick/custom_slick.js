@@ -315,11 +315,11 @@ $('.product-main').slick({
   asNavFor: '.left-slider-image'
 });
 $('.left-slider-image').slick({
-  slidesToShow: 3,
+  slidesToShow: 4,
   slidesToScroll: 1,
   asNavFor: '.product-main',
   dots: false,
-  centerMode: true,
+  // centerMode: true,
   focusOnSelect: true,
-  vertical: true,
+  // vertical: false,
 });

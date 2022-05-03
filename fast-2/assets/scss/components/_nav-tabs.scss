@@ -5,17 +5,25 @@
     padding-left: 10px;
     gap: 10px;
     flex-wrap: wrap;
+    border-bottom: 1px solid #f9f9f9;
 
     .nav-item {
         .nav-link {
-            background-color: $border-color;
-            color: $content-color;
-            // font-size: 20px;
-            font-weight: 600;
+            background-color: #f8f8f8;
+            color: $title-color;
+            padding: 12px 18px;
+            font-weight: 400;
+            font-size: 17px;
+            border-color: #f8f8f8;
 
             &.active {
-                color: $title-color;
-                background-color: $white;
+                color: $white;
+                background: var(--theme-color2);
+            }
+
+            &:focus,
+            &:hover {
+                border-color: transparent;
             }
         }
     }
@@ -104,6 +112,11 @@
                 margin-bottom: 20px;
                 color: $content-color;
                 line-height: 1.7;
+                font-size: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -218,6 +231,54 @@
                             }
                         }
                     }
+                }
+            }
+        }
+
+        .rating-box {
+            margin-top: 17px;
+
+            .table {
+                tbody {
+                    tr {
+                        td {
+                            border: none;
+                            vertical-align: middle;
+
+                            &:first-child {
+                                width: 22%;
+                                color: $content-color;
+                            }
+
+                            .progress {
+                                border-radius: 3px;
+
+                                .progress-bar {
+                                    background: var(--theme-color2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .info-table {
+        border: 1px solid $border-color;
+        margin-bottom: 0;
+
+        tbody {
+            tr {
+
+                th,
+                td {
+                    padding: 14px 18px;
+                    font-size: 16px;
+                }
+
+                td {
+                    border-left: 1px solid $border-color;
                 }
             }
         }
