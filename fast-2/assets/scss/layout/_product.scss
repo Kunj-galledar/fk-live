@@ -56,16 +56,28 @@
           margin: 11px 0;
 
           &.product-deal-timer {
-               width: 50%;
+               width: 290px;
                margin-top: 24px;
 
-               @include mq-max(4xl) {
-                    width: 60%;
-               }
+               // @include mq-max(4xl) {
+               //      width: 60%;
+               // }
+
+               // @include mq-max(3xl) {
+               //      width: 66%;
+               // }
+
+               // @include mq-max(2xl) {
+               //      width: 72%;
+               // }
+
+               // @include mq-max(xl) {
+               //      width: 46%;
+               // }
 
                ul {
                     padding: 14px 18px;
-                    background-color: #f6f5f1;
+                    background: linear-gradient(187.77deg, #fafafa 5.52%, #f8f8f8 94%);
                     border-radius: 8px;
                     border: none;
 
@@ -73,12 +85,16 @@
                          +li {
                               &::before {
                                    left: -25px;
+
+                                   // @include mq-max(lg) {
+                                   //      left: -40px;
+                                   // }
                               }
                          }
 
                          .counter {
                               h5 {
-                                   font-size: 20px;
+                                   font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
                               }
                          }
                     }
@@ -183,8 +199,6 @@
                          }
 
                          h5 {
-                              margin-left: 10px;
-
                               a {
                                    color: $title-color;
 
@@ -553,7 +567,7 @@
      .product-category {
           padding: calc(19px + (36 - 19) * ((100vw - 320px) / (1920 - 320))) calc(16px + (25 - 16) * ((100vw - 320px) / (1920 - 320)));
           background-color: #f8f8f8;
-          @include pseudowh;
+          // @include pseudowh;
 
           .product-category-list {
                column-count: 2;
