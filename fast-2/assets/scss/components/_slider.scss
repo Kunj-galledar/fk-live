@@ -1,6 +1,56 @@
 /**=====================
      Slider css start
 ==========================**/
+.product-wrapper {
+     .slick-dots {
+          position: relative;
+          bottom: 0;
+          margin-top: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)));
+
+          li {
+               width: auto;
+               height: auto;
+
+               button {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 4px;
+                    padding: 0;
+                    margin: 0;
+                    background-color: rgba(35, 35, 35, 0.2);
+                    transition: all 0.5s ease;
+
+                    &::before {
+                         display: none;
+                    }
+               }
+
+               &.slick-active {
+                    button {
+                         margin: 0;
+                         width: 40px;
+                         background-color: var(--theme-color);
+                         transition: all 0.5s ease;
+                    }
+               }
+          }
+     }
+
+     .timer {
+          position: absolute;
+          top: 15px;
+          left: 0;
+          right: 0;
+          text-align: center;
+     }
+
+     &.slick-slider {
+          &.slick-dotted {
+               margin-bottom: -2px;
+          }
+     }
+}
+
 .no-arrow {
      .slick-arrow {
           display: none !important;
