@@ -800,8 +800,8 @@
     padding: 8px calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
     border-bottom: 1px solid $border-color;
     // background-color: #f8f8f8;
-    height: 250px;
-    overflow-x: hidden;
+    // height: 250px;
+    // overflow-x: hidden;
 
     &::-webkit-scrollbar-track {
       background-color: $content-color;
@@ -822,7 +822,7 @@
         overflow: hidden;
         border-radius: 4px;
 
-        .form-label {
+        .btn-apply {
           position: absolute;
           height: 100%;
           vertical-align: middle;
@@ -834,6 +834,7 @@
           right: 0;
           margin: 0;
           font-weight: 700;
+          border: none;
         }
 
         .form-control {
@@ -862,6 +863,13 @@
             color: $content-color;
             margin-left: auto;
             // font-weight: 500;
+
+            .shpping-contain {
+              display: block;
+              font-weight: 400;
+              font-size: 13px;
+              margin-top: 3px;
+            }
           }
 
           span {
@@ -912,6 +920,7 @@
 
         h4 {
           font-weight: 600;
+          font-size: 16px;
         }
       }
     }
@@ -925,24 +934,31 @@
   ul {
     @include flex_common ($dis: flex, $align: center, $justify: flex-end);
     flex-wrap: wrap;
-    margin: calc(-3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
+    gap: calc(7px + (16 - 7) * ((100vw - 320px) / (1920 - 320)));
+    // margin: calc(-3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
+
+    // li {
+    // margin: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
+    // }
 
     li {
-      margin: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
-    }
+      display: block;
+      width: 100%;
 
-    button {
-      font: inherit;
-      letter-spacing: 0.04em;
-      padding: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+      button {
+        width: 100%;
+        font: inherit;
+        letter-spacing: 0.04em;
+        padding: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
 
-      &.shopping-button {
-        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
-        background-color: $border-color;
-        color: $black;
+        &.shopping-button {
+          font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+          background-color: $border-color;
+          color: $black;
 
-        i {
-          margin-right: 8px;
+          i {
+            margin-right: 8px;
+          }
         }
       }
     }
