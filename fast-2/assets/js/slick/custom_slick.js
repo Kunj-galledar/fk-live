@@ -137,6 +137,41 @@ $('.slider-4-1').slick({
   ]
 });
 
+$('.slider-4-2').slick({
+  arrows: false,
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  responsive: [{
+    breakpoint: 992,
+    settings: {
+      slidesToShow: 3,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      dots: true,
+    }
+  },
+  {
+    breakpoint: 768,
+    settings: {
+      slidesToShow: 2,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      dots: true,
+    }
+  },
+  {
+    breakpoint: 474,
+    settings: {
+      slidesToShow: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      dots: true,
+    }
+  },
+  ]
+});
+
 $('.slider-5_1').slick({
   infinite: true,
   slidesToScroll: 1,

@@ -107,15 +107,111 @@
   overflow: hidden;
 
   .breadscrumb-contain {
-    padding: 20px 0;
+    padding: calc(26px + (60 - 26) * ((100vw - 320px) / (1920 - 320))) 0;
     text-align: center;
     color: $title-color;
     display: block;
 
     h2 {
-      font-size: 34px;
-      margin-top: 17px;
+      font-size: calc(33px + (48 - 33) * ((100vw - 320px) / (1920 - 320)));
+      // margin-bottom: 17px;
       font-weight: 700;
+    }
+
+    p {
+      margin: calc(11px + (16 - 11) * ((100vw - 320px) / (1920 - 320))) auto 0;
+      color: $content-color;
+      width: 50%;
+      line-height: 1.7;
+      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+      @include mq-max(4xl) {
+        width: 60%;
+      }
+
+      @include mq-max(2xl) {
+        width: 70%;
+      }
+
+      @include mq-max(lg) {
+        width: 90%;
+      }
+
+      @include mq-max(md) {
+        width: 100%;
+      }
+
+      span {
+        display: inline;
+      }
+    }
+
+    .faq-form-tag {
+      position: relative;
+      margin: calc(18px + (35 - 18) * ((100vw - 320px) / (1920 - 320))) auto 0;
+      width: 50%;
+
+      @include mq-max(4xl) {
+        width: 60%;
+      }
+
+      @include mq-max(2xl) {
+        width: 70%;
+      }
+
+      @include mq-max(lg) {
+        width: 90%;
+      }
+
+      @include mq-max(md) {
+        width: 100%;
+      }
+
+      i {
+        position: absolute;
+        width: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+        color: var(--theme-color);
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+      }
+
+      .form-control {
+        padding-left: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
+      }
+
+      .custom-dropdown {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+        padding: 0 calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
+        display: flex;
+        align-items: center;
+
+        .dropdown {
+          button {
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 600;
+            color: var(--theme-color);
+            padding: 0;
+
+            &::after {
+              content: unset;
+            }
+
+            i {
+              position: relative;
+              padding: 0;
+              margin-left: 5px;
+              font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+            }
+          }
+        }
+      }
     }
   }
 }
