@@ -165,8 +165,9 @@ header {
                     }
 
                     &::before {
-                         content: "\f107";
-                         position: absolute;
+                         // content: "\f107";
+                         // position: absolute;
+                         @include pos($pos: absolute, $content: "\f107");
                          @include font;
                          right: -10px;
                     }
@@ -199,8 +200,9 @@ header {
 
      .navbar-toggler-icon {
           display: inline-block;
-          width: 1.5em;
-          height: 1.5em;
+          // width: 1.5em;
+          // height: 1.5em;
+          @include pseudowh($width: 24px, $height: 24px);
           vertical-align: middle;
           background-repeat: no-repeat;
           background-position: center;
@@ -626,8 +628,9 @@ header {
                                    display: block;
                                    top: 50%;
                                    right: 10px;
-                                   width: 7px;
-                                   height: 7px;
+                                   // width: 7px;
+                                   // height: 7px;
+                                   @include pseudowh($width: 7px, $height: 7px);
                                    border-top: 2px solid $content-color;
                                    border-left: 2px solid $content-color;
                                    border-right: none;

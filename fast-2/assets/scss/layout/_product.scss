@@ -25,8 +25,9 @@
                     border: none;
                     @include flex_common;
                     padding: 0;
-                    width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
-                    height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
+                    // width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
+                    // height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
+                    @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
                     background-color: $white;
                     z-index: 0;
                     border-radius: 50% !important;
@@ -118,8 +119,9 @@
 
                     +li {
                          &::before {
-                              content: ":";
-                              position: absolute;
+                              // content: ":";
+                              // position: absolute;
+                              @include pos($pos: absolute, $content: ":");
                               @include center(vertical);
                               left: -20px;
 
@@ -156,17 +158,19 @@
                     @include pos;
                     bottom: -8px;
                     left: 0;
-                    width: 70%;
-                    height: 2px;
+                    // width: 70%;
+                    // height: 2px;
+                    @include pseudowh($width: 70%, $height: 2px);
                     background-color: var(--theme-color);
                }
           }
 
           ul {
                border-bottom: 1px dashed rgba($content-color, 0.5);
-               display: flex;
-               flex-wrap: wrap;
-               gap: 25px;
+               // display: flex;
+               // flex-wrap: wrap;
+               // gap: 25px;
+               @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 25px);
 
                &.value-list {
                     margin-top: 35px;
@@ -187,14 +191,16 @@
                          color: $title-color;
 
                          svg {
-                              width: 25px;
-                              height: 25px;
+                              // width: 25px;
+                              // height: 25px;
+                              @include pseudowh($width: 25px, $height: 25px);
                               stroke: $title-color;
                          }
 
                          img {
-                              width: 25px;
-                              height: 25px;
+                              // width: 25px;
+                              // height: 25px;
+                              @include pseudowh($width: 25px, $height: 25px);
                               object-fit: contain;
                          }
 
@@ -323,8 +329,9 @@
                     @include pos;
                     top: 16px;
                     left: 44px;
-                    width: 15px;
-                    height: 15px;
+                    // width: 15px;
+                    // height: 15px;
+                    @include pseudowh($width: 15px, $height: 15px);
                     border-bottom: solid 15px #faba02;
                     border-left: solid 15px transparent;
                     border-right: solid 15px transparent;
@@ -335,8 +342,9 @@
                     @include pos;
                     top: 0;
                     left: 44px;
-                    width: 15px;
-                    height: 15px;
+                    // width: 15px;
+                    // height: 15px;
+                    @include pseudowh($width: 15px, $height: 15px);
                     border-bottom: solid 15px #faba02;
                     border-left: solid 15px transparent;
                     border-right: solid 15px transparent;
@@ -357,8 +365,9 @@
                }
 
                img {
-                    width: 100%;
-                    height: 140px;
+                    // width: 100%;
+                    // height: 140px;
+                    @include pseudowh($width: 100%, $height: 140px);
                     object-fit: contain;
                }
           }
@@ -519,13 +528,15 @@
                          }
 
                          img {
-                              width: 80px;
-                              height: 80px;
+                              // width: 80px;
+                              // height: 80px;
+                              @include pseudowh($width: 80px, $height: 80px);
                               object-fit: contain;
 
                               @include mq-max(4xl) {
-                                   width: 90px;
-                                   height: 70px;
+                                   // width: 90px;
+                                   // height: 70px;
+                                   @include pseudowh($width: 90px, $height: 70px);
                               }
                          }
                     }
@@ -533,8 +544,9 @@
                     .offer-detail {
                          padding-left: calc(12px + (23 - 12) * ((100vw - 320px) / (1920 - 320)));
                          position: relative;
-                         width: calc(100% - 80px);
-                         height: 100%;
+                         // width: calc(100% - 80px);
+                         // height: 100%;
+                         @include pseudowh($width: calc(100% - 80px), $height: 80px);
                          display: flex;
                          align-items: center;
 
@@ -588,8 +600,9 @@
                          top: 50%;
                          transform: rotate(45deg) translateY(-50%);
                          left: 0;
-                         width: 7px;
-                         height: 7px;
+                         // width: 7px;
+                         // height: 7px;
+                         @include pseudowh($width: 7px, $height: 7px);
                          border: 1px solid $content-color;
                     }
 
@@ -678,8 +691,9 @@
                     @include pos;
                     bottom: 0;
                     left: 0;
-                    width: 120px;
-                    height: 2px;
+                    // width: 120px;
+                    // height: 2px;
+                    @include pseudowh($width: 120px, $height: 2px);
                     background-color: var(--theme-color);
                }
 
@@ -708,8 +722,9 @@
 
                .top-selling-image {
                     img {
-                         width: 100px;
-                         height: 100px;
+                         // width: 100px;
+                         // height: 100px;
+                         @include pseudowh($width: 100px, $height: 100px);
                          object-fit: contain;
                          border-radius: 5px;
                     }
@@ -747,8 +762,9 @@
                overflow: hidden;
 
                img {
-                    width: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320)));
-                    height: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320)));
+                    // width: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320)));
+                    // height: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320)));
+                    @include pseudowh($width: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320))), $height: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320))));
                     object-fit: contain;
                }
           }
@@ -801,15 +817,17 @@
                     position: absolute;
                     bottom: 0;
                     right: 0;
-                    width: 40px;
-                    height: 40px;
+                    // width: 40px;
+                    // height: 40px;
+                    @include pseudowh($width: 40px, $height: 40px);
                     background-color: #F7F5F2;
                     border-radius: 100%;
                     @include flex_common;
 
                     svg {
-                         width: 20px;
-                         height: 20px;
+                         // width: 20px;
+                         // height: 20px;
+                         @include pseudowh($width: 20px, $height: 20px);
                          color: $content-color;
                          stroke-width: 1.5px;
                     }
@@ -847,8 +865,9 @@
 
           .product-offer-image {
                img {
-                    width: 150px;
-                    height: 85px;
+                    // width: 150px;
+                    // height: 85px;
+                    @include pseudowh($width: 150px, $height: 85px);
                     object-fit: contain;
                }
           }
@@ -880,15 +899,17 @@
                     position: absolute;
                     bottom: 0;
                     right: 0;
-                    width: 40px;
-                    height: 40px;
+                    // width: 40px;
+                    // height: 40px;
+                    @include pseudowh($width: 40px, $height: 40px);
                     background-color: #F7F5F2;
                     border-radius: 100%;
                     @include flex_common;
 
                     .feather {
-                         width: 20px;
-                         height: 20px;
+                         // width: 20px;
+                         // height: 20px;
+                         @include pseudowh($width: 20px, $height: 20px);
                          color: #4A5568;
                          stroke-width: 1.5px;
                     }
@@ -906,8 +927,9 @@
 
           .deal-image {
                img {
-                    width: 250px;
-                    height: 250px;
+                    // width: 250px;
+                    // height: 250px;
+                    @include pseudowh($width: 250px, $height: 250px);
                     object-fit: contain;
 
                     @include mq-max(sm) {
@@ -950,8 +972,9 @@
                          }
 
                          a {
-                              width: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320)));
-                              height: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320)));
+                              // width: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320)));
+                              // height: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320)));
+                              @include pseudowh($width: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))));
                               background-color: $white;
                               box-shadow: 0px 5.57831px 13.9458px rgba($black, .05);
                               border-radius: 100%;
@@ -959,8 +982,9 @@
                               color: $title-color;
 
                               svg {
-                                   width: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
-                                   height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                   // width: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                   // height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                   @include pseudowh($width: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))), $height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))));
                               }
                          }
                     }
@@ -1042,8 +1066,9 @@
                     }
 
                     img {
-                         width: 100%;
-                         height: 140px;
+                         // width: 100%;
+                         // height: 140px;
+                         @include pseudowh($width: 100%, $height: 140px);
                          object-fit: contain;
                     }
                }
@@ -1097,8 +1122,9 @@
                          z-index: 0;
 
                          .feather {
-                              width: 15px;
-                              height: 15px;
+                              // width: 15px;
+                              // height: 15px;
+                              @include pseudowh($width: 15px, $height: 15px);
                               color: #777;
 
                               &.active {
@@ -1137,8 +1163,9 @@
                                         top: 0;
                                         left: -1px;
                                         background-color: var(--theme-color);
-                                        width: 1px;
-                                        height: 100%;
+                                        // width: 1px;
+                                        // height: 100%;
+                                        @include pseudowh($width: 1px, $height: 100%);
                                    }
                               }
 
@@ -1150,8 +1177,9 @@
                                    }
 
                                    .feather {
-                                        width: 17px;
-                                        height: 17px;
+                                        // width: 17px;
+                                        // height: 17px;
+                                        @include pseudowh($width: 17px, $height: 17px);
                                         object-fit: contain;
                                         stroke-width: 1.5;
                                    }

@@ -71,8 +71,9 @@ header {
               @include pos;
               top: 0;
               left: -13px;
-              width: 2px;
-              height: 90%;
+              // width: 2px;
+              // height: 90%;
+              @include pseudowh($width: 2px, $height: 90%);
               background-color: rgba($white, .3);
             }
           }
@@ -106,8 +107,9 @@ header {
               }
 
               &::before {
-                position: absolute;
-                content: "\f107";
+                // position: absolute;
+                // content: "\f107";
+                @include pos($pos: absolute, $content: "\f107");
                 @include font;
                 @include center(vertical);
                 right: 0;
@@ -155,8 +157,9 @@ header {
 
       .web-logo {
         img {
-          width: 162px;
-          height: 38px;
+          // width: 162px;
+          // height: 38px;
+          @include pseudowh($width: 162px, $height: 38px);
           object-fit: contain;
         }
       }
@@ -176,8 +179,9 @@ header {
           position: relative;
 
           span {
-            width: 35px;
-            height: 35px;
+            // width: 35px;
+            // height: 35px;
+            @include pseudowh($width: 35px, $height: 35px);
             @include flex_common;
             color: $content-color;
             background-color: #F3F5F9;
@@ -185,8 +189,9 @@ header {
             margin-right: 12px;
 
             .feather {
-              width: 16px;
-              height: 16px;
+              // width: 16px;
+              // height: 16px;
+              @include pseudowh($width: 16px, $height: 16px);
             }
           }
 
@@ -249,8 +254,9 @@ header {
               border: 1px solid #FFA53B;
 
               .feather {
-                width: 20px;
-                height: 20px;
+                // width: 20px;
+                // height: 20px;
+                @include pseudowh($width: 20px, $height: 20px);
               }
             }
           }
@@ -272,8 +278,9 @@ header {
                 @include pos;
                 @include center(vertical);
                 left: 14px;
-                width: 1px;
-                height: 24px;
+                // width: 1px;
+                // height: 24px;
+                @include pseudowh($width: 1px, $height: 24px);
                 background-color: rgba($content-color, $alpha: .5);
               }
             }
@@ -315,8 +322,9 @@ header {
               span {
                 background-color: #FF7272;
                 font-size: 12px;
-                width: 18px;
-                height: 18px;
+                // width: 18px;
+                // height: 18px;
+                @include pseudowh($width: 18px, $height: 18px);
                 padding: 0;
                 @include flex_common;
                 border-radius: 2px;
@@ -336,9 +344,10 @@ header {
       position: relative;
 
       .dropdown-category {
-        width: 222px;
+        // width: 222px;
+        // height: 53px;
+        @include pseudowh($width: 222px, $height: 53px);
         background: linear-gradient(90.56deg, #0E947A 8.46%, #0DA487 62.97%);
-        height: 53px;
         color: $white;
         border-radius: 5px;
         @include flex_common;
@@ -410,8 +419,9 @@ header {
                 color: $title-color;
 
                 img {
-                  width: 25px;
-                  height: 25px;
+                  // width: 25px;
+                  // height: 25px;
+                  @include pseudowh($width: 25px, $height: 25px);
                   object-fit: contain;
                   margin-right: 6px;
                 }
