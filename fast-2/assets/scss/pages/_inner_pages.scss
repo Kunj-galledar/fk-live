@@ -1901,8 +1901,9 @@
           @include pos;
           bottom: -5px;
           left: 0;
-          width: 70%;
-          height: 2px;
+          // width: 70%;
+          // height: 2px;
+          @include pseudowh($width: 70%, $height: 2px);
           background: var(--theme-color2);
         }
       }
@@ -1910,10 +1911,11 @@
 
     .contact-detail {
       .contact-detail-box {
-        display: flex;
         align-items: center;
-        flex-wrap: wrap;
-        gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
+        // display: flex;
+        // flex-wrap: wrap;
+        // gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320))));
         background-color: #f8f8f8;
         padding: calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(30px + (41 - 30) * ((100vw - 320px) / (1920 - 320)));
         position: relative;
@@ -1922,8 +1924,7 @@
 
         .contact-icon {
           position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
+          @include center(vertical);
           left: -21px;
           background-color: var(--theme-color);
           padding: 13px;
@@ -2025,8 +2026,9 @@
 .map-section {
   .map-box {
     iframe {
-      width: 100%;
-      height: 350px;
+      // width: 100%;
+      // height: 350px;
+      @include pseudowh($width: 100%, $height: 350px);
       // border-radius: 8px;
     }
   }
@@ -3235,8 +3237,9 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 100vh;
+  // width: 100vw;
+  // height: 100vh;
+  @include pseudowh($width: 100vw, $height: 100vh);
   position: relative;
   @include flex_common;
 
@@ -3256,9 +3259,7 @@
     text-align: center;
 
     .coming-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex_common;
       flex-wrap: nowrap;
       gap: 23px;
 
@@ -3294,10 +3295,9 @@
 
           +li {
             &::after {
-              content: ":";
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
+              // content: ":";
+              // position: absolute;
+              @include pos($pos: absolute, $content: ":");
               left: -25px;
               font-size: 30px;
               color: var(--theme-color);
@@ -3354,47 +3354,49 @@
       }
     }
 
-    .social-icon {
-      margin-top: 40px;
+    // .social-icon {
+    //   margin-top: 40px;
 
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
+    //   ul {
+    //     // display: flex;
+    //     // flex-wrap: wrap;
+    //     // gap: 20px;
+    //     @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
+    //     justify-content: center;
 
-        li {
-          width: 50px;
-          height: 50px;
-          @include flex_common;
-          border-radius: 5px;
+    //     li {
+    //       // width: 50px;
+    //       // height: 50px;
+    //       @include pseudowh($width: 50px, $height: 50px);
+    //       @include flex_common;
+    //       border-radius: 5px;
 
-          a {
-            font-size: 19px;
-            color: $white;
-          }
+    //       a {
+    //         font-size: 19px;
+    //         color: $white;
+    //       }
 
-          &.fb-bg {
-            background-color: #4267B2;
-          }
+    //       &.fb-bg {
+    //         background-color: #4267B2;
+    //       }
 
-          &.twitter-bg {
-            background-color: #00acee;
-          }
+    //       &.twitter-bg {
+    //         background-color: #00acee;
+    //       }
 
-          &.linkedin-bg {
-            background-color: #0e76a8;
-          }
+    //       &.linkedin-bg {
+    //         background-color: #0e76a8;
+    //       }
 
-          &.pint-bg {
-            background-color: #c8232c;
-          }
+    //       &.pint-bg {
+    //         background-color: #c8232c;
+    //       }
 
-          &.google-bg {
-            background-color: #f4c20d;
-          }
-        }
-      }
-    }
+    //       &.google-bg {
+    //         background-color: #f4c20d;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }
