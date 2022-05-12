@@ -1881,7 +1881,7 @@
 
     .contact-image {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: calc(25px + (64 - 25) * ((100vw - 320px) / (1920 - 320)));
 
       img {
         width: 60%;
@@ -1889,17 +1889,16 @@
     }
 
     .contact-title {
-      margin-bottom: 32px;
+      margin-bottom: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
 
       h3 {
         position: relative;
         display: inline-block;
-        font-size: 28px;
+        font-size: calc(23px + (28 - 23) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 600;
 
         &::after {
-          content: "";
-          position: absolute;
+          @include pos;
           bottom: -5px;
           left: 0;
           width: 70%;
@@ -1914,11 +1913,12 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
         background-color: #f8f8f8;
-        padding: 27px 27px 27px 41px;
+        padding: calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(30px + (41 - 30) * ((100vw - 320px) / (1920 - 320)));
         position: relative;
         border-radius: 10px;
+        margin-left: 22px;
 
         .contact-icon {
           position: absolute;
@@ -1940,14 +1940,14 @@
         .contact-detail-title {
           h4 {
             font-weight: 600;
-            font-size: 18px;
+            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
           }
         }
 
         .contact-detail-contain {
           p {
             margin: 0;
-            font-size: 15px;
+            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
             line-height: 1.5;
             color: $content-color;
           }
@@ -1957,7 +1957,7 @@
   }
 
   .right-sidebar-box {
-    padding: 60px;
+    padding: calc(21px + (60 - 21) * ((100vw - 320px) / (1920 - 320)));
     border-radius: 10px;
     box-shadow: 0 0 8px rgba($title-color, .1);
 
@@ -1966,13 +1966,14 @@
         color: $content-color;
         display: block;
         font-size: 16px;
+        margin-bottom: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
       }
 
       .custom-input {
         position: relative;
 
         .form-control {
-          padding: 20px 20px 20px 52px;
+          padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(41px + (52 - 41) * ((100vw - 320px) / (1920 - 320)));
 
           &:focus {
             background-color: #f8f8f8;
@@ -1986,11 +1987,11 @@
           top: 0;
           left: 0;
           height: 100%;
-          padding: 0 20px;
+          padding: 0 calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
           display: flex;
-          font-size: 18px;
           align-items: center;
-          color: #4a5568;
+          font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+          color: $content-color;
         }
       }
 
@@ -3219,6 +3220,178 @@
 
           &:focus {
             background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+     Coming Soon Scss
+==========================**/
+.coming-soon-section {
+  background-image: url(../images/inner-page/coming-soon.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  @include flex_common;
+
+  // &::before {
+  //   @include pos;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: var(--theme-color2);
+  //   // opacity: .2;
+  //   z-index: -1;
+  // }
+
+  .coming-box {
+    // height: 100vh;
+    text-align: center;
+
+    .coming-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 23px;
+
+      img {
+        width: 50px;
+      }
+
+      h2 {
+        font-size: 49px;
+        font-weight: 400;
+      }
+    }
+
+    .coming-timer {
+      margin-top: 29px;
+      border-bottom: 1px solid $content-color;
+      padding-bottom: 25px;
+
+      ul {
+        @include flex_common;
+        flex-wrap: wrap;
+        gap: 40px;
+
+        li {
+          position: relative;
+          box-shadow: 0 0 5px rgba($title-color, 0.2);
+          // width: 100px;
+          // height: 100px;
+          @include pseudowh($width: 80px, $height: 80px);
+          @include flex_common;
+          border-radius: 6px;
+          background: var(--theme-color2);
+
+          +li {
+            &::after {
+              content: ":";
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: -25px;
+              font-size: 30px;
+              color: var(--theme-color);
+            }
+          }
+
+          .counter {
+            h6 {
+              font-size: 27px;
+              font-weight: 600;
+              color: $white;
+            }
+
+            p {
+              margin-bottom: 0;
+              // margin-top: 8px;
+              color: #ddd;
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+
+    .coming-contain {
+      margin-top: 38px;
+
+      p {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 15px;
+        line-height: 1.6;
+        color: $content-color;
+      }
+
+      .coming-form {
+        position: relative;
+        width: 90%;
+        margin: 22px auto 0;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .coming-button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          border: none;
+          padding: 0 25px;
+          background: var(--theme-color2);
+          color: $white;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .social-icon {
+      margin-top: 40px;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+
+        li {
+          width: 50px;
+          height: 50px;
+          @include flex_common;
+          border-radius: 5px;
+
+          a {
+            font-size: 19px;
+            color: $white;
+          }
+
+          &.fb-bg {
+            background-color: #4267B2;
+          }
+
+          &.twitter-bg {
+            background-color: #00acee;
+          }
+
+          &.linkedin-bg {
+            background-color: #0e76a8;
+          }
+
+          &.pint-bg {
+            background-color: #c8232c;
+          }
+
+          &.google-bg {
+            background-color: #f4c20d;
           }
         }
       }
