@@ -3243,6 +3243,17 @@
   position: relative;
   @include flex_common;
 
+  // .bg-black {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: $black;
+  //   opacity: .2;
+  //   z-index: 0;
+  // }
+
   // &::before {
   //   @include pos;
   //   top: 0;
@@ -3257,48 +3268,51 @@
   .coming-box {
     // height: 100vh;
     text-align: center;
+    z-index: 1;
 
     .coming-title {
       @include flex_common;
       flex-wrap: nowrap;
-      gap: 23px;
+      gap: calc(12px + (23 - 12) * ((100vw - 320px) / (1920 - 320)));
 
       img {
-        width: 50px;
+        width: calc(29px + (50 - 29) * ((100vw - 320px) / (1920 - 320)));
       }
 
       h2 {
-        font-size: 49px;
+        font-size: calc(30px + (49 - 30) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 400;
       }
     }
 
     .coming-timer {
-      margin-top: 29px;
-      border-bottom: 1px solid $content-color;
-      padding-bottom: 25px;
+      margin-top: calc(20px + (29 - 20) * ((100vw - 320px) / (1920 - 320)));
+      border-bottom: 1px solid #ddd;
+      padding-bottom: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320)));
 
       ul {
         @include flex_common;
         flex-wrap: wrap;
-        gap: 40px;
+        gap: calc(26px + (40 - 26) * ((100vw - 320px) / (1920 - 320)));
 
         li {
           position: relative;
-          box-shadow: 0 0 5px rgba($title-color, 0.2);
+          // box-shadow: 0 0 5px rgba($title-color, 0.2);
           // width: 100px;
           // height: 100px;
-          @include pseudowh($width: 80px, $height: 80px);
-          @include flex_common;
-          border-radius: 6px;
-          background: var(--theme-color2);
+          // @include pseudowh($width: 80px, $height: 80px);
+          // @include flex_common;
+          // border-radius: 6px;
+          // background: var(--theme-color2);
 
           +li {
             &::after {
               // content: ":";
               // position: absolute;
               @include pos($pos: absolute, $content: ":");
-              left: -25px;
+              @include center(vertical);
+              // left: -25px;
+              left: calc(-16px + (4 - 16) * ((100vw - 320px) / (1920 - 320)));
               font-size: 30px;
               color: var(--theme-color);
             }
@@ -3306,16 +3320,16 @@
 
           .counter {
             h6 {
-              font-size: 27px;
+              font-size: calc(22px + (27 - 22) * ((100vw - 320px) / (1920 - 320)));
               font-weight: 600;
-              color: $white;
+              color: var(--theme-color);
             }
 
             p {
               margin-bottom: 0;
-              // margin-top: 8px;
-              color: #ddd;
-              font-size: 17px;
+              margin-top: 5px;
+              color: $content-color;
+              font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
             }
           }
         }
@@ -3323,7 +3337,7 @@
     }
 
     .coming-contain {
-      margin-top: 38px;
+      margin-top: calc(19px + (38 - 19) * ((100vw - 320px) / (1920 - 320)));
 
       p {
         width: 90%;
@@ -3331,6 +3345,10 @@
         font-size: 15px;
         line-height: 1.6;
         color: $content-color;
+
+        @include mq-max(xs) {
+          width: 100%;
+        }
       }
 
       .coming-form {
@@ -3340,13 +3358,17 @@
         border-radius: 4px;
         overflow: hidden;
 
+        @include mq-max(xs) {
+          width: 100%;
+        }
+
         .coming-button {
           position: absolute;
           top: 0;
           right: 0;
           height: 100%;
           border: none;
-          padding: 0 25px;
+          padding: 0 calc(15px + (25 - 15) * ((100vw - 320px) / (1920 - 320)));
           background: var(--theme-color2);
           color: $white;
           font-weight: 700;
@@ -3398,5 +3420,193 @@
     //     }
     //   }
     // }
+  }
+}
+
+/**=====================
+     About Us Scss
+==========================**/
+.about-us-title {
+  h4 {
+    font-size: 18px;
+    margin-bottom: 13px;
+  }
+
+  h2 {
+    font-size: 40px;
+    margin-bottom: 28px;
+  }
+}
+
+.fresh-vegetable-section {
+  .fresh-contain {
+    height: 100%;
+
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: $content-color;
+      margin-bottom: 20px;
+
+      // &:nth-last-of-type(1) {
+      //   margin-bottom: 0;
+      // }
+    }
+  }
+
+  .delivery-list {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      li {
+        width: 100%;
+
+        .deliver-box {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          align-items: center;
+          color: $content-color;
+
+          .feather {
+            width: 17px;
+            height: auto;
+          }
+
+          h6 {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.client-section {
+  background-color: #f8f8f8;
+
+  .client-box {
+    .client-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      li {
+        width: 460px;
+        // background-color: antiquewhite;
+        position: relative;
+
+        +li {
+          &::before {
+            @include pos;
+            @include center(vertical);
+            left: -50px;
+            // width: 1px;// height: 70%;
+            @include pseudowh($width: 1px, $height: 70%);
+            background-color: #ddd;
+          }
+        }
+
+        .clint-contain {
+          text-align: center;
+
+          h2 {
+            font-size: 42px;
+            margin-bottom: 11px;
+          }
+
+          h4 {
+            font-size: 21px;
+            margin-bottom: 6px;
+          }
+
+          p {
+            color: $content-color;
+            width: 80%;
+            margin: 0 auto;
+            line-height: 1.7;
+          }
+        }
+      }
+    }
+  }
+}
+
+.team-section {
+  .team-box {
+    &:hover {
+      .team-iamge {
+        img {
+          transform: scale(1.1);
+        }
+
+        .team-media {
+          opacity: 1;
+          right: 10px;
+        }
+      }
+    }
+
+    .team-iamge {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        transition: all .3s ease-in-out;
+      }
+
+      .team-media {
+        position: absolute;
+        bottom: 10px;
+        right: -10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+
+        li {
+          a {
+            background-color: $content-color;
+            width: 40px;
+            height: 40px;
+            @include flex_common;
+            font-size: 18px;
+            color: $white;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+
+    .team-name {
+      padding-top: 20px;
+      text-align: center;
+
+      h3 {
+        font-size: 23px;
+        letter-spacing: 0.7px;
+        font-weight: 700;
+      }
+
+      h5 {
+        margin-top: 6px;
+        letter-spacing: 0.5px;
+        color: $content-color;
+      }
+    }
+  }
+}
+
+.about-faq-section {
+  background-color: #f8f8f8;
+
+  .faq-accordion {
+    .accordion {
+      gap: 15px;
+    }
   }
 }
