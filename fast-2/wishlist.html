@@ -43,7 +43,7 @@
 <body>
 
     <!-- Header Start -->
-    <!-- <header>
+    <header>
         <div class="nav-about theme-bg-color text-white">
             <div class="container-fluid-lg">
                 <div class="row">
@@ -132,7 +132,10 @@
                             <div class="middle-box">
                                 <div class="location-box">
                                     <span><i data-feather="map-pin"></i></span>
-                                    <div class="dropdown">
+                                    <button class="btn location-button" data-bs-toggle="modal"
+                                        data-bs-target="#locationModal">Your Location <i
+                                            class="fa-solid fa-angle-down"></i></button>
+                                    <!-- <div class="dropdown">
                                         <button class="btn dropdown-toggle p-0" type="button" id="dropdownMenuButton1"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             Dropdown button <i class="fa-solid fa-angle-down"></i>
@@ -142,7 +145,7 @@
                                             <li><a class="dropdown-item" href="#">Another action</a></li>
                                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="search-box">
@@ -207,9 +210,10 @@
                 <div class="col-12">
                     <div class="header-nav">
                         <div class="header-nav-left">
-                            <div class="dropdown-category">
+                            <button class="dropdown-category" data-bs-toggle="offcanvas" data-bs-target="#categories">
                                 <i data-feather="align-left"></i>
-                                <div class="dropdown custom-dropdown">
+                                <span>All Categories</span>
+                                <!-- <div class="dropdown custom-dropdown">
                                     <a href="javascript:void(0)" class="js-link">All Categories</a>
                                     <ul class="js-dropdown-list">
                                         <li>Vegetables & Fruit</li>
@@ -223,8 +227,8 @@
                                         <li>Milk & Dairies</li>
                                         <li>Pet Foods</li>
                                     </ul>
-                                </div>
-                            </div>
+                                </div> -->
+                            </button>
                         </div>
 
                         <div class="header-nav-middle">
@@ -782,7 +786,7 @@
                 </div>
             </div>
         </div>
-    </header> -->
+    </header>
     <!-- Header End -->
 
     <!-- mobile fix menu start -->
@@ -1496,6 +1500,229 @@
         </div>
     </footer>
     <!-- Footer Section End -->
+
+    <!-- Location Modal Start -->
+    <div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Choose your Delivery Location</h5>
+                    <p class="mt-1 text-content">Enter your address and we will specify the offer for your area.</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="location-list">
+                        <div class="search-input">
+                            <input type="search" class="form-control" placeholder="Search Your Area">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+
+                        <ul class="location-select">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Select a Location</h6>
+                                    <span>Clear All</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Alabama</h6>
+                                    <span>Min: $130</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Arizona</h6>
+                                    <span>Min: $150</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>California</h6>
+                                    <span>Min: $110</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Colorado</h6>
+                                    <span>Min: $140</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Florida</h6>
+                                    <span>Min: $160</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Georgia</h6>
+                                    <span>Min: $120</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Kansas</h6>
+                                    <span>Min: $170</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Minnesota</h6>
+                                    <span>Min: $120</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>New York</h6>
+                                    <span>Min: $110</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <h6>Washington</h6>
+                                    <span>Min: $130</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Location Modal End -->
+
+    <!-- Categories Offcanvas Box Start -->
+    <div class="offcanvas offcanvas-start categories-canvas" tabindex="-1" id="categories"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title">Categories</h3>
+            <button type="button" class="close-button" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="categories-list">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Beverages</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Biscuits & Snacks</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Breads & Bakery</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Breakfast & Dairy</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Frozen Foods</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Fruits & Vegetables</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Household Needs</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Grocery & Staples</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Meats & Seafood</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Eggs Substitutes</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Honey Vegetables</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Marmalades Staples</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Sour Cream and Dips</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h6>Yogurt Seafood</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Categories Offcanvas Box End -->
 
     <!-- View Shipping Modal Start -->
     <div class="modal fade" id="view-shipping" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
