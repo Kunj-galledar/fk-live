@@ -195,6 +195,60 @@ $('.slider-4-2').slick({
   ]
 });
 
+$('.slider-4-half').slick({
+  arrows: false,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: '200px',
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  responsive: [{
+    breakpoint: 1524,
+    settings: {
+      centerPadding: '150px',
+    }
+  },
+  {
+    breakpoint: 1291,
+    settings: {
+      slidesToShow: 2,
+      centerPadding: '100px',
+    }
+  },
+  {
+    breakpoint: 921,
+    settings: {
+      slidesToShow: 2,
+      centerPadding: '20px',
+    }
+  },
+  {
+    breakpoint: 798,
+    settings: {
+      slidesToShow: 1,
+      centerPadding: '50px',
+    }
+  },
+  {
+    breakpoint: 798,
+    settings: {
+      slidesToShow: 1,
+      centerPadding: '20px',
+    }
+  },
+  {
+    breakpoint: 434,
+    settings: {
+      slidesToShow: 1,
+      centerPadding: '0',
+    }
+  },
+  ]
+});
+
 $('.slider-5_1').slick({
   infinite: true,
   slidesToScroll: 1,
