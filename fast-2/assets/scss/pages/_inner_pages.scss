@@ -4284,9 +4284,9 @@
                         }
 
                         // .feather {
-    //     fill: var(--theme-color);
-    //     stroke: #fff;
-    // }
+                        //     fill: var(--theme-color);
+                        //     stroke: #fff;
+                        // }
                     }
 
                     .feather {
@@ -4433,6 +4433,40 @@
             .dashboard-detail {
                 h6 {
                     margin-bottom: 8px;
+                }
+            }
+        }
+
+        .dashboard-order {
+            .order-accordion {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 24px;
+
+                .accordion-item {
+                    width: 100%;
+                    border-radius: 6px;
+                    border: 1px solid $border-color;
+
+                    .accordion-header {
+                        .accordion-button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            background-color: transparent;
+
+                            &:not(.collapsed) {
+                                color: $title-color;
+                                background-color: transparent;
+                                box-shadow: none;
+                            }
+
+                            &::after {
+                                content: none;
+                            }
+                        }
+                    }
                 }
             }
         }
