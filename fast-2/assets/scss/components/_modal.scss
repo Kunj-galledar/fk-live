@@ -4,9 +4,11 @@
 .theme-modal {
     .modal-dialog {
         .modal-content {
+            border: none;
+
             .modal-header {
                 border-bottom: none;
-                // padding-bottom: 0;
+                padding: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
 
                 .modal-title {
                     font-weight: 600;
@@ -25,12 +27,18 @@
                     color: $white;
                     margin: 0;
                     padding: 8px;
+
+                    @include mq-max(sm) {
+                        top: 0;
+                        right: 0;
+                    }
                 }
             }
 
             .modal-footer {
                 border: none;
                 padding-top: 0;
+                padding: 0 calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320))) calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
             }
         }
     }
