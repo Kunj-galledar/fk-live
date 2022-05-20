@@ -6,6 +6,12 @@ header {
 
     .nav-about {
         padding: 10px 0;
+        background: var(--theme-color2);
+        color: $white;
+
+        &.bg-black-nav {
+            background: $title-color;
+        }
 
         .header-top {
             @include flex_common ($dis: flex, $align: center, $justify: space-between);
@@ -268,7 +274,7 @@ header {
                             color: $white;
                             padding: 14px 20px;
                             border-radius: 5px;
-                            border: 1px solid #FFA53B;
+                            border: 1px solid transparent;
 
                             .feather {
                                 // width: 20px;
@@ -374,6 +380,10 @@ header {
                 // @include mq-max(lg) {
                 //     display: none;
                 // }
+
+                &.black-dropdown {
+                    background: $title-color;
+                }
 
                 .feather {
                     // font-size: 23px;
