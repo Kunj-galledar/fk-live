@@ -596,3 +596,56 @@ $('.slider-user').slick({
   },
   ]
 });
+
+$('.search-product').slick({
+  arrows: false,
+  infinite: false,
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  dots: true,
+  responsive: [{
+    breakpoint: 1408,
+    settings: {
+      slidesToShow: 5,
+      autoplay: true,
+      autoplaySpeed: 3500,
+    }
+  },
+  {
+    breakpoint: 1080,
+    settings: {
+      slidesToShow: 4,
+    }
+  },
+  {
+    breakpoint: 875,
+    settings: {
+      slidesToShow: 3,
+    }
+  },
+  {
+    breakpoint: 634,
+    settings: {
+      slidesToShow: 2,
+    }
+  },
+  {
+    breakpoint: 54,
+    settings: {
+      slidesToShow: 4,
+    }
+  },
+  {
+    breakpoint: 12,
+    settings: {
+      slidesToShow: 3,
+    }
+  },
+  {
+    breakpoint: 56,
+    settings: {
+      slidesToShow: 2,
+    }
+  },
+  ]
+});
