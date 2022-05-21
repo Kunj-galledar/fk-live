@@ -202,8 +202,6 @@ $(document).ready(function () {
 //     });
 // });
 
-
-
 // User Dashboard Left Sidebar Show Js
 $(".left-dashboard-show").click(function () {
     $(".bg-overlay, .dashboard-left-sidebar").addClass("show");
@@ -211,3 +209,9 @@ $(".left-dashboard-show").click(function () {
 $(".close-button, .bg-overlay, .user-nav-pills .nav-item .nav-link").click(function () {
     $(".bg-overlay, .dashboard-left-sidebar").removeClass("show");
 });
+
+//  Tooltip Js
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
