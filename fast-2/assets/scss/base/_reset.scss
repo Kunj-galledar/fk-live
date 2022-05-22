@@ -71,6 +71,10 @@ section,
 // Position Center
 .p-center-left {
     @include flex_common ($dis: flex, $align: center, $justify: flex-start);
+
+    [dir="rtl"] & {
+        justify-content: flex-end;
+    }
 }
 
 .p-center {
@@ -79,11 +83,19 @@ section,
 
 .p-center-right {
     @include flex_common ($dis: flex, $align: center, $justify: flex-end);
+
+    [dir="rtl"] & {
+        justify-content: flex-start;
+    }
 }
 
 // Position Bottom
 .p-bottom-left {
     @include flex_common ($dis: flex, $align: flex-end, $justify: flex-start);
+
+    [dir="rtl"] & {
+        justify-content: flex-end;
+    }
 }
 
 .p-bottom-center {
@@ -162,6 +174,11 @@ section,
         color: $content-color;
         font-size: 12px;
         margin-left: 5px;
+
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: 5px;
+        }
     }
 }
 

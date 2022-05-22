@@ -43,16 +43,36 @@
                 @include pseudowh($width: 1px, $height: 50%);
                 border: 1px dashed rgba($content-color, 0.5);
 
+                [dir="rtl"] & {
+                    left: unset;
+                    right: -104px;
+                }
+
                 @include mq-max(4xl) {
                     left: -70px;
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: -70px;
+                    }
                 }
 
                 @include mq-max(3xl) {
                     left: -36px;
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: -36px;
+                    }
                 }
 
                 @include mq-max(2xl) {
                     left: -31px;
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: -31px;
+                    }
                 }
             }
         }
@@ -68,6 +88,11 @@
 
         .service-detail {
             margin-left: 20px;
+
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 20px;
+            }
 
             h5 {
                 font-weight: 500;

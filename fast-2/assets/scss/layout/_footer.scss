@@ -61,10 +61,12 @@ footer {
                             }
 
                             p {
-                                margin-bottom: 0;
-                                margin-left: 10px;
-                                margin-top: 1px;
+                                margin: 1px 0 0 10px;
                                 color: $content-color;
+
+                                [dir="rtl"] & {
+                                    margin: 1px 10px 0 unset;
+                                }
                             }
                         }
                     }
@@ -112,6 +114,10 @@ footer {
             }
 
             ul {
+                [dir="rtl"] & {
+                    padding: 0;
+                }
+
                 &.address {
                     margin-top: calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
 
@@ -127,10 +133,16 @@ footer {
                         }
 
                         p {
-                            margin-bottom: 0;
-                            margin-left: 10px;
-                            margin-top: 1px;
+                            // margin-bottom: 0;
+                            // margin-left: 10px;
+                            // margin-top: 1px;
+                            margin: 1px 0 0 10px;
                             color: $content-color;
+
+                            [dir="rtl"] & {
+                                margin-right: 10px;
+                                margin-left: unset;
+                            }
                         }
                     }
                 }
@@ -175,6 +187,10 @@ footer {
             margin-top: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
 
             ul {
+                [dir="rtl"] & {
+                    padding: 0;
+                }
+
                 li {
                     display: block;
                     margin-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
@@ -202,6 +218,11 @@ footer {
                         .contact-number {
                             padding-left: 12px;
 
+                            [dir="rtl"] & {
+                                padding-left: unset;
+                                padding-right: 12px;
+                            }
+
                             h5 {
                                 margin-top: 6px;
                                 font-weight: 600;
@@ -222,7 +243,11 @@ footer {
                             align-items: center;
                             // flex-wrap: wrap;
                             // gap: 8px;
-                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
+                            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+
+                            [dir="rtl"] & {
+                                padding: 0;
+                            }
 
                             li {
                                 // margin: 4px;
@@ -265,11 +290,20 @@ footer {
 
             h6 {
                 margin-right: 10px;
+
+                [dir="rtl"] & {
+                    margin-left: 10px;
+                    margin-right: unset;
+                }
             }
 
             ul {
                 display: flex;
                 align-items: center;
+
+                [dir="rtl"] & {
+                    padding: 0;
+                }
 
                 li {
                     i {

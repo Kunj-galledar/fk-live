@@ -2627,17 +2627,17 @@
                                     //   z-index: -1;
                                     // }
 
-                                    &:hover {
-                                        a {
-                                            .category-name {
+                                    // &:hover {
+                                    //     a {
+                                    //         .category-name {
 
-                                                h5,
-                                                span {
-                                                    color: var(--theme-color);
-                                                }
-                                            }
-                                        }
-                                    }
+                                    //             h5,
+                                    //             span {
+                                    //                 color: var(--theme-color);
+                                    //             }
+                                    //         }
+                                    //     }
+                                    // }
 
                                     a {
                                         display: block;
@@ -5166,8 +5166,9 @@
                 }
 
                 &:before {
-                    content: "\f111";
-                    font-family: "Font Awesome 6 Free";
+                    // content: "\f111";
+                    // font-family: "Font Awesome 6 Free";
+                    @include pos($pos: absolute, $content: "\f111");
                     color: #959595;
                     background-color: $white;
                     font-size: 35px;
@@ -5228,8 +5229,9 @@
                     @include flex_common;
                     color: $white;
                     background: var(--theme-color2);
-                    height: 30px;
-                    width: 30px;
+                    // height: 30px;
+                    // width: 30px;
+                    @include pseudowh($width: 30px, $height: 30px);
                     line-height: 35px;
                     border: none;
                     border-radius: 35px;
@@ -5248,7 +5250,6 @@
 
 // Order Table Scss
 .order-table-section {
-
     .order-navpills {
         flex-wrap: nowrap;
         gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)));

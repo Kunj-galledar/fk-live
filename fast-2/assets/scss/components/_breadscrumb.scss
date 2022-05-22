@@ -73,6 +73,11 @@
         nav {
             margin-left: auto;
 
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: auto;
+            }
+
             .breadcrumb {
                 @include flex_common;
 
@@ -89,6 +94,12 @@
 
                     +.breadcrumb-item {
                         position: relative;
+
+                        // @include rtl(padding-left, 8px, padding-right, 8px);
+                        [dir="rtl"] & {
+                            margin-left: 0;
+                            margin-right: 8px;
+                        }
 
                         &::before {
                             content: "\f105";
