@@ -1,0 +1,94 @@
+/**=====================
+     Slider css start
+==========================**/
+@mixin offer_common {
+    .offer-box {
+        position: relative;
+        z-index: 0;
+
+        .offer-contain {
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            @include flex_common;
+            @include pseudowh;
+
+            @include mq-max(lg) {
+                display: block;
+                text-align: center;
+            }
+
+            &::before {
+                @include mq-max(lg) {
+                    @include pos;
+                    @include pseudowh;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba($white, 0.22);
+                    z-index: -1;
+                }
+            }
+
+            .offer-detail {
+                h2 {
+                    text-transform: none;
+                    line-height: calc(27px + (43 - 27) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 400;
+                }
+
+                p {
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    color: $content-color;
+                    margin-top: calc(4px + (12 - 4) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+
+            .offer-timing {
+                margin-left: 24px;
+
+                @include mq-max(2xs) {
+                    margin-left: 0;
+                }
+
+                .time {
+                    ul {
+                        li {
+                            position: relative;
+
+                            +li {
+                                margin-left: 16px;
+
+                                &::before {
+                                    // content: ":";
+                                    // position: absolute;
+                                    @include pos($pos: absolute, $content: ":");
+                                    @include center(vertical);
+                                    left: -12px;
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .counter {
+                                background-color: $danger-color;
+                                color: $white;
+                                border-radius: 5px;
+
+                                div {
+                                    // width: calc(46px + (61 - 46) * ((100vw - 320px) / (1920 - 320)));
+                                    // height: calc(50px + (73 - 50) * ((100vw - 320px) / (1920 - 320)));
+                                    @include pseudowh($width: calc(46px + (61 - 46) * ((100vw - 320px) / (1920 - 320))), $height: calc(50px + (73 - 50) * ((100vw - 320px) / (1920 - 320))));
+                                    @include flex_common;
+
+                                    h3 {
+                                        font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

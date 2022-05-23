@@ -1,0 +1,77 @@
+/* =====================
+    Blog CSS Start 
+ ========================== */
+.newsletter-section {
+    .newsletter-box {
+        border-radius: 5px;
+
+        .newsletter-contain {
+            .newsletter-detail {
+                h2 {
+                    font-weight: 700;
+                    color: $white;
+                    margin-bottom: 10px;
+                }
+
+                h5 {
+                    font-weight: 600;
+                    color: #FFBC5D;
+                    margin-bottom: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                .input-box {
+                    position: relative;
+
+                    ::placeholder {
+                        font-size: 14px;
+                        color: $content-color;
+                        padding-left: 28px;
+
+                        @include mq-max(2xs) {
+                            padding-left: 0;
+                        }
+                    }
+
+                    input {
+                        height: calc(41px + (52 - 41) * ((100vw - 320px) / (1920 - 320)));
+                        border-radius: 5px;
+                        border: none;
+                    }
+
+                    .arrow {
+                        position: absolute;
+                        @include center(vertical);
+                        padding: 8px;
+                        background-color: rgba(13, 164, 135, .1);
+                        font-size: 15px;
+                        left: 3px;
+                        -webkit-text-stroke: 1px var(--theme-color);
+                        color: transparent;
+
+                        @include mq-max(2xs) {
+                            display: none;
+                        }
+                    }
+
+                    .sub-btn {
+                        background-color: $danger-color;
+                        position: absolute;
+                        @include center(vertical);
+                        right: 3px;
+                        border-radius: 5px;
+                        border: none;
+                        padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) calc(8px + (21 - 8) * ((100vw - 320px) / (1920 - 320)));
+                        font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                        color: $white;
+                        font-weight: 500;
+
+                        i {
+                            margin-left: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

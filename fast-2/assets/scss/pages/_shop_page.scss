@@ -670,6 +670,11 @@
                                         font-size: 15px;
                                         border-radius: 100%;
                                         @include flex_common;
+
+                                        [dir="rtl"] & {
+                                             right: unset;
+                                             left: 5px;
+                                        }
                                    }
 
                                    &:not(.collapsed) {
@@ -731,6 +736,7 @@
                               color: $title-color;
                               border-radius: unset;
                               position: relative;
+                              @include rtl(text-align, left, right);
 
                               &.active {
                                    color: $white;
@@ -747,6 +753,11 @@
                                         @include pseudowh($width: 90px, $height: 90px);
                                         filter: invert(1);
                                         opacity: 0.4;
+
+                                        [dir="rtl"] & {
+                                             right: unset;
+                                             left: -10px;
+                                        }
                                    }
                               }
 
@@ -758,6 +769,11 @@
                                    // height: 70px;
                                    @include pseudowh($width: 70px, $height: 70px);
                                    opacity: 0.1;
+
+                                   [dir="rtl"] & {
+                                        right: unset;
+                                        left: -10px;
+                                   }
                               }
                          }
                     }
@@ -909,6 +925,11 @@
                     .dropdown {
                          margin-left: 10px;
 
+                         [dir="rtl"] & {
+                              margin-left: unset;
+                              margin-right: 10px;
+                         }
+
                          .dropdown-toggle {
                               border: none;
                               background-color: #f6f5f2;
@@ -941,9 +962,14 @@
                .grid-option {
                     margin-left: auto;
 
+                    [dir="rtl"] & {
+                         margin-left: unset;
+                         margin-right: auto;
+                    }
+
                     ul {
-                         // display: flex;
                          align-items: center;
+                         // display: flex;
                          // flex-wrap: wrap;
                          // gap: 5px;
                          @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);

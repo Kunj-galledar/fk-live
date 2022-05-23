@@ -1,0 +1,191 @@
+/**=====================
+     Banner css start
+==========================**/
+.banner-contain {
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+
+    .banner-details {
+        &.banner-b-space {
+            padding: 45px calc(20px + (160 - 20) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        .banner-box {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background-color: rgba($white, $alpha: .5);
+            // padding: calc(14px + (22 - 14) * ((100vw - 320px) / (1920 - 320))) calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))) calc(14px + (22 - 14) * ((100vw - 320px) / (1920 - 320))) calc(14px + (22 - 14) * ((100vw - 320px) / (1920 - 320)));
+            padding: 22px 40px 22px 22px;
+            border-radius: 0px 60px 60px 0px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0px 11px 10px rgba(60, 115, 104, .06);
+
+            @include mq-max(4xl) {
+                top: 22px;
+                padding: 16px 37px 16px 16px;
+            }
+
+            @include mq-max(3xl) {
+                top: 20px;
+                padding: 14px 32px 14px 14px;
+            }
+
+            @include mq-max(2xl) {
+                padding: 11px 28px 11px 11px;
+            }
+
+            h5 {
+                margin: calc(2px + (6 - 2) * ((100vw - 320px) / (1920 - 320))) 0;
+                font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+                font-weight: 600;
+            }
+        }
+
+        .banner-button {
+            position: absolute;
+            bottom: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
+            left: calc(14px + (22 - 14) * ((100vw - 320px) / (1920 - 320)));
+            color: $white;
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: calc(20px + (42 - 20) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        h3 {
+            font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        h4 {
+            font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        .coupon-code {
+            padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))) calc(9px + (15 - 9) * ((100vw - 320px) / (1920 - 320)));
+            background-color: rgba(10, 104, 86, 0.4);
+            border: 2px dashed rgba($white, 0.5);
+            display: inline-block;
+            font-weight: 500;
+            margin-top: 13px;
+
+            &.code-2 {
+                background-color: rgba(153, 105, 31, 0.5);
+            }
+        }
+
+        p {
+            color: $content-color;
+            line-height: 1.5;
+        }
+
+        .banner-timing {
+            position: absolute;
+            top: 0;
+            left: 0;
+            // width: 100%;
+            // height: 210px;
+            @include pseudowh($width: 100%, $height: 210px);
+            background: linear-gradient(181.97deg, rgba($black, 0.3) 1.66%, rgba($black, 0) 95.27%);
+            backdrop-filter: blur(2px);
+            text-align: center;
+            color: $white;
+
+            .time {
+                margin-top: 25px;
+
+                ul {
+                    @include flex_common ($dis: flex, $align: center, $justify: space-evenly);
+
+                    li {
+                        .counter {
+                            border: 1px dashed $white;
+                            // width: 55px;
+                            // height: 70px;
+                            @include pseudowh($width: 55px, $height: 70px);
+                            @include flex_common;
+
+                            h5 {
+                                font-weight: 600;
+                                margin-bottom: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner-contain-2 {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .banner-detail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320))) calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320)));
+
+        .banner-detail-box {
+            position: relative;
+            padding: 7px 0;
+
+            &::before {
+                @include pos;
+                top: 0;
+                left: -10px;
+                // width: 2px;
+                // height: 100%;
+                @include pseudowh($width: 2px, $height: 100%);
+                background-color: var(--theme-color);
+            }
+
+            &-2 {
+                padding: 7px 0 7px 17px;
+
+                &::before {
+                    width: 5px;
+                    border-radius: 50px;
+                    left: 0;
+                }
+            }
+        }
+
+        h3 {
+            font-size: calc(27px + (34 - 27) * ((100vw - 320px) / (1920 - 320)));
+
+            .brand-name {
+                font-weight: bold;
+                background-color: var(--theme-color);
+                color: $white;
+                padding: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))) calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
+                position: relative;
+
+                &::before {
+                    @include pos;
+                    top: calc(3px + (7 - 3) * ((100vw - 320px) / (1920 - 320)));
+                    left: calc(3px + (6 - 3) * ((100vw - 320px) / (1920 - 320)));
+                    @include pseudowh;
+                    border: calc(1px + (2 - 1) * ((100vw - 320px) / (1920 - 320))) solid $title-color;
+                }
+            }
+        }
+
+        h2 {
+            font-size: calc(42px + (59 - 42) * ((100vw - 1199px) / (1920 - 1199)));
+            font-weight: 700;
+        }
+
+        h4 {
+            font-weight: 600;
+            font-size: calc(17px + (21 - 17) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+}

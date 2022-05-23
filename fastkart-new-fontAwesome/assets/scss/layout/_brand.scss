@@ -1,0 +1,28 @@
+/**=====================
+     Banner css start
+==========================**/
+@mixin brand_common {
+    .brand-section {
+        position: relative;
+
+        &::before {
+            @include pos;
+            @include pseudowh;
+            top: 0;
+            left: 0;
+            background-color: var(--theme-color);
+            opacity: 0.05;
+        }
+
+        .brand-image {
+            img {
+                width: 70%;
+                margin: 0 auto;
+
+                @include mq-max(2xs) {
+                    width: 60%;
+                }
+            }
+        }
+    }
+}

@@ -97,8 +97,8 @@
 
                         // @include rtl(padding-left, 8px, padding-right, 8px);
                         [dir="rtl"] & {
-                            margin-left: 0;
-                            margin-right: 8px;
+                            padding-left: 0;
+                            padding-right: 8px;
                         }
 
                         &::before {
@@ -224,6 +224,11 @@
                 padding-left: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
                 border: none;
 
+                [dir="rtl"] & {
+                    padding-left: unset;
+                    padding-right: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
+                }
+
                 &:focus {
                     background-color: none;
                 }
@@ -239,6 +244,11 @@
                 padding: 0 calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
                 display: flex;
                 align-items: center;
+
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 0;
+                }
 
                 .dropdown {
                     button {
@@ -256,6 +266,11 @@
                             padding: 0;
                             margin-left: 5px;
                             font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+
+                            [dir="rtl"] & {
+                                padding-left: unset;
+                                padding-right: 5px;
+                            }
                         }
                     }
                 }

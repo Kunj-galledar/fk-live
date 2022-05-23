@@ -1,0 +1,512 @@
+/**=====================
+     header css start
+==========================**/
+header {
+    margin-bottom: 12px;
+
+    .nav-about {
+        padding: 10px 0;
+        background: var(--theme-color2);
+        color: $white;
+
+        &.bg-black-nav {
+            background: $title-color;
+        }
+
+        .header-top {
+            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+            .about-list {
+                display: flex;
+                align-items: center;
+
+                &.left-nav-about {
+                    @include mq-max(md) {
+                        display: none;
+                    }
+                }
+
+                &.right-nav-about {
+                    @include mq-max(md) {
+                        width: 100%;
+                        justify-content: flex-end;
+                    }
+
+                    li {
+
+                        &.right-nav-list {
+
+                            &:first-child,
+                            &:nth-child(2) {
+                                @include mq-max(xl) {
+                                    display: none;
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                &::after {
+                                    @include mq-max(xl) {
+                                        content: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    // line-height: 1.6;
+
+                    i {
+                        font-size: 18px;
+                        margin-right: 5px;
+                    }
+
+                    span {
+                        margin-top: 1px;
+                        font-weight: 500;
+                    }
+
+                    +li {
+                        margin-left: 25px;
+                        position: relative;
+
+                        &::after {
+                            @include pos;
+                            top: 0;
+                            left: -13px;
+                            // width: 2px;
+                            // height: 90%;
+                            @include pseudowh($width: 2px, $height: 90%);
+                            background-color: rgba($white, .3);
+                        }
+                    }
+
+                    .theme-form-select {
+                        padding: 0;
+                        background-color: transparent;
+                        color: $white;
+                        border: none;
+                        background-image: none;
+                        // width: 70px;
+                        position: relative;
+
+                        .dropdown-toggle {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: $white;
+                            padding: 0 18px 0 0;
+
+                            img {
+                                width: 30px;
+                                margin-right: 10px;
+                            }
+
+                            &::after {
+                                content: none;
+                            }
+
+                            &:focus {
+                                box-shadow: none;
+                            }
+
+                            &::before {
+                                // position: absolute;
+                                // content: "\f107";
+                                @include pos($pos: absolute, $content: "\f107");
+                                @include font;
+                                @include center(vertical);
+                                right: 0;
+                                color: $white;
+                            }
+                        }
+
+                        .dropdown-menu {
+                            &.sm-dropdown-menu {
+                                min-width: 100%;
+                            }
+
+                            li {
+                                +li {
+                                    margin-left: 0;
+                                }
+
+                                .dropdown-item {
+                                    display: flex;
+                                    align-items: center;
+
+                                    &:hover,
+                                    &:focus {
+                                        background-color: transparent;
+                                    }
+
+                                    img {
+                                        width: 30px;
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .top-nav {
+        padding: 24px 0;
+
+        .navbar-menu-button {
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .navbar-top {
+            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+            .web-logo {
+                img {
+                    // width: 162px;
+                    // height: 38px;
+                    @include pseudowh($width: 162px, $height: 38px);
+                    object-fit: contain;
+                }
+            }
+
+            .middle-box {
+                display: flex;
+                align-items: center;
+
+                .location-box {
+                    border-radius: 5px;
+                    border: 1px solid #E0E2E7;
+                    display: flex;
+                    align-items: center;
+                    padding: 7px;
+                    padding-right: 20px;
+                    margin-right: 13px;
+                    position: relative;
+
+                    span {
+                        // width: 35px;
+                        // height: 35px;
+                        @include pseudowh($width: 35px, $height: 35px);
+                        @include flex_common;
+                        color: $content-color;
+                        background-color: #F3F5F9;
+                        border-radius: 5px;
+                        margin-right: 12px;
+
+                        .feather {
+                            // width: 16px;
+                            // height: 16px;
+                            @include pseudowh($width: 16px, $height: auto);
+                        }
+                    }
+
+                    .location-button {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: var(--theme-color);
+                        padding: 0;
+
+                        i {
+                            color: $title-color;
+                        }
+                    }
+
+                    // .dropdown {
+                    //   position: unset;
+
+                    //   .dropdown-toggle {
+                    //     font-size: 16px;
+                    //     font-weight: 500;
+                    //     color: var(--theme-color);
+
+                    //     i {
+                    //       color: $title-color;
+                    //     }
+
+                    //     &::after {
+                    //       content: none;
+                    //     }
+                    //   }
+
+                    //   .dropdown-menu {
+                    //     &.show {
+                    //       max-width: 100%;
+                    //       width: 100%;
+                    //       top: 56px !important;
+                    //       border: none;
+                    //       transform: none !important;
+                    //       box-shadow: 0 0 5px rgba($black, .14);
+                    //     }
+
+                    //     li {
+                    //       display: block;
+                    //     }
+                    //   }
+                    // }
+                }
+
+                .search-box {
+                    .input-group {
+                        ::placeholder {
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+
+                        .form-control {
+                            width: 577px;
+                            border-radius: 5px 0 0 5px;
+
+                            &:focus {
+                                border-color: var(--theme-color);
+                                background-color: $white;
+                            }
+                        }
+
+                        button {
+                            background-color: #FFA53B;
+                            color: $white;
+                            padding: 14px 20px;
+                            border-radius: 5px;
+                            border: 1px solid transparent;
+
+                            .feather {
+                                // width: 20px;
+                                // height: 20px;
+                                @include pseudowh($width: 20px, $height: 20px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .rightside-box {
+                .right-side-menu {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        position: relative;
+
+                        +li {
+                            padding-left: 32px;
+
+                            &::before {
+                                @include pos;
+                                @include center(vertical);
+                                left: 14px;
+                                // width: 1px;
+                                // height: 24px;
+                                @include pseudowh($width: 1px, $height: 24px);
+                                background-color: rgba($content-color, $alpha: .5);
+                            }
+                        }
+
+                        .delivery-login-box {
+                            display: flex;
+                            align-items: center;
+
+                            .delivery-icon {
+                                .feather {
+                                    color: $content-color;
+                                    margin-right: 14px;
+                                    stroke-width: 1.5;
+                                }
+                            }
+
+                            .delivery-detail {
+                                h6 {
+                                    color: $content-color;
+                                    margin-bottom: 3px;
+                                }
+
+                                h5 {
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+
+                        .header-badge {
+                            padding-right: 9px;
+                        }
+
+                        .header-wishlist {
+                            .feather {
+                                stroke-width: 1.5;
+                                color: $content-color;
+                            }
+
+                            span {
+                                background-color: #FF7272;
+                                font-size: 12px;
+                                // width: 18px;
+                                // height: 18px;
+                                @include pseudowh($width: 18px, $height: 18px);
+                                padding: 0;
+                                @include flex_common;
+                                border-radius: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+
+        .header-nav-left {
+            position: relative;
+
+            .dropdown-category {
+                // width: 222px;
+                // height: 53px;
+                // @include pseudowh($width: 222px, $height: 53px);
+                padding: 13px 29px;
+                background: var(--theme-color2);
+                color: $white;
+                border-radius: 5px;
+                @include flex_common;
+                border: none;
+
+                // @include mq-max(lg) {
+                //     display: none;
+                // }
+
+                &.black-dropdown {
+                    background: $title-color;
+                }
+
+                .feather {
+                    // font-size: 23px;
+                    // color: $white;
+                    margin-right: 16px;
+                    width: 25px;
+                    height: auto;
+                }
+
+                span {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                // .dropdown {
+                //     display: inline-block;
+
+                //     &.custom-dropdown {
+                //         // width: 150px;
+                //         position: unset;
+                //         // margin-right: 10px;
+
+                //         a {
+                //             display: block;
+                //             color: $white;
+                //             text-decoration: none;
+                //             transition: background 0.35s ease;
+                //             font-family: $public-sans;
+                //             font-weight: 500;
+                //             font-size: 18px;
+                //         }
+
+                //         .fa {
+                //             margin: 3px 0 0 10px;
+                //             font-size: 14px;
+                //             color: var(--theme-color);
+                //         }
+
+                //         ul {
+                //             display: none;
+                //             border: 1px solid $border-color;
+                //             border-radius: 5px;
+                //             position: absolute;
+                //             top: 53px;
+                //             width: 100%;
+                //             left: 0;
+                //             background-color: $white;
+                //             box-shadow: 0px 3px 4px rgba($black, 0.14);
+                //             z-index: 999;
+
+                //             .show {
+                //                 display: block;
+                //             }
+
+                //             @include mq-max(xl) {
+                //                 position: fixed;
+                //                 top: 0;
+                //                 left: 0;
+                //                 width: 320px;
+                //             }
+
+                //             li {
+                //                 display: flex;
+                //                 align-items: center;
+                //                 padding: 12px 14px;
+                //                 border-bottom: 1px solid $border-color;
+                //                 cursor: pointer;
+                //                 transition: background 0.35s ease;
+                //                 color: $title-color;
+
+                //                 img {
+                //                     // width: 25px;
+                //                     // height: 25px;
+                //                     @include pseudowh($width: 25px, $height: 25px);
+                //                     object-fit: contain;
+                //                     margin-right: 6px;
+                //                 }
+
+                //                 &:last-child {
+                //                     border-bottom: none;
+                //                 }
+
+                //                 &:focus,
+                //                 &:hover {
+                //                     background-color: $border-color;
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
+            }
+        }
+
+        .header-nav-right {
+
+            .deal-button {
+                color: var(--theme-color);
+                padding: 10px 20px;
+                position: relative;
+                border-radius: 5px;
+                overflow: hidden;
+                z-index: 0;
+
+                &::before {
+                    @include pos;
+                    top: 0;
+                    left: 0;
+                    @include pseudowh;
+                    background-color: var(--theme-color);
+                    opacity: 0.1;
+                    z-index: -1;
+                }
+
+                .feather {
+                    margin-right: 10px;
+                    stroke-width: 1.5px;
+                }
+
+                span {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
