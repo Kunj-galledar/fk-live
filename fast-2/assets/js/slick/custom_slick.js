@@ -83,19 +83,24 @@ $('.slider-3_1').slick({
   slidesToScroll: 1,
   slidesToShow: 3,
   arrows: false,
-  dots: true,
   responsive: [{
     breakpoint: 1262,
     settings: {
       slidesToShow: 2,
       autoplay: true,
       autoplaySpeed: 3500,
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 2800,
     }
   },
   {
     breakpoint: 650,
     settings: {
       slidesToShow: 1,
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 2800,
     }
   },
   ]
@@ -203,8 +208,8 @@ $('.slider-4-half').slick({
   centerMode: true,
   centerPadding: '200px',
   dots: true,
-  autoplay: true,
-  autoplaySpeed: 2500,
+  // autoplay: true,
+  // autoplaySpeed: 2500,
   responsive: [{
     breakpoint: 1524,
     settings: {
