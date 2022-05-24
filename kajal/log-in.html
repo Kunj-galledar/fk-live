@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fastkart">
+    <meta name="keywords" content="Fastkart">
+    <meta name="author" content="Fastkart">
+    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
+    <title>Log In</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
+
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/font-awesome.css">
+
+    <!-- feather icon css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/feather-icon.css">
+
+    <!-- animation css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/animate.css">
+
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick/slick-theme.css">
+
+    <!-- Iconly css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bulk-style.css">
+
+    <!-- Theme css -->
+    <link id="color-link" rel="stylesheet" type="text/css" href="assets/css/demo1.css">
+</head>
+
+<body>
+
+    <!-- log in section start -->
+    <section class="log-in-section background-image-2 section-b-space">
+        <div id="bg"></div>
+        <div class="container-fluid-lg">
+            <div class="row">
+                <div class="col-xxl-4 col-xl-5 col-lg-6">
+                    <div class="log-in-box">
+                        <div class="logo-name">
+                            <a href="index.html">Fast<span class="theme-color">kart.</span></a>
+                        </div>
+
+                        <div class="log-in-title">
+                            <h3>Welcome To Fastkart</h3>
+                            <h4>Log In Your Account</h4>
+                        </div>
+
+                        <div class="input-box">
+                            <form class="row g-4">
+                                <div class="col-12">
+                                    <div class="form-floating theme-form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Email Address">
+                                        <label for="email">Email Address</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-floating theme-form-floating">
+                                        <input type="password" class="form-control" id="password"
+                                            placeholder="Password">
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="forgot-box">
+                                        <div class="form-check ps-0 m-0 remember-box">
+                                            <input class="checkbox_animated" type="checkbox" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+                                        </div>
+                                        <a href="forgot.html" class="forgot-password">Forgot Password?</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-animation w-100" type="submit">Log In</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="other-log-in">
+                            <h6>or</h6>
+                        </div>
+
+                        <div class="log-in-button">
+                            <ul>
+                                <li>
+                                    <a href="www.google.com" class="btn google-button w-100">
+                                        <img src="assets/images/inner-page/google.png" alt=""> Log In with Google
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="www.google.com" class="btn google-button w-100">
+                                        <img src="assets/images/inner-page/facebook.png" alt=""> Log In with Facebook
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="other-log-in">
+                            <h6></h6>
+                        </div>
+
+                        <div class="sign-up-box">
+                            <h4>Don't have an account?</h4>
+                            <a href="sign-up.html">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-xxl-7 col-xl-6 col-lg-6">
+
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- log in section end -->
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+
+    <!-- feather icon js-->
+    <script src="assets/js/feather/feather.min.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        /*************************************/
+        // Low-poly Background animations
+
+        var refreshDuration = 10000;
+        var refreshTimeout;
+        var numPointsX;
+        var numPointsY;
+        var unitWidth;
+        var unitHeight;
+        var points;
+
+        function onLoad() {
+            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("width", window.outerWidth);
+            svg.setAttribute("height", window.outerHeight);
+            document.querySelector("#bg").appendChild(svg);
+
+            var unitSize = (window.innerWidth + window.innerHeight) / 15;
+            numPointsX = Math.ceil(window.innerWidth / unitSize) + 1;
+            numPointsY = Math.ceil(window.innerHeight / unitSize) + 1;
+            unitWidth = Math.ceil(window.innerWidth / (numPointsX - 1));
+            unitHeight = Math.ceil(window.innerHeight / (numPointsY - 1));
+
+            points = [];
+
+            for (var y = 0; y < numPointsY; y++) {
+                for (var x = 0; x < numPointsX; x++) {
+                    points.push({
+                        x: unitWidth * x,
+                        y: unitHeight * y,
+                        originX: unitWidth * x,
+                        originY: unitHeight * y
+                    });
+                }
+            }
+
+            randomize();
+
+            for (var i = 0; i < points.length; i++) {
+                if (
+                    points[i].originX != unitWidth * (numPointsX - 1) &&
+                    points[i].originY != unitHeight * (numPointsY - 1)
+                ) {
+                    var topLeftX = points[i].x;
+                    var topLeftY = points[i].y;
+                    var topRightX = points[i + 1].x;
+                    var topRightY = points[i + 1].y;
+                    var bottomLeftX = points[i + numPointsX].x;
+                    var bottomLeftY = points[i + numPointsX].y;
+                    var bottomRightX = points[i + numPointsX + 1].x;
+                    var bottomRightY = points[i + numPointsX + 1].y;
+
+                    var rando = Math.floor(Math.random() * 2);
+
+                    for (var n = 0; n < 2; n++) {
+                        var polygon = document.createElementNS(svg.namespaceURI, "polygon");
+
+                        if (rando == 0) {
+                            if (n == 0) {
+                                polygon.point1 = i;
+                                polygon.point2 = i + numPointsX;
+                                polygon.point3 = i + numPointsX + 1;
+                                polygon.setAttribute(
+                                    "points",
+                                    topLeftX +
+                                    "," +
+                                    topLeftY +
+                                    " " +
+                                    bottomLeftX +
+                                    "," +
+                                    bottomLeftY +
+                                    " " +
+                                    bottomRightX +
+                                    "," +
+                                    bottomRightY
+                                );
+                            } else if (n == 1) {
+                                polygon.point1 = i;
+                                polygon.point2 = i + 1;
+                                polygon.point3 = i + numPointsX + 1;
+                                polygon.setAttribute(
+                                    "points",
+                                    topLeftX +
+                                    "," +
+                                    topLeftY +
+                                    " " +
+                                    topRightX +
+                                    "," +
+                                    topRightY +
+                                    " " +
+                                    bottomRightX +
+                                    "," +
+                                    bottomRightY
+                                );
+                            }
+                        } else if (rando == 1) {
+                            if (n == 0) {
+                                polygon.point1 = i;
+                                polygon.point2 = i + numPointsX;
+                                polygon.point3 = i + 1;
+                                polygon.setAttribute(
+                                    "points",
+                                    topLeftX +
+                                    "," +
+                                    topLeftY +
+                                    " " +
+                                    bottomLeftX +
+                                    "," +
+                                    bottomLeftY +
+                                    " " +
+                                    topRightX +
+                                    "," +
+                                    topRightY
+                                );
+                            } else if (n == 1) {
+                                polygon.point1 = i + numPointsX;
+                                polygon.point2 = i + 1;
+                                polygon.point3 = i + numPointsX + 1;
+                                polygon.setAttribute(
+                                    "points",
+                                    bottomLeftX +
+                                    "," +
+                                    bottomLeftY +
+                                    " " +
+                                    topRightX +
+                                    "," +
+                                    topRightY +
+                                    " " +
+                                    bottomRightX +
+                                    "," +
+                                    bottomRightY
+                                );
+                            }
+                        }
+                        polygon.setAttribute("fill", "rgba(0,0,0," + Math.random() / 3 + ")");
+                        var animate = document.createElementNS(
+                            "http://www.w3.org/2000/svg",
+                            "animate"
+                        );
+                        animate.setAttribute("fill", "freeze");
+                        animate.setAttribute("attributeName", "points");
+                        animate.setAttribute("dur", refreshDuration + "ms");
+                        animate.setAttribute("calcMode", "linear");
+                        polygon.appendChild(animate);
+                        svg.appendChild(polygon);
+                    }
+                }
+            }
+
+            refresh();
+        }
+
+        function randomize() {
+            for (var i = 0; i < points.length; i++) {
+                if (
+                    points[i].originX != 0 &&
+                    points[i].originX != unitWidth * (numPointsX - 1)
+                ) {
+                    points[i].x = points[i].originX + Math.random() * unitWidth - unitWidth / 2;
+                }
+                if (
+                    points[i].originY != 0 &&
+                    points[i].originY != unitHeight * (numPointsY - 1)
+                ) {
+                    points[i].y =
+                        points[i].originY + Math.random() * unitHeight - unitHeight / 2;
+                }
+            }
+        }
+
+        function refresh() {
+            randomize();
+            for (var i = 0; i < document.querySelector("#bg svg").childNodes.length; i++) {
+                var polygon = document.querySelector("#bg svg").childNodes[i];
+                var animate = polygon.childNodes[0];
+                if (animate.getAttribute("to")) {
+                    animate.setAttribute("from", animate.getAttribute("to"));
+                }
+                animate.setAttribute(
+                    "to",
+                    points[polygon.point1].x +
+                    "," +
+                    points[polygon.point1].y +
+                    " " +
+                    points[polygon.point2].x +
+                    "," +
+                    points[polygon.point2].y +
+                    " " +
+                    points[polygon.point3].x +
+                    "," +
+                    points[polygon.point3].y
+                );
+                animate.beginElement();
+            }
+            refreshTimeout = setTimeout(function () {
+                refresh();
+            }, refreshDuration);
+        }
+
+        function onResize() {
+            document.querySelector("#bg svg").remove();
+            clearTimeout(refreshTimeout);
+            onLoad();
+        }
+
+        window.onload = onLoad;
+        window.onresize = onResize;
+
+        // End of Low-poly background animations
+    </script>
+</body>
+
+</html>
