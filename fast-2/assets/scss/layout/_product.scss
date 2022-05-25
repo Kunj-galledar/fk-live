@@ -246,6 +246,11 @@
                     >.row {
                          border-right: 1px solid rgba($content-color, 0.3);
                          margin-left: 0;
+
+                         [dir="rtl"] & {
+                              border-left: 1px solid rgba($content-color, 0.3);
+                              border-right: unset;
+                         }
                     }
                }
           }
@@ -259,6 +264,11 @@
                     &:nth-child(5n+5) {
                          .product-box {
                               border-right: none;
+
+                              [dir="rtl"] & {
+                                   border-left: none;
+                                   border-right: unset;
+                              }
                          }
                     }
 
@@ -1169,6 +1179,11 @@
                     .product-footer {
                          padding-left: 20px;
                          width: calc(100% - 180px);
+
+                         [dir="rtl"] & {
+                              padding-left: unset;
+                              padding-right: 20px;
+                         }
 
                          @include mq-max(md) {
                               padding: 0;

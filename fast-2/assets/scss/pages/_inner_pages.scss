@@ -4138,6 +4138,11 @@
             // height: 3px;
             @include pseudowh($width: 140px, $height: 3px);
             background-color: #ffa53b;
+
+            [dir="rtl"] & {
+                right: 0;
+                left: unset;
+            }
         }
     }
 }
@@ -4355,6 +4360,11 @@
                         // height: auto;
                         @include pseudowh($width: calc(18px + (19 - 18) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                         margin-right: 10px;
+
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 10px;
+                        }
                     }
 
                     // &::before {
@@ -4437,6 +4447,11 @@
                         opacity: 0.12;
                         right: -30px;
                         filter: grayscale(1);
+
+                        [dir="rtl"] & {
+                            right: unset;
+                            left: -30px;
+                        }
                     }
 
                     .totle-detail {
@@ -4544,6 +4559,11 @@
                                     margin-left: calc(9px + (20 - 9) * ((100vw - 320px) / (1920 - 320)));
                                     font-weight: 600;
 
+                                    [dir="rtl"] & {
+                                        margin-left: unset;
+                                        margin-right: calc(9px + (20 - 9) * ((100vw - 320px) / (1920 - 320)));
+                                    }
+
                                     &.success-bg {
                                         background: var(--theme-color2);
                                     }
@@ -4643,6 +4663,11 @@
                         color: $white;
                         font-size: 12px;
                         letter-spacing: 0.8px;
+
+                        [dir="rtl"] & {
+                            right: unset;
+                            left: 0;
+                        }
                     }
 
                     .form-check {
@@ -4691,6 +4716,11 @@
                                         min-width: 90px;
                                         color: $content-color;
                                         padding-left: 8px;
+
+                                        [dir="rtl"] & {
+                                            padding-left: unset;
+                                            padding-right: 8px;
+                                        }
                                     }
 
                                     &:last-child {
@@ -4745,6 +4775,11 @@
                             // height: auto;
                             @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                             margin-right: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
+
+                            [dir="rtl"] & {
+                                margin-right: unset;
+                                margin-left: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
+                            }
                         }
                     }
                 }
@@ -4985,6 +5020,11 @@
                         display: flex;
                         align-items: center;
 
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 10px;
+                        }
+
                         span {
                             background: var(--theme-color2);
                             color: $white;
@@ -4992,6 +5032,11 @@
                             margin-left: 10px;
                             border-radius: 5px;
                             font-size: 13px;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 10px;
+                            }
                         }
                     }
 
@@ -5010,6 +5055,11 @@
                     border-radius: 5px;
                     overflow: hidden;
                     display: inline-block;
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: auto;
+                    }
 
                     @include mq-max(xs) {
                         margin-top: 10px;
@@ -5109,6 +5159,11 @@
                                         font-weight: 600;
                                         overflow: hidden;
                                         z-index: 0;
+
+                                        [dir="rtl"] & {
+                                            margin-left: unset;
+                                            margin-right: 20px;
+                                        }
 
                                         &::before {
                                             @include pos;

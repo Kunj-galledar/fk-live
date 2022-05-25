@@ -654,3 +654,47 @@ $('.search-product').slick({
   },
   ]
 });
+
+$('.three-slider-1').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+
+  responsive: [{
+      breakpoint: 1660,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 1100,
+      settings: {
+        slidesToShow: 1,
+        fade: true,
+      }
+    },
+  ]
+})
+
+$('.three-slider').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+
+  responsive: [{
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 757,
+      settings: {
+        slidesToShow: 1,
+        fade: true,
+      }
+    },
+  ]
+})

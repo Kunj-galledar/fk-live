@@ -13,6 +13,11 @@
   border: none;
   font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
   z-index: 1;
+  overflow: hidden;
+
+  &:focus {
+    box-shadow: none;
+  }
 
   .icon {
     margin-left: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
@@ -52,9 +57,9 @@
     &:hover {
       color: $white;
 
-      i {
-        transform: translateX(3px);
-      }
+      // i {
+      //   transform: translateX(3px);
+      // }
 
       &::after {
         top: 0;

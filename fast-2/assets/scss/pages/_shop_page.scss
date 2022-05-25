@@ -63,7 +63,7 @@
           }
 
           h2 {
-               font-size: 58px;
+               font-size: calc(24px + (58 - 24) * ((100vw - 320px) / (1920 - 320)));
                margin: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) 0;
                line-height: 1.2;
                font-weight: 700;
@@ -456,11 +456,11 @@
           }
      }
 
-     .irs-slider {
-          &.state_hover {
-               background: $white;
-          }
-     }
+     // .irs-slider {
+     //      &.state_hover {
+     //           background: $white;
+     //      }
+     // }
 }
 
 .js-range-slider {
@@ -469,6 +469,7 @@
      border-radius: 5px;
      border: 1px solid #ddd;
      color: $title-color;
+     width: 100%;
 }
 
 // ========== Price Range Slider =============
@@ -478,6 +479,11 @@
           position: sticky;
           top: 0;
           border-right: 1px solid #ddd;
+
+          [dir="rtl"] & {
+               border-right: unset;
+               border-left: 1px solid #ddd;
+          }
 
           @include mq-max(lg) {
                border-right: unset;
@@ -493,11 +499,21 @@
                overflow-x: scroll;
                overflow-y: auto;
                transition: all .3s ease-in-out;
+
+               [dir="rtl"] & {
+                    border-right: unset;
+                    border-left: unset;
+               }
           }
 
           &.right-box {
                border-right: unset;
                border-left: 1px solid #ddd;
+
+               [dir="rtl"] & {
+                    border-left: unset;
+                    border-right: 1px solid #ddd;
+               }
 
                @include mq-max(lg) {
                     border-left: unset;
@@ -518,6 +534,11 @@
           .shop-left-sidebar {
                padding-right: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
 
+               [dir="rtl"] & {
+                    padding-right: unset;
+                    padding-left: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+               }
+
                @include mq-max(lg) {
                     padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                }
@@ -528,6 +549,11 @@
                     padding-left: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                     padding-right: unset;
 
+                    // [dir="rtl"] & {
+                    //      padding-right: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    //      padding-left: unset;
+                    // }
+
                     @include mq-max(lg) {
                          padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                     }
@@ -537,6 +563,11 @@
                               i {
                                    margin-right: unset;
                                    margin-left: 10px;
+
+                                   [dir="rtl"] & {
+                                        margin-right: 10px;
+                                        margin-left: unset;
+                                   }
                               }
                          }
                     }
@@ -557,6 +588,11 @@
 
                          i {
                               margin-right: 10px;
+
+                              [dir="rtl"] & {
+                                   margin-left: 10px;
+                                   margin-right: unset;
+                              }
                          }
                     }
                }
@@ -846,6 +882,11 @@
 
                     .dropdown {
                          margin-left: 10px;
+
+                         [dir="rtl"] & {
+                              margin-right: 10px;
+                              margin-left: unset;
+                         }
 
                          .dropdown-toggle {
                               border: none;
