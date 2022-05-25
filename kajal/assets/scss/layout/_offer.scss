@@ -1,0 +1,82 @@
+/**=====================
+     Slider css start
+==========================**/
+@mixin offer_common {
+    .best-deal-card {
+        border: 3px solid var(--theme-color);
+        border-radius: 10px;
+        overflow: hidden;
+
+        .card-body {
+            position: relative;
+            text-align: center;
+
+            &::before {
+                @include pos;
+                @include pseudowh;
+                top: 0;
+                left: 0;
+                background-color: var(--theme-color);
+                opacity: 0.1;
+            }
+
+            h3 {
+                font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+            }
+
+            h2 {
+                font-size: calc(17px + (25 - 17) * ((100vw - 320px) / (1920 - 320)));
+                margin: 0;
+                color: $black;
+            }
+        }
+    }
+}
+
+@mixin offer_1 {
+    .offer-section {
+        .offer-box {
+            @include flex_common;
+            background-image: url(../images/grocery/celebration.png);
+            background-repeat: repeat;
+            overflow: hidden;
+            border: 4px dashed var(--theme-color);
+            padding: 20px;
+            position: relative;
+            border-radius: 8px;
+
+            @include mq-max(sm) {
+                display: block;
+                text-align: center;
+            }
+
+            &::before {
+                @include pos;
+                @include pseudowh;
+                top: 0;
+                left: 0;
+                background-color: var(--theme-color);
+                opacity: .1;
+                z-index: -1;
+            }
+
+            h2 {
+                margin-left: 20px;
+                color: var(--theme-color);
+                font-weight: 500;
+                font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+
+                @include mq-max(sm) {
+                    margin-left: 0;
+                    line-height: 1.3;
+                    margin-top: 10px;
+                }
+
+                span {
+                    font-weight: 700;
+                    font-size: calc(24px + (28 - 24) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+        }
+    }
+}
