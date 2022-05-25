@@ -943,11 +943,11 @@
           }
 
           &::before {
-            content: "\f107";
+            // content: "\f107";
+            // position: absolute;
             @include font;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            @include pos($pos: absolute, $content: "\f107");
+            @include center(vertical);
             right: 30px;
             transition: transform 0.2s ease-in-out;
           }
@@ -1410,9 +1410,10 @@
         }
 
         &::before {
-          content: "\f107";
+          // content: "\f107";
+          // position: absolute;
           @include font;
-          position: absolute;
+          @include pos($pos: absolute, $content: "\f107");
           @include center(vertical);
           right: 20px;
         }
@@ -1515,8 +1516,9 @@
       position: relative;
 
       &:before {
-        content: "";
-        position: absolute;
+        // content: "";
+        // position: absolute;
+        @include pos;
         top: 0;
         left: 0;
         width: 100%;
@@ -1531,8 +1533,9 @@
       position: relative;
 
       &:after {
-        content: "";
-        position: absolute;
+        // content: "";
+        // position: absolute;
+        @include pos;
         top: 0;
         left: 0;
         width: 100%;
@@ -1547,8 +1550,9 @@
       position: relative;
 
       &:after {
-        content: "";
-        position: absolute;
+        // content: "";
+        // position: absolute;
+        @include pos;
         top: 0;
         left: 0;
         width: 100%;

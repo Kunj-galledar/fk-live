@@ -98,22 +98,22 @@
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                             <li>
-                                                <a class="dropdown-item" href="#">English</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">English</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">Hindi</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">Hindi</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">Gujarati</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">Gujarati</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">Arbic</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">Arbic</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">Rusia</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">Rusia</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">Chinese</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">Chinese</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -125,16 +125,16 @@
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                             <li>
-                                                <a class="dropdown-item" href="#">USD</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">USD</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">INR</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">INR</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">EUR</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">EUR</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="#">AUD</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">AUD</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -362,9 +362,8 @@
                                                                 href="dashboard-orders.html">Orders</a>
                                                             <ul class="dropdown-menu">
                                                                 <li>
-                                                                    <a class="dropdown-item"
-                                                                        href="account-profile.html">Profile
-                                                                        Info</a>
+                                                                    <a href="account-profile.html"
+                                                                        class="dropdown-item">Profile Info</a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="dropdown-item"
@@ -1070,7 +1069,7 @@
                                 </a>
 
                                 <div class="deal-detail order-sm-1">
-                                    <button class="buy-box btn btn-animation btn-cart">
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli m-0"></i>
                                     </button>
                                     <div class="hot-deal">
@@ -1144,7 +1143,7 @@
                                 </a>
 
                                 <div class="deal-detail order-sm-1">
-                                    <button class="buy-box btn btn-animation btn-cart">
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli m-0"></i>
                                     </button>
                                     <div class="hot-deal">
@@ -1218,7 +1217,7 @@
                                 </a>
 
                                 <div class="deal-detail order-sm-1">
-                                    <button class="buy-box btn btn-animation btn-cart">
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli m-0"></i>
                                     </button>
                                     <div class="hot-deal">
@@ -1292,7 +1291,7 @@
                                 </div>
 
                                 <div class="deal-detail order-sm-1">
-                                    <button class="buy-box btn btn-animation btn-cart">
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli m-0"></i>
                                     </button>
                                     <div class="hot-deal">
@@ -1366,7 +1365,7 @@
     <!-- Deal Section End -->
 
     <!-- Product Sction Start -->
-    <!-- <section class="product-section">
+    <section class="product-section">
         <div class="container-fluid-lg">
             <div class="title title-flex">
                 <h2 class="mb-lg-0 mb-2">Our Products</h2>
@@ -1405,7 +1404,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="row g-8">
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -1459,22 +1458,28 @@
                                 </ul>
                                 <h5 class="name">Bell pepper</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <button class="btn p-0 wishlist btn-wishlist">
@@ -1524,22 +1529,27 @@
                                 </ul>
                                 <h5 class="name">Eggplant</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -1593,22 +1603,27 @@
                                 </ul>
                                 <h5 class="name">Potato</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <button class="btn p-0 wishlist btn-wishlist">
@@ -1658,22 +1673,27 @@
                                 </ul>
                                 <h5 class="name">Onion</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -1727,22 +1747,27 @@
                                 </ul>
                                 <h5 class="name">Baby Chili</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -1796,22 +1821,27 @@
                                 </ul>
                                 <h5 class="name">Broccoli</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -1865,22 +1895,27 @@
                                 </ul>
                                 <h5 class="name">Peru</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <button class="btn p-0 wishlist btn-wishlist">
@@ -1930,22 +1965,27 @@
                                 </ul>
                                 <h5 class="name">Apple</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -1999,22 +2039,27 @@
                                 </ul>
                                 <h5 class="name">Avacado</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <button class="btn p-0 wishlist btn-wishlist">
@@ -2064,22 +2109,27 @@
                                 </ul>
                                 <h5 class="name">Pea</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -2133,22 +2183,27 @@
                                 </ul>
                                 <h5 class="name">Cucumber</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -2202,22 +2257,27 @@
                                 </ul>
                                 <h5 class="name">Beetroot</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -2271,22 +2331,27 @@
                                 </ul>
                                 <h5 class="name">Strawberry</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <button class="btn p-0 wishlist btn-wishlist">
@@ -2336,22 +2401,27 @@
                                 </ul>
                                 <h5 class="name">Passion</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -2405,22 +2475,27 @@
                                 </ul>
                                 <h5 class="name">Corn</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <button class="btn p-0 wishlist btn-wishlist">
@@ -2470,22 +2545,27 @@
                                 </ul>
                                 <h5 class="name">Blackberry</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -2539,22 +2619,27 @@
                                 </ul>
                                 <h5 class="name">Cabbage</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
-                        <div class="product-box">
+                        <div class="product-box-4">
                             <div class="product-image">
                                 <div class="label-flex">
                                     <div class="discount">
@@ -2608,15 +2693,20 @@
                                 </ul>
                                 <h5 class="name">Ginger</h5>
                                 <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                <div class="counter-number">
-                                    <div class='counter'>
-                                        <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                        <input type='text' value='1'>
-                                        <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
                                 </div>
-                                <button class="buy-box btn btn-animation btn-cart btn-sm">
-                                    <i class="iconly-Buy icli"></i>
+                                <button class="buy-box btn gradient-bg-theme text-white btn-cart">
+                                    <i class="iconly-Buy icli m-0"></i>
                                 </button>
                             </div>
                         </div>
@@ -2624,46 +2714,45 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- Product Sction End -->
 
     <!-- Banner Section Start -->
-    <!-- <section class="banner-section ratio_50">
+    <section class="banner-section ratio_50 section-b-space">
         <div class="container-fluid-lg">
             <div class="row gy-lg-0 gy-3">
                 <div class="col-lg-6">
-                    <div class="banner-contain">
+                    <div class="banner-contain-3">
                         <img src="assets/images/veg-3/banner/1.png" class="bg-img img-fluid" alt="">
                         <div class="banner-detail text-white p-center-left w-50">
                             <div>
                                 <h6 class="ls-expanded text-uppercase">Premium</h6>
                                 <h3 class="mb-sm-3 mb-1">Fresh Vegetable & Daily Eating</h3>
                                 <h4>Get Extra 50% Off</h4>
-                                <button onclick="location.href = 'shop-left-sidebar.html';"
-                                    class="btn btn-animation btn-white btn-animation-white mt-sm-3 mt-1">Shop
-                                    Now</button>
+                                <button class="btn theme-color bg-white btn-md fw-bold mt-sm-3 mt-1"
+                                    onclick="location.href = 'shop-left-sidebar.html';">Shop Now</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6">
-                    <div class="banner-contain">
+                    <div class="banner-contain-3">
                         <img src="assets/images/veg-3/banner/2.png" class="bg-img img-fluid" alt="">
                         <div class="banner-detail text-dark p-center-left w-50">
                             <div>
                                 <h6 class="ls-expanded text-uppercase">available</h6>
                                 <h3 class="mb-sm-3 mb-1">100% Natural & Healthy Fruits</h3>
                                 <h4 class="text-content">Weekend Special</h4>
-                                <button onclick="location.href = 'shop-left-sidebar.html';"
-                                    class="btn btn-animation mt-sm-3 mt-1">Shop Now</button>
+                                <button class="btn gradient-bg-theme text-white btn-md fw-bold mt-sm-3 mt-1"
+                                    onclick="location.href = 'shop-left-sidebar.html';">Shop Now</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- Banner Section End -->
 
     <!-- Product Section Start -->
@@ -2681,7 +2770,7 @@
                                 <div>
                                     <div class="row gy-4">
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/1.png" class="img-fluid"
                                                         alt="">
@@ -2738,7 +2827,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/2.png" class="img-fluid"
                                                         alt="">
@@ -2795,7 +2884,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/3.png" class="img-fluid"
                                                         alt="">
@@ -2856,7 +2945,7 @@
                                 <div>
                                     <div class="row gy-4">
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/4.png" class="img-fluid"
                                                         alt="">
@@ -2913,7 +3002,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/5.png" class="img-fluid"
                                                         alt="">
@@ -2970,7 +3059,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/6.png" class="img-fluid"
                                                         alt="">
@@ -3043,7 +3132,7 @@
                                 <div>
                                     <div class="row gy-4">
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/7.png" class="img-fluid"
                                                         alt="">
@@ -3100,7 +3189,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/8.png" class="img-fluid"
                                                         alt="">
@@ -3157,7 +3246,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/9.png" class="img-fluid"
                                                         alt="">
@@ -3218,7 +3307,7 @@
                                 <div>
                                     <div class="row gy-4">
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/10.png" class="img-fluid"
                                                         alt="">
@@ -3275,7 +3364,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/11.png" class="img-fluid"
                                                         alt="">
@@ -3332,7 +3421,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/12.png" class="img-fluid"
                                                         alt="">
@@ -3405,7 +3494,7 @@
                                 <div>
                                     <div class="row gy-4">
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/1.png" class="img-fluid"
                                                         alt="">
@@ -3462,7 +3551,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/2.png" class="img-fluid"
                                                         alt="">
@@ -3519,7 +3608,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/3.png" class="img-fluid"
                                                         alt="">
@@ -3580,7 +3669,7 @@
                                 <div>
                                     <div class="row gy-4">
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/4.png" class="img-fluid"
                                                         alt="">
@@ -3637,7 +3726,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/5.png" class="img-fluid"
                                                         alt="">
@@ -3694,7 +3783,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/6.png" class="img-fluid"
                                                         alt="">
@@ -3767,7 +3856,7 @@
                                 <div>
                                     <div class="row gy-4">
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/7.png" class="img-fluid"
                                                         alt="">
@@ -3824,7 +3913,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/8.png" class="img-fluid"
                                                         alt="">
@@ -3881,7 +3970,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/9.png" class="img-fluid"
                                                         alt="">
@@ -3942,7 +4031,7 @@
                                 <div>
                                     <div class="row gy-4">
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/10.png" class="img-fluid"
                                                         alt="">
@@ -3999,7 +4088,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/11.png" class="img-fluid"
                                                         alt="">
@@ -4056,7 +4145,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <div class="product-box">
+                                            <div class="product-box-4">
                                                 <a href="shop-left-sidebar.html" class="product-image">
                                                     <img src="assets/images/veg-3/pro1/12.png" class="img-fluid"
                                                         alt="">
@@ -4156,7 +4245,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -4210,14 +4299,19 @@
                                     </ul>
                                     <h5 class="name">Bell pepper</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                   <div class="counter-number qty-box">
+                                       <div class="input-group">
+                                           <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                               <i class="fa fa-minus" aria-hidden="true"></i>
+                                           </button>
+                                           <input class="form-control input-number qty-input" type="text"
+                                               name="quantity" value="0">
+                                           <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                               <i class="fa fa-plus" aria-hidden="true"></i>
+                                           </button>
+                                       </div>
+                                   </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4225,7 +4319,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
@@ -4275,14 +4369,19 @@
                                     </ul>
                                     <h5 class="name">Eggplant</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4294,7 +4393,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -4348,14 +4447,19 @@
                                     </ul>
                                     <h5 class="name">Potato</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4363,7 +4467,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
@@ -4413,14 +4517,19 @@
                                     </ul>
                                     <h5 class="name">Onion</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4432,7 +4541,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -4486,14 +4595,19 @@
                                     </ul>
                                     <h5 class="name">Baby Chili</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                 <div class="counter-number qty-box">
+                                     <div class="input-group">
+                                         <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                             <i class="fa fa-minus" aria-hidden="true"></i>
+                                         </button>
+                                         <input class="form-control input-number qty-input" type="text" name="quantity"
+                                             value="0">
+                                         <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                             <i class="fa fa-plus" aria-hidden="true"></i>
+                                         </button>
+                                     </div>
+                                 </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4501,7 +4615,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -4555,14 +4669,19 @@
                                     </ul>
                                     <h5 class="name">Broccoli</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4574,7 +4693,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -4628,14 +4747,19 @@
                                     </ul>
                                     <h5 class="name">Peru</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4643,7 +4767,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
@@ -4693,14 +4817,19 @@
                                     </ul>
                                     <h5 class="name">Apple</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4712,7 +4841,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -4766,14 +4895,20 @@
                                     </ul>
                                     <h5 class="name">Avacado</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                    <div class="counter-number qty-box">
+                                        <div class="input-group">
+                                            <button type="button" class="qty-left-minus" data-type="minus"
+                                                data-field="">
+                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                            </button>
+                                            <input class="form-control input-number qty-input" type="text"
+                                                name="quantity" value="0">
+                                            <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </button>
                                         </div>
                                     </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4781,7 +4916,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
@@ -4831,14 +4966,19 @@
                                     </ul>
                                     <h5 class="name">Pea</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                 <div class="counter-number qty-box">
+                                     <div class="input-group">
+                                         <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                             <i class="fa fa-minus" aria-hidden="true"></i>
+                                         </button>
+                                         <input class="form-control input-number qty-input" type="text" name="quantity"
+                                             value="0">
+                                         <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                             <i class="fa fa-plus" aria-hidden="true"></i>
+                                         </button>
+                                     </div>
+                                 </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4850,7 +4990,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -4904,14 +5044,19 @@
                                     </ul>
                                     <h5 class="name">Cucumber</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                 <div class="counter-number qty-box">
+                                     <div class="input-group">
+                                         <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                             <i class="fa fa-minus" aria-hidden="true"></i>
+                                         </button>
+                                         <input class="form-control input-number qty-input" type="text" name="quantity"
+                                             value="0">
+                                         <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                             <i class="fa fa-plus" aria-hidden="true"></i>
+                                         </button>
+                                     </div>
+                                 </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4919,7 +5064,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
@@ -4969,14 +5114,19 @@
                                     </ul>
                                     <h5 class="name">Beetroot</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -4988,7 +5138,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -5042,14 +5192,19 @@
                                     </ul>
                                     <h5 class="name">Strawberry</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                              <div class="counter-number qty-box">
+                                  <div class="input-group">
+                                      <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                          <i class="fa fa-minus" aria-hidden="true"></i>
+                                      </button>
+                                      <input class="form-control input-number qty-input" type="text" name="quantity"
+                                          value="0">
+                                      <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                          <i class="fa fa-plus" aria-hidden="true"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -5057,7 +5212,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
@@ -5107,14 +5262,19 @@
                                     </ul>
                                     <h5 class="name">Passion</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -5126,7 +5286,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -5180,14 +5340,19 @@
                                     </ul>
                                     <h5 class="name">Corn</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                               <div class="counter-number qty-box">
+                                   <div class="input-group">
+                                       <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                           <i class="fa fa-minus" aria-hidden="true"></i>
+                                       </button>
+                                       <input class="form-control input-number qty-input" type="text" name="quantity"
+                                           value="0">
+                                       <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                           <i class="fa fa-plus" aria-hidden="true"></i>
+                                       </button>
+                                   </div>
+                               </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -5195,7 +5360,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -5249,14 +5414,19 @@
                                     </ul>
                                     <h5 class="name">Blackberry</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
+                                <div class="counter-number qty-box">
+                                    <div class="input-group">
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input class="form-control input-number qty-input" type="text" name="quantity"
+                                            value="0">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
                                     </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -5268,7 +5438,7 @@
                 <div>
                     <div class="row gy-4">
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -5322,14 +5492,20 @@
                                     </ul>
                                     <h5 class="name">Cabbage</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
+                                    <div class="counter-number qty-box">
+                                        <div class="input-group">
+                                            <button type="button" class="qty-left-minus" data-type="minus"
+                                                data-field="">
+                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                            </button>
+                                            <input class="form-control input-number qty-input" type="text"
+                                                name="quantity" value="0">
+                                            <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </button>
                                         </div>
                                     </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -5337,7 +5513,7 @@
                         </div>
 
                         <div class="col-12">
-                            <div class="product-box">
+                            <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
@@ -5391,14 +5567,19 @@
                                     </ul>
                                     <h5 class="name">Ginger</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="counter-number">
-                                        <div class='counter'>
-                                            <div class='down' onclick='decreaseCount(event, this)'>-</div>
-                                            <input type='text' value='1'>
-                                            <div class='up' onclick='increaseCount(event, this)'>+</div>
-                                        </div>
-                                    </div>
-                                    <button class="buy-box btn btn-animation btn-cart btn-sm">
+                                  <div class="counter-number qty-box">
+                                      <div class="input-group">
+                                          <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                              <i class="fa fa-minus" aria-hidden="true"></i>
+                                          </button>
+                                          <input class="form-control input-number qty-input" type="text" name="quantity"
+                                              value="0">
+                                          <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                              <i class="fa fa-plus" aria-hidden="true"></i>
+                                          </button>
+                                      </div>
+                                  </div>
+                                    <button class="buy-box btn gradient-bg-theme text-white btn-cart">
                                         <i class="iconly-Buy icli"></i>
                                     </button>
                                 </div>
@@ -6018,6 +6199,9 @@
 
     <!-- Auto Height Js -->
     <script src="assets/js/auto-height.js"></script>
+
+    <!-- Auto Height Js -->
+    <script src="assets/js/quantity.js"></script>
 
     <!-- Timer Js -->
     <script src="assets/js/timer.js"></script>

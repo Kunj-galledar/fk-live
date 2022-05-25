@@ -45,21 +45,22 @@
                         .theme-form-select {
                             padding: 0;
                             background-color: transparent;
-                            color: #fff;
+                            color: $white;
                             border: none;
                             background-image: none;
                             width: 70px;
                             position: relative;
 
                             &::before {
-                                position: absolute;
-                                content: "\f107";
+                                // position: absolute;
+                                // content: "\f107";
+                                @include pos($pos: absolute, $content: "\f107");
                                 @include font;
                                 @include pseudowh;
                                 @include center(vertical);
                                 right: 0;
                                 // background-color: red;
-                                color: #fff;
+                                color: $white;
                             }
                         }
                     }

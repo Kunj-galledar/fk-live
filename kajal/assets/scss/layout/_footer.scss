@@ -107,9 +107,10 @@
 
                 @include mq-max(sm) {
                     &::before {
-                        content: "\f107";
+                        // content: "\f107";
+                        // position: absolute;
+                        @include pos($pos: absolute, $content: "\f107");
                         @include font;
-                        position: absolute;
                         @include center(vertical);
                         right: 0;
                         font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
@@ -145,9 +146,10 @@
                         }
 
                         &:before {
-                            content: "\f105";
+                            // content: "\f105";
+                            // position: absolute;
                             @include font;
-                            position: absolute;
+                            @include pos($pos: absolute, $content: "\f105");
                             top: 0;
                             left: -20px;
                             border-radius: 100%;
