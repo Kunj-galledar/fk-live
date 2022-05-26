@@ -60,9 +60,10 @@ section,
 
 // Position Center
 .p-center-left {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  // display: flex;
+  // align-items: center;
+  // justify-content: flex-start;
+  @include flex_common ($dis: flex, $align: center, $justify: flex-start);
 }
 
 .p-center {
@@ -71,28 +72,32 @@ section,
 }
 
 .p-center-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  // display: flex;
+  // align-items: center;
+  // justify-content: flex-end;
+  @include flex_common ($dis: flex, $align: center, $justify: flex-end);
 }
 
 // Position Bottom
 .p-bottom-left {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  // display: flex;
+  // align-items: flex-end;
+  // justify-content: flex-start;
+  @include flex_common ($dis: flex, $align: flex-end, $justify: flex-start);
 }
 
 .p-bottom-center {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  // display: flex;
+  // align-items: flex-end;
+  // justify-content: center;
+  @include flex_common ($dis: flex, $align: flex-end, $justify: center);
 }
 
 .p-bottom-right {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  // display: flex;
+  // align-items: flex-end;
+  // justify-content: flex-end;
+  @include flex_common ($dis: flex, $align: flex-end, $justify: flex-end);
 }
 
 .ls-expanded {
@@ -106,15 +111,16 @@ section,
 .g-8 {
   margin: -8px;
 
-  > div {
+  >div {
     padding: 8px;
   }
 }
 
 // Svg Width
 .icon-width {
-  width: 25px;
-  height: 25px;
+  // width: 25px;
+  // height: 25px;
+  @include pseudowh($width: 25px, $height: 25px);
 }
 
 // Rating
@@ -126,7 +132,7 @@ section,
     align-items: center;
 
     li {
-      + li {
+      +li {
         margin-left: 1px;
       }
     }
