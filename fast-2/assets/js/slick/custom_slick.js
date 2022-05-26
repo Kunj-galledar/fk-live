@@ -36,6 +36,13 @@ $('.category-slider').slick({
   ]
 });
 
+$('.product-category-1').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+})
+
 $('.slider-1').slick({
   arrows: false,
   infinite: true,
@@ -43,6 +50,13 @@ $('.slider-1').slick({
   slidesToScroll: 1,
   dots: true,
 });
+
+// $('.slider-1-category').slick({
+//   arrows: true,
+//   infinite: true,
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+// });
 
 $('.slider-3').slick({
   infinite: true,
@@ -107,7 +121,7 @@ $('.slider-3_1').slick({
 });
 
 $('.slider-4').slick({
-  arrows: false,
+  arrows: true,
   infinite: true,
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -401,7 +415,7 @@ $('.slider-5-2').slick({
 $('.slider-6').slick({
   arrows: false,
   infinite: true,
-  slidesToShow: 9,
+  slidesToShow: 6,
   slidesToScroll: 1,
   responsive: [{
     breakpoint: 1630,
@@ -694,6 +708,116 @@ $('.three-slider').slick({
       settings: {
         slidesToShow: 1,
         fade: true,
+      }
+    },
+  ]
+})
+
+$('.category-slider-1').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 8,
+  slidesToScroll: 1,
+  responsive: [{
+      breakpoint: 1661,
+      settings: {
+        slidesToShow: 7,
+      }
+    },
+    {
+      breakpoint: 1461,
+      settings: {
+        slidesToShow: 6,
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 5,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 4,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+  ]
+});
+
+$('.slider-7_1').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  responsive: [{
+      breakpoint: 1660,
+      settings: {
+        slidesToShow: 6,
+      }
+    },
+    {
+      breakpoint: 1501,
+      settings: {
+        slidesToShow: 5,
+      }
+    },
+    {
+      breakpoint: 1251,
+      settings: {
+        slidesToShow: 4,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 575,
+      settings: {
+        slidesToShow: 2,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      }
+    },
+  ]
+})
+
+$('.slider-5_2').slick({
+  infinite: true,
+  slidesToScroll: 1,
+  slidesToShow: 5,
+  arrows: false,
+  responsive: [{
+      breakpoint: 1700,
+      settings: {
+        slidesToShow: 4,
+      }
+    },
+    {
+      breakpoint: 1400,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
       }
     },
   ]
