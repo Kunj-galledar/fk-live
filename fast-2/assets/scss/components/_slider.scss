@@ -271,3 +271,118 @@
           display: initial;
      }
 }
+
+.product-arrow {
+
+     .slick-prev,
+     .slick-next {
+          background-color: $border-color;
+          // width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
+          // height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
+          @include pseudowh($width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))));
+          border-radius: 5px;
+          @include flex_common;
+          z-index: 1;
+          transition: .3s ease;
+
+          &::before {
+               @include font;
+          }
+     }
+
+     .slick-prev {
+          left: 0;
+
+          &::before {
+               color: $black;
+               content: "\f104";
+          }
+
+          &:hover,
+          &:focus {
+               background-color: var(--theme-color);
+
+               &::before {
+                    color: $white;
+               }
+          }
+     }
+
+     .slick-next {
+          right: 0;
+
+          &:before {
+               color: $black;
+               content: "\f105";
+          }
+
+          &:hover,
+          &:focus {
+               background-color: var(--theme-color);
+
+               &::before {
+                    color: $white;
+               }
+          }
+     }
+}
+
+.product-box-arrow {
+
+     .slick-prev,
+     .slick-next {
+          // background-color: $border-color;
+          // width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
+          // height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
+          @include pseudowh($width: 32px, $height: 32px);
+          border-radius: 50%;
+          @include flex_common;
+          z-index: 1;
+          transition: all .3s ease;
+          background-color: $white;
+          box-shadow: 0px 3px 4px rgba($black, .14);
+          color: $content-color;
+
+          &::before {
+               @include font;
+          }
+     }
+
+     .slick-prev {
+          left: -28px;
+          // transform: translateY(-40px);
+
+          &::before {
+               color: $black;
+               content: "\f104";
+          }
+
+          &:hover,
+          &:focus {
+               background-color: var(--theme-color);
+
+               &::before {
+                    color: $white;
+               }
+          }
+     }
+
+     .slick-next {
+          right: -28px;
+          // transform: translateY(-40px);
+
+          &:before {
+               color: $black;
+               content: "\f105";
+          }
+
+          &:hover,
+          &:focus {
+               background-color: var(--theme-color);
+
+               &::before {
+                    color: $white;
+               }
+          }
+     }
+}

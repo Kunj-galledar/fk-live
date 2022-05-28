@@ -36,6 +36,44 @@ $('.category-slider').slick({
   ]
 });
 
+$('.category-slider-2').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 7,
+  slidesToScroll: 1,
+  responsive: [{
+      breakpoint: 1745,
+      settings: {
+        slidesToShow: 6,
+      }
+    },
+    {
+      breakpoint: 1540,
+      settings: {
+        slidesToShow: 5,
+      }
+    },
+    {
+      breakpoint: 910,
+      settings: {
+        slidesToShow: 4,
+      }
+    },
+    {
+      breakpoint: 730,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 410,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+  ]
+});
+
 $('.product-category-1').slick({
   arrows: true,
   infinite: true,
@@ -576,6 +614,7 @@ $('.product-main').slick({
   fade: true,
   asNavFor: '.left-slider-image'
 });
+
 $('.left-slider-image').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -816,6 +855,42 @@ $('.slider-5_2').slick({
     },
     {
       breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+  ]
+})
+
+$('.top-selling-slider').slick({
+  arrows: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+})
+
+$('.product-box-slider').slick({
+  infinite: true,
+  arrows: true,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  pauseOnHover: true,
+  responsive: [{
+      breakpoint: 12,
+      settings: {
+        slidesToShow: 4,
+      }
+    },
+    {
+      breakpoint: 23,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 45,
       settings: {
         slidesToShow: 2,
       }
