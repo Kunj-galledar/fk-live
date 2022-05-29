@@ -680,6 +680,11 @@
                 width: 80%;
                 margin-left: auto;
 
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: auto;
+                }
+
                 @include mq-max(sm) {
                     width: 60%;
                     margin: 0 auto 30px;
@@ -695,6 +700,11 @@
             padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
             border-radius: 5px;
             @include flex_common;
+
+            [dir="rtl"] & {
+                right: unset;
+                left: calc(18px + (25 - 18) * ((100vw - 320px) / (1920 - 320)));
+            }
 
             .iconly-Buy {
                 font-size: 24px;
@@ -800,7 +810,7 @@
                 }
 
                 img {
-                    width: 130px;
+                    width: calc(90px + (130 - 90) * ((100vw - 320px) / (1920 - 320)));
                 }
             }
 

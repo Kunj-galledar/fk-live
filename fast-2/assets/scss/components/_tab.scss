@@ -8,16 +8,17 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    gap: 10px;
 
     .nav-item {
-        margin: 5px;
+        margin-bottom: 5px;
 
         .nav-link {
             border: none;
             color: $title-color;
             font-weight: 500;
             transition: all .3s ease-in-out;
-            font-size: 16px;
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
             white-space: nowrap;
 
             &.active,
@@ -39,6 +40,11 @@
 
             img {
                 margin-right: 5px;
+
+                [dir="rtl"] & {
+                    margin-right: unset;
+                    margin-left: 5px;
+                }
             }
         }
     }

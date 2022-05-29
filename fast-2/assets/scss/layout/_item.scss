@@ -61,6 +61,11 @@
         @include flex_common;
         margin: 10px 0;
 
+        [dir="rtl"] & {
+            padding-left: unset;
+            padding-right: 0;
+        }
+
         li {
             background-color: $white;
             // width: 30px;
@@ -75,6 +80,11 @@
 
             +li {
                 margin-left: -10px;
+
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: -10px;
+                }
             }
 
             img {

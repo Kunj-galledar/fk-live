@@ -7,10 +7,10 @@ header {
           display: flex;
           align-items: center;
 
-          @include mq-max(xl) {
-               padding: 0;
-               margin-bottom: -22px;
-          }
+          // @include mq-max(xl) {
+          //      padding: 0;
+          //      margin-bottom: -22px;
+          // }
      }
 
      .icon-box {
@@ -34,6 +34,11 @@ header {
           padding-left: 0;
           margin-bottom: 0;
           list-style: none;
+
+          [dir="rtl"] & {
+               padding-left: unset;
+               padding-right: 0;
+          }
 
           .nav-item {
                margin-bottom: 0;
@@ -105,6 +110,20 @@ header {
                .nav-item {
                     +.nav-item {
                          margin-left: 40px;
+
+                         [dir="rtl"] & {
+                              margin-left: unset;
+                              margin-right: 40px;
+                         }
+
+                         @include mq-max(xl) {
+                              margin-left: 0;
+
+                              [dir="rtl"] & {
+                                   margin-left: unset;
+                                   margin-right: 0;
+                              }
+                         }
                     }
                }
 
@@ -161,6 +180,11 @@ header {
                               @include mq-max(xl) {
                                    content: none;
                               }
+
+                              [dir="rtl"] & {
+                                   left: unset;
+                                   right: 10px;
+                              }
                          }
                     }
 
@@ -170,6 +194,11 @@ header {
                          @include pos($pos: absolute, $content: "\f107");
                          @include font;
                          right: -10px;
+
+                         [dir="rtl"] & {
+                              right: unset;
+                              left: -10px;
+                         }
                     }
                }
           }
@@ -309,6 +338,11 @@ header {
           padding-bottom: 6px;
           // border-left: 1px solid $border-color;
           padding-left: 15px;
+
+          [dir="rtl"] & {
+               padding-left: unset;
+               padding-right: 15px;
+          }
 
           &:not(.navbar-stuck) {
                .navbar-stuck-btn {

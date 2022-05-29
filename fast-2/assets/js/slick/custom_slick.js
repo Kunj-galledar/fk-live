@@ -6,29 +6,34 @@ $('.category-slider').slick({
   responsive: [{
       breakpoint: 1745,
       settings: {
+        slidesToShow: 7,
+      }
+    },
+    {
+      breakpoint: 1399,
+      settings: {
         slidesToShow: 6,
       }
     },
     {
-      breakpoint: 1540,
+      breakpoint: 1124,
       settings: {
         slidesToShow: 5,
       }
     },
     {
-      breakpoint: 910,
+      breakpoint: 900,
       settings: {
         slidesToShow: 4,
       }
     },
     {
-      breakpoint: 730,
+      breakpoint: 692,
       settings: {
         slidesToShow: 3,
       }
-    },
-    {
-      breakpoint: 410,
+    }, {
+      breakpoint: 482,
       settings: {
         slidesToShow: 2,
       }
@@ -79,7 +84,7 @@ $('.product-category-1').slick({
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-})
+});
 
 $('.slider-1').slick({
   arrows: false,
@@ -87,6 +92,17 @@ $('.slider-1').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   dots: true,
+});
+
+$('.slider-1_1').slick({
+  arrows: false,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  pauseOnHover: true,
 });
 
 // $('.slider-1-category').slick({
@@ -834,7 +850,7 @@ $('.slider-7_1').slick({
       }
     },
   ]
-})
+});
 
 $('.slider-5_2').slick({
   infinite: true,
@@ -860,14 +876,14 @@ $('.slider-5_2').slick({
       }
     },
   ]
-})
+});
 
 $('.top-selling-slider').slick({
   arrows: true,
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
-})
+});
 
 $('.product-box-slider').slick({
   infinite: true,
@@ -878,22 +894,22 @@ $('.product-box-slider').slick({
   autoplaySpeed: 2500,
   pauseOnHover: true,
   responsive: [{
-      breakpoint: 12,
+      breakpoint: 1630,
       settings: {
         slidesToShow: 4,
       }
     },
     {
-      breakpoint: 23,
+      breakpoint: 1300,
       settings: {
         slidesToShow: 3,
       }
     },
     {
-      breakpoint: 45,
+      breakpoint: 617,
       settings: {
         slidesToShow: 2,
       }
     },
   ]
-})
+});

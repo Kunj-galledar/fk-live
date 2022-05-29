@@ -6,6 +6,11 @@
         display: flex;
         align-items: center;
 
+        [dir="rtl"] & {
+            padding-left: unset;
+            padding-right: 0;
+        }
+
         @include mq-max(2xs) {
             justify-content: space-between;
         }
@@ -34,6 +39,11 @@
             +li {
                 margin-left: 15px;
 
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: 15px;
+                }
+
                 &::after {
                     // content: ":";
                     // position: absolute;
@@ -41,6 +51,11 @@
                     @include center(vertical);
                     font-weight: bolder;
                     left: -10px;
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: -10px;
+                    }
                 }
             }
 

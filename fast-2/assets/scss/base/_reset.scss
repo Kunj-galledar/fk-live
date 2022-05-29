@@ -149,6 +149,11 @@ section,
         align-items: center;
     }
 
+    [dir="rtl"] & {
+        padding-left: unset;
+        padding-right: 0;
+    }
+
     li {
         line-height: 0;
         // display: inline-block  !important;
@@ -156,6 +161,11 @@ section,
 
         +li {
             margin-left: 2px;
+
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 2px;
+            }
         }
 
         .feather {

@@ -57,6 +57,11 @@
                         +li {
                             margin-left: 16px;
 
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 16px;
+                            }
+
                             &::before {
                                 // content: ":";
                                 // position: absolute;
@@ -64,6 +69,11 @@
                                 @include center(vertical);
                                 left: -12px;
                                 font-size: 20px;
+
+                                [dir="rtl"] & {
+                                    left: unset;
+                                    right: -12px;
+                                }
                             }
                         }
 

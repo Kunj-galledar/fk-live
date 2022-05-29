@@ -156,10 +156,24 @@
           box-shadow: 0px 3px 4px rgba($black, .14);
           position: absolute;
           top: calc(-32px + (-45 - -32) * ((100vw - 320px) / (1920 - 320)));
-          width: calc(35px + (40 - 35) * ((100vw - 320px) / (1920 - 320)));
-          height: calc(35px + (40 - 35) * ((100vw - 320px) / (1920 - 320)));
+          width: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
+          height: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
           border-radius: 5px;
           transition: all .3s ease-in-out;
+
+          &::before {
+               @include font;
+               color: var(--theme-color);
+               font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
+          }
+
+          &:hover {
+               background-color: var(--theme-color);
+
+               &::before {
+                    color: $white;
+               }
+          }
      }
 
      .slick-prev {
@@ -168,17 +182,18 @@
 
           &::before {
                content: "\f104";
-               @include font;
-               color: var(--theme-color);
+               // @include font;
+               // color: var(--theme-color);
+               // font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
           }
 
-          &:hover {
-               background-color: var(--theme-color);
+          // &:hover {
+          //      background-color: var(--theme-color);
 
-               &::before {
-                    color: $white;
-               }
-          }
+          //      &::before {
+          //           color: $white;
+          //      }
+          // }
      }
 
      .slick-next {
@@ -186,17 +201,18 @@
 
           &::before {
                content: "\f105";
-               @include font;
-               color: var(--theme-color);
+               // @include font;
+               // color: var(--theme-color);
+               // font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
           }
 
-          &:hover {
-               background-color: var(--theme-color);
+          // &:hover {
+          //      background-color: var(--theme-color);
 
-               &::before {
-                    color: $white;
-               }
-          }
+          //      &::before {
+          //           color: $white;
+          //      }
+          // }
      }
 }
 
@@ -344,7 +360,18 @@
           color: $content-color;
 
           &::before {
+               color: $black;
                @include font;
+               font-size: 18px;
+          }
+
+          &:hover,
+          &:focus {
+               background-color: var(--theme-color);
+
+               &::before {
+                    color: $white;
+               }
           }
      }
 
@@ -353,17 +380,7 @@
           // transform: translateY(-40px);
 
           &::before {
-               color: $black;
                content: "\f104";
-          }
-
-          &:hover,
-          &:focus {
-               background-color: var(--theme-color);
-
-               &::before {
-                    color: $white;
-               }
           }
      }
 
@@ -372,17 +389,7 @@
           // transform: translateY(-40px);
 
           &:before {
-               color: $black;
                content: "\f105";
-          }
-
-          &:hover,
-          &:focus {
-               background-color: var(--theme-color);
-
-               &::before {
-                    color: $white;
-               }
           }
      }
 }

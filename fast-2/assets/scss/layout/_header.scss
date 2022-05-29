@@ -4,6 +4,30 @@
 header {
     // margin-bottom: 12px;
 
+    &.nav-down {
+        &.nav-up {
+            .navbar-searchbar {
+                top: 0;
+            }
+
+            .main-menu {
+                padding: 10px 0;
+            }
+        }
+
+        .navbar-searchbar {
+            position: fixed;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            margin-top: 0;
+            background-color: $white;
+            box-shadow: 0px 4px 10px rgba(23, 32, 90, 0.15);
+            transition: all 0.5s ease;
+            z-index: 6;
+        }
+    }
+
     .nav-about {
         padding: 10px 0;
         background: var(--theme-color2);
@@ -19,6 +43,11 @@ header {
             .about-list {
                 display: flex;
                 align-items: center;
+
+                [dir="rtl"] & {
+                    padding-left: unset;
+                    padding-right: 0;
+                }
 
                 &.left-nav-about {
                     @include mq-max(md) {
@@ -62,6 +91,11 @@ header {
                     i {
                         font-size: 18px;
                         margin-right: 5px;
+
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 5px;
+                        }
                     }
 
                     span {
@@ -73,6 +107,11 @@ header {
                         margin-left: 25px;
                         position: relative;
 
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 25px;
+                        }
+
                         &::after {
                             @include pos;
                             top: 0;
@@ -81,6 +120,11 @@ header {
                             // height: 90%;
                             @include pseudowh($width: 2px, $height: 90%);
                             background-color: rgba($white, .3);
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: -13px;
+                            }
                         }
                     }
 
@@ -102,6 +146,11 @@ header {
                             img {
                                 width: 30px;
                                 margin-right: 10px;
+
+                                [dir="rtl"] & {
+                                    margin-right: unset;
+                                    margin-left: 10px;
+                                }
                             }
 
                             &::after {
@@ -190,8 +239,18 @@ header {
                     // padding-right: 20px;
                     // position: relative;
 
+                    [dir="rtl"] & {
+                        margin-right: unset;
+                        margin-left: 32px;
+                    }
+
                     @include mq-max(2xl) {
                         margin-right: 13px;
+
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 13px;
+                        }
                     }
 
                     .feather {
@@ -199,6 +258,11 @@ header {
                         // height: 16px;
                         margin-right: 8px;
                         @include pseudowh($width: 22px, $height: auto);
+
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 8px;
+                        }
                     }
 
                     // span {
@@ -222,6 +286,11 @@ header {
                             color: $title-color;
                             margin-left: 7px;
                             font-size: 15px;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 7px;
+                            }
                         }
                     }
 
@@ -304,6 +373,11 @@ header {
                         +li {
                             padding-left: 32px;
 
+                            [dir="rtl"] & {
+                                padding-left: unset;
+                                padding-right: 32px;
+                            }
+
                             &::before {
                                 @include pos;
                                 @include center(vertical);
@@ -312,6 +386,11 @@ header {
                                 // height: 24px;
                                 @include pseudowh($width: 1px, $height: 24px);
                                 background-color: rgba($content-color, $alpha: .5);
+
+                                [dir="rtl"] & {
+                                    left: unset;
+                                    right: 14px;
+                                }
                             }
                         }
 
@@ -324,6 +403,11 @@ header {
                                     color: $content-color;
                                     margin-right: 14px;
                                     stroke-width: 1.5;
+
+                                    [dir="rtl"] & {
+                                        margin-right: unset;
+                                        margin-left: 14px;
+                                    }
                                 }
                             }
 
@@ -398,12 +482,47 @@ header {
                 background: $title-color;
             }
 
+            &-2 {
+                background-color: $white;
+                color: $title-color;
+                font-weight: 300;
+                font-size: 16px;
+                padding-left: 0;
+                position: relative;
+
+                [dir="rtl"] & {
+                    padding-left: 29px;
+                    padding-right: 0;
+                }
+
+                &::after {
+                    @include pos;
+                    @include center(vertical);
+                    right: 0;
+                    // width: 1px;
+                    // height: 80%;
+                    @include pseudowh($width: 1px, $height: 80%);
+                    background: $title-color;
+                    opacity: .2;
+
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: 0;
+                    }
+                }
+            }
+
             .feather {
                 // font-size: 23px;
                 // color: $white;
                 margin-right: 16px;
                 width: 25px;
                 height: auto;
+
+                [dir="rtl"] & {
+                    margin-right: unset;
+                    margin-left: 16px;
+                }
             }
 
             span {
@@ -517,6 +636,11 @@ header {
                 .feather {
                     margin-right: 10px;
                     stroke-width: 1.5px;
+
+                    [dir="rtl"] & {
+                        margin-right: unset;
+                        margin-left: 10px;
+                    }
                 }
 
                 span {
@@ -751,6 +875,11 @@ header {
             display: inline-block;
             margin-left: calc(16px + (29 - 16) * ((100vw - 320px) / (1920 - 320)));
 
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: calc(16px + (29 - 16) * ((100vw - 320px) / (1920 - 320)));
+            }
+
             @include mq-max(2xl) {
                 margin-left: 25px;
                 float: right;
@@ -910,6 +1039,12 @@ header {
                     border-radius: 0;
                     border-top-right-radius: 4px;
                     border-bottom-right-radius: 4px;
+
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: 0;
+                        border-radius: 4px 0 0 4px;
+                    }
                 }
 
                 .iconly-Search {
@@ -920,6 +1055,11 @@ header {
                     @include flex_common;
                     padding: 0 18px;
                     font-size: 24px;
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: 10px;
+                    }
                 }
 
                 input {
@@ -929,6 +1069,10 @@ header {
                     color: $title-color;
                     border-color: var(--theme-color);
                     font-size: 16px;
+
+                    [dir="rtl"] & {
+                        padding: 8px 60px 8px 25px;
+                    }
 
                     @media (max-width: 1742px) {
                         width: 800px;
@@ -1038,6 +1182,11 @@ header {
         align-items: center;
         margin-left: auto;
 
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: auto;
+        }
+
         .dropdown-dollar {
             display: flex;
             align-items: center;
@@ -1089,9 +1238,10 @@ header {
                         @include pos;
                         @include center(vertical);
                         left: -10px;
-                        width: 1px;
-                        height: 25px;
-                        background-color: #777;
+                        // width: 1px;
+                        // height: 25px;
+                        @include pseudowh($width: 1px, $height: 25px);
+                        background-color: $border-color;
                     }
 
                     // .dropdown-toggle {
@@ -1489,13 +1639,29 @@ header {
                     align-items: center;
                     flex-wrap: nowrap;
                     gap: 12px;
+
+                    .user-name {
+                        @media (max-width: 1660px) {
+                            display: none;
+                        }
+                    }
                 }
 
                 +li {
                     margin-left: 37px;
 
-                    @include mq-max(3xl) {
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: 37px;
+                    }
+
+                    @include mq-max(4xl) {
                         margin-left: 22px;
+
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 22px;
+                        }
                     }
 
                     &::after {
@@ -1506,8 +1672,18 @@ header {
                         height: 80%;
                         background-color: $border-color;
 
-                        @include mq-max(3xl) {
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: -20px;
+                        }
+
+                        @include mq-max(4xl) {
                             left: -13px;
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: -13px;
+                            }
                         }
                     }
                 }
@@ -1522,8 +1698,18 @@ header {
             align-items: center;
             margin-left: 18px;
 
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 18px;
+            }
+
             .mobile-image {
                 margin-right: 11px;
+
+                [dir="rtl"] & {
+                    margin-right: unset;
+                    margin-left: 11px;
+                }
 
                 img {
                     width: 15px;
@@ -1573,6 +1759,7 @@ header {
 
             .support-number {
                 text-align: right;
+                @include rtl(text-align, right, left);
 
                 // h2 {
                 //     font-size: 30px;
@@ -1592,6 +1779,11 @@ header {
         display: flex;
         align-items: center;
         margin-left: auto;
+
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: auto;
+        }
 
         @include mq-max(2xl) {
             display: none;
@@ -1615,6 +1807,11 @@ header {
                 font-weight: 500;
                 margin-bottom: 0;
                 margin-left: 8px;
+
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: 8px;
+                }
             }
         }
 
@@ -1628,6 +1825,11 @@ header {
                 margin-left: 7px;
                 font-size: 16px;
                 font-weight: 500;
+
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: 7px;
+                }
             }
 
             .fire {
@@ -1746,6 +1948,11 @@ header {
             font-size: 23px;
             color: var(--theme-color);
             margin-right: 10px;
+
+            [dir="rtl"] & {
+                margin-right: unset;
+                margin-left: 10px;
+            }
         }
 
         .dropdown {

@@ -46,6 +46,11 @@ footer {
                 }
 
                 ul {
+                    [dir="rtl"] & {
+                        padding-left: unset;
+                        padding-right: 0;
+                    }
+
                     &.address {
                         margin-top: calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
 
@@ -65,7 +70,7 @@ footer {
                                 color: $content-color;
 
                                 [dir="rtl"] & {
-                                    margin: 1px 10px 0 unset;
+                                    margin: 1px 10px 0 0;
                                 }
                             }
                         }
@@ -186,9 +191,15 @@ footer {
         .footer-contact {
             margin-top: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
 
+            [dir="rtl"] & {
+                padding-left: unset;
+                padding-right: 0;
+            }
+
             ul {
                 [dir="rtl"] & {
-                    padding: 0;
+                    padding-left: unset;
+                    padding-right: 0;
                 }
 
                 li {
@@ -382,6 +393,11 @@ footer {
             flex-wrap: wrap;
             gap: 6px;
 
+            [dir="rtl"] & {
+                padding-left: unset;
+                padding-right: 0;
+            }
+
             li {
                 width: 40px;
                 height: 40px;
@@ -445,6 +461,11 @@ footer {
                 width: 20%;
                 height: 3px;
                 background-color: var(--theme-color);
+
+                [dir="rtl"] & {
+                    left: unset;
+                    right: 0;
+                }
             }
 
             @include mq-max(sm) {
@@ -484,6 +505,11 @@ footer {
                         &::before {
                             left: 0;
                             opacity: 1;
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: 7px;
+                            }
                         }
                     }
 
@@ -497,10 +523,20 @@ footer {
                         border-radius: 100%;
                         opacity: 0;
                         transition: all .3s ease-in-out;
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: -20px;
+                        }
                     }
 
                     i {
                         margin-right: 10px;
+
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 10px;
+                        }
                     }
                 }
             }
@@ -534,6 +570,11 @@ footer {
                         .feather {
                             margin-right: 10px;
                             width: 20px;
+
+                            [dir="rtl"] & {
+                                margin-right: unset;
+                                margin-left: 10px;
+                            }
                         }
 
                         p {
