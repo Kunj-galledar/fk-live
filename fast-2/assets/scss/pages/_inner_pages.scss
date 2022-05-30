@@ -108,7 +108,7 @@
 .cart-section {
     .deliver-box {
         padding: 22px 18px;
-        background-color: #f8f8f8;
+        background-color: $light-gray;
         border-radius: 6px;
         position: relative;
         margin-bottom: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
@@ -295,7 +295,7 @@
 
     .special-seller-box {
         padding: 20px;
-        background-color: #f8f8f8;
+        background-color: $light-gray;
         border-radius: 6px;
         border-radius: 5px;
         border: 1px dashed #bfbfbf;
@@ -371,7 +371,7 @@
 
     .cart-total-box {
         padding: 20px;
-        background-color: #f8f8f8;
+        background-color: $light-gray;
         border-radius: 6px;
         text-align: center;
 
@@ -408,7 +408,7 @@
 ==========================**/
 // Shopping Cart Box
 .cart-table {
-    background-color: #f8f8f6;
+    background-color: $light-gray;
     // height: 100%;
     padding: calc(18px + (35 - 18) * ((100vw - 320px) / (1920 - 320))) calc(12px + (25 - 12) * ((100vw - 320px) / (1920 - 320)));
 
@@ -839,14 +839,14 @@
 .summery-box {
     // border: 1px solid $border-color;
     border-radius: 5px;
-    background-color: #f8f8f6;
+    background-color: $light-gray;
 
     .summery-header {
         padding: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
         display: flex;
         align-items: center;
         border-bottom: 1px solid $border-color;
-        // background-color: #f8f8f8;
+        // background-color: $light-gray;
 
         h3 {
             font-weight: 600;
@@ -871,7 +871,7 @@
     .summery-contain {
         padding: 16px calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
         border-bottom: 1px solid $border-color;
-        // background-color: #f8f8f8;
+        // background-color: $light-gray;
         // height: 250px;
         // overflow-x: hidden;
 
@@ -963,7 +963,7 @@
     .summery-contain {
         padding: calc(11px + (16 - 11) * ((100vw - 320px) / (1920 - 320))) calc(11px + (22 - 11) * ((100vw - 320px) / (1920 - 320)));
         border-bottom: 1px solid $border-color;
-        // background-color: #f8f8f8;
+        // background-color: $light-gray;
         // height: 250px;
         // overflow-x: hidden;
 
@@ -1028,7 +1028,7 @@
 
     .summery-total {
         padding: 0 calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
-        // background-color: #f8f8f8;
+        // background-color: $light-gray;
 
         li {
             padding-top: 12px;
@@ -1133,10 +1133,18 @@
 
 .checkout-section {
     .custom-accordion {
+        align-items: center;
+        // display: flex;
+        // flex-wrap: wrap;
+        // gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))));
+
         .accordion-item {
             border: none;
             border-radius: 6px;
             overflow: hidden;
+            display: block;
+            width: 100%;
 
             .accordion-header {
                 .accordion-button {
@@ -1205,9 +1213,9 @@
                 }
             }
 
-            +.accordion-item {
-                margin-top: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
-            }
+            // +.accordion-item {
+            //     margin-top: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
+            // }
 
             .accordion-collapse {
                 .accordion-body {
@@ -1348,7 +1356,7 @@
     }
 
     .tab-content {
-        background-color: #f8f8f6;
+        background-color: $light-gray;
         height: 100%;
         padding: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))) calc(12px + (25 - 12) * ((100vw - 320px) / (1920 - 320)));
 
@@ -2008,7 +2016,7 @@
                 // flex-wrap: wrap;
                 // gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320))));
-                background-color: #f8f8f8;
+                background-color: $light-gray;
                 padding: calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(30px + (41 - 30) * ((100vw - 320px) / (1920 - 320)));
                 position: relative;
                 border-radius: 10px;
@@ -2052,7 +2060,7 @@
     .right-sidebar-box {
         padding: calc(21px + (60 - 21) * ((100vw - 320px) / (1920 - 320)));
         border-radius: 10px;
-        background-color: #f8f8f8;
+        background-color: $light-gray;
 
         .custom-form {
             label {
@@ -2347,7 +2355,7 @@
 
     .faq-top-box {
         text-align: center;
-        background-color: #f8f8f8;
+        background-color: $light-gray;
         border-radius: 9px;
         padding: 28px 18px;
 
@@ -2407,15 +2415,15 @@
             .accordion-item {
                 width: 100%;
                 border-radius: 7px;
-                background-color: #f8f8f8;
+                background-color: $light-gray;
                 border: none;
                 overflow: hidden;
 
                 .accordion-header {
-                    // background-color: #f8f8f8;
+                    // background-color: $light-gray;
 
                     .accordion-button {
-                        background-color: #f8f8f8;
+                        background-color: $light-gray;
                         font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
                         font-weight: 500;
                         padding: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
@@ -2499,7 +2507,7 @@
                 font-size: 16px;
                 font-weight: 500;
                 color: $title-color;
-                background-color: #f7f6f5;
+                background-color: $light-gray;
             }
 
             td {
@@ -2609,7 +2617,7 @@
 
                 input {
                     padding: 8px 56px 8px 20px;
-                    background-color: #f7f6f5;
+                    background-color: $light-gray;
                     border: none;
                     height: 53px;
                     border-radius: 7px;
@@ -2627,7 +2635,7 @@
             .accordion-item {
                 border: none;
                 padding: calc(18px + (25 - 18) * ((100vw - 320px) / (1920 - 320)));
-                background-color: #f7f6f5;
+                background-color: $light-gray;
 
                 +.accordion-item {
                     margin-top: 20px;
@@ -2637,7 +2645,7 @@
                     // margin-bottom: 20px;
 
                     .accordion-button {
-                        background-color: #f7f6f5;
+                        background-color: $light-gray;
                         color: $title-color;
                         font-weight: 700;
                         padding: 0;
@@ -2668,7 +2676,7 @@
                 }
 
                 .accordion-collapse {
-                    background-color: #f7f6f5;
+                    background-color: $light-gray;
 
                     .accordion-body {
                         padding: 0;
@@ -3167,7 +3175,7 @@
             padding: calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320))) calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320))) calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320))) calc(62px + (180 - 62) * ((100vw - 320px) / (1920 - 320)));
             border-radius: 10px;
             margin-bottom: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
-            background: $content-color;
+            background-color: $content-color;
             position: relative;
             color: $white;
 
@@ -3387,7 +3395,7 @@
 
     .leave-box {
         padding: calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
-        background-color: #f7f6f5;
+        background-color: $light-gray;
         border-radius: 6px;
 
         .leave-comment {
@@ -3810,7 +3818,7 @@
 }
 
 .client-section {
-    background-color: #f8f8f8;
+    background-color: $light-gray;
 
     .clint-contain {
         background: $white;
@@ -4019,7 +4027,7 @@
 }
 
 .review-section {
-    background-color: #f8f8f8;
+    background-color: $light-gray;
 
     //     .review-box {
     //         background-color: $white;
@@ -4185,7 +4193,7 @@
 
 .user-dashboard-section {
     .dashboard-left-sidebar {
-        background: #f8f8f8;
+        background: $light-gray;
         box-shadow: 0 0 8px rgba($title-color, .14);
         border-radius: 10px;
         overflow: hidden;
@@ -4219,7 +4227,7 @@
             z-index: 1;
             width: 30px;
             height: 30px;
-            background: #f8f8f8;
+            background: $light-gray;
             border-radius: 100%;
             @include flex_common;
 
@@ -4295,7 +4303,7 @@
 
                     img {
                         width: 108px;
-                        background-color: #f8f8f8;
+                        background-color: $light-gray;
                         border-radius: 100%;
                         padding: 5px;
                         border: 1px solid $border-color;
@@ -4429,7 +4437,7 @@
     }
 
     .dashboard-right-sidebar {
-        background-color: #f8f8f8;
+        background-color: $light-gray;
         padding: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
         // box-shadow: 0 0 8px rgba($title-color, .14);
         border-radius: 8px;
@@ -4617,7 +4625,7 @@
                     }
 
                     .product-order-detail {
-                        background-color: #f8f8f8;
+                        background-color: $light-gray;
                         padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
                         margin-top: 30px;
                         border-radius: 8px;
@@ -4803,7 +4811,7 @@
                     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
 
                     button {
-                        background-color: #f8f8f8;
+                        background-color: $light-gray;
                         font-weight: 600;
 
                         .feather {
@@ -5317,7 +5325,7 @@
 ==========================**/
 .order-detail {
     .order-image {
-        background-color: #f8f8f8;
+        background-color: $light-gray;
         padding: 40px;
         border-radius: 8px;
         text-align: center;
@@ -5329,7 +5337,7 @@
     }
 
     .order-details-contain {
-        background-color: #f8f8f8;
+        background-color: $light-gray;
         padding: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
         border-radius: 8px;
         display: flex;
@@ -5389,6 +5397,7 @@
             display: inline-block;
             text-align: center;
             margin: 10px 0;
+            position: relative;
 
             @include mq-max(sm) {
                 margin: 0;
@@ -5469,6 +5478,7 @@
                     // content: "\f111";
                     // font-family: "Font Awesome 6 Free";
                     @include pos($pos: absolute, $content: "\f111");
+                    @include font;
                     color: #959595;
                     background-color: $white;
                     font-size: 35px;
