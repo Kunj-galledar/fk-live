@@ -37,6 +37,18 @@
             &.home-name {
                 font-size: 86px;
                 font-weight: 700;
+                position: relative;
+                display: inline-block;
+
+                &::before {
+                    @include pos;
+                    bottom: 0;
+                    @include center(horizontal);
+                    // width: 80%;
+                    // height: 2px;
+                    @include pseudowh($width: 80%, $height: 2px);
+                    background-color: $title-color;
+                }
             }
 
             &.poster-1 {
@@ -199,7 +211,7 @@
 }
 
 .home-section-2 {
-    background-image: url("../images/veg-3/home-bg.jpg");
+    background-image: url("../images/veg-3/home-bg.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
