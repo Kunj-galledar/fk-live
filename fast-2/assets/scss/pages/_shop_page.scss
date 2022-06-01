@@ -6,8 +6,9 @@
 }
 
 .custom-height {
-     height: 190px;
+     max-height: 190px;
      overflow-y: auto;
+     height: 100%;
 
      &::-webkit-scrollbar-track {
           border-radius: 10px;
@@ -17,6 +18,7 @@
      &::-webkit-scrollbar {
           width: 4px;
           background-color: #f5f5f5;
+          border-radius: 50px;
      }
 
      &::-webkit-scrollbar-thumb {
@@ -245,7 +247,7 @@
           // height: 20px;
           @include pseudowh($width: 20px, $height: 20px);
           border: 3px solid $white;
-          background: var(--theme-color);
+          background-color: var(--theme-color);
           border-radius: 100%;
           cursor: pointer;
 
@@ -290,6 +292,22 @@
           font-weight: 500;
      }
 
+     .irs-min {
+          position: absolute;
+          display: block;
+          left: 0;
+          top: 0;
+          cursor: default;
+          color: #777;
+          font-size: 12px;
+          line-height: 1.333;
+          text-shadow: none;
+          padding: 3px 7px;
+          background: rgba($title-color, 0.1);
+          border-radius: 3px;
+          font-weight: 500;
+     }
+
      .irs-from {
           position: absolute;
           display: block;
@@ -302,7 +320,7 @@
           line-height: 1.333;
           text-shadow: none;
           padding: 3px 7px;
-          background: var(--theme-color);
+          background-color: var(--theme-color);
           border-radius: 3px;
           font-weight: 600;
      }
@@ -319,7 +337,7 @@
           line-height: 1.333;
           text-shadow: none;
           padding: 3px 7px;
-          background: var(--theme-color);
+          background-color: var(--theme-color);
           border-radius: 3px;
           font-weight: 600;
      }

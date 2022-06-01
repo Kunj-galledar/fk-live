@@ -1187,10 +1187,10 @@
                         align-items: center;
                         width: 100%;
 
-                        [dir="rtl"] & {
-                            padding-left: unset;
-                            margin-right: 1.5em;
-                        }
+                        // [dir="rtl"] & {
+                        //     padding-left: unset;
+                        //     margin-right: 1.5em;
+                        // }
 
                         .form-check-label {
                             font-weight: 500;
@@ -1207,6 +1207,11 @@
 
                             .form-check-input {
                                 margin-right: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+
+                                [dir="rtl"] & {
+                                    margin-left: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+                                    margin-right: unset;
+                                }
                             }
                         }
                     }
@@ -1226,7 +1231,7 @@
 
                         [dir="rtl"] & {
                             padding-left: unset;
-                            padding-right: 1.5em;
+                            padding-right: 0;
                         }
 
                         label {
@@ -1238,6 +1243,11 @@
 
                         input {
                             margin-right: 10px;
+
+                            [dir="rtl"] & {
+                                margin-right: unset;
+                                margin-left: 10px;
+                            }
                         }
                     }
                 }
@@ -2616,7 +2626,7 @@
                 }
 
                 input {
-                    padding: 8px 56px 8px 20px;
+                    padding: 8px 68px 8px 20px;
                     background-color: $light-gray;
                     border: none;
                     height: 53px;
@@ -4090,6 +4100,12 @@
             transform: rotate(15deg);
             bottom: -30px;
             right: -8px;
+
+            [dir="rtl"] & {
+                transform: rotate(-15deg) rotateY(183deg);
+                left: -8px;
+                right: unset;
+            }
         }
 
         h3 {
@@ -4445,7 +4461,7 @@
         .dashboard-bg-box {
             padding: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
             background-color: $white;
-            border: 1px solid $border-color;
+            // border: 1px solid $border-color;
             border-radius: 6px;
         }
 

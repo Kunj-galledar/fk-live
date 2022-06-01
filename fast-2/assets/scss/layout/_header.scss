@@ -1216,6 +1216,11 @@ header {
 
                     i {
                         margin-left: 8px;
+
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 8px;
+                        }
                     }
 
                     // &::before {
@@ -1234,6 +1239,11 @@ header {
                 +.dropdown {
                     margin-left: 23px;
 
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: 23px;
+                    }
+
                     &::after {
                         @include pos;
                         @include center(vertical);
@@ -1242,6 +1252,11 @@ header {
                         // height: 25px;
                         @include pseudowh($width: 1px, $height: 25px);
                         background-color: $border-color;
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: -10px;
+                        }
                     }
 
                     // .dropdown-toggle {
@@ -1417,8 +1432,18 @@ header {
                     +li {
                         margin-left: 37px;
 
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 37px;
+                        }
+
                         @include mq-max(3xl) {
                             margin-left: 22px;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 22px;
+                            }
                         }
 
                         &::after {
@@ -1429,8 +1454,18 @@ header {
                             height: 80%;
                             background-color: $border-color;
 
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: -20px;
+                            }
+
                             @include mq-max(3xl) {
                                 left: -13px;
+
+                                [dir="rtl"] & {
+                                    left: unset;
+                                    right: -13px;
+                                }
                             }
                         }
                     }
