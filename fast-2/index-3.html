@@ -48,7 +48,7 @@
 
     <!-- Header Start -->
     <header>
-        <div class="nav-about bg-black-nav">
+        <div class="nav-about">
             <div class="container-fluid-lg">
                 <div class="row">
                     <div class="col-12">
@@ -75,20 +75,19 @@
                                     <div class="dropdown theme-form-select">
                                         <button class="btn dropdown-toggle" type="button" id="select-language"
                                             data-bs-toggle="dropdown" aria-expanded="false">
-                                            <img src="assets/images/vegetable/flag/us.png"
-                                                class="img-fluid blur-up lazyload" alt="">
+                                            <img src="assets/images/vegetable/flag/us.png" class="img-fluid" alt="">
                                             English
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="select-language">
                                             <li>
                                                 <a class="dropdown-item" href="javascript:void(0)">
-                                                    <img src="assets/images/vegetable/flag/france.png"
-                                                        class="img-fluid blur-up lazyload" alt=""> France</a>
+                                                    <img src="assets/images/vegetable/flag/france.png" class="img-fluid"
+                                                        alt=""> France</a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="javascript:void(0)">
-                                                    <img src="assets/images/vegetable/flag/china.png"
-                                                        class="img-fluid blur-up lazyload" alt=""> Chinese</a>
+                                                    <img src="assets/images/vegetable/flag/china.png" class="img-fluid"
+                                                        alt=""> Chinese</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -131,15 +130,17 @@
                                 </span>
                             </button>
                             <a href="javascript:void(0)" class="web-logo nav-logo">
-                                <img src="assets/images/logo/1.png" class="img-fluid blur-up lazyload" alt="">
+                                <img src="assets/images/logo/1.png" class="img-fluid" alt="">
                             </a>
 
                             <div class="middle-box">
-                                <div class="location-box location-border">
+                                <div class="location-box">
                                     <button class="btn location-button" data-bs-toggle="modal"
                                         data-bs-target="#locationModal">
-                                        <i data-feather="map-pin"></i>
-                                        <span>Your Location </span>
+                                        <span>
+                                            <i data-feather="map-pin"></i>
+                                        </span>
+                                        <h6>Your Location</h6>
                                         <i class="fa-solid fa-angle-down"></i>
                                     </button>
                                 </div>
@@ -148,7 +149,7 @@
                                     <div class="input-group">
                                         <input type="search" class="form-control" placeholder="I'm searching for..."
                                             aria-label="Recipient's username" aria-describedby="button-addon2">
-                                        <button class="btn theme-bg-color" type="button" id="button-addon2">
+                                        <button class="btn" type="button" id="button-addon2">
                                             <i data-feather="search"></i>
                                         </button>
                                     </div>
@@ -157,6 +158,13 @@
 
                             <div class="rightside-box">
                                 <ul class="right-side-menu">
+                                    <li>
+                                        <div class="delivery-login-box">
+                                            <div class="delivery-icon">
+                                                <i data-feather="search"></i>
+                                            </div>
+                                        </div>
+                                    </li>
                                     <li>
                                         <div class="delivery-login-box">
                                             <div class="delivery-icon">
@@ -206,8 +214,7 @@
                 <div class="col-12">
                     <div class="header-nav">
                         <div class="header-nav-left">
-                            <button class="dropdown-category black-dropdown" data-bs-toggle="offcanvas"
-                                data-bs-target="#categories">
+                            <button class="dropdown-category" data-bs-toggle="offcanvas" data-bs-target="#categories">
                                 <i data-feather="align-left"></i>
                                 <span>All Categories</span>
                             </button>
@@ -757,9 +764,9 @@
     <!-- Header End -->
 
     <!-- mobile fix menu start -->
-    <!-- <div class="mobile-menu d-md-none d-block mobile-cart">
+    <div class="mobile-menu d-md-none d-block mobile-cart">
         <ul>
-            <li class="active">
+            <li>
                 <a href="index.html">
                     <i class="iconly-Home icli"></i>
                     <span>Home</span>
@@ -783,14 +790,14 @@
                     <span>My Wish</span>
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="cart.html">
                     <i class="iconly-Bag-2 icli fly-cate"></i>
                     <span>Cart</span>
                 </a>
             </li>
         </ul>
-    </div> -->
+    </div>
     <!-- mobile fix menu end -->
 
     <!-- Home Section Start -->
@@ -3693,12 +3700,10 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
 
-                        <ul class="location-select">
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <h6>Select a Location</h6>
-                                    <span>Clear All</span>
-                                </a>
+                        <ul class="location-select custom-height">
+                            <li class="disabled-box">
+                                <h6>Select a Location</h6>
+                                <span>Clear All</span>
                             </li>
 
                             <li>

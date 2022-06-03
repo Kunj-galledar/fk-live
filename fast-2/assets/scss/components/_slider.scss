@@ -370,7 +370,7 @@
           // background-color: $border-color;
           // width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
           // height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
-          @include pseudowh($width: 32px, $height: 32px);
+          @include pseudowh($width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))));
           border-radius: 50%;
           @include flex_common;
           z-index: 1;
@@ -382,7 +382,7 @@
           &::before {
                color: $black;
                @include font;
-               font-size: 18px;
+               font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
           }
 
           &:hover,
@@ -399,6 +399,10 @@
           left: -28px;
           // transform: translateY(-40px);
 
+          @include mq-max(sm) {
+               left: -8px;
+          }
+
           &::before {
                content: "\f104";
           }
@@ -407,6 +411,10 @@
      .slick-next {
           right: -28px;
           // transform: translateY(-40px);
+
+          @include mq-max(sm) {
+               right: -8px;
+          }
 
           &:before {
                content: "\f105";
