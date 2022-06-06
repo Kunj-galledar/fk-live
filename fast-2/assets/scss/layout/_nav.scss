@@ -197,7 +197,7 @@ header {
 
                          [dir="rtl"] & {
                               right: unset;
-                              left: -10px;
+                              left: -12px;
                          }
                     }
                }
@@ -223,6 +223,11 @@ header {
           font-size: 18px;
           margin-right: 10px;
           padding: 0;
+
+          [dir="rtl"] & {
+               margin-right: unset;
+               margin-left: 10px;
+          }
 
           &:focus-visible {
                outline: none;
@@ -445,7 +450,7 @@ header {
           padding: 20px 24px;
 
           .btn-close {
-               padding: 10px 12px;
+               padding: 0;
                margin: -10px -12px -12px 0;
                font-size: 16px;
           }
@@ -664,19 +669,30 @@ header {
                               position: relative;
                               padding-right: 26px;
 
+                              [dir="rtl"] & {
+                                   padding-right: 20px;
+                                   padding-left: 26px;
+                              }
+
                               &::after {
-                                   @include pos;
+                                   @include pos($pos: absolute, $content: "\f105");
+                                   @include font;
                                    display: block;
                                    top: 50%;
                                    right: 10px;
                                    // width: 7px;
                                    // height: 7px;
-                                   @include pseudowh($width: 7px, $height: 7px);
-                                   border-top: 2px solid $content-color;
-                                   border-left: 2px solid $content-color;
+                                   @include pseudowh($width: unset, $height: unset);
+                                   border-top: none;
+                                   border-left: none;
                                    border-right: none;
                                    border-bottom: none;
-                                   transform: translate(-50%, -50%) rotate(135deg);
+                                   transform: translateY(-50%);
+
+                                   [dir="rtl"] & {
+                                        right: unset;
+                                        left: 10px;
+                                   }
                               }
                          }
 
@@ -698,6 +714,11 @@ header {
                          padding-left: 0;
                          border-radius: 5px;
                          background-color: $white;
+
+                         [dir="rtl"] & {
+                              left: unset;
+                              right: 100%;
+                         }
                     }
                }
 
@@ -755,6 +776,10 @@ header {
                               padding: 10px 0 5px 20px;
                               font-size: 16px;
                               font-weight: 600;
+
+                              [dir="rtl"] & {
+                                   padding: 10px 20px 5px 0;
+                              }
                          }
                     }
                }
@@ -823,11 +848,11 @@ header {
 
      .navbar-expand-xl {
           .offcanvas {
-               z-index: 0;
+               // z-index: 0;
                -webkit-box-flex: 1;
 
                @include mq-max(xl) {
-                    z-index: 2;
+                    z-index: 3;
                     -webkit-box-flex: 2;
                }
           }

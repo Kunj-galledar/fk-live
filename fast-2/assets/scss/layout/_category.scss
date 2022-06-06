@@ -809,8 +809,20 @@
                     border-radius: 10px;
                 }
 
-                img {
-                    width: calc(90px + (130 - 90) * ((100vw - 320px) / (1920 - 320)));
+                a {
+                    img {
+                        width: calc(90px + (130 - 90) * ((100vw - 320px) / (1920 - 320)));
+                    }
+                }
+
+                .category-name {
+                    &::after {
+                        width: 100%;
+                    }
+
+                    h6 {
+                        color: $white;
+                    }
                 }
             }
 
@@ -818,25 +830,47 @@
                 width: calc(133px + (168 - 133) * ((100vw - 320px) / (1920 - 320)));
                 height: calc(84px + (112 - 84) * ((100vw - 320px) / (1920 - 320)));
                 border-radius: 100px;
-                margin: 0 auto 22px;
+                margin: 0 auto 30px;
                 transition: all .3s ease-in-out;
             }
 
-            img {
-                transition: all .3s ease-in-out;
-                position: absolute;
-                bottom: 34px;
-                @include center(horizontal);
-                width: calc(87px + (110 - 87) * ((100vw - 320px) / (1920 - 320)));
+            a {
+                display: block;
+
+                img {
+                    transition: all .3s ease-in-out;
+                    position: absolute;
+                    bottom: 50px;
+                    @include center(horizontal);
+                    width: calc(87px + (110 - 87) * ((100vw - 320px) / (1920 - 320)));
+                }
             }
 
             .category-name {
                 position: relative;
                 text-align: center;
-                width: 53%;
-                margin: 0 auto;
+                z-index: 0;
+
+                &::after {
+                    z-index: -1;
+                    @include pos;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: var(--theme-color);
+                    transition: all .3s ease-in-out;
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: 0;
+                    }
+                }
 
                 h6 {
+                    transition: all .3s ease-in-out;
+                    margin: 0 auto;
+                    width: 53%;
                     font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (1920 - 320)));
                     letter-spacing: 0.7px;
                     line-height: 1.3;

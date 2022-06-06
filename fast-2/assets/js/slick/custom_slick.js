@@ -890,8 +890,8 @@ $('.product-box-slider').slick({
   arrows: true,
   slidesToShow: 5,
   slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2500,
+  // autoplay: true,
+  // autoplaySpeed: 2500,
   pauseOnHover: true,
   responsive: [{
       breakpoint: 1630,
