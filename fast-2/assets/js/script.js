@@ -184,24 +184,6 @@ $(document).ready(function () {
     });
 });
 
-/*=====================
-        02. dropdown category function js
-    ==========================*/
-// $(function () {
-//     var list = $(".js-dropdown-list");
-//     var link = $(".js-link");
-//     link.click(function (e) {
-//         e.preventDefault();
-//         list.slideToggle(200);
-//     });
-//     list.find("li").click(function () {
-//         var text = $(this).html();
-//         var icon = '<i class="fa fa-chevron-down"></i>';
-//         link.html(text + icon);
-//         list.slideToggle(200);
-//     });
-// });
-
 // User Dashboard Left Sidebar Show Js
 $(".left-dashboard-show").click(function () {
     $(".bg-overlay, .dashboard-left-sidebar").addClass("show");
@@ -279,5 +261,23 @@ $(function () {
         lastScrollTop = windowTop;
 
         $("#windowtop").text("scrollTop: " + windowTop);
+    });
+});
+
+/*=====================
+   4. search box function
+   ==========================*/
+$(".search-box").on("click", function () {
+    $(this).closest(".rightside-box").find(".search-full").addClass("open");
+});
+$(window).on("load resize", function () {
+    // open searchbox
+    $(".search-type").on("click", function () {
+        $(this).parents(".search-full").addClass("show");
+    });
+
+    // close seach
+    $(".close-search").on("click", function () {
+        $(this).closest(".rightside-box").find(".search-full").removeClass("open");
     });
 });

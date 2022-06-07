@@ -3,7 +3,6 @@
 ==========================**/
 footer {
     background-color: $light-gray;
-    // background: linear-gradient(90deg, rgba(248, 248, 248, 1) 0%, rgba(246, 246, 246, 1) 100%);
     position: relative;
     z-index: 0;
 
@@ -11,8 +10,6 @@ footer {
         @include pos;
         top: 0;
         left: 0;
-        // width: 30%;
-        // height: 100%;
         @include pseudowh($width: 30%, $height: 100%);
         background-image: url(../images/vegetable/footer-shape.png);
         background-repeat: no-repeat;
@@ -23,8 +20,6 @@ footer {
         @include pos;
         bottom: 0;
         right: 0;
-        // width: 30%;
-        // height: 100%;
         @include pseudowh($width: 30%, $height: 100%);
         background-image: url(../images/vegetable/footer-shape-2.png);
         background-repeat: no-repeat;
@@ -33,6 +28,11 @@ footer {
 
     .main-footer {
         border-top: 1px dashed rgba($content-color, 0.5);
+
+        @include mq-max(md) {
+            border: none;
+            padding-top: 0;
+        }
 
         .footer-theme {
             .footer-theme-contain {
@@ -59,8 +59,6 @@ footer {
                             align-items: center;
 
                             .feather {
-                                // width: 18px;
-                                // height: 18px;
                                 @include pseudowh($width: 18px, $height: 18px);
                                 stroke: $content-color;
                             }
@@ -94,17 +92,77 @@ footer {
             }
         }
 
+        .footer-logo {
+            .theme-logo {
+                display: flex;
+                align-items: center;
+
+                @include mq-max(sm) {
+                    margin-bottom: 15px;
+                }
+
+                a {
+                    img {
+                        width: 160px;
+
+                    }
+                }
+
+                h4 {
+                    margin-left: 10px;
+                }
+            }
+
+            .footer-logo-contain {
+                margin: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320))) 0;
+
+                p {
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    color: $content-color;
+                    line-height: 27px;
+                    margin-bottom: 0;
+                }
+
+                .address {
+                    margin-top: calc(7px + (30 - 7) * ((100vw - 320px) / (1920 - 320)));
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
+
+                    li {
+                        display: flex;
+                        align-items: flex-start;
+                        width: 100%;
+
+                        .feather {
+                            @include pseudowh($width: 18px, $height: 18px);
+                            stroke: $content-color;
+                        }
+
+                        p,
+                        a {
+                            margin: 0 0 0 10px;
+                            color: $content-color;
+                            line-height: 18px;
+
+                            [dir="rtl"] & {
+                                margin-right: 10px;
+                                margin-left: unset;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         .footer-title {
-
-            // &-2 {
-            //     @include mq-max(sm) {
-            //         margin-bottom: 0;
-            //     }
-            // }
-
             h4 {
                 font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 600;
+
+                @include mq-max(sm) {
+                    font-weight: 400;
+                }
             }
         }
 
@@ -128,21 +186,18 @@ footer {
 
                     li {
                         display: flex;
-                        align-items: center;
+                        align-items: flex-start;
 
                         .feather {
-                            // width: 18px;
-                            // height: 18px;
                             @include pseudowh($width: 18px, $height: 18px);
                             stroke: $content-color;
                         }
 
-                        p {
-                            // margin-bottom: 0;
-                            // margin-left: 10px;
-                            // margin-top: 1px;
-                            margin: 1px 0 0 10px;
+                        p,
+                        a {
+                            margin: 0 0 0 10px;
                             color: $content-color;
+                            line-height: 18px;
 
                             [dir="rtl"] & {
                                 margin-right: 10px;
@@ -160,7 +215,7 @@ footer {
                         display: block;
 
                         &:hover {
-                            color: $content-color;
+                            color: var(--theme-color);
                         }
                     }
 
@@ -168,23 +223,6 @@ footer {
                         margin-top: calc(4px + (15 - 4) * ((100vw - 320px) / (1920 - 320)));
                     }
                 }
-            }
-        }
-
-        .theme-logo {
-            display: flex;
-            align-items: center;
-
-            a {
-                margin-top: -3px;
-
-                img {
-                    width: 90px;
-                }
-            }
-
-            h4 {
-                margin-left: 10px;
             }
         }
 
@@ -218,30 +256,47 @@ footer {
                             right: unset;
                             left: 0;
                         }
+
+                        @include mq-max(3xl) {
+                            bottom: -20px;
+                        }
+
+                        @include mq-max(lg) {
+                            bottom: -18px;
+                        }
+
+                        @include mq-max(md) {
+                            bottom: -16px;
+                        }
+
+                        @include mq-max(2xs) {
+                            bottom: -13px;
+                        }
                     }
 
                     .footer-number {
                         display: flex;
                         align-items: flex-start;
+                        flex-wrap: nowrap;
+                        gap: 12px;
 
                         .feather {
-                            // width: 18px;
-                            // height: 18px;
                             @include pseudowh($width: 18px, $height: 18px);
                             stroke: $content-color;
                         }
 
                         .contact-number {
-                            padding-left: 12px;
+                            // padding-left: 12px;
 
-                            [dir="rtl"] & {
-                                padding-left: unset;
-                                padding-right: 12px;
-                            }
+                            // [dir="rtl"] & {
+                            //     padding-left: unset;
+                            //     padding-right: 12px;
+                            // }
 
                             h5 {
                                 margin-top: 6px;
                                 font-weight: 600;
+                                color: var(--theme-color);
                             }
                         }
                     }
@@ -254,11 +309,7 @@ footer {
                         }
 
                         ul {
-                            // margin: -4px;
-                            // display: flex;
                             align-items: center;
-                            // flex-wrap: wrap;
-                            // gap: 8px;
                             @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
 
                             [dir="rtl"] & {
@@ -266,7 +317,6 @@ footer {
                             }
 
                             li {
-                                // margin: 4px;
                                 display: inline-block;
 
                                 &::before {
@@ -296,7 +346,7 @@ footer {
 
         .payment {
             @include mq-max(lg) {
-                margin: 6px 0;
+                margin: 8px 0;
             }
         }
 
@@ -357,6 +407,11 @@ footer {
 .footer-section-2 {
     background-color: $light-gray;
 
+    &::before,
+    &::after {
+        content: none;
+    }
+
     .download-image {
         margin-top: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
     }
@@ -391,7 +446,6 @@ footer {
         }
 
         .social-icon {
-            // margin: 10px -5px 0;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
@@ -406,7 +460,6 @@ footer {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
-                // margin: 0 5px;
                 position: relative;
                 z-index: 0;
 
@@ -420,11 +473,6 @@ footer {
                     border-radius: 50%;
                     z-index: -1;
                 }
-
-
-                // @include mq-max(2xs) {
-                //     margin: 0 2px;
-                // }
 
                 a {
                     @include pseudowh;
@@ -458,34 +506,6 @@ footer {
             font-family: $public-sans;
             font-weight: 600;
             position: relative;
-            padding-bottom: calc(5px + (12 - 5) * ((100vw - 320px) / (1920 - 320)));
-
-            &::after {
-                @include pos;
-                bottom: -5px;
-                left: 0;
-                width: 20%;
-                height: 3px;
-                background-color: var(--theme-color);
-
-                [dir="rtl"] & {
-                    left: unset;
-                    right: 0;
-                }
-            }
-
-            @include mq-max(sm) {
-                &::before {
-                    // content: "\f107";
-                    // position: absolute;
-                    @include pos($pos: absolute, $content: "\f107");
-                    @include font;
-                    @include center(vertical);
-                    right: 0;
-                    font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
-                    color: $content-color;
-                }
-            }
         }
 
         .footer-list {
@@ -520,8 +540,6 @@ footer {
                     }
 
                     &:before {
-                        // content: "\f105";
-                        // position: absolute;
                         @include font;
                         @include pos($pos: absolute, $content: "\f105");
                         top: 0;
@@ -601,6 +619,7 @@ footer {
 
         &-lite {
             border-top: 1px solid rgba($border-color, $alpha: .2) !important;
+            display: block;
         }
 
         p {
@@ -609,16 +628,6 @@ footer {
             color: $content-color;
             text-transform: capitalize;
         }
-
-        // .left-footer {
-        //     height: 100%;
-        //     display: flex;
-        //     align-items: center;
-
-        //     @include mq-max(md) {
-        //         justify-content: center;
-        //     }
-        // }
 
         .right-footer {
             text-align: right;

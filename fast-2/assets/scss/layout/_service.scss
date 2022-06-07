@@ -4,19 +4,25 @@
 .service-contain {
     @include flex_common ($dis: flex, $align: center, $justify: space-between);
     flex-wrap: wrap;
+    padding-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
+
+    @include mq-max(md) {
+        display: none;
+    }
 
     .service-box {
         display: flex;
         align-items: center;
         position: relative;
-        // padding: 8px;
 
         @include mq-max(2xl) {
             width: 50%;
         }
 
-        @include mq-max(md) {
-            width: 100%;
+        &:nth-child(-n+2) {
+            @include mq-max(2xl) {
+                margin-bottom: 15px;
+            }
         }
 
         &:nth-child(3) {
@@ -38,8 +44,6 @@
                 @include pos;
                 @include center(vertical);
                 left: -104px;
-                // width: 1px;
-                // height: 50%;
                 @include pseudowh($width: 1px, $height: 50%);
                 border: 1px dashed rgba($content-color, 0.5);
 

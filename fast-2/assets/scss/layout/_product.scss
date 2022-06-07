@@ -24,8 +24,6 @@
                border: none;
                @include flex_common;
                padding: 0;
-               // width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
-               // height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
                @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
                background-color: $white;
                z-index: 0;
@@ -60,22 +58,6 @@
           width: 290px;
           margin-top: 24px;
 
-          // @include mq-max(4xl) {
-          //      width: 60%;
-          // }
-
-          // @include mq-max(3xl) {
-          //      width: 66%;
-          // }
-
-          // @include mq-max(2xl) {
-          //      width: 72%;
-          // }
-
-          // @include mq-max(xl) {
-          //      width: 46%;
-          // }
-
           ul {
                padding: 14px 18px;
                background: linear-gradient(187.77deg, #fafafa 5.52%, #f8f8f8 94%);
@@ -91,10 +73,6 @@
                                    left: unset;
                                    right: -25px;
                               }
-
-                              // @include mq-max(lg) {
-                              //      left: -40px;
-                              // }
                          }
                     }
 
@@ -124,8 +102,6 @@
 
                +li {
                     &::before {
-                         // content: ":";
-                         // position: absolute;
                          @include pos($pos: absolute, $content: ":");
                          @include center(vertical);
                          left: -20px;
@@ -171,8 +147,6 @@
                @include pos;
                bottom: -8px;
                left: 0;
-               // width: 70%;
-               // height: 2px;
                @include pseudowh($width: 70%, $height: 2px);
                background-color: var(--theme-color);
 
@@ -185,9 +159,6 @@
 
      ul {
           border-bottom: 1px dashed rgba($content-color, 0.5);
-          // display: flex;
-          // flex-wrap: wrap;
-          // gap: 25px;
           @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 30px);
 
           [dir="rtl"] & {
@@ -216,15 +187,11 @@
                     gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
 
                     svg {
-                         // width: 25px;
-                         // height: 25px;
                          @include pseudowh($width: 25px, $height: 25px);
                          stroke: $title-color;
                     }
 
                     img {
-                         // width: 25px;
-                         // height: 25px;
                          @include pseudowh($width: 25px, $height: 25px);
                          object-fit: contain;
                     }
@@ -254,7 +221,6 @@
 .product-border {
      border: 1px solid rgba($content-color, 0.3);
      border-radius: 10px;
-     // overflow: hidden;
      padding: 0 calc(0px + (14 - 0) * ((100vw - 320px) / (1920 - 320)));
 
      .slider-5-1 {
@@ -275,15 +241,9 @@
           >div {
                >.row {
                     >div {
-                         // border-bottom: 1px solid rgba($content-color, 0.3);
-
                          &:nth-child(n+6) {
                               border-top: 1px solid rgba($content-color, 0.3);
                          }
-
-                         // &:nth-child(n+6) {
-                         //      border-bottom: none;
-                         // }
 
                          &:nth-child(5n+5) {
                               .product-box {
@@ -308,60 +268,6 @@
                                    }
                               }
                          }
-
-                         // @media screen and (max-width: 1399px) {
-                         //      &:nth-child(4n+4) {
-                         //           .product-box {
-                         //                border-right: none;
-                         //           }
-                         //      }
-
-                         //      &:nth-child(5n+5) {
-                         //           .product-box {
-                         //                border-right: 1px solid rgba($content-color, 0.3);
-                         //           }
-                         //      }
-
-                         //      &:nth-child(n+5) {
-                         //           border-top: 1px solid rgba($content-color, 0.3);
-                         //      }
-                         // }
-
-                         // @include mq-max(md) {
-                         //      &:nth-child(3n+3) {
-                         //           .product-box {
-                         //                border-right: none;
-                         //           }
-                         //      }
-
-                         //      &:nth-child(4n+4) {
-                         //           .product-box {
-                         //                border-right: 1px solid rgba($content-color, 0.3);
-                         //           }
-                         //      }
-
-                         //      &:nth-child(n+3) {
-                         //           border-top: 1px solid rgba($content-color, 0.3);
-                         //      }
-                         // }
-
-                         // @include mq-max(sm) {
-                         //      &:nth-child(2n+2) {
-                         //           .product-box {
-                         //                border-right: none;
-                         //           }
-                         //      }
-
-                         //      &:nth-child(3n+3) {
-                         //           .product-box {
-                         //                border-right: 1px solid rgba($content-color, 0.3);
-                         //           }
-                         //      }
-
-                         //      &:nth-child(n+3) {
-                         //           border-top: 1px solid rgba($content-color, 0.3);
-                         //      }
-                         // }
                     }
                }
           }
@@ -403,8 +309,6 @@
                @include pos;
                top: 16px;
                left: 44px;
-               // width: 15px;
-               // height: 15px;
                @include pseudowh($width: 15px, $height: 15px);
                border-bottom: solid 15px #faba02;
                border-left: solid 15px transparent;
@@ -416,8 +320,6 @@
                @include pos;
                top: 0;
                left: 44px;
-               // width: 15px;
-               // height: 15px;
                @include pseudowh($width: 15px, $height: 15px);
                border-bottom: solid 15px #faba02;
                border-left: solid 15px transparent;
@@ -466,7 +368,6 @@
                               width: 17px;
                               height: auto;
                               color: $content-color;
-                              // stroke-width: 1.2px;
                          }
                     }
 
@@ -490,8 +391,6 @@
           }
 
           img {
-               // width: 100%;
-               // height: 140px;
                @include pseudowh($width: 100%, $height: 140px);
                object-fit: contain;
           }
@@ -577,22 +476,13 @@
      padding: calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
 
      li {
-          // display: block;
           display: flex;
           align-items: center;
           height: 80px;
           position: relative;
 
           +li {
-               margin-top: 70px;
-
-               @include mq-max(3xl) {
-                    margin-top: 60px;
-               }
-
-               @include mq-max(md) {
-                    margin-top: 50px;
-               }
+               margin-top: 50px;
 
                @include mq-max(sm) {
                     margin-top: 44px;
@@ -604,7 +494,7 @@
 
                &:after {
                     @include pos;
-                    top: -42px;
+                    top: -28px;
                     right: 0;
                     border-bottom: 1px dashed rgba($content-color, 0.3);
                     width: calc(100% - 103px);
@@ -614,38 +504,35 @@
                          left: 0;
                     }
 
-                    @include mq-max(2xl) {
-                         top: -30px;
-                         width: 52%;
-                    }
+                    // @include mq-max(2xl) {
+                    //      width: 52%;
+                    // }
 
-                    @include mq-max(lg) {
-                         top: -38px;
-                         width: 68%;
-                    }
+                    // @include mq-max(xl) {
+                    //      width: 60%;
+                    // }
 
-                    @include mq-max(xl) {
-                         top: -38px;
-                         width: 60%;
-                    }
+                    // @include mq-max(lg) {
+                    //      width: 68%;
+                    // }
 
-                    @include mq-max(md) {
-                         top: -34px;
-                         width: 59%;
-                    }
+                    // @include mq-max(md) {
+                    //      top: -28px;
+                    //      width: 59%;
+                    // }
 
-                    @include mq-max(sm) {
-                         width: 76%;
-                    }
+                    // @include mq-max(sm) {
+                    //      width: 76%;
+                    // }
 
-                    @include mq-max(xs) {
-                         width: 70%;
-                    }
+                    // @include mq-max(xs) {
+                    //      width: 70%;
+                    // }
 
-                    @include mq-max(2xs) {
-                         top: -20px;
-                         width: 61%;
-                    }
+                    // @include mq-max(2xs) {
+                    //      top: -18px;
+                    //      width: 61%;
+                    // }
                }
           }
 
@@ -663,15 +550,15 @@
                     }
 
                     img {
-                         // width: 80px;
-                         // height: 80px;
                          @include pseudowh($width: 80px, $height: 80px);
                          object-fit: contain;
 
                          @include mq-max(4xl) {
-                              // width: 90px;
-                              // height: 70px;
                               @include pseudowh($width: 90px, $height: 70px);
+                         }
+
+                         @include mq-max(sm) {
+                              @include pseudowh($width: 70px, $height: 70px);
                          }
                     }
                }
@@ -679,8 +566,6 @@
                .offer-detail {
                     padding-left: calc(12px + (23 - 12) * ((100vw - 320px) / (1920 - 320)));
                     position: relative;
-                    // width: calc(100% - 80px);
-                    // height: 100%;
                     @include pseudowh($width: calc(100% - 80px), $height: 80px);
                     display: flex;
                     align-items: center;
@@ -719,7 +604,6 @@
 .product-category {
      padding: calc(19px + (36 - 19) * ((100vw - 320px) / (1920 - 320))) calc(16px + (25 - 16) * ((100vw - 320px) / (1920 - 320)));
      background-color: $light-gray;
-     // @include pseudowh;
 
      .product-category-list {
           column-count: 2;
@@ -750,8 +634,6 @@
                     top: 50%;
                     transform: rotate(45deg) translateY(-50%);
                     left: 0;
-                    // width: 7px;
-                    // height: 7px;
                     @include pseudowh($width: 7px, $height: 7px);
                     border: 1px solid $content-color;
 
@@ -788,6 +670,8 @@
 }
 
 .product-slider {
+     padding-bottom: 5px;
+
      .product-slider-image {
           border-radius: 5px;
      }
@@ -851,8 +735,6 @@
                @include pos;
                bottom: 0;
                left: 0;
-               // width: 120px;
-               // height: 2px;
                @include pseudowh($width: 120px, $height: 2px);
                background-color: var(--theme-color);
 
@@ -892,8 +774,6 @@
 
           .top-selling-image {
                img {
-                    // width: 100px;
-                    // height: 100px;
                     @include pseudowh($width: 100px, $height: 100px);
                     object-fit: contain;
                     border-radius: 5px;
@@ -949,8 +829,6 @@
           overflow: hidden;
 
           img {
-               // width: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320)));
-               // height: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320)));
                @include pseudowh($width: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320))), $height: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320))));
                object-fit: contain;
           }
@@ -998,7 +876,6 @@
                li {
                     width: 45px;
                     height: 45px;
-                    //    background-color: black;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -1009,12 +886,10 @@
                     overflow: hidden;
 
                     &:after {
-                         content: "";
-                         position: absolute;
+                         @include pos;
                          top: 0;
                          left: 0;
-                         width: 100%;
-                         height: 100%;
+                         @include pseudowh;
                          background-color: var(--theme-color);
                          opacity: 0.1;
                     }
@@ -1023,8 +898,7 @@
                          color: var(--theme-color);
 
                          .feather {
-                              width: 20px;
-                              height: auto;
+                              @include pseudowh($width: 20px, $height: auto);
                               margin-top: -2px;
                          }
                     }
@@ -1060,16 +934,12 @@
                position: absolute;
                bottom: 0;
                right: 0;
-               // width: 40px;
-               // height: 40px;
                @include pseudowh($width: 40px, $height: 40px);
                background-color: #F7F5F2;
                border-radius: 100%;
                @include flex_common;
 
                svg {
-                    // width: 20px;
-                    // height: 20px;
                     @include pseudowh($width: 20px, $height: 20px);
                     color: $content-color;
                     stroke-width: 1.5px;
@@ -1091,8 +961,6 @@
      display: flex;
      align-items: center;
      position: relative;
-     // padding-bottom: 20px;
-     // border-bottom: 1px dashed #BFA378;
 
      +.product-offcer-contain {
           margin-top: 50px;
@@ -1108,8 +976,6 @@
 
      .product-offer-image {
           img {
-               // width: 150px;
-               // height: 85px;
                @include pseudowh($width: 150px, $height: 85px);
                object-fit: contain;
           }
@@ -1142,16 +1008,12 @@
                position: absolute;
                bottom: 0;
                right: 0;
-               // width: 40px;
-               // height: 40px;
                @include pseudowh($width: 40px, $height: 40px);
                background-color: #F7F5F2;
                border-radius: 100%;
                @include flex_common;
 
                .feather {
-                    // width: 20px;
-                    // height: 20px;
                     @include pseudowh($width: 20px, $height: 20px);
                     color: #4A5568;
                     stroke-width: 1.5px;
@@ -1170,8 +1032,6 @@
 
      .deal-image {
           img {
-               // width: 250px;
-               // height: 250px;
                @include pseudowh($width: 250px, $height: 250px);
                object-fit: contain;
 
@@ -1235,8 +1095,6 @@
                     }
 
                     a {
-                         // width: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320)));
-                         // height: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320)));
                          @include pseudowh($width: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))));
                          background-color: $white;
                          box-shadow: 0px 5.57831px 13.9458px rgba($black, .05);
@@ -1245,8 +1103,6 @@
                          color: $title-color;
 
                          svg {
-                              // width: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
-                              // height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
                               @include pseudowh($width: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))), $height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))));
                          }
                     }
@@ -1313,12 +1169,6 @@
           box-shadow: 0 0 8px rgba($title-color, .08);
 
           .product-header {
-               // .product-category-menu {
-               //      // left: 0;
-               //      opacity: 1;
-               //      margin-top: 0;
-               // }
-
                .product-image {
                     .product-option {
                          bottom: 10px;
@@ -1334,7 +1184,6 @@
 
      .product-header {
           position: relative;
-          // width: 180px;
 
           .product-image {
                text-align: center;
@@ -1345,8 +1194,6 @@
                }
 
                img {
-                    // width: 100%;
-                    // height: 140px;
                     @include pseudowh($width: 100%, $height: 140px);
                     object-fit: contain;
                }
@@ -1375,9 +1222,7 @@
                               color: $title-color;
 
                               .feather {
-                                   width: 17px;
-                                   height: auto;
-                                   // stroke-width: 1.2px;
+                                   @include pseudowh($width: 17px, $height: auto);
                               }
                          }
 
@@ -1415,21 +1260,13 @@
 
                .label-new {
                     position: relative;
-                    // background-color: var(--theme-color);
                     border-radius: 4px;
                     padding: 3px 8px;
-                    // width: 45px;
-                    // height: 27px;
-                    // @include flex_common;
                     color: $white;
 
                     &.bg-warning {
                          background: linear-gradient(-90deg, #FFBF65 -14.53%, #FFAD39 99.15%) !important;
                     }
-
-                    // &.bg-danger {
-                    //      background: linear-gradient(0deg, #ff6b6b 0%, #ff4f4f 100%) !important;
-                    // }
 
                     &.bg-theme {
                          background: var(--theme-color2) !important;
@@ -1443,9 +1280,6 @@
                }
 
                .wishlist-button {
-                    // position: absolute;
-                    // top: 0;
-                    // right: 0;
                     position: relative;
                     padding: 6px;
                     margin-left: auto;
@@ -1460,8 +1294,6 @@
                     }
 
                     .feather {
-                         // width: 15px;
-                         // height: 15px;
                          @include pseudowh($width: 15px, $height: 15px);
                          color: $content-color;
                     }
@@ -1470,9 +1302,6 @@
                .close-button {
                     position: relative;
                     padding: 0;
-                    // background-color: $white;
-                    // box-shadow: 0 3px 3px rgba($title-color, .24);
-                    // border-radius: 100%;
                     z-index: 0;
 
                     .feather {
@@ -1510,8 +1339,6 @@
                                    top: 0;
                                    left: -1px;
                                    background-color: var(--theme-color);
-                                   // width: 1px;
-                                   // height: 100%;
                                    @include pseudowh($width: 1px, $height: 100%);
                               }
                          }
@@ -1524,34 +1351,12 @@
                               }
 
                               .feather {
-                                   // width: 17px;
-                                   // height: 17px;
                                    @include pseudowh($width: 17px, $height: 17px);
                                    object-fit: contain;
                                    stroke-width: 1.5;
                               }
                          }
                     }
-
-                    // li {//      width: 100%;
-
-                    //      a {
-                    //           width: 35px;
-                    //           height: 35px;
-                    //           background-color: $white;
-                    //           display: flex;
-                    //           align-items: center;
-                    //           justify-content: center;
-                    //           border-radius: 100%;
-                    //           box-shadow: 0 2px 5px rgba($title-color, 0.3);
-
-                    //           .feather {
-                    //                color: $title-color;
-                    //                width: 15px;
-                    //                height: 15px;
-                    //           }
-                    //      }
-                    // }
                }
           }
      }
@@ -1844,7 +1649,6 @@
                -webkit-box-orient: vertical;
                display: -webkit-box;
                overflow: hidden;
-               // color: $black;
                @include rtl(text-align, left, right);
           }
 
@@ -1935,12 +1739,10 @@
 
                input {
                     border: none;
-                    // background-color: transparent;
                     width: 27px;
                     height: unset;
                     background-color: transparent;
                     position: relative;
-                    // border-left: 1px solid #e1b254;
                }
 
                .counter-arrow {
@@ -1980,9 +1782,6 @@
                @include mq-max(xs) {
                     position: relative;
                     transform: unset;
-                    // bottom: 0;
-                    // right: 0;
-                    // margin-top: 10px;
                     width: 100%;
                     margin-top: 10px;
                }

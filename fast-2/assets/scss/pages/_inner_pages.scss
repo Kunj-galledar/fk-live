@@ -18,8 +18,6 @@
             @include pos;
             bottom: 0;
             @include center(horizontal);
-            // width: 70%;
-            // height: 1px;
             @include pseudowh($width: 70px, $height: 1px);
             background-color: var(--theme-color);
         }
@@ -57,10 +55,6 @@
             @include mq-max(3xl) {
                 width: 40%;
             }
-
-            // @include mq-max(2xl) {
-            //   width: 85%;
-            // }
 
             @include mq-max(lg) {
                 width: 50%;
@@ -135,138 +129,6 @@
             }
         }
     }
-
-    // .cart-table {
-    //     table {
-    //         thead {
-    //             tr {
-    //                 text-align: center;
-
-    //                 th {
-    //                     font: 500 14px/18px $public-sans;
-    //                     border-bottom: 1px solid $border-color;
-    //                     color: $title-color;
-    //                 }
-    //             }
-    //         }
-
-    //         tbody {
-    //             border-top: 1px solid $border-color;
-
-    //             tr {
-    //                 td {
-    //                     min-width: 150px;
-    //                     vertical-align: middle;
-    //                     text-align: center;
-    //                     border: none;
-    //                     padding-top: 16px;
-
-    //                     .btn-trash {
-    //                         padding: 0;
-    //                         border: none;
-    //                     }
-
-    //                     &.product {
-    //                         display: flex;
-    //                         align-items: center;
-
-    //                         .product-image {
-    //                             display: inline-block;
-    //                             position: relative;
-
-    //                             button {
-    //                                 padding: 0;
-    //                                 position: absolute;
-    //                                 top: -10px;
-    //                                 right: -10px;
-    //                                 width: 20px;
-    //                                 height: 20px;
-    //                                 background-color: var(--theme-color);
-    //                                 color: $white;
-    //                                 border-radius: 3px;
-    //                             }
-
-    //                             img {
-    //                                 background-color: #f1f1f1;
-    //                                 padding: 10px;
-    //                                 border-radius: 8px;
-    //                                 width: 90px;
-    //                                 height: 90px;
-    //                                 object-fit: cover;
-    //                             }
-    //                         }
-
-    //                         .product-name {
-    //                             margin-left: 20px;
-
-    //                             a {
-    //                                 font-weight: 500;
-    //                                 color: $content-color;
-    //                                 letter-spacing: .8px;
-    //                                 transition: .3s ease;
-
-    //                                 &:hover {
-    //                                     color: $title-color;
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-
-    //                     .product-contain {
-    //                         margin-left: 20px;
-    //                         display: inline-block;
-    //                         vertical-align: middle;
-
-    //                         h4 {
-    //                             span {
-    //                                 font-size: 16px;
-    //                             }
-    //                         }
-
-    //                         h5,
-    //                         p {
-    //                             margin-top: 8px;
-    //                             margin-bottom: 0;
-    //                         }
-
-    //                         p {
-    //                             border-bottom: 1px solid $border-color;
-    //                             display: inline-block;
-    //                         }
-    //                     }
-
-    //                     .fw-500 {
-    //                         font-weight: 500;
-    //                     }
-
-    //                     &.quantity-price {
-    //                         .qty-box {
-    //                             width: 60%;
-    //                             margin: 0 auto;
-
-    //                             .input-group {
-    //                                 button {
-    //                                     background-color: var(--theme-color);
-    //                                     color: $white;
-    //                                     border: none;
-    //                                     width: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
-    //                                     height: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
-    //                                     border-radius: 5px !important;
-    //                                 }
-
-    //                                 .qty-input {
-    //                                     padding: 0;
-    //                                     text-align: center;
-    //                                     border: none;
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 
     .cart-title {
         margin-bottom: calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
@@ -348,8 +210,6 @@
                                 .form-check-input {
                                     margin-top: 2px;
                                     margin-right: 10px;
-                                    // width: 18px;
-                                    // height: 18px;
                                     @include pseudowh($width: 18px, $height: 18px);
 
                                     &:checked {
@@ -409,7 +269,6 @@
 // Shopping Cart Box
 .cart-table {
     background-color: $light-gray;
-    // height: 100%;
     padding: calc(18px + (35 - 18) * ((100vw - 320px) / (1920 - 320))) calc(12px + (25 - 12) * ((100vw - 320px) / (1920 - 320)));
 
     &.cart-table-2 {
@@ -450,36 +309,8 @@
 
     table {
         margin-bottom: 0;
-        // thead {
-        //     tr {
-        //         th {
-        //             background-color: #f1f1f1;
-        //             font-weight: 500;
-        //             font-size: 15px;
-        //             padding: 10px;
-
-        //             &:first-child {
-        //                 text-align: center;
-        //             }
-
-        //             &:nth-child(n + 2) {
-        //                 @include mq-max(md) {
-        //                     display: none;
-        //                 }
-        //             }
-
-        //             &:last-child {
-        //                 @include mq-max(md) {
-        //                     display: revert;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
 
         tbody {
-            // border-top: 2px solid $border-color;
-
             tr {
                 &:last-child {
                     td {
@@ -495,7 +326,6 @@
                 }
 
                 td {
-                    // vertical-align: middle;
                     padding: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320))) 16px;
                     min-width: calc(135px + (170 - 135) * ((100vw - 320px) / (1920 - 320)));
 
@@ -504,24 +334,6 @@
                         font-size: 14px;
                         font-weight: 500;
                     }
-
-                    // &:nth-child(n + 2) {
-                    //   @include mq-max(2xl) {
-                    //     display: none;
-                    //   }
-                    // }
-
-                    // &:last-child {
-                    //   @include mq-max(2xl) {
-                    //     display: revert;
-                    //     text-align: center;
-                    //     vertical-align: top;
-                    //   }
-
-                    //   @include mq-max(xs) {
-                    //     min-width: 160px;
-                    //   }
-                    // }
 
                     &.product-detail {
                         ul {
@@ -595,23 +407,11 @@
 
                                         &:nth-child(n + 4) {
                                             display: none;
-
-                                            // @include mq-max(2xl) {
-                                            //   display: block;
-                                            // }
-
-                                            // @include mq-max(xs) {
-                                            //   min-width: 160px;
-                                            // }
                                         }
 
                                         .price {
                                             display: flex;
                                             align-items: center;
-
-                                            // h5 {
-                                            //     font-weight: 500;
-                                            // }
 
                                             h6 {
                                                 margin-left: 8px;
@@ -641,13 +441,6 @@
                                                         padding: 10px 18px;
                                                         border: none;
                                                         text-align: center;
-                                                        // @include mq-max(xl) {
-                                                        //     width: 90%;
-                                                        // }
-
-                                                        // @include mq-max(2xs) {
-                                                        //     width: 100%;
-                                                        // }
                                                     }
                                                 }
                                             }
@@ -663,18 +456,8 @@
                                                     width: 60%;
                                                 }
 
-                                                // @include mq-max(xl) {
-                                                //     width: 90%;
-                                                // }
-
-                                                // @include mq-max(2xs) {
-                                                //     width: 100%;
-                                                // }
-
                                                 .cart_qty {
                                                     button {
-                                                        // width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
-                                                        // height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)));
                                                         @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
                                                         border: none;
                                                         @include flex_common;
@@ -734,8 +517,6 @@
                     }
 
                     .quantity-price {
-                        // border: 1px solid $border-color;
-                        // border-radius: 5px;
                         width: 62%;
 
                         @include mq-max(3xl) {
@@ -752,8 +533,6 @@
 
                         .cart_qty {
                             button {
-                                // width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320)));
-                                // height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320)));
                                 @include pseudowh($width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))));
                                 border: none;
                                 @include flex_common;
@@ -837,7 +616,6 @@
 
 // Summery cart box
 .summery-box {
-    // border: 1px solid $border-color;
     border-radius: 5px;
     background-color: $light-gray;
 
@@ -846,7 +624,6 @@
         display: flex;
         align-items: center;
         border-bottom: 1px solid $border-color;
-        // background-color: $light-gray;
 
         h3 {
             font-weight: 600;
@@ -871,9 +648,6 @@
     .summery-contain {
         padding: 16px calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
         border-bottom: 1px solid $border-color;
-        // background-color: $light-gray;
-        // height: 250px;
-        // overflow-x: hidden;
 
         &::-webkit-scrollbar-track {
             background-color: $content-color;
@@ -923,7 +697,6 @@
                 padding: 10px 0;
                 display: flex;
                 align-items: center;
-                // border-bottom: 1px solid $border-color;
 
                 &:last-child {
                     border-bottom: none;
@@ -936,7 +709,6 @@
                     &.price {
                         color: $content-color;
                         margin-left: auto;
-                        // font-weight: 500;
 
                         [dir="rtl"] & {
                             margin-left: unset;
@@ -952,7 +724,6 @@
                     }
 
                     span {
-                        // font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                         font-weight: 600;
                     }
                 }
@@ -963,9 +734,6 @@
     .summery-contain {
         padding: calc(11px + (16 - 11) * ((100vw - 320px) / (1920 - 320))) calc(11px + (22 - 11) * ((100vw - 320px) / (1920 - 320)));
         border-bottom: 1px solid $border-color;
-        // background-color: $light-gray;
-        // height: 250px;
-        // overflow-x: hidden;
 
         &::-webkit-scrollbar-track {
             background-color: $content-color;
@@ -984,7 +752,6 @@
             padding: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))) 0;
             display: flex;
             align-items: center;
-            // border-bottom: 1px solid $border-color;
 
             &:last-child {
                 border-bottom: none;
@@ -1003,7 +770,6 @@
                 &.price {
                     color: $content-color;
                     margin-left: auto;
-                    // font-weight: 500;
 
                     [dir="rtl"] & {
                         margin-left: unset;
@@ -1019,7 +785,6 @@
                 }
 
                 span {
-                    // font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 600;
                 }
             }
@@ -1028,7 +793,6 @@
 
     .summery-total {
         padding: 0 calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
-        // background-color: $light-gray;
 
         li {
             padding-top: 12px;
@@ -1041,7 +805,6 @@
 
                 &.price {
                     margin-left: auto;
-                    // font-weight: 600;
 
                     [dir="rtl"] & {
                         margin-left: unset;
@@ -1096,16 +859,8 @@
         @include flex_common ($dis: flex, $align: center, $justify: flex-end);
         flex-wrap: wrap;
         gap: calc(7px + (16 - 7) * ((100vw - 320px) / (1920 - 320)));
-        // margin: calc(-3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
-
-        // li {
-        // margin: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
-        // }
 
         li {
-            // display: block;
-            // width: 100%;
-
             button {
                 width: 100%;
                 font: inherit;
@@ -1134,9 +889,6 @@
 .checkout-section {
     .custom-accordion {
         align-items: center;
-        // display: flex;
-        // flex-wrap: wrap;
-        // gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))));
 
         .accordion-item {
@@ -1157,8 +909,6 @@
                     }
 
                     &::before {
-                        // content: "\f107";
-                        // position: absolute;
                         @include pos($pos: absolute, $content: "\f107");
                         @include font;
                         @include center(vertical);
@@ -1187,11 +937,6 @@
                         align-items: center;
                         width: 100%;
 
-                        // [dir="rtl"] & {
-                        //     padding-left: unset;
-                        //     margin-right: 1.5em;
-                        // }
-
                         .form-check-label {
                             font-weight: 500;
                             color: $title-color;
@@ -1218,10 +963,6 @@
                 }
             }
 
-            // +.accordion-item {
-            //     margin-top: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
-            // }
-
             .accordion-collapse {
                 .accordion-body {
                     .custom-form-check {
@@ -1238,7 +979,6 @@
                             display: flex;
                             align-items: center;
                             font-size: calc(14px + (17 - 14) * ((100vw - 320px) / (1920 - 320)));
-                            // font-weight: 500;
                         }
 
                         input {
@@ -1256,11 +996,7 @@
     }
 
     .custom-navtab {
-        // margin: calc(-6px + (-12 - -6) * ((100vw - 320px) / (1920 - 320)));
         overflow: auto;
-        // display: flex;
-        // flex-wrap: wrap;
-        // gap: calc(0px + (24 - 0) * ((100vw - 320px) / (1920 - 320)));
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(0px + (24 - 0) * ((100vw - 320px) / (1920 - 320))));
 
         @include mq-max(lg) {
@@ -1295,8 +1031,6 @@
                     @include pos;
                     bottom: 0;
                     left: 0;
-                    // width: 0;
-                    // height: 100%;
                     @include pseudowh($width: 0px, $height: 100%);
                     background-color: var(--theme-color);
                     background-color: transparent;
@@ -1341,20 +1075,7 @@
                         font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
                     }
 
-                    // i {
-                    //     position: absolute;
-                    //     @include center(vertical);
-                    //     right: 0;
-                    //     font-size: 22px;
-                    //     color: $title-color;
-                    //     -webkit-text-stroke: 1px $content-color;
-                    //     color: $white;
-                    //     transition: .3s ease-in-out;
-                    // }
-
                     .lord-icon {
-                        // width: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320)));
-                        // height: auto;
                         @include pseudowh($width: calc(38px + (58 - 38) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                         position: absolute;
                         @include center(vertical);
@@ -1382,7 +1103,6 @@
     // Delivery Address
     .delivery-address-box {
         border-radius: 8px;
-        // border: 1px solid $border-color;
         padding: calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
         background-color: $white;
         box-shadow: 0 0 9px rgba($black, 0.07);
@@ -1410,8 +1130,6 @@
 
             .form-check {
                 .form-check-input {
-                    // width: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
-                    // height: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                     @include pseudowh($width: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))), $height: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))));
                     margin-top: 2px;
 
@@ -1433,9 +1151,6 @@
             .delivery-address-detail {
                 margin-left: 10px;
                 width: calc(85% + (75 - 85) * ((100vw - 320px) / (1920 - 320)));
-                // display: flex;
-                // flex-wrap: wrap;
-                // gap: 10px;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
 
                 [dir="rtl"] & {
@@ -1446,16 +1161,7 @@
                 li {
                     display: block;
                     width: 100%;
-
-                    // +li {
-                    //   margin-top: 8px;
-                    // }
                 }
-
-                // h4 {//   line-height: 1.6;
-                //   font-weight: 500;
-                //   // font-size: calc(16px + (17 - 16) * ((100vw - 320px) / (1920 - 320)));
-                // }
 
                 p,
                 h6 {
@@ -1468,22 +1174,12 @@
                         margin-right: 4px;
                     }
                 }
-
-                // h4,
-                // h6 {
-                //     font-weight: 500;
-
-                //     span {
-                //         font-weight: 400;
-                //     }
-                // }
             }
         }
     }
 
     .add-address {
         padding: 30px;
-        // border: 1px solid $border-color;
         height: 100%;
         @include flex_common;
         text-align: center;
@@ -1497,19 +1193,12 @@
     .delivery-option {
         padding: calc(17px + (26 - 17) * ((100vw - 320px) / (1920 - 320)));
         background-color: $white;
-        // box-shadow: 0 0 9px rgba($black, .07);
         border-radius: 5px;
 
         .select-option {
             @include mq-max(3xl) {
                 margin-top: 6px;
             }
-
-            // .form-floating {
-            //     .form-select {
-            //         margin-top: 5px;
-            //     }
-            // }
         }
 
         .date-box {
@@ -1532,34 +1221,6 @@
             @include mq-max(md) {
                 display: block;
             }
-
-            // .shipment-name {
-            //     h4 {
-            //         display: flex;
-            //         align-items: center;
-
-            //         i {
-            //             -webkit-text-stroke: 1px $content-color;
-            //             color: transparent;
-            //             margin-right: 10px;
-            //             font-size: 22px;
-            //         }
-
-            //         span {
-            //             font-size: 17px;
-            //             margin-top: 2px;
-            //             color: $content-color;
-            //         }
-            //     }
-            // }
-
-            // .shipment-detail {
-            //     margin-left: 15px;
-
-            //     @include mq-max(md) {
-            //         margin: 10px 0 0;
-            //     }
-            // }
         }
 
         .custom-form-check {
@@ -1603,7 +1264,6 @@
                 letter-spacing: 0.5px;
                 display: flex;
                 align-items: center;
-                // font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
 
                 &.items {
                     margin-bottom: 5px;
@@ -1625,10 +1285,6 @@
                     @include mq-max(sm) {
                         margin-top: 8px;
                     }
-
-                    // @include mq-max(xs) {
-                    //   margin-left: 0;
-                    // }
                 }
 
                 i {
@@ -1693,8 +1349,6 @@
                 }
 
                 &::before {
-                    // content: "\f107";
-                    // position: absolute;
                     @include pos($pos: absolute, $content: "\f107");
                     @include font;
                     @include center(vertical);
@@ -1782,208 +1436,8 @@
 /**=====================
      Contact Us Scss
 ==========================**/
-// .contact-address {
-//   padding: calc(28px + (50 - 28) * ((100vw - 320px) / (1920 - 320))) 0;
-//   //   text-align: center;
-//   color: $title-color;
-//   font-family: $public-sans;
-//   background-color: #f2f2ee;
-
-//   .address-box {
-//     padding: 20px;
-//     border-radius: 20px;
-//     z-index: 0;
-//     overflow: hidden;
-
-//     &.address-color-1 {
-//       position: relative;
-
-//       &:before {
-//         @include pos;
-//         top: 0;
-//         left: 0;
-//         @include pseudowh;
-//         opacity: 0.3;
-//         z-index: -1;
-//         background-color: #c5e3d9;
-//       }
-//     }
-
-//     &.address-color-2 {
-//       position: relative;
-
-//       &:after {
-//         @include pos;
-//         top: 0;
-//         left: 0;
-//         @include pseudowh;
-//         opacity: 0.3;
-//         z-index: -1;
-//         background-color: #ffa53b;
-//       }
-//     }
-
-//     &.address-color-3 {
-//       position: relative;
-
-//       &:after {
-//         @include pos;
-//         top: 0;
-//         left: 0;
-//         @include pseudowh;
-//         opacity: 0.3;
-//         z-index: -1;
-//         background-color: $danger-color;
-//       }
-//     }
-
-//     h3 {
-//       font-weight: 600;
-//       margin-bottom: 15px;
-//     }
-
-//     p {
-//       width: 70%;
-//       line-height: 2;
-//       color: #777;
-//       letter-spacing: 0.5px;
-//     }
-
-//     span {
-//       letter-spacing: 1.4px;
-//     }
-//   }
-// }
-
-// .contact-us-section {
-//   .map-section {
-//     position: relative;
-
-//     .contact-box {
-//       padding: 35px 20px;
-//       background-color: $white;
-//       margin-top: -200px;
-//       border-radius: 8px 0 0 8px;
-//     }
-
-//     .contact-title {
-//       margin-bottom: 30px;
-
-//       h2 {
-//         margin-bottom: 15px;
-//       }
-
-//       h5 {
-//         width: 53%;
-//         font-size: 18px;
-//         line-height: 1.3;
-//         color: $content-color;
-//       }
-//     }
-//   }
-// }
-
-// .contact-detail-section {
-//   .contact-detail-title {
-//     text-align: center;
-//     margin-bottom: 30px;
-
-//     h2 {
-//       font-size: 38px;
-//       font-weight: 400;
-//       margin-bottom: 17px;
-//     }
-
-//     p {
-//       margin-bottom: 0;
-//       color: $content-color;
-//       font-size: 16px;
-//       line-height: 1.6;
-//     }
-//   }
-
-//   .contact-contain {
-//     padding: 28px 20px;
-//     border: 1px solid $border-color;
-//     border-radius: 10px;
-//     text-align: center;
-
-//     .contact-icon {
-//       text-align: center;
-//       margin-bottom: 20px;
-
-//       .feather {
-//         width: 29px;
-//         height: auto;
-//         color: var(--theme-color);
-//       }
-//     }
-
-//     .contact-detail-2 {
-//       p {
-//         margin: 12px 0 0 !important;
-
-//         &:last-child {
-//           margin: 5px 0 0 !important;
-//         }
-//       }
-//     }
-
-//     .contact-detail {
-//       h3 {
-//         margin-bottom: 5px;
-//         // font-size: 18px;
-//         font-weight: 700;
-//       }
-
-//       p {
-//         font-size: 15px;
-//         line-height: 1.4;
-//         margin-bottom: 12px;
-//       }
-
-//       a {
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         gap: 7px;
-//         font-size: 16px;
-//       }
-//     }
-//   }
-// }
-
-// .contact-box-section {
-//   .contact-spacing {
-//     padding: 48px 70px;
-//     border-radius: 10px;
-//     border: 1px solid $border-color;
-
-//     .contact-box-title {
-//       margin-bottom: 18px;
-//       margin-top: -5px;
-
-//       h3 {
-//         font-size: 24px;
-//         font-weight: 600;
-//       }
-//     }
-
-//     .contact-detail {
-//       p {
-//         margin-bottom: 0;
-//         font-size: 16px;
-//         line-height: 1.7;
-//       }
-//     }
-//   }
-// }
-
 .contact-box-section {
     .left-sidebar-box {
-        // padding: 30px 60px;// border-radius: 10px;
-        // box-shadow: 0 0 8px rgba($title-color, .1);
-
         .contact-image {
             text-align: center;
             margin-bottom: calc(25px + (64 - 25) * ((100vw - 320px) / (1920 - 320)));
@@ -2006,8 +1460,6 @@
                     @include pos;
                     bottom: -5px;
                     left: 0;
-                    // width: 70%;
-                    // height: 2px;
                     @include pseudowh($width: 70%, $height: 2px);
                     background: var(--theme-color2);
 
@@ -2022,9 +1474,6 @@
         .contact-detail {
             .contact-detail-box {
                 align-items: center;
-                // display: flex;
-                // flex-wrap: wrap;
-                // gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320))));
                 background-color: $light-gray;
                 padding: calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(30px + (41 - 30) * ((100vw - 320px) / (1920 - 320)));
@@ -2094,7 +1543,6 @@
                     &:focus {
                         background-color: $white;
                         border-color: transparent;
-                        // box-shadow: 1px 1px 8px rgba($title-color, .1);
                     }
                 }
 
@@ -2157,10 +1605,7 @@
 .map-section {
     .map-box {
         iframe {
-            // width: 100%;
-            // height: 350px;
             @include pseudowh($width: 100%, $height: 350px);
-            // border-radius: 8px;
         }
     }
 }
@@ -2228,13 +1673,10 @@
 
             ul {
                 margin: -15px;
-                // display: flex;
-                // align-items: center;
 
                 li {
                     display: block;
                     margin: 15px;
-                    // width: 100%;
 
                     a {
                         @include flex_common;
@@ -2258,12 +1700,8 @@
         }
 
         .remember-box {
-            // display: flex;
-            // align-items: center;
-
             label {
                 font-size: 16px;
-                // margin-top: 6px;
 
                 span {
                     font-weight: 500;
@@ -2291,8 +1729,6 @@
                 @include pos;
                 @include center(vertical);
                 left: 0;
-                // width: 100%;
-                // height: 1px;
                 @include pseudowh($width: 100%, $height: 1px);
                 background-color: #ddd;
                 z-index: 0;
@@ -2306,19 +1742,6 @@
                 display: inline-block;
             }
         }
-
-        // .google-button {
-        //     background-color: $white;
-        //     color: $title-color;
-        //     border: 1px solid #bfbfbf;
-        //     @include flex_common;
-        //     border-radius: 5px;
-
-        //     img {
-        //         width: 24px;
-        //         margin-right: 10px;
-        //     }
-        // }
 
         .sign-up-box {
             margin-top: 20px;
@@ -2377,8 +1800,6 @@
             border-radius: 7px;
 
             .feather {
-                // width: 24px;
-                // height: auto;
                 @include pseudowh($width: 24px, $height: auto);
                 color: var(--theme-color);
                 stroke-width: 2.6px;
@@ -2417,9 +1838,6 @@
 
     .faq-accordion {
         .accordion {
-            // display: flex;
-            // flex-wrap: wrap;
-            // gap: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320))));
 
             .accordion-item {
@@ -2430,8 +1848,6 @@
                 overflow: hidden;
 
                 .accordion-header {
-                    // background-color: $light-gray;
-
                     .accordion-button {
                         background-color: $light-gray;
                         font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
@@ -2451,11 +1867,6 @@
                         &::after {
                             content: unset;
                         }
-
-                        // &::before {
-                        //   content: "\f107";
-                        //   @include font;
-                        // }
 
                         &:not(.collapsed) {
                             font-weight: 700;
@@ -2540,8 +1951,6 @@
                     margin: 0 auto;
 
                     img {
-                        // width: 100%;
-                        // height: 90px;
                         @include pseudowh($width: 100%, $height: 90px);
                         object-fit: contain;
                     }
@@ -2596,17 +2005,11 @@
 ==========================**/
 .blog-section {
     .left-sidebar-box {
-        // position: sticky;
-        // top: 20px;
-        // height: 100%;
-
         .left-search-box {
             .search-box {
                 position: relative;
 
                 &::before {
-                    // content: "\f002";
-                    // position: absolute;
                     @include pos($pos: absolute, $content: "\f002");
                     @include font;
                     @include center(vertical);
@@ -2618,8 +2021,6 @@
                     @include pos;
                     @include center(vertical);
                     right: 51px;
-                    // width: 1px;
-                    // height: 60%;
                     @include pseudowh($width: 1px, $height: 60%);
                     opacity: .3;
                     background-color: $content-color;
@@ -2652,8 +2053,6 @@
                 }
 
                 .accordion-header {
-                    // margin-bottom: 20px;
-
                     .accordion-button {
                         background-color: $light-gray;
                         color: $title-color;
@@ -2664,8 +2063,6 @@
                             background-image: none;
                             content: "\f107";
                             @include font;
-                            // width: unset;
-                            // height: unset;
                             @include pseudowh($width: unset, $height: unset);
 
                             [dir="rtl"] & {
@@ -2703,7 +2100,6 @@
 
                                 .recent-image {
                                     width: 110px;
-                                    // height: 100%;
                                     border-radius: 5px;
                                     overflow: hidden;
 
@@ -2736,8 +2132,6 @@
                                         color: $content-color;
 
                                         .feather {
-                                            // width: 18px;
-                                            // height: 18px;
                                             @include pseudowh($width: 18px, $height: 18px);
                                             stroke-width: 1;
                                         }
@@ -2759,8 +2153,6 @@
                                     display: block;
                                     position: relative;
                                     transition: all 0.3s ease-in-out;
-                                    // padding: 10px 20px;
-                                    // border-radius: 5px;
                                     z-index: 0;
                                     overflow: hidden;
                                     width: 100%;
@@ -2768,30 +2160,6 @@
                                     &:first-child {
                                         padding-top: 0;
                                     }
-
-                                    // &::after {
-                                    //   @include pos;
-                                    //   top: 0;
-                                    //   left: 0;
-                                    //   opacity: 0;
-                                    //   font-size: 12px;
-                                    //   transition: all 0.3s ease-in-out;
-                                    //   @include pseudowh;
-                                    //   background-color: var(--theme-color);
-                                    //   z-index: -1;
-                                    // }
-
-                                    // &:hover {
-                                    //     a {
-                                    //         .category-name {
-
-                                    //             h5,
-                                    //             span {
-                                    //                 color: var(--theme-color);
-                                    //             }
-                                    //         }
-                                    //     }
-                                    // }
 
                                     a {
                                         display: block;
@@ -2816,8 +2184,6 @@
                                                 background-color: var(--theme-color);
                                                 padding: 4px 5px 3px;
                                                 border-radius: 100%;
-                                                // width: 22px;
-                                                // height: 22px;
                                                 @include pseudowh($width: 22px, $height: 22px);
                                                 @include flex_common;
                                             }
@@ -2838,7 +2204,6 @@
 
                                 li {
                                     z-index: 0;
-                                    // box-shadow: 0 0 3px rgba($content-color, .4);
                                     padding: 4px 9px;
                                     border-radius: 3px;
                                     transition: all .3s ease-in-out;
@@ -2858,7 +2223,6 @@
                                     }
 
                                     &:hover {
-                                        // background-color: var(--theme-color);
                                         border-color: transparent;
 
                                         &::after {
@@ -2925,12 +2289,9 @@
                 @include flex_common;
 
                 i {
-                    // width: 16px;
-                    // height: 16px;
                     @include pseudowh($width: 16px, $height: 16px);
                     object-fit: contain;
                     margin-right: 3px;
-                    // filter: invert(1) brightness(100);
                     color: $white;
                 }
             }
@@ -2951,8 +2312,6 @@
                     font-size: 13px;
 
                     .feather {
-                        // width: 16px;
-                        // height: 16px;
                         @include pseudowh($width: 16px, $height: 16px);
                         object-fit: contain;
                         margin-right: 4px;
@@ -3098,8 +2457,6 @@
                         &::before {
                             @include pos;
                             background-color: $title-color;
-                            // width: 15px;
-                            // height: 1px;
                             @include pseudowh($width: 15px, $height: 1px);
                             @include center(vertical);
                             left: -24px;
@@ -3134,8 +2491,6 @@
                         align-items: center;
 
                         .feather {
-                            // width: 18px;
-                            // height: 18px;
                             @include pseudowh($width: 18px, $height: 18px);
                             margin-right: 3px;
 
@@ -3151,19 +2506,8 @@
     }
 
     .blog-detail-contain {
-        // border-bottom: 1px solid $border-color;
-        // padding-bottom: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
-        // margin-bottom: calc(35px + (60 - 35) * ((100vw - 320px) / (1920 - 320)));
-
-        // h2 {//   line-height: 44px;
-        //   margin-bottom: 25px;
-        //   font-size: 40px;
-        //   font-weight: 700;
-        // }
-
         p {
             color: $content-color;
-            // text-align: justify;
             font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
             line-height: calc(25px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
             margin-bottom: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
@@ -3171,8 +2515,6 @@
             .first {
                 font-size: calc(55px + (70 - 55) * ((100vw - 320px) / (1920 - 320)));
                 color: $content-color;
-                // width: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320)));
-                // height: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320)));
                 @include pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))));
                 @include flex_common;
                 float: left;
@@ -3202,8 +2544,6 @@
             }
 
             &::after {
-                // content: "\f10d";
-                // position: absolute;
                 @include pos($pos: absolute, $content: "\f10d");
                 @include font;
                 font-size: calc(38px + (70 - 38) * ((100vw - 320px) / (1920 - 320)));
@@ -3216,18 +2556,6 @@
 
     .leave-title {
         margin: 40px 0 9px;
-        // text-align: center;
-        // position: relative;
-
-        // &::before {
-        //   @include pos;
-        //   @include center(vertical);
-        //   left: 0;
-        //   width: 100%;
-        //   height: 1px;
-        //   background-color: #ddd;
-        //   z-index: -1;
-        // }
 
         h3 {
             position: relative;
@@ -3235,18 +2563,6 @@
             z-index: 0;
             color: $content-color;
             font-size: 22px;
-            // display: inline-block;
-            // background-color: $white;
-            // padding: 0 10px;
-
-            // &::before {
-            //   @include pos;
-            //   bottom: -7px;
-            //   left: 0;
-            //   width: 80%;
-            //   height: 1px;
-            //   background-color: var(--theme-color);
-            // }
         }
     }
 
@@ -3254,21 +2570,13 @@
         margin-top: 24px;
 
         ul {
-            // box-shadow: 0 0 14px rgba($title-color, .15);
-            // background-color: #fbfbfb;
             display: flex;
             flex-wrap: wrap;
 
-            // gap: 50px;
             [dir="rtl"] & {
                 padding-left: unset;
                 padding-right: 0;
             }
-
-            // @include mq-max(xs) {
-            //   box-shadow: none;
-            //   background-color: unset;
-            // }
 
             li {
                 padding: 0px 0 50px;
@@ -3282,16 +2590,6 @@
                 @include mq-max(xs) {
                     padding: 0;
                 }
-
-                // +li {//   &::before {
-                //     @include pos;
-                //     width: 100%;
-                //     height: 1px;
-                //     background-color: #777;
-                //     top: 0;
-                //     left: 0;
-                //   }
-                // }
 
                 .user-box {
                     display: flex;
@@ -3317,10 +2615,6 @@
                             margin: -3px 9px 0 0;
                             color: #777;
 
-                            // margin-top: -3px;
-                            // margin-right: 9px;
-                            // margin-bottom: 0px;
-                            // margin-left: 0px;
                             [dir="rtl"] & {
                                 margin: -3px 0 0 9px;
                             }
@@ -3331,8 +2625,6 @@
                         position: relative;
 
                         img {
-                            // width: 60px;
-                            // height: 60px;
                             @include pseudowh($width: 60px, $height: 60px);
                             object-fit: cover;
                             border-radius: 100%;
@@ -3356,7 +2648,6 @@
 
                             h5 {
                                 font-weight: 600;
-                                // margin-bottom: 4px;
                             }
 
                             h6 {
@@ -3419,7 +2710,6 @@
                 margin: 20px 0 0;
                 display: flex;
                 align-items: center;
-                // @include mq-max()
 
                 .form-check {
                     display: flex;
@@ -3466,36 +2756,11 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    // width: 100vw;
-    // height: 100vh;
     @include pseudowh($width: 100vw, $height: 100vh);
     position: relative;
     @include flex_common;
 
-    // .bg-black {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-color: $black;
-    //   opacity: .2;
-    //   z-index: 0;
-    // }
-
-    // &::before {
-    //   @include pos;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background: var(--theme-color2);
-    //   // opacity: .2;
-    //   z-index: -1;
-    // }
-
     .coming-box {
-        // height: 100vh;
         text-align: center;
         z-index: 1;
 
@@ -3541,21 +2806,11 @@
                     background-color: $white;
                     border-radius: 10px;
                     @include flex_common;
-                    // box-shadow: 0 0 5px rgba($title-color, 0.2);
-                    // width: 100px;
-                    // height: 100px;
-                    // @include pseudowh($width: 80px, $height: 80px);
-                    // @include flex_common;
-                    // border-radius: 6px;
-                    // background: var(--theme-color2);
 
                     +li {
                         &::after {
-                            // content: ":";
-                            // position: absolute;
                             @include pos($pos: absolute, $content: ":");
                             @include center(vertical);
-                            // left: -25px;
                             left: -17px;
                             font-size: 30px;
                             color: var(--theme-color);
@@ -3625,51 +2880,6 @@
                 }
             }
         }
-
-        // .social-icon {
-        //   margin-top: 40px;
-
-        //   ul {
-        //     // display: flex;
-        //     // flex-wrap: wrap;
-        //     // gap: 20px;
-        //     @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
-        //     justify-content: center;
-
-        //     li {
-        //       // width: 50px;
-        //       // height: 50px;
-        //       @include pseudowh($width: 50px, $height: 50px);
-        //       @include flex_common;
-        //       border-radius: 5px;
-
-        //       a {
-        //         font-size: 19px;
-        //         color: $white;
-        //       }
-
-        //       &.fb-bg {
-        //         background-color: #4267B2;
-        //       }
-
-        //       &.twitter-bg {
-        //         background-color: #00acee;
-        //       }
-
-        //       &.linkedin-bg {
-        //         background-color: #0e76a8;
-        //       }
-
-        //       &.pint-bg {
-        //         background-color: #c8232c;
-        //       }
-
-        //       &.google-bg {
-        //         background-color: #f4c20d;
-        //       }
-        //     }
-        //   }
-        // }
     }
 }
 
@@ -3690,14 +2900,6 @@
         width: 80%;
         line-height: 1.3;
         position: relative;
-
-        // &::before {//     @include pos;
-        //     bottom: calc(-7px + (6 - 7) * ((100vw - 320px) / (1920 - 320)));
-        //     left: 0;
-        //     width: calc(106px + (175 - 106) * ((100vw - 320px) / (1920 - 320)));
-        //     height: 3px;
-        //     background: #ffa53b;
-        // }
 
         &.center {
             &::before {
@@ -3756,34 +2958,22 @@
             line-height: 1.7;
             color: $content-color;
             margin-bottom: calc(11px + (20 - 11) * ((100vw - 320px) / (1920 - 320)));
-
-            // &:nth-last-of-type(1) {
-            //   margin-bottom: 0;
-            // }
         }
     }
 
     .delivery-list {
         ul {
-            // display: flex;
-            // flex-wrap: wrap;
-            // gap: calc(11px + (20 - 11) * ((100vw - 320px) / (1920 - 320)));
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(11px + (20 - 11) * ((100vw - 320px) / (1920 - 320))));
 
             li {
                 width: 100%;
 
                 .deliver-box {
-                    // display: flex;
-                    // flex-wrap: nowrap;
-                    // gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
                     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320))));
                     align-items: flex-start;
                     color: $content-color;
 
                     .feather {
-                        // width: 17px;
-                        // height: auto;
                         @include pseudowh($width: 17px, $height: auto);
                         margin-top: 3px;
                     }
@@ -3800,24 +2990,16 @@
     .delivery-box {
         margin-top: 20px;
         align-items: center;
-        // display: flex;
-        // flex-wrap: wrap;
-        // gap: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))));
 
         li {
             .delivery-box {
                 align-items: center;
-                // display: flex;
-                // flex-wrap: wrap;
-                // gap: 12px;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
                 margin-top: 0;
 
                 .delivery-icon {
                     img {
-                        // width: 30px;
-                        // height: auto;
                         @include pseudowh($width: 30px, $height: auto);
                     }
                 }
@@ -3834,23 +3016,14 @@
         background: $white;
         padding: calc(27px + (50 - 27) * ((100vw - 320px) / (1920 - 320)));
         border-radius: calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
-        // text-align: left;
         position: relative;
 
-        // [dir="rtl"] & {
-        //     direction: rtl;
-        // 
-
         .client-icon {
-            // width: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320)));
-            // height: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320)));
             @include pseudowh($width: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320))), $height: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320))));
             margin-bottom: 14px;
 
             img {
                 object-fit: contain;
-                // width: 74%;
-                // height: 100%;
                 @include pseudowh($width: 74%, $height: 100%);
             }
         }
@@ -3875,21 +3048,10 @@
             margin-bottom: 7px;
             font-weight: 400;
             position: relative;
-
-            // &:before {
-            //     @include pos;
-            //     bottom: -4px;
-            //     left: 0;
-            //     // width: 90px;
-            //     // height: 2px;
-            //     @include pseudowh($width: 90px, $height: 2px);
-            //     background-color: #ffa53b;
-            // }
         }
 
         p {
             color: $content-color;
-            // width: 80%;
             margin: 0 auto;
             line-height: 1.7;
         }
@@ -3897,26 +3059,11 @@
 
     .client-box {
         .client-list {
-            // display: flex;
-            // align-items: center;
-            // justify-content: space-between;
             @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
             li {
                 width: 460px;
-                // background-color: antiquewhite;
                 position: relative;
-
-                // +li {
-                //     &::before {
-                //         @include pos;
-                //         @include center(vertical);
-                //         left: -50px;
-                //         // width: 1px;// height: 70%;
-                //         @include pseudowh($width: 1px, $height: 70%);
-                //         background-color: #ddd;
-                //     }
-                // }
             }
         }
     }
@@ -3924,9 +3071,6 @@
 
 .team-section {
     .team-box {
-        // padding-bottom: 60px;// position: relative;
-        // margin-bottom: 10px !important;
-
         &:hover {
             .team-iamge {
                 img {
@@ -3992,27 +3136,17 @@
                 position: relative;
                 margin-top: 15px;
                 justify-content: center;
-                // display: flex;
-                // flex-wrap: wrap;
-                // gap: 14px;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
                 transition: all .3s ease-in-out;
 
                 li {
                     a {
-                        // background-color: $content-color;
-                        // width: 40px;// height: 40px;
                         @include flex_common;
                         font-size: 16px;
-                        // color: $content-color;
-                        // border-radius: 5px;
                         color: $white;
                         border-radius: 5px;
-                        // width: 30px;
-                        // height: 30px;
                         @include pseudowh($width: 30px, $height: 30px);
                         background-color: #ededed;
-                        // background: red;
 
                         &.fb-bg {
                             color: #4267B2;
@@ -4039,58 +3173,13 @@
 .review-section {
     background-color: $light-gray;
 
-    //     .review-box {
-    //         background-color: $white;
-    //         padding: calc(23px + (34 - 23) * ((100vw - 320px) / (1920 - 320)));
-    //         border-radius: 10px;
-    //         box-shadow: 0 0 8px rgba($title-color, 0.1);
-    //         margin: 10px !important;
-    //         z-index: 0;
-    //         position: relative;
-    //         overflow: hidden;
-
-    //         i {
-    //             position: absolute;
-    //             font-size: 106px;
-    //             opacity: 0.05;
-    //             z-index: -1;
-    //             transform: rotate(15deg);
-    //             bottom: -30px;
-    //             right: -8px;
-
-    //             // &.fa-quote-right {}// &.fa-quote-left {
-    // //     top: -30px;
-    // //     left: -8px;
-    // //     // transform: rotate(-15deg);
-    // // }
-    //         }
-
-    //         p {
-    //             line-height: 1.7;
-    //             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-    //             color: $content-color;
-    //             -webkit-line-clamp: 3;
-    //             -webkit-box-orient: vertical;
-    //             display: -webkit-box;
-    //             overflow: hidden;
-    //         }
-
-    //         h6 {
-    //             font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
-    //             font-weight: 600;
-    //         }
-    //     }
-
     .reviewer-box {
         background-color: $white;
         padding: calc(18px + (34 - 18) * ((100vw - 320px) / (1920 - 320)));
         border-radius: 10px;
-        // box-shadow: 0 0 8px rgba($title-color, 0.1);
-        // margin: 10px !important;
         z-index: 0;
         position: relative;
         overflow: hidden;
-        // text-align: center;
 
         i {
             position: absolute;
@@ -4109,9 +3198,6 @@
         }
 
         h3 {
-            // font-weight: 700;
-            // margin: 6px 0 13px;
-            // font-size: calc(19px + (23 - 19) * ((100vw - 320px) / (1920 - 320)));
             font-weight: 400;
             margin: 10px 0 13px;
             font-size: 20px;
@@ -4127,22 +3213,15 @@
 
         .reviewer-profile {
             align-items: center;
-            // display: flex;
-            // flex-wrap: wrap;
-            // gap: calc(12px + (19 - 12) * ((100vw - 320px) / (1920 - 320)));
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(12px + (19 - 12) * ((100vw - 320px) / (1920 - 320))));
 
             .reviewer-image {
-                // width: calc(65px + (75 - 65) * ((100vw - 320px) / (1920 - 320)));
-                // height: auto;
                 @include pseudowh($width: calc(65px + (75 - 65) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                 border-radius: 8px;
                 overflow: hidden;
 
                 img {
-                    // width: 100%;
-                    // height: 100%;
-                    @include pseudowh($width: 100%, $height: 100%);
+                    @include pseudowh;
                     object-fit: contain;
                 }
             }
@@ -4194,8 +3273,6 @@
             @include pos;
             bottom: -4px;
             left: 0;
-            // width: 140px;
-            // height: 3px;
             @include pseudowh($width: 140px, $height: 3px);
             background-color: #ffa53b;
 
@@ -4221,8 +3298,6 @@
             position: fixed;
             top: 0;
             left: -320px;
-            // width: 300px;
-            // height: 100vh;
             @include pseudowh($width: 300px, $height: 100vh);
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
@@ -4249,8 +3324,6 @@
 
             .close-sidebar {
                 border: none;
-                // padding: 7px 11px;
-                // border-radius: 100%;
                 font-size: 15px;
                 background-color: transparent;
                 color: $content-color;
@@ -4262,13 +3335,7 @@
             position: relative;
 
             .cover-image {
-                // width: 100%;
-                // height: 250px;
-                // padding: 18px;
-                // border: 1px solid $border-color;
-                // border-radius: 8px;
                 position: relative;
-                // border-radius: 5px;
                 overflow: hidden;
 
                 img {
@@ -4283,9 +3350,7 @@
 
                 &:before {
                     @include pos;
-                    // width: 100%;
-                    // height: 100%;
-                    @include pseudowh($width: 100%, $height: 100%);
+                    @include pseudowh;
                     top: 0;
                     left: 0;
                     background-color: $title-color;
@@ -4298,8 +3363,6 @@
                     right: 8px;
                     z-index: 1;
                     background-color: $white;
-                    // width: 30px;
-                    // height: 30px;
                     @include pseudowh($width: 30px, $height: 30px);
                     border-radius: 100%;
                     @include flex_common;
@@ -4332,8 +3395,6 @@
                         left: 55%;
                         z-index: 1;
                         background-color: $white;
-                        // width: 30px;
-                        // height: 30px;
                         @include pseudowh($width: 30px, $height: 30px);
                         border-radius: 100%;
                         @include flex_common;
@@ -4368,7 +3429,6 @@
         .user-nav-pills {
             flex-wrap: wrap;
             gap: calc(2px + (7 - 2) * ((100vw - 320px) / (1920 - 320)));
-            // padding: 15px;
             margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320))) 0 6px;
 
             .nav-item {
@@ -4391,7 +3451,6 @@
 
                     &.active,
                     .show>.nav-link {
-                        // color: #222;
                         border-left: 3px solid var(--theme-color);
                         font-weight: 600;
                         background-color: transparent;
@@ -4401,23 +3460,14 @@
                             @include pos;
                             top: 0;
                             left: 0;
-                            // width: 100%;
-                            // height: 100%;
-                            @include pseudowh($width: 100%, $height: 100%);
+                            @include pseudowh;
                             background: var(--theme-color2);
                             z-index: -1;
                             opacity: 0.1;
                         }
-
-                        // .feather {
-                        //     fill: var(--theme-color);
-                        //     stroke: #fff;
-                        // }
                     }
 
                     .feather {
-                        // width: calc(18px+(19 - 18) * ((100vw - 320px) / (1920 - 320)));
-                        // height: auto;
                         @include pseudowh($width: calc(18px + (19 - 18) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                         margin-right: 10px;
 
@@ -4426,27 +3476,6 @@
                             margin-left: 10px;
                         }
                     }
-
-                    // &::before {
-                    //     @include pos;
-                    //     top: 0;
-                    //     left: 0;
-                    //     width: 100%;
-                    //     height: 100%;
-                    //     background: var(--theme-color2);
-                    //     z-index: -1;
-                    //     opacity: 0.1;
-                    // }
-
-                    // &::after {
-                    //     content: "";
-                    //     position: absolute;
-                    //     top: 0;
-                    //     left: 0;
-                    //     width: 5px;
-                    //     height: 100%;
-                    //     background: var(--theme-color2);
-                    // }
                 }
             }
         }
@@ -4455,13 +3484,11 @@
     .dashboard-right-sidebar {
         background-color: $light-gray;
         padding: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
-        // box-shadow: 0 0 8px rgba($title-color, .14);
         border-radius: 8px;
 
         .dashboard-bg-box {
             padding: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
             background-color: $white;
-            // border: 1px solid $border-color;
             border-radius: 6px;
         }
 
@@ -4488,10 +3515,6 @@
                     padding: calc(16px + (25 - 16) * ((100vw - 320px) / (1920 - 320)));
                     border-radius: 9px;
                     box-shadow: 0 0 8px rgba($title-color, 0.08);
-                    align-items: center;
-                    // display: flex;
-                    // flex-wrap: wrap;
-                    // gap: 15px;
                     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
                     position: relative;
                     overflow: hidden;
@@ -4538,9 +3561,6 @@
                 margin-bottom: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
 
                 h4 {
-                    // display: flex;
-                    // align-items: center;
-                    // justify-content: space-between;
                     @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                     a {
@@ -4569,17 +3589,11 @@
 
         .dashboard-order {
             .order-contain {
-                // display: flex;
-                // flex-wrap: wrap;
-                // gap: 30px;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320))));
 
                 .order-box {
                     .order-container {
                         align-items: center;
-                        // display: flex;
-                        // flex-wrap: wrap;
-                        // gap: 14px;
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))));
 
                         .order-icon {
@@ -4646,9 +3660,6 @@
                         margin-top: 30px;
                         border-radius: 8px;
                         align-items: center;
-                        // display: flex;
-                        // flex-wrap: nowrap;
-                        // gap: 20px;
                         @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 20px);
 
                         @include mq-max(xl) {
@@ -4674,9 +3685,6 @@
                             }
 
                             .product-size {
-                                // display: flex;
-                                // flex-wrap: wrap;
-                                // gap: 9px;
                                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))));
 
                                 li {
@@ -4732,8 +3740,6 @@
 
                     .form-check {
                         .form-check-input {
-                            // width: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
-                            // height: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                             @include pseudowh($width: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))), $height: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))));
                             margin-top: 2px;
 
@@ -4768,8 +3774,6 @@
                                 td {
                                     border: none;
                                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                                    // padding-left: 0;
-                                    // padding-right: 0;
                                     padding: 4px 0;
 
                                     &:first-child {
@@ -4797,9 +3801,6 @@
 
                                     h4 {
                                         align-items: center;
-                                        // display: flex;
-                                        // flex-wrap: wrap;
-                                        // gap: 12px;
                                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
                                         font-weight: 500;
                                         color: $title-color;
@@ -4821,9 +3822,6 @@
 
                 .button-group {
                     align-items: center;
-                    // display: flex;
-                    // flex-wrap: nowrap;
-                    // gap: 10px;
                     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
 
                     button {
@@ -4831,8 +3829,6 @@
                         font-weight: 600;
 
                         .feather {
-                            // width: 18px;
-                            // height: auto;
                             @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                             margin-right: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)));
 
@@ -4843,38 +3839,6 @@
                         }
                     }
                 }
-
-                // .rename-remove {
-                //     position: absolute;
-                //     top: 0;
-                //     right: 0;
-                //     width: 100%;
-                //     height: 100%;
-                //     background-color: rgba($title-color, 0.3);
-                //     @include flex_common;
-                //     flex-wrap: wrap;
-                //     gap: 8px;
-
-                //     .rename-icon,
-                //     .remove-icon {
-                //         padding: 8px;
-                //         border-radius: 5px;
-
-                //         .feather {
-                //             color: $white;
-                //             width: 20px;
-                //             height: auto;
-                //         }
-                //     }
-
-                //     .rename-icon {
-                //         background: var(--theme-color2);
-                //     }
-
-                //     .remove-icon {
-                //         background: linear-gradient(90deg, #ff6b6b 0%, #ff4f4f 100%);
-                //     }
-                // }
             }
 
             .add-address {
@@ -5063,8 +4027,6 @@
 
         .dashboard-profile {
             .profile-detail {
-                // display: flex;// align-items: center;
-
                 .profile-name-detail {
                     display: flex;
                     align-items: center;
@@ -5127,9 +4089,7 @@
 
                     &::after {
                         @include pos;
-                        // width: 100%;
-                        // height: 100%;
-                        @include pseudowh($width: 100%, $height: 100%);
+                        @include pseudowh;
                         top: 0;
                         left: 0;
                         background: var(--theme-color2);
@@ -5145,23 +4105,15 @@
 
                     ul {
                         align-items: center;
-                        // display: flex;
-                        // flex-wrap: wrap;
-                        // gap: 26px;
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (26 - 10) * ((100vw - 320px) / (1920 - 320))));
 
                         li {
                             .location-box {
                                 align-items: center;
-                                // display: flex;
-                                // flex-wrap: wrap;
-                                // gap: 7px;
                                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 7px);
                                 color: $content-color;
 
                                 .feather {
-                                    // width: 20px;
-                                    // height: auto;
                                     @include pseudowh($width: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                                 }
 
@@ -5229,9 +4181,7 @@
                                             @include pos;
                                             top: 0;
                                             left: 0;
-                                            // width: 100%;
-                                            // height: 100%;
-                                            @include pseudowh($width: 100%, $height: 100%);
+                                            @include pseudowh;
                                             background: var(--theme-color2);
                                             opacity: 0.08;
                                             z-index: -1;
@@ -5247,11 +4197,6 @@
 
         .dashboard-privacy {
             .privacy-box {
-                // display: flex;
-                // align-items: center;
-                // justify-content: space-between;
-                // @include flex_common ($dis: flex, $align: center, $justify: space-between);
-
                 +.privacy-box {
                     margin-top: 15px;
                 }
@@ -5275,8 +4220,6 @@
                         opacity: 0;
 
                         &+label {
-                            // width: 62px;
-                            // height: 25px;
                             @include pseudowh($width: 62px, $height: 25px);
                             position: relative;
                             border-radius: 50px;
@@ -5292,8 +4235,6 @@
 
                             &:before {
                                 content: "";
-                                // width: 19px;
-                                // height: 19px;
                                 @include pseudowh($width: 19px, $height: 19px);
                                 border-radius: 100%;
                                 left: 2px;
@@ -5301,18 +4242,6 @@
                                 background: var(--theme-color2);
                                 transition: all 0.3s ease-in-out;
                             }
-
-                            /* for text content */
-                            // &:after {
-                            //     display: inline-block;
-                            //     content: "OFF";
-                            //     bottom: -60px;
-                            //     /* to center it horizontally */
-                            //     left: 50%;
-                            //     transform: translateX(-50%);
-
-                            //     color: #607d8b;
-                            // }
                         }
 
                         &:checked {
@@ -5321,15 +4250,8 @@
                                     left: 39px;
                                 }
                             }
-
-                            // &+label:after {
-                            //     content: "ON";
-                            //     color: #4caf50;
-                            //     animation: change-content 0.3s forwards linear;
-                            // }
                         }
                     }
-
                 }
             }
         }
@@ -5385,7 +4307,6 @@
 
             h5 {
                 margin-bottom: 7px;
-                // font-weight: 400;
             }
 
             img {
@@ -5396,7 +4317,6 @@
     }
 
     .progtrckr {
-        // margin: 40px 0 15px;
         margin: 15px 0 0;
         padding: 0;
         display: flex;
@@ -5491,8 +4411,6 @@
                 }
 
                 &:before {
-                    // content: "\f111";
-                    // font-family: "Font Awesome 6 Free";
                     @include pos($pos: absolute, $content: "\f111");
                     @include font;
                     color: #959595;
@@ -5555,8 +4473,6 @@
                     @include flex_common;
                     color: $white;
                     background: var(--theme-color2);
-                    // height: 30px;
-                    // width: 30px;
                     @include pseudowh($width: 30px, $height: 30px);
                     line-height: 35px;
                     border: none;
@@ -5579,8 +4495,6 @@
     .order-navpills {
         flex-wrap: nowrap;
         gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)));
-        // overflow-y: hidden;
-        // overflow-x: auto;
         overflow: auto hidden;
 
         .nav-item {
@@ -5622,12 +4536,6 @@
                 border-top: none;
 
                 tr {
-                    // &:last-child {
-                    //     td {
-                    //         border-bottom: none;
-                    //     }
-                    // }
-
                     td {
                         font-weight: 300;
                         text-align: center;

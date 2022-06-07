@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,16 +20,13 @@
         rel="stylesheet">
 
     <!-- bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.rtl.css">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
 
     <!-- font-awesome css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/font-awesome.css">
 
     <!-- feather icon css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/feather-icon.css">
-
-    <!-- animation css -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/vendors/animate.css"> -->
 
     <!-- slick css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick/slick.css">
@@ -155,16 +152,29 @@
                             </div>
 
                             <div class="rightside-box">
+                                <div class="search-full">
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i data-feather="search" class="font-light"></i>
+                                        </span>
+                                        <input type="text" class="form-control search-type" placeholder="Search here..">
+                                        <span class="input-group-text close-search">
+                                            <i data-feather="x" class="font-light"></i>
+                                        </span>
+                                    </div>
+                                </div>
                                 <ul class="right-side-menu">
                                     <li>
                                         <div class="delivery-login-box">
                                             <div class="delivery-icon">
-                                                <i data-feather="search"></i>
+                                                <div class="search-box">
+                                                    <i data-feather="search"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="delivery-login-box">
+                                        <a href="contact-us.html" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="phone-call"></i>
                                             </div>
@@ -172,11 +182,12 @@
                                                 <h6>24/7 Delivery</h6>
                                                 <h5>+91 888 104 2340</h5>
                                             </div>
-                                        </div>
+                                        </a>
                                     </li>
                                     <li>
                                         <div class="header-badge">
-                                            <button type="button" class="btn p-0 position-relative header-wishlist">
+                                            <button type="button" onclick="location.href = 'wishlist.html';"
+                                                class="btn p-0 position-relative header-wishlist">
                                                 <i data-feather="heart"></i> <span
                                                     class="position-absolute top-0 start-100 translate-middle badge">2
                                                     <span class="visually-hidden">unread messages</span></span>
@@ -184,20 +195,21 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <button type="button" class="btn p-0 position-relative header-wishlist">
+                                        <button type="button" onclick="location.href = 'cart.html';"
+                                            class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="shopping-cart"></i>
                                         </button>
                                     </li>
                                     <li>
-                                        <div class="delivery-login-box">
+                                        <a href="log-in.html" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="user"></i>
                                             </div>
                                             <div class="delivery-detail">
                                                 <h6>Hello,</h6>
-                                                <h5>Login/Register</h5>
+                                                <h5>Login / Register</h5>
                                             </div>
-                                        </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -803,11 +815,11 @@
     <!-- mobile fix menu end -->
 
     <!-- Home Section Start -->
-    <section class="home-section">
+    <section class="home-section pt-md-4 pt-0">
         <div class="container-fluid-lg">
             <div class="row g-4">
-                <div class="col-xl-9 ratio_50">
-                    <div class="home-contain">
+                <div class="col-xl-9 col-lg-8 ratio_50">
+                    <div class="home-contain h-100">
                         <div class="h-100">
                             <img src="assets/images/veg-2/banner/1.jpg" class="bg-img blur-up lazyload" alt="">
                         </div>
@@ -826,7 +838,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 ratio_156">
+                <div class="col-xl-3 col-lg-4 d-lg-inline-block d-none ratio_156">
                     <div class="home-contain">
                         <img src="assets/images/veg-2/banner/2.jpg" class="bg-img blur-up lazyload" alt="">
                         <div class="home-detail p-top-left home-p-sm w-75">
@@ -982,157 +994,169 @@
                 </span>
                 <p>A virtual assistant collects the products from your list</p>
             </div>
-            <div class="product-border p-0 rounded-0">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-5 ratio_100">
-                        <div class="product rounded-0 border-bottom-0 border-top-0 border-start-0">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="home-contain rounded-0">
-                                        <div>
-                                            <img src="assets/images/veg-2/banner/4.jpg" class="bg-img blur-up lazyload"
-                                                alt="">
+            <div class="product-border">
+                <div class="slider-5-1">
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/1.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Fresh Brown Coconut</h6>
+
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
                                         </div>
-                                        <div class="home-detail p-top-left ps-4">
-                                            <div>
-                                                <h5>Weekly Discounts on</h5>
-                                                <h4 class="theme-color fw-bold mt-2">Fruits and Vegetables</h4>
-                                                <h6 class="mt-4">Super Offer to 50% Off</h6>
-                                                <button onclick="location.href = 'shop-left-sidebar.html';"
-                                                    class="btn btn-sm btn-animation mt-xxl-3 mt-2 home-button">Shop Now
-                                                    <i class="fa-solid fa-right-long ms-2 icon"></i></button>
+
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
+
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-12">
-                                    <div class="product-category">
-                                        <ul class="product-category-list">
-                                            <li>Herbs & Seasonings</li>
-                                            <li>Packaged Produce</li>
-                                            <li>Party Trays</li>
-                                            <li>Cuts & Sprouts</li>
-                                            <li>Exotic Fruits & Veggies</li>
-                                            <li>Package Produce</li>
-                                            <li>
-                                                <a href="shop-left-sidebar.html">Shop All Breakfast & Dairy <i
-                                                        class="fa-solid fa-right-long"></i></a>
-                                            </li>
-                                        </ul>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/2.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Fresh Organic Broccoli Crown</h6>
+
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
+
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
+
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-9 col-lg-8 col-md-7">
-                        <div class="slider-5-1">
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/1.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Fresh Brown Coconut</h6>
-
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
-
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
-
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
-
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/3.png" class="img-fluid blur-up lazyload"
+                                            alt="">
                                     </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Fresh Cavendish Banana</h6>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/2.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Fresh Organic Broccoli Crown</h6>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
-
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1140,111 +1164,111 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/3.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Fresh Cavendish Banana</h6>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/4.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Fresh Organic Kivi</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/4.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Fresh Organic Kivi</h6>
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/5.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Organic Green Lemon</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1252,111 +1276,111 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/5.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Organic Green Lemon</h6>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/6.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Organic Orange</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/6.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Organic Orange</h6>
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/7.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Green lettuce</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1364,111 +1388,111 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/7.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Green lettuce</h6>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/8.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Green Papaya</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/8.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Green Papaya</h6>
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/9.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Green Capsicum</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1476,111 +1500,53 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/9.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Green Capsicum</h6>
-
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
-
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
-
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
-
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/10.png" class="img-fluid blur-up lazyload"
+                                            alt="">
                                     </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Organic Fresh Strawberry</h6>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/10.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Organic Fresh Strawberry</h6>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
-
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1662,149 +1628,168 @@
                 <p>A virtual assistant collects the products from your list</p>
             </div>
             <div class="product-border p-0 rounded-0">
-                <div class="row">
-                    <div class="col-xxl-3 ratio_110">
-                        <div class="product rounded-0">
-                            <div class="home-contain rounded-0">
-                                <div>
-                                    <img src="assets/images/veg-2/banner/5.jpg" class="bg-img blur-up lazyload" alt="">
-                                </div>
-                                <div class="home-detail p-top-left ps-3">
-                                    <div>
-                                        <h5>Weekly Discounts on</h5>
-                                        <h4 class="fw-bold mt-2">Breakfast & Dairy</h4>
-                                        <h6 class="mt-4">Super Offer to 50% Off</h6>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';"
-                                            class="btn btn-sm btn-animation mt-xxl-3 mt-2 home-button">Shop Now <i
-                                                class="fa-solid fa-right-long ms-2 icon"></i></button>
+                <div class="slider-5-1">
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/11.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Belgian Waffle</h6>
+
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
+
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
+
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="product-category">
-                                <ul class="product-category-list">
-                                    <li>Butter and Margarine</li>
-                                    <li>Eggs Substitutes Honey</li>
-                                    <li>Marmalades</li>
-                                    <li>Yogurt</li>
-                                    <li>Cheese</li>
-                                    <li>Sour Cream and Dips</li>
-                                    <li>
-                                        <a href="shop-left-sidebar.html">Shop All Breakfast & Dairy <i
-                                                class="fa-solid fa-right-long"></i></a>
-                                    </li>
-                                </ul>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/12.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Sandwich Cookies</h6>
+
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
+
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
+
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
+
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xxl-9">
-                        <div class="slider-5-1">
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/11.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Belgian Waffle</h6>
-
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
-
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
-
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
-
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/13.png" class="img-fluid blur-up lazyload"
+                                            alt="">
                                     </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Butter Croissant</h6>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/12.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Sandwich Cookies</h6>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
-
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1812,111 +1797,111 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/13.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Butter Croissant</h6>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/14.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Frooti Mango Drink</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/14.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Frooti Mango Drink</h6>
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/15.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Bambino Elbow Macaroni Pasta</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1924,111 +1909,111 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/15.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Bambino Elbow Macaroni Pasta</h6>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/16.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Muffets Burger Bun</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/16.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Muffets Burger Bun</h6>
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/17.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Tuffets Britannia Cheezza</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -2036,111 +2021,111 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/17.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Tuffets Britannia Cheezza</h6>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/18.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Chicken egg</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/18.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Chicken egg</h6>
+                    <div>
+                        <div class="row m-0">
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/19.png" class="img-fluid blur-up lazyload"
+                                            alt="">
+                                    </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Yogurt</h6>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -2148,111 +2133,53 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/19.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Yogurt</h6>
-
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
-
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
-
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
-
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="col-12 px-0">
+                                <div class="product-box border-end-0">
+                                    <div class="product-image">
+                                        <img src="assets/images/veg-2/product/20.png" class="img-fluid blur-up lazyload"
+                                            alt="">
                                     </div>
+                                    <div class="product-detail">
+                                        <h6 class="name name-2 h-100">Organic Orange Jam</h6>
 
-                                    <div class="col-12">
-                                        <div class="product-box border-end-0 p-0">
-                                            <div class="product-image">
-                                                <img src="assets/images/veg-2/product/20.png"
-                                                    class="img-fluid blur-up lazyload" alt="">
-                                            </div>
-                                            <div class="product-detail">
-                                                <h6 class="name name-2 h-100">Organic Orange Jam</h6>
+                                        <div class="product-rating mt-2">
+                                            <ul class="rating">
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star" class="fill"></i>
+                                                </li>
+                                                <li>
+                                                    <i data-feather="star"></i>
+                                                </li>
+                                            </ul>
+                                            <span>(34)</span>
+                                        </div>
 
-                                                <div class="product-rating mt-2">
-                                                    <ul class="rating">
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star" class="fill"></i>
-                                                        </li>
-                                                        <li>
-                                                            <i data-feather="star"></i>
-                                                        </li>
-                                                    </ul>
-                                                    <span>(34)</span>
-                                                </div>
+                                        <h6 class="sold weight text-content fw-normal">1 KG</h6>
 
-                                                <h6 class="sold weight text-content fw-normal">1 KG</h6>
+                                        <div class="counter-box">
+                                            <h6 class="sold theme-color">$ 80.00</h6>
 
-                                                <div class="counter-box">
-                                                    <h6 class="sold theme-color">$ 80.00</h6>
-
-                                                    <div class="cart_qty qty-box">
-                                                        <div class="input-group">
-                                                            <button type="button" class="qty-left-minus"
-                                                                data-type="minus" data-field="">
-                                                                <i class="fa fa-minus" aria-hidden="true"></i>
-                                                            </button>
-                                                            <input class="form-control input-number qty-input"
-                                                                type="text" name="quantity" value="1">
-                                                            <button type="button" class="qty-right-plus"
-                                                                data-type="plus" data-field="">
-                                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                            <div class="cart_qty qty-box">
+                                                <div class="input-group">
+                                                    <button type="button" class="qty-left-minus" data-type="minus"
+                                                        data-field="">
+                                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    </button>
+                                                    <input class="form-control input-number qty-input" type="text"
+                                                        name="quantity" value="1">
+                                                    <button type="button" class="qty-right-plus" data-type="plus"
+                                                        data-field="">
+                                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -2272,7 +2199,7 @@
         <div class="container-fluid-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="slider-4">
+                    <div class="slider-4-blog no-arrow product-wrapper">
                         <div>
                             <div class="product-slider">
                                 <div class="product-slider-image">
@@ -3145,7 +3072,7 @@
     <!-- Footer Section Start -->
     <footer class="section-t-space">
         <div class="container-fluid-lg">
-            <div class="service-section section-b-space">
+            <div class="service-section">
                 <div class="row g-3">
                     <div class="col-12">
                         <div class="service-contain">
@@ -3194,34 +3121,34 @@
             </div>
 
             <div class="main-footer section-b-space section-t-space">
-                <div class="row g-md-4 g-2">
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-sm-6">
-                        <div class="footer-title">
+                <div class="row g-md-4 g-3">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="footer-logo">
                             <div class="theme-logo">
                                 <a href="index.html">
                                     <img src="assets/images/logo/1.png" class="blur-up lazyload" alt="">
                                 </a>
                             </div>
-                        </div>
 
-                        <div class="footer-contain">
-                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
-                                demonstrate the visual form of a document.</p>
+                            <div class="footer-logo-contain">
+                                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
+                                    demonstrate the visual form of a document.</p>
 
-                            <ul class="address">
-                                <li>
-                                    <i data-feather="home"></i>
-                                    <p>1418 Riverwood Drive, CA 96052, US</p>
-                                </li>
-                                <li>
-                                    <i data-feather="mail"></i>
-                                    <p>support@fastkart.com</p>
-                                </li>
-                            </ul>
+                                <ul class="address">
+                                    <li>
+                                        <i data-feather="home"></i>
+                                        <p>1418 Riverwood Drive, CA 96052, US</p>
+                                    </li>
+                                    <li>
+                                        <i data-feather="mail"></i>
+                                        <a href="#">support@fastkart.com</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Help Center</h4>
                         </div>
@@ -3246,17 +3173,11 @@
                                 <li>
                                     <a href="javascript:void(0)" class="text-content">Cancellation and Returnpolicy</a>
                                 </li>
-                                <li>
-                                    <a href="checkout.html" class="text-content">Checkout</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="text-content">Other Issues</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl-2 col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Useful Links</h4>
                         </div>
@@ -3281,14 +3202,11 @@
                                 <li>
                                     <a href="javascript:void(0)" class="text-content">Flash Sale</a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="text-content">Sitemap</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Most Popular Categories</h4>
                         </div>
@@ -3313,20 +3231,11 @@
                                 <li>
                                     <a href="shop-left-sidebar.html" class="text-content">Grocery & Staples</a>
                                 </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Wines & Alcohol Drinks</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Milk & Dairies</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Pet Foods</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl-2 col-lg-4 col-sm-4">
+                    <div class="col-xl-3 col-lg-4 col-sm-4">
                         <div class="footer-title">
                             <h4>Contact Us</h4>
                         </div>
@@ -3512,10 +3421,6 @@
                         </ul>
                     </div>
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div> -->
             </div>
         </div>
     </div>
@@ -3647,7 +3552,7 @@
                 </div>
                 <div class="modal-body ratio_35">
                     <div class="news-letter-box">
-                        <div class="newsletter-image ">
+                        <div class="newsletter-image">
                             <div>
                                 <img src="assets/images/veg-news.jpg" class="bg-img blur-up lazyload" alt="">
                             </div>
@@ -3703,7 +3608,6 @@
 
     <!-- Slick js-->
     <script src="assets/js/slick/slick.js"></script>
-    <!-- <script src="assets/js/slick/slick-animation.min.js"></script> -->
     <script src="assets/js/slick/custom_slick.js"></script>
 
     <!-- Auto Height Js -->
@@ -3711,9 +3615,6 @@
 
     <!-- Timer Js -->
     <script src="assets/js/timer.js"></script>
-    <!-- <script src="assets/js/timer1.js"></script> -->
-    <!-- <script src="assets/js/timer2.js"></script> -->
-    <!-- <script src="assets/js/timer3.js"></script> -->
 
     <!-- Fly Cart Js -->
     <script src="assets/js/fly-cart.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,16 +20,13 @@
         rel="stylesheet">
 
     <!-- bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.rtl.css">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
 
     <!-- font-awesome css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/font-awesome.css">
 
     <!-- feather icon css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/feather-icon.css">
-
-    <!-- animation css -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/vendors/animate.css"> -->
 
     <!-- slick css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick/slick.css">
@@ -155,16 +152,29 @@
                             </div>
 
                             <div class="rightside-box">
+                                <div class="search-full">
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i data-feather="search" class="font-light"></i>
+                                        </span>
+                                        <input type="text" class="form-control search-type" placeholder="Search here..">
+                                        <span class="input-group-text close-search">
+                                            <i data-feather="x" class="font-light"></i>
+                                        </span>
+                                    </div>
+                                </div>
                                 <ul class="right-side-menu">
                                     <li>
                                         <div class="delivery-login-box">
                                             <div class="delivery-icon">
-                                                <i data-feather="search"></i>
+                                                <div class="search-box">
+                                                    <i data-feather="search"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="delivery-login-box">
+                                        <a href="contact-us.html" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="phone-call"></i>
                                             </div>
@@ -172,11 +182,12 @@
                                                 <h6>24/7 Delivery</h6>
                                                 <h5>+91 888 104 2340</h5>
                                             </div>
-                                        </div>
+                                        </a>
                                     </li>
                                     <li>
                                         <div class="header-badge">
-                                            <button type="button" class="btn p-0 position-relative header-wishlist">
+                                            <button type="button" onclick="location.href = 'wishlist.html';"
+                                                class="btn p-0 position-relative header-wishlist">
                                                 <i data-feather="heart"></i> <span
                                                     class="position-absolute top-0 start-100 translate-middle badge">2
                                                     <span class="visually-hidden">unread messages</span></span>
@@ -184,20 +195,21 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <button type="button" class="btn p-0 position-relative header-wishlist">
+                                        <button type="button" onclick="location.href = 'cart.html';"
+                                            class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="shopping-cart"></i>
                                         </button>
                                     </li>
                                     <li>
-                                        <div class="delivery-login-box">
+                                        <a href="log-in.html" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="user"></i>
                                             </div>
                                             <div class="delivery-detail">
                                                 <h6>Hello,</h6>
-                                                <h5>Login/Register</h5>
+                                                <h5>Login / Register</h5>
                                             </div>
-                                        </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -803,7 +815,7 @@
     <!-- mobile fix menu end -->
 
     <!-- Home Section Start -->
-    <section class="home-section">
+    <section class="home-section pt-md-4 pt-0">
         <div class="container-fluid-lg">
             <div class="row g-4">
                 <div class="col-xl-8 ratio_65">
@@ -1054,7 +1066,7 @@
                                 <img src="assets/images/vegetable/banner/8.jpg" class="bg-img blur-up lazyload" alt="">
                                 <div class="home-detail p-top-left home-p-medium">
                                     <div>
-                                        <h6 class="text-yellow home-banner ">Seafood</h6>
+                                        <h6 class="text-yellow home-banner">Seafood</h6>
                                         <h3 class="text-uppercase fw-normal"><span
                                                 class="theme-color fw-bold">Freshes</span> Products</h3>
                                         <h3 class="fw-light">every hour</h3>
@@ -1242,8 +1254,8 @@
                     </div>
 
                     <div class="section-b-space">
-                        <div class="product-border">
-                            <div class="product-box-slider product-box-arrow">
+                        <div class="product-border overflow-hidden">
+                            <div class="product-box-slider no-arrow">
                                 <div>
                                     <div class="row m-0">
                                         <div class="col-12 px-0">
@@ -2312,7 +2324,7 @@
                         <p>Top Categories Of The Week</p>
                     </div>
 
-                    <div class="category-slider-2">
+                    <div class="category-slider-2 no-arrow">
                         <div>
                             <a href="shop-left-sidebar.html" class="category-box">
                                 <div>
@@ -2422,8 +2434,8 @@
                         <p>A virtual assistant collects the products from your list</p>
                     </div>
 
-                    <div class="product-border">
-                        <div class="product-box-slider arrow-slider">
+                    <div class="product-border overflow-hidden">
+                        <div class="product-box-slider no-arrow">
                             <div>
                                 <div class="row m-0">
                                     <div class="col-12 px-0">
@@ -2954,8 +2966,9 @@
                         </div>
                     </div>
 
-                    <div class="row g-3">
-                        <div class="col-lg-4 col-sm-6">
+
+                    <div class="best-selling-slider product-wrapper">
+                        <div>
                             <ul class="product-list">
                                 <li>
                                     <div class="offer-product">
@@ -3027,7 +3040,7 @@
                             </ul>
                         </div>
 
-                        <div class="col-lg-4 col-sm-6">
+                        <div>
                             <ul class="product-list">
                                 <li>
                                     <div class="offer-product">
@@ -3099,7 +3112,7 @@
                             </ul>
                         </div>
 
-                        <div class="col-lg-4 col-sm-6">
+                        <div>
                             <ul class="product-list">
                                 <li>
                                     <div class="offer-product">
@@ -3200,7 +3213,7 @@
                         <p>A virtual assistant collects the products from your list</p>
                     </div>
 
-                    <div class="slider-4 ratio_87">
+                    <div class="slider-4 ratio_87 no-arrow">
                         <div>
                             <div class="blog-box">
                                 <div class="blog-image">
@@ -3266,9 +3279,9 @@
             <div class="newsletter-box">
                 <img src="assets/images/vegetable/newsletter/1.jpg" class="bg-img blur-up lazyload" alt="">
                 <div class="newsletter-contain py-5">
-                    <div class="container-fluid p-0">
+                    <div class="container-fluid">
                         <div class="row">
-                            <div class="col-xl-4 col-sm-8 col-10 mx-auto">
+                            <div class="col-xl-4 col-sm-8 offset-xl-3">
                                 <div class="newsletter-detail">
                                     <h2>Join our newsletter and get...</h2>
                                     <h5>$20 discount for your first order</h5>
@@ -3294,7 +3307,7 @@
     <!-- Footer Section Start -->
     <footer class="section-t-space">
         <div class="container-fluid-lg">
-            <div class="service-section section-b-space">
+            <div class="service-section">
                 <div class="row g-3">
                     <div class="col-12">
                         <div class="service-contain">
@@ -3343,34 +3356,34 @@
             </div>
 
             <div class="main-footer section-b-space section-t-space">
-                <div class="row g-md-4 g-2">
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-sm-6">
-                        <div class="footer-title">
+                <div class="row g-md-4 g-3">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="footer-logo">
                             <div class="theme-logo">
                                 <a href="index.html">
                                     <img src="assets/images/logo/1.png" class="blur-up lazyload" alt="">
                                 </a>
                             </div>
-                        </div>
 
-                        <div class="footer-contain">
-                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
-                                demonstrate the visual form of a document.</p>
+                            <div class="footer-logo-contain">
+                                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
+                                    demonstrate the visual form of a document.</p>
 
-                            <ul class="address">
-                                <li>
-                                    <i data-feather="home"></i>
-                                    <p>1418 Riverwood Drive, CA 96052, US</p>
-                                </li>
-                                <li>
-                                    <i data-feather="mail"></i>
-                                    <p>support@fastkart.com</p>
-                                </li>
-                            </ul>
+                                <ul class="address">
+                                    <li>
+                                        <i data-feather="home"></i>
+                                        <p>1418 Riverwood Drive, CA 96052, US</p>
+                                    </li>
+                                    <li>
+                                        <i data-feather="mail"></i>
+                                        <a href="#">support@fastkart.com</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Help Center</h4>
                         </div>
@@ -3395,17 +3408,11 @@
                                 <li>
                                     <a href="javascript:void(0)" class="text-content">Cancellation and Returnpolicy</a>
                                 </li>
-                                <li>
-                                    <a href="checkout.html" class="text-content">Checkout</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="text-content">Other Issues</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl-2 col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Useful Links</h4>
                         </div>
@@ -3430,14 +3437,11 @@
                                 <li>
                                     <a href="javascript:void(0)" class="text-content">Flash Sale</a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="text-content">Sitemap</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Most Popular Categories</h4>
                         </div>
@@ -3462,20 +3466,11 @@
                                 <li>
                                     <a href="shop-left-sidebar.html" class="text-content">Grocery & Staples</a>
                                 </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Wines & Alcohol Drinks</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Milk & Dairies</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Pet Foods</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl-2 col-lg-4 col-sm-4">
+                    <div class="col-xl-3 col-lg-4 col-sm-4">
                         <div class="footer-title">
                             <h4>Contact Us</h4>
                         </div>
@@ -3791,7 +3786,7 @@
                 </div>
                 <div class="modal-body ratio_35">
                     <div class="news-letter-box">
-                        <div class="newsletter-image ">
+                        <div class="newsletter-image">
                             <div>
                                 <img src="assets/images/veg-news.jpg" class="bg-img blur-up lazyload" alt="">
                             </div>
@@ -3858,9 +3853,6 @@
 
     <!-- Timer Js -->
     <script src="assets/js/timer.js"></script>
-    <!-- <script src="assets/js/timer1.js"></script> -->
-    <!-- <script src="assets/js/timer2.js"></script> -->
-    <!-- <script src="assets/js/timer3.js"></script> -->
 
     <!-- Fly Cart Js -->
     <script src="assets/js/fly-cart.js"></script>

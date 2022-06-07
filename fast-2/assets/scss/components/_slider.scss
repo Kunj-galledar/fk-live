@@ -66,7 +66,9 @@
           }
 
           .slick-slide {
-               >div {
+
+               >div,
+               >ul {
                     margin: 0 10px;
 
                     [dir="rtl"] & {
@@ -187,18 +189,7 @@
 
           &::before {
                content: "\f104";
-               // @include font;
-               // color: var(--theme-color);
-               // font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
           }
-
-          // &:hover {
-          //      background-color: var(--theme-color);
-
-          //      &::before {
-          //           color: $white;
-          //      }
-          // }
      }
 
      .slick-next {
@@ -211,18 +202,7 @@
 
           &::before {
                content: "\f105";
-               // @include font;
-               // color: var(--theme-color);
-               // font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (1920 - 320)));
           }
-
-          // &:hover {
-          //      background-color: var(--theme-color);
-
-          //      &::before {
-          //           color: $white;
-          //      }
-          // }
      }
 }
 
@@ -270,8 +250,6 @@
           }
 
           &:hover {
-               // background-color: var(--theme-color);
-
                &::before {
                     color: var(--theme-color);
                }
@@ -293,8 +271,6 @@
           }
 
           &:hover {
-               // background-color: var(--theme-color);
-
                &::before {
                     color: var(--theme-color);
                }
@@ -313,8 +289,6 @@
      .slick-prev,
      .slick-next {
           background-color: $border-color;
-          // width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
-          // height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
           @include pseudowh($width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))));
           border-radius: 5px;
           @include flex_common;
@@ -367,9 +341,6 @@
 
      .slick-prev,
      .slick-next {
-          // background-color: $border-color;
-          // width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
-          // height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
           @include pseudowh($width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))));
           border-radius: 50%;
           @include flex_common;
@@ -397,7 +368,6 @@
 
      .slick-prev {
           left: -28px;
-          // transform: translateY(-40px);
 
           @include mq-max(sm) {
                left: -8px;
@@ -410,7 +380,6 @@
 
      .slick-next {
           right: -28px;
-          // transform: translateY(-40px);
 
           @include mq-max(sm) {
                right: -8px;

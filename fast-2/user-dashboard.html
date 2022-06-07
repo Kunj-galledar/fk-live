@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,16 +20,13 @@
         rel="stylesheet">
 
     <!-- bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.rtl.css">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
 
     <!-- font-awesome css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/font-awesome.css">
 
     <!-- feather icon css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/feather-icon.css">
-
-    <!-- animation css -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/vendors/animate.css"> -->
 
     <!-- slick css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick/slick.css">
@@ -155,16 +152,29 @@
                             </div>
 
                             <div class="rightside-box">
+                                <div class="search-full">
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i data-feather="search" class="font-light"></i>
+                                        </span>
+                                        <input type="text" class="form-control search-type" placeholder="Search here..">
+                                        <span class="input-group-text close-search">
+                                            <i data-feather="x" class="font-light"></i>
+                                        </span>
+                                    </div>
+                                </div>
                                 <ul class="right-side-menu">
                                     <li>
                                         <div class="delivery-login-box">
                                             <div class="delivery-icon">
-                                                <i data-feather="search"></i>
+                                                <div class="search-box">
+                                                    <i data-feather="search"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="delivery-login-box">
+                                        <a href="contact-us.html" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="phone-call"></i>
                                             </div>
@@ -172,11 +182,12 @@
                                                 <h6>24/7 Delivery</h6>
                                                 <h5>+91 888 104 2340</h5>
                                             </div>
-                                        </div>
+                                        </a>
                                     </li>
                                     <li>
                                         <div class="header-badge">
-                                            <button type="button" class="btn p-0 position-relative header-wishlist">
+                                            <button type="button" onclick="location.href = 'wishlist.html';"
+                                                class="btn p-0 position-relative header-wishlist">
                                                 <i data-feather="heart"></i> <span
                                                     class="position-absolute top-0 start-100 translate-middle badge">2
                                                     <span class="visually-hidden">unread messages</span></span>
@@ -184,20 +195,21 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <button type="button" class="btn p-0 position-relative header-wishlist">
+                                        <button type="button" onclick="location.href = 'cart.html';"
+                                            class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="shopping-cart"></i>
                                         </button>
                                     </li>
                                     <li>
-                                        <div class="delivery-login-box">
+                                        <a href="log-in.html" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="user"></i>
                                             </div>
                                             <div class="delivery-detail">
                                                 <h6>Hello,</h6>
-                                                <h5>Login/Register</h5>
+                                                <h5>Login / Register</h5>
                                             </div>
-                                        </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -832,12 +844,6 @@
             <div class="row">
                 <div class="col-xxl-3 col-lg-4">
                     <div class="dashboard-left-sidebar">
-                        <!-- <div class="close-button">
-                            <button class="close-sidebar">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                        </div> -->
-
                         <div class="close-button d-flex d-lg-none">
                             <button class="close-sidebar">
                                 <i class="fa-solid fa-xmark"></i>
@@ -861,7 +867,6 @@
 
                                 <div class="profile-name">
                                     <h3>Vicki E. Pope</h3>
-                                    <!-- <h6 class="text-content product-number">10 Product <span>|</span> 8 Wishlist</h6> -->
                                     <h6 class="text-content">vicki.pope@gmail.com</h6>
                                 </div>
                             </div>
@@ -2396,10 +2401,6 @@
                                     </div>
 
                                     <div class="profile-about dashboard-bg-box">
-                                        <!-- <div class="dashboard-title">
-                                            <h3>Profile About</h3>
-                                        </div> -->
-
                                         <div class="row">
                                             <div class="col-xxl-7">
                                                 <div class="dashboard-title mb-3">
@@ -2473,15 +2474,6 @@
                             <div class="tab-pane fade show" id="pills-security" role="tabpanel"
                                 aria-labelledby="pills-security-tab">
                                 <div class="dashboard-privacy">
-                                    <!-- <div class="title">
-                                        <h2>Privacy Profile</h2>
-                                        <span class="title-leaf">
-                                            <svg class="icon-width bg-gray">
-                                                <use xlink:href="assets/svg/leaf.svg#leaf"></use>
-                                            </svg>
-                                        </span>
-                                    </div> -->
-
                                     <div class="dashboard-bg-box">
                                         <div class="dashboard-title mb-4">
                                             <h3>Privacy</h3>
@@ -2561,7 +2553,7 @@
     <!-- Footer Section Start -->
     <footer class="section-t-space">
         <div class="container-fluid-lg">
-            <div class="service-section section-b-space">
+            <div class="service-section">
                 <div class="row g-3">
                     <div class="col-12">
                         <div class="service-contain">
@@ -2610,34 +2602,34 @@
             </div>
 
             <div class="main-footer section-b-space section-t-space">
-                <div class="row g-md-4 g-2">
-                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-sm-6">
-                        <div class="footer-title">
+                <div class="row g-md-4 g-3">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="footer-logo">
                             <div class="theme-logo">
                                 <a href="index.html">
                                     <img src="assets/images/logo/1.png" class="blur-up lazyload" alt="">
                                 </a>
                             </div>
-                        </div>
 
-                        <div class="footer-contain">
-                            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
-                                demonstrate the visual form of a document.</p>
+                            <div class="footer-logo-contain">
+                                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
+                                    demonstrate the visual form of a document.</p>
 
-                            <ul class="address">
-                                <li>
-                                    <i data-feather="home"></i>
-                                    <p>1418 Riverwood Drive, CA 96052, US</p>
-                                </li>
-                                <li>
-                                    <i data-feather="mail"></i>
-                                    <p>support@fastkart.com</p>
-                                </li>
-                            </ul>
+                                <ul class="address">
+                                    <li>
+                                        <i data-feather="home"></i>
+                                        <p>1418 Riverwood Drive, CA 96052, US</p>
+                                    </li>
+                                    <li>
+                                        <i data-feather="mail"></i>
+                                        <a href="#">support@fastkart.com</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Help Center</h4>
                         </div>
@@ -2662,17 +2654,11 @@
                                 <li>
                                     <a href="javascript:void(0)" class="text-content">Cancellation and Returnpolicy</a>
                                 </li>
-                                <li>
-                                    <a href="checkout.html" class="text-content">Checkout</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="text-content">Other Issues</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl-2 col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Useful Links</h4>
                         </div>
@@ -2697,14 +2683,11 @@
                                 <li>
                                     <a href="javascript:void(0)" class="text-content">Flash Sale</a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="text-content">Sitemap</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl col-md-4 col-sm-6 col-12">
+                    <div class="col-xl col-md-4 col-sm-6">
                         <div class="footer-title">
                             <h4>Most Popular Categories</h4>
                         </div>
@@ -2729,20 +2712,11 @@
                                 <li>
                                     <a href="shop-left-sidebar.html" class="text-content">Grocery & Staples</a>
                                 </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Wines & Alcohol Drinks</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Milk & Dairies</a>
-                                </li>
-                                <li>
-                                    <a href="shop-left-sidebar.html" class="text-content">Pet Foods</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-xl-2 col-lg-4 col-sm-4">
+                    <div class="col-xl-3 col-lg-4 col-sm-4">
                         <div class="footer-title">
                             <h4>Contact Us</h4>
                         </div>
@@ -3296,9 +3270,6 @@
     <!-- latest jquery-->
     <script src="assets/js/jquery-ui.min.js"></script>
 
-    <!-- Lordicon Js -->
-    <!-- <script src="assets/js/lusqsztk.js"></script> -->
-
     <!-- Bootstrap js-->
     <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bootstrap/popper.min.js"></script>
@@ -3309,17 +3280,11 @@
     <!-- Lazyload Js -->
     <script src="assets/js/lazysizes.min.js"></script>
 
-    <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-    <script src="assets/js/datepicker.js"></script>
-
     <!-- Wizard js -->
     <script src="assets/js/wizard.js"></script>
 
     <!-- Slick js-->
     <script src="assets/js/slick/slick.js"></script>
-    <script src="assets/js/slick/slick-animation.min.js"></script>
     <script src="assets/js/slick/custom_slick.js"></script>
 
     <!-- Quantity js -->
