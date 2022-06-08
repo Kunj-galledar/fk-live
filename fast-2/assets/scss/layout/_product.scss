@@ -180,11 +180,9 @@
                }
 
                .category-list {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))));
                     align-items: center;
                     color: $title-color;
-                    flex-wrap: nowrap;
-                    gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
 
                     svg {
                          @include pseudowh($width: 25px, $height: 25px);
@@ -346,10 +344,8 @@
                bottom: -5px;
                @include center(horizontal);
                background-color: $white;
-               display: flex;
                align-items: center;
-               flex-wrap: nowrap;
-               gap: calc(6px + (17 - 6) * ((100vw - 320px) / (1920 - 320)));
+               @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(6px + (17 - 6) * ((100vw - 320px) / (1920 - 320))));
                width: 100%;
                padding: 10px 16px;
                border-radius: 7px;
@@ -365,8 +361,7 @@
                          color: $title-color;
 
                          .feather {
-                              width: 17px;
-                              height: auto;
+                              @include pseudowh($width: 17px, $height: auto);
                               color: $content-color;
                          }
                     }
@@ -376,8 +371,7 @@
                               @include pos;
                               top: 0;
                               left: -16px;
-                              width: 1px;
-                              height: 100%;
+                              @include pseudowh($width: 1px, $height: 100%);
                               background-color: $content-color;
                               opacity: .3;
 
@@ -503,44 +497,13 @@
                          right: unset;
                          left: 0;
                     }
-
-                    // @include mq-max(2xl) {
-                    //      width: 52%;
-                    // }
-
-                    // @include mq-max(xl) {
-                    //      width: 60%;
-                    // }
-
-                    // @include mq-max(lg) {
-                    //      width: 68%;
-                    // }
-
-                    // @include mq-max(md) {
-                    //      top: -28px;
-                    //      width: 59%;
-                    // }
-
-                    // @include mq-max(sm) {
-                    //      width: 76%;
-                    // }
-
-                    // @include mq-max(xs) {
-                    //      width: 70%;
-                    // }
-
-                    // @include mq-max(2xs) {
-                    //      top: -18px;
-                    //      width: 61%;
-                    // }
                }
           }
 
           .offer-product {
                display: flex;
                align-items: center;
-               height: 100%;
-               width: 100%;
+               @include pseudowh;
 
                .offer-image {
                     width: 80px;
@@ -865,20 +828,14 @@
                top: -90px;
                left: 0;
                background-color: $white;
-               width: 100%;
-               height: 100%;
-               display: flex;
-               align-items: center;
-               justify-content: space-evenly;
+               @include pseudowh;
+               @include flex_common ($dis: flex, $align: center, $justify: space-evenly);
                opacity: 0;
                transition: all 0.3s ease-in-out;
 
                li {
-                    width: 45px;
-                    height: 45px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @include pseudowh($width: 45px, $height: 45px);
+                    @include flex_common;
                     border-radius: 100%;
                     border: 1px solid var(--theme-color);
                     position: relative;
@@ -1015,7 +972,7 @@
 
                .feather {
                     @include pseudowh($width: 20px, $height: 20px);
-                    color: #4A5568;
+                    color: $content-color;
                     stroke-width: 1.5px;
                }
           }
@@ -1203,12 +1160,11 @@
                     bottom: -5px;
                     @include center(horizontal);
                     background-color: $white;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-around;
+                    @include flex_common ($dis: flex, $align: center, $justify: space-around);
                     flex-wrap: nowrap;
                     gap: 17px;
                     width: 100%;
+                    max-width: 230px;
                     padding: 10px 16px;
                     border-radius: 7px;
                     box-shadow: 0 0 8px rgba($title-color, 0.12);
@@ -1231,8 +1187,7 @@
                                    @include pos;
                                    top: 0;
                                    left: -19px;
-                                   width: 1px;
-                                   height: 100%;
+                                   @include pseudowh($width: 1px, $height: 100%);
                                    background-color: $content-color;
                                    opacity: .3;
 
@@ -1419,8 +1374,7 @@
 
                img {
                     margin: 0;
-                    height: auto;
-                    width: 100%;
+                    @include pseudowh($width: 100%, $height: auto);
                     animation: rounded 15s linear infinite;
                }
           }
@@ -1510,8 +1464,7 @@
 
                img {
                     margin: 0;
-                    height: auto;
-                    width: 100%;
+                    @include pseudowh($width: 100%, $height: auto);
                     animation: rounded 15s linear infinite;
                }
           }
@@ -1549,8 +1502,7 @@
           position: relative;
 
           img {
-               width: 70%;
-               height: 140px;
+               @include pseudowh($width: 70%, $height: 140px);
                margin: 30px auto 20px;
                object-fit: contain;
 
@@ -1564,8 +1516,7 @@
                }
 
                &.product-image {
-                    width: 65%;
-                    height: auto;
+                    @include pseudowh($width: 65%, $height: auto);
                     object-fit: unset;
                     margin: 20px auto 0;
                }
@@ -1582,8 +1533,7 @@
                }
 
                li {
-                    width: 40px;
-                    height: 40px;
+                    @include pseudowh($width: 40px, $height: 40px);
                     background-color: $white;
                     border-radius: 50%;
                     border: 1px solid var(--theme-color);
@@ -1596,8 +1546,7 @@
                     overflow: hidden;
 
                     @include mq-max(xs) {
-                         width: 30px;
-                         height: 30px;
+                         @include pseudowh($width: 30px, $height: 30px);
                          margin: 0 1px;
                     }
 
@@ -1731,16 +1680,14 @@
                          @include pos;
                          top: 0;
                          right: -8px;
-                         width: 1px;
-                         height: 100%;
+                         @include pseudowh($width: 1px, $height: 100%);
                          background-color: #e1b254;
                     }
                }
 
                input {
                     border: none;
-                    width: 27px;
-                    height: unset;
+                    @include pseudowh($width: 27px, $height: unset);
                     background-color: transparent;
                     position: relative;
                }
@@ -1753,8 +1700,7 @@
                     .down,
                     .up {
                          border: unset;
-                         width: unset;
-                         height: unset;
+                         @include pseudowh($width: unset, $height: unset);
                          font-size: unset;
                          background-color: transparent;
                          padding: 0;
@@ -1841,12 +1787,10 @@
                border: 1px solid $border-color;
                border-radius: 12px;
                padding: 15px;
-               width: 116px;
-               height: 116px;
+               @include pseudowh($width: 116px, $height: 116px);
 
                &-2 {
-                    width: 116px;
-                    height: 151px;
+                    @include pseudowh($width: 116px, $height: 151px);
                     border-radius: 8px;
                }
 
@@ -1885,11 +1829,10 @@
                }
 
                .option {
-                    position: absolute;
                     @include center(vertical);
+                    position: absolute;
                     left: 25px;
-                    width: fit-content;
-                    height: 100%;
+                    @include pseudowh($width: fit-content, $height: 100%);
                     background-color: $white;
                     display: flex;
                     align-items: center;
@@ -1908,8 +1851,7 @@
                     }
 
                     li {
-                         width: 40px;
-                         height: 40px;
+                         @include pseudowh($width: 40px, $height: 40px);
                          background-color: $white;
                          border-radius: 50%;
                          border: 1px solid var(--theme-color);
@@ -1922,8 +1864,7 @@
                          overflow: hidden;
 
                          @include mq-max(xs) {
-                              width: 30px;
-                              height: 30px;
+                              @include pseudowh($width: 30px, $height: 30px);
                               margin: 0 2px;
                          }
 

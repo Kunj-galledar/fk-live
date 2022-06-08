@@ -88,8 +88,7 @@ header {
                             @include pos;
                             top: 0;
                             left: -13px;
-                            width: 2px;
-                            height: 90%;
+                            @include pseudowh($width: 2px, $height: 90%);
                             background-color: rgba($white, .3);
 
                             [dir="rtl"] & {
@@ -202,8 +201,7 @@ header {
 
             .web-logo {
                 img {
-                    width: calc(120px + (162 - 120) * ((100vw - 320px) / (1920 - 320)));
-                    height: auto;
+                    @include pseudowh($width: calc(120px + (162 - 120) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                     object-fit: contain;
 
                     @include mq-max(md) {
@@ -270,8 +268,7 @@ header {
                         }
 
                         span {
-                            width: 35px;
-                            height: 35px;
+                            @include pseudowh($width: 35px, $height: 35px);
                             @include flex_common;
                             color: $content-color;
                             background-color: #F3F5F9;
@@ -293,8 +290,7 @@ header {
                             }
 
                             .feather {
-                                width: 16px;
-                                height: 16px;
+                                @include pseudowh($width: 16px, $height: 16px);
                             }
                         }
 
@@ -370,8 +366,7 @@ header {
                             }
 
                             .feather {
-                                width: 20px;
-                                height: 20px;
+                                @include pseudowh($width: 20px, $height: 20px);
                             }
                         }
                     }
@@ -452,8 +447,7 @@ header {
                             @include pos;
                             @include center(vertical);
                             right: 14px;
-                            width: 1px;
-                            height: 24px;
+                            @include pseudowh($width: 1px, $height: 24px);
                             background-color: rgba($content-color, .5);
 
                             [dir="rtl"] & {
@@ -545,8 +539,7 @@ header {
         top: 0;
         right: 0;
         z-index: 2;
-        height: 0;
-        width: 0;
+        @include pseudowh($width: 0, $height: 0);
         transform: scale(0);
         transition: all 0.3s ease;
         display: flex;
@@ -1001,8 +994,7 @@ header {
             top: 40px;
             right: 0;
             z-index: 1;
-            height: 0;
-            width: 0;
+            @include pseudowh($width: 0, $height: 0);
             transform: scale(0);
             transition: all 0.3s ease;
             display: flex;
@@ -1125,8 +1117,7 @@ header {
                 }
 
                 input {
-                    width: 685px;
-                    height: 45px;
+                    @include pseudowh($width: 685px, $height: 45px);
                     padding: 8px 60px 8px 18px;
                     color: $title-color;
                     border-color: var(--theme-color);
@@ -1234,8 +1225,7 @@ header {
                 }
 
                 input {
-                    width: 853px;
-                    height: 55px;
+                    @include pseudowh($width: 853px, $height: 55px);
                     padding: 8px 25px 8px 60px;
                     color: $title-color;
                     border-color: var(--theme-color);
@@ -1436,8 +1426,7 @@ header {
                 border-radius: 100%;
                 padding: 10px;
                 position: relative;
-                width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320)));
-                height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320)));
+                @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
                 @include flex_common;
 
                 +.header-icon {
@@ -1447,8 +1436,7 @@ header {
                         @include pos;
                         @include center(vertical);
                         left: -50%;
-                        width: 1px;
-                        height: 100%;
+                        @include pseudowh($width: 1px, $height: 100%);
                         background-color: $border-color;
                     }
                 }
@@ -1483,8 +1471,7 @@ header {
                                 @include pos;
                                 @include center(vertical);
                                 left: -50%;
-                                width: 1px;
-                                height: 100%;
+                                @include pseudowh($width: 1px, $height: 100%);
                                 background-color: $border-color;
                             }
                         }
@@ -1498,8 +1485,7 @@ header {
                     background: var(--theme-color2);
                     font-weight: 600;
                     color: $white;
-                    width: 18px;
-                    height: 18px;
+                    @include pseudowh($width: 18px, $height: 18px);
                     border-radius: 100%;
                     @include flex_common;
                     font-size: 10px;
@@ -1584,8 +1570,7 @@ header {
                             @include pos;
                             @include center(vertical);
                             left: -20px;
-                            width: 1px;
-                            height: 80%;
+                            @include pseudowh($width: 1px, $height: 80%);
                             background-color: $border-color;
 
                             [dir="rtl"] & {
@@ -1611,8 +1596,7 @@ header {
                         border-radius: 100%;
                         padding: 10px;
                         position: relative;
-                        width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320)));
-                        height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320)));
+                        @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
                         @include flex_common;
 
                         +.header-icon {
@@ -1622,8 +1606,7 @@ header {
                                 @include pos;
                                 @include center(vertical);
                                 left: -50%;
-                                width: 1px;
-                                height: 100%;
+                                @include pseudowh($width: 1px, $height: 100%);
                                 background-color: $border-color;
                             }
                         }
@@ -1658,8 +1641,7 @@ header {
                                         @include pos;
                                         @include center(vertical);
                                         left: -50%;
-                                        width: 1px;
-                                        height: 100%;
+                                        @include pseudowh($width: 1px, $height: 100%);
                                         background-color: $border-color;
                                     }
                                 }
@@ -1673,8 +1655,7 @@ header {
                             background-color: var(--theme-color);
                             font-weight: 600;
                             color: $white;
-                            width: 18px;
-                            height: 18px;
+                            @include pseudowh($width: 18px, $height: 18px);
                             border-radius: 100%;
                             @include flex_common;
                             font-size: 10px;
@@ -1706,8 +1687,7 @@ header {
                     border-radius: 100%;
                     padding: 10px;
                     position: relative;
-                    width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320)));
-                    height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320)));
+                    @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
                     @include flex_common;
 
                     +.header-icon {
@@ -1717,8 +1697,7 @@ header {
                             @include pos;
                             @include center(vertical);
                             left: -50%;
-                            width: 1px;
-                            height: 100%;
+                            @include pseudowh($width: 1px, $height: 100%);
                             background-color: $border-color;
                         }
                     }
@@ -1730,8 +1709,7 @@ header {
                         background-color: var(--theme-color);
                         font-weight: 600;
                         color: $white;
-                        width: 18px;
-                        height: 18px;
+                        @include pseudowh($width: 18px, $height: 18px);
                         border-radius: 100%;
                         @include flex_common;
                         font-size: 10px;
@@ -1748,10 +1726,8 @@ header {
                 }
 
                 .user-box {
-                    display: flex;
                     align-items: center;
-                    flex-wrap: nowrap;
-                    gap: 12px;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
 
                     .user-name {
                         @media (max-width: 1660px) {
@@ -1781,8 +1757,7 @@ header {
                         @include pos;
                         @include center(vertical);
                         left: -20px;
-                        width: 1px;
-                        height: 80%;
+                        @include pseudowh($width: 1px, $height: 80%);
                         background-color: $border-color;
 
                         [dir="rtl"] & {
@@ -1825,8 +1800,7 @@ header {
                 }
 
                 img {
-                    width: 15px;
-                    height: auto;
+                    @include pseudowh($width: 15px, $height: auto);
                 }
             }
         }
@@ -1858,15 +1832,12 @@ header {
         }
 
         .support-box {
-            display: flex;
             align-items: flex-start;
-            flex-wrap: nowrap;
-            gap: 9px;
+            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
 
             .support-image {
                 img {
-                    width: 33px;
-                    height: auto;
+                    @include pseudowh($width: 33px, $height: auto);
                 }
             }
 
@@ -1906,8 +1877,7 @@ header {
             }
 
             img {
-                width: 32px;
-                height: 32px;
+                @include pseudowh($width: 32px, $height: 32px);
             }
 
             span {
@@ -1943,8 +1913,7 @@ header {
 
             .fire {
                 position: relative;
-                width: 20px;
-                height: 20px;
+                @include pseudowh($width: 20px, $height: 20px);
                 background-color: transparent;
                 z-index: 1;
 
@@ -1969,8 +1938,7 @@ header {
                         position: absolute;
                         top: 60%;
                         left: 45%;
-                        width: 10px;
-                        height: 10px;
+                        @include pseudowh($width: 10px, $height: 10px);
                         background-color: $white;
                         border-radius: 50%;
                         animation: particleUp 2s ease-out 0;
@@ -1990,8 +1958,7 @@ header {
                         position: absolute;
                         top: 15%;
                         right: -25%;
-                        width: 80%;
-                        height: 80%;
+                        @include pseudowh($width: 80%, $height: 80%);
                         background-color: $white;
                         transform: scaleX(0.8) rotate(45deg);
                         border-radius: 0 40% 60% 40%;
@@ -2000,8 +1967,7 @@ header {
                             position: absolute;
                             top: 45%;
                             left: 50%;
-                            width: 15px;
-                            height: 15px;
+                            @include pseudowh($width: 15px, $height: 15px);
                             background-color: $white;
                             transform: scaleX(0.8) rotate(45deg);
                             border-radius: 50%;
@@ -2023,8 +1989,7 @@ header {
                         position: absolute;
                         top: 15%;
                         left: -20%;
-                        width: 80%;
-                        height: 80%;
+                        @include pseudowh($width: 80%, $height: 80%);
                         background-color: $white;
                         transform: scaleX(0.8) rotate(45deg);
                         border-radius: 0 40% 60% 40%;
@@ -2033,8 +1998,7 @@ header {
                             position: absolute;
                             top: 10%;
                             left: 20%;
-                            width: 10%;
-                            height: 10%;
+                            @include pseudowh($width: 10%, $height: 10%);
                             background-color: $white;
                             border-radius: 50%;
                             animation: particleUp 3s infinite ease-out 0;
@@ -2066,8 +2030,7 @@ header {
             top: 0;
             right: 0;
             background-color: $border-color;
-            width: 1px;
-            height: 100%;
+            @include pseudowh($width: 1px, $height: 100%);
 
             [dir="rtl"] & {
                 right: unset;
@@ -2112,8 +2075,7 @@ header {
                         @include pos;
                         @include center(vertical);
                         left: -12px;
-                        width: 1px;
-                        height: 80%;
+                        @include pseudowh($width: 1px, $height: 80%);
                         background-color: rgba($white, 0.4);
                     }
                 }
@@ -2188,8 +2150,7 @@ header {
                 @include center(vertical);
                 left: -8px;
                 background-color: rgba($white, $alpha: 0.4);
-                width: 1px;
-                height: 70%;
+                @include pseudowh($width: 1px, $height: 70%);
             }
         }
     }

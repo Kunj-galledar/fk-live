@@ -27,10 +27,10 @@
     background-color: $light-gray;
 
     .verndor-contain {
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
         padding: 7px calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
         background-color: $white;
         align-items: center;
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
 
         .vendor-image {
             @include pseudowh($width: 64px, $height: 66px);
@@ -120,8 +120,8 @@
             overflow: hidden;
 
             img {
-                cursor: pointer;
                 @include pseudowh($width: auto, $height: auto);
+                cursor: pointer;
                 object-fit: contain;
             }
         }

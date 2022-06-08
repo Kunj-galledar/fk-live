@@ -125,9 +125,7 @@ footer {
 
                 .address {
                     margin-top: calc(7px + (30 - 7) * ((100vw - 320px) / (1920 - 320)));
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320))));
 
                     li {
                         display: flex;
@@ -275,10 +273,8 @@ footer {
                     }
 
                     .footer-number {
-                        display: flex;
                         align-items: flex-start;
-                        flex-wrap: nowrap;
-                        gap: 12px;
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
 
                         .feather {
                             @include pseudowh($width: 18px, $height: 18px);
@@ -286,13 +282,6 @@ footer {
                         }
 
                         .contact-number {
-                            // padding-left: 12px;
-
-                            // [dir="rtl"] & {
-                            //     padding-left: unset;
-                            //     padding-right: 12px;
-                            // }
-
                             h5 {
                                 margin-top: 6px;
                                 font-weight: 600;
@@ -457,8 +446,7 @@ footer {
             }
 
             li {
-                width: 40px;
-                height: 40px;
+                @include pseudowh($width: 40px, $height: 40px);
                 border-radius: 50%;
                 position: relative;
                 z-index: 0;

@@ -69,9 +69,7 @@
                     }
 
                     .brand-list {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 9px;
+                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
                         margin-top: 24px;
 
                         li {
@@ -132,8 +130,7 @@
 
                             .feather {
                                 color: #61b33e;
-                                width: 19px;
-                                height: auto;
+                                @include pseudowh($width: 19px, $height: auto);
                             }
 
                             h6 {
@@ -400,8 +397,7 @@
             font-size: 17px;
             padding: 0;
             background-color: #ddd;
-            width: 30px;
-            height: 30px;
+            @include pseudowh($width: 30px, $height: 30px);
             border-radius: 100%;
             @include flex_common;
         }
@@ -413,9 +409,7 @@
 
         .categories-list {
             ul {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 25px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 25px);
 
                 [dir="rtl"] & {
                     padding-left: unset;

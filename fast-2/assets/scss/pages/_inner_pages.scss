@@ -16,16 +16,16 @@
 
         &::after {
             @include pos;
-            bottom: 0;
             @include center(horizontal);
             @include pseudowh($width: 70px, $height: 1px);
+            bottom: 0;
             background-color: var(--theme-color);
         }
 
         img {
+            @include center(horizontal);
             bottom: -11px;
             position: absolute;
-            @include center(horizontal);
             background-color: $white;
             z-index: 1;
             padding: 0 10px;
@@ -208,9 +208,9 @@
                                 margin-bottom: 0;
 
                                 .form-check-input {
+                                    @include pseudowh($width: 18px, $height: 18px);
                                     margin-top: 2px;
                                     margin-right: 10px;
-                                    @include pseudowh($width: 18px, $height: 18px);
 
                                     &:checked {
                                         background-color: var(--theme-color);
@@ -459,8 +459,8 @@
                                                 .cart_qty {
                                                     button {
                                                         @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
-                                                        border: none;
                                                         @include flex_common;
+                                                        border: none;
                                                         background-color: #e3e0e0;
                                                         border-radius: 100% !important;
                                                         padding: 0;
@@ -534,8 +534,8 @@
                         .cart_qty {
                             button {
                                 @include pseudowh($width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))));
-                                border: none;
                                 @include flex_common;
+                                border: none;
                                 background-color: #e3e0e0;
                                 border-radius: 100% !important;
                                 padding: 0;
@@ -4278,15 +4278,12 @@
         background-color: $light-gray;
         padding: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
         border-radius: 8px;
-        display: flex;
-        flex-wrap: nowrap;
-        gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))));
         height: 100%;
 
         .order-tracking-icon {
             .feather {
-                width: 25px;
-                height: auto;
+                @include pseudowh($width: 25px, $height: auto);
                 stroke-width: 1.4px;
             }
         }
@@ -4471,9 +4468,9 @@
                     content: "\f00c";
                     @include font;
                     @include flex_common;
+                    @include pseudowh($width: 30px, $height: 30px);
                     color: $white;
                     background: var(--theme-color2);
-                    @include pseudowh($width: 30px, $height: 30px);
                     line-height: 35px;
                     border: none;
                     border-radius: 35px;

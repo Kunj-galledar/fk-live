@@ -272,8 +272,7 @@
             }
 
             .shape-circle {
-                width: calc(133px + (168 - 133) * ((100vw - 320px) / (1920 - 320)));
-                height: calc(84px + (112 - 84) * ((100vw - 320px) / (1920 - 320)));
+                @include pseudowh($width: calc(133px + (168 - 133) * ((100vw - 320px) / (1920 - 320))), $height: calc(84px + (112 - 84) * ((100vw - 320px) / (1920 - 320))));
                 border-radius: 100px;
                 margin: 0 auto 30px;
                 transition: all .3s ease-in-out;
@@ -301,8 +300,7 @@
                     @include pos;
                     top: 0;
                     left: 0;
-                    width: 0;
-                    height: 100%;
+                    @include pseudowh($width: 0, $height: 100%);
                     background-color: var(--theme-color);
                     transition: all .3s ease-in-out;
 

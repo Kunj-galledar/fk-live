@@ -6,11 +6,6 @@ header {
           padding: 20px 0;
           display: flex;
           align-items: center;
-
-          // @include mq-max(xl) {
-          //      padding: 0;
-          //      margin-bottom: -22px;
-          // }
      }
 
      .icon-box {
@@ -61,7 +56,6 @@ header {
                .dropdown {
                     margin-right: 20px;
                     margin-left: 20px;
-                    // border-left: 1px solid $border-color;
 
                     &:last-child {
                          margin-bottom: 12px;
@@ -129,7 +123,6 @@ header {
 
                .nav-link {
                     @include flex_common;
-                    // padding: 0 25px;
                     font-size: 16px;
                     font-weight: normal;
                     position: relative;
@@ -169,8 +162,7 @@ header {
 
                          &::before {
                               @include pos;
-                              width: 0;
-                              height: 0;
+                              @include pseudowh($width: 0, $height: 0);
                               display: inline-block;
                               top: 100%;
                               left: 10px;
@@ -189,8 +181,6 @@ header {
                     }
 
                     &::before {
-                         // content: "\f107";
-                         // position: absolute;
                          @include pos($pos: absolute, $content: "\f107");
                          @include font;
                          right: -10px;
@@ -210,7 +200,6 @@ header {
      }
 
      .navbar-collapse {
-          // -ms-flex-preferred-size: 100%;
           flex-basis: 100%;
           flex-grow: 1;
           align-items: center;
@@ -240,8 +229,6 @@ header {
 
      .navbar-toggler-icon {
           display: inline-block;
-          // width: 1.5em;
-          // height: 1.5em;
           @include pseudowh($width: auto, $height: auto);
           vertical-align: middle;
           background-repeat: no-repeat;
@@ -348,7 +335,6 @@ header {
           display: inline-block;
           padding-top: 6px;
           padding-bottom: 6px;
-          // border-left: 1px solid $border-color;
           padding-left: 15px;
 
           [dir="rtl"] & {
@@ -474,7 +460,6 @@ header {
           }
 
           &::-webkit-scrollbar-thumb {
-               // background-color: $border-color;
                border-radius: 4px;
           }
 
@@ -633,7 +618,6 @@ header {
                .dropdown-menu {
                     margin-top: 0;
                     box-shadow: -1px 0 10px 0 rgba($title-color, 0.07), 5px 20px 40px 0 rgba($title-color, 0.04);
-                    // border-color: $border-color;
                     background-color: $white;
                     border-color: $white;
                     padding: 0;
@@ -680,8 +664,6 @@ header {
                                    display: block;
                                    top: 50%;
                                    right: 10px;
-                                   // width: 7px;
-                                   // height: 7px;
                                    @include pseudowh($width: unset, $height: unset);
                                    border-top: none;
                                    border-left: none;
