@@ -147,15 +147,16 @@ header {
                             li {
                                 +li {
                                     margin-left: 0;
+
+                                    [dir="rtl"] & {
+                                        margin-left: unset;
+                                        margin-right: 0;
+                                    }
                                 }
 
                                 .dropdown-item {
                                     display: flex;
                                     align-items: center;
-
-                                    [dir="rtl"] & {
-                                        justify-content: flex-end;
-                                    }
 
                                     &:hover,
                                     &:focus {
@@ -280,7 +281,7 @@ header {
                                 margin-left: 12px;
                             }
 
-                            @media (max-width: 1556px) {
+                            @media (max-width: 1300px) {
                                 margin-right: 0;
 
                                 [dir="rtl"] & {
@@ -299,7 +300,7 @@ header {
                             font-weight: 600;
                             color: var(--theme-color);
 
-                            @media (max-width: 1556px) {
+                            @media (max-width: 1300px) {
                                 display: none;
                             }
                         }
@@ -313,7 +314,7 @@ header {
                                 margin-right: 17px;
                             }
 
-                            @media (max-width: 1556px) {
+                            @media (max-width: 1300px) {
                                 display: none;
                             }
                         }
@@ -341,12 +342,12 @@ header {
                             }
 
                             @media (max-width: 1812px) {
-                                width: 477px;
+                                width: 466px;
                             }
 
-                            @media (max-width: 1686px) {
-                                width: 375px;
-                            }
+                            // @media (max-width: 1686px) {
+                            //     width: 375px;
+                            // }
 
                             &:focus {
                                 border-color: var(--theme-color);
