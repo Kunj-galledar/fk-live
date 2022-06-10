@@ -14,6 +14,11 @@ footer {
         background-image: url(../images/vegetable/footer-shape.png);
         background-repeat: no-repeat;
         z-index: -1;
+
+        @include mq-max(xl) {
+            // content: none;
+            content: none;
+        }
     }
 
     &:before {
@@ -24,6 +29,10 @@ footer {
         background-image: url(../images/vegetable/footer-shape-2.png);
         background-repeat: no-repeat;
         z-index: -1;
+
+        @include mq-max(xl) {
+            content: none;
+        }
     }
 
     .main-footer {
@@ -126,6 +135,11 @@ footer {
                 .address {
                     margin-top: calc(7px + (30 - 7) * ((100vw - 320px) / (1920 - 320)));
                     @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320))));
+
+                    [dir="rtl"] & {
+                        padding-left: unset;
+                        padding-right: 0;
+                    }
 
                     li {
                         display: flex;

@@ -281,3 +281,10 @@ $(window).on("load resize", function () {
         $(this).closest(".rightside-box").find(".search-full").removeClass("open");
     });
 });
+
+// Loader js
+$(window).load(function () {
+    $('.cssloader').fadeOut('slow', function () {
+        $(this).remove();
+    });
+});
