@@ -50,6 +50,9 @@ $('.category-slider-2').slick({
       breakpoint: 1745,
       settings: {
         slidesToShow: 6,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 2500,
       }
     },
     {
@@ -173,12 +176,14 @@ $('.slider-4-blog').slick({
     {
       breakpoint: 1092,
       settings: {
+        dots: true,
         slidesToShow: 2,
       }
     },
     {
       breakpoint: 685,
       settings: {
+        dots: true,
         slidesToShow: 1,
         fade: true,
       }
@@ -873,7 +878,19 @@ $('.best-selling-slider').slick({
       }
     },
     {
-      breakpoint: 767,
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 666,
       settings: {
         slidesToShow: 1,
         dots: true,

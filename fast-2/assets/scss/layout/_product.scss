@@ -302,27 +302,30 @@
           font-size: 14px;
           color: $white;
           font-weight: 500;
+          z-index: 1;
 
           &::after {
                @include pos;
+               @include pseudowh($width: 15px, $height: 15px);
                top: 16px;
                left: 44px;
-               @include pseudowh($width: 15px, $height: 15px);
                border-bottom: solid 15px #faba02;
                border-left: solid 15px transparent;
                border-right: solid 15px transparent;
                transform: rotate(0);
+               z-index: 1;
           }
 
           &::before {
                @include pos;
+               @include pseudowh($width: 15px, $height: 15px);
                top: 0;
                left: 44px;
-               @include pseudowh($width: 15px, $height: 15px);
                border-bottom: solid 15px #faba02;
                border-left: solid 15px transparent;
                border-right: solid 15px transparent;
                transform: rotate(180deg);
+               z-index: 1;
           }
 
           span {
@@ -340,12 +343,12 @@
           }
 
           .product-option {
+               @include center(horizontal);
+               @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(6px + (17 - 6) * ((100vw - 320px) / (1920 - 320))));
                position: absolute;
                bottom: -5px;
-               @include center(horizontal);
                background-color: $white;
                align-items: center;
-               @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(6px + (17 - 6) * ((100vw - 320px) / (1920 - 320))));
                width: 100%;
                padding: 10px 16px;
                border-radius: 7px;
@@ -369,9 +372,9 @@
                     +li {
                          &:after {
                               @include pos;
+                              @include pseudowh($width: 1px, $height: 100%);
                               top: 0;
                               left: -16px;
-                              @include pseudowh($width: 1px, $height: 100%);
                               background-color: $content-color;
                               opacity: .3;
 
@@ -501,9 +504,9 @@
           }
 
           .offer-product {
+               @include pseudowh;
                display: flex;
                align-items: center;
-               @include pseudowh;
 
                .offer-image {
                     width: 80px;
@@ -527,9 +530,9 @@
                }
 
                .offer-detail {
+                    @include pseudowh($width: calc(100% - 80px), $height: 80px);
                     padding-left: calc(12px + (23 - 12) * ((100vw - 320px) / (1920 - 320)));
                     position: relative;
-                    @include pseudowh($width: calc(100% - 80px), $height: 80px);
                     display: flex;
                     align-items: center;
 
@@ -594,10 +597,10 @@
 
                &::before {
                     @include pos;
+                    @include pseudowh($width: 7px, $height: 7px);
                     top: 50%;
                     transform: rotate(45deg) translateY(-50%);
                     left: 0;
-                    @include pseudowh($width: 7px, $height: 7px);
                     border: 1px solid $content-color;
 
                     [dir="rtl"] & {
@@ -696,9 +699,9 @@
 
           &::after {
                @include pos;
+               @include pseudowh($width: 120px, $height: 2px);
                bottom: 0;
                left: 0;
-               @include pseudowh($width: 120px, $height: 2px);
                background-color: var(--theme-color);
 
                [dir="rtl"] & {
@@ -824,12 +827,12 @@
           }
 
           .product-option {
+               @include pseudowh;
+               @include flex_common ($dis: flex, $align: center, $justify: space-evenly);
                position: absolute;
                top: -90px;
                left: 0;
                background-color: $white;
-               @include pseudowh;
-               @include flex_common ($dis: flex, $align: center, $justify: space-evenly);
                opacity: 0;
                transition: all 0.3s ease-in-out;
 
@@ -844,9 +847,9 @@
 
                     &:after {
                          @include pos;
+                         @include pseudowh;
                          top: 0;
                          left: 0;
-                         @include pseudowh;
                          background-color: var(--theme-color);
                          opacity: 0.1;
                     }
@@ -888,13 +891,13 @@
           }
 
           .cart-icon {
+               @include pseudowh($width: 40px, $height: 40px);
+               @include flex_common;
                position: absolute;
                bottom: 0;
                right: 0;
-               @include pseudowh($width: 40px, $height: 40px);
                background-color: #F7F5F2;
                border-radius: 100%;
-               @include flex_common;
 
                svg {
                     @include pseudowh($width: 20px, $height: 20px);
@@ -962,13 +965,13 @@
           }
 
           .cart-icon {
+               @include pseudowh($width: 40px, $height: 40px);
+               @include flex_common;
                position: absolute;
                bottom: 0;
                right: 0;
-               @include pseudowh($width: 40px, $height: 40px);
                background-color: #F7F5F2;
                border-radius: 100%;
-               @include flex_common;
 
                .feather {
                     @include pseudowh($width: 20px, $height: 20px);
@@ -1053,10 +1056,10 @@
 
                     a {
                          @include pseudowh($width: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))), $height: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))));
+                         @include flex_common;
                          background-color: $white;
                          box-shadow: 0px 5.57831px 13.9458px rgba($black, .05);
                          border-radius: 100%;
-                         @include flex_common;
                          color: $title-color;
 
                          svg {
@@ -1156,11 +1159,11 @@
                }
 
                .product-option {
+                    @include center(horizontal);
+                    @include flex_common ($dis: flex, $align: center, $justify: space-around);
                     position: absolute;
                     bottom: -5px;
-                    @include center(horizontal);
                     background-color: $white;
-                    @include flex_common ($dis: flex, $align: center, $justify: space-around);
                     flex-wrap: nowrap;
                     gap: 17px;
                     width: 100%;
@@ -1185,9 +1188,9 @@
                          +li {
                               &:after {
                                    @include pos;
+                                   @include pseudowh($width: 1px, $height: 100%);
                                    top: 0;
                                    left: -19px;
-                                   @include pseudowh($width: 1px, $height: 100%);
                                    background-color: $content-color;
                                    opacity: .3;
 
@@ -1267,19 +1270,19 @@
           }
 
           .product-category-menu {
-               position: absolute;
                @include center(both);
+               position: absolute;
                opacity: 0;
                transition: all .3s ease-in-out;
                margin-top: 30px;
 
 
                ul {
+                    @include flex_common ($dis: flex, $align: center, $justify: space-evenly);
                     background-color: $white;
                     border: 1px solid var(--theme-color);
                     border-radius: 4px;
                     width: 100px;
-                    @include flex_common ($dis: flex, $align: center, $justify: space-evenly);
                     flex-wrap: wrap;
                     gap: 1px;
                     text-align: center;
@@ -1291,10 +1294,10 @@
                          +li {
                               &::before {
                                    @include pos;
+                                   @include pseudowh($width: 1px, $height: 100%);
                                    top: 0;
                                    left: -1px;
                                    background-color: var(--theme-color);
-                                   @include pseudowh($width: 1px, $height: 100%);
                               }
                          }
 
@@ -1373,8 +1376,8 @@
                left: 0;
 
                img {
-                    margin: 0;
                     @include pseudowh($width: 100%, $height: auto);
+                    margin: 0;
                     animation: rounded 15s linear infinite;
                }
           }
@@ -1470,8 +1473,8 @@
           }
 
           .shape-text {
-               position: absolute;
                @include center(both);
+               position: absolute;
                color: $white;
 
                h6 {
@@ -1523,9 +1526,9 @@
           }
 
           .option {
-               position: absolute;
                @include center(both);
                @include flex_common;
+               position: absolute;
                margin: 0 -4px;
 
                @include mq-max(xs) {
@@ -1534,10 +1537,10 @@
 
                li {
                     @include pseudowh($width: 40px, $height: 40px);
+                    @include flex_common;
                     background-color: $white;
                     border-radius: 50%;
                     border: 1px solid var(--theme-color);
-                    @include flex_common;
                     margin: 0 4px;
                     opacity: 0;
                     transform: translateY(40px);
@@ -1678,16 +1681,16 @@
 
                     &:after {
                          @include pos;
+                         @include pseudowh($width: 1px, $height: 100%);
                          top: 0;
                          right: -8px;
-                         @include pseudowh($width: 1px, $height: 100%);
                          background-color: #e1b254;
                     }
                }
 
                input {
-                    border: none;
                     @include pseudowh($width: 27px, $height: unset);
+                    border: none;
                     background-color: transparent;
                     position: relative;
                }
@@ -1699,8 +1702,8 @@
 
                     .down,
                     .up {
-                         border: unset;
                          @include pseudowh($width: unset, $height: unset);
+                         border: unset;
                          font-size: unset;
                          background-color: transparent;
                          padding: 0;
@@ -1784,10 +1787,10 @@
           }
 
           .product-image {
+               @include pseudowh($width: 116px, $height: 116px);
                border: 1px solid $border-color;
                border-radius: 12px;
                padding: 15px;
-               @include pseudowh($width: 116px, $height: 116px);
 
                &-2 {
                     @include pseudowh($width: 116px, $height: 151px);

@@ -283,8 +283,8 @@ $(window).on("load resize", function () {
 });
 
 // Loader js
-$(window).load(function () {
-    $('.cssloader').fadeOut('slow', function () {
-        $(this).remove();
-    });
-});
+// $(window).load(function () {
+//     $('.cssloader').fadeOut('slow', function () {
+//         $(this).remove();
+//     });
+// });
