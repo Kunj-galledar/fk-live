@@ -31,9 +31,33 @@
     .btn-close {
         top: 50% !important;
         transform: translateY(-50%) !important;
+
+        [dir="rtl"] & {
+            right: unset !important;
+            left: 10px !important;
+        }
     }
 }
 
 [data-notify="icon"] {
     margin-right: 5px;
+
+    [dir="rtl"] & {
+        margin-right: unset;
+        margin-left: 5px;
+    }
+}
+
+[data-notify="progressbar"] {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 0;
+}
+
+.progress-bar-info {
+    background-color: #0c5460;
 }

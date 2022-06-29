@@ -47,11 +47,24 @@ header {
                min-width: 200px;
                margin: 0;
                margin-top: -8px;
-               background-color: transparent;
+               background-color: $white;
+               box-shadow: -1px 0 10px 0 rgba($title-color, .7),
+                    5px 20px 40px 0 rgba($title-color, .4);
                border-color: transparent;
                box-shadow: none;
                border: 0;
                position: static;
+
+               &-2 {
+                    @media (min-width: 1201px) {
+                         transform: translateX(-50%);
+                         width: 100vw;
+                         min-width: unset;
+                         padding: 14px !important;
+                         align-items: center;
+                         justify-content: space-around;
+                    }
+               }
 
                .dropdown {
                     margin-right: 20px;
@@ -103,11 +116,11 @@ header {
           .navbar-nav {
                .nav-item {
                     +.nav-item {
-                         margin-left: 40px;
+                         margin-left: calc(30px + (40 - 30) * ((100vw - 1200px) / (1920 - 1200)));
 
                          [dir="rtl"] & {
                               margin-left: unset;
-                              margin-right: 40px;
+                              margin-right: calc(30px + (40 - 30) * ((100vw - 1200px) / (1920 - 1200)));
                          }
 
                          @include mq-max(xl) {
@@ -188,6 +201,12 @@ header {
                          [dir="rtl"] & {
                               right: unset;
                               left: -12px;
+                         }
+                    }
+
+                    &-2 {
+                         &::before {
+                              content: none;
                          }
                     }
                }
@@ -423,9 +442,12 @@ header {
                &:not(.offcanvas-bottom) {
                     top: 0;
                     left: 0;
-                    width: 320px;
-                    border-right: 0 solid transparent;
-                    transform: translateX(-100%);
+                    box-shadow: none;
+
+                    @include mq-max(xl) {
+                         width: 320px;
+                         transform: translateX(-100%);
+                    }
                }
           }
      }
@@ -630,6 +652,10 @@ header {
                     .dropdown-column {
                          margin: 5px;
                          position: relative;
+
+                         &:first-of-type {
+                              margin-left: 0;
+                         }
                     }
 
                     .dropdown-item {
@@ -747,12 +773,12 @@ header {
                     }
 
                     .dropdown-column {
-                         &:last-child {
-                              &.dropdown-column-img {
-                                   margin-right: -12px;
-                                   margin-left: 12px;
-                              }
-                         }
+                         // &:last-child {
+                         //      &.dropdown-column-img {
+                         //           margin-right: -12px;
+                         //           margin-left: 12px;
+                         //      }
+                         // }
 
                          .dropdown-header {
                               padding: 10px 0 5px 20px;
@@ -833,14 +859,14 @@ header {
                -webkit-box-flex: 1;
 
                @include mq-max(xl) {
-                    z-index: 3;
+                    z-index: 4;
                     -webkit-box-flex: 2;
                }
           }
      }
 
      .offcanvas-backdrop {
-          z-index: 1;
+          z-index: 3;
      }
 
      @media (max-width:1200px) {

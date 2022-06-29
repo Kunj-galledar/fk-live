@@ -55,6 +55,24 @@
      }
 }
 
+.no-space {
+     .slick-list {
+          margin: 0 !important;
+
+          .slick-slide {
+
+               >div,
+               >ul {
+                    margin: 0 !important;
+
+                    [dir="rtl"] & {
+                         direction: rtl;
+                    }
+               }
+          }
+     }
+}
+
 .slick-slider {
      .slick-list {
           margin: 0 -10px;
@@ -151,10 +169,10 @@
      .slick-prev,
      .slick-next {
           background-color: $white;
-          box-shadow: 0px 3px 4px rgba($black, .14);
+          box-shadow: 0px 3px 4px rgba($title-color, .14);
           position: absolute;
-          top: calc(-32px + (-45 - -32) * ((100vw - 320px) / (1920 - 320)));
-          @include pseudowh($width: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320))), $height: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320))));
+          top: calc(-28px + (-43 - -28) * ((100vw - 320px) / (1920 - 320)));
+          @include pseudowh($width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))));
           border-radius: 5px;
           transition: all .3s ease-in-out;
 
@@ -185,6 +203,10 @@
           &::before {
                content: "\f104";
           }
+
+          @include mq-max(sm) {
+               right: 45px;
+          }
      }
 
      .slick-next {
@@ -197,6 +219,12 @@
 
           &::before {
                content: "\f105";
+          }
+
+          @include mq-max(sm) {
+               [dir="rtl"] & {
+                    left: 40px;
+               }
           }
      }
 }

@@ -61,10 +61,10 @@
 
                             <ul class="about-list right-nav-about">
                                 <li class="right-nav-list">
-                                    <a href="javascript:void(0)" class="text-white">Guid & Help Center</a>
+                                    <a href="help.html" class="text-white">Guide & Help Center</a>
                                 </li>
                                 <li class="right-nav-list">
-                                    <a href="javascript:void(0)" class="text-white">Order Tracking</a>
+                                    <a href="order-tracking.html" class="text-white">Order Tracking</a>
                                 </li>
                                 <li class="right-nav-list">
                                     <div class="dropdown theme-form-select">
@@ -124,7 +124,7 @@
                                     <i class="iconly-Filter icli"></i>
                                 </span>
                             </button>
-                            <a href="javascript:void(0)" class="web-logo nav-logo">
+                            <a href="index.html" class="web-logo nav-logo">
                                 <img src="assets/images/logo/1.png" class="img-fluid" alt="">
                             </a>
 
@@ -132,10 +132,10 @@
                                 <div class="location-box">
                                     <button class="btn location-button" data-bs-toggle="modal"
                                         data-bs-target="#locationModal">
-                                        <span>
+                                        <span class="location-arrow">
                                             <i data-feather="map-pin"></i>
                                         </span>
-                                        <h6>Your Location</h6>
+                                        <span class="locat-name">Your Location</span>
                                         <i class="fa-solid fa-angle-down"></i>
                                     </button>
                                 </div>
@@ -164,7 +164,7 @@
                                     </div>
                                 </div>
                                 <ul class="right-side-menu">
-                                    <li>
+                                    <li class="right-side">
                                         <div class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <div class="search-box">
@@ -173,7 +173,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li class="right-side">
                                         <a href="contact-us.html" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="phone-call"></i>
@@ -184,7 +184,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="right-side">
                                         <div class="header-badge">
                                             <button type="button" onclick="location.href = 'wishlist.html';"
                                                 class="btn p-0 position-relative header-wishlist">
@@ -194,13 +194,60 @@
                                             </button>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li class="right-side onhover-dropdown">
                                         <button type="button" onclick="location.href = 'cart.html';"
                                             class="btn p-0 position-relative header-wishlist">
                                             <i data-feather="shopping-cart"></i>
                                         </button>
+
+                                        <div class="onhover-div">
+                                            <ul class="cart-list">
+                                                <li>
+                                                    <div class="drop-cart">
+                                                        <div class="drop-image">
+                                                            <img src="assets/images/vegetable/product/1.png" alt="">
+                                                        </div>
+
+                                                        <div class="drop-contain">
+                                                            <h5>Fantasy Crunchy Choco Chip Cookies</h5>
+                                                            <h6><span>1 x</span> $80.58</h6>
+                                                            <button class="close-button">
+                                                                <i class="fa-solid fa-xmark"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="drop-cart">
+                                                        <div class="drop-image">
+                                                            <img src="assets/images/vegetable/product/2.png" alt="">
+                                                        </div>
+
+                                                        <div class="drop-contain">
+                                                            <h5>Peanut Butter Bite Premium Butter Cookies 600 g</h5>
+                                                            <h6><span>1 x</span> $25.68</h6>
+                                                            <button class="close-button">
+                                                                <i class="fa-solid fa-xmark"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                            <div class="price-box">
+                                                <h5>Price :</h5>
+                                                <h4 class="theme-color fw-bold">$106.58</h4>
+                                            </div>
+
+                                            <div class="button-group">
+                                                <a href="cart.html" class="btn btn-sm cart-button">View Cart</a>
+                                                <a href="checkout.html"
+                                                    class="btn btn-sm theme-bg-color text-white">Checkout</a>
+                                            </div>
+                                        </div>
                                     </li>
-                                    <li>
+                                    <li class="right-side">
                                         <a href="log-in.html" class="delivery-login-box">
                                             <div class="delivery-icon">
                                                 <i data-feather="user"></i>
@@ -299,7 +346,7 @@
 
                                             <li class="nav-item dropdown dropdown-mega">
                                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                                    data-bs-toggle="dropdown">About</a>
+                                                    data-bs-toggle="dropdown">Shop</a>
                                                 <div class="dropdown-menu">
                                                     <div class="dropdown-column">
                                                         <h5 class="dropdown-header">Blog</h5>
@@ -761,7 +808,7 @@
                         </div>
 
                         <div class="header-nav-right">
-                            <button class="btn deal-button">
+                            <button class="btn deal-button" data-bs-toggle="modal" data-bs-target="#deal-box">
                                 <i data-feather="zap"></i>
                                 <span>Deal Today</span>
                             </button>
@@ -772,6 +819,80 @@
         </div>
     </header>
     <!-- Header End -->
+
+    <!-- Deal Box Modal Start -->
+    <div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deal_today">Deal Today</h5>
+                    <p class="mt-1 text-content">Recommended deals for you.</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="deal-offer-box">
+                        <ul class="deal-offer-list">
+                            <li class="list-1">
+                                <div class="deal-offer-contain">
+                                    <div class="deal-image">
+                                        <img src="assets/images/vegetable/product/10.png" alt="">
+                                    </div>
+
+                                    <div class="deal-contain">
+                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-2">
+                                <div class="deal-offer-contain">
+                                    <div class="deal-image">
+                                        <img src="assets/images/vegetable/product/11.png" alt="">
+                                    </div>
+
+                                    <div class="deal-contain">
+                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-3">
+                                <div class="deal-offer-contain">
+                                    <div class="deal-image">
+                                        <img src="assets/images/vegetable/product/12.png" alt="">
+                                    </div>
+
+                                    <div class="deal-contain">
+                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-1">
+                                <div class="deal-offer-contain">
+                                    <div class="deal-image">
+                                        <img src="assets/images/vegetable/product/13.png" alt="">
+                                    </div>
+
+                                    <div class="deal-contain">
+                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Deal Box Modal End -->
 
     <!-- latest jquery-->
     <script src="assets/js/jquery-3.6.0.min.js"></script>

@@ -23,9 +23,9 @@ footer {
 
     &:before {
         @include pos;
+        @include pseudowh($width: 30%, $height: 100%);
         bottom: 0;
         right: 0;
-        @include pseudowh($width: 30%, $height: 100%);
         background-image: url(../images/vegetable/footer-shape-2.png);
         background-repeat: no-repeat;
         z-index: -1;
@@ -112,7 +112,7 @@ footer {
 
                 a {
                     img {
-                        width: 160px;
+                        width: calc(120px + (160 - 120) * ((100vw - 320px) / (1920 - 320)));
 
                     }
                 }
@@ -151,11 +151,15 @@ footer {
                             stroke: $content-color;
                         }
 
-                        p,
                         a {
                             margin: 0 0 0 10px;
                             color: $content-color;
                             line-height: 18px;
+                            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                            &:hover {
+                                color: var(--theme-color);
+                            }
 
                             [dir="rtl"] & {
                                 margin-right: 10px;
@@ -189,9 +193,9 @@ footer {
             }
 
             ul {
-                [dir="rtl"] & {
-                    padding: 0;
-                }
+                // [dir="rtl"] & {
+                //     padding: 0;
+                // }
 
                 &.address {
                     margin-top: calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
@@ -224,10 +228,40 @@ footer {
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                     a {
-                        display: block;
+                        display: inline-block;
+                        position: relative;
+
+                        &::before {
+                            @include pos;
+                            bottom: 0;
+                            left: 0;
+                            @include pseudowh($width: 0, $height: 2px);
+                            background-color: var(--theme-color);
+                            transition: all .3s ease-in-out;
+                        }
+
+                        &::after {
+                            @include pos;
+                            @include center(vertical);
+                            @include pseudowh($width: 5px, $height: 5px);
+                            left: -13px;
+                            background-color: var(--theme-color);
+                            border-radius: 100%;
+                            opacity: 0;
+                            transition: all .3s ease-in-out;
+                        }
 
                         &:hover {
                             color: var(--theme-color);
+                            margin-left: 13px;
+
+                            &::before {
+                                width: 100%;
+                            }
+
+                            &::after {
+                                opacity: 1;
+                            }
                         }
                     }
 
@@ -391,7 +425,8 @@ footer {
         }
 
         ul {
-            margin: -6px;
+            flex-wrap: wrap;
+            gap: 6px;
             @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
             @include mq-max(lg) {
@@ -400,7 +435,6 @@ footer {
             }
 
             li {
-                margin: 6px;
                 display: block;
             }
         }
