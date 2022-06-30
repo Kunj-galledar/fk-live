@@ -309,7 +309,7 @@ $(".product-box-4 .product-image .label-flex button.wishlist").on("click", funct
         offset: 20,
         spacing: 10,
         z_index: 1031,
-        delay: 5546546546556000,
+        delay: 5000,
         animate: {
             enter: "animated fadeInDown",
             exit: "animated fadeOutUp",
@@ -327,3 +327,12 @@ $(".product-box-4 .product-image .label-flex button.wishlist").on("click", funct
             "</div>",
     });
 });
+
+// plus button on click then qty show
+// $("button.add__button").click(function () {
+//     $(".qty__box").addClass("open");
+// });
+// $("button.add-button").click(function () {
+//     $(this).next().addClass("open");
+//     $(".order-menu-section .qty-input").val('1');
+// });

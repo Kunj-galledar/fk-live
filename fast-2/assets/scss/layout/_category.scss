@@ -259,16 +259,6 @@
                         width: calc(90px + (130 - 90) * ((100vw - 320px) / (1920 - 320)));
                     }
                 }
-
-                .category-name {
-                    &::after {
-                        width: 100%;
-                    }
-
-                    h6 {
-                        color: $white;
-                    }
-                }
             }
 
             .shape-circle {
@@ -294,21 +284,6 @@
                 position: relative;
                 text-align: center;
                 z-index: 0;
-
-                &::after {
-                    z-index: -1;
-                    @include pos;
-                    top: 0;
-                    left: 0;
-                    @include pseudowh($width: 0, $height: 100%);
-                    background-color: var(--theme-color);
-                    transition: all .3s ease-in-out;
-
-                    [dir="rtl"] & {
-                        left: unset;
-                        right: 0;
-                    }
-                }
 
                 h6 {
                     transition: all .3s ease-in-out;

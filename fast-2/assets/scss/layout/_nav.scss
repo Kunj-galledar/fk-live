@@ -58,9 +58,10 @@ header {
                &-2 {
                     @media (min-width: 1201px) {
                          transform: translateX(-50%);
-                         width: 100vw;
+                         width: 48vw;
+                         left: 50%;
                          min-width: unset;
-                         padding: 14px !important;
+                         padding: 22px !important;
                          align-items: center;
                          justify-content: space-around;
                     }
@@ -642,11 +643,17 @@ header {
                     box-shadow: -1px 0 10px 0 rgba($title-color, 0.07), 5px 20px 40px 0 rgba($title-color, 0.04);
                     background-color: $white;
                     border-color: $white;
-                    padding: 0;
+                    padding: 20px;
 
                     li {
                          display: block;
                          width: 100%;
+
+                         &:first-child {
+                              .dropdown-item {
+                                   margin: 0;
+                              }
+                         }
                     }
 
                     .dropdown-column {
@@ -659,8 +666,8 @@ header {
                     }
 
                     .dropdown-item {
-                         padding: 5px 20px 5px 20px;
-                         margin: 3px 0px 3px 0;
+                         padding: 0;
+                         margin: 10px 0px 0 0;
                          font-size: 14px;
 
                          &:hover {
@@ -755,11 +762,28 @@ header {
                .dropdown-mega {
                     position: static;
 
+                    >.dropdown-menu {
+                         align-items: flex-start;
+                         justify-content: space-between;
+                    }
+
                     &:hover {
                          >.dropdown-menu {
                               display: flex;
                          }
                     }
+
+                    .dropdown-menu {
+                         .dropdown-item {
+                              padding: 0;
+                              margin: 10px 0px 0 0;
+                         }
+
+                         .dropdown-column {
+                              margin: 0;
+                         }
+                    }
+
 
                     .dropdown-column {
                          &.dropdown-column-img {
@@ -773,20 +797,15 @@ header {
                     }
 
                     .dropdown-column {
-                         // &:last-child {
-                         //      &.dropdown-column-img {
-                         //           margin-right: -12px;
-                         //           margin-left: 12px;
-                         //      }
-                         // }
 
                          .dropdown-header {
-                              padding: 10px 0 5px 20px;
+                              padding: 0;
                               font-size: 16px;
                               font-weight: 600;
+                              margin-bottom: 14px;
 
                               [dir="rtl"] & {
-                                   padding: 10px 20px 5px 0;
+                                   padding: 0;
                               }
                          }
                     }
