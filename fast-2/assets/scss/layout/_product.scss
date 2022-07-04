@@ -772,13 +772,22 @@
                     padding-right: 18px;
                }
 
-               h5 {
-                    margin-bottom: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
-                    font-weight: 600;
-                    -webkit-line-clamp: 1;
-                    -webkit-box-orient: vertical;
-                    display: -webkit-box;
-                    overflow: hidden;
+               a {
+                    display: block;
+                    color: $title-color;
+
+                    &:hover {
+                         color: $title-color;
+                    }
+
+                    h5 {
+                         margin-bottom: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
+                         font-weight: 600;
+                         -webkit-line-clamp: 1;
+                         -webkit-box-orient: vertical;
+                         display: -webkit-box;
+                         overflow: hidden;
+                    }
                }
 
                h6 {
@@ -1644,15 +1653,19 @@
                margin-top: 0;
           }
 
-          .name {
-               width: 70%;
-               margin-top: 5px;
-               text-transform: capitalize;
-               -webkit-line-clamp: 1;
-               -webkit-box-orient: vertical;
-               display: -webkit-box;
-               overflow: hidden;
-               @include rtl(text-align, left, right);
+          a {
+               color: $title-color;
+
+               .name {
+                    width: 70%;
+                    margin-top: 5px;
+                    text-transform: capitalize;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    @include rtl(text-align, left, right);
+               }
           }
 
           .price {
@@ -1895,10 +1908,14 @@
                     padding-right: 25px;
                }
 
-               .name {
-                    font-weight: 500;
-                    margin: 5px 0;
-                    @include rtl(text-align, left, right);
+               a {
+                    color: $title-color;
+
+                    .name {
+                         font-weight: 500;
+                         margin: 5px 0;
+                         @include rtl(text-align, left, right);
+                    }
                }
 
                .price {
