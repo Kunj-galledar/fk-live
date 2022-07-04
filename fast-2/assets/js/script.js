@@ -290,7 +290,7 @@ $(window).on("load resize", function () {
 // });
 
 // Wishlist Js
-$(".product-box-4 .product-image .label-flex button.wishlist").on("click", function () {
+$(".notifi-wishlist").on("click", function () {
     $.notify({
         icon: "fa fa-check",
         title: "Success!",

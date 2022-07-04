@@ -1101,12 +1101,12 @@ header {
         }
 
         .search-full {
+            @include pseudowh($width: 0, $height: 0);
             background-color: $white;
             position: absolute;
             top: 40px;
             right: 0;
             z-index: 1;
-            @include pseudowh($width: 0, $height: 0);
             transform: scale(0);
             transition: all 0.3s ease;
             display: flex;
@@ -1582,8 +1582,8 @@ header {
                             &::after {
                                 @include pos;
                                 @include center(vertical);
-                                left: -50%;
                                 @include pseudowh($width: 1px, $height: 100%);
+                                left: -50%;
                                 background-color: $border-color;
                             }
                         }

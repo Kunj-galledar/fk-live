@@ -130,6 +130,7 @@ footer {
                     color: $content-color;
                     line-height: 27px;
                     margin-bottom: 0;
+                    width: 88%;
                 }
 
                 .address {
@@ -487,11 +488,9 @@ footer {
         }
 
         .social-icon {
-            margin-top: 10px;
-            display: flex;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 6px);
             align-items: center;
-            flex-wrap: wrap;
-            gap: 6px;
+            margin-top: 10px;
 
             [dir="rtl"] & {
                 padding-left: unset;

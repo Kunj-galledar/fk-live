@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,7 +20,7 @@
         rel="stylesheet">
 
     <!-- bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.rtl.css">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
 
     <!-- font-awesome css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/font-awesome.css">
@@ -44,19 +44,107 @@
     <!-- Product Sction Start -->
     <section class="product-section">
         <div class="container-fluid-lg">
-            <div class="title">
-                <h2>Top Products</h2>
+            <div class="title title-flex">
+                <h2 class="mb-lg-0 mb-2">Our Products</h2>
+                <ul class="nav nav-tabs tab-style-color" id="myTab">
+                    <li class="nav-item">
+                        <button class="bg-light-red border-light-red nav-link btn active" id="discount-tab"
+                            data-bs-toggle="tab" data-bs-target="#discount" type="button">Discount</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link btn bg-light-green border-light-green" id="cooking-tab"
+                            data-bs-toggle="tab" data-bs-target="#cooking" type="button"><img alt=""
+                                src="assets/images/icon/product/cooking.png"> Cooking</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link btn bg-light-purple border-light-purple" id="fruits-tab"
+                            data-bs-toggle="tab" data-bs-target="#fruits" type="button"><img alt=""
+                                src="assets/images/icon/product/fruits.png"> Fruits & Vegetables</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link btn bg-light-yellow border-light-yellow" id="beverage-tab"
+                            data-bs-toggle="tab" data-bs-target="#beverage" type="button"><img alt=""
+                                src="assets/images/icon/product/beverage.png"> Beverage</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link btn bg-light-red border-light-red" id="dairy-tab" data-bs-toggle="tab"
+                            data-bs-target="#dairy" type="button"><img src="assets/images/icon/product/dairy.png"
+                                alt=""> Dairy</button>
+                    </li>
+                </ul>
             </div>
 
-            <div class="slider-6 img-slider slick-slider-1 arrow-slider">
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="discount" role="tabpanel" aria-labelledby="discount-tab">
+                    <div class="row g-8">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
                                             <label>-25%</label>
+                                        </div>
+
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/1.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <div class="discount">
+                                            <label>Hot</label>
                                         </div>
 
                                         <button class="btn p-0 wishlist btn-wishlist">
@@ -76,7 +164,7 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
                                             <i data-feather="star"></i>
@@ -85,7 +173,7 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Potato</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -109,74 +197,12 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
                                         <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
-                                        <button class="btn p-0 wishlist btn-wishlist">
-                                            <i class="iconly-Heart icli"></i>
-                                        </button>
-                                    </div>
-
-                                    <img src="assets/images/veg-3/cate1/4.png" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="product-detail">
-                                    <ul class="rating">
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star" class="fill"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="name">Bell pepper</h5>
-                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="price-qty">
-                                        <div class="counter-number">
-                                            <div class="counter">
-                                                <div class="qty-left-minus" data-type="minus" data-field="">
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </div>
-                                                <input class="form-control input-number qty-input" type="text"
-                                                    name="quantity" value="0">
-                                                <div class="qty-right-plus" data-type="plus" data-field="">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button class="buy-button buy-button-2 btn btn-cart">
-                                            <i class="iconly-Buy icli m-0"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
-                            <div class="product-box-4">
-                                <div class="product-image">
-                                    <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
+                                            <label>50%</label>
                                         </div>
 
                                         <button class="btn p-0 wishlist btn-wishlist">
@@ -193,7 +219,7 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star" class="fill"></i>
+                                            <i data-feather="star"></i>
                                         </li>
                                         <li>
                                             <i data-feather="star"></i>
@@ -205,7 +231,7 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Baby Chili</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -229,7 +255,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
@@ -263,7 +289,7 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Broccoli</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -286,12 +312,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
@@ -313,7 +335,7 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star" class="fill"></i>
+                                            <i data-feather="star"></i>
                                         </li>
                                         <li>
                                             <i data-feather="star"></i>
@@ -325,7 +347,7 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Peru</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -349,7 +371,123 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <div class="discount">
+                                            <label>Hot</label>
+                                        </div>
+
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/9.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Avacado</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <div class="discount">
+                                            <label>50%</label>
+                                        </div>
+
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/11.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Cucumber</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
@@ -362,7 +500,65 @@
                                         </button>
                                     </div>
 
-                                    <img src="assets/images/veg-3/cate1/8.png" class="img-fluid" alt="">
+                                    <img src="assets/images/veg-3/cate1/12.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Beetroot</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <div class="discount">
+                                            <label>-25%</label>
+                                        </div>
+
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/13.png" class="img-fluid" alt="">
                                 </div>
 
                                 <div class="product-detail">
@@ -383,7 +579,181 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Strawberry</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <div class="discount">
+                                            <label>Hot</label>
+                                        </div>
+
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/15.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Corn</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <div class="discount">
+                                            <label>50%</label>
+                                        </div>
+
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/17.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Cabbage</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <div class="discount">
+                                            <label>-25%</label>
+                                        </div>
+
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/18.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Ginger</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -409,22 +779,18 @@
                     </div>
                 </div>
 
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
+                <div class="tab-pane fade" id="cooking" role="tabpanel" aria-labelledby="cooking-tab">
+                    <div class="row g-8">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
                                     </div>
 
-                                    <img src="assets/images/veg-3/cate1/9.png" class="img-fluid" alt="">
+                                    <img src="assets/images/veg-3/cate1/1.png" class="img-fluid" alt="">
                                 </div>
 
                                 <div class="product-detail">
@@ -436,16 +802,16 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Eggplant</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -469,14 +835,280 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/2.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Eggplant</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
                                         </div>
 
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/3.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Onion</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/4.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Potato</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/5.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Baby Chili</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/6.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Broccoli</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
@@ -494,6 +1126,114 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Pea</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/11.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Cucumber</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/17.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
                                             <i data-feather="star"></i>
                                         </li>
                                         <li>
@@ -503,7 +1243,61 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Cabbage</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/18.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Ginger</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -529,22 +1323,18 @@
                     </div>
                 </div>
 
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
+                <div class="tab-pane fade" id="fruits" role="tabpanel" aria-labelledby="fruits-tab">
+                    <div class="row g-8">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
                                     </div>
 
-                                    <img src="assets/images/veg-3/cate1/11.png" class="img-fluid" alt="">
+                                    <img src="assets/images/veg-3/cate1/8.png" class="img-fluid" alt="">
                                 </div>
 
                                 <div class="product-detail">
@@ -556,16 +1346,16 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Apple</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -589,14 +1379,280 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/14.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Passion</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
                                         </div>
 
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/16.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Blackberry</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/7.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Peru</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/9.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Apple</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/13.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Strawberry</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
@@ -649,22 +1705,18 @@
                     </div>
                 </div>
 
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
+                <div class="tab-pane fade" id="beverage" role="tabpanel" aria-labelledby="beverage-tab">
+                    <div class="row g-8">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
                                     </div>
 
-                                    <img src="assets/images/veg-3/cate1/13.png" class="img-fluid" alt="">
+                                    <img src="assets/images/veg-3/cate1/1.png" class="img-fluid" alt="">
                                 </div>
 
                                 <div class="product-detail">
@@ -676,16 +1728,16 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Eggplant</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -709,20 +1761,16 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
                                     </div>
 
-                                    <img src="assets/images/veg-3/cate1/14.png" class="img-fluid" alt="">
+                                    <img src="assets/images/veg-3/cate1/2.png" class="img-fluid" alt="">
                                 </div>
 
                                 <div class="product-detail">
@@ -734,78 +1782,16 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star"></i>
-                                        </li>
-                                    </ul>
-                                    <h5 class="name">Bell pepper</h5>
-                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
-                                    <div class="price-qty">
-                                        <div class="counter-number">
-                                            <div class="counter">
-                                                <div class="qty-left-minus" data-type="minus" data-field="">
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </div>
-                                                <input class="form-control input-number qty-input" type="text"
-                                                    name="quantity" value="0">
-                                                <div class="qty-right-plus" data-type="plus" data-field="">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button class="buy-button buy-button-2 btn btn-cart">
-                                            <i class="iconly-Buy icli m-0"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
-                            <div class="product-box-4">
-                                <div class="product-image">
-                                    <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
-                                        <button class="btn p-0 wishlist btn-wishlist">
-                                            <i class="iconly-Heart icli"></i>
-                                        </button>
-                                    </div>
-
-                                    <img src="assets/images/veg-3/cate1/15.png" class="img-fluid" alt="">
-                                </div>
-
-                                <div class="product-detail">
-                                    <ul class="rating">
-                                        <li>
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star"></i>
-                                        </li>
-                                        <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Eggplant</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -829,20 +1815,16 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
                                     </div>
 
-                                    <img src="assets/images/veg-3/cate1/16.png" class="img-fluid" alt="">
+                                    <img src="assets/images/veg-3/cate1/3.png" class="img-fluid" alt="">
                                 </div>
 
                                 <div class="product-detail">
@@ -863,7 +1845,7 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Onion</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -886,19 +1868,281 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/4.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Potato</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
                                         </div>
 
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/5.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Baby Chili</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/6.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Broccoli</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/10.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Pea</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/11.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Cucumber</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
@@ -925,7 +2169,7 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Cabbage</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -949,14 +2193,10 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
@@ -983,7 +2223,7 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Ginger</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -1009,22 +2249,18 @@
                     </div>
                 </div>
 
-                <div>
-                    <div class="row gy-4 gx-0">
-                        <div class="col-12">
+                <div class="tab-pane fade" id="dairy" role="tabpanel" aria-labelledby="dairy-tab">
+                    <div class="row g-8">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
                                     </div>
 
-                                    <img src="assets/images/veg-3/cate1/19.png" class="img-fluid" alt="">
+                                    <img src="assets/images/veg-3/cate1/1.png" class="img-fluid" alt="">
                                 </div>
 
                                 <div class="product-detail">
@@ -1036,16 +2272,16 @@
                                             <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
-                                            <i data-feather="star"></i>
+                                            <i data-feather="star" class="fill"></i>
                                         </li>
                                         <li>
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Eggplant</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
@@ -1069,20 +2305,70 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
                             <div class="product-box-4">
                                 <div class="product-image">
                                     <div class="label-flex">
-                                        <div class="discount">
-                                            <label>-25%</label>
-                                        </div>
-
                                         <button class="btn p-0 wishlist btn-wishlist">
                                             <i class="iconly-Heart icli"></i>
                                         </button>
                                     </div>
 
-                                    <img src="assets/images/veg-3/cate1/20.png" class="img-fluid" alt="">
+                                    <img src="assets/images/veg-3/cate1/2.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Eggplant</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/3.png" class="img-fluid" alt="">
                                 </div>
 
                                 <div class="product-detail">
@@ -1103,7 +2389,385 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
-                                    <h5 class="name">Bell pepper</h5>
+                                    <h5 class="name">Onion</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/4.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Potato</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/5.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Baby Chili</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/6.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Broccoli</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/10.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Pea</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/11.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Cucumber</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/17.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Cabbage</h5>
+                                    <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
+                                    <div class="price-qty">
+                                        <div class="counter-number">
+                                            <div class="counter">
+                                                <div class="qty-left-minus" data-type="minus" data-field="">
+                                                    <i class="fa-solid fa-minus"></i>
+                                                </div>
+                                                <input class="form-control input-number qty-input" type="text"
+                                                    name="quantity" value="0">
+                                                <div class="qty-right-plus" data-type="plus" data-field="">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="buy-button buy-button-2 btn btn-cart">
+                                            <i class="iconly-Buy icli m-0"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-2 col-xl-3 col-lg-4 col-6">
+                            <div class="product-box-4">
+                                <div class="product-image">
+                                    <div class="label-flex">
+                                        <button class="btn p-0 wishlist btn-wishlist">
+                                            <i class="iconly-Heart icli"></i>
+                                        </button>
+                                    </div>
+
+                                    <img src="assets/images/veg-3/cate1/18.png" class="img-fluid" alt="">
+                                </div>
+
+                                <div class="product-detail">
+                                    <ul class="rating">
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star" class="fill"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                        <li>
+                                            <i data-feather="star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="name">Ginger</h5>
                                     <h5 class="price theme-color">$70.21<del>$65.25</del></h5>
                                     <div class="price-qty">
                                         <div class="counter-number">
