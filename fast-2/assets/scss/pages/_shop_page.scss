@@ -814,6 +814,12 @@
                     display: flex;
                     align-items: center;
 
+                    h5 {
+                         @include mq-max(md) {
+                              display: none;
+                         }
+                    }
+
                     .dropdown {
                          margin-left: 10px;
 
@@ -845,6 +851,14 @@
 
                .grid-option {
                     margin-left: auto;
+
+                    &-2 {
+                         margin-left: 0;
+
+                         @include mq-max(md) {
+                              display: none;
+                         }
+                    }
 
                     ul {
                          align-items: center;

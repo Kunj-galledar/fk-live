@@ -1660,6 +1660,11 @@
                 font-weight: bold;
                 color: $title-color;
                 font-family: $public-sans;
+                display: block;
+
+                img {
+                    width: calc(150px + (225 - 150) * ((100vw - 320px) / (1920 - 320)));
+                }
             }
         }
 
@@ -1710,6 +1715,10 @@
 
         .forgot-box {
             @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+            @include mq-max(2xs) {
+                display: block;
+            }
         }
 
         .remember-box {
@@ -3733,9 +3742,18 @@
                         }
 
                         .order-wrap {
-                            h3 {
-                                font-weight: 600;
-                                margin-bottom: 6px;
+                            a {
+                                display: block;
+                                color: $title-color;
+
+                                &:hover {
+                                    color: $title-color;
+                                }
+
+                                h3 {
+                                    font-weight: 600;
+                                    margin-bottom: 6px;
+                                }
                             }
 
                             p {
@@ -3798,6 +3816,8 @@
                     }
 
                     .form-check {
+                        margin-top: 3px;
+
                         .form-check-input {
                             @include pseudowh($width: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))), $height: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))));
                             margin-top: 2px;
@@ -4641,4 +4661,14 @@
             border-bottom-left-radius: 0;
         }
     }
+}
+
+/**=====================
+     Theme Setting Scss
+==========================**/
+.theme-setting {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
 }
