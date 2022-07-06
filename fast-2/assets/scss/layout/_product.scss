@@ -358,6 +358,10 @@
                opacity: 0;
                transition: all .3s ease-in-out;
 
+               @include mq-max(xs) {
+                    display: none;
+               }
+
                li {
                     position: relative;
 
@@ -1072,6 +1076,14 @@
                margin-top: 10px;
           }
 
+          a {
+               color: $title-color;
+
+               &:hover {
+                    color: $title-color;
+               }
+          }
+
           .name {
                font-weight: 600;
                margin-bottom: calc(5px + (11 - 5) * ((100vw - 320px) / (1920 - 320)));
@@ -1552,6 +1564,10 @@
                position: absolute;
                margin: 0 -4px;
 
+               [dir="rtl"] & {
+                    padding-right: 0;
+               }
+
                @include mq-max(xs) {
                     margin: 0 -1px;
                }
@@ -1659,15 +1675,20 @@
           }
 
           .buy-button {
+               @include flex_common;
                position: absolute;
                bottom: 0;
                right: 0;
                width: 35px;
                height: 35px;
-               @include flex_common;
                padding: 7px 11px;
                background-color: var(--theme-color);
                color: $white;
+
+               [dir="rtl"] & {
+                    right: unset;
+                    left: 0;
+               }
 
                i {
                     font-size: 18px;

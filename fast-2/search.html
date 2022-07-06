@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,7 +20,7 @@
         rel="stylesheet">
 
     <!-- bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.css">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap.rtl.css">
 
     <!-- font-awesome css -->
     <link rel="stylesheet" type="text/css" href="assets/css/vendors/font-awesome.css">
@@ -626,7 +626,7 @@
             <div class="row">
                 <div class="col-xxl-6 col-xl-8 mx-auto">
                     <div class="title d-block text-center">
-                        <h2>Search for products on our site</h2>
+                        <h2>Search for products</h2>
                         <span class="title-leaf">
                             <svg class="icon-width">
                                 <use xlink:href="assets/svg/leaf.svg#leaf"></use>
@@ -635,10 +635,11 @@
                     </div>
 
                     <div class="search-box">
-                        <div class="form-floating theme-form-floating">
-                            <input type="search" class="form-control" id="searchBar" placeholder="Search Product">
-                            <label for="searchBar">Search Product</label>
-                            <button class="btn theme-bg-color text-white">Search</button>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder=""
+                                aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            <button class="btn theme-bg-color text-white" type="button"
+                                id="button-addon1">Button</button>
                         </div>
                     </div>
                 </div>
@@ -1881,6 +1882,26 @@
     </div>
     <!-- Deal Box Modal End -->
 
+    <!-- Theme Setting Start -->
+    <div class="theme-setting">
+        <ul>
+            <li class="rtl">
+                <h5>RTL</h5>
+            </li>
+            <li class="dark">
+                <h5 id="darkButton">Dark <i class="fa-solid fa-moon"></i></h5>
+                <h5 id="lightButton">Light <i class="fa-solid fa-sun"></i></h5>
+            </li>
+            <li class="color-picker">
+                <form class="form-control">
+                    <input type="color" class="form-control form-control-color" id="colorPick" value="#0da487"
+                        title="Choose your color">
+                </form>
+            </li>
+        </ul>
+    </div>
+    <!-- Theme Setting End -->
+
     <!-- Tap to top start -->
     <div class="back-to-top">
         <a id="back-to-top" href="#" role="button">
@@ -1928,15 +1949,12 @@
     <!-- Quantity js -->
     <script src="assets/js/quantity.js"></script>
 
-    <!-- Zoom Js -->
-    <script src="assets/js/jquery.elevatezoom.js"></script>
-    <script src="assets/js/zoom-filter.js"></script>
-
     <!-- Infinite Scroll Js -->
     <script src="assets/js/infinite-scroll.js"></script>
 
     <!-- script js -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/theme-setting.js"></script>
 
 
 </body>

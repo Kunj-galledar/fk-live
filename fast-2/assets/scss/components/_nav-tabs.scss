@@ -43,6 +43,11 @@
         display: inherit;
         border-radius: 6px;
 
+        [dir="rtl"] & {
+            right: unset;
+            left: 10px;
+        }
+
         tbody {
             tr {
 
@@ -148,11 +153,21 @@
                 .review-list {
                     @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 26px);
 
+                    [dir="rtl"] & {
+                        padding-right: 0;
+                    }
+
                     li {
                         display: block;
+                        width: 100%;
 
                         &.people-reply {
                             margin-left: calc(10px + (40 - 10) * ((100vw - 320px) / (1920 - 320)));
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: calc(10px + (40 - 10) * ((100vw - 320px) / (1920 - 320)));
+                            }
                         }
 
                         .people-box {
@@ -213,6 +228,11 @@
                                 padding-left: 15px;
                                 width: calc(100% - 70px);
 
+                                [dir="rtl"] & {
+                                    padding-left: unset;
+                                    padding-right: 15px;
+                                }
+
                                 @include mq-max(xs) {
                                     padding: 0;
                                     width: 100%;
@@ -233,12 +253,20 @@
                                 margin: calc(7px + (16 - 7) * ((100vw - 320px) / (1920 - 320))) 0 0;
                                 line-height: 1.6;
                                 color: $content-color;
+                                position: relative;
 
                                 a {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
                                     opacity: 0;
-                                    margin-left: 8px;
                                     font-weight: 600;
                                     transition: all .3s ease-in-out;
+
+                                    [dir="rtl"] & {
+                                        right: unset;
+                                        left: 0;
+                                    }
 
                                     @include mq-max(sm) {
                                         opacity: 1;

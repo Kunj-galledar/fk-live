@@ -1,6 +1,10 @@
 /**=====================
      Inner Title Scss
 ==========================**/
+.table> :not(:last-child)> :last-child>* {
+    border-bottom: none;
+}
+
 .inner-title {
     margin-bottom: calc(32px + (55 - 32) * ((100vw - 320px) / (1920 - 320)));
     text-align: center;
@@ -382,6 +386,10 @@
                                 }
 
                                 ul {
+                                    [dir="rtl"] & {
+                                        padding-right: 0;
+                                    }
+
                                     li {
                                         display: block;
                                         white-space: nowrap;
@@ -502,6 +510,11 @@
                             del {
                                 font-size: calc(13px + (16 - 13) * ((100vw - 320px) / (1920 - 320)));
                                 margin-left: 4px;
+
+                                [dir="rtl"] & {
+                                    margin-left: unset;
+                                    margin-right: 4px;
+                                }
                             }
                         }
 
@@ -704,6 +717,10 @@
         }
 
         ul {
+            [dir="rtl"] & {
+                padding-right: 0;
+            }
+
             li {
                 padding: 10px 0;
                 display: flex;
@@ -860,6 +877,10 @@
         padding: 0 calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320))) calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
 
         ul {
+            [dir="rtl"] & {
+                padding-right: 0;
+            }
+
             li {
                 width: 100%;
             }
@@ -3033,6 +3054,10 @@
         ul {
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(11px + (20 - 11) * ((100vw - 320px) / (1920 - 320))));
 
+            [dir="rtl"] & {
+                padding-right: 0;
+            }
+
             li {
                 width: 100%;
 
@@ -4648,18 +4673,30 @@
     .search-box {
         position: relative;
 
-        button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            padding: 0 calc(18px + (34 - 18) * ((100vw - 320px) / (1920 - 320)));
-            font-weight: 500;
-            text-transform: capitalize;
-            font-size: calc(16px + (19 - 16) * ((100vw - 320px) / (1920 - 320)));
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+        .input-group {
+            .form-control {
+                [dir="rtl"] & {
+                    text-align: left;
+                }
+
+                &:focus {
+                    z-index: 0;
+                }
+            }
         }
+
+        // button {
+        //     position: absolute;
+        //     top: 0;
+        //     right: 0;
+        //     height: 100%;
+        //     padding: 0 calc(18px + (34 - 18) * ((100vw - 320px) / (1920 - 320)));
+        //     font-weight: 500;
+        //     text-transform: capitalize;
+        //     font-size: calc(16px + (19 - 16) * ((100vw - 320px) / (1920 - 320)));
+        //     border-top-left-radius: 0;
+        //     border-bottom-left-radius: 0;
+        // }
     }
 }
 
@@ -4667,8 +4704,83 @@
      Theme Setting Scss
 ==========================**/
 .theme-setting {
-    position: absolute;
+    position: fixed;
     top: 50%;
-    transform: translateY(-50%);
-    right: 0;
+    transform: translateY(-50%) rotate(90deg);
+    right: -123px;
+    z-index: 10;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        [dir="rtl"] & {
+            padding-right: 0;
+        }
+
+        li {
+            box-shadow: 0px 2px 8px rgba($title-color, 0.2);
+            padding: 10px;
+            background-color: $white;
+            border-radius: 5px;
+            cursor: pointer;
+            // display: block;
+
+            &.dark {
+                display: flex;
+            }
+
+            h5 {
+                text-align: center;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                font-weight: 500;
+                position: relative;
+
+                +h5 {
+                    margin-right: 22px;
+
+                    &:before {
+                        @include pos;
+                        top: 0;
+                        right: -10px;
+                        width: 1px;
+                        height: 100%;
+                        background-color: rgba($title-color, .2);
+                    }
+                }
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+
+            // +li {
+            //     margin-top: 10px;
+            // }
+
+            &.color-picker {
+                padding: 0;
+                border: none;
+
+                .form-control {
+                    padding: 0;
+                    border: none;
+
+                    .form-control-color {
+                        padding: 0;
+                        font-size: 24px;
+                        border: none;
+                        width: 43px;
+                        height: auto;
+
+                        [dir="rtl"] & {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

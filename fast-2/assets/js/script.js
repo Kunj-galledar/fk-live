@@ -328,6 +328,9 @@ $(".notifi-wishlist").on("click", function () {
     });
 });
 
+// Dark, RTl and color picker button js
+
+
 // plus button on click then qty show
 // $("button.add__button").click(function () {
 //     $(".qty__box").addClass("open");

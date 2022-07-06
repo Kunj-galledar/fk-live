@@ -194,9 +194,9 @@ footer {
             }
 
             ul {
-                // [dir="rtl"] & {
-                //     padding: 0;
-                // }
+                [dir="rtl"] & {
+                    padding-right: 0;
+                }
 
                 &.address {
                     margin-top: calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
@@ -234,11 +234,16 @@ footer {
 
                         &::before {
                             @include pos;
-                            bottom: 0;
-                            left: 0;
                             @include pseudowh($width: 0, $height: 2px);
+                            left: 0;
+                            bottom: 0;
                             background-color: var(--theme-color);
                             transition: all .3s ease-in-out;
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: 0;
+                            }
                         }
 
                         &::after {
@@ -250,11 +255,21 @@ footer {
                             border-radius: 100%;
                             opacity: 0;
                             transition: all .3s ease-in-out;
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: -13px;
+                            }
                         }
 
                         &:hover {
                             color: var(--theme-color);
                             margin-left: 13px;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 13px;
+                            }
 
                             &::before {
                                 width: 100%;
@@ -420,6 +435,11 @@ footer {
 
                     +li {
                         margin-left: 8px;
+
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 8px;
+                        }
                     }
                 }
             }
