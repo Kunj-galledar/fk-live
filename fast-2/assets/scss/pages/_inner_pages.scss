@@ -1,5 +1,5 @@
 /**=====================
-     Inner Title Scss
+     Inner scss
 ==========================**/
 .table> :not(:last-child)> :last-child>* {
     border-bottom: none;
@@ -1654,6 +1654,7 @@
     overflow-x: hidden;
     display: flex;
     align-items: center;
+    padding: 0;
 
     &.otp-section {
         display: flex;
@@ -1675,6 +1676,7 @@
 
         .logo-name {
             margin-bottom: 30px;
+            margin-top: -10px;
 
             a {
                 font-size: calc(28px + (35 - 28) * ((100vw - 320px) / (1920 - 320)));
@@ -1799,6 +1801,8 @@
             a {
                 font-weight: 500;
                 font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: -4px;
+                display: block;
 
                 &:hover {
                     color: var(--theme-color);
@@ -2444,10 +2448,6 @@
                     display: -webkit-box;
                     overflow: hidden;
                 }
-
-                // @include mq-between(lg, 2xl) {
-                //     display: none;
-                // }
             }
 
             .blog-button {
@@ -2500,7 +2500,6 @@
             margin-bottom: 0;
             width: 38%;
 
-            // object-fit: contain;
             @media (max-width: 1399px) {
                 width: 45%;
             }
@@ -2510,27 +2509,17 @@
                 margin-bottom: 8px;
                 text-align: center;
             }
-
-            // img {
-            //     width: 100%;
-            // }
         }
 
         .blog-contain {
             padding: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
             width: 62%;
 
-            // [dir="rtl"] & {
-            //     padding-right: 30px;
-            //     padding-left: unset;
-            // }
-
             @media (max-width: 1399px) {
                 width: 55%;
             }
 
             @include mq-max(sm) {
-                // padding: 0;
                 width: 100%;
             }
         }
@@ -4738,138 +4727,5 @@
                 }
             }
         }
-
-        // button {
-        //     position: absolute;
-        //     top: 0;
-        //     right: 0;
-        //     height: 100%;
-        //     padding: 0 calc(18px + (34 - 18) * ((100vw - 320px) / (1920 - 320)));
-        //     font-weight: 500;
-        //     text-transform: capitalize;
-        //     font-size: calc(16px + (19 - 16) * ((100vw - 320px) / (1920 - 320)));
-        //     border-top-left-radius: 0;
-        //     border-bottom-left-radius: 0;
-        // }
     }
 }
-
-/**=====================
-     Theme Setting Scss
-==========================**/
-// .theme-setting {
-//     position: fixed;
-//     top: 50%;
-//     transform: translateY(-50%) rotate(90deg);
-//     right: -111px;
-//     z-index: 10;
-
-//     ul {
-//         display: flex;
-//         flex-wrap: wrap;
-//         gap: 15px;
-
-//         [dir="rtl"] & {
-//             padding-right: 0;
-//         }
-
-//         li {
-//             box-shadow: 0px 2px 8px rgba($title-color, 0.09);
-//             padding: 10px;
-//             background-color: $white;
-//             border-radius: 5px;
-//             cursor: pointer;
-//             // display: block;
-
-//             &.dark {
-//                 display: flex;
-//                 padding: 0;
-//                 background-color: transparent;
-//             }
-
-//             &.rtl {
-//                 h5 {
-//                     padding: 0;
-//                 }
-//             }
-
-//             h5 {
-//                 text-align: center;
-//                 border-top-left-radius: 5px;
-//                 border-bottom-left-radius: 5px;
-//                 font-weight: 500;
-//                 position: relative;
-//                 background-color: $white;
-//                 padding: 10px;
-//                 font-size: 14px;
-
-//                 [dir="rtl"] & {
-//                     border-top-left-radius: 0;
-//                     border-top-right-radius: 5px;
-//                     border-bottom-left-radius: 0;
-//                     border-bottom-right-radius: 5px;
-//                 }
-
-//                 // #darkButton,
-//                 // #lightButton {
-//                 //     padding: 10px;
-//                 // }
-
-//                 +h5 {
-//                     // margin-left: 22px;
-
-//                     &:before {
-//                         @include pos;
-//                         @include center(vertical);
-//                         left: 0;
-//                         width: 1px;
-//                         height: 70%;
-//                         background-color: rgba($title-color, 0.15);
-
-//                         [dir="rtl"] & {
-//                             left: unset;
-//                             right: 0;
-//                         }
-//                     }
-//                 }
-
-//                 i {
-//                     margin-right: 5px;
-
-//                     [dir="rtl"] & {
-//                         margin-right: unset;
-//                         margin-left: 5px;
-//                     }
-//                 }
-//             }
-
-//             // +li {
-//             //     margin-top: 10px;
-//             // }
-
-//             &.color-picker {
-//                 padding: 0;
-//                 border: none;
-//                 background-color: transparent;
-//                 box-shadow: none;
-
-//                 .form-control {
-//                     padding: 0;
-//                     border: none;
-
-//                     .form-control-color {
-//                         padding: 0;
-//                         font-size: 27px;
-//                         border: none;
-//                         width: 43px;
-//                         height: auto;
-
-//                         [dir="rtl"] & {
-//                             max-width: 100%;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }

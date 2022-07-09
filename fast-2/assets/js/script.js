@@ -282,13 +282,6 @@ $(window).on("load resize", function () {
     });
 });
 
-// Loader js
-// $(window).load(function () {
-//     $('.cssloader').fadeOut('slow', function () {
-//         $(this).remove();
-//     });
-// });
-
 // Wishlist Js
 $(".notifi-wishlist").on("click", function () {
     $.notify({
@@ -328,14 +321,15 @@ $(".notifi-wishlist").on("click", function () {
     });
 });
 
-// Dark, RTl and color picker button js
+// Loader Js
+const loaderEl = document.getElementsByClassName("fullpage-loader")[0];
+document.addEventListener("readystatechange", (event) => {
+    const readyState = "complete";
+    if (document.readyState == readyState) {
+        loaderEl.classList.add("fullpage-loader--invisible");
 
-
-// plus button on click then qty show
-// $("button.add__button").click(function () {
-//     $(".qty__box").addClass("open");
-// });
-// $("button.add-button").click(function () {
-//     $(this).next().addClass("open");
-//     $(".order-menu-section .qty-input").val('1');
-// });
+        setTimeout(() => {
+            loaderEl.parentNode.removeChild(loaderEl);
+        }, 2000);
+    }
+});

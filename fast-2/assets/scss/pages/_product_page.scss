@@ -1,5 +1,5 @@
 /**=====================
-     Product Page Scss
+     Product Page scss
 ==========================**/
 .pt-25 {
     padding-top: 25px;
@@ -132,6 +132,10 @@
     }
 
     .right-box-contain {
+        @include mq-max(md) {
+            text-align: center;
+        }
+
         .offer-top {
             font-weight: 500;
             padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
@@ -177,6 +181,7 @@
             .custom-rate {
                 @include mq-max(3xl) {
                     margin-top: 10px;
+                    justify-content: center;
                 }
             }
 
@@ -234,6 +239,10 @@
             .select-packege {
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (13 - 5) * ((100vw - 320px) / (1920 - 320))));
 
+                @include mq-max(md) {
+                    justify-content: center;
+                }
+
                 [dir="rtl"] & {
                     padding-right: 0;
                 }
@@ -252,8 +261,12 @@
         }
 
         .note-box {
-            align-items: center;
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
+            align-items: center;
+
+            @include mq-max(md) {
+                justify-content: center;
+            }
 
             .product-qty {
                 width: 180px;
@@ -279,6 +292,10 @@
             margin-top: 20px;
             padding-bottom: 16px;
             border-bottom: 1px solid $border-color;
+
+            @include mq-max(md) {
+                justify-content: center;
+            }
 
             a {
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
@@ -325,6 +342,10 @@
             ul {
                 align-items: center;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320))));
+
+                @include mq-max(md) {
+                    justify-content: center;
+                }
 
                 [dir="rtl"] & {
                     padding-right: 0;
