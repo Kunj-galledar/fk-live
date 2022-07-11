@@ -1,6 +1,6 @@
 $('.slider-animate').slick({
     autoplay: true,
-    speed: 1500,
+    speed: 1800,
     lazyLoad: 'progressive',
     fade: true,
     dots: true,

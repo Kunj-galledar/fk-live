@@ -192,68 +192,81 @@
                 width: 100%;
             }
 
-            i {
-                @include pseudowh($width: auto, $height: 100%);
-                position: absolute;
-                display: flex;
-                align-items: center;
-                padding: 0 calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
-                color: var(--theme-color);
-                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-            }
+            .input-group {
+                background-color: $white;
 
-            .form-control {
-                padding-left: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
-                border: none;
-
-                [dir="rtl"] & {
-                    padding-left: unset;
-                    padding-right: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
+                i {
+                    @include pseudowh($width: auto, $height: 100%);
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+                    color: var(--theme-color);
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    z-index: 1;
                 }
 
-                &:focus {
-                    background-color: none;
-                }
-            }
+                .form-control {
+                    padding-left: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
+                    border: none;
 
-            .custom-dropdown {
-                position: absolute;
-                top: 0;
-                right: 0;
-                @include pseudowh($width: auto, $height: 100%);
-                padding: 0 calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
-                display: flex;
-                align-items: center;
+                    [dir="rtl"] & {
+                        padding-left: unset;
+                        padding-right: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
+                    }
 
-                [dir="rtl"] & {
-                    right: unset;
-                    left: 0;
+                    &:focus {
+                        background-color: transparent;
+                    }
                 }
 
-                .dropdown {
-                    button {
-                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                        font-weight: 600;
-                        color: var(--theme-color);
+                .faq-dropdown-menu {
+                    li {
+                        display: block;
+                    }
+                }
+
+                .faq-dropdown-button {
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 600;
+                    color: var(--theme-color);
+                    // padding: 0;
+
+                    &::after {
+                        content: unset;
+                    }
+
+                    i {
+                        position: relative;
                         padding: 0;
+                        margin-left: 5px;
+                        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
 
-                        &::after {
-                            content: unset;
-                        }
-
-                        i {
-                            position: relative;
-                            padding: 0;
-                            margin-left: 5px;
-                            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
-
-                            [dir="rtl"] & {
-                                margin-left: unset;
-                                margin-right: 5px;
-                            }
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 5px;
                         }
                     }
                 }
+
+                // .custom-dropdown {
+                //     // position: absolute;
+                //     // top: 0;
+                //     // right: 0;
+                //     // @include pseudowh($width: auto, $height: 100%);
+                //     // padding: 0 calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
+                //     // display: flex;
+                //     // align-items: center;
+
+                //     [dir="rtl"] & {
+                //         right: unset;
+                //         left: 0;
+                //     }
+
+                //     .dropdown {
+
+                //     }
+                // }
             }
         }
     }
