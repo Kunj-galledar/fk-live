@@ -17,12 +17,30 @@
         box-shadow: none;
     }
 
+    &:hover {
+        .icon {
+            &-2 {
+                transform: translateX(3px);
+            }
+        }
+    }
+
     .icon {
         margin-left: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
 
         [dir="rtl"] & {
             margin-left: unset;
             margin-right: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        &-2 {
+            margin-left: 6px;
+            transition: 0.3s ease;
+
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 6px;
+            }
         }
     }
 

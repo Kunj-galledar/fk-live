@@ -886,8 +886,14 @@
     }
 
     ul {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
-        margin-top: 45px;
+        @include flex_common ($dis: flex, $align: center, $justify: flex-end);
+        flex-wrap: wrap;
+        gap: calc(7px + (16 - 7) * ((100vw - 320px) / (1920 - 320)));
+
+        &.button-group-list {
+            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            margin-top: calc(26px + (45 - 26) * ((100vw - 320px) / (1920 - 320)));
+        }
 
         li {
             button {
@@ -1840,11 +1846,11 @@
         padding: 28px 18px;
 
         .faq-box-icon {
-            margin-bottom: 16px;
-            display: inline-block;
+            @include pseudowh($width: 65px, $height: 65px);
+            @include flex_common;
             background-color: $white;
-            padding: 10px;
             border-radius: 7px;
+            margin: 0 auto 16px;
 
             img {
                 @include pseudowh($width: calc(36px + (45 - 36) * ((100vw - 320px) / (1920 - 320))), $height: auto);
@@ -1923,7 +1929,7 @@
 
                         i {
                             margin-left: auto;
-                            transition: all.3s ease-in-out;
+                            transition: all .3s ease-in-out;
 
                             [dir="rtl"] & {
                                 margin-left: unset;

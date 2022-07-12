@@ -1,17 +1,21 @@
 // 01. Image to background js
-// 02. dropdown category function js
-// 03. search box function js
-// 04. Footer function js
-// 05. search box function js
-// 06. Add to Cart js
-// 07. Add to wishlist js
-// 08. category menu js
-// 09. Wishlist Button js
-// 10. Counter Number js
-// 11. feather js
-// 12. Bootstrap tooltip js
-// 13. mobile menu active class js
-// 14. Tap to top button
+// 02. Shop Page Grid Setting Js
+// 03. Footer function js
+// 04. Feather js
+// 05. mobile menu active class js
+// 06. btn-cart open close js
+// 07. quantity js
+// 08. Tap to Top js
+// 09. User Dashboard Left Sidebar Show js
+// 10. Tooltip js
+// 11. Cookie Bar js
+// 12. Image To Background js
+// 13. Hide header on scroll down js
+// 14. search box function Js
+// 15. Wishlist Js
+// 16. Loader Js
+// 17. header Dropdown Js
+// 18. Add to Cart Show Js
 
 (function ($) {
     "use strict";
@@ -41,6 +45,10 @@
 
         el.hide();
     });
+
+    /*=====================
+    02. Shop Page Grid Setting Js
+    ==========================*/
     $(".grid-option .grid-btn").on("click", function () {
         $(".product-list-section").removeClass("list-style");
     });
@@ -73,7 +81,7 @@
 })(jQuery);
 
 /*=====================
-    04.  Footer function js
+    03. Footer function js
 ==========================*/
 var contentwidth = $(window).width();
 if (contentwidth < "576") {
@@ -110,12 +118,12 @@ if (contentwidth < "576") {
 }
 
 /*=====================
-  11. feather js
+  04. Feather js
    ==========================*/
 feather.replace();
 
 /*=====================
-  13. mobile menu active class js
+  05. mobile menu active class js
    ==========================*/
 $(document).ready(function () {
     $('.mobile-menu ul li a').click(function () {
@@ -125,7 +133,7 @@ $(document).ready(function () {
 });
 
 /*=====================
-  14. btn-cart open close js
+  06. btn-cart open close js
    ==========================*/
 $(document).ready(function () {
     $('.button-item').on("click", function () {
@@ -147,7 +155,7 @@ $(document).ready(function () {
 });
 
 /*=====================
-  15. quantity js
+  07. quantity js
    ==========================*/
 $('.qty-box .quantity-right-plus').on('click', function () {
     var $qty = $(this).parents(".qty-box").find(".input-number");
@@ -164,8 +172,9 @@ $('.qty-box .quantity-left-minus').on('click', function () {
     }
 });
 
+
 /*=====================
-  15. Tap to Top js
+  08. Tap to Top js
    ==========================*/
 $(document).ready(function () {
     $(window).scroll(function () {
@@ -184,7 +193,9 @@ $(document).ready(function () {
     });
 });
 
-// User Dashboard Left Sidebar Show Js
+/*=====================
+   09. User Dashboard Left Sidebar Show Js
+   ==========================*/
 $(".left-dashboard-show").click(function () {
     $(".bg-overlay, .dashboard-left-sidebar").addClass("show");
 });
@@ -192,20 +203,24 @@ $(".close-button, .bg-overlay, .user-nav-pills .nav-item .nav-link").click(funct
     $(".bg-overlay, .dashboard-left-sidebar").removeClass("show");
 });
 
-//  Tooltip Js
+/*=====================
+   10. Tooltip Js
+   ==========================*/
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
-// Cookie Bar Js
+/*=====================
+   11. Cookie Bar Js
+   ==========================*/
 $(".ok-button").click(function () {
     $(".cookie-bar-box").addClass("hide");
 });
 
 /*=====================
-      Image to background js
-      ==========================*/
+   12. Image To Background Js
+   ==========================*/
 $(".bg-top").parent().addClass("b-top");
 $(".bg-bottom").parent().addClass("b-bottom");
 $(".bg-center").parent().addClass("b-center");
@@ -231,7 +246,7 @@ $(".bg-img").each(function () {
 });
 
 /*=====================
-    Hide header on scroll down js
+   13. Hide header on scroll down js
 ==========================*/
 $(function () {
     var $window = $(window);
@@ -257,15 +272,13 @@ $(function () {
             }
         }
         $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
-
         lastScrollTop = windowTop;
-
         $("#windowtop").text("scrollTop: " + windowTop);
     });
 });
 
 /*=====================
-   4. search box function
+   14. search box function Js
    ==========================*/
 $(".search-box").on("click", function () {
     $(this).closest(".rightside-box").find(".search-full").addClass("open");
@@ -282,7 +295,9 @@ $(window).on("load resize", function () {
     });
 });
 
-// Wishlist Js
+/*=====================
+   15. Wishlist Js
+   ==========================*/
 $(".notifi-wishlist").on("click", function () {
     $.notify({
         icon: "fa fa-check",
@@ -321,7 +336,9 @@ $(".notifi-wishlist").on("click", function () {
     });
 });
 
-// Loader Js
+/*=====================
+   16. Loader Js
+   ==========================*/
 const loaderEl = document.getElementsByClassName("fullpage-loader")[0];
 document.addEventListener("readystatechange", (event) => {
     const readyState = "complete";
@@ -332,4 +349,30 @@ document.addEventListener("readystatechange", (event) => {
             loaderEl.parentNode.removeChild(loaderEl);
         }, 2000);
     }
+});
+
+/*=====================
+    17. header Dropdown Js
+ ==========================*/
+$(".dropdown-menu li a").on('click', function () {
+    var a = $(this).closest("a");
+    var getSampling = a.text();
+    var getImage = a.find('img').attr('src');
+
+    // console.log("src path", getImage);
+    $(this).closest(".dropdown-menu").prev('.dropdown-toggle').find('span').text(getSampling);
+    $(this).closest(".dropdown-menu").prev('.dropdown-toggle').find('img').attr("src", getImage);
+});
+
+/*=====================
+   18. Add to Cart Show Js
+   ==========================*/
+$(".product-box .product-image .product-option li .addCart").click(function () {
+    $(".add-cart-box").addClass("show");
+    setTimeout(function () {
+        $(".add-cart-box").removeClass("show");
+    }, 5000);
+});
+$(".add-cart-box .btn-close").click(function () {
+    $(".add-cart-box").removeClass("show");
 });

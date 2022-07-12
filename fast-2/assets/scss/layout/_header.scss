@@ -86,9 +86,9 @@ header {
 
                         &::after {
                             @include pos;
+                            @include pseudowh($width: 2px, $height: 90%);
                             top: 0;
                             left: -13px;
-                            @include pseudowh($width: 2px, $height: 90%);
                             background-color: rgba($white, .3);
 
                             [dir="rtl"] & {
@@ -113,7 +113,7 @@ header {
                             padding: 0 18px 0 0;
 
                             img {
-                                width: 30px;
+                                width: 20px;
                                 margin-right: 10px;
 
                                 [dir="rtl"] & {
@@ -164,7 +164,7 @@ header {
                                     }
 
                                     img {
-                                        width: 30px;
+                                        width: 20px;
                                         margin-right: 10px;
 
                                         [dir="rtl"] & {
@@ -448,8 +448,8 @@ header {
                         &::before {
                             @include pos;
                             @include center(vertical);
-                            right: 14px;
                             @include pseudowh($width: 1px, $height: 24px);
+                            right: 14px;
                             background-color: rgba($content-color, .5);
 
                             [dir="rtl"] & {
@@ -525,11 +525,11 @@ header {
                             }
 
                             span {
+                                @include pseudowh($width: 18px, $height: 18px);
+                                @include flex_common;
                                 background-color: #FF7272;
                                 font-size: 12px;
-                                @include pseudowh($width: 18px, $height: 18px);
                                 padding: 0;
-                                @include flex_common;
                                 border-radius: 2px;
                             }
                         }
@@ -656,12 +656,12 @@ header {
     }
 
     .search-full {
+        @include pseudowh($width: 0, $height: 0);
         background-color: $white;
         position: absolute;
         top: 0;
         right: 0;
         z-index: 2;
-        @include pseudowh($width: 0, $height: 0);
         transform: scale(0);
         transition: all 0.3s ease;
         display: flex;
@@ -719,12 +719,12 @@ header {
             }
 
             .dropdown-category {
+                @include flex_common;
                 padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) calc(16px + (31 - 16) * ((100vw - 320px) / (1920 - 320)));
                 background: var(--theme-color2);
                 color: $white;
                 border-radius: 5px;
                 border: none;
-                @include flex_common;
 
                 &-2 {
                     background: linear-gradient(93.33deg, #222221 12.35%, #2F2F2D 99.38%);
@@ -922,10 +922,10 @@ header {
 
                 &::before {
                     @include pos;
+                    @include pseudowh($width: 10px, $height: 10px);
                     bottom: -15px;
                     left: 50%;
                     transform: translateX(-50%) rotate(45deg);
-                    @include pseudowh($width: 10px, $height: 10px);
                     background-color: $white;
                     border-radius: 100%;
                 }
@@ -1166,9 +1166,9 @@ header {
                 }
 
                 @include mq-max(2xs) {
+                    @include center(horizontal);
                     padding: 0;
                     width: 95%;
-                    @include center(horizontal);
                 }
             }
 
@@ -1193,9 +1193,9 @@ header {
             }
 
             @include mq-max(2xl) {
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
                 margin-left: 25px;
                 float: right;
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
             }
 
             @include mq-max(xl) {
@@ -1223,12 +1223,12 @@ header {
                 }
 
                 .search-button {
-                    position: absolute;
                     @include center(vertical);
+                    @include flex_common;
+                    position: absolute;
                     padding: 0 19px;
                     right: 0;
                     height: 100%;
-                    @include flex_common;
                     cursor: pointer;
 
                     [dir="rtl"] & {
@@ -1336,11 +1336,11 @@ header {
                 }
 
                 .iconly-Search {
+                    @include flex_common;
                     position: absolute;
                     top: 0;
                     left: 0;
                     height: 100%;
-                    @include flex_common;
                     padding: 0 18px;
                     font-size: 24px;
 
@@ -1520,8 +1520,8 @@ header {
                     &::after {
                         @include pos;
                         @include center(vertical);
-                        left: -10px;
                         @include pseudowh($width: 1px, $height: 25px);
+                        left: -10px;
                         background-color: $border-color;
 
                         [dir="rtl"] & {
@@ -1546,14 +1546,14 @@ header {
             align-items: center;
 
             .header-icon {
+                @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
+                @include flex_common;
                 font-size: 18px;
                 border: 1px solid $border-color;
                 background-color: $white;
                 border-radius: 100%;
                 padding: 10px;
                 position: relative;
-                @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
-                @include flex_common;
 
                 +.header-icon {
                     margin-left: 38px;
@@ -1561,8 +1561,8 @@ header {
                     &::after {
                         @include pos;
                         @include center(vertical);
-                        left: -50%;
                         @include pseudowh($width: 1px, $height: 100%);
+                        left: -50%;
                         background-color: $border-color;
                     }
                 }
@@ -1605,15 +1605,15 @@ header {
                 }
 
                 .badge-number {
+                    @include pseudowh($width: 18px, $height: 18px);
+                    @include flex_common;
                     position: absolute;
                     top: -10px;
                     right: 0;
                     background: var(--theme-color2);
                     font-weight: 600;
                     color: $white;
-                    @include pseudowh($width: 18px, $height: 18px);
                     border-radius: 100%;
-                    @include flex_common;
                     font-size: 10px;
                 }
 
@@ -1666,16 +1666,8 @@ header {
                     }
 
                     @include mq-max(md) {
-                        &:nth-last-child(5n-1) {
+                        &:not(:nth-last-of-type(5n-5)) {
                             display: none;
-
-                            +li {
-                                margin-left: 0;
-
-                                &::after {
-                                    content: none;
-                                }
-                            }
                         }
                     }
 
@@ -1699,8 +1691,8 @@ header {
                         &::after {
                             @include pos;
                             @include center(vertical);
-                            left: -20px;
                             @include pseudowh($width: 1px, $height: 80%);
+                            left: -20px;
                             background-color: $border-color;
 
                             [dir="rtl"] & {
@@ -1720,14 +1712,14 @@ header {
                     }
 
                     .header-icon {
+                        @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
+                        @include flex_common;
                         font-size: 18px;
                         border: 1px solid $border-color;
                         background-color: $white;
                         border-radius: 100%;
                         padding: 10px;
                         position: relative;
-                        @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
-                        @include flex_common;
 
                         +.header-icon {
                             margin-left: 38px;
@@ -1735,8 +1727,8 @@ header {
                             &::after {
                                 @include pos;
                                 @include center(vertical);
-                                left: -50%;
                                 @include pseudowh($width: 1px, $height: 100%);
+                                left: -50%;
                                 background-color: $border-color;
                             }
                         }
@@ -1750,7 +1742,7 @@ header {
                         }
 
                         &.bag-icon {
-                            display: block;
+                            // display: block;
 
                             @include mq-max(xs) {
                                 display: none;
@@ -1770,8 +1762,8 @@ header {
                                     &::after {
                                         @include pos;
                                         @include center(vertical);
-                                        left: -50%;
                                         @include pseudowh($width: 1px, $height: 100%);
+                                        left: -50%;
                                         background-color: $border-color;
                                     }
                                 }
@@ -1779,15 +1771,15 @@ header {
                         }
 
                         .badge-number {
+                            @include pseudowh($width: 18px, $height: 18px);
+                            @include flex_common;
                             position: absolute;
                             top: -10px;
                             right: 0;
                             background-color: var(--theme-color);
                             font-weight: 600;
                             color: $white;
-                            @include pseudowh($width: 18px, $height: 18px);
                             border-radius: 100%;
-                            @include flex_common;
                             font-size: 10px;
                         }
 
@@ -1811,14 +1803,14 @@ header {
                 position: relative;
 
                 .header-icon {
+                    @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
+                    @include flex_common;
                     font-size: 18px;
                     border: 1px solid $border-color;
                     background-color: $white;
                     border-radius: 100%;
                     padding: 10px;
                     position: relative;
-                    @include pseudowh($width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))), $height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320))));
-                    @include flex_common;
 
                     +.header-icon {
                         margin-left: 38px;
@@ -1826,22 +1818,22 @@ header {
                         &::after {
                             @include pos;
                             @include center(vertical);
-                            left: -50%;
                             @include pseudowh($width: 1px, $height: 100%);
+                            left: -50%;
                             background-color: $border-color;
                         }
                     }
 
                     .badge-number {
+                        @include pseudowh($width: 18px, $height: 18px);
+                        @include flex_common;
                         position: absolute;
                         top: -10px;
                         right: 0;
                         background-color: var(--theme-color);
                         font-weight: 600;
                         color: $white;
-                        @include pseudowh($width: 18px, $height: 18px);
                         border-radius: 100%;
-                        @include flex_common;
                         font-size: 10px;
                     }
 
@@ -1856,8 +1848,8 @@ header {
                 }
 
                 .user-box {
-                    align-items: center;
                     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+                    align-items: center;
 
                     .user-name {
                         @media (max-width: 1660px) {
@@ -1886,8 +1878,8 @@ header {
                     &::after {
                         @include pos;
                         @include center(vertical);
-                        left: -20px;
                         @include pseudowh($width: 1px, $height: 80%);
+                        left: -20px;
                         background-color: $border-color;
 
                         [dir="rtl"] & {
@@ -1962,8 +1954,8 @@ header {
         }
 
         .support-box {
-            align-items: flex-start;
             @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+            align-items: flex-start;
 
             .support-image {
                 img {
@@ -2048,15 +2040,15 @@ header {
                 z-index: 1;
 
                 .fire-main {
-                    position: absolute;
                     @include pseudowh;
+                    position: absolute;
                     animation: scaleUpDown 3s ease-out;
                     animation-iteration-count: infinite;
                     animation-fill-mode: both;
 
                     .main-fire {
-                        position: absolute;
                         @include pseudowh;
+                        position: absolute;
                         background-image: radial-gradient(farthest-corner at 10px 0,
                                 $white 0%,
                                 #ddd 95%);
@@ -2065,10 +2057,10 @@ header {
                     }
 
                     .particle-fire {
+                        @include pseudowh($width: 10px, $height: 10px);
                         position: absolute;
                         top: 60%;
                         left: 45%;
-                        @include pseudowh($width: 10px, $height: 10px);
                         background-color: $white;
                         border-radius: 50%;
                         animation: particleUp 2s ease-out 0;
@@ -2085,19 +2077,19 @@ header {
                     animation-fill-mode: both;
 
                     .main-fire {
+                        @include pseudowh($width: 80%, $height: 80%);
                         position: absolute;
                         top: 15%;
                         right: -25%;
-                        @include pseudowh($width: 80%, $height: 80%);
                         background-color: $white;
                         transform: scaleX(0.8) rotate(45deg);
                         border-radius: 0 40% 60% 40%;
 
                         .particle-fire {
+                            @include pseudowh($width: 15px, $height: 15px);
                             position: absolute;
                             top: 45%;
                             left: 50%;
-                            @include pseudowh($width: 15px, $height: 15px);
                             background-color: $white;
                             transform: scaleX(0.8) rotate(45deg);
                             border-radius: 50%;
@@ -2109,26 +2101,26 @@ header {
                 }
 
                 .fire-left {
-                    position: absolute;
                     @include pseudowh;
+                    position: absolute;
                     animation: shake 3s ease-out 0;
                     animation-iteration-count: infinite;
                     animation-fill-mode: both;
 
                     .main-fire {
+                        @include pseudowh($width: 80%, $height: 80%);
                         position: absolute;
                         top: 15%;
                         left: -20%;
-                        @include pseudowh($width: 80%, $height: 80%);
                         background-color: $white;
                         transform: scaleX(0.8) rotate(45deg);
                         border-radius: 0 40% 60% 40%;
 
                         .particle-fire {
+                            @include pseudowh($width: 10%, $height: 10%);
                             position: absolute;
                             top: 10%;
                             left: 20%;
-                            @include pseudowh($width: 10%, $height: 10%);
                             background-color: $white;
                             border-radius: 50%;
                             animation: particleUp 3s infinite ease-out 0;
@@ -2151,16 +2143,16 @@ header {
             padding: 9px 0 9px calc(16px + (31 - 16) * ((100vw - 320px) / (1920 - 320)));
         }
 
-        @include mq-max(lg) {
+        @include mq-max(xl) {
             display: none;
         }
 
         &::after {
             @include pos;
+            @include pseudowh($width: 1px, $height: 100%);
             top: 0;
             right: 0;
             background-color: $border-color;
-            @include pseudowh($width: 1px, $height: 100%);
 
             [dir="rtl"] & {
                 right: unset;
@@ -2181,12 +2173,13 @@ header {
 
         span {
             font-size: 16px;
+            margin-top: 4px;
         }
     }
 
     .dropdown-list {
-        font-family: $public-sans;
         @include flex_common;
+        font-family: $public-sans;
 
         @include mq-max(md) {
             display: none;
@@ -2204,8 +2197,8 @@ header {
                     &::after {
                         @include pos;
                         @include center(vertical);
-                        left: -12px;
                         @include pseudowh($width: 1px, $height: 80%);
+                        left: -12px;
                         background-color: rgba($white, 0.4);
                     }
                 }
@@ -2278,9 +2271,9 @@ header {
             &::after {
                 @include pos;
                 @include center(vertical);
+                @include pseudowh($width: 1px, $height: 70%);
                 left: -8px;
                 background-color: rgba($white, $alpha: 0.4);
-                @include pseudowh($width: 1px, $height: 70%);
             }
         }
     }

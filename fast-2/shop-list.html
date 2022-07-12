@@ -43,15 +43,13 @@
 
     <!-- Loader Start -->
     <div class="fullpage-loader">
-        <div class="fullpage-loader__logo">
-            <div class="background">
-                <span> </span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
     <!-- Loader End -->
@@ -86,18 +84,20 @@
                                         <button class="btn dropdown-toggle" type="button" id="select-language"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             <img src="assets/images/vegetable/flag/us.png" class="img-fluid" alt="">
-                                            English
+                                            <span>English</span>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="select-language">
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                <a class="dropdown-item" href="javascript:void(0)" id="france">
                                                     <img src="assets/images/vegetable/flag/france.png" class="img-fluid"
-                                                        alt=""> France</a>
+                                                        alt="">
+                                                    <span>France</span>
+                                                </a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                <a class="dropdown-item" href="javascript:void(0)" id="chinese">
                                                     <img src="assets/images/vegetable/flag/china.png" class="img-fluid"
-                                                        alt=""> Chinese</a>
+                                                        alt=""> <span>Chinese</span></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -106,17 +106,18 @@
                                     <div class="dropdown theme-form-select">
                                         <button class="btn dropdown-toggle" type="button" id="select-dollar"
                                             data-bs-toggle="dropdown" aria-expanded="false">
-                                            USD
+                                            <span>USD</span>
                                         </button>
-                                        <ul class="dropdown-menu sm-dropdown-menu" aria-labelledby="select-dollar">
+                                        <ul class="dropdown-menu dropdown-menu-end sm-dropdown-menu"
+                                            aria-labelledby="select-dollar">
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">AUD</a>
+                                                <a class="dropdown-item" id="aud" href="javascript:void(0)">AUD</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">EUR</a>
+                                                <a class="dropdown-item" id="eur" href="javascript:void(0)">EUR</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">CNY</a>
+                                                <a class="dropdown-item" id="cny" href="javascript:void(0)">CNY</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -641,47 +642,20 @@
                 <div class="col-12">
                     <div class="slider-1 slider-animate product-wrapper no-arrow">
                         <div>
-                            <div class="shop-banner-contain">
-                                <img src="assets/images/shop/1.jpg" class="bg-img blur-up lazyload" alt="">
-                                <div class="shop-banner-details p-center-left">
-                                    <div>
-                                        <h5>Welcome To Fastkart</h5>
-                                        <h2>Let's make a better <span class="theme-color">vegetables</span></h2>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';"
-                                            class="btn btn-animation mt-xxl-4 mt-2 home-button">Shop Now <i
-                                                class="fa-solid fa-right-long ms-2"></i></button>
-                                    </div>
-                                </div>
+                            <div class="shop-banner">
+                                <img src="assets/images/shop/banner-shop.png" class="w-100 img-fluid rounded-3" alt="">
                             </div>
                         </div>
 
                         <div>
-                            <div class="shop-banner-contain">
-                                <img src="assets/images/shop/1.jpg" class="bg-img blur-up lazyload" alt="">
-                                <div class="shop-banner-details p-center-left">
-                                    <div>
-                                        <h5>Welcome To Fastkart</h5>
-                                        <h2>Let's make a better <span class="theme-color">vegetables</span></h2>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';"
-                                            class="btn btn-animation mt-xxl-4 mt-2 home-button">Shop Now <i
-                                                class="fa-solid fa-right-long ms-2"></i></button>
-                                    </div>
-                                </div>
+                            <div class="shop-banner">
+                                <img src="assets/images/shop/banner-shop.png" class="w-100 img-fluid rounded-3" alt="">
                             </div>
                         </div>
 
                         <div>
-                            <div class="shop-banner-contain">
-                                <img src="assets/images/shop/1.jpg" class="bg-img blur-up lazyload" alt="">
-                                <div class="shop-banner-details p-center-left">
-                                    <div>
-                                        <h5>Welcome To Fastkart</h5>
-                                        <h2>Let's make a better <span class="theme-color">vegetables</span></h2>
-                                        <button onclick="location.href = 'shop-left-sidebar.html';"
-                                            class="btn btn-animation mt-xxl-4 mt-2 home-button">Shop Now <i
-                                                class="fa-solid fa-right-long ms-2"></i></button>
-                                    </div>
-                                </div>
+                            <div class="shop-banner">
+                                <img src="assets/images/shop/banner-shop.png" class="w-100 img-fluid rounded-3" alt="">
                             </div>
                         </div>
                     </div>
@@ -1417,29 +1391,32 @@
                                 <div class="dropdown">
                                     <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                         data-bs-toggle="dropdown">
-                                        Most Popular <i class="fa-solid fa-angle-down"></i>
+                                        <span>Most Popular</span> <i class="fa-solid fa-angle-down"></i>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">Popularity</a>
+                                            <a class="dropdown-item" id="pop" href="javascript:void(0)">Popularity</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">Low - High Price</a>
+                                            <a class="dropdown-item" id="low" href="javascript:void(0)">Low - High
+                                                Price</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">High - Low Price</a>
+                                            <a class="dropdown-item" id="high" href="javascript:void(0)">High - Low
+                                                Price</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">Average Rating</a>
+                                            <a class="dropdown-item" id="rating" href="javascript:void(0)">Average
+                                                Rating</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">A - Z Order</a>
+                                            <a class="dropdown-item" id="aToz" href="javascript:void(0)">A - Z Order</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">Z - A Order</a>
+                                            <a class="dropdown-item" id="zToa" href="javascript:void(0)">Z - A Order</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">% Off - Hight To
+                                            <a class="dropdown-item" id="off" href="javascript:void(0)">% Off - Hight To
                                                 Low</a>
                                         </li>
                                     </ul>
@@ -1486,7 +1463,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -1566,7 +1543,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -1647,7 +1624,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -1733,7 +1710,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -1817,7 +1794,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -1900,7 +1877,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -1986,7 +1963,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -2066,7 +2043,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -2148,7 +2125,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -2233,7 +2210,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -2318,7 +2295,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -2400,7 +2377,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -2486,7 +2463,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -2566,7 +2543,7 @@
 
                                         <ul class="product-option">
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Cart">
-                                                <a href="cart.html">
+                                                <a href="javascript:void(0)" class="addCart">
                                                     <i data-feather="shopping-bag"></i>
                                                 </a>
                                             </li>
@@ -3142,12 +3119,12 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
 
-                        <ul class="location-select custom-height">
-                            <li class="disabled-box">
-                                <h6>Select a Location</h6>
-                                <span>Clear All</span>
-                            </li>
+                        <div class="disabled-box">
+                            <h6>Select a Location</h6>
+                            <span>Clear All</span>
+                        </div>
 
+                        <ul class="location-select custom-height">
                             <li>
                                 <a href="javascript:void(0)">
                                     <h6>Alabama</h6>
@@ -3454,6 +3431,22 @@
         </div>
     </div>
     <!-- Deal Box Modal End -->
+
+    <!-- Add to cart Modal Start -->
+    <div class="add-cart-box">
+        <div class="add-iamge">
+            <img src="assets/images/cake/pro/1.jpg" class="img-fluid" alt="">
+        </div>
+
+        <button class="btn-close">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="add-contain">
+            <h6>Added To Cart</h6>
+        </div>
+    </div>
+    <!-- Add to cart Modal End -->
 
     <!-- Theme Setting Start -->
     <div class="theme-setting">
