@@ -272,12 +272,6 @@
      }
 }
 
-// .product-box-bg {
-//      +.product-box-bg {
-//           margin-top: 10px;
-//      }
-// }
-
 .product-box {
      padding: 14px;
      border-right: 1px solid rgba($content-color, 0.3);
@@ -360,18 +354,17 @@
 
           .product-option {
                @include center(horizontal);
-               @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(6px + (17 - 6) * ((100vw - 320px) / (1920 - 320))));
+               @include flex_common ($dis: flex, $align: center, $justify: space-between);
                position: absolute;
                bottom: -5px;
                background-color: $white;
-               align-items: center;
                width: 100%;
                padding: 10px 16px;
                border-radius: 7px;
                box-shadow: 0 0 8px rgba($title-color, 0.12);
-               justify-content: space-between;
                opacity: 0;
                transition: all .3s ease-in-out;
+               max-width: 320px;
 
                @include mq-max(xs) {
                     display: none;
@@ -379,6 +372,7 @@
 
                li {
                     position: relative;
+                    width: 25%;
 
                     a {
                          color: $title-color;
@@ -394,13 +388,13 @@
                               @include pos;
                               @include pseudowh($width: 1px, $height: 100%);
                               top: 0;
-                              left: -16px;
+                              left: 0;
                               background-color: $content-color;
                               opacity: .3;
 
                               [dir="rtl"] & {
                                    left: unset;
-                                   right: -16px;
+                                   right: 0;
                               }
                          }
                     }
@@ -1275,28 +1269,32 @@
 
                .product-option {
                     @include center(horizontal);
-                    @include flex_common ($dis: flex, $align: center, $justify: space-around);
+                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
                     position: absolute;
                     bottom: -5px;
                     background-color: $white;
-                    flex-wrap: nowrap;
-                    gap: 17px;
                     width: 100%;
-                    max-width: 230px;
                     padding: 10px 16px;
                     border-radius: 7px;
                     box-shadow: 0 0 8px rgba($title-color, 0.12);
                     opacity: 0;
                     transition: all .3s ease-in-out;
+                    max-width: 230px;
+
+                    @include mq-max(xs) {
+                         display: none;
+                    }
 
                     li {
                          position: relative;
+                         width: 25%;
 
                          a {
                               color: $title-color;
 
                               .feather {
                                    @include pseudowh($width: 17px, $height: auto);
+                                   color: $content-color;
                               }
                          }
 
@@ -1305,18 +1303,19 @@
                                    @include pos;
                                    @include pseudowh($width: 1px, $height: 100%);
                                    top: 0;
-                                   left: -19px;
+                                   left: 0;
                                    background-color: $content-color;
                                    opacity: .3;
 
                                    [dir="rtl"] & {
                                         left: unset;
-                                        right: -19px;
+                                        right: 0;
                                    }
                               }
                          }
                     }
                }
+
           }
 
           .product-header-top {

@@ -1,1 +1,4 @@
-feather.replace()
+ /**=====================
+     Feather Icon js
+==========================**/
+ feather.replace()

@@ -8,7 +8,7 @@
     <meta name="description" content="Fastkart">
     <meta name="keywords" content="Fastkart">
     <meta name="author" content="Fastkart">
-    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
+    <link rel="icon" href="assets/dummy-images/favicon/1.png" type="image/x-icon">
     <title>Faltu</title>
 
     <!-- Google font -->
@@ -37,25 +37,108 @@
 
     <!-- Theme css -->
     <link id="color-link" rel="stylesheet" type="text/css" href="assets/css/demo1.css">
+
+    <style>
+        body {
+            background: none #000;
+        }
+
+        .abs-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            /* IE 9 */
+            -webkit-transform: translate(-50%, -50%);
+            /* Safari */
+            -moz-transform: translate(-50%, -50%);
+            /* Firefox Older versions*/
+            -o-transform: translate(-50%, -50%);
+            /* Opera */
+            transform: translate(-50%, -50%);
+        }
+
+        /* box fall preloader */
+        .sq-wrapper {
+            display: inline-block;
+            position: relative;
+            width: 1em;
+            height: 1em;
+            text-align: center;
+        }
+
+        .sq-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: none transparent;
+            overflow: hidden;
+        }
+
+        .sq-fill {
+            background: none #fd4401;
+            width: 100%;
+            height: 100%;
+        }
+
+        .loader>div::after {
+            content: "LOADING ASSETS";
+            position: absolute;
+            white-space: nowrap;
+            top: 1.875em;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.6;
+            letter-spacing: 0.125em;
+            font-size: 1.075em;
+            color: #fff;
+            font-family: "Dosis", sans-serif;
+        }
+
+        .credits {
+            position: absolute;
+            left: 1%;
+            bottom: 2%;
+            color: #41365c;
+            display: none;
+            overflow: hidden;
+        }
+
+        a {
+            color: #41365c !important;
+            margin-left: -6px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Add to cart Modal Start -->
-    <div class="add-cart-box">
-        <div class="add-iamge">
-            <img src="assets/images/cake/pro/1.jpg" class="img-fluid" alt="">
-        </div>
-
-        <button class="btn-close">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <div class="add-contain">
-            <h6>Added To Cart</h6>
+    <!-- Product Left Sidebar Start -->
+    <div class="loader abs-center">
+        <div class="sq-wrapper">
+            <div class="sq-box">
+                <div class="sq-fill"></div>
+            </div>
+            <div class="sq-box">
+                <div class="sq-fill"></div>
+            </div>
+            <div class="sq-box">
+                <div class="sq-fill"></div>
+            </div>
+            <div class="sq-box">
+                <div class="sq-fill"></div>
+            </div>
+            <div class="sq-box">
+                <div class="sq-fill"></div>
+            </div>
+            <div class="sq-box">
+                <div class="sq-fill"></div>
+            </div>
         </div>
     </div>
-    <!-- Add to cart Modal End -->
+    <!-- Product Left Sidebar End -->
 
     <!-- latest jquery-->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -93,6 +176,72 @@
 
     <!-- script js -->
     <script src="assets/js/script.js"></script>
+
+    <script>
+        preloaderTL = new TimelineMax({});
+        // Variables
+        var boxes = $(".sq-box"),
+            xMin = 10,
+            xMax = 200,
+            yMin = 150,
+            yMax = 200,
+            randomX,
+            labelTime,
+            $currentFill,
+            timeline = {};
+
+        boxes.each(function (index, element) {
+            if (index % 2 == 0) {
+                randomX = randomInt(-xMax, -xMin);
+            } else {
+                randomX = randomInt(xMin, xMax);
+            }
+
+            labelTime = index * 0.75;
+            $currentFill = $(this).find(".sq-fill");
+
+            // create a new timeline for this which repeats itself
+            timeline["sven-" + index] = new TimelineMax({
+                repeat: -1,
+                repeatDelay: 0.75,
+                yoyo: false
+            });
+
+            timeline["sven-" + index].from($currentFill, 0.75, {
+                backgroundColor: "transparent"
+            });
+            timeline["sven-" + index].from($(this), 3, {
+                rotation: 720,
+                opacity: 0,
+                x: randomX + "px",
+                y: randomInt(-yMax, -yMin) + "px",
+                ease: Linear.easeNone
+            });
+            timeline["sven-" + index].to($currentFill, 0.25, {
+                y: "104%",
+                ease: Linear.easeNone
+            });
+
+            // Add to master Timeline
+            preloaderTL.add(timeline["sven-" + index], labelTime);
+        });
+
+        // can be used for animating x, y, rotation and other simple operations
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // can be used for animating scale, opacity and other simple math operations
+        function randomFloat(min, max) {
+            return (Math.random() * (max - min) + min).toFixed(1);
+        }
+
+        TweenMax.delayedCall(5, showCredits, []);
+
+        function showCredits() {
+            $(".credits").show();
+        }
+    </script>
 </body>
 
 </html>

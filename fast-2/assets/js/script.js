@@ -1,3 +1,13 @@
+/*-----------------------------------------------------------------------------------
+
+ Template Name:Fastkart
+ Template URI: themes.pixelstrap.com/Fastkart
+ Description: This is Ecommerce website
+ Author: Pixelstrap
+ Author URI: https://themeforest.net/user/pixelstrap
+
+ ----------------------------------------------------------------------------------- */
+
 // 01. Image to background js
 // 02. Shop Page Grid Setting Js
 // 03. Footer function js
@@ -16,6 +26,7 @@
 // 16. Loader Js
 // 17. header Dropdown Js
 // 18. Add to Cart Show Js
+// 19. active class Js
 
 (function ($) {
     "use strict";
@@ -367,7 +378,7 @@ $(".dropdown-menu li a").on('click', function () {
 /*=====================
    18. Add to Cart Show Js
    ==========================*/
-$(".product-box .product-image .product-option li .addCart").click(function () {
+$(".addCart").click(function () {
     $(".add-cart-box").addClass("show");
     setTimeout(function () {
         $(".add-cart-box").removeClass("show");
@@ -375,4 +386,12 @@ $(".product-box .product-image .product-option li .addCart").click(function () {
 });
 $(".add-cart-box .btn-close").click(function () {
     $(".add-cart-box").removeClass("show");
+});
+
+/*=====================
+   19. active class Js
+   ==========================*/
+$(".product-packege .select-packege li a").click(function () {
+    $("li a").removeClass("active");
+    $(this).addClass("active");
 });

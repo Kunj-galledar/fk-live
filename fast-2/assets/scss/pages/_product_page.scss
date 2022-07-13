@@ -154,7 +154,19 @@
         .price-rating {
             @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
-            @include mq-max(3xl) {
+            &-2 {
+                @include mq-max(3xl) {
+                    display: block;
+                }
+
+                .custom-rate {
+                    @include mq-max(3xl) {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            @include mq-max(md) {
                 display: block;
             }
 
@@ -179,7 +191,7 @@
             }
 
             .custom-rate {
-                @include mq-max(3xl) {
+                @include mq-max(md) {
                     margin-top: 10px;
                     justify-content: center;
                 }
@@ -255,6 +267,13 @@
                         display: block;
                         color: $content-color;
                         font-size: 14px;
+                        transition: all .3s ease-in-out;
+
+                        &.active {
+                            border: 1px solid var(--theme-color);
+                            background: var(--theme-color2);
+                            color: $white;
+                        }
                     }
                 }
             }
