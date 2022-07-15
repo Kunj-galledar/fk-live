@@ -1,6 +1,8 @@
 /**=====================
      Product scss
 ==========================**/
+
+
 .qty-box {
      margin-top: calc(12px + (22 - 12) * ((100vw - 320px) / (1920 - 320)));
      width: 62%;
@@ -219,7 +221,22 @@
 .product-border {
      border: 1px solid rgba($content-color, 0.3);
      border-radius: 10px;
-     padding: 0 calc(0px + (14 - 0) * ((100vw - 320px) / (1920 - 320)));
+     padding: 0 14px;
+
+     &.border-row {
+          .slick-slider {
+               .slick-list {
+                    margin: 0 -14px;
+               }
+          }
+          .row {
+               > div {
+                    &:last-child {
+                         border-top: 1px solid #ddd;
+                    }
+               }
+          }
+     }
 
      .slider-5-1 {
           .slick-slide {
@@ -294,6 +311,13 @@
           padding: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
           border: none;
 
+          .qty-box {
+               .input-group {
+                    background-color: $white;
+                    box-shadow: 0 0 8px rgba(34, 34, 34, 0.04);
+               }
+          }
+
           +.product-box-bg {
                margin-top: 20px !important;
 
@@ -358,8 +382,8 @@
                position: absolute;
                bottom: -5px;
                background-color: $white;
-               width: 100%;
-               padding: 10px 16px;
+               width: 70%;
+               padding: 10px 5px;
                border-radius: 7px;
                box-shadow: 0 0 8px rgba($title-color, 0.12);
                opacity: 0;
@@ -372,7 +396,7 @@
 
                li {
                     position: relative;
-                    width: 25%;
+                    width: 33.33%;
 
                     a {
                          color: $title-color;
@@ -1674,6 +1698,65 @@
                margin-top: 0;
           }
 
+          .addtocart_btn {
+
+               .add-button,
+               .add_cart {
+                    transition: all 0.3s ease;
+
+                    span {
+                         position: absolute;
+                         left: 8px;
+                         right: 0;
+                         bottom: -21px;
+                         font-size: 12px;
+                    }
+               }
+
+               .qty-box {
+                    display: none;
+                    transition: all 0.3s ease;
+                    z-index: 1;
+                    margin-top: 0;
+
+                    &.open {
+                         display: block;
+                         position: absolute;
+                         right: 0;
+                         bottom: 0;
+                         width: 100%;
+                         transition: all 0.3s ease;
+                    }
+               }
+
+               .input-group {
+                    box-shadow: 0 2px 4px 0 #dedede;
+                    border-radius: 2px;
+                    padding: 4px;
+                    text-align: center;
+                    z-index: 0;
+                    background-color: $white;
+
+                    .btn {
+                         padding: 7px 12px;
+                         font-size: 10px;
+                         line-height: 1;
+                         border-radius: 2px !important;
+                         background-color: #f8f8f8;
+
+                         i {
+                              font-size: 15px;
+                         }
+                    }
+
+                    .form-control {
+                         padding: 2px;
+                         text-align: center;
+                         border-color: #f9f9f9;
+                    }
+               }
+          }
+
           a {
                color: $title-color;
 
@@ -1728,6 +1811,17 @@
                padding: 7px 11px;
                background-color: var(--theme-color);
                color: $white;
+
+               @include mq-max(xs) {
+                    position: relative;
+                    bottom: unset;
+                    right: unset;
+                    width: 100%;
+                    margin-top: 12px;
+                    color: var(--theme-color);
+                    border-radius: 5px;
+                    border: 1px solid var(--theme-color);
+               }
 
                [dir="rtl"] & {
                     right: unset;

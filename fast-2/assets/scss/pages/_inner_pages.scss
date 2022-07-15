@@ -2488,6 +2488,7 @@
 
                 i {
                     margin-left: 10px;
+                    margin-top: 1px;
 
                     [dir="rtl"] & {
                         margin-left: unset;
@@ -2999,16 +3000,19 @@
         font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
         margin-bottom: calc(7px + (13 - 7) * ((100vw - 320px) / (1920 - 320)));
         color: $title-color;
-        // font-family: $indie;
         font-weight: 400;
     }
 
     h2 {
-        font-size: 40px;
-        margin-bottom: 30px;
+        font-size: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
+        margin-bottom: calc(12px + (30 - 12) * ((100vw - 320px) / (1920 - 320)));
         width: 80%;
         line-height: 1.3;
         position: relative;
+
+        @include mq-max(xs) {
+            width: 100%;
+        }
 
         &.center {
             &::before {
@@ -3382,19 +3386,6 @@
         line-height: 1.3;
         position: relative;
         font-weight: 600;
-
-        // &::before {
-        //     @include pos;
-        //     bottom: -4px;
-        //     left: 0;
-        //     @include pseudowh($width: 140px, $height: 3px);
-        //     background-color: #ffa53b;
-
-        //     [dir="rtl"] & {
-        //         right: 0;
-        //         left: unset;
-        //     }
-        // }
     }
 }
 
@@ -4379,6 +4370,50 @@
                             &+label {
                                 &:before {
                                     left: 39px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .switch-radio {
+                    .form-check-input {
+                        position: absolute;
+                        clip-path: circle(0%);
+                        opacity: 0;
+
+                        &+label {
+                            @include pseudowh($width: 62px, $height: 25px);
+                            position: relative;
+                            border-radius: 50px;
+                            cursor: pointer;
+                            background-color: #0e997e26;
+                            border: 1px solid #0e997e26;
+
+                            &:before,
+                            &:after {
+                                display: inline-block;
+                                position: absolute;
+                            }
+
+                            &:before {
+                                content: "";
+                                @include pseudowh($width: 19px, $height: 19px);
+                                border-radius: 100%;
+                                left: 2px;
+                                top: 2px;
+                                background: var(--theme-color2);
+                                transition: all 0.3s ease-in-out;
+                            }
+                        }
+
+                        &:checked {
+                            &+label {
+                                background-color: var(--theme-color);
+
+                                &:before {
+                                    left: 39px;
+                                    background: $white;
                                 }
                             }
                         }

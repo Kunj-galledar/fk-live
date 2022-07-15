@@ -328,13 +328,13 @@ $(".notifi-wishlist").on("click", function () {
         offset: 20,
         spacing: 10,
         z_index: 1031,
-        delay: 5000,
+        delay: 5000000000,
         animate: {
             enter: "animated fadeInDown",
             exit: "animated fadeOutUp",
         },
         icon_type: "class",
-        template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+        template: '<div data-notify="container" class="col-xs-6 col-lg-5 col-md-6 col-sm-7 col-12 alert alert-{0}" role="alert">' +
             '<button type="button" aria-hidden="true" class="btn-close" data-notify="dismiss"></button>' +
             '<span data-notify="icon"></span> ' +
             '<span data-notify="title">{1}</span> ' +
@@ -394,4 +394,38 @@ $(".add-cart-box .btn-close").click(function () {
 $(".product-packege .select-packege li a").click(function () {
     $("li a").removeClass("active");
     $(this).addClass("active");
+});
+
+/*=====================
+   20. Hide header on scroll down js
+   ==========================*/
+$(function () {
+    var $window = $(window);
+    var lastScrollTop = 0;
+    var $header = $("header");
+    var headerHeight = $header.outerHeight();
+
+    $window.scroll(function () {
+        var windowTop = $window.scrollTop();
+
+        if (windowTop >= headerHeight) {
+            $header.addClass("nav-down");
+        } else {
+            $header.removeClass("nav-down");
+            $header.removeClass("nav-up");
+        }
+
+        if ($header.hasClass("nav-down")) {
+            if (windowTop < lastScrollTop) {
+                $header.addClass("nav-up");
+            } else {
+                $header.removeClass("nav-up");
+            }
+        }
+        $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
+
+        lastScrollTop = windowTop;
+
+        $("#windowtop").text("scrollTop: " + windowTop);
+    });
 });

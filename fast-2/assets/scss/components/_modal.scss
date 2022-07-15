@@ -14,6 +14,7 @@
                     font-weight: 600;
                     font-size: 20px;
                     width: 95%;
+                    margin-top: -4px;
                 }
 
                 .btn-close {
@@ -60,7 +61,7 @@
     .modal-dialog {
         .modal-content {
             .modal-body {
-                padding: 40px;
+                padding: calc(18px + (40 - 18) * ((100vw - 320px) / (1920 - 320)));
 
                 .right-sidebar-modal {
                     .title-name {
@@ -99,7 +100,7 @@
                         }
 
                         p {
-                            font-size: 15px;
+                            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                             line-height: 1.6;
                             margin: 0;
                             color: $content-color;
@@ -122,12 +123,27 @@
 
                     .select-wight {
                         margin-top: 40px;
+                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                        flex-wrap: wrap;
+                        gap: 5px;
+
+                        .select-form-wight {
+                            width: auto;
+
+                            @include mq-max(xs) {
+                                width: 100%;
+                            }
+                        }
 
                         .stoke-box {
                             @include flex_common ($dis: flex, $align: center, $justify: flex-end);
                             height: 100%;
                             flex-wrap: wrap;
                             gap: 6px;
+
+                            @include mq-max(sm) {
+                                justify-content: flex-start;
+                            }
 
                             .feather {
                                 @include pseudowh($width: 19px, $height: auto);

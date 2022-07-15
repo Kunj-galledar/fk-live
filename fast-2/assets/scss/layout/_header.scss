@@ -2,6 +2,34 @@
      Header scss
 ==========================**/
 header {
+    &.nav-down {
+        &.nav-up {
+            .top-header {
+                top: 0;
+            }
+
+            .main-menu {
+                padding: 10px 0;
+            }
+        }
+
+        .top-header {
+            position: fixed;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            margin-top: 0;
+            background-color: $white;
+            box-shadow: 0px 4px 10px rgba(23, 32, 90, 0.15);
+            transition: all 0.5s ease;
+            z-index: 6;
+
+            @include mq-max(md) {
+                padding: 16px 0;
+            }
+        }
+    }
+
     .nav-about {
         padding: 10px 0;
         background-color: var(--theme-color);
@@ -553,7 +581,7 @@ header {
         .onhover-div {
             position: absolute;
             top: 60px;
-            right: 20px;
+            right: -10px;
             background-color: $white;
             z-index: 1001;
             width: 320px;
@@ -1309,76 +1337,58 @@ header {
                 position: relative;
                 display: flex;
                 align-items: center;
+                width: 853px;
+                border: 1px solid var(--theme-color);
+                border-radius: 5px;
+                overflow: hidden;
+
+                @media (max-width: 1742px) {
+                    width: 800px;
+                }
+
+                @media (max-width: 1668px) {
+                    width: 760px;
+                }
+
+                @media (max-width: 1610px) {
+                    width: 710px;
+                }
+
+                @media (max-width: 1544px) {
+                    width: 670px;
+                }
+
+                @media (max-width: 1492px) {
+                    width: 600px;
+                }
 
                 @include mq-max(lg) {
                     display: none;
                 }
 
                 .search-button {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
                     color: $white;
                     background-color: var(--theme-color);
                     font-weight: 500;
-                    font-size: 20px;
-                    padding: 0 37px;
-                    height: 100%;
-                    border-radius: 0;
-                    border-top-right-radius: 4px;
-                    border-bottom-right-radius: 4px;
-
-                    [dir="rtl"] & {
-                        right: unset;
-                        left: 0;
-                        border-radius: 4px 0 0 4px;
-                    }
                 }
 
-                .iconly-Search {
-                    @include flex_common;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    padding: 0 18px;
-                    font-size: 24px;
-
-                    [dir="rtl"] & {
-                        left: unset;
-                        right: 10px;
-                    }
+                .search-icon {
+                    font-size: 27px;
+                    background-color: $white;
+                    padding-left: 16px;
+                    padding-right: 5px;
                 }
 
                 input {
-                    @include pseudowh($width: 853px, $height: 55px);
-                    padding: 8px 25px 8px 60px;
+                    height: 55px;
+                    padding: 8px 25px;
                     color: $title-color;
-                    border-color: var(--theme-color);
+                    border: none;
                     font-size: 16px;
+                    z-index: 0;
 
                     [dir="rtl"] & {
-                        padding: 8px 60px 8px 25px;
-                    }
-
-                    @media (max-width: 1742px) {
-                        width: 800px;
-                    }
-
-                    @media (max-width: 1668px) {
-                        width: 760px;
-                    }
-
-                    @media (max-width: 1610px) {
-                        width: 710px;
-                    }
-
-                    @media (max-width: 1544px) {
-                        width: 670px;
-                    }
-
-                    @media (max-width: 1492px) {
-                        width: 600px;
+                        padding: 8px 60px;
                     }
 
                     &:focus {
@@ -1742,8 +1752,6 @@ header {
                         }
 
                         &.bag-icon {
-                            // display: block;
-
                             @include mq-max(xs) {
                                 display: none;
                             }
@@ -1854,6 +1862,12 @@ header {
                     .user-name {
                         @media (max-width: 1660px) {
                             display: none;
+                        }
+
+                        &:hover {
+                            h4 {
+                                color: var(--theme-color);
+                            }
                         }
                     }
                 }

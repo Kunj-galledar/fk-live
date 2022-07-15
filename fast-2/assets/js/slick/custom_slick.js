@@ -706,6 +706,35 @@
      ]
  });
 
+ $('.product-modal').slick({
+     slidesToShow: 1,
+     slidesToScroll: 1,
+     arrows: false,
+     fade: true,
+     asNavFor: '.left-slider-modal'
+ });
+
+ $('.left-slider-modal').slick({
+     slidesToShow: 4,
+     slidesToScroll: 1,
+     asNavFor: '.product-modal',
+     dots: false,
+     focusOnSelect: true,
+     responsive: [{
+             breakpoint: 885,
+             settings: {
+                 slidesToShow: 3,
+             }
+         },
+         {
+             breakpoint: 400,
+             settings: {
+                 slidesToShow: 2,
+             }
+         },
+     ]
+ });
+
  $('.product-main').slick({
      slidesToShow: 1,
      slidesToScroll: 1,
@@ -947,7 +976,7 @@
              }
          },
          {
-             breakpoint: 575,
+             breakpoint: 684,
              settings: {
                  slidesToShow: 2,
                  autoplay: true,

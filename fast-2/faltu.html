@@ -8,7 +8,7 @@
     <meta name="description" content="Fastkart">
     <meta name="keywords" content="Fastkart">
     <meta name="author" content="Fastkart">
-    <link rel="icon" href="assets/dummy-images/favicon/1.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
     <title>Faltu</title>
 
     <!-- Google font -->
@@ -39,209 +39,183 @@
     <link id="color-link" rel="stylesheet" type="text/css" href="assets/css/demo1.css">
 
     <style>
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
         body {
-            background: none #000;
+            font-family: "Open Sans";
+            font-weight: 300;
+            margin: 2rem;
+            background: #4a4a4a;
+            -webkit-backface-visibility: hidden;
         }
 
-        .abs-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            /* IE 9 */
-            -webkit-transform: translate(-50%, -50%);
-            /* Safari */
-            -moz-transform: translate(-50%, -50%);
-            /* Firefox Older versions*/
-            -o-transform: translate(-50%, -50%);
-            /* Opera */
-            transform: translate(-50%, -50%);
-        }
-
-        /* box fall preloader */
-        .sq-wrapper {
-            display: inline-block;
-            position: relative;
-            width: 1em;
-            height: 1em;
+        h1 {
             text-align: center;
+            color: #fff;
+            font-weight: 300;
+            margin-bottom: 4rem;
         }
 
-        .sq-box {
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .switch {
+            margin: 4rem auto;
+        }
+
+        /* main styles */
+        .switch {
+            width: 24rem;
+            position: relative;
+        }
+
+        .switch input {
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: none transparent;
-            overflow: hidden;
+            z-index: 2;
+            opacity: 0;
+            cursor: pointer;
         }
 
-        .sq-fill {
-            background: none #fd4401;
-            width: 100%;
-            height: 100%;
+        .switch input:checked {
+            z-index: 1;
         }
 
-        .loader>div::after {
-            content: "LOADING ASSETS";
-            position: absolute;
-            white-space: nowrap;
-            top: 1.875em;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0.6;
-            letter-spacing: 0.125em;
-            font-size: 1.075em;
+        .switch input:checked+label {
+            opacity: 1;
+            cursor: default;
+        }
+
+        .switch input:not(:checked)+label:hover {
+            opacity: 0.5;
+        }
+
+        .switch label {
             color: #fff;
-            font-family: "Dosis", sans-serif;
+            opacity: 0.33;
+            transition: opacity 0.25s ease;
+            cursor: pointer;
         }
 
-        .credits {
+        .switch .toggle-outside {
+            height: 100%;
+            border-radius: 2rem;
+            padding: 0.25rem;
+            overflow: hidden;
+            transition: 0.25s ease all;
+        }
+
+        .switch .toggle-inside {
+            border-radius: 5rem;
+            background: #4a4a4a;
             position: absolute;
-            left: 1%;
-            bottom: 2%;
-            color: #41365c;
-            display: none;
+            transition: 0.25s ease all;
+        }
+
+        .switch--no-label label {
+            width: 0;
+            height: 0;
+            visibility: hidden;
             overflow: hidden;
         }
 
-        a {
-            color: #41365c !important;
-            margin-left: -6px;
+        .switch--no-label input:checked~.toggle-outside .toggle-inside {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.2);
         }
+
+        .switch--no-label input~input:checked~.toggle-outside {
+            background: #fff;
+        }
+
+        .switch--no-label input~input:checked~.toggle-outside .toggle-inside {
+            background: #2ecc71;
+        }
+
+        .switch--no-label.switch--vertical {
+            width: 3rem;
+        }
+
+        .switch--no-label.switch--horizontal {
+            width: 6rem;
+        }
+
+        .switch--no-label.switch--horizontal input,
+        .switch--no-label.switch--horizontal .toggle-outside {
+            left: 0;
+        }
+
+        .switch--expanding-inner input:checked+label:hover~.toggle-outside .toggle-inside {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+
+        .switch--expanding-inner.switch--horizontal input:hover~.toggle-outside .toggle-inside {
+            width: 3.5rem;
+        }
+
+        .switch--expanding-inner.switch--horizontal input:hover~input:checked~.toggle-outside .toggle-inside {
+            left: 2.25rem;
+        }
+
+        .switch--expanding-inner.switch--vertical input:hover~.toggle-outside .toggle-inside {
+            height: 3.5rem;
+        }
+
+        .switch--expanding-inner.switch--vertical input:hover~input:checked~.toggle-outside .toggle-inside {
+            top: 2.25rem;
+        }
+
+        /* mixin */
     </style>
 </head>
 
 <body>
-
-    <!-- Product Left Sidebar Start -->
-    <div class="loader abs-center">
-        <div class="sq-wrapper">
-            <div class="sq-box">
-                <div class="sq-fill"></div>
-            </div>
-            <div class="sq-box">
-                <div class="sq-fill"></div>
-            </div>
-            <div class="sq-box">
-                <div class="sq-fill"></div>
-            </div>
-            <div class="sq-box">
-                <div class="sq-fill"></div>
-            </div>
-            <div class="sq-box">
-                <div class="sq-fill"></div>
-            </div>
-            <div class="sq-box">
-                <div class="sq-fill"></div>
-            </div>
+    <h1>CSS Switches</h1>
+    <div class="container">
+        <div class="switch switch--horizontal switch--no-label">
+            <input id="radio-e" type="radio" name="third-switch" checked="checked" />
+            <label for="radio-e">Off</label>
+            <input id="radio-f" type="radio" name="third-switch" />
+            <label for="radio-f">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
+        </div>
+        <div class="switch switch--vertical switch--no-label">
+            <input id="radio-e" type="radio" name="fourth-switch" checked="checked" />
+            <label for="radio-g">Off</label>
+            <input id="radio-f" type="radio" name="fourth-switch" />
+            <label for="radio-h">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
+        </div>
+        <div class="switch switch--horizontal switch--expanding-inner">
+            <input id="radio-i" type="radio" name="fifth-switch" checked="checked" />
+            <label for="radio-i">Off</label>
+            <input id="radio-j" type="radio" name="fifth-switch" />
+            <label for="radio-j">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
+        </div>
+        <div class="switch switch--vertical switch--expanding-inner">
+            <input id="radio-k" type="radio" name="sixth-switch" checked="checked" />
+            <label for="radio-k">Off</label>
+            <input id="radio-l" type="radio" name="sixth-switch" />
+            <label for="radio-l">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
+        </div>
+        <div class="switch switch--horizontal switch--no-label switch--expanding-inner">
+            <input id="radio-m" type="radio" name="seventh-switch" checked="checked" />
+            <label for="radio-m">Off</label>
+            <input id="radio-n" type="radio" name="seventh-switch" />
+            <label for="radio-n">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
+        </div>
+        <div class="switch switch--vertical switch--no-label switch--expanding-inner">
+            <input id="radio-o" type="radio" name="eighth-switch" checked="checked" />
+            <label for="radio-o">Off</label>
+            <input id="radio-p" type="radio" name="eighth-switch" />
+            <label for="radio-p">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
         </div>
     </div>
-    <!-- Product Left Sidebar End -->
-
-    <!-- latest jquery-->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-
-    <!-- latest jquery-->
-    <script src="assets/js/jquery-ui.min.js"></script>
-
-    <!-- Bootstrap js-->
-    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
-    <script src="assets/js/bootstrap/popper.min.js"></script>
-
-    <!-- feather icon js-->
-    <script src="assets/js/feather/feather.min.js"></script>
-
-    <!-- Lazyload Js -->
-    <script src="assets/js/lazysizes.min.js"></script>
-
-    <!-- News Letter Js -->
-    <script src="assets/js/newsletter.js"></script>
-
-    <!-- Slick js-->
-    <script src="assets/js/slick/slick.js"></script>
-    <script src="assets/js/slick/slick-animation.min.js"></script>
-    <script src="assets/js/slick/custom_slick.js"></script>
-
-    <!-- Auto Height Js -->
-    <script src="assets/js/auto-height.js"></script>
-
-    <!-- Fly Cart Js -->
-    <script src="assets/js/fly-cart.js"></script>
-
-    <!-- Quantity js -->
-    <script src="assets/js/quantity.js"></script>
-
-    <!-- script js -->
-    <script src="assets/js/script.js"></script>
-
-    <script>
-        preloaderTL = new TimelineMax({});
-        // Variables
-        var boxes = $(".sq-box"),
-            xMin = 10,
-            xMax = 200,
-            yMin = 150,
-            yMax = 200,
-            randomX,
-            labelTime,
-            $currentFill,
-            timeline = {};
-
-        boxes.each(function (index, element) {
-            if (index % 2 == 0) {
-                randomX = randomInt(-xMax, -xMin);
-            } else {
-                randomX = randomInt(xMin, xMax);
-            }
-
-            labelTime = index * 0.75;
-            $currentFill = $(this).find(".sq-fill");
-
-            // create a new timeline for this which repeats itself
-            timeline["sven-" + index] = new TimelineMax({
-                repeat: -1,
-                repeatDelay: 0.75,
-                yoyo: false
-            });
-
-            timeline["sven-" + index].from($currentFill, 0.75, {
-                backgroundColor: "transparent"
-            });
-            timeline["sven-" + index].from($(this), 3, {
-                rotation: 720,
-                opacity: 0,
-                x: randomX + "px",
-                y: randomInt(-yMax, -yMin) + "px",
-                ease: Linear.easeNone
-            });
-            timeline["sven-" + index].to($currentFill, 0.25, {
-                y: "104%",
-                ease: Linear.easeNone
-            });
-
-            // Add to master Timeline
-            preloaderTL.add(timeline["sven-" + index], labelTime);
-        });
-
-        // can be used for animating x, y, rotation and other simple operations
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
-        }
-
-        // can be used for animating scale, opacity and other simple math operations
-        function randomFloat(min, max) {
-            return (Math.random() * (max - min) + min).toFixed(1);
-        }
-
-        TweenMax.delayedCall(5, showCredits, []);
-
-        function showCredits() {
-            $(".credits").show();
-        }
-    </script>
 </body>
 
 </html>
