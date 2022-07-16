@@ -2088,6 +2088,10 @@
 ==========================**/
 .blog-section {
     .left-sidebar-box {
+        // position: sticky;
+        // top: 20px;
+        // z-index: 1;
+
         .left-search-box {
             .search-box {
                 position: relative;
@@ -2407,7 +2411,8 @@
                 align-items: center;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
 
-                span {
+                .time,
+                .super {
                     display: flex;
                     align-items: center;
                     color: $content-color;
@@ -2423,6 +2428,10 @@
                             margin-right: unset;
                             margin-left: 4px;
                         }
+                    }
+
+                    span {
+                        margin-top: 1px;
                     }
                 }
             }
@@ -2508,7 +2517,7 @@
         }
 
         .blog-image {
-            margin-bottom: 0;
+            margin-bottom: -1px;
             width: 38%;
 
             @media (max-width: 1399px) {
@@ -3016,6 +3025,7 @@
 
         &.center {
             &::before {
+                color: var(--theme-color);
                 @include center(horizontal);
             }
         }
@@ -3138,6 +3148,7 @@
         .client-icon {
             @include pseudowh($width: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320))), $height: calc(60px + (80 - 60) * ((100vw - 320px) / (1920 - 320))));
             margin-bottom: 14px;
+            margin-top: -11px;
 
             img {
                 object-fit: contain;
@@ -3172,6 +3183,7 @@
             color: $content-color;
             margin: 0 auto;
             line-height: 1.7;
+            margin-bottom: -5px;
         }
     }
 
