@@ -328,7 +328,7 @@ $(".notifi-wishlist").on("click", function () {
         offset: 20,
         spacing: 10,
         z_index: 1031,
-        delay: 5000000000,
+        delay: 5000,
         animate: {
             enter: "animated fadeInDown",
             exit: "animated fadeOutUp",
