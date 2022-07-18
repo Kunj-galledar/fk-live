@@ -287,6 +287,31 @@ footer {
             }
         }
 
+        .social-app {
+            margin-bottom: 0;
+
+            &::before {
+                content: none;
+            }
+
+            ul {
+                align-items: center;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+
+                [dir="rtl"] & {
+                    padding: 0;
+                }
+
+                li {
+                    display: inline-block;
+
+                    &::before {
+                        content: none;
+                    }
+                }
+            }
+        }
+
         .footer-contact {
             margin-top: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
 
@@ -349,31 +374,6 @@ footer {
                                 margin-top: 6px;
                                 font-weight: 600;
                                 color: $title-color;
-                            }
-                        }
-                    }
-
-                    &.social-app {
-                        margin-bottom: 0;
-
-                        &::before {
-                            content: none;
-                        }
-
-                        ul {
-                            align-items: center;
-                            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
-
-                            [dir="rtl"] & {
-                                padding: 0;
-                            }
-
-                            li {
-                                display: inline-block;
-
-                                &::before {
-                                    content: none;
-                                }
                             }
                         }
                     }

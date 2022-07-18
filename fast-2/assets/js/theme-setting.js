@@ -17,7 +17,7 @@ $("#darkButton").on("click", function () {
     $("body").addClass("dark");
     document
         .getElementById("color-link")
-        .setAttribute("href", "assets/css/" + split + "_dark.css");
+        .setAttribute("href", "../assets/css/" + split + "_dark.css");
 });
 $("#lightButton").on("click", function () {
     var href = $("#color-link").attr("href");
@@ -26,7 +26,7 @@ $("#lightButton").on("click", function () {
     $("body").addClass("light");
     document
         .getElementById("color-link")
-        .setAttribute("href", "assets/css/" + split + ".css");
+        .setAttribute("href", "../assets/css/" + split + ".css");
 });
 
 /*========================
@@ -38,12 +38,12 @@ $(".rtl").on("click", function () {
         $("body").removeClass("ltr");
         $("body").addClass("rtl");
         $(this).text("LTR");
-        $("#rtl-link").attr("href", "assets/css/vendors/bootstrap.rtl.css");
+        $("#rtl-link").attr("href", "../assets/css/vendors/bootstrap.rtl.css");
     } else {
         $("html").attr("dir", "");
         $("body").removeClass("rtl");
         $(this).text("RTL");
         $("body").addClass("ltr");
-        $("#rtl-link").attr("href", "assets/css/vendors/bootstrap.css");
+        $("#rtl-link").attr("href", "../assets/css/vendors/bootstrap.css");
     }
 });
