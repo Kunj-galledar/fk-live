@@ -62,6 +62,7 @@ header {
                box-shadow: none;
                border: 0;
                position: static;
+               transition: all 0.5s ease;
 
                &-2 {
                     @media (min-width: 1200px) {
@@ -747,6 +748,7 @@ header {
                     background-color: $white;
                     border-color: $white;
                     padding: 20px;
+                    border-radius: 10px;
 
                     li {
                          display: block;
@@ -755,6 +757,13 @@ header {
                          &:first-child {
                               .dropdown-item {
                                    margin: 0;
+                                   margin-top: -3px;
+                              }
+                         }
+
+                         &:last-child {
+                              .dropdown-item {
+                                   margin-bottom: -4px;
                               }
                          }
                     }
@@ -802,7 +811,7 @@ header {
 
                          &:hover {
                               background-color: transparent;
-                              color: var(--theme-color);
+                              letter-spacing: 0.03em;
                          }
                     }
 
@@ -884,7 +893,7 @@ header {
                     &:hover {
                          >.dropdown-menu {
                               display: block;
-                              animation: dropdown-show 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                              animation: dropdown-show 0.25s;
                          }
                     }
                }

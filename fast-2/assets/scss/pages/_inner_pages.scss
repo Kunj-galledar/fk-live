@@ -693,16 +693,9 @@
                 border-radius: 4px;
 
                 .btn-apply {
-                    position: absolute;
-                    height: 100%;
-                    vertical-align: middle;
                     background: var(--theme-color);
                     color: $white;
-                    display: flex;
-                    align-items: center;
                     padding: 0 calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
-                    right: 0;
-                    margin: 0;
                     font-weight: 700;
                     border: none;
                 }
@@ -1910,7 +1903,7 @@
 
     .faq-accordion {
         .accordion {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320))));
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(15px + (24 - 15) * ((100vw - 320px) / (1920 - 320))));
 
             .accordion-item {
                 width: 100%;
@@ -2091,6 +2084,7 @@
         position: sticky;
         top: 20px;
         z-index: 1;
+
         .left-search-box {
             .search-box {
                 position: relative;
@@ -4450,11 +4444,11 @@
                 }
 
                 &:before {
-                    @include pos($pos: absolute, $content: "\f111");
+                    @include pos($pos: absolute, $content: "\f192");
                     @include font;
                     color: #959595;
                     background-color: $white;
-                    font-size: 35px;
+                    font-size: 30px;
 
                     @include mq-max(sm) {
                         position: absolute;
@@ -4507,6 +4501,7 @@
                 }
 
                 &:before {
+                    padding-top: 2px;
                     content: "\f00c";
                     @include font;
                     @include flex_common;

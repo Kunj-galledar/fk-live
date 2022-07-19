@@ -601,13 +601,13 @@
                               -webkit-box-orient: vertical;
                               display: -webkit-box;
                               overflow: hidden;
-                              font-weight: 400;
+                              font-weight: 600;
                               margin-top: -1px;
                          }
                     }
 
                     span {
-                         font-size: 12px;
+                         font-size: 14px;
                          margin-top: 5px;
                          color: $content-color;
                          font-weight: 400;
@@ -994,6 +994,7 @@
                -webkit-box-orient: vertical;
                display: -webkit-box;
                overflow: hidden;
+               color: $title-color;
           }
 
           h3 {
@@ -1297,8 +1298,8 @@
                     position: absolute;
                     bottom: -5px;
                     background-color: $white;
-                    width: 100%;
-                    padding: 10px 16px;
+                    width: 70%;
+                    padding: 10px 5px;
                     border-radius: 7px;
                     box-shadow: 0 0 8px rgba($title-color, 0.12);
                     opacity: 0;
@@ -1311,7 +1312,7 @@
 
                     li {
                          position: relative;
-                         width: 25%;
+                         width: 33.33%;
 
                          a {
                               color: $title-color;
@@ -1541,7 +1542,7 @@
      text-align: center;
 
      +.product-box-4 {
-          margin-top: 24px !important;
+          margin-top: 20px !important;
      }
 
      &:hover {
@@ -1795,6 +1796,10 @@
                     display: -webkit-box;
                     overflow: hidden;
                     @include rtl(text-align, left, right);
+
+                    @include mq-max(xs) {
+                         width: 100%;
+                    }
                }
           }
 
@@ -1898,12 +1903,11 @@
 
                     @include mq-max(xs) {
                          margin-bottom: 9px;
-                         float: right;
+                         float: left;
                     }
 
                     @media (max-width: 336px) {
                          display: block;
-                         float: unset;
                     }
                }
 

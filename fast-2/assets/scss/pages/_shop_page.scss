@@ -315,7 +315,7 @@
           line-height: 1.333;
           text-shadow: none;
           padding: 1px 5px;
-          background: #428bca;
+          background: var(--theme-color);
           border-radius: 3px;
      }
 
@@ -897,7 +897,10 @@
           .top-filter-menu {
                display: flex;
                align-items: center;
-               margin-top: 18px;
+
+               @include mq-max(lg) {
+                    margin-top: 18px;
+               }
 
                .category-dropdown {
                     display: flex;
