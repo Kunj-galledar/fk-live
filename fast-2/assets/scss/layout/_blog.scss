@@ -86,7 +86,12 @@
             }
 
             .blog-list {
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                // @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                // margin-top: 15px;
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: calc(15px + (29 - 15) * ((100vw - 320px) / (1920 - 320)));
                 margin-top: 15px;
 
                 span {

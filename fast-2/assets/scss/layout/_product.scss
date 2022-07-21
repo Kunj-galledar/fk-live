@@ -1,8 +1,6 @@
 /**=====================
      Product scss
 ==========================**/
-
-
 .qty-box {
      margin-top: calc(12px + (22 - 12) * ((100vw - 320px) / (1920 - 320)));
      width: 62%;
@@ -12,7 +10,7 @@
      }
 
      @include mq-max(2xs) {
-          width: 90%;
+          width: 100%;
      }
 
      .input-group {
@@ -779,7 +777,7 @@
           overflow: hidden;
 
           +.top-selling-contain {
-               margin-top: 30px;
+               margin-top: calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                &:before {
                     @include pos;
@@ -806,15 +804,15 @@
 
           .top-selling-image {
                img {
-                    @include pseudowh($width: 100px, $height: 100px);
+                    @include pseudowh($width: calc(80px + (100 - 80) * ((100vw - 320px) / (1920 - 320))), $height: calc(80px + (100 - 80) * ((100vw - 320px) / (1920 - 320))));
                     object-fit: contain;
                     border-radius: 5px;
                }
           }
 
           .top-selling-detail {
-               padding-left: 18px;
-               width: calc(100% - 100px);
+               padding-left: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+               width: calc(100% - calc(80px + (100 - 80) * ((100vw - 320px) / (1920 - 320))));
                position: relative;
 
                .product-option {

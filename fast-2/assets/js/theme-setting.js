@@ -37,12 +37,12 @@ $(".rtl").on("click", function () {
         $("html").attr("dir", "rtl");
         $("body").removeClass("ltr");
         $("body").addClass("rtl");
-        $(this).text("LTR");
+        // $(this).text("LTR");
         $("#rtl-link").attr("href", "../assets/css/vendors/bootstrap.rtl.css");
     } else {
         $("html").attr("dir", "");
         $("body").removeClass("rtl");
-        $(this).text("RTL");
+        // $(this).text("RTL");
         $("body").addClass("ltr");
         $("#rtl-link").attr("href", "../assets/css/vendors/bootstrap.css");
     }

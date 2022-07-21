@@ -19,6 +19,18 @@
         @include pseudowh;
         padding: calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320)));
 
+        >.home-top {
+            margin-top: -100px;
+
+            @include mq-max(sm) {
+                margin-top: -80px;
+            }
+
+            @include mq-max(xs) {
+                margin-top: 0;
+            }
+        }
+
         &.home-p-sm {
             padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) !important;
         }
@@ -31,9 +43,15 @@
             letter-spacing: 12px;
         }
 
-        h2 {
-            font-size: calc(16px + (38 - 16) * ((100vw - 320px) / (1920 - 320)));
+        h1 {
+            font-size: calc(19px + (42 - 19) * ((100vw - 320px) / (1920 - 320)));
+            width: 80%;
+            line-height: 1.4;
             margin-bottom: calc(3px + (10 - 3) * ((100vw - 320px) / (1920 - 320)));
+
+            @include mq-max(xs) {
+                width: 100%;
+            }
 
             [dir="rtl"] & {
                 margin-right: auto;
@@ -114,6 +132,18 @@
                 font-size: 16px;
                 color: #262834;
                 font-weight: 400;
+            }
+        }
+
+        h2 {
+            font-size: calc(25px + (38 - 25) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: 7px;
+
+            span {
+                &.discount {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
             }
         }
 
@@ -279,13 +309,18 @@
                 padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))) !important;
             }
 
-            h2 {
+            h1 {
                 font-size: calc(25px + (45 - 25) * ((100vw - 320px) / (1920 - 320)));
-                margin-bottom: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 6px;
 
                 &.sale-name {
                     font-size: calc(25px + (38 - 25) * ((100vw - 320px) / (1920 - 320)));
                 }
+            }
+
+            h2 {
+                font-size: calc(18px + (32 - 18) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 10px;
             }
 
             h3 {
@@ -305,7 +340,7 @@
 
             h6 {
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320)));
             }
 
             p {

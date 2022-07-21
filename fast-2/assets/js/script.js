@@ -27,6 +27,8 @@
 // 17. header Dropdown Js
 // 18. Add to Cart Show Js
 // 19. active class Js
+// 20. Hide header on scroll down js
+// 21. setting - option open js
 
 (function ($) {
     "use strict";
@@ -334,7 +336,7 @@ $(".notifi-wishlist").on("click", function () {
             exit: "animated fadeOutUp",
         },
         icon_type: "class",
-        template: '<div data-notify="container" class="col-xs-6 col-lg-5 col-md-6 col-sm-7 col-12 alert alert-{0}" role="alert">' +
+        template: '<div data-notify="container" class="col-xxl-3 col-lg-5 col-md-6 col-sm-7 col-12 alert alert-{0}" role="alert">' +
             '<button type="button" aria-hidden="true" class="btn-close" data-notify="dismiss"></button>' +
             '<span data-notify="icon"></span> ' +
             '<span data-notify="title">{1}</span> ' +
@@ -430,29 +432,10 @@ $(function () {
     });
 });
 
-
-$(".close_button").click(function () {
-    $("product-box-3").removeClass("active");
-    $(this).addClass("active");
+/*=====================
+   21. setting-option open js
+   ==========================*/
+$(".theme-option .setting-box .setting-button").click(function () {
+    $(".theme-setting-2").toggleClass("active");
+    $(this).find("i").toggleClass("fa-xmark");
 });
-
-// $(document).ready(function () {
-//     $(".close_button").click(function () {
-//         $(".product-box-3").style.display = "none";
-//     });
-// });
-
-// function myFunction() {
-//     document.getElementsByClassName("product-box-3").style.display = "none";
-// }
-
-// $(document).ready(function () {
-//     $(".close_button").click(function () {
-//         $(".product-box-3").slideToggle(500);
-//     });
-// });
-
-// $(document).on('click', '.close_button', function () {
-//     var show = $(this).data('show');
-//     $(show).removeClass("hide").siblings().addClass("hide");
-// });
