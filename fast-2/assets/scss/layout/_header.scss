@@ -20,7 +20,7 @@ header {
             width: 100%;
             margin-top: 0;
             background-color: $white;
-            box-shadow: 0 4px 8px rgba(124, 124, 124, 0.05), 0 24px 35px rgba(187, 187, 187, 0.1);
+            box-shadow: 0 4px 8px rgba(124, 124, 124, 0.05), 0 24px 35px rgba(187, 187, 187, 0.01);
             transition: all 0.5s ease;
             z-index: 6;
 
@@ -63,7 +63,6 @@ header {
                     }
 
                     li {
-
                         &.right-nav-list {
 
                             &:first-child,
@@ -1640,14 +1639,14 @@ header {
         }
 
         .option-list {
-            > ul {
+            >ul {
                 display: flex;
 
                 [dir="rtl"] & {
                     padding-right: 0;
                 }
 
-                > li {
+                >li {
                     position: relative;
 
                     &:nth-of-type(5n-3) {
@@ -1969,27 +1968,6 @@ header {
                 }
             }
         }
-
-        .support-box {
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
-            align-items: flex-start;
-
-            .support-image {
-                img {
-                    @include pseudowh($width: 33px, $height: auto);
-                }
-            }
-
-            .support-number {
-                text-align: right;
-                @include rtl(text-align, right, left);
-
-                h4 {
-                    margin-top: 4px;
-                    font-weight: 500;
-                }
-            }
-        }
     }
 
     .right-nav {
@@ -2308,6 +2286,31 @@ header {
         .navbar-toggler {
             &:focus {
                 box-shadow: none;
+            }
+        }
+
+        .support-box {
+            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+            align-items: flex-start;
+
+            .support-image {
+                img {
+                    @include pseudowh($width: 33px, $height: auto);
+                }
+            }
+
+            .support-number {
+                text-align: right;
+
+                h2 {
+                    font-size: 25px;
+                }
+
+                h4 {
+                    margin-top: 4px;
+                    font-weight: 500;
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -2687,19 +2690,20 @@ header {
                     background-color: $white;
                     padding-left: 16px;
                     padding-right: 5px;
+
+                    [dir="rtl"] & {
+                        padding-left: 5px;
+                        padding-right: 16px;
+                    }
                 }
 
                 input {
                     height: 55px;
-                    padding: 8px 25px;
+                    padding: 8px;
                     color: $title-color;
                     border: none;
                     font-size: 16px;
                     z-index: 0;
-
-                    [dir="rtl"] & {
-                        padding: 8px 60px;
-                    }
 
                     &:focus {
                         box-shadow: 0px 3px 4px rgba($black, 0.14);
@@ -3127,6 +3131,10 @@ header {
         .option-list-2 {
             display: flex;
 
+            [dir="rtl"] & {
+                padding-right: 0;
+            }
+
             li {
                 position: relative;
 
@@ -3135,6 +3143,12 @@ header {
 
                     +li {
                         margin-left: 0;
+
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 0;
+                        }
+
 
                         &::after {
                             content: none;
@@ -3148,6 +3162,11 @@ header {
 
                         +li {
                             margin-left: 22px;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 22px;
+                            }
 
                             &::after {
                                 content: "";
@@ -3264,12 +3283,27 @@ header {
             margin-left: 37px;
             position: relative;
 
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 37px;
+            }
+
             @include mq-max(4xl) {
                 margin-left: 22px;
+
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: 22px;
+                }
             }
 
             @include mq-max(md) {
                 margin-left: 0;
+
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: 0;
+                }
             }
 
             &::after {
@@ -3281,8 +3315,18 @@ header {
                 left: -20px;
                 background-color: $border-color;
 
+                [dir="rtl"] & {
+                    left: unset;
+                    right: -20px;
+                }
+
                 @include mq-max(4xl) {
                     left: -13px;
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: -13px;
+                    }
                 }
 
                 @include mq-max(xl) {
@@ -3392,27 +3436,6 @@ header {
                     color: $title-color;
                     font-size: 16px;
                     margin-bottom: 0;
-                }
-            }
-        }
-
-        .support-box {
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
-            align-items: flex-start;
-
-            .support-image {
-                img {
-                    @include pseudowh($width: 33px, $height: auto);
-                }
-            }
-
-            .support-number {
-                text-align: right;
-                @include rtl(text-align, right, left);
-
-                h4 {
-                    margin-top: 4px;
-                    font-weight: 500;
                 }
             }
         }

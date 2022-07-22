@@ -62,24 +62,36 @@
              breakpoint: 1540,
              settings: {
                  slidesToShow: 5,
+                 dots: true,
+                 autoplay: true,
+                 autoplaySpeed: 2500,
              }
          },
          {
              breakpoint: 910,
              settings: {
                  slidesToShow: 4,
+                 dots: true,
+                 autoplay: true,
+                 autoplaySpeed: 2500,
              }
          },
          {
              breakpoint: 730,
              settings: {
                  slidesToShow: 3,
+                 dots: true,
+                 autoplay: true,
+                 autoplaySpeed: 2500,
              }
          },
          {
              breakpoint: 410,
              settings: {
                  slidesToShow: 2,
+                 dots: true,
+                 autoplay: true,
+                 autoplaySpeed: 2500,
              }
          },
      ]
@@ -297,6 +309,30 @@
                  dots: true,
                  slidesToShow: 1,
                  fade: true,
+             }
+         },
+     ]
+ });
+
+ $('.slider-3-blog-2').slick({
+     arrows: true,
+     infinite: true,
+     slidesToShow: 3,
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 2500,
+     responsive: [{
+             breakpoint: 1200,
+             settings: {
+                 slidesToShow: 2,
+                 dots: true,
+             }
+         },
+         {
+             breakpoint: 750,
+             settings: {
+                 dots: true,
+                 slidesToShow: 1,
              }
          },
      ]
@@ -876,37 +912,19 @@
              }
          },
          {
-             breakpoint: 1080,
+             breakpoint: 1215,
              settings: {
                  slidesToShow: 4,
              }
          },
          {
-             breakpoint: 875,
+             breakpoint: 1060,
              settings: {
                  slidesToShow: 3,
              }
          },
          {
-             breakpoint: 634,
-             settings: {
-                 slidesToShow: 2,
-             }
-         },
-         {
-             breakpoint: 54,
-             settings: {
-                 slidesToShow: 4,
-             }
-         },
-         {
-             breakpoint: 12,
-             settings: {
-                 slidesToShow: 3,
-             }
-         },
-         {
-             breakpoint: 56,
+             breakpoint: 775,
              settings: {
                  slidesToShow: 2,
              }

@@ -3287,8 +3287,7 @@
             top: 0;
             left: -320px;
             @include pseudowh($width: 300px, $height: 100vh);
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+            border-radius: 0;
             z-index: 6;
             overflow-y: auto;
             overflow-x: hidden;
@@ -3369,7 +3368,9 @@
                     position: relative;
 
                     img {
-                        width: 108px;
+                        width: calc(93px + (108 - 93) * ((100vw - 320px) / (1920 - 320)));
+                        height: calc(93px + (108 - 93) * ((100vw - 320px) / (1920 - 320)));
+                        object-fit: contain;
                         background-color: $light-gray;
                         border-radius: 100%;
                         padding: 5px;
@@ -3387,6 +3388,19 @@
                         border-radius: 100%;
                         @include flex_common;
                         color: $content-color;
+
+                        i {
+                            position: relative;
+
+                            input {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                left: 0;
+                                opacity: 0;
+                                width: 35px;
+                            }
+                        }
                     }
                 }
 
@@ -3728,6 +3742,7 @@
                 background-color: $white;
                 box-shadow: 0 0 9px rgba($black, 0.07);
                 position: relative;
+                height: 100%;
                 overflow: hidden;
 
                 >div {
@@ -3897,6 +3912,7 @@
                 }
 
                 .card-details {
+                    height: 100%;
                     color: $white;
                     padding: 30px 20px;
                     border-radius: 5px;
@@ -4099,7 +4115,7 @@
                         margin-right: auto;
                     }
 
-                    @include mq-max(xs) {
+                    @include mq-max(sm) {
                         margin-top: 10px;
                     }
 
@@ -4300,7 +4316,7 @@
                                 border-radius: 100%;
                                 left: 2px;
                                 top: 2px;
-                                background: var(--theme-color2);
+                                background-color: var(--theme-color);
                                 transition: all 0.3s ease-in-out;
                             }
                         }
@@ -4546,7 +4562,7 @@
                     @include flex_common;
                     @include pseudowh($width: 30px, $height: 30px);
                     color: $white;
-                    background: var(--theme-color2);
+                    background-color: var(--theme-color);
                     line-height: 35px;
                     border: none;
                     border-radius: 35px;

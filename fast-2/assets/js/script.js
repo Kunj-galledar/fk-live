@@ -439,3 +439,9 @@ $(".theme-option .setting-box .setting-button").click(function () {
     $(".theme-setting-2").toggleClass("active");
     $(this).find("i").toggleClass("fa-xmark");
 });
+
+
+function readURL(uploader) {
+    $('.update_img').attr('src',
+        window.URL.createObjectURL(uploader.files[0]));
+};

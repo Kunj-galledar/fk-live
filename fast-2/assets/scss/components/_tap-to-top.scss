@@ -11,11 +11,16 @@
         left: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
     }
 
+    @include mq-max(md) {
+        bottom: calc(75px + (80 - 75) * ((100vw - 320px) / (1920 - 320)))
+    }
+
     .back-to-top {
         background-color: var(--theme-color);
         padding: 0;
         border-radius: 5px;
         z-index: 1;
+        margin-top: 12px;
 
         [dir="rtl"] & {
             right: unset;

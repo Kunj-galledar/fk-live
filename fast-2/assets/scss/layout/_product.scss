@@ -20,6 +20,10 @@
           text-align: center;
           z-index: 0;
 
+          &.theme-bg-white {
+               background-color: $white;
+          }
+
           button {
                border: none;
                @include flex_common;
@@ -32,6 +36,7 @@
                i {
                     font-size: 13px;
                     color: var(--theme-color);
+                    margin-top: 1px;
                }
 
                &:focus {
@@ -184,6 +189,18 @@
                     align-items: center;
                     color: $title-color;
 
+                    &:hover {
+                         h5 {
+                              a {
+                                   letter-spacing: .5px;
+
+                                   &:before {
+                                        width: 70px;
+                                   }
+                              }
+                         }
+                    }
+
                     svg {
                          @include pseudowh($width: 25px, $height: 25px);
                          stroke: $title-color;
@@ -201,9 +218,25 @@
                               -webkit-box-orient: vertical;
                               display: -webkit-box;
                               overflow: hidden;
+                              position: relative;
+                              z-index: 0;
+                              transition: all .3s ease-in-out;
 
                               &:hover {
                                    color: $title-color;
+                              }
+
+                              &::before {
+                                   @include pos;
+                                   bottom: 0;
+                                   left: 0;
+                                   width: 0;
+                                   height: 3px;
+                                   opacity: 0.5;
+                                   border-radius: 50px;
+                                   background-color: var(--theme-color);
+                                   z-index: -1;
+                                   transition: all .3s ease-in-out;
                               }
                          }
                     }
@@ -911,7 +944,7 @@
           overflow: hidden;
 
           img {
-               @include pseudowh($width: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320))), $height: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320))));
+               @include pseudowh($width: calc(86px + (130 - 86) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                object-fit: contain;
           }
      }
@@ -986,7 +1019,7 @@
           h6 {
                font-weight: 600;
                line-height: 1.4;
-               margin-bottom: 7px;
+               margin-bottom: calc(2px + (7 - 2) * ((100vw - 320px) / (1920 - 320)));
                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                -webkit-line-clamp: 1;
                -webkit-box-orient: vertical;
@@ -1003,7 +1036,7 @@
 
           h5 {
                font-weight: 500;
-               margin-top: 10px;
+               margin-top: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
 
                del {
                     font-size: 14px;
@@ -1255,6 +1288,10 @@
      background-color: $light-gray;
      border-radius: 5px;
      transition: all 0.4s ease-in-out;
+
+     &.theme-bg-white {
+          background-color: $white;
+     }
 
      &:hover {
           box-shadow: 0 0 8px rgba($title-color, .08);

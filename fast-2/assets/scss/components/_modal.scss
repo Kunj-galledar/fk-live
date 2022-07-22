@@ -359,7 +359,6 @@
     .modal-dialog {
         .modal-content {
             .modal-header {
-                display: block;
                 padding: calc(13px + (30 - 13) * ((100vw - 320px) / (1920 - 320)));
                 padding-bottom: 0;
 
@@ -623,9 +622,32 @@
                         align-items: center;
                         color: $content-color;
 
+                        &:hover {
+                            h6 {
+                                letter-spacing: 0.3px;
+
+                                &::before {
+                                    width: 65px;
+                                }
+                            }
+                        }
+
                         h6 {
                             font-size: 17px;
                             font-weight: 500;
+                            position: relative;
+                            transition: all .3s ease-in-out;
+
+                            &:before {
+                                @include pos;
+                                bottom: 0;
+                                left: 0;
+                                width: 0;
+                                height: 3px;
+                                background-color: var(--theme-color);
+                                opacity: 0.5;
+                                transition: all .3s ease-in-out;
+                            }
                         }
 
                         i {
