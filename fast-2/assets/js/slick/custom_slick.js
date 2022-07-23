@@ -127,20 +127,6 @@
      slidesToShow: 3,
      arrows: false,
      responsive: [{
-             breakpoint: 1400,
-             settings: {
-                 slidesToShow: 3,
-                 autoplay: true,
-                 autoplaySpeed: 3500,
-             }
-         },
-         {
-             breakpoint: 1200,
-             settings: {
-                 slidesToShow: 3,
-             }
-         },
-         {
              breakpoint: 992,
              settings: {
                  slidesToShow: 2,

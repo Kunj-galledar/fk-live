@@ -255,23 +255,49 @@
     .category-slider {
         .shop-category-box {
             position: relative;
-
-            .shape-circle {
-                @include pseudowh($width: calc(133px + (168 - 133) * ((100vw - 320px) / (1920 - 320))), $height: calc(84px + (112 - 84) * ((100vw - 320px) / (1920 - 320))));
-                border-radius: 100px;
-                margin: 0 auto 30px;
-                transition: all .3s ease-in-out;
-            }
+            padding-top: 14px;
 
             a {
                 display: block;
+                position: relative;
+
+                &.circle-1 {
+                    &::before {
+                        background-color: #fff9d8;
+                    }
+                }
+
+                &.circle-2 {
+                    &::before {
+                        background-color: #fff2ec;
+                    }
+                }
+
+                &.circle-3 {
+                    &::before {
+                        background-color: #fce9e9;
+                    }
+                }
+
+                &.circle-4 {
+                    &::before {
+                        background-color: #fcf1ff;
+                    }
+                }
+
+                &::before {
+                    @include pos;
+                    top: -14px;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100px;
+                }
 
                 img {
-                    transition: all .3s ease-in-out;
-                    position: absolute;
-                    bottom: 50px;
-                    @include center(horizontal);
+                    position: relative;
                     width: calc(87px + (110 - 87) * ((100vw - 320px) / (1920 - 320)));
+                    margin: 0 auto;
                 }
             }
 
@@ -279,6 +305,7 @@
                 position: relative;
                 text-align: center;
                 z-index: 0;
+                margin: 16px auto 0;
 
                 h6 {
                     transition: all .3s ease-in-out;

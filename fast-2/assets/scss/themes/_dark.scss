@@ -874,11 +874,32 @@ header {
 }
 
 .header-2 {
+    .dropdown-category {
+        span {
+            color: #ffffff;
+        }
+    }
+
     .top-nav {
         .middle-box {
             .searchbar-box-2 {
                 .search-button {
                     color: #ffffff;
+                }
+            }
+
+            .searchbar-box {
+                input {
+                    &:focus {
+                        background-color: #1d1d22;
+                        border: 1px solid #777;
+                    }
+                }
+
+                .search-button {
+                    .iconly-Search {
+                        color: #ddd;
+                    }
                 }
             }
         }
@@ -1010,6 +1031,10 @@ header {
 .deal-section {
     .deal-box {
         .deal-detail {
+            .custom-progressbar {
+                background-color: #1d1d22;
+            }
+
             .hot-deal {
                 color: #ffffff;
             }
@@ -1028,7 +1053,12 @@ header {
 .tab-style-color {
     .nav-item {
         .nav-link {
-            color: #222222;
+            color: #222222 !important;
+
+            &.active,
+            &:hover {
+                color: #222222 !important;
+            }
         }
     }
 }
@@ -1058,6 +1088,10 @@ header {
 }
 
 .product-box-4 {
+    .custom-progressbar {
+        background: #1d1d22;
+    }
+
     &.bg-white {
         background-color: #2a2d2d !important;
     }
@@ -1065,6 +1099,22 @@ header {
     .circle-box {
         .shape-text {
             color: #ffffff;
+        }
+    }
+
+    .product-detail {
+        .addtocart_btn {
+            .input-group {
+                box-shadow: 0 2px 6px 0 rgba(119, 119, 119, 0.23);
+
+                .btn {
+                    background-color: #1d1d22;
+
+                    i {
+                        color: #fff;
+                    }
+                }
+            }
         }
     }
 }
@@ -1577,6 +1627,10 @@ header {
 
                         .form-control {
                             border-color: #777777;
+
+                            &:focus {
+                                background-color: #1d1d22;
+                            }
                         }
                     }
 
@@ -1605,6 +1659,10 @@ header {
 .home-section-2 {
     .home-contain {
         .home-detail {
+            .home-button {
+                color: var(--theme-color) !important;
+            }
+
             p {
                 color: #777777;
             }
@@ -1891,5 +1949,171 @@ header {
 .product-slider {
     .product-slider-detail {
         background-color: rgba(29, 29, 34, 0.8);
+    }
+}
+
+.offer-banner {
+    .banner-detail {
+        &::after {
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        h6 {
+            color: #4a5568;
+        }
+    }
+}
+
+.view-modal {
+    .modal-dialog {
+        .modal-content {
+            .modal-body {
+                .right-sidebar-modal {
+                    .select-wight {
+                        .select-form-wight {
+                            background-color: #1d1d22;
+                            color: #fff;
+                            border: 1px solid transparent;
+
+                            &:focus {
+                                border-color: transparent;
+                            }
+                        }
+                    }
+
+                    .add-cart-button {
+                        background-color: #1d1d22;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner-contain-3 {
+    .banner-detail {
+
+        h5,
+        h4 {
+            color: #222;
+        }
+
+        button {
+            &.bg-white {
+                color: var(--theme-color) !important;
+            }
+
+            &.shop-now-button {
+                color: #222 !important;
+            }
+        }
+    }
+}
+
+.newsletter-section-2 {
+    .newsletter-box {
+        .newsletter-detail {
+            .newsletter-form {
+                .submit-button {
+                    color: var(--theme-color) !important;
+                }
+            }
+        }
+    }
+}
+
+.header-3 {
+    .top-nav {
+        .middle-box {
+            .location-box-2 {
+                button {
+
+                    .icli,
+                    h6,
+                    .down-arrow {
+                        color: #222;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-top {
+        .support-box {
+            .support-number {
+                h4 {
+                    color: #4a5568;
+                }
+            }
+        }
+    }
+
+    .rightside-menu {
+        .mobile-app {
+            .mobile-image {
+                img {
+                    filter: invert(1) brightness(100);
+                }
+            }
+        }
+
+        .user-box {
+            &::after {
+                @include mq-max(xl) {
+                    background-color: rgba(34, 34, 34, 0.2);
+                }
+            }
+
+            .header-icon {
+                @include mq-max(xl) {
+                    border-color: rgba(34, 34, 34, 0.2);
+                }
+
+                .icli {
+                    @include mq-max(xl) {
+                        color: #222222;
+                    }
+                }
+            }
+        }
+
+        .option-list-2 {
+            li {
+                +li {
+                    &::after {
+                        @include mq-max(xl) {
+                            background-color: rgba(34, 34, 34, 0.2);
+                        }
+                    }
+                }
+
+                .header-icon {
+                    @include mq-max(xl) {
+                        border-color: rgba(34, 34, 34, 0.2);
+                    }
+
+
+                    .icli {
+                        @include mq-max(xl) {
+                            color: #222222;
+                        }
+                    }
+
+                    .badge-number {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-section-3 {
+    .product-title {
+        &.product-warning {
+            h2 {
+                color: #222222;
+            }
+        }
     }
 }
