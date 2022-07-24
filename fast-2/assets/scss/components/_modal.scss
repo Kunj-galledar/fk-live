@@ -90,6 +90,10 @@
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
                         margin-top: 24px;
 
+                        [dir="rtl"] & {
+                            padding-right: 0;
+                        }
+
                         li {
                             width: 100%;
 
@@ -398,6 +402,10 @@
                     .deal-offer-list {
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (16 - 6) * ((100vw - 320px) / (1920 - 320))));
 
+                        [dir="rtl"] & {
+                            padding-right: 0;
+                        }
+
                         li {
                             width: 100%;
 
@@ -528,6 +536,8 @@
 
 // Offcanvas Modal Start
 .pickup-offcanvas {
+    border: none;
+
     .offcanvas-header {
         border-bottom: 1px solid $border-color;
         align-items: flex-start;

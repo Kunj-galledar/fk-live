@@ -30,12 +30,26 @@
         .offer-timing {
             margin-left: 24px;
 
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 24px;
+            }
+
             @include mq-max(2xs) {
                 margin-left: 0;
+
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: 0;
+                }
             }
 
             .time {
                 ul {
+                    [dir="rtl"] & {
+                        padding-right: 0;
+                    }
+
                     li {
                         position: relative;
 
@@ -113,6 +127,11 @@
             color: var(--theme-color);
             font-weight: 500;
             font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 20px;
+            }
 
             @include mq-max(sm) {
                 margin-left: 0;

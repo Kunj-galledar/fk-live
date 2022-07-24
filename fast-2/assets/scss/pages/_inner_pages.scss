@@ -883,6 +883,10 @@
         flex-wrap: wrap;
         gap: calc(7px + (16 - 7) * ((100vw - 320px) / (1920 - 320)));
 
+        [dir="rtl"] & {
+            padding-right: 0;
+        }
+
         &.button-group-list {
             @include flex_common ($dis: flex, $align: center, $justify: space-between);
             margin-top: calc(26px + (45 - 26) * ((100vw - 320px) / (1920 - 320)));
@@ -973,6 +977,10 @@
                             width: 100%;
                             font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
                             padding: 16px 20px;
+
+                            [dir="rtl"] & {
+                                padding-right: 0;
+                            }
 
                             @include mq-max(xs) {
                                 margin-top: 5px;
@@ -1118,6 +1126,11 @@
                     .lord-icon {
                         @include pseudowh($width: calc(38px + (58 - 38) * ((100vw - 320px) / (1920 - 320))), $height: auto);
                         margin-left: auto;
+
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: auto;
+                        }
                     }
                 }
             }
@@ -1194,6 +1207,7 @@
                 [dir="rtl"] & {
                     margin-left: unset;
                     margin-right: 10px;
+                    padding-right: 0;
                 }
 
                 li {
@@ -1722,11 +1736,18 @@
             padding: 1px 0;
 
             ul {
-                margin: -15px;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 15px;
+
+                [dir="rtl"] & {
+                    padding-right: 0;
+                }
 
                 li {
                     display: block;
-                    margin: 15px;
+                    width: 100%;
 
                     a {
                         @include flex_common;
@@ -2518,7 +2539,15 @@
         display: flex;
         align-items: center;
 
-        @include mq-max(sm) {
+        @include mq-max(xl) {
+            display: block;
+        }
+
+        @include mq-max(lg) {
+            display: flex;
+        }
+
+        @include mq-max(md) {
             display: block;
         }
 
@@ -2530,10 +2559,33 @@
                 width: 45%;
             }
 
-            @include mq-max(sm) {
+            @include mq-max(xl) {
+                width: 100%;
+            }
+
+            @include mq-max(lg) {
+                width: 45%;
+            }
+
+            @include mq-max(md) {
                 @include pseudowh;
                 margin-bottom: 8px;
                 text-align: center;
+            }
+
+            img {
+                @include mq-max(xl) {
+                    width: 100%;
+                }
+
+                @include mq-max(lg) {
+                    width: auto;
+                }
+
+                @include mq-max(md) {
+                    width: 100%;
+                    ;
+                }
             }
         }
 
@@ -2545,7 +2597,15 @@
                 width: 55%;
             }
 
-            @include mq-max(sm) {
+            @include mq-max(xl) {
+                width: 100%;
+            }
+
+            @include mq-max(lg) {
+                width: 55%;
+            }
+
+            @include mq-max(md) {
                 width: 100%;
             }
         }
@@ -3714,6 +3774,10 @@
                             .product-size {
                                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))));
 
+                                [dir="rtl"] & {
+                                    padding-right: 0;
+                                }
+
                                 li {
                                     width: 100%;
 
@@ -4077,6 +4141,11 @@
 
                         @include mq-max(2xs) {
                             margin-right: 0;
+
+                            [dir="rtl"] & {
+                                margin-right: unset;
+                                margin-left: 0;
+                            }
                         }
 
                         span {
@@ -4143,6 +4212,10 @@
                         align-items: center;
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (26 - 10) * ((100vw - 320px) / (1920 - 320))));
 
+                        [dir="rtl"] & {
+                            padding-right: 0;
+                        }
+
                         li {
                             .location-box {
                                 align-items: center;
@@ -4183,7 +4256,6 @@
                                 vertical-align: middle;
                                 border: none;
                                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                                ;
                                 white-space: nowrap;
 
                                 &:first-child {
@@ -4199,7 +4271,7 @@
                                     }
 
                                     span {
-                                        margin-left: 20px;
+                                        margin-left: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
                                         font-size: 14px;
                                         padding: 5px 10px;
                                         border-radius: 5px;
@@ -4210,7 +4282,7 @@
 
                                         [dir="rtl"] & {
                                             margin-left: unset;
-                                            margin-right: 20px;
+                                            margin-right: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
                                         }
 
                                         &::before {
@@ -4695,10 +4767,6 @@
 
         .input-group {
             .form-control {
-                [dir="rtl"] & {
-                    text-align: left;
-                }
-
                 &:focus {
                     z-index: 0;
                 }

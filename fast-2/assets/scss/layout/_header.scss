@@ -607,10 +607,20 @@ header {
                 }
 
                 li {
+                    margin: 0 !important;
+
+                    &::after {
+                        content: none !important;
+                    }
+
                     .drop-cart {
                         @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
                         align-items: center;
                         position: relative;
+
+                        &::after {
+                            content: none;
+                        }
 
                         .drop-image {
                             img {
@@ -2835,6 +2845,11 @@ header {
             position: absolute;
             top: -47px;
             right: 0;
+
+            [dir="rtl"] & {
+                right: unset;
+                left: 0;
+            }
         }
 
         .dropdown-dollar {

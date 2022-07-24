@@ -91,6 +91,10 @@
 .category-list {
      @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))));
 
+     [dir="rtl"] & {
+          padding-right: 0;
+     }
+
      li {
           display: block;
           width: 100%;
@@ -115,6 +119,7 @@
                          -webkit-box-orient: vertical;
                          display: -webkit-box;
                          overflow: hidden;
+                         width: 80%;
                     }
 
                     .number {
@@ -512,6 +517,11 @@
                     padding-left: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                     padding-right: unset;
 
+                    [dir="rtl"] & {
+                         padding-left: unset;
+                         padding-right: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    }
+
                     @include mq-max(lg) {
                          padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                     }
@@ -519,12 +529,12 @@
                     .back-button {
                          h3 {
                               i {
-                                   margin-right: unset;
-                                   margin-left: 10px;
+                                   margin-right: auto;
+                                   margin-left: 0;
 
                                    [dir="rtl"] & {
-                                        margin-right: 10px;
-                                        margin-left: unset;
+                                        margin-right: 0;
+                                        margin-left: auto;
                                    }
                               }
                          }
@@ -571,6 +581,13 @@
                          display: flex;
                          align-items: center;
                          color: $content-color;
+
+                         [dir="rtl"] & {
+                              right: unset;
+                              left: 0;
+                              border-left: unset;
+                              border-right: 1px solid #ddd;
+                         }
                     }
                }
 
@@ -602,6 +619,10 @@
                     ul {
                          @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))));
                          padding-top: 16px;
+
+                         [dir="rtl"] & {
+                              padding-right: 0;
+                         }
 
                          li {
                               padding: 9px 34px 9px 11px;
@@ -703,7 +724,7 @@
                }
 
                .custom-nav-tab {
-                    gap: 20px;
+                    gap: calc(11px + (20 - 11) * ((100vw - 320px) / (1920 - 320)));
 
                     .nav-item {
                          width: 100%;
@@ -765,24 +786,24 @@
      .show-button {
           margin-bottom: 14px;
 
+          .filter-button {
+               display: block;
+               color: $white;
+
+               a {
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 600;
+                    padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320))) calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
+                    background-color: var(--theme-color);
+                    border-radius: 5px;
+                    display: inline-block;
+               }
+          }
+
           .filter-button-group {
                display: flex;
                align-items: center;
                margin-top: 30px;
-
-               .filter-button {
-                    display: block;
-                    color: $white;
-
-                    a {
-                         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                         font-weight: 600;
-                         padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320))) calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
-                         background-color: var(--theme-color);
-                         border-radius: 5px;
-                         display: inline-block;
-                    }
-               }
 
                .sort-by-button {
                     color: $white;
@@ -880,6 +901,10 @@
                          @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (12 - 5) * ((100vw - 320px) / (1920 - 320))));
                          align-items: center;
 
+                         [dir="rtl"] & {
+                              padding-right: 0;
+                         }
+
                          li {
                               @include pseudowh($width: 35px, $height: 35px);
                               border-radius: 5px;
@@ -972,6 +997,10 @@
                          @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320))));
                          align-items: center;
 
+                         [dir="rtl"] & {
+                              padding-right: 0;
+                         }
+
                          li {
                               @include pseudowh($width: 35px, $height: 35px);
                               border-radius: 5px;
@@ -990,7 +1019,7 @@
                margin-bottom: 25px;
 
                ul {
-                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320))));
                     padding-top: 16px;
 
                     li {
@@ -1036,7 +1065,27 @@
                >div {
                     border-right: 1px solid $border-color;
 
+                    [dir="rtl"] & {
+                         border-right: unset;
+                         border-left: 1px solid $border-color;
+                    }
+
                     &:last-child {
+                         border: none;
+                    }
+
+                    @include mq-max(xl) {
+                         &:nth-child(4n-2) {
+                              border-right: none;
+
+                              [dir="rtl"] & {
+                                   border-right: unset;
+                                   border-left: none;
+                              }
+                         }
+                    }
+
+                    @include mq-max(md) {
                          border: none;
                     }
                }
