@@ -141,6 +141,26 @@
      ]
  });
 
+ $('.slider-bank-3').slick({
+     infinite: true,
+     slidesToScroll: 1,
+     slidesToShow: 3,
+     arrows: true,
+     responsive: [{
+             breakpoint: 1652,
+             settings: {
+                 slidesToShow: 2,
+             }
+         },
+         {
+             breakpoint: 914,
+             settings: {
+                 slidesToShow: 1,
+             }
+         },
+     ]
+ });
+
  $('.slider-3-product').slick({
      infinite: true,
      slidesToScroll: 1,

@@ -331,6 +331,12 @@ footer {
                     margin-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
                     position: relative;
 
+                    &:last-child {
+                        &::before {
+                            content: none;
+                        }
+                    }
+
                     &::before {
                         @include pos;
                         bottom: -24px;
@@ -384,7 +390,6 @@ footer {
 
     .sub-footer {
         border-top: 1px dashed #c1c1c1;
-        padding: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320))) 0;
         @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
         @include mq-max(lg) {
@@ -393,7 +398,7 @@ footer {
         }
 
         @include mq-max(md) {
-            margin-bottom: 70px;
+            margin-bottom: 66px;
         }
 
         .payment {

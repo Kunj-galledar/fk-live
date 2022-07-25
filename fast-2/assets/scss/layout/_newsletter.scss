@@ -4,6 +4,51 @@
 .newsletter-section {
     .newsletter-box {
         border-radius: 5px;
+        position: relative;
+
+        &-2 {
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("../images/vegetable/newsletter/1.jpg");
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                display: block;
+                z-index: -1;
+
+                [dir="rtl"] & {
+                    transform: scaleX(-1);
+                    filter: FlipH;
+                }
+            }
+        }
+
+        &-3 {
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url("../images/vegetable/newsletter/2.jpg");
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                display: block;
+                z-index: -1;
+
+                [dir="rtl"] & {
+                    transform: scaleX(-1);
+                    filter: FlipH;
+                }
+            }
+        }
 
         .newsletter-contain {
             .newsletter-detail {

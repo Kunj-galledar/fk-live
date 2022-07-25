@@ -60,6 +60,11 @@
             padding: 20px;
             margin-top: 0;
 
+            h2 {
+                font-size: 22px;
+                line-height: 1.4;
+            }
+
             label {
                 font-size: 12px;
                 padding: 7px 11px;
@@ -87,11 +92,9 @@
             }
 
             .blog-list {
-                display: flex;
-                align-items: center;
-                flex-wrap: nowrap;
-                gap: calc(15px + (29 - 15) * ((100vw - 320px) / (1920 - 320)));
+                @include flex_common ($dis: flex, $align: center, $justify: flex-start);
                 margin-top: 15px;
+                gap: calc(14px + (22 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                 span {
                     color: $content-color;

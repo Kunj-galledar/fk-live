@@ -12,21 +12,19 @@ document.getElementById("colorPick").onchange = function () {
  ==========================*/
 $("#darkButton").on("click", function () {
     var href = $("#color-link").attr("href");
-    var split = href.split("/").pop().split(".").shift();
     $("body").removeClass("light");
     $("body").addClass("dark");
     document
         .getElementById("color-link")
-        .setAttribute("href", "../assets/css/" + split + "_dark.css");
+        .setAttribute("href", "../assets/css/dark.css");
 });
 $("#lightButton").on("click", function () {
     var href = $("#color-link").attr("href");
-    var split = href.split("/").pop().split(".").shift().split("_").shift();
     $("body").removeClass("dark");
     $("body").addClass("light");
     document
         .getElementById("color-link")
-        .setAttribute("href", "../assets/css/" + split + ".css");
+        .setAttribute("href", "../assets/css/style.css");
 });
 
 /*========================

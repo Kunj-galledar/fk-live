@@ -3,7 +3,7 @@
 ==========================**/
 .tab-style-color {
     border: none;
-    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
+    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 20px);
     overflow-x: auto;
     overflow-y: hidden;
 
@@ -17,14 +17,14 @@
             transition: all .3s ease-in-out;
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
             white-space: nowrap;
+            background-color: $white;
+            border: 1px solid var(--theme-color);
+            padding: 10px 30px;
 
             &.active,
             &:hover {
-                background-image: url("../images/veg-3/shape.png");
-                background-size: contain;
-                background-clip: border-box;
-                background-position: 0 0;
-                animation: shape 15s linear infinite;
+                background-color: var(--theme-color);
+                color: $white;
             }
 
             img {

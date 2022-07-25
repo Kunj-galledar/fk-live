@@ -47,9 +47,9 @@
     }
 
     &-flex {
-        @include flex_common ($dis: flex, $align: flex-end, $justify: space-between);
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
-        @include mq-max(lg) {
+        @media (max-width: 1265px) {
             display: block;
         }
 
@@ -63,7 +63,7 @@
                 padding: 12px 11px;
                 border-radius: 5px;
 
-                @include mq-max(lg) {
+                @media (max-width: 1265px) {
                     margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
                 }
 

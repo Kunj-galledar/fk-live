@@ -4,6 +4,7 @@
 .qty-box {
      margin-top: calc(12px + (22 - 12) * ((100vw - 320px) / (1920 - 320)));
      width: 62%;
+     max-width: 200px;
 
      @include mq-max(xs) {
           width: 70%;
@@ -1244,6 +1245,7 @@
                .product-box-3 {
                     display: flex;
                     align-items: center;
+                    padding: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                     .product-header {
                          width: 180px;
@@ -1261,6 +1263,12 @@
                          padding-left: 20px;
                          width: calc(100% - 180px);
 
+                         .product-detail {
+                              .span-name {
+                                   display: none;
+                              }
+                         }
+
                          [dir="rtl"] & {
                               padding-left: unset;
                               padding-right: 20px;
@@ -1275,6 +1283,10 @@
                          .product-content {
                               display: block;
                               line-height: 1.5;
+                              -webkit-line-clamp: 2;
+                              -webkit-box-orient: vertical;
+                              display: -webkit-box;
+                              overflow: hidden;
                          }
 
                          .product-detail {

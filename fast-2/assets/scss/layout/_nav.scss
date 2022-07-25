@@ -72,10 +72,15 @@ header {
                border: 0;
                position: static;
                transition: all 0.5s ease;
+               opacity: 0;
+               visibility: hidden;
+               display: block !important;
+               transform: translateY(-15px);
 
                &-2 {
                     @media (min-width: 1200px) {
-                         @include center(horizontal);
+                         left: 50%;
+                         transform: translateX(-50%) translateY(-15px);
                          width: 52vw;
                          min-width: unset;
                          padding: 22px !important;
@@ -85,6 +90,7 @@ header {
                          background-position: right;
                          background-repeat: no-repeat;
                          background-size: contain;
+                         display: flex !important;
                     }
                }
 
@@ -466,6 +472,7 @@ header {
           padding-top: 6px;
           padding-bottom: 6px;
           padding-left: 15px;
+          z-index: 1;
 
           [dir="rtl"] & {
                padding-left: unset;
@@ -870,7 +877,6 @@ header {
                     }
 
                     .dropdown-menu {
-                         display: none;
                          top: 0;
                          right: auto;
                          left: 100%;
@@ -906,8 +912,17 @@ header {
                .dropdown {
                     &:hover {
                          >.dropdown-menu {
-                              display: block;
-                              animation: dropdown-show 0.25s;
+                              opacity: 1;
+                              visibility: visible;
+                              transform: translateY(0);
+                         }
+
+                         .dropdown-menu-2 {
+                              transform: translateX(-50%) translateY(0);
+                         }
+
+                         .dropdown-menu-left {
+                              transform: translateX(0%) translateY(0);
                          }
                     }
                }
@@ -1123,6 +1138,19 @@ header {
                               font-size: 16px;
                               font-weight: 600;
                          }
+                    }
+               }
+          }
+
+          .navbar-nav {
+               .dropdown-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    display: none !important;
+                    transform: translateY(0);
+
+                    &.show {
+                         display: block !important;
                     }
                }
           }
