@@ -8,7 +8,7 @@ document.getElementById("colorPick").onchange = function () {
 };
 
 /*========================
- Dark local storage setting js
+ Dark setting js
  ==========================*/
 $("#darkButton").on("click", function () {
     var href = $("#color-link").attr("href");
@@ -25,22 +25,21 @@ $("#lightButton").on("click", function () {
     document
         .getElementById("color-link")
         .setAttribute("href", "../assets/css/style.css");
+    console
 });
 
 /*========================
-   RTL local storage setting js
+   RTL setting js
    ==========================*/
 $(".rtl").on("click", function () {
     if ($("body").hasClass("ltr")) {
         $("html").attr("dir", "rtl");
         $("body").removeClass("ltr");
         $("body").addClass("rtl");
-        // $(this).text("LTR");
         $("#rtl-link").attr("href", "../assets/css/vendors/bootstrap.rtl.css");
     } else {
         $("html").attr("dir", "");
         $("body").removeClass("rtl");
-        // $(this).text("RTL");
         $("body").addClass("ltr");
         $("#rtl-link").attr("href", "../assets/css/vendors/bootstrap.css");
     }

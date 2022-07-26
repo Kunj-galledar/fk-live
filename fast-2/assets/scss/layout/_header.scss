@@ -624,7 +624,7 @@ header {
 
                         .drop-image {
                             img {
-                                width: 100px;
+                                width: 87px;
                                 background: #f8f8f8;
                                 padding: 10px;
                             }
@@ -639,6 +639,7 @@ header {
                                 margin-bottom: 5px;
                                 font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                                 color: var(--theme-color);
+                                font-weight: 500;
                             }
 
                             h6 {
@@ -677,6 +678,7 @@ header {
                 .cart-button {
                     border: 2px solid var(--theme-color);
                     color: var(--theme-color);
+                    padding: 6px 10px;
 
                     &:hover {
                         background-color: var(--theme-color);
@@ -2312,9 +2314,11 @@ header {
 
                 h2 {
                     font-size: 25px;
+                    color: $white;
                 }
 
                 h4 {
+                    color: $white;
                     margin-top: 4px;
                     font-weight: 500;
                     font-size: 16px;
@@ -2425,7 +2429,7 @@ header {
 
     .top-nav {
         padding: 14px 0;
-        background-color: #ffc121;
+        background-color: var(--theme-color);
 
         @include mq-max(xl) {
             border-bottom: unset;
@@ -2443,6 +2447,7 @@ header {
             .icli {
                 font-size: 25px;
                 margin-top: 2px;
+                color: $white;
             }
         }
 
@@ -2679,8 +2684,7 @@ header {
                 }
 
                 .search-button {
-                    color: $white;
-                    background-color: var(--theme-color);
+                    background-color: #ffb803;
                     font-weight: 500;
                 }
 
@@ -2728,7 +2732,7 @@ header {
 
                 @include mq-max(xl) {
                     margin-right: unset;
-                    margin-left: 13px;
+                    margin-left: 0;
                 }
 
                 @include mq-max(md) {
@@ -2747,6 +2751,7 @@ header {
                     .icli {
                         margin-right: 9px;
                         font-size: 22px;
+                        color: $white;
 
                         [dir="rtl"] & {
                             margin-right: unset;
@@ -2760,7 +2765,7 @@ header {
 
                     h6 {
                         font-size: 16px;
-                        color: $title-color;
+                        color: $white;
 
                         @media (max-width: 1556px) {
                             display: none;
@@ -2769,7 +2774,7 @@ header {
 
                     .down-arrow {
                         margin-left: 10px;
-                        color: $content-color;
+                        color: $white;
 
                         [dir="rtl"] & {
                             margin-left: unset;
@@ -3026,7 +3031,7 @@ header {
                     position: relative;
 
                     @include mq-max(xl) {
-                        border-color: rgba($title-color, 0.2);
+                        border-color: rgba($white, 0.2);
                         background-color: transparent;
                     }
 
@@ -3055,12 +3060,23 @@ header {
                         font-size: 10px;
                     }
 
+                    .badge-light {
+                        @include mq-max(xl) {
+                            background-color: $white;
+                            color: var(--theme-color);
+                        }
+                    }
+
                     .icli {
                         color: $black;
                         font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
 
                         &.iconly-Swap {
                             transform: rotate(90deg);
+                        }
+
+                        @include mq-max(xl) {
+                            color: $white;
                         }
                     }
                 }
@@ -3104,7 +3120,7 @@ header {
                         }
 
                         @include mq-max(xl) {
-                            background-color: rgba($title-color, 0.2);
+                            background-color: rgba($white, 0.2);
                         }
                     }
                 }
@@ -3164,7 +3180,7 @@ header {
                 }
 
                 @include mq-max(xl) {
-                    background-color: rgba($title-color, 0.2);
+                    background-color: rgba($white, 0.2);
                 }
 
                 @include mq-max(md) {
@@ -3183,7 +3199,7 @@ header {
                 position: relative;
 
                 @include mq-max(xl) {
-                    border-color: rgba($title-color, .2);
+                    border-color: rgba($white, .2);
                     background-color: transparent;
                 }
 
@@ -3203,6 +3219,10 @@ header {
                 .icli {
                     color: $black;
                     font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+
+                    @include mq-max(xl) {
+                        color: $white;
+                    }
                 }
             }
 

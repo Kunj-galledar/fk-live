@@ -443,3 +443,20 @@ function readURL(uploader) {
     $('.update_img').attr('src',
         window.URL.createObjectURL(uploader.files[0]));
 };
+
+/*=====================
+   22. Wishlist box remove js
+   ==========================*/
+$(".close_button").click(function () {
+    $(this).closest(".product-box-contain").fadeOut("slow", function () {
+        // After animation completed:
+        $(this).closest(".product-box-contain").remove();
+    });
+});
+
+// $(".close_button").click(function () {
+//     $(this).closest(".col-xxl-2.col-lg-3.col-md-4.col-6").fadeOut("slow", function () {
+//         // After animation completed:
+//         $(this).closest(".col-xxl-2.col-lg-3.col-md-4.col-6").remove();
+//     });
+// });

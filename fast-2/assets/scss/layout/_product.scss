@@ -1552,7 +1552,6 @@
           background-color: var(--theme-color);
           color: $white;
           border-radius: 8px 8px 0 0;
-          background-image: url(../images/grocery/shape.png);
           border: 2px solid transparent;
           background-size: contain;
           background-clip: border-box;
@@ -1560,24 +1559,24 @@
           animation: shape 15s linear infinite;
 
           &.product-warning {
-               background-color: #ffe03e;
+               background-color: transparent;
                color: $title-color;
                margin: 0;
+               border: none;
           }
      }
 }
 
-.product-full-border {
-     border: 1px solid $border-color;
+.product-bg-image {
+     background-image: url(../images/grocery/bg.jpg);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
      height: 100%;
-     border-radius: 10px;
-
-     &:hover {
-          box-shadow: 0 0 8px rgba($title-color, .08);
-     }
 
      .product-box-4 {
           border: none;
+          background-color: transparent;
      }
 
      .product-box-3 {
@@ -1861,7 +1860,7 @@
 
                del {
                     margin-left: 10px;
-                    color: #bfbfbf;
+                    color: $content-color;
                     font-weight: 400;
 
                     [dir="rtl"] & {

@@ -220,6 +220,47 @@
     overflow: hidden;
     position: relative;
 
+    .social-image {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .delivery-bike {
+        text-align: center;
+
+        img {
+            margin-top: -16px;
+        }
+    }
+
+    &.banner-contain-bg {
+        background-image: url(../images/grocery/banner/11-bg.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: block;
+    }
+
+    .banner-detail-2 {
+        h2 {
+            font-size: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: 10px;
+            text-transform: none;
+        }
+
+        h3 {
+            font-size: 35px;
+        }
+
+        h4 {
+            font-size: 40px;
+        }
+    }
+
+    .banner-minus-position {
+        margin-top: -13px;
+    }
+
     .banner-detail {
         position: absolute;
         top: 0%;
@@ -227,13 +268,17 @@
         @include pseudowh;
         padding: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
 
+        &.banner-half-width {
+            width: 50%;
+        }
+
         &.banner-p-sm {
             padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))) !important;
         }
 
         h2 {
             font-size: calc(25px + (45 - 25) * ((100vw - 320px) / (1920 - 320)));
-            margin-bottom: 10px;
+            margin-bottom: 3px;
 
             &.sale-name {
                 font-size: calc(25px + (38 - 25) * ((100vw - 320px) / (1920 - 320)));
@@ -244,12 +289,28 @@
             font-size: calc(18px + (32 - 18) * ((100vw - 320px) / (1920 - 320)));
             margin-bottom: 10px;
             line-height: 1.4;
+
+            &.banner-contain {
+                font-size: 33px;
+                font-weight: bold;
+                margin-bottom: 0;
+
+                @media (max-width: 1500px) {
+                    font-size: 20px;
+                }
+            }
         }
 
         h4 {
             font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
             margin-bottom: 5px;
             line-height: 1.4;
+
+            .delivery-contain {
+                @media (max-width: 1500px) {
+                    font-size: 16px;
+                }
+            }
         }
 
         h5 {
@@ -268,6 +329,46 @@
             line-height: 1.5;
             color: $content-color;
             letter-spacing: .8px;
+        }
+
+        .banner-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            [dir="rtl"] & {
+                padding-right: 0;
+            }
+
+            li {
+                display: block;
+                width: 100%;
+
+                .delivery-box {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: 11px;
+
+                    .check-icon {
+                        @include flex_common;
+                        width: 20px;
+                        height: 20px;
+                        background-color: #6BBE66;
+                        color: $white;
+                        border-radius: 100%;
+                        font-size: 11px;
+                    }
+
+                    .check-contain {
+                        h5 {
+                            @media (max-width: 1500px) {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .shop-now-button {
@@ -445,6 +546,11 @@
                 color: $white;
                 font-weight: 600;
                 padding: 6px 21px;
+
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: auto;
+                }
             }
         }
     }
