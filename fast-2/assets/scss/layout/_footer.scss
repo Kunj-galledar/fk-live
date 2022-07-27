@@ -146,6 +146,16 @@ footer {
                         align-items: flex-start;
                         width: 100%;
 
+                        &:hover {
+                            a {
+                                color: var(--theme-color);
+                            }
+
+                            .feather {
+                                stroke: var(--theme-color)
+                            }
+                        }
+
                         .feather {
                             @include pseudowh($width: 18px, $height: 18px);
                             stroke: $content-color;
@@ -156,10 +166,6 @@ footer {
                             color: $content-color;
                             line-height: 18px;
                             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-
-                            &:hover {
-                                color: var(--theme-color);
-                            }
 
                             [dir="rtl"] & {
                                 margin-right: 10px;
