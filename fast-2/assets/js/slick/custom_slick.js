@@ -719,6 +719,7 @@
      slidesToShow: 6,
      slidesToScroll: 1,
      autoplay: true,
+     mobile: true,
      autoplaySpeed: 3500,
      responsive: [{
              breakpoint: 1648,
@@ -745,7 +746,7 @@
              }
          },
      ]
- });
+ }).trigger("resize");
 
  $('.slider-9').slick({
      arrows: false,

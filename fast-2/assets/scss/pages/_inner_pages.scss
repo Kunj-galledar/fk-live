@@ -2023,6 +2023,10 @@
                 border-right: 1px solid #ddd;
                 padding: 16px 20px;
                 text-align: center;
+
+                &:first-child {
+                    min-width: auto;
+                }
             }
 
             th {
@@ -2117,7 +2121,6 @@
     .left-sidebar-box {
         position: sticky;
         top: 20px;
-        z-index: 1;
 
         .left-search-box {
             .search-box {
@@ -2595,7 +2598,8 @@
             }
 
             @include mq-max(md) {
-                @include pseudowh;
+                width: 100%;
+                height: auto;
                 margin-bottom: 8px;
                 text-align: center;
             }
@@ -2613,7 +2617,6 @@
 
                 @include mq-max(md) {
                     width: 100%;
-                    ;
                 }
             }
         }

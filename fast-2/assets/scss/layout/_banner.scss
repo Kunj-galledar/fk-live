@@ -555,3 +555,30 @@
         }
     }
 }
+
+.shop-banner {
+    width: 52% !important;
+
+    @include mq-max(sm) {
+        width: 100% !important;
+    }
+
+    >div {
+        padding: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
+        background: var(--theme-color);
+        color: $white;
+        border-radius: 9px;
+
+        h2 {
+            font-size: calc(21px + (37 - 21) * ((100vw - 320px) / (1920 - 320))) !important;
+            font-weight: 700 !important;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: calc(19px + (30 - 19) * ((100vw - 320px) / (1920 - 320))) !important;
+            margin-top: 18px;
+            margin-bottom: -2px;
+        }
+    }
+}

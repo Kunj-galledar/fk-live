@@ -199,23 +199,20 @@
                 background-color: $white;
 
                 i {
-                    @include pseudowh($width: auto, $height: 100%);
-                    position: absolute;
                     display: flex;
                     align-items: center;
                     padding: 0 calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
                     color: var(--theme-color);
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                    z-index: 1;
                 }
 
                 .form-control {
-                    padding-left: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
+                    padding-left: 0;
                     border: none;
 
                     [dir="rtl"] & {
                         padding-left: unset;
-                        padding-right: calc(40px + (54 - 40) * ((100vw - 320px) / (1920 - 320)));
+                        padding-right: 0;
                     }
 
                     &:focus {
@@ -233,6 +230,7 @@
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     font-weight: 600;
                     color: var(--theme-color);
+                    z-index: 0;
 
                     &::after {
                         content: unset;

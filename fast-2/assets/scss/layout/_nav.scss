@@ -17,6 +17,11 @@ header {
                .dropdown-menu-2 {
                     left: 0;
                     transform: unset;
+
+                    [dir="rtl"] & {
+                         left: unset;
+                         right: 0;
+                    }
                }
           }
      }
@@ -78,19 +83,43 @@ header {
                transform: translateY(-15px);
 
                &-2 {
-                    @media (min-width: 1200px) {
-                         left: 50%;
-                         transform: translateX(-50%) translateY(-15px);
-                         width: 52vw;
-                         min-width: unset;
-                         padding: 22px !important;
-                         align-items: center;
-                         justify-content: space-around;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-15px);
+                    width: 52vw;
+                    min-width: unset;
+                    padding: 22px !important;
+                    align-items: center;
+                    justify-content: space-around;
+                    display: flex !important;
+                    overflow: hidden;
+                    position: relative;
+                    z-index: 0;
+
+                    &::after {
+                         @include pos;
+                         width: 100%;
+                         height: 100%;
                          background-image: url(../images/bg.png);
                          background-position: right;
                          background-repeat: no-repeat;
-                         background-size: contain;
-                         display: flex !important;
+                         background-size: cover;
+                         top: 0;
+                         left: 0;
+                         z-index: -1;
+
+                         [dir="rtl"] & {
+                              transform: scaleX(-1);
+                              filter: FlipH;
+                         }
+                    }
+
+                    @media (max-width: 1400px) {
+                         background-position: 20px center;
+                    }
+
+                    @include mq-max(xl) {
+                         width: 100%;
+                         padding: 0 !important;
                     }
                }
 
@@ -574,6 +603,7 @@ header {
           @include flex_common ($dis: flex, $align: center, $justify: space-between);
           flex-shrink: 0;
           padding: 20px 24px;
+          z-index: 1;
 
           .btn-close {
                padding: 0;
@@ -811,6 +841,10 @@ header {
                               }
                          }
 
+                         &:active {
+                              color: $black;
+                         }
+
 
                          &::after {
                               @include pos;
@@ -823,6 +857,11 @@ header {
                               border-radius: 50px;
                               transition: all .3s ease-in-out;
                               z-index: -1;
+
+                              [dir="rtl"] & {
+                                   left: unset;
+                                   right: 0;
+                              }
                          }
 
                          &:focus {
@@ -918,6 +957,10 @@ header {
 
                          .dropdown-menu-2 {
                               transform: translateX(-50%) translateY(0);
+
+                              [dir="rtl"] & {
+                                   transform: translateX(0);
+                              }
                          }
 
                          .dropdown-menu-left {
@@ -932,6 +975,7 @@ header {
                     >.dropdown-menu {
                          align-items: flex-start;
                          justify-content: space-between;
+                         flex-wrap: nowrap;
                     }
 
                     &:hover {
