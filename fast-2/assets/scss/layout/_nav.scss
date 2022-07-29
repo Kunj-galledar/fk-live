@@ -148,6 +148,10 @@ header {
           .dropdown-image {
                background-image: none;
 
+               &::after {
+                    content: none;
+               }
+
                .dropdown-column {
                     display: flex;
                     flex-wrap: nowrap;
@@ -395,6 +399,9 @@ header {
           @include pseudowh($width: auto, $height: auto);
           @include flex_common;
           font-size: 20px;
+          color: $title-color;
+          -webkit-text-fill-color: $title-color;
+          -webkit-opacity: 1;
 
           @include mq-max(md) {
                margin-right: 0;
