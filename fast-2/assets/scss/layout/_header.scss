@@ -6,6 +6,11 @@ header {
         &.nav-up {
             .top-header {
                 top: 0;
+                padding-bottom: 24px;
+
+                @include mq-max(md) {
+                    padding-bottom: 16px;
+                }
             }
 
             .main-menu {
@@ -2222,6 +2227,10 @@ header {
             @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
             align-items: flex-start;
 
+            @media (max-width: 1432px) {
+                display: none;
+            }
+
             .support-image {
                 img {
                     @include pseudowh($width: 33px, $height: auto);
@@ -2367,6 +2376,7 @@ header {
                 font-size: 25px;
                 margin-top: 2px;
                 color: $white;
+                -webkit-text-fill-color: $white;
             }
         }
 
@@ -2471,16 +2481,20 @@ header {
             }
 
             @include mq-max(lg) {
-                display: none;
+                margin-left: auto;
             }
 
             .center-box {
                 display: flex;
                 align-items: center;
 
-                @include mq-max(lg) {
-                    display: none;
-                }
+                // @include mq-max(lg) {
+                //     display: none;
+                // }
+            }
+
+            @include mq-max(md) {
+                display: block !important;
             }
 
             .searchbar-box-2 {
@@ -2564,8 +2578,22 @@ header {
                     margin-left: 0;
                 }
 
-                @include mq-max(md) {
-                    display: none;
+                // @include mq-max(md) {
+                //     display: none;
+                // }
+
+                &::before {
+                    @include pos;
+                    left: -13px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 1px;
+                    height: 80%;
+                    background-color: rgba($white, 0.2);
+
+                    @include mq-max(xs) {
+                        left: -6px;
+                    }
                 }
 
                 button {
@@ -2587,8 +2615,12 @@ header {
                             margin-left: 9px;
                         }
 
-                        @media (max-width: 1556px) {
+                        @include mq-max(lg) {
+                            @include flex_common;
+                            @include flex_common;
                             margin-right: 0;
+                            width: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320)));
+                            height: calc(35px + (46 - 35) * ((100vw - 320px) / (1920 - 320)));
                         }
                     }
 
@@ -2596,7 +2628,7 @@ header {
                         font-size: 16px;
                         color: $white;
 
-                        @media (max-width: 1556px) {
+                        @include mq-max(lg) {
                             display: none;
                         }
                     }
@@ -2610,7 +2642,7 @@ header {
                             margin-right: 10px;
                         }
 
-                        @media (max-width: 1556px) {
+                        @include mq-max(lg) {
                             display: none;
                         }
                     }
@@ -2624,6 +2656,12 @@ header {
         align-items: center;
         margin-left: auto;
 
+        &.support-sidemenu {
+            @media (max-width: 1432px) {
+                display: none;
+            }
+        }
+
         [dir="rtl"] & {
             margin-left: unset;
             margin-right: auto;
@@ -2631,13 +2669,30 @@ header {
 
         @include mq-max(xl) {
             position: absolute;
-            top: -47px;
+            top: -49px;
             right: 0;
 
             [dir="rtl"] & {
                 right: unset;
                 left: 0;
             }
+        }
+
+        @include mq-max(lg) {
+            top: -53px;
+            right: 78px;
+        }
+
+        @include mq-max(md) {
+            top: -51px;
+        }
+
+        @include mq-max(xs) {
+            top: -49px;
+        }
+
+        @include mq-max(2xs) {
+            right: 64px;
         }
 
         .dropdown-dollar {
@@ -2860,7 +2915,7 @@ header {
                     position: relative;
 
                     @include mq-max(xl) {
-                        border-color: rgba($white, 0.2);
+                        border: none;
                         background-color: transparent;
                     }
 
@@ -2893,6 +2948,7 @@ header {
                         @include mq-max(xl) {
                             background-color: $white;
                             color: var(--theme-color);
+                            top: -3px;
                         }
                     }
 
@@ -3028,7 +3084,7 @@ header {
                 position: relative;
 
                 @include mq-max(xl) {
-                    border-color: rgba($white, .2);
+                    border: none;
                     background-color: transparent;
                 }
 

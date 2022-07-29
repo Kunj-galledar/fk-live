@@ -2,21 +2,21 @@
      Product scss
 ==========================**/
 .qty-box {
-     margin-top: calc(12px + (22 - 12) * ((100vw - 320px) / (1920 - 320)));
-     width: 62%;
-     max-width: 200px;
+     margin-top: 10px;
+     width: 100%;
+     max-width: 206px;
 
-     @include mq-max(xs) {
-          width: 70%;
-     }
+     // @include mq-max(xs) {
+     //      width: 70%;
+     // }
 
-     @include mq-max(2xs) {
-          width: 100%;
-     }
+     // @include mq-max(2xs) {
+     //      width: 100%;
+     // }
 
      .input-group {
           background-color: $light-gray;
-          border-radius: 50px;
+          border-radius: 7px;
           padding: 4px;
           text-align: center;
           z-index: 0;
@@ -32,7 +32,7 @@
                @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))), $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
                background-color: $white;
                z-index: 0;
-               border-radius: 50% !important;
+               border-radius: 4px !important;
 
                i {
                     font-size: 13px;
@@ -1694,8 +1694,16 @@
      .product-image {
           position: relative;
 
+          &-2 {
+               img {
+                    @include mq-max(lg) {
+                         margin: 0 !important;
+                    }
+               }
+          }
+
           img {
-               @include pseudowh($width: 70%, $height: calc(95px + (140 - 95) * ((100vw - 320px) / (1920 - 320))));
+               @include pseudowh($width: 70%, $height: calc(80px + (140 - 80) * ((100vw - 320px) / (1920 - 320))));
                margin: 30px auto 20px;
                object-fit: contain;
 
