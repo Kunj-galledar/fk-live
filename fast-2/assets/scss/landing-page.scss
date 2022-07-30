@@ -2,14 +2,173 @@
 @import "utils/mixin/breakpoints";
 @import "utils/mixin/common";
 
-// Section Space
+//  typography scss
+body {
+    font-family: $public-sans;
+    position: relative;
+    font-size: 14px;
+    color: $title-color;
+    margin: 0;
+    background-color: $white;
+    transition: all 0.3s ease-in-out;
+    padding-right: 0 !important;
+
+    ::selection {
+        color: $white;
+        background-color: var(--theme-color);
+    }
+
+    .bg-overlay {
+        @include pseudowh($width: 100vw, $height: 100vh);
+        background-color: $title-color;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+
+        &.show {
+            visibility: visible;
+            opacity: 0.5;
+        }
+    }
+}
+
+ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+li {
+    display: inline-block;
+    font-size: 14px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+a {
+    color: var(--theme-color);
+    transition: 0.5s ease;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        transition: 0.5s ease;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-close {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+:focus {
+    outline: none;
+}
+
+.form-control {
+    background-color: $white;
+
+    &:focus {
+        box-shadow: none;
+        border-color: var(--theme-color);
+    }
+}
+
+h1 {
+    font-size: calc(40px + (70 - 40) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 600;
+    line-height: 1.1;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+h2 {
+    font-size: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 600;
+    line-height: 1;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+h3 {
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h4 {
+    font-size: calc(17px + (18 - 17) * ((100vw - 320px) / (1920 - 320)));
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 400;
+}
+
+h5 {
+    font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 400;
+}
+
+span {
+    display: inline-block;
+}
+
+.theme-color {
+    color: var(--theme-color) !important;
+}
+
+.theme-bg-color {
+    background: var(--theme-color) !important;
+}
+
+// animation Scss
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+// Section Space Scss
 section,
 .section-t-space {
-    padding-top: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
+    padding-top: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .section-b-space {
-    padding-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
+    padding-bottom: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.section-big-space {
+    padding-top: calc(30px + (150 - 30) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .container-fluid-lg {
@@ -46,7 +205,7 @@ a {
     }
 }
 
-// Button
+// Button Scss
 .btn {
     color: $title-color;
     padding: calc(7px + (14 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
@@ -69,29 +228,9 @@ a {
             transform: translateX(3px);
         }
     }
-
-    .icon {
-        margin-left: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
-        transition: 0.3s ease;
-
-        [dir="rtl"] & {
-            margin-left: unset;
-            margin-right: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
-        }
-
-        &-2 {
-            margin-left: 6px;
-            transition: 0.3s ease;
-
-            [dir="rtl"] & {
-                margin-left: unset;
-                margin-right: 6px;
-            }
-        }
-    }
 }
 
-// Ratio
+// Ratio Scss
 .ratio_46 {
     .bg-size {
         &:before {
@@ -102,84 +241,143 @@ a {
     }
 }
 
-// Home Section Start
+// Title Start Scss
+.title {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+
+    @include mq-max(3xl) {
+        width: 77%;
+    }
+
+    @include mq-max(lg) {
+        width: 100%;
+    }
+
+    h4 {
+        line-height: 1.5;
+        font-weight: 500;
+        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+    }
+}
+
+.main-title {
+    margin: calc(21px + (40 - 21) * ((100vw - 320px) / (1920 - 320))) 0 40px;
+    text-align: center;
+
+    h2 {
+        font-size: calc(29px + (40 - 29) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 700;
+        margin-bottom: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    h3 {
+        font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 700;
+    }
+}
+
+// Home Section Scss
 .home-section {
     position: relative;
-    // .home-bg-image {
-    //     width: 100%;
-    // }
+    background-image: url(../images/landing-image/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
     .home-icon {
         img {
             position: absolute;
+            animation: mover 5s infinite alternate;
+
+            @include mq-max(xl) {
+                display: none;
+            }
 
             &.image-1 {
                 top: 213px;
                 right: 0;
+                animation-delay: 1s;
             }
 
             &.image-2 {
                 top: 0;
                 left: 0;
+                animation-delay: 2s;
+
+                @include mq-max(3xl) {
+                    display: none;
+                }
             }
 
             &.image-3 {
                 bottom: 165px;
                 right: 21px;
+                animation-delay: 3s;
             }
 
             &.image-4 {
                 top: 105px;
                 right: 215px;
+                animation-delay: 4s;
             }
 
             &.image-5 {
                 top: 263px;
                 right: 312px;
+                animation-delay: 5s;
             }
 
             &.image-6 {
                 top: 166px;
                 right: 575px;
+                animation-delay: 6s;
             }
 
             &.image-7 {
                 top: 275px;
                 right: 435px;
+                animation-delay: 7s;
             }
 
             &.image-8 {
                 top: 100px;
                 left: 360px;
+                animation-delay: 8s;
             }
 
             &.image-9 {
                 top: 320px;
                 left: 165px;
+                animation-delay: 9s;
             }
         }
     }
 
     .home-image {
-        position: absolute;
-        top: 360px;
-        left: 0;
-        width: 100%;
-        height: auto;
-        text-align: center;
+        margin-top: calc(175px + (330 - 175) * ((100vw - 320px) / (1920 - 320)));
     }
 
     .home-contain {
         position: absolute;
-        top: 100px;
+        top: calc(26px + (100 - 26) * ((100vw - 320px) / (1920 - 320)));
         left: 50%;
         transform: translateX(-50%);
+        text-align: center;
+
+        @include mq-max(lg) {
+            width: 70%;
+        }
+
+        @include mq-max(xs) {
+            width: 100%;
+        }
 
         .check-landing {
-            display: flex;
-            align-items: center;
+            @include flex_common;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)));
 
             li {
                 display: flex;
@@ -191,10 +389,96 @@ a {
                 gap: 10px;
                 align-items: center;
 
-                h6 {
-                    margin: 0;
+                img {
+                    margin-top: -2px;
+                }
+
+                h4 {
+                    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
                 }
             }
         }
+
+        h1 {
+            margin-top: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
+            line-height: 1.5;
+            margin-bottom: 0;
+
+            font: {
+                size: calc(19px + (50 - 19) * ((100vw - 320px) / (1920 - 320)));
+                weight: 700;
+            }
+
+            span {
+                position: relative;
+                padding: 0 18px;
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Home Pages Section
+.layout-section {
+    .layout-page-box {
+        padding: 15px;
+        box-shadow: -6px 9px 30px rgba(13, 110, 92, 0.06);
+        background-color: $white;
+        position: relative;
+        margin-bottom: 36px;
+
+        @include mq-max(sm) {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            .layout-mobile {
+                opacity: 1;
+            }
+        }
+
+        .layout-mobile {
+            position: absolute;
+            bottom: -36px;
+            right: -8px;
+            opacity: 0;
+            transition: all .3s ease-in-out;
+            width: calc(30% + (100 - 30) * ((100vw - 575px) / (1920 - 575)));
+
+            @include mq-max(sm) {
+                opacity: 1;
+            }
+
+            @include mq-max(xs) {
+                bottom: -8px;
+            }
+        }
+
+        .layout-name {
+            margin-top: 20px;
+
+            h3 {
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+// Feature Scss
+.feature-section {
+    background: {
+        position: top;
+        image: url(../images/landing-image/feature-bg.png);
+        repeat: no-repeat;
+        size: cover;
     }
 }
