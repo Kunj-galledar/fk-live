@@ -121,6 +121,64 @@
      dots: true,
  });
 
+ $('.slider-2-landing').slick({
+     arrows: false,
+     dots: true,
+     infinite: true,
+     slidesToShow: 2,
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 2000,
+     centerMode: true,
+     centerPadding: '300px',
+     responsive: [{
+             breakpoint: 1586,
+             settings: {
+                 slidesToShow: 2,
+                 dots: true,
+                 centerMode: true,
+                 centerPadding: '300px',
+             }
+         },
+         {
+             breakpoint: 1140,
+             settings: {
+                 slidesToShow: 1,
+                 dots: true,
+                 centerMode: true,
+                 centerPadding: '300px',
+             }
+         },
+         {
+             breakpoint: 1075,
+             settings: {
+                 slidesToShow: 1,
+                 dots: true,
+                 centerMode: true,
+                 centerPadding: '150px',
+             }
+         },
+         {
+             breakpoint: 605,
+             settings: {
+                 slidesToShow: 1,
+                 dots: true,
+                 centerMode: true,
+                 centerPadding: '100px',
+             }
+         },
+         {
+             breakpoint: 400,
+             settings: {
+                 slidesToShow: 1,
+                 dots: true,
+                 centerMode: true,
+                 centerPadding: '50px',
+             }
+         },
+     ]
+ });
+
  $('.slider-3').slick({
      infinite: true,
      slidesToScroll: 1,
