@@ -11,24 +11,25 @@
 // 01. Image to background js
 // 02. Shop Page Grid Setting Js
 // 03. Footer function js
-// 04. Feather js
-// 05. mobile menu active class js
-// 06. btn-cart open close js
-// 07. quantity js
-// 08. Tap to Top js
-// 09. User Dashboard Left Sidebar Show js
-// 10. Tooltip js
-// 11. Cookie Bar js
-// 12. Image To Background js
-// 13. Hide header on scroll down js
-// 14. search box function Js
-// 15. Wishlist Js
-// 16. Loader Js
-// 17. header Dropdown Js
-// 18. Add to Cart Show Js
-// 19. active class Js
-// 20. Hide header on scroll down js
-// 21. setting - option open js
+// 04. mobile menu active class js
+// 05. btn-cart open close js
+// 06. quantity js
+// 07. Tap to Top js
+// 08. User Dashboard Left Sidebar Show js
+// 09. Tooltip js
+// 10. Cookie Bar js
+// 11. Image To Background js
+// 12. Hide header on scroll down js
+// 13. search box function Js
+// 14. Wishlist Js
+// 15. Loader Js
+// 16. header Dropdown Js
+// 17. Add to Cart Show Js
+// 18. active class Js
+// 19. Hide header on scroll down js
+// 20. setting - option open js
+// 21. user-dashboard profile change js
+// 22. Wishlist box remove js
 
 (function ($) {
     "use strict";
@@ -127,12 +128,7 @@ if (contentwidth < "576") {
 }
 
 /*=====================
-  04. Feather js
-   ==========================*/
-feather.replace();
-
-/*=====================
-  05. mobile menu active class js
+  04. mobile menu active class js
    ==========================*/
 $(document).ready(function () {
     $('.mobile-menu ul li a').click(function () {
@@ -142,7 +138,7 @@ $(document).ready(function () {
 });
 
 /*=====================
-  06. btn-cart open close js
+  05. btn-cart open close js
    ==========================*/
 $(document).ready(function () {
     $('.button-item').on("click", function () {
@@ -164,7 +160,7 @@ $(document).ready(function () {
 });
 
 /*=====================
-  07. quantity js
+  06. quantity js
    ==========================*/
 $('.qty-box .quantity-right-plus').on('click', function () {
     var $qty = $(this).parents(".qty-box").find(".input-number");
@@ -183,7 +179,7 @@ $('.qty-box .quantity-left-minus').on('click', function () {
 
 
 /*=====================
-  08. Tap to Top js
+  07. Tap to Top js
    ==========================*/
 $(document).ready(function () {
     $(window).scroll(function () {
@@ -203,7 +199,7 @@ $(document).ready(function () {
 });
 
 /*=====================
-   09. User Dashboard Left Sidebar Show Js
+   08. User Dashboard Left Sidebar Show Js
    ==========================*/
 $(".left-dashboard-show").click(function () {
     $(".bg-overlay, .dashboard-left-sidebar").addClass("show");
@@ -213,7 +209,7 @@ $(".close-button, .bg-overlay, .user-nav-pills .nav-item .nav-link").click(funct
 });
 
 /*=====================
-   10. Tooltip Js
+   09. Tooltip Js
    ==========================*/
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -221,14 +217,14 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 })
 
 /*=====================
-   11. Cookie Bar Js
+   10. Cookie Bar Js
    ==========================*/
 $(".ok-button").click(function () {
     $(".cookie-bar-box").addClass("hide");
 });
 
 /*=====================
-   12. Image To Background Js
+   11. Image To Background Js
    ==========================*/
 $(".bg-top").parent().addClass("b-top");
 $(".bg-bottom").parent().addClass("b-bottom");
@@ -255,7 +251,7 @@ $(".bg-img").each(function () {
 });
 
 /*=====================
-   13. Hide header on scroll down js
+   12. Hide header on scroll down js
 ==========================*/
 $(function () {
     var $window = $(window);
@@ -287,7 +283,7 @@ $(function () {
 });
 
 /*=====================
-   14. search box function Js
+   13. search box function Js
    ==========================*/
 $(".search-box").on("click", function () {
     $(this).closest(".rightside-box").find(".search-full").addClass("open");
@@ -305,7 +301,7 @@ $(window).on("load resize", function () {
 });
 
 /*=====================
-   15. Wishlist Js
+   14. Wishlist Js
    ==========================*/
 $(".notifi-wishlist").on("click", function () {
     $.notify({
@@ -346,7 +342,7 @@ $(".notifi-wishlist").on("click", function () {
 });
 
 /*=====================
-   16. Loader Js
+   15. Loader Js
    ==========================*/
 const loaderEl = document.getElementsByClassName("fullpage-loader")[0];
 document.addEventListener("readystatechange", (event) => {
@@ -361,7 +357,7 @@ document.addEventListener("readystatechange", (event) => {
 });
 
 /*=====================
-    17. header Dropdown Js
+    16. header Dropdown Js
  ==========================*/
 $(".dropdown-menu li a").on('click', function () {
     var a = $(this).closest("a");
@@ -374,7 +370,7 @@ $(".dropdown-menu li a").on('click', function () {
 });
 
 /*=====================
-   18. Add to Cart Show Js
+   17. Add to Cart Show Js
    ==========================*/
 $(".addCart").click(function () {
     $(".add-cart-box").addClass("show");
@@ -387,7 +383,7 @@ $(".add-cart-box .btn-close").click(function () {
 });
 
 /*=====================
-   19. active class Js
+   18. active class Js
    ==========================*/
 $(".product-packege .select-packege li a").click(function () {
     $("li a").removeClass("active");
@@ -395,7 +391,7 @@ $(".product-packege .select-packege li a").click(function () {
 });
 
 /*=====================
-   20. Hide header on scroll down js
+   19. Hide header on scroll down js
    ==========================*/
 $(function () {
     var $window = $(window);
@@ -429,7 +425,7 @@ $(function () {
 });
 
 /*=====================
-   21. setting-option open js
+   20. setting-option open js
    ==========================*/
 $(".theme-option .setting-box .setting-button").click(function () {
     $(".theme-setting-2").toggleClass("active");
@@ -437,7 +433,7 @@ $(".theme-option .setting-box .setting-button").click(function () {
 });
 
 /*=====================
-   22. user-dashboard profile change js
+   21. user-dashboard profile change js
    ==========================*/
 function readURL(uploader) {
     $('.update_img').attr('src',
@@ -445,7 +441,7 @@ function readURL(uploader) {
 };
 
 /*=====================
-   23. Wishlist box remove js
+   22. Wishlist box remove js
    ==========================*/
 $(".close_button").click(function () {
     $(this).closest(".product-box-contain").fadeOut("slow", function () {

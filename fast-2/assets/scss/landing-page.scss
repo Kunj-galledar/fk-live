@@ -146,6 +146,12 @@ span {
     background: var(--theme-color) !important;
 }
 
+.swiper-3d {
+    .swiper-slide-shadow {
+        background: rgba($title-color, 0.08);
+    }
+}
+
 // animation Scss
 @keyframes mover {
     0% {
@@ -170,11 +176,11 @@ span {
 // Section Space Scss
 section,
 .section-t-space {
-    padding-top: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+    padding-top: calc(30px + (70 - 30) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .section-b-space {
-    padding-bottom: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+    padding-bottom: calc(30px + (70 - 30) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .section-big-space {
@@ -246,6 +252,86 @@ a {
     }
 }
 
+.btn-md {
+    color: $title-color;
+    padding: 12px 19px;
+    font-weight: 500;
+    background: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    @include flex_common;
+    border: none;
+    font-size: 16px;
+    z-index: 0;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    gap: 8px;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &:hover {
+        .icon {
+            transform: translateX(3px);
+        }
+    }
+
+    .icon {
+        margin-left: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
+        transition: 0.3s ease;
+
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+
+    &-animation {
+        overflow: hidden;
+        color: $white;
+        border-radius: 5px;
+        font-weight: 600;
+        background: transparent;
+        transition: all 0.3s ease;
+        position: relative;
+        @include flex_common;
+        background: #ff6b6b;
+        background: linear-gradient(90deg, #ff6b6b 0%, #ff4f4f 100%);
+        border: none;
+        z-index: 0;
+
+        i {
+            transition: 0.3s ease;
+        }
+
+        &::after {
+            @include pos;
+            @include pseudowh($width: 100%, $height: 0);
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 5px;
+            background: #ff4f4f;
+            background: linear-gradient(90deg, #ff4f4f 0%, #ff6b6b 100%);
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            color: $white;
+
+            i {
+                transform: translateX(3px);
+            }
+
+            &::after {
+                top: 0;
+                height: 100%;
+            }
+        }
+    }
+}
+
 // Ratio Scss
 .ratio_46 {
     .bg-size {
@@ -295,8 +381,7 @@ a {
             top: unset;
             transform: unset;
             z-index: 1;
-            height: auto;
-            width: auto;
+            @include pseudowh($width: auto, $height: auto);
 
             &::before {
                 content: "";
@@ -326,7 +411,7 @@ a {
     .slick-dots {
         position: relative;
         bottom: 0;
-        margin-top: calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320)));
+        margin-top: calc(18px + (35 - 18) * ((100vw - 320px) / (1920 - 320)));
         @include flex_common;
 
         li {
@@ -366,41 +451,11 @@ a {
         right: 0;
         text-align: center;
     }
-
-    &.slick-slider {
-        &.slick-dotted {
-            margin-bottom: -2px;
-        }
-    }
 }
 
 // Title Start Scss
 .title {
-    text-align: center;
-    width: 60%;
-    margin: 0 auto;
-
-    @include mq-max(3xl) {
-        width: 77%;
-    }
-
-    @include mq-max(lg) {
-        width: 100%;
-    }
-
-    &-2 {
-        margin-bottom: 55px;
-    }
-
-    h4 {
-        line-height: 1.5;
-        font-weight: 500;
-        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
-    }
-}
-
-.main-title {
-    margin: calc(21px + (40 - 21) * ((100vw - 320px) / (1920 - 320))) 0 calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
+    margin-bottom: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
     text-align: center;
 
     &.main-small-space {
@@ -415,8 +470,139 @@ a {
     }
 
     h3 {
-        font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
-        font-weight: 700;
+        font-weight: 500;
+        margin-bottom: 3px;
+    }
+
+    p {
+        width: 60%;
+        font-size: 14px;
+        line-height: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        line-height: 1.5;
+        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+        &.heading-foot {
+            width: 80%;
+
+            @include mq-max(lg) {
+                width: 100%;
+            }
+        }
+
+        @include mq-max(3xl) {
+            width: 77%;
+        }
+
+        @include mq-max(lg) {
+            width: 100%;
+        }
+    }
+}
+
+// Header Scss
+header {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+
+    &.active {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $white;
+        box-shadow: 0 8px 10px rgba($title-color, 0.05);
+    }
+
+    // &.nav-down {
+    //     &.nav-up {
+    //         .top-header {
+    //             top: 0;
+    //             padding: 8px 0;
+
+    //             @include mq-max(md) {
+    //                 padding-bottom: 16px;
+    //             }
+    //         }
+
+    //         .main-menu {
+    //             padding: 10px 0;
+    //         }
+    //     }
+
+    //     .top-header {
+    //         position: fixed;
+    //         top: -100px;
+    //         left: 0;
+    //         width: 100%;
+    //         margin-top: 0;
+    //         background-color: $white;
+    //         box-shadow: 0 4px 8px rgba($title-color, 0.05), 0 24px 35px rgba($title-color, 0.01);
+    //         transition: all 0.5s ease;
+    //         z-index: 6;
+
+    //         @include mq-max(md) {
+    //             padding: 16px 0;
+    //         }
+    //     }
+    // }
+
+    .custom-navbar {
+        .navbar-brand {
+            margin: 0;
+            padding: 0;
+            font-size: 0;
+
+            img {
+                @include pseudowh($width: calc(127px + (204 - 127) * ((100vw - 320px) / (1920 - 320))), $height: auto);
+            }
+        }
+
+        .navbar-toggler {
+            margin-right: calc(10px + (26 - 10) * ((100vw - 320px) / (1920 - 320)));
+            border: none;
+            padding: 0;
+
+            .navbar-toggler-icon {
+                @include pseudowh($width: 23px, $height: 23px);
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .navbar-collapse {
+            .navbar-nav {
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 37px);
+
+                @include mq-max(xl) {
+                    padding: calc(11px + (20 - 11) * ((100vw - 320px) / (1199 - 320))) calc(19px + (26 - 19) * ((100vw - 320px) / (1199 - 320)));
+                    background: #f1f1f1;
+                    border-radius: 8px;
+                    margin-top: 9px;
+                    gap: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                .nav-item {
+                    .nav-link {
+                        padding: 0;
+                        color: $title-color;
+                        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+                        &.active {
+                            color: var(--theme-color);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -427,11 +613,13 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    z-index: 0;
 
     .home-icon {
         img {
             position: absolute;
-            animation: mover 5s infinite alternate;
+            animation: mover 2s infinite alternate;
+            z-index: -1;
 
             @include mq-max(xl) {
                 display: none;
@@ -498,14 +686,13 @@ a {
     }
 
     .home-image {
-        margin-top: calc(175px + (320 - 175) * ((100vw - 320px) / (1920 - 320)));
+        margin-top: calc(220px + (420 - 220) * ((100vw - 320px) / (1920 - 320)));
     }
 
     .home-contain {
         position: absolute;
-        top: calc(26px + (100 - 26) * ((100vw - 320px) / (1920 - 320)));
-        left: 50%;
-        transform: translateX(-50%);
+        top: calc(82px + (180 - 82) * ((100vw - 320px) / (1920 - 320)));
+        @include center(horizontal);
         text-align: center;
 
         @include mq-max(lg) {
@@ -522,13 +709,7 @@ a {
             gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)));
 
             li {
-                display: flex;
-                flex-wrap: nowrap;
-                gap: 10px;
-                align-items: center;
-                display: flex;
-                flex-wrap: nowrap;
-                gap: 10px;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
                 align-items: center;
 
                 img {
@@ -542,26 +723,26 @@ a {
         }
 
         h1 {
-            margin-top: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
+            margin-top: calc(11px + (36 - 11) * ((100vw - 320px) / (1920 - 320)));
             line-height: 1.5;
             margin-bottom: 0;
 
             font: {
-                size: calc(19px + (50 - 19) * ((100vw - 320px) / (1920 - 320)));
+                size: calc(18px + (50 - 18) * ((100vw - 320px) / (1920 - 320)));
                 weight: 700;
             }
 
             span {
                 position: relative;
                 padding: 0 18px;
+                z-index: 0;
 
                 img {
+                    z-index: -1;
                     position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    @include center(vertical);
                     left: 0;
-                    width: 100%;
-                    height: 100%;
+                    @include pseudowh;
                 }
             }
         }
@@ -572,13 +753,22 @@ a {
 .layout-section {
     .layout-page-box {
         padding: 15px;
-        box-shadow: -6px 9px 30px rgba(13, 110, 92, 0.06);
+        box-shadow: 0 0 30px rgba($title-color, 0.05);
         background-color: $white;
         position: relative;
-        margin-bottom: 36px;
 
         @include mq-max(sm) {
             margin-bottom: 0;
+        }
+
+        &:hover {
+            .layout-image {
+                a {
+                    .link-button {
+                        transform: scale(1);
+                    }
+                }
+            }
         }
 
         .layout-image {
@@ -586,6 +776,20 @@ a {
                 display: block;
                 height: auto;
                 object-fit: contain;
+                position: relative;
+
+                .link-button {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(13, 164, 135, 0.3);
+                    @include flex_common;
+                    transition: all .3s ease-in-out;
+                    transform-origin: center;
+                    transform: scale(0);
+                }
 
                 img {
                     height: auto;
@@ -593,35 +797,19 @@ a {
             }
         }
 
-        .layout-mobile {
-            position: absolute;
-            bottom: -36px;
-            right: -8px;
-            transition: all .3s ease-in-out;
-            width: 163px;
-            height: 343px;
-
-            @include mq-max(sm) {
-                opacity: 1;
-            }
-
-            @include mq-max(xs) {
-                bottom: -80px;
-                width: 140px;
-            }
-
-            @include mq-max(2xs) {
-                bottom: -150px;
-                width: 100px;
-            }
-        }
-
         .layout-name {
             margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
             h3 {
                 font-weight: 600;
                 margin-bottom: 5px;
+            }
+
+            h5 {
+                color: $content-color;
             }
         }
     }
@@ -643,7 +831,7 @@ a {
 
         img {
             position: absolute;
-            animation: mover 5s infinite alternate;
+            animation: mover 2s infinite alternate;
 
             &.img-1 {
                 bottom: 73px;
@@ -670,17 +858,13 @@ a {
             &:first-child {
                 padding-top: 150px;
 
-                @include mq-max(lg) {
+                @include mq-max(xl) {
                     padding-top: 0;
                 }
             }
 
             &:last-child {
                 padding-top: 223px;
-
-                // @media (max-width: 1399px) {
-                //     padding-top: 0;
-                // }
 
                 @include mq-max(xl) {
                     padding-top: 0;
@@ -701,20 +885,17 @@ a {
             @include pos;
             bottom: -4%;
             left: -4%;
-            width: 70%;
-            height: 70%;
+            @include pseudowh($width: 70%, $height: 70%);
             border: 1px dashed rgba($title-color, 0.4);
             z-index: -1;
         }
 
         &-2 {
             &::before {
+                @include pseudowh($width: 70%, $height: 70%);
                 @include pos;
+                @include center(horizontal);
                 bottom: -4%;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 70%;
-                height: 70%;
                 border: 1px dashed rgba($title-color, 0.4);
                 z-index: -1;
             }
@@ -726,8 +907,7 @@ a {
                 bottom: -4%;
                 right: -4%;
                 left: unset;
-                width: 70%;
-                height: 70%;
+                @include pseudowh($width: 70%, $height: 70%);
                 border: 1px dashed rgba($title-color, 0.4);
                 z-index: -1;
             }
@@ -744,8 +924,7 @@ a {
                 position: relative;
 
                 .main-img {
-                    width: 100%;
-                    height: calc(180px + (263 - 180) * ((100vw - 320px) / (1920 - 320)));
+                    @include pseudowh($width: 100%, $height: calc(180px + (263 - 180) * ((100vw - 320px) / (1920 - 320))));
                     object-fit: contain;
                 }
 
@@ -756,15 +935,18 @@ a {
 
                     img {
                         position: absolute;
+                        animation: mover 2s infinite alternate;
 
                         &.img-header {
                             top: 12px;
                             left: -96px;
+                            animation-delay: 5s;
                         }
 
                         &.img-footer {
                             bottom: -13px;
                             right: -70px;
+                            animation-delay: 9s;
                         }
                     }
                 }
@@ -821,16 +1003,7 @@ a {
                         border-top: transparent;
                         position: relative;
                         background: transparent;
-                        padding-bottom: 13px;
-
-                        &::before {
-                            background: linear-gradient(180deg, rgba($white, 0) 0%, $white 192.86%);
-                            @include pos;
-                            width: 100%;
-                            height: 23%;
-                            bottom: 0;
-                            left: 0;
-                        }
+                        padding-bottom: calc(8px + (13 - 8) * ((100vw - 320px) / (1920 - 320)));
                     }
                 }
             }
@@ -838,7 +1011,48 @@ a {
     }
 
     .nav-tabs-section {
-        margin-top: calc(-40px + (-100 - -40) * ((100vw - 320px) / (1920 - 320)));
+        margin-top: calc(-55px + (-115 - -55) * ((100vw - 320px) / (1920 - 320)));
+
+        .slider-image {
+            padding-bottom: 16px;
+            transition: all .3s ease-in-out;
+            padding-top: 15px;
+
+            &:hover {
+                transform: translateY(-8px);
+
+                a {
+                    // img {
+                    //     transform: translateY(-8px);
+                    // }
+
+                    .visit-button {
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            a {
+                display: block;
+                position: relative;
+
+                img {
+                    box-shadow: -4.31566px 6.47349px 21.5783px rgba($title-color, 0.06);
+                }
+
+                .visit-button {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include pseudowh;
+                    background-color: rgba($title-color, 0.161);
+                    @include flex_common;
+                    transform-origin: center;
+                    transform: scale(0);
+                    transition: all .3s ease-in-out;
+                }
+            }
+        }
     }
 }
 
@@ -851,10 +1065,7 @@ a {
         background-size: cover;
         animation: floating 110s linear infinite reverse;
         background-repeat: repeat-x !important;
-
-        img {
-            opacity: 0;
-        }
+        height: calc(57vh + (100 - 57) * ((100vw - 320px) / (1920 - 320)));
     }
 }
 
@@ -879,42 +1090,39 @@ a {
 
                 &:first-child,
                 &:nth-child(3) {
-                    padding-top: 80px;
+                    padding-top: calc(0px + (80 - 0) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 &:nth-child(4) {
-                    padding-top: 148px;
+                    padding-top: calc(0px + (148 - 0) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 &:nth-child(5) {
-                    padding-top: 70px;
+                    padding-top: calc(0px + (70 - 0) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 &:last-child {
-                    padding-top: 12px;
+                    padding-top: calc(0px + (12 - 0) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 &:first-child,
                 &:last-child {
                     .core-feature-image {
-                        width: 178px;
-                        height: 178px;
+                        @include pseudowh($width: calc(118px + (178 - 118) * ((100vw - 320px) / (1920 - 320))), $height: calc(118px + (178 - 118) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
 
                 &:nth-child(2),
                 &:nth-child(4) {
                     .core-feature-image {
-                        width: 142px;
-                        height: 142px;
+                        @include pseudowh($width: calc(118px + (142 - 118) * ((100vw - 320px) / (1920 - 320))), $height: calc(118px + (142 - 118) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
 
                 &:nth-child(3),
                 &:nth-child(5) {
                     .core-feature-image {
-                        width: 155px;
-                        height: 155px;
+                        @include pseudowh($width: calc(118px + (155 - 118) * ((100vw - 320px) / (1920 - 320))), $height: calc(118px + (155 - 118) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
             }
@@ -923,16 +1131,13 @@ a {
 
     .core-feature-box {
         +.core-feature-box {
-            margin-top: 65px;
+            margin-top: calc(16px + (65 - 16) * ((100vw - 320px) / (1920 - 320)));
         }
 
         &:hover {
             .core-feature-image {
                 box-shadow: 0px 7px 30px rgba($title-color, 0.08);
-
-                img {
-                    filter: grayscale(0);
-                }
+                transform: translateY(-5px);
             }
         }
 
@@ -945,19 +1150,19 @@ a {
             transition: 0.4s ease-in;
 
             img {
-                height: 85px;
-                width: 85px;
-                filter: grayscale(1);
+                @include pseudowh($width: calc(50px + (85 - 50) * ((100vw - 320px) / (1920 - 320))), $height: calc(50px + (85 - 50) * ((100vw - 320px) / (1920 - 320))));
                 transition: 0.4s ease-in;
+                object-fit: contain;
             }
         }
 
         .core-feature-name {
-            margin-top: 22px;
+            margin-top: calc(11px + (22 - 11) * ((100vw - 320px) / (1920 - 320)));
             text-align: center;
 
             h4 {
                 text-transform: capitalize;
+                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
             }
         }
     }
@@ -978,18 +1183,18 @@ footer {
         text-align: center;
 
         h2 {
-            font-size: calc(31px + (60 - 31) * ((100vw - 320px) / (1920 - 320)));
-            margin-bottom: calc(17px + (45 - 17) * ((100vw - 320px) / (1920 - 320)));
+            font-size: calc(25px + (45 - 25) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: calc(14px + (33 - 14) * ((100vw - 320px) / (1920 - 320)));
         }
 
         .theme-rating {
             @include flex_common;
             flex-wrap: wrap;
-            gap: calc(6px + (18 - 6) * ((100vw - 320px) / (1920 - 320)));
-            margin-bottom: 42px;
+            gap: calc(2px + (18 - 2) * ((100vw - 320px) / (1920 - 320)));
+            margin-bottom: calc(19px + (42 - 19) * ((100vw - 320px) / (1920 - 320)));
 
             h3 {
-                font-size: calc(17px + (26 - 17) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
             }
 
             .rating {
@@ -997,8 +1202,7 @@ footer {
                     .feather {
                         fill: #FFB016;
                         stroke: #FFB016;
-                        width: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320)));
-                        height: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320)));
+                        @include pseudowh($width: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))), $height: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
             }
@@ -1006,8 +1210,12 @@ footer {
     }
 
     .sub-footer {
-        padding: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320))) 0;
         border-top: 1px solid rgba($white, 0.1);
         text-align: center;
+
+        h4 {
+            font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+        }
     }
 }

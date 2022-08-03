@@ -141,25 +141,25 @@
              }
          },
          {
-             breakpoint: 1140,
+             breakpoint: 1420,
              settings: {
-                 slidesToShow: 1,
+                 slidesToShow: 2,
                  dots: true,
                  centerMode: true,
-                 centerPadding: '300px',
+                 centerPadding: '200px',
              }
          },
          {
-             breakpoint: 1075,
+             breakpoint: 992,
              settings: {
-                 slidesToShow: 1,
+                 slidesToShow: 2,
                  dots: true,
                  centerMode: true,
-                 centerPadding: '150px',
+                 centerPadding: '50px',
              }
          },
          {
-             breakpoint: 605,
+             breakpoint: 767,
              settings: {
                  slidesToShow: 1,
                  dots: true,
@@ -168,12 +168,12 @@
              }
          },
          {
-             breakpoint: 400,
+             breakpoint: 650,
              settings: {
                  slidesToShow: 1,
                  dots: true,
                  centerMode: true,
-                 centerPadding: '50px',
+                 centerPadding: '25px',
              }
          },
      ]
