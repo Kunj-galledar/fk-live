@@ -254,7 +254,7 @@ a {
 
 .btn-md {
     color: $title-color;
-    padding: 12px 19px;
+    padding: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))) calc(11px + (19 - 11) * ((100vw - 320px) / (1920 - 320)));
     font-weight: 500;
     background: transparent;
     transition: all 0.3s ease;
@@ -265,16 +265,10 @@ a {
     z-index: 0;
     white-space: nowrap;
     flex-wrap: nowrap;
-    gap: 8px;
+    gap: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
 
     &:focus {
         box-shadow: none;
-    }
-
-    &:hover {
-        .icon {
-            transform: translateX(3px);
-        }
     }
 
     .icon {
@@ -319,10 +313,6 @@ a {
 
         &:hover {
             color: $white;
-
-            i {
-                transform: translateX(3px);
-            }
 
             &::after {
                 top: 0;
