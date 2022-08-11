@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-</head>
-<body>
-	
+var all = document.getElementsByTagName("*"), i = 0, rect, docWidth = document.documentElement.offsetWidth;
+for (; i < all.length; i++) {
+rect = all[i].getBoundingClientRect();
+if (rect.right > docWidth || rect.left < 0){
+console.log(all[i]);
+all[i].style.borderTop = '1px solid red';
+}
+}
 
-</body>
-</html>
+
+
+                        &:active {
+                            background-color: var(--theme-color);
+                            color: $white;
+                        }

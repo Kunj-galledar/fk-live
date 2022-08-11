@@ -253,34 +253,34 @@ $(".bg-img").each(function () {
 /*=====================
    12. Hide header on scroll down js
 ==========================*/
-$(function () {
-    var $window = $(window);
-    var lastScrollTop = 0;
-    var $header = $("header");
-    var headerHeight = $header.outerHeight();
+// $(function () {
+//     var $window = $(window);
+//     var lastScrollTop = 0;
+//     var $header = $("header");
+//     var headerHeight = $header.outerHeight();
 
-    $window.scroll(function () {
-        var windowTop = $window.scrollTop();
+//     $window.scroll(function () {
+//         var windowTop = $window.scrollTop();
 
-        if (windowTop >= headerHeight) {
-            $header.addClass("nav-down");
-        } else {
-            $header.removeClass("nav-down");
-            $header.removeClass("nav-up");
-        }
+//         if (windowTop >= headerHeight) {
+//             $header.addClass("nav-down");
+//         } else {
+//             $header.removeClass("nav-down");
+//             $header.removeClass("nav-up");
+//         }
 
-        if ($header.hasClass("nav-down")) {
-            if (windowTop < lastScrollTop) {
-                $header.addClass("nav-up");
-            } else {
-                $header.removeClass("nav-up");
-            }
-        }
-        $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
-        lastScrollTop = windowTop;
-        $("#windowtop").text("scrollTop: " + windowTop);
-    });
-});
+//         if ($header.hasClass("nav-down")) {
+//             if (windowTop < lastScrollTop) {
+//                 $header.addClass("nav-up");
+//             } else {
+//                 $header.removeClass("nav-up");
+//             }
+//         }
+//         $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
+//         lastScrollTop = windowTop;
+//         $("#windowtop").text("scrollTop: " + windowTop);
+//     });
+// });
 
 /*=====================
    13. search box function Js
@@ -393,35 +393,43 @@ $(".product-packege .select-packege li a").click(function () {
 /*=====================
    19. Hide header on scroll down js
    ==========================*/
-$(function () {
-    var $window = $(window);
-    var lastScrollTop = 0;
-    var $header = $("header");
-    var headerHeight = $header.outerHeight();
+// $(function () {
+//     var $window = $(window);
+//     var lastScrollTop = 0;
+//     var $header = $("header");
+//     var headerHeight = $header.outerHeight();
 
-    $window.scroll(function () {
-        var windowTop = $window.scrollTop();
+//     $window.scroll(function () {
+//         var windowTop = $window.scrollTop();
 
-        if (windowTop >= headerHeight) {
-            $header.addClass("nav-down");
-        } else {
-            $header.removeClass("nav-down");
-            $header.removeClass("nav-up");
-        }
+//         if (windowTop >= headerHeight) {
+//             $header.addClass("nav-down");
+//         } else {
+//             $header.removeClass("nav-down");
+//             $header.removeClass("nav-up");
+//         }
 
-        if ($header.hasClass("nav-down")) {
-            if (windowTop < lastScrollTop) {
-                $header.addClass("nav-up");
-            } else {
-                $header.removeClass("nav-up");
-            }
-        }
-        $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
+//         if ($header.hasClass("nav-down")) {
+//             if (windowTop < lastScrollTop) {
+//                 $header.addClass("nav-up");
+//             } else {
+//                 $header.removeClass("nav-up");
+//             }
+//         }
+//         $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
 
-        lastScrollTop = windowTop;
+//         lastScrollTop = windowTop;
 
-        $("#windowtop").text("scrollTop: " + windowTop);
-    });
+//         $("#windowtop").text("scrollTop: " + windowTop);
+//     });
+// });
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+        $('header').addClass('active')
+    } else {
+        $('header').removeClass('active')
+    }
 });
 
 /*=====================

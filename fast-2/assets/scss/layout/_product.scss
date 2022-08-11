@@ -1610,6 +1610,10 @@
 
      &:hover {
           .product-image {
+               img {
+                    transform: scale(1.08);
+               }
+
                .option {
                     li {
                          opacity: 1;
@@ -1696,6 +1700,8 @@
 
           &-2 {
                img {
+                    margin: 20px 0 !important;
+
                     @include mq-max(lg) {
                          margin: 0 !important;
                     }
@@ -1706,6 +1712,7 @@
                @include pseudowh($width: 70%, $height: calc(80px + (140 - 80) * ((100vw - 320px) / (1920 - 320))));
                margin: 30px auto 20px;
                object-fit: contain;
+               transition: all .3s ease-in-out;
 
                @include mq-max(xs) {
                     width: 80%;
