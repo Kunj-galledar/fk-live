@@ -456,3 +456,13 @@ $(".close_button").click(function () {
         $(this).closest(".product-box-contain").remove();
     });
 });
+
+/*=====================
+   23. Category Box js
+   ==========================*/
+$(".mobile-category").click(function () {
+    $(".bg-overlay, .category-dropdown").addClass("show");
+});
+$(".close-button, .bg-overlay").click(function () {
+    $(".bg-overlay, .category-dropdown").removeClass("show");
+});

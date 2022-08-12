@@ -2,8 +2,28 @@
     Blog scss 
  ========================== */
 .blog-box {
-    .blog-image {
+    &:hover {
+        .blog-box-image {
+            a {
+                transform: scale(1.12) rotate(3deg);
+                overflow: hidden;
+            }
+        }
+
+        .blog-detail {
+            h5 {
+                color: var(--theme-color);
+            }
+        }
+    }
+
+    .blog-box-image {
+        overflow: hidden;
         border-radius: 5px;
+
+        .blog-image {
+            transition: all .3s ease-in-out;
+        }
     }
 
     .blog-detail {
@@ -25,6 +45,7 @@
             line-height: 1.5;
             font-weight: 600;
             font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+            transition: all .3s ease-in-out;
         }
     }
 }
@@ -37,6 +58,34 @@
         overflow: hidden;
         position: relative;
         height: 100%;
+
+        &:hover {
+            .blog-box-image {
+                a {
+                    transform: scale(1.12) rotate(3deg);
+                    overflow: hidden;
+                }
+            }
+
+            .blog-detail {
+                label {
+                    color: $white;
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .blog-box-image {
+            overflow: hidden;
+            border-radius: 0;
+
+            a {
+                transition: all .3s ease-in-out;
+            }
+        }
 
         .blog-image {
             position: relative;
@@ -73,16 +122,18 @@
                 margin-bottom: 12px;
                 position: relative;
                 overflow: hidden;
+                z-index: 0;
+                transition: all .3s ease-in-out;
 
                 &::before {
-                    content: "";
-                    position: absolute;
+                    @include pos;
+                    @include pseudowh;
                     top: 0;
                     left: 0;
-                    width: 100%;
-                    height: 100%;
                     background-color: var(--theme-color);
                     opacity: .1;
+                    z-index: -1;
+                    transition: all .3s ease-in-out;
                 }
             }
 

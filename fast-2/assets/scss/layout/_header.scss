@@ -4,7 +4,7 @@
 header {
     &.active {
         .sticky-header {
-            position: sticky;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -12,6 +12,12 @@ header {
             color: $title-color;
             box-shadow: 0 8px 10px rgba($title-color, 0.05);
             z-index: 9;
+            padding: 24px 0;
+
+            &-2 {
+                background-color: var(--theme-color);
+                padding: 14px 0;
+            }
 
             // .navbar-top {
             //     .rightside-box {
@@ -659,7 +665,8 @@ header {
             }
 
             &-login {
-                width: auto;
+                right: 0;
+                width: 160px;
                 padding: 20px;
 
                 .user-box-name {
@@ -857,10 +864,6 @@ header {
         .header-nav-left {
             position: relative;
 
-            @include mq-max(md) {
-                display: none;
-            }
-
             .dropdown-category {
                 @include flex_common;
                 padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) calc(16px + (31 - 16) * ((100vw - 320px) / (1920 - 320)));
@@ -868,6 +871,10 @@ header {
                 color: $white;
                 border-radius: 5px;
                 border: none;
+
+                @include mq-max(md) {
+                    display: none;
+                }
 
                 &-2 {
                     background: linear-gradient(93.33deg, #222221 12.35%, #2F2F2D 99.38%);
@@ -956,6 +963,136 @@ header {
                                 &:focus,
                                 &:hover {
                                     background-color: $border-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .category-dropdown {
+                    opacity: 1;
+                    visibility: visible;
+                    top: 63px;
+                }
+            }
+
+            .category-dropdown {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                background-color: $white;
+                box-shadow: 0 0 8px #ddd;
+                z-index: 2;
+                width: 270px;
+                border-radius: 6px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all .3s ease-in-out;
+
+                @include mq-max(md) {
+                    position: fixed;
+                    top: 0;
+                    left: -320px;
+                    width: calc(300px + (320 - 300) * ((100vw - 320px) / (1920 - 320)));
+                    height: 100vh;
+                    border-radius: 0;
+                    z-index: 10;
+                    padding: 0;
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all .3s ease-in-out;
+                    box-shadow: none;
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: -320px;
+                    }
+
+                    &.show {
+                        left: 0;
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 0;
+                        }
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                        visibility: visible;
+                        top: 0;
+                    }
+                }
+
+                .category-title {
+                    display: none;
+
+                    @include mq-max(md) {
+                        padding: 20px 24px;
+                        border-bottom: 1px solid #ececec;
+                        box-shadow: 0 2px 10px -3px rgba($title-color, 0.1);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
+                    h5 {
+                        color: var(--theme-color);
+                        font-weight: 600;
+                    }
+                }
+
+                .category-list {
+                    padding: 20px 25px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 25px;
+
+                    li {
+                        display: block;
+                        width: 100%;
+
+                        a {
+                            display: flex;
+                            align-items: center;
+                            color: $content-color;
+
+                            &:hover {
+                                h6 {
+                                    letter-spacing: 0.3px;
+
+                                    &::before {
+                                        width: 65px;
+                                    }
+                                }
+                            }
+
+                            h6 {
+                                font-size: 17px;
+                                font-weight: 500;
+                                position: relative;
+                                transition: all .3s ease-in-out;
+
+                                &:before {
+                                    @include pos;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: 0;
+                                    height: 3px;
+                                    background-color: var(--theme-color);
+                                    opacity: 0.5;
+                                    transition: all .3s ease-in-out;
+                                }
+                            }
+
+                            i {
+                                margin-left: auto;
+
+                                [dir="rtl"] & {
+                                    margin-left: unset;
+                                    margin-right: auto;
                                 }
                             }
                         }

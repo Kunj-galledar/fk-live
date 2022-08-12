@@ -312,6 +312,14 @@ footer {
                     &::before {
                         content: none !important;
                     }
+
+                    a {
+                        display: block;
+
+                        img {
+                            width: 140px;
+                        }
+                    }
                 }
             }
         }
@@ -336,8 +344,24 @@ footer {
                     position: relative;
 
                     &:last-child {
+                        margin-bottom: 0;
+
                         &::before {
                             content: none;
+                        }
+                    }
+
+                    &.social-app {
+                        ul {
+                            li {
+                                a {
+                                    display: block;
+
+                                    img {
+                                        width: 139px;
+                                    }
+                                }
+                            }
                         }
                     }
 
@@ -437,8 +461,19 @@ footer {
                 }
 
                 li {
-                    i {
-                        color: $content-color;
+                    &:hover {
+                        i {
+                            transform: translateY(-5px);
+                        }
+                    }
+
+                    a {
+                        display: block;
+
+                        i {
+                            color: $content-color;
+                            transition: all .3s ease-in-out;
+                        }
                     }
 
                     +li {
@@ -526,11 +561,19 @@ footer {
                 border-radius: 50%;
                 position: relative;
                 z-index: 0;
+                transition: all .3s ease-in-out;
 
                 &.light-bg {
                     &::after {
                         background-color: $white;
                         opacity: .1;
+                        transition: all .3s ease-in-out;
+                    }
+
+                    &:hover {
+                        &::after {
+                            opacity: 0.3;
+                        }
                     }
                 }
 
@@ -545,10 +588,24 @@ footer {
                     z-index: -1;
                 }
 
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+
+                    i {
+                        color: $white
+                    }
+                }
+
                 a {
                     @include pseudowh;
                     @include flex_common;
                     color: $content-color;
+
+                    i {
+                        transition: all .3s ease-in-out;
+                    }
 
                     &.footer-link-color {
                         color: $white;
@@ -619,6 +676,15 @@ footer {
                     align-items: center;
                     font-size: 16px;
 
+                    i {
+                        margin-right: 10px;
+
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 10px;
+                        }
+                    }
+
                     &.light-text {
                         color: #bfbfbf;
                     }
@@ -661,12 +727,27 @@ footer {
                         }
                     }
 
-                    i {
-                        margin-right: 10px;
+                    &.footer-contain-2 {
+                        &::before {
+                            content: "\f105";
+                            @include font;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                            width: unset;
+                            height: unset;
+                            opacity: 0;
+                            background: none;
+                            color: var(--theme-color);
+                        }
 
-                        [dir="rtl"] & {
-                            margin-right: unset;
-                            margin-left: 10px;
+                        &:hover {
+                            padding-left: 6px;
+                            color: var(--theme-color);
+
+                            &::before {
+                                opacity: 1;
+                            }
                         }
                     }
                 }

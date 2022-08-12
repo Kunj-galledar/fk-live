@@ -340,6 +340,16 @@
                     }
 
                     &.product-detail {
+                        &:hover {
+                            .product {
+                                .product-image {
+                                    img {
+                                        transform: scale(1.1);
+                                    }
+                                }
+                            }
+                        }
+
                         ul {
                             li {
                                 +li {
@@ -351,6 +361,7 @@
                         .product {
                             display: flex;
                             align-items: center;
+                            overflow: hidden;
 
                             @include mq-max(2xl) {
                                 align-items: flex-start;
@@ -373,6 +384,10 @@
 
                                 @include mq-max(2xs) {
                                     width: 70px;
+                                }
+
+                                img {
+                                    transition: all .3s ease-in-out;
                                 }
                             }
 
@@ -2036,7 +2051,7 @@
             th {
                 min-width: 200px;
                 border-right: 1px solid #ddd;
-                padding: 16px 20px;
+                padding: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
                 text-align: center;
 
                 &:first-child {
@@ -2070,16 +2085,18 @@
                 }
 
                 .compare-image {
-                    display: block;
                     text-align: center;
                     border-radius: 5px;
-                    padding: 20px;
                     background-color: #f1f1f1;
-                    width: 45%;
                     margin: 0 auto;
+                    width: calc(105px + (130 - 105) * ((100vw - 320px) / (1920 - 320)));
+                    height: calc(105px + (130 - 105) * ((100vw - 320px) / (1920 - 320)));
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
                     img {
-                        @include pseudowh($width: 100%, $height: 90px);
+                        @include pseudowh($width: 100%, $height: calc(65px + (90 - 65) * ((100vw - 320px) / (1920 - 320))));
                         object-fit: contain;
                     }
                 }
@@ -3045,10 +3062,36 @@
     .fresh-image {
         margin-top: 30px;
         border-radius: 50px 0;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+
+        >div {
+            transition: all .3s ease-in-out;
+            overflow: hidden;
+        }
+
+        &:hover {
+            >div {
+                transform: scale(1.05);
+            }
+        }
     }
 
     .fresh-image-2 {
         border-radius: 0 50px;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+
+        >div {
+            transition: all .3s ease-in-out;
+            overflow: hidden;
+        }
+
+        &:hover {
+            >div {
+                transform: scale(1.05);
+            }
+        }
     }
 
     .fresh-contain {
@@ -3280,18 +3323,42 @@
 
                         &.fb-bg {
                             color: #4267B2;
+                            transition: all .3s ease-in-out;
+
+                            &:hover {
+                                background-color: #4267B2;
+                                color: $white;
+                            }
                         }
 
                         &.twitter-bg {
                             color: #00acee;
+                            transition: all .3s ease-in-out;
+
+                            &:hover {
+                                background-color: #00acee;
+                                color: $white;
+                            }
                         }
 
                         &.pint-bg {
                             color: #c8232c;
+                            transition: all .3s ease-in-out;
+
+                            &:hover {
+                                background-color: #c8232c;
+                                color: $white;
+                            }
                         }
 
                         &.insta-bg {
                             color: #F56040;
+                            transition: all .3s ease-in-out;
+
+                            &:hover {
+                                background-color: #F56040;
+                                color: $white;
+                            }
                         }
                     }
                 }
@@ -3311,6 +3378,17 @@
         position: relative;
         overflow: hidden;
 
+        &:hover {
+            i {
+                color: var(--theme-color);
+                font-size: 143px;
+                opacity: .18;
+                transform: rotate(7deg);
+                bottom: -29px;
+                right: -7px;
+            }
+        }
+
         i {
             position: absolute;
             font-size: 106px;
@@ -3319,6 +3397,7 @@
             transform: rotate(15deg);
             bottom: -30px;
             right: -8px;
+            transition: all .3s ease-in-out;
 
             [dir="rtl"] & {
                 transform: rotate(-15deg) rotateY(183deg);
@@ -3656,6 +3735,15 @@
                     position: relative;
                     overflow: hidden;
 
+                    &:hover {
+                        .img-1 {
+                            width: calc(84px + (96 - 84) * ((100vw - 320px) / (1920 - 320)));
+                            transform: translateY(-50%) rotate(-7deg);
+                            opacity: 0.2;
+                            right: -19px;
+                        }
+                    }
+
                     img {
                         width: calc(54px + (60 - 54) * ((100vw - 320px) / (1920 - 320)));
                     }
@@ -3666,6 +3754,7 @@
                         @include center(vertical);
                         opacity: 0.12;
                         right: -30px;
+                        transition: all 0.3s ease-in-out;
                         filter: grayscale(1);
 
                         [dir="rtl"] & {
@@ -4832,6 +4921,10 @@
                 &:focus {
                     z-index: 0;
                 }
+            }
+
+            button {
+                z-index: 0;
             }
         }
     }

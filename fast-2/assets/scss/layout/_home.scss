@@ -284,15 +284,28 @@
         }
 
         .social-icon {
-            margin: -7px;
+            // margin: -7px;
             margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 14px;
 
-            [dir="rtl"] & {
-                padding-right: 0;
-            }
+            // [dir="rtl"] & {
+            //     padding-right: 0;
+            // }
 
             li {
-                margin: 7px;
+                // margin: 7px;
+
+                &:hover {
+                    a {
+                        border-color: var(--theme-color);
+                        background-color: var(--theme-color);
+                        color: $white;
+                    }
+                }
 
                 a {
                     @include pseudowh($width: 28px, $height: 28px);
