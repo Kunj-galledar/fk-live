@@ -465,7 +465,7 @@
                transition: all 0.5s ease;
                overflow-x: scroll;
                overflow-y: auto;
-               transition: all .3s ease-in-out;
+               transition: all 0.3s ease-in-out;
 
                [dir="rtl"] & {
                     border-right: unset;
@@ -741,9 +741,31 @@
                               position: relative;
                               @include rtl(text-align, left, right);
 
+                              &:hover(not) {
+                                   img {
+                                        transform: translateY(-50%) rotate(-4deg);
+                                        //     width: 75px;
+                                        //     height: 75px;
+                                        @include pseudowh($width: 75px, $height: 75px);
+                                        right: -12px;
+                                        opacity: 0.45;
+                                   }
+                              }
+
+                              &:hover {
+                                   img {
+                                        transform: translateY(-50%) rotate(-4deg);
+                                        //     width: 75px;
+                                        //     height: 75px;
+                                        @include pseudowh($width: 75px, $height: 75px);
+                                        right: -12px;
+                                        opacity: 0.29;
+                                   }
+                              }
+
                               &.active {
                                    color: $white;
-                                   background: linear-gradient(90.56deg, #0E947A 8.46%, #0DA487 62.97%);
+                                   background: linear-gradient(90.56deg, var(--theme-color1) 8.46%, var(--theme-color) 62.97%);
                                    font-size: 19px;
                                    font-weight: 600;
 
@@ -768,6 +790,7 @@
                                    position: absolute;
                                    right: -10px;
                                    opacity: 0.1;
+                                   transition: all 0.3s ease-in-out;
 
                                    [dir="rtl"] & {
                                         right: unset;
@@ -1059,7 +1082,7 @@
           border-radius: 6px;
           margin-bottom: 0;
           overflow: hidden;
-          transition: all .3s ease-in-out;
+          transition: all 0.3s ease-in-out;
 
           &.show {
                padding: 24px;

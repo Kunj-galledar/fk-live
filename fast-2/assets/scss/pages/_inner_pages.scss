@@ -387,7 +387,7 @@
                                 }
 
                                 img {
-                                    transition: all .3s ease-in-out;
+                                    transition: all 0.3s ease-in-out;
                                 }
                             }
 
@@ -1686,21 +1686,35 @@
      Log In Us Scss
 ==========================**/
 .log-in-section {
-    background-image: url(../images/inner-page/bg-img.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    // background-image: url(../images/inner-page/new.png);
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // height: 100vh;
     overflow-x: hidden;
     display: flex;
     align-items: center;
-    padding: 0;
+    // padding: 0;
     position: relative;
+    z-index: 0;
 
-    .leaf-image {
-        position: absolute;
-        bottom: 0;
+    // .leaf-image {
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    // }
+
+    &::after {
+        @include pos;
+        top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/inner-page/log-in-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
     }
 
     &.otp-section {
@@ -1708,16 +1722,35 @@
         align-items: center;
     }
 
+    // &.forgot-section {
+    //     .log-in-box {
+    //         display: flex;
+    //         align-items: center
+    //     }
+    // }
+
+    .image-contain {
+        @include flex_common;
+        height: 100%;
+    }
+
+    .log-in-form {
+        .form-control {
+            border: none;
+        }
+    }
+
     .inputs {
         margin: calc(-2px + (-8 - 2) * ((100vw - 320px) / (1920 - 320)));
 
         input {
             margin: calc(2px + (8 - 2) * ((100vw - 320px) / (1920 - 320)));
+            border: none;
         }
     }
 
     .log-in-box {
-        background-color: $white;
+        background-color: #f8f8f8;
         padding: calc(16px + (50 - 16) * ((100vw - 320px) / (1920 - 320)));
         border-radius: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320)));
 
@@ -1773,13 +1806,14 @@
 
                     a {
                         @include flex_common;
-                        border: 1px solid #ddd;
+                        // border: 1px solid #ddd;
                         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                         color: $title-color;
                         border-radius: 5px;
                         padding: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))) calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
                         flex-wrap: wrap;
                         gap: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320)));
+                        background-color: $white;
 
 
                         img {
@@ -1844,9 +1878,10 @@
             h6 {
                 color: $content-color;
                 position: relative;
-                background-color: $white;
+                background-color: #f9f9f9;
                 padding: 0 14px;
                 display: inline-block;
+                text-transform: uppercase;
             }
         }
 
@@ -1986,7 +2021,7 @@
 
                         i {
                             margin-left: auto;
-                            transition: all .3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
 
                             [dir="rtl"] & {
                                 margin-left: unset;
@@ -2247,6 +2282,14 @@
                                     margin-top: 20px;
                                 }
 
+                                &:hover {
+                                    .recent-image {
+                                        img {
+                                            transform: scale(1.1) rotate(4deg);
+                                        }
+                                    }
+                                }
+
                                 .recent-image {
                                     width: 110px;
                                     border-radius: 5px;
@@ -2254,6 +2297,7 @@
 
                                     img {
                                         @include pseudowh;
+                                        transition: all 0.3s ease-in-out;
                                     }
                                 }
 
@@ -2333,7 +2377,7 @@
 
                                             h5,
                                             span {
-                                                transition: all .3s ease-in-out;
+                                                transition: all 0.3s ease-in-out;
                                             }
 
                                             span {
@@ -2364,13 +2408,13 @@
                                     z-index: 0;
                                     padding: 4px 9px;
                                     border-radius: 3px;
-                                    transition: all .3s ease-in-out;
+                                    transition: all 0.3s ease-in-out;
                                     overflow: hidden;
                                     position: relative;
                                     background-color: $white;
 
                                     &::after {
-                                        transition: all .3s ease-in-out;
+                                        transition: all 0.3s ease-in-out;
                                         @include pos;
                                         @include pseudowh;
                                         z-index: -1;
@@ -2434,11 +2478,23 @@
     }
 
     .blog-box {
+        &:hover {
+            .blog-image {
+                a {
+                    transform: scale(1.1) rotate(4deg);
+                }
+            }
+        }
+
         .blog-image {
             position: relative;
             overflow: hidden;
             margin-bottom: 15px;
             border-radius: 0;
+
+            a {
+                transition: all 0.3s ease-in-out;
+            }
 
             label {
                 position: absolute;
@@ -2516,7 +2572,7 @@
                     display: -webkit-box;
                     overflow: hidden;
                     font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
-                    transition: all .3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
                 }
             }
 
@@ -2535,7 +2591,7 @@
 
             .blog-button {
                 border: none;
-                background-color: transparent;
+                background-color: rgba(var(--theme-color-rgb), 0.1);
                 font-size: 16px;
                 display: flex;
                 position: relative;
@@ -2544,20 +2600,25 @@
                 border-radius: 5px;
                 padding: 10px 22px;
                 color: var(--theme-color);
-                transition: all .3s ease-in-out;
+                transition: all 0.3s ease-in-out;
                 margin-top: calc(8px + (22 - 8) * ((100vw - 320px) / (1920 - 320)));
                 font-size: 14px;
 
-                &:after {
-                    @include pos;
-                    @include pseudowh;
-                    top: 0;
-                    right: 0;
-                    background-color: var(--theme-color);
-                    opacity: 0.1;
-                    z-index: -1;
-                    transition: all 0.3s ease-in-out;
+                &:hover {
+                    background-color: rgba(var(--theme-color-rgb), 1);
+                    color: $white;
                 }
+
+                // &:after {
+                //     @include pos;
+                //     @include pseudowh;
+                //     top: 0;
+                //     right: 0;
+                //     background-color: var(--theme-color);
+                //     opacity: 0.1;
+                //     z-index: -1;
+                //     transition: all 0.3s ease-in-out;
+                // }
 
                 i {
                     margin-left: 10px;
@@ -2575,7 +2636,7 @@
     .blog-list {
         display: flex;
         align-items: center;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
         @include mq-max(xl) {
             display: block;
@@ -2615,7 +2676,7 @@
         .blog-image {
             margin-bottom: -1px;
             width: 38%;
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
 
             @media (max-width: 1399px) {
                 width: 45%;
@@ -2637,7 +2698,7 @@
             }
 
             img {
-                transition: all .3s ease-in-out;
+                transition: all 0.3s ease-in-out;
 
                 @include mq-max(xl) {
                     width: 100%;
@@ -3063,10 +3124,10 @@
         margin-top: 30px;
         border-radius: 50px 0;
         overflow: hidden;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
         >div {
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             overflow: hidden;
         }
 
@@ -3080,10 +3141,10 @@
     .fresh-image-2 {
         border-radius: 0 50px;
         overflow: hidden;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
         >div {
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             overflow: hidden;
         }
 
@@ -3204,7 +3265,7 @@
             opacity: .05;
             font-size: calc(52px + (70 - 52) * ((100vw - 320px) / (1920 - 320)));
             font-weight: 800;
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
 
             [dir="rtl"] & {
                 right: unset;
@@ -3217,7 +3278,7 @@
             margin-bottom: 7px;
             font-weight: 600;
             position: relative;
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
 
         p {
@@ -3226,7 +3287,7 @@
             margin: 0 auto;
             line-height: 1.7;
             margin-bottom: -5px;
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
     }
 
@@ -3268,7 +3329,7 @@
             margin: 0 auto;
 
             img {
-                transition: all .3s ease-in-out;
+                transition: all 0.3s ease-in-out;
                 filter: grayscale(1);
             }
         }
@@ -3310,7 +3371,7 @@
                 margin-top: 15px;
                 justify-content: center;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
-                transition: all .3s ease-in-out;
+                transition: all 0.3s ease-in-out;
 
                 li {
                     a {
@@ -3323,7 +3384,7 @@
 
                         &.fb-bg {
                             color: #4267B2;
-                            transition: all .3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
 
                             &:hover {
                                 background-color: #4267B2;
@@ -3333,7 +3394,7 @@
 
                         &.twitter-bg {
                             color: #00acee;
-                            transition: all .3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
 
                             &:hover {
                                 background-color: #00acee;
@@ -3343,7 +3404,7 @@
 
                         &.pint-bg {
                             color: #c8232c;
-                            transition: all .3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
 
                             &:hover {
                                 background-color: #c8232c;
@@ -3353,7 +3414,7 @@
 
                         &.insta-bg {
                             color: #F56040;
-                            transition: all .3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
 
                             &:hover {
                                 background-color: #F56040;
@@ -3397,7 +3458,7 @@
             transform: rotate(15deg);
             bottom: -30px;
             right: -8px;
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
 
             [dir="rtl"] & {
                 transform: rotate(-15deg) rotateY(183deg);
@@ -3499,7 +3560,7 @@
             z-index: 6;
             overflow-y: auto;
             overflow-x: hidden;
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
 
             &.show {
                 left: 0;
@@ -3900,12 +3961,24 @@
                             display: block;
                         }
 
+                        &:hover {
+                            .order-image {
+                                img {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+
                         .order-image {
                             display: block;
 
                             @include mq-max(xl) {
                                 text-align: center;
                                 margin-bottom: calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320)));
+                            }
+
+                            img {
+                                transition: all 0.3s ease-in-out;
                             }
                         }
 
@@ -4080,6 +4153,11 @@
                     button {
                         background-color: $light-gray;
                         font-weight: 600;
+
+                        &:hover {
+                            background-color: var(--theme-color);
+                            color: $white;
+                        }
 
                         .feather {
                             @include pseudowh($width: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), $height: auto);
