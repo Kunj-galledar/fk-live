@@ -466,3 +466,10 @@ $(".mobile-category").click(function () {
 $(".close-button, .bg-overlay").click(function () {
     $(".bg-overlay, .category-dropdown").removeClass("show");
 });
+
+/*=====================
+   23. remove notication bar js
+   ==========================*/
+$(".close-notification").click(function () {
+    $(".timer-notification").addClass("remove");
+});

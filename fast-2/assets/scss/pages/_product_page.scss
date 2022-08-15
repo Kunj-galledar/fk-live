@@ -248,6 +248,7 @@
                 line-height: 1.7;
                 margin: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) 0 0;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                width: 80%;
             }
         }
 
@@ -284,15 +285,23 @@
         }
 
         .note-box {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
+            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
 
             @include mq-max(md) {
                 justify-content: center;
             }
 
+            .compare-button {
+                background-color: #f8f8f8;
+            }
+
+            .cart-button {
+                animation: shake 150ms 2 linear;
+            }
+
             .product-qty {
-                width: 180px;
+                width: auto;
                 margin-top: 0;
 
                 @include mq-max(2xs) {
@@ -300,12 +309,27 @@
                 }
 
                 .input-group {
+                    width: auto;
+                }
+
+                .input-group {
                     background: linear-gradient(187.77deg, #fafafa 5.52%, #f8f8f8 94%);
                 }
 
                 button {
-                    @include pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (1920 - 320))));
+                    @include pseudowh($width: 20px, $height: 20px);
+                    background-color: transparent;
                 }
+            }
+        }
+
+        .buy-now-button {
+            margin-top: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $border-color;
+
+            button {
+                background-color: #FF7272;
             }
         }
 
@@ -313,8 +337,33 @@
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
             align-items: center;
             margin-top: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid $border-color;
+            // padding-bottom: 16px;
+            // border-bottom: 1px solid $border-color;
+
+            .team-box {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                align-items: center;
+
+                input {
+                    margin-top: -7px;
+                    display: block;
+                }
+
+                .form-check-label {
+                    span {
+                        display: flex;
+                        align-items: center;
+
+                        a {
+                            text-decoration: underline;
+                            margin-left: 3px;
+                            color: $title-color;
+                        }
+                    }
+                }
+            }
 
             @include mq-max(md) {
                 justify-content: center;
@@ -339,20 +388,152 @@
                 margin-top: 20px;
 
                 .product-info-list {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
-                    flex-wrap: wrap;
+                    -webkit-box-align: start;
+                    -ms-flex-align: start;
+                    align-items: flex-start;
+                    -ms-flex-wrap: nowrap;
+                    flex-wrap: nowrap;
                     gap: 5px;
+                    text-align: left;
+                    display: inline-block;
+                    column-count: 2;
+                    background-color: #f9f9f9;
+                    padding: 15px 15px 3px;
+                    border-radius: 12px;
+                    width: 80%;
+
+                    @include mq-max(sm) {
+                        flex-wrap: wrap;
+                        gap: 0;
+                    }
 
                     li {
-                        // display: block;
-                        // width: 100%;
-                        width: 40%;
+                        padding-left: 13px;
+                        width: 100%;
                         font-size: 15px;
+                        position: relative;
+                        margin-bottom: 12px;
+                        color: #777;
+
+                        @include mq-max(sm) {
+                            width: auto;
+                            margin-left: 18px;
+                        }
+
+                        @include mq-max(xs) {
+                            margin-left: unset;
+                            width: 100%;
+                            padding-left: unset;
+
+                            &::after {
+                                content: none !important;
+                            }
+                        }
+
+                        &::after {
+                            @include pos;
+                            @include center(vertical);
+                            left: 0;
+                            width: 5px;
+                            height: 5px;
+                            background-color: $content-color;
+                            border-radius: 100%;
+                        }
+
+                        a {
+                            font-weight: 400;
+                            margin-left: 5px;
+
+                            +a {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+
+                .product-info-list-2 {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-wrap: nowrap;
+                    gap: 5px;
+                    text-align: left;
+
+                    @include mq-max(sm) {
+                        flex-wrap: wrap;
+                        gap: 0;
+                    }
+
+                    .list-1 {
+                        width: 37%;
+
+                        @include mq-max(3xl) {
+                            width: 50%;
+                        }
+
+                        @include mq-max(sm) {
+                            width: 100%;
+                        }
+
+                        @include mq-max(xs) {
+                            text-align: center;
+
+                        }
+                    }
+
+                    .list-2 {
+                        width: 50%;
+
+                        @include mq-max(sm) {
+                            width: 100%;
+                        }
+
+                        @include mq-max(xs) {
+                            text-align: center;
+
+                        }
+                    }
+
+                    li {
+                        padding-left: 13px;
+                        width: 100%;
+                        font-size: 15px;
+                        position: relative;
+
+                        @include mq-max(sm) {
+                            width: auto;
+                            margin-left: 18px;
+                        }
+
+                        @include mq-max(xs) {
+                            margin-left: unset;
+                            width: 100%;
+                            padding-left: unset;
+
+                            &::after {
+                                content: none !important;
+                            }
+                        }
+
+                        &::after {
+                            @include pos;
+                            @include center(vertical);
+                            left: 0;
+                            width: 5px;
+                            height: 5px;
+                            background-color: $content-color;
+                            border-radius: 100%;
+                        }
 
                         a {
                             font-weight: 600;
                             margin-left: 5px;
+
+                            +a {
+                                margin-left: 0;
+                            }
                         }
                     }
                 }
@@ -367,9 +548,11 @@
 
             .pickup-detail {
                 h4 {
+                    width: 90%;
                     font-weight: 400;
                     margin-bottom: 5px;
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    line-height: 1.6;
                 }
 
                 h6 {

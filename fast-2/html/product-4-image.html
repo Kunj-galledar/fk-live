@@ -481,19 +481,27 @@
                                                             4 Image</a>
                                                     </li>
                                                     <li>
+                                                        <a href="product-bottom-thumbnail.html"
+                                                            class="dropdown-item">Product Bottom Thumbnail</a>
+                                                    </li>
+                                                    <li>
                                                         <a href="product-left-thumbnail.html"
                                                             class="dropdown-item">Product Left Thumbnail</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="product-left.html">Product
+                                                        <a href="product-left.html" class="dropdown-item">Product
                                                             Left</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="product-slider.html">Product
+                                                        <a href="product-right-thumbnail.html"
+                                                            class="dropdown-item">Product Right Thumbnail</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="product-slider.html" class="dropdown-item">Product
                                                             Slider</a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="product-sticky.html">Product
+                                                        <a href="product-sticky.html" class="dropdown-item">Product
                                                             Sticky</a>
                                                     </li>
                                                 </ul>
@@ -665,14 +673,14 @@
     <!-- mobile fix menu start -->
     <div class="mobile-menu d-md-none d-block mobile-cart">
         <ul>
-            <li>
+            <li class="active">
                 <a href="index.html">
                     <i class="iconly-Home icli"></i>
                     <span>Home</span>
                 </a>
             </li>
 
-            <li data-bs-toggle="offcanvas" data-bs-target="#categories">
+            <li class="mobile-category">
                 <a href="javascript:void(0)">
                     <i class="iconly-Category icli js-link"></i>
                     <span>Category</span>
@@ -687,7 +695,7 @@
             </li>
 
             <li>
-                <a href="wishlist.html">
+                <a href="wishlist.html" class="notifi-wishlist">
                     <i class="iconly-Heart icli"></i>
                     <span>My Wish</span>
                 </a>
@@ -808,7 +816,7 @@
                         </div>
 
                         <div class="procuct-contain">
-                            <p>Lollipop oat cake chocolate chocolate cake dessert jujubes. Shortbread sugar plum dessert
+                            <p>Lollipop cake chocolate chocolate cake dessert jujubes. Shortbread sugar plum dessert
                                 powder cookie sweet brownie. Cake cookie apple pie dessert sugar plum muffin cheesecake.
                             </p>
                         </div>
@@ -876,36 +884,60 @@
                             </ul>
                         </div>
 
+                        <!-- <div class="cart_qty qty-box product-qty">
+                            <div class="input-group">
+                                <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </button>
+                                <input class="form-control input-number qty-input" type="text" name="quantity"
+                                    value="0">
+                                <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div> -->
+
                         <div class="note-box product-packege mt-4">
                             <div class="cart_qty qty-box product-qty">
                                 <div class="input-group">
-                                    <button type="button" class="qty-left-minus" data-type="minus" data-field="">
-                                        <i class="fa fa-minus" aria-hidden="true"></i>
-                                    </button>
                                     <input class="form-control input-number qty-input" type="text" name="quantity"
                                         value="0">
-                                    <button type="button" class="qty-right-plus" data-type="plus" data-field="">
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                    </button>
+                                    <div class="qty-button">
+                                        <button type="button" class="qty-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                        <button type="button" class="qty-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 
                             <button onclick="location.href = 'cart.html';"
-                                class="btn btn-md bg-dark text-white rounded-pill">Add To Cart</button>
-                            <button class="btn buy-button btn-md theme-bg-color text-white rounded-pill"
-                                onclick="location.href = 'checkout.html';">Buy It Now</button>
+                                class="btn btn-md bg-dark cart-button text-white w-100">Add To Cart</button>
+
+                            <button class="btn buy-button btn-md theme-bg-color text-white"
+                                onclick="location.href = 'wishlist.html';">
+                                <i data-feather="heart"></i>
+                            </button>
+
+                            <button class="btn btn-md compare-button" onclick="location.href = 'compare.html';">
+                                <i data-feather="shuffle"></i>
+                            </button>
                         </div>
 
                         <div class="buy-box">
-                            <a href="wishlist.html">
-                                <i data-feather="heart"></i>
-                                <span>Add To Wishlist</span>
-                            </a>
+                            <div class="form-check team-box">
+                                <input class="checkbox_animated" type="checkbox" id="fruit">
+                                <label class="form-check-label" for="fruit">
+                                    <span>I agree with <a href="javascript:void(0)">Term & Condition</a></span>
+                                </label>
+                            </div>
+                        </div>
 
-                            <a href="compare.html">
-                                <i data-feather="shuffle"></i>
-                                <span>Add To Compare</span>
-                            </a>
+                        <div class="buy-now-button">
+                            <button onclick="location.href = 'cart.html';" class="btn btn-md text-white w-100">Buy
+                                Now</button>
                         </div>
 
                         <div class="pickup-box">
@@ -914,23 +946,21 @@
                             </div>
 
                             <div class="pickup-detail">
-                                <h4 class="text-content">Pickup available at Store (Usually ready in 24 hours)
-                                </h4>
-                                <a href="javascript:void(0)" data-bs-toggle="offcanvas"
+                                <h4 class="text-content">Lollipop cake chocolate chocolate cake dessert jujubes.
+                                    Shortbread sugar plum dessert powder cookie sweet brownie.</h4>
+                                <!-- <a href="javascript:void(0)" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">View
-                                    store information</a>
+                                    store information</a> -->
                             </div>
 
                             <div class="product-info">
                                 <ul class="product-info-list">
-                                    <li>Type : <a href="javascript:void(0)">Organic</a></li>
-                                    <li>MFG : <a href="javascript:void(0)">Jun 4.2022</a></li>
-                                    <li>LIFE : <a href="javascript:void(0)">70 days</a></li>
-                                    <li>SKU : <a href="javascript:void(0)">FWM15VKT</a></li>
-                                    <li>Tags : <a href="javascript:void(0)">Snack,</a> <a
-                                            href="javascript:void(0)">Organic,</a> <a
-                                            href="javascript:void(0)">Brown</a></li>
-                                    <li>Stock : <a href="javascript:void(0)">8 Items In Stock</a></li>
+                                    <li>Type : <a href="javascript:void(0)">Black Forest</a></li>
+                                    <li>SKU : <a href="javascript:void(0)">SDFVW65467</a></li>
+                                    <li>MFG : <a href="javascript:void(0)">Jun 4, 2022</a></li>
+                                    <li>Stock : <a href="javascript:void(0)">2 Items Left</a></li>
+                                    <li>Tags : <a href="javascript:void(0)">Cake,</a> <a
+                                            href="javascript:void(0)">Backery</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -941,23 +971,34 @@
                             </div>
                             <ul>
                                 <li>
-                                    <img src="../assets/images/product/payment/1.svg" class="blur-up lazyload" alt="">
+                                    <a href="javascript:void(0)">
+                                        <img src="../assets/images/product/payment/1.svg" class="blur-up lazyload"
+                                            alt="">
+                                    </a>
                                 </li>
-
                                 <li>
-                                    <img src="../assets/images/product/payment/2.svg" class="blur-up lazyload" alt="">
+                                    <a href="javascript:void(0)">
+                                        <img src="../assets/images/product/payment/2.svg" class="blur-up lazyload"
+                                            alt="">
+                                    </a>
                                 </li>
-
                                 <li>
-                                    <img src="../assets/images/product/payment/3.svg" class="blur-up lazyload" alt="">
+                                    <a href="javascript:void(0)">
+                                        <img src="../assets/images/product/payment/3.svg" class="blur-up lazyload"
+                                            alt="">
+                                    </a>
                                 </li>
-
                                 <li>
-                                    <img src="../assets/images/product/payment/4.svg" class="blur-up lazyload" alt="">
+                                    <a href="javascript:void(0)">
+                                        <img src="../assets/images/product/payment/4.svg" class="blur-up lazyload"
+                                            alt="">
+                                    </a>
                                 </li>
-
                                 <li>
-                                    <img src="../assets/images/product/payment/5.svg" class="blur-up lazyload" alt="">
+                                    <a href="javascript:void(0)">
+                                        <img src="../assets/images/product/payment/5.svg" class="blur-up lazyload"
+                                            alt="">
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -2482,120 +2523,6 @@
     </div>
     <!-- Location Modal End -->
 
-    <!-- Categories Offcanvas Box Start -->
-    <div class="offcanvas offcanvas-start categories-canvas" tabindex="-1" id="categories">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Categories</h5>
-            <button type="button" class="btn-close close-button" data-bs-dismiss="offcanvas" aria-label="Close">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="categories-list">
-                <ul>
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Beverages</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Biscuits & Snacks</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Breads & Bakery</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Breakfast & Dairy</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Frozen Foods</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Fruits & Vegetables</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Household Needs</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Grocery & Staples</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Meats & Seafood</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Eggs Substitutes</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Honey Vegetables</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Marmalades Staples</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Sour Cream and Dips</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="shop-left-sidebar.html">
-                            <h6>Yogurt Seafood</h6>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Categories Offcanvas Box End -->
-
     <!-- Backdrop Modal Start -->
     <div class="offcanvas pickup-offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop"
         aria-labelledby="offcanvasWithBackdropLabel">
@@ -2818,7 +2745,7 @@
     <script src="../assets/js/custom-wow.js"></script>
 
     <!-- Infinite scroll js -->
-    <script src="assets/js/infinite-scroll.js"></script>
+    <!-- <script src="assets/js/infinite-scroll.js"></script> -->
 
     <!-- script js -->
     <script src="../assets/js/script.js"></script>
