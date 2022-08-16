@@ -21,11 +21,11 @@
         }
 
         li {
-            position: relative;
+            @include flex_common;
             @include pseudowh($width: 50px, $height: 50px);
+            position: relative;
             background-color: $border-color;
             padding: 8px;
-            @include flex_common;
             border-radius: 5px;
 
             @include mq-max(sm) {
@@ -75,9 +75,10 @@
 
     ul {
         li {
+            @include pseudowh($width: 60px, $height: 60px);
             color: $black;
-            width: 60px;
-            height: 60px;
+            // width: 60px;
+            // height: 60px;
             border: 1px solid $title-color;
             background-color: transparent;
 
@@ -110,11 +111,11 @@
         }
 
         li {
-            position: relative;
+            @include flex_common;
             @include pseudowh($width: 50px, $height: 50px);
+            position: relative;
             background-color: $border-color;
             padding: 8px;
-            @include flex_common;
             border-radius: 5px;
 
             @include mq-max(sm) {

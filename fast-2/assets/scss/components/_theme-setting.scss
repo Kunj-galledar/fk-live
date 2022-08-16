@@ -11,8 +11,9 @@
 
     .setting-button {
         @include flex_common;
-        width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
-        height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+        @include pseudowh($width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))));
+        // width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+        // height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
         padding: 0;
         color: $white;
     }
@@ -148,11 +149,12 @@
                                 gap: 15px;
 
                                 .form-control-color {
+                                    @include pseudowh($width: 38px, $height: auto);
                                     padding: 0;
                                     font-size: 13px;
                                     border: none;
-                                    width: 38px;
-                                    height: auto;
+                                    // width: 38px;
+                                    // height: auto;
 
                                     [dir="rtl"] & {
                                         max-width: 100%;

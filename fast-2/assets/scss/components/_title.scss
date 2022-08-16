@@ -11,9 +11,9 @@
     &::before {
         @include pos;
         @include center(vertical);
+        @include pseudowh($width: 100%, $height: 1px);
         left: 0;
         background-color: var(--theme-color);
-        @include pseudowh($width: 100%, $height: 1px);
         z-index: -1;
     }
 
@@ -67,10 +67,6 @@
                     margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
                 }
 
-                [class="dark"] & {
-                    background-color: red;
-                }
-
                 i {
                     -webkit-text-stroke: 1px $white;
                     color: transparent;
@@ -78,8 +74,8 @@
                 }
 
                 .feather {
-                    margin-right: 9px;
                     @include pseudowh($width: 17px, $height: 17px);
+                    margin-right: 9px;
 
                     [dir="rtl"] & {
                         margin-left: 9px;
@@ -167,18 +163,18 @@
 
                     &::before {
                         @include pos;
+                        @include pseudowh($width: 50px, $height: 2px);
                         bottom: 0;
                         left: 17px;
-                        @include pseudowh($width: 50px, $height: 2px);
                         border-radius: 50px;
                         background-color: var(--theme-color);
                     }
 
                     &::after {
                         @include pos;
+                        @include pseudowh($width: 4px, $height: 2px);
                         bottom: 0;
                         left: 75px;
-                        @include pseudowh($width: 4px, $height: 2px);
                         border-radius: 50px;
                         background-color: var(--theme-color);
                     }
@@ -190,9 +186,9 @@
 
                 &::before {
                     @include pos;
+                    @include pseudowh($width: 13px, $height: 13px);
                     top: 9px;
                     left: -11px;
-                    @include pseudowh($width: 13px, $height: 13px);
                     background-image: url(../svg/bag.svg);
                     background-repeat: no-repeat;
                     background-size: cover;

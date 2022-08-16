@@ -162,11 +162,11 @@
 
      .slick-prev,
      .slick-next {
+          @include pseudowh($width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))));
           background-color: $white;
           box-shadow: 0px 1px 4px rgba($title-color, .14);
           position: absolute;
           top: calc(-28px + (-43 - -28) * ((100vw - 320px) / (1920 - 320)));
-          @include pseudowh($width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))));
           border-radius: 5px;
           transition: all 0.3s ease-in-out;
 
@@ -305,12 +305,12 @@
 
      .slick-prev,
      .slick-next {
-          background-color: $border-color;
-          @include pseudowh($width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))));
-          border-radius: 5px;
           @include flex_common;
+          @include pseudowh($width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))));
+          background-color: $border-color;
+          border-radius: 5px;
           z-index: 1;
-          transition: .3s ease;
+          transition: all 0.3s ease;
 
           &::before {
                @include font;
@@ -363,9 +363,9 @@
 
      .slick-prev,
      .slick-next {
+          @include flex_common;
           @include pseudowh($width: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320))));
           border-radius: 50%;
-          @include flex_common;
           z-index: 1;
           transition: all .3s ease;
           background-color: $white;
@@ -373,8 +373,8 @@
           color: $content-color;
 
           &::before {
-               color: $black;
                @include font;
+               color: $black;
                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
           }
 

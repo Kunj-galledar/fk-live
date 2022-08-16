@@ -8,9 +8,9 @@ footer {
 
     &::after {
         @include pos;
+        @include pseudowh($width: 30%, $height: 100%);
         top: 0;
         left: 0;
-        @include pseudowh($width: 30%, $height: 100%);
         background-image: url(../images/vegetable/footer-shape.png);
         background-repeat: no-repeat;
         z-index: -1;
@@ -395,8 +395,8 @@ footer {
                     }
 
                     .footer-number {
-                        align-items: flex-start;
                         @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+                        align-items: flex-start;
 
                         .feather {
                             @include pseudowh($width: 18px, $height: 18px);
@@ -711,10 +711,12 @@ footer {
 
                     &:before {
                         @include pos;
-                        width: 5px;
-                        height: 5px;
-                        top: 50%;
-                        transform: translateY(-50%);
+                        @include pseudowh($width: 5px, $height: 5px);
+                        @include center(vertical);
+                        // width: 5px;
+                        // height: 5px;
+                        // top: 50%;
+                        // transform: translateY(-50%);
                         left: -20px;
                         border-radius: 100%;
                         opacity: 0;
@@ -729,13 +731,15 @@ footer {
 
                     &.footer-contain-2 {
                         &::before {
-                            content: "\f105";
                             @include font;
-                            top: 50%;
+                            @include pseudowh($width: unset, $height: unset);
+                            @include center(vertical);
+                            content: "\f105";
+                            // top: 50%;
+                            // transform: translateY(-50%);
                             left: 0;
-                            transform: translateY(-50%);
-                            width: unset;
-                            height: unset;
+                            // width: unset;
+                            // height: unset;
                             opacity: 0;
                             background: none;
                             color: var(--theme-color);

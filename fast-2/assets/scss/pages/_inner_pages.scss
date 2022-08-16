@@ -1,8 +1,14 @@
 /**=====================
      Inner scss
 ==========================**/
-.table> :not(:last-child)> :last-child>* {
-    border-bottom: none;
+.table {
+    >&:not(:last-child) {
+        >&:last-child> {
+            * {
+                border-bottom: none;
+            }
+        }
+    }
 }
 
 .inner-title {

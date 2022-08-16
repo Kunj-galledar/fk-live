@@ -1171,19 +1171,30 @@
      slidesToScroll: 1,
      pauseOnHover: true,
      responsive: [{
-             breakpoint: 1630,
+             breakpoint: 1680,
              settings: {
                  slidesToShow: 4,
              }
          },
          {
-             breakpoint: 1300,
+             breakpoint: 1400,
              settings: {
                  slidesToShow: 3,
              }
          },
          {
-             breakpoint: 617,
+             breakpoint: 1200,
+             settings: {
+                 slidesToShow: 4,
+             }
+         }, {
+             breakpoint: 992,
+             settings: {
+                 slidesToShow: 3,
+             }
+         },
+         {
+             breakpoint: 660,
              settings: {
                  slidesToShow: 2,
              }
@@ -1227,4 +1238,15 @@
              }
          },
      ]
+ });
+
+ $('.notification-slider').slick({
+     slidesToShow: 1,
+     slidesToScroll: 1,
+     dots: false,
+     vertical: true,
+     variableWidth: false,
+     autoplay: true,
+     autoplaySpeed: 2500,
+     arrows: false,
  });

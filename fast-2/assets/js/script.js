@@ -471,5 +471,116 @@ $(".close-button, .bg-overlay").click(function () {
    23. remove notication bar js
    ==========================*/
 $(".close-notification").click(function () {
-    $(".timer-notification").addClass("remove");
+    $(".header-notification").addClass("remove");
 });
+
+/*=====================
+    03. category box js
+==========================*/
+// var contentwidth = $(window).width();
+// if (contentwidth < "576") {
+//     $(".footer-title h4").append(
+//         '<span class="according-menu float-end"><i class="fa-solid fa-angle-down"></i></span>'
+//     );
+//     $(".footer-title").on("click", function () {
+//         $(".footer-title")
+//             .removeClass("active")
+//             .find("span")
+//             .replaceWith(
+//                 '<span class="according-menu float-end"><i class="fa-solid fa-angle-down"></i></span>'
+//             );
+//         $(".footer-contact, .footer-contain").slideUp("normal");
+//         if ($(this).next().is(":hidden") == true) {
+//             $(this).addClass("active");
+//             $(this)
+//                 .find("span")
+//                 .replaceWith(
+//                     '<span class="according-menu float-end"><i class="fas fa-chevron-up"></i></span>'
+//                 );
+//             $(this).next().slideDown("normal");
+//         } else {
+//             $(this)
+//                 .find("span")
+//                 .replaceWith(
+//                     '<span class="according-menu float-end"><i class="fa-solid fa-angle-down"></i></span>'
+//                 );
+//         }
+//     });
+//     $(".footer-contact, .footer-contain").hide();
+// } else {
+//     $(".footer-contact, .footer-contain").show();
+// }
+
+var contentwidth = $(window).width();
+if (contentwidth < "767") {
+    $(".onhover-category-list .category-name").append('<span class="according-menu">+</span>');
+    $(".category-name").on("click", function () {
+        $(".category-name")
+            .removeClass("active")
+            .find("span")
+            .replaceWith('<span class="according-menu">+</span>');
+        $(".onhover-category-list .onhover-category-box").slideUp("normal");
+        if ($(this).next().is(":hidden") == true) {
+            $(this).addClass("active");
+            $(this)
+                .find("span")
+                .replaceWith('<span class="according-menu">-</span>');
+            $(this).next().slideDown("normal");
+        } else {
+            $(this)
+                .find("span")
+                .replaceWith('<span class="according-menu">+</span>');
+        }
+    });
+    $(".accordion-box").hide();
+}
+
+// var contentwidth = $(window).width();
+// if (contentwidth < "1200") {
+//     $(".menu-title-level1").append(
+//         '<span class="according-menu">+</span>'
+//     );
+//     $(".menu-title-level1").on("click", function () {
+//         $(".menu-title-level1")
+//             .removeClass("active")
+//             .find("span")
+//             .replaceWith('<span class="according-menu">+</span>');
+//         $(".level1").slideUp("normal");
+//         if ($(this).next().is(":hidden") == true) {
+//             $(this).addClass("active");
+//             $(this)
+//                 .find("span")
+//                 .replaceWith('<span class="according-menu">-</span>');
+//             $(this).next().slideDown("normal");
+//         } else {
+//             $(this)
+//                 .find("span")
+//                 .replaceWith('<span class="according-menu">+</span>');
+//         }
+//     });
+//     $(".nav-sub-childmenu .level1").hide();
+// }
+
+// var contentwidth = $(window).width();
+// if (contentwidth < "1200") {
+//     $(".submenu-title").append('<span class="according-menu">+</span>');
+//     $(".submenu-title").on("click", function () {
+//         $(".submenu-title")
+//             .removeClass("active")
+//             .find("span")
+//             .replaceWith('<span class="according-menu">+</span>');
+//         $(".submenu-content").slideUp("normal");
+//         if ($(this).next().is(":hidden") == true) {
+//             $(this).addClass("active");
+//             $(this)
+//                 .find("span")
+//                 .replaceWith('<span class="according-menu">-</span>');
+//             $(this).next().slideDown("normal");
+//         } else {
+//             $(this)
+//                 .find("span")
+//                 .replaceWith('<span class="according-menu">+</span>');
+//         }
+//     });
+//     $(".submenu-content").hide();
+// }
