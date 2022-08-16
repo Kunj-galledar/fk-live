@@ -13,10 +13,10 @@
     border-radius: 10px;
 
     .home-detail {
+        @include pseudowh;
         position: absolute;
         top: 0;
         left: 0;
-        @include pseudowh;
         padding: calc(18px + (60 - 18) * ((100vw - 320px) / (1920 - 320)));
 
         &.home-big-space {
@@ -25,7 +25,7 @@
 
         &.home-overlay {
             @include mq-max(md) {
-                background-color: rgba(255, 255, 255, 0.529);
+                background-color: rgba($white, 0.529);
             }
         }
 
@@ -284,10 +284,8 @@
         }
 
         .social-icon {
+            @include flex_common;
             margin-top: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             flex-wrap: nowrap;
             gap: 14px;
 
@@ -328,10 +326,10 @@
         position: relative;
 
         .home-detail {
+            @include pseudowh;
             position: absolute;
             top: 0%;
             left: 0;
-            @include pseudowh;
             padding: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
 
             &.home-p-sm {

@@ -251,38 +251,6 @@ $(".bg-img").each(function () {
 });
 
 /*=====================
-   12. Hide header on scroll down js
-==========================*/
-// $(function () {
-//     var $window = $(window);
-//     var lastScrollTop = 0;
-//     var $header = $("header");
-//     var headerHeight = $header.outerHeight();
-
-//     $window.scroll(function () {
-//         var windowTop = $window.scrollTop();
-
-//         if (windowTop >= headerHeight) {
-//             $header.addClass("nav-down");
-//         } else {
-//             $header.removeClass("nav-down");
-//             $header.removeClass("nav-up");
-//         }
-
-//         if ($header.hasClass("nav-down")) {
-//             if (windowTop < lastScrollTop) {
-//                 $header.addClass("nav-up");
-//             } else {
-//                 $header.removeClass("nav-up");
-//             }
-//         }
-//         $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
-//         lastScrollTop = windowTop;
-//         $("#windowtop").text("scrollTop: " + windowTop);
-//     });
-// });
-
-/*=====================
    13. search box function Js
    ==========================*/
 $(".search-box").on("click", function () {
@@ -393,37 +361,6 @@ $(".product-packege .select-packege li a").click(function () {
 /*=====================
    19. Hide header on scroll down js
    ==========================*/
-// $(function () {
-//     var $window = $(window);
-//     var lastScrollTop = 0;
-//     var $header = $("header");
-//     var headerHeight = $header.outerHeight();
-
-//     $window.scroll(function () {
-//         var windowTop = $window.scrollTop();
-
-//         if (windowTop >= headerHeight) {
-//             $header.addClass("nav-down");
-//         } else {
-//             $header.removeClass("nav-down");
-//             $header.removeClass("nav-up");
-//         }
-
-//         if ($header.hasClass("nav-down")) {
-//             if (windowTop < lastScrollTop) {
-//                 $header.addClass("nav-up");
-//             } else {
-//                 $header.removeClass("nav-up");
-//             }
-//         }
-//         $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
-
-//         lastScrollTop = windowTop;
-
-//         $("#windowtop").text("scrollTop: " + windowTop);
-//     });
-// });
-
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
         $('header').addClass('active')
@@ -477,40 +414,6 @@ $(".close-notification").click(function () {
 /*=====================
     03. category box js
 ==========================*/
-// var contentwidth = $(window).width();
-// if (contentwidth < "576") {
-//     $(".footer-title h4").append(
-//         '<span class="according-menu float-end"><i class="fa-solid fa-angle-down"></i></span>'
-//     );
-//     $(".footer-title").on("click", function () {
-//         $(".footer-title")
-//             .removeClass("active")
-//             .find("span")
-//             .replaceWith(
-//                 '<span class="according-menu float-end"><i class="fa-solid fa-angle-down"></i></span>'
-//             );
-//         $(".footer-contact, .footer-contain").slideUp("normal");
-//         if ($(this).next().is(":hidden") == true) {
-//             $(this).addClass("active");
-//             $(this)
-//                 .find("span")
-//                 .replaceWith(
-//                     '<span class="according-menu float-end"><i class="fas fa-chevron-up"></i></span>'
-//                 );
-//             $(this).next().slideDown("normal");
-//         } else {
-//             $(this)
-//                 .find("span")
-//                 .replaceWith(
-//                     '<span class="according-menu float-end"><i class="fa-solid fa-angle-down"></i></span>'
-//                 );
-//         }
-//     });
-//     $(".footer-contact, .footer-contain").hide();
-// } else {
-//     $(".footer-contact, .footer-contain").show();
-// }
-
 var contentwidth = $(window).width();
 if (contentwidth < "767") {
     $(".onhover-category-list .category-name").append('<span class="according-menu">+</span>');
@@ -534,53 +437,3 @@ if (contentwidth < "767") {
     });
     $(".accordion-box").hide();
 }
-
-// var contentwidth = $(window).width();
-// if (contentwidth < "1200") {
-//     $(".menu-title-level1").append(
-//         '<span class="according-menu">+</span>'
-//     );
-//     $(".menu-title-level1").on("click", function () {
-//         $(".menu-title-level1")
-//             .removeClass("active")
-//             .find("span")
-//             .replaceWith('<span class="according-menu">+</span>');
-//         $(".level1").slideUp("normal");
-//         if ($(this).next().is(":hidden") == true) {
-//             $(this).addClass("active");
-//             $(this)
-//                 .find("span")
-//                 .replaceWith('<span class="according-menu">-</span>');
-//             $(this).next().slideDown("normal");
-//         } else {
-//             $(this)
-//                 .find("span")
-//                 .replaceWith('<span class="according-menu">+</span>');
-//         }
-//     });
-//     $(".nav-sub-childmenu .level1").hide();
-// }
-
-// var contentwidth = $(window).width();
-// if (contentwidth < "1200") {
-//     $(".submenu-title").append('<span class="according-menu">+</span>');
-//     $(".submenu-title").on("click", function () {
-//         $(".submenu-title")
-//             .removeClass("active")
-//             .find("span")
-//             .replaceWith('<span class="according-menu">+</span>');
-//         $(".submenu-content").slideUp("normal");
-//         if ($(this).next().is(":hidden") == true) {
-//             $(this).addClass("active");
-//             $(this)
-//                 .find("span")
-//                 .replaceWith('<span class="according-menu">-</span>');
-//             $(this).next().slideDown("normal");
-//         } else {
-//             $(this)
-//                 .find("span")
-//                 .replaceWith('<span class="according-menu">+</span>');
-//         }
-//     });
-//     $(".submenu-content").hide();
-// }

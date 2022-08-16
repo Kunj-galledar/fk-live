@@ -77,8 +77,6 @@
         li {
             @include pseudowh($width: 60px, $height: 60px);
             color: $black;
-            // width: 60px;
-            // height: 60px;
             border: 1px solid $title-color;
             background-color: transparent;
 
@@ -126,9 +124,8 @@
                 margin-left: 15px;
 
                 &::after {
-                    content: ":";
+                    @include pos($pos: absolute, $content: ":");
                     font-weight: bolder;
-                    position: absolute;
                     @include center(vertical);
                     left: -10px;
                 }

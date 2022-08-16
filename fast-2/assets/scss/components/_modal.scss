@@ -93,10 +93,8 @@
                     }
 
                     .brand-list {
-                        display: flex;
+                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))));
                         align-items: center;
-                        flex-wrap: wrap;
-                        gap: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
                         margin-top: calc(13px + (19 - 13) * ((100vw - 320px) / (1920 - 320)));
                         border-bottom: 1px dashed $border-color;
                         padding-bottom: 14px;
@@ -122,11 +120,9 @@
                     }
 
                     .select-size {
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
                         margin-top: 10px;
-                        display: flex;
                         align-items: center;
-                        flex-wrap: nowrap;
-                        gap: 15px;
                         margin-top: calc(16px + (21 - 16) * ((100vw - 320px) / (1920 - 320)));
 
                         h4 {
@@ -668,8 +664,6 @@
                                 @include pseudowh($width: 0, $height: 3px);
                                 bottom: 0;
                                 left: 0;
-                                // width: 0;
-                                // height: 3px;
                                 background-color: var(--theme-color);
                                 opacity: 0.5;
                                 transition: all 0.3s ease-in-out;

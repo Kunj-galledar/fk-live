@@ -140,10 +140,10 @@
     overflow: hidden;
 
     .banner-detail {
+        @include pseudowh;
         position: absolute;
         top: 0;
         left: 0;
-        @include pseudowh;
         padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320))) calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320)));
 
         [dir="rtl"] & {
@@ -193,9 +193,9 @@
 
                 &::before {
                     @include pos;
+                    @include pseudowh;
                     top: calc(3px + (7 - 3) * ((100vw - 320px) / (1920 - 320)));
                     left: calc(3px + (6 - 3) * ((100vw - 320px) / (1920 - 320)));
-                    @include pseudowh;
                     border: calc(1px + (2 - 1) * ((100vw - 320px) / (1920 - 320))) solid $title-color;
                     z-index: -1;
                 }
@@ -278,10 +278,10 @@
     }
 
     .banner-detail {
+        @include pseudowh;
         position: absolute;
         top: 0%;
         left: 0;
-        @include pseudowh;
         padding: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
 
         &.banner-half-width {
@@ -348,9 +348,7 @@
         }
 
         .banner-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
 
             [dir="rtl"] & {
                 padding-right: 0;
@@ -361,16 +359,12 @@
                 width: 100%;
 
                 .delivery-box {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
                     align-items: center;
-                    flex-wrap: nowrap;
-                    gap: 11px;
 
                     .check-icon {
                         @include flex_common;
                         @include pseudowh($width: 20px, $height: 20px);
-                        // width: 20px;
-                        // height: 20px;
                         background-color: #6BBE66;
                         color: $white;
                         border-radius: 100%;
@@ -515,8 +509,6 @@
                 .bank-image {
                     @include pseudowh($width: 120px, $height: auto);
                     margin-bottom: 12px;
-                    // height: auto;
-                    // width: 120px;
                 }
 
                 .bank-name {

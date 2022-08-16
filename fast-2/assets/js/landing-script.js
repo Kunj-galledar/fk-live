@@ -1,37 +1,6 @@
 /*=====================
    Hide header on scroll down js
    ==========================*/
-// $(function () {
-//     var $window = $(window);
-//     var lastScrollTop = 0;
-//     var $header = $("header");
-//     var headerHeight = $header.outerHeight();
-
-//     $window.scroll(function () {
-//         var windowTop = $window.scrollTop();
-
-//         if (windowTop >= headerHeight) {
-//             $header.addClass("nav-down");
-//         } else {
-//             $header.removeClass("nav-down");
-//             $header.removeClass("nav-up");
-//         }
-
-//         if ($header.hasClass("nav-down")) {
-//             if (windowTop < lastScrollTop) {
-//                 $header.addClass("nav-up");
-//             } else {
-//                 $header.removeClass("nav-up");
-//             }
-//         }
-//         $("#lastscrolltop").text("LastscrollTop: " + lastScrollTop);
-
-//         lastScrollTop = windowTop;
-
-//         $("#windowtop").text("scrollTop: " + windowTop);
-//     });
-// });
-
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
         $('header').addClass('active')

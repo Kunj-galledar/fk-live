@@ -12,8 +12,6 @@
     .setting-button {
         @include flex_common;
         @include pseudowh($width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320))));
-        // width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
-        // height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
         padding: 0;
         color: $white;
     }
@@ -90,10 +88,8 @@
                     }
 
                     .theme-setting-button {
-                        display: flex;
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
                         align-items: center;
-                        flex-wrap: nowrap;
-                        gap: 10px;
                         padding-top: 0;
                         width: 85%;
 
@@ -141,20 +137,16 @@
                             box-shadow: none;
 
                             .form-control {
+                                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
                                 padding: 0;
                                 border: none;
-                                display: flex;
                                 align-items: center;
-                                flex-wrap: nowrap;
-                                gap: 15px;
 
                                 .form-control-color {
                                     @include pseudowh($width: 38px, $height: auto);
                                     padding: 0;
                                     font-size: 13px;
                                     border: none;
-                                    // width: 38px;
-                                    // height: auto;
 
                                     [dir="rtl"] & {
                                         max-width: 100%;

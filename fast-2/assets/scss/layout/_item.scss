@@ -8,8 +8,6 @@
     position: fixed;
     right: 0;
     border-radius: 7px 0 0 7px;
-    // width: 50px;
-    // height: 50px;
     background-color: var(--theme-color);
     z-index: 9;
 
@@ -46,9 +44,7 @@
     }
 
     h6 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex_common;
         flex-wrap: nowrap;
         gap: 5px;
         margin-top: 10px;
@@ -67,8 +63,6 @@
             @include flex_common;
             @include pseudowh($width: 30px, $height: 30px);
             background-color: $white;
-            // width: 30px;
-            // height: 30px;
             border-radius: 50%;
             border: 1px solid var(--theme-color);
             color: var(--theme-color);
@@ -81,8 +75,6 @@
 
             img {
                 @include pseudowh($width: 15px, $height: 15px);
-                // width: 15px;
-                // height: 15px;
                 object-fit: contain;
             }
         }

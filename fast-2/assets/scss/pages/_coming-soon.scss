@@ -2,13 +2,13 @@
      Coming Soon Scss
 ==========================**/
 .coming-soon-section {
+    @include pseudowh($width: 100vw, $height: 100vh);
+    @include flex_common;
     background-image: url(../images/inner-page/coming-soon.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    @include pseudowh($width: 100vw, $height: 100vh);
     position: relative;
-    @include flex_common;
 
     .coming-box {
         text-align: center;
@@ -43,13 +43,11 @@
                 gap: 28px;
 
                 li {
-                    position: relative;
-                    // width: 90px;
-                    // height: 90px;
                     @include pseudowh($width: 90px, $height: 90px);
+                    @include flex_common;
+                    position: relative;
                     background-color: $white;
                     border-radius: 10px;
-                    @include flex_common;
 
                     +li {
                         &::after {

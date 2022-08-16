@@ -46,8 +46,8 @@
         margin-top: calc(13px + (24 - 13) * ((100vw - 320px) / (1920 - 320)));
 
         ul {
-            align-items: center;
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(9px + (18 - 9) * ((100vw - 320px) / (1920 - 320))));
+            align-items: center;
 
             [dir="rtl"] & {
                 padding-right: 0;
@@ -308,18 +308,9 @@
                     width: 160px;
                 }
 
-                // .input-group {
-                //     width: auto;
-                // }
-
                 .input-group {
                     background: linear-gradient(187.77deg, #fafafa 5.52%, #f8f8f8 94%);
                 }
-
-                // button {
-                //     @include pseudowh($width: 20px, $height: 20px);
-                //     background-color: transparent;
-                // }
             }
         }
 
@@ -337,8 +328,6 @@
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
             align-items: center;
             margin-top: 20px;
-            // padding-bottom: 16px;
-            // border-bottom: 1px solid $border-color;
 
             .team-box {
                 padding: 0;
@@ -388,10 +377,8 @@
                 margin-top: 20px;
 
                 .product-info-list {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 5px);
                     align-items: flex-start;
-                    flex-wrap: nowrap;
-                    gap: 5px;
                     text-align: left;
                     display: inline-block;
                     column-count: 2;
@@ -431,9 +418,8 @@
                         &::after {
                             @include pos;
                             @include center(vertical);
+                            @include pseudowh($width: 5px, $height: 5px);
                             left: 0;
-                            width: 5px;
-                            height: 5px;
                             background-color: $content-color;
                             border-radius: 100%;
                         }
@@ -451,10 +437,8 @@
                 }
 
                 .product-info-list-2 {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 5px);
                     align-items: flex-start;
-                    flex-wrap: nowrap;
-                    gap: 5px;
                     text-align: left;
 
                     @include mq-max(sm) {
@@ -516,9 +500,8 @@
                         &::after {
                             @include pos;
                             @include center(vertical);
+                            @include pseudowh($width: 5px, $height: 5px);
                             left: 0;
-                            width: 5px;
-                            height: 5px;
                             background-color: $content-color;
                             border-radius: 100%;
                         }

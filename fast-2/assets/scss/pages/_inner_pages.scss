@@ -118,8 +118,8 @@
         margin-bottom: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
 
         .btn-close {
-            position: absolute;
             @include center(vertical);
+            position: absolute;
             right: 18px;
         }
 
@@ -941,8 +941,8 @@
 
 .checkout-section {
     .custom-accordion {
-        align-items: center;
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))));
+        align-items: center;
 
         .accordion-item {
             border: none;
@@ -1061,8 +1061,8 @@
     }
 
     .custom-navtab {
-        overflow: auto;
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(0px + (24 - 0) * ((100vw - 320px) / (1920 - 320))));
+        overflow: auto;
         position: sticky;
         top: 0;
 
@@ -1096,9 +1096,9 @@
 
                 &::before {
                     @include pos;
+                    @include pseudowh($width: 0px, $height: 100%);
                     bottom: 0;
                     left: 0;
-                    @include pseudowh($width: 0px, $height: 100%);
                     background-color: var(--theme-color);
                     background-color: transparent;
                     transition: 0.3s ease;
@@ -1221,9 +1221,9 @@
             }
 
             .delivery-address-detail {
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
                 margin-left: 10px;
                 width: calc(85% + (75 - 85) * ((100vw - 320px) / (1920 - 320)));
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
 
                 [dir="rtl"] & {
                     margin-left: unset;
@@ -1252,9 +1252,9 @@
     }
 
     .add-address {
+        @include flex_common;
         padding: 30px;
         height: 100%;
-        @include flex_common;
         text-align: center;
         cursor: pointer;
         background-color: $white;
@@ -1278,8 +1278,8 @@
             position: relative;
 
             i {
-                position: absolute;
                 @include center(vertical);
+                position: absolute;
                 right: 17px;
                 font-size: 18px;
                 color: $content-color;
@@ -1498,8 +1498,8 @@
         }
 
         img {
-            position: absolute;
             @include center(vertical);
+            position: absolute;
             right: 20px;
             width: 60px;
         }
@@ -1531,9 +1531,9 @@
 
                 &::after {
                     @include pos;
+                    @include pseudowh($width: 70%, $height: 2px);
                     bottom: -5px;
                     left: 0;
-                    @include pseudowh($width: 70%, $height: 2px);
                     background: var(--theme-color2);
 
                     [dir="rtl"] & {
@@ -1546,8 +1546,8 @@
 
         .contact-detail {
             .contact-detail-box {
-                align-items: center;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320))));
+                align-items: center;
                 background-color: $light-gray;
                 padding: calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (27 - 15) * ((100vw - 320px) / (1920 - 320))) calc(30px + (41 - 30) * ((100vw - 320px) / (1920 - 320)));
                 position: relative;
@@ -1555,8 +1555,8 @@
                 margin-left: 22px;
 
                 .contact-icon {
-                    position: absolute;
                     @include center(vertical);
+                    position: absolute;
                     left: -21px;
                     background-color: var(--theme-color);
                     padding: 13px;
@@ -1700,10 +1700,9 @@
 
     &::after {
         @include pos;
+        @include pseudowh;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         background-image: url(../images/inner-page/log-in-bg.png);
         background-position: center;
         background-repeat: no-repeat;
@@ -1778,10 +1777,8 @@
             padding: 1px 0;
 
             ul {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
                 align-items: center;
-                flex-wrap: wrap;
-                gap: 15px;
 
                 [dir="rtl"] & {
                     padding-right: 0;
@@ -1855,8 +1852,8 @@
             &::before {
                 @include pos;
                 @include center(vertical);
-                left: 0;
                 @include pseudowh($width: 100%, $height: 1px);
+                left: 0;
                 background-color: #ddd;
                 z-index: 0;
             }
@@ -2106,15 +2103,12 @@
                 }
 
                 .compare-image {
+                    @include pseudowh($width: calc(105px + (130 - 105) * ((100vw - 320px) / (1920 - 320))), $height: calc(105px + (130 - 105) * ((100vw - 320px) / (1920 - 320))));
+                    @include flex_common;
                     text-align: center;
                     border-radius: 5px;
                     background-color: #f1f1f1;
                     margin: 0 auto;
-                    width: calc(105px + (130 - 105) * ((100vw - 320px) / (1920 - 320)));
-                    height: calc(105px + (130 - 105) * ((100vw - 320px) / (1920 - 320)));
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
 
                     img {
                         @include pseudowh($width: 100%, $height: calc(65px + (90 - 65) * ((100vw - 320px) / (1920 - 320))));
@@ -2190,8 +2184,8 @@
                 &::after {
                     @include pos;
                     @include center(vertical);
-                    right: 51px;
                     @include pseudowh($width: 1px, $height: 60%);
+                    right: 51px;
                     opacity: .3;
                     background-color: $content-color;
                 }
@@ -2230,10 +2224,10 @@
                         padding: 0;
 
                         &::after {
+                            @include pseudowh($width: unset, $height: unset);
+                            @include font;
                             background-image: none;
                             content: "\f107";
-                            @include font;
-                            @include pseudowh($width: unset, $height: unset);
 
                             [dir="rtl"] & {
                                 margin-left: unset;
@@ -2367,13 +2361,13 @@
                                             }
 
                                             span {
+                                                @include pseudowh($width: 22px, $height: 22px);
+                                                @include flex_common;
                                                 font-size: 13px;
                                                 color: $white;
                                                 background-color: var(--theme-color);
                                                 padding: 4px 5px 3px;
                                                 border-radius: 100%;
-                                                @include pseudowh($width: 22px, $height: 22px);
-                                                @include flex_common;
                                             }
                                         }
                                     }
@@ -2400,9 +2394,9 @@
                                     background-color: $white;
 
                                     &::after {
-                                        transition: all 0.3s ease-in-out;
                                         @include pos;
                                         @include pseudowh;
+                                        transition: all 0.3s ease-in-out;
                                         z-index: -1;
                                         top: 0;
                                         left: 0;
@@ -2483,6 +2477,7 @@
             }
 
             label {
+                @include flex_common;
                 position: absolute;
                 top: 0;
                 bottom: unset;
@@ -2494,7 +2489,6 @@
                 text-transform: uppercase;
                 font-size: 13px;
                 font-weight: 600;
-                @include flex_common;
 
                 i {
                     @include pseudowh($width: 16px, $height: 16px);
@@ -2513,8 +2507,8 @@
             }
 
             .blog-label {
-                align-items: center;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
+                align-items: center;
 
                 .time,
                 .super {
@@ -2666,8 +2660,7 @@
             }
 
             @include mq-max(md) {
-                width: 100%;
-                height: auto;
+                @include pseudowh($width: 100%, $height: auto);
                 margin-bottom: 8px;
                 text-align: center;
             }
@@ -2740,9 +2733,9 @@
 
                         &::before {
                             @include pos;
-                            background-color: $title-color;
                             @include pseudowh($width: 15px, $height: 1px);
                             @include center(vertical);
+                            background-color: $title-color;
                             left: -24px;
 
                             [dir="rtl"] & {
@@ -2797,10 +2790,10 @@
             margin-bottom: calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
 
             .first {
-                font-size: calc(55px + (70 - 55) * ((100vw - 320px) / (1920 - 320)));
-                color: $content-color;
                 @include pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))), $height: calc(38px + (50 - 38) * ((100vw - 320px) / (1920 - 320))));
                 @include flex_common;
+                font-size: calc(55px + (70 - 55) * ((100vw - 320px) / (1920 - 320)));
+                color: $content-color;
                 float: left;
                 margin-right: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320)));
                 margin-top: 8px;
@@ -3056,8 +3049,8 @@
 
         &.center {
             &::before {
-                color: var(--theme-color);
                 @include center(horizontal);
+                color: var(--theme-color);
             }
         }
     }
@@ -3079,10 +3072,9 @@
 
         &::before {
             @include pos;
+            @include pseudowh($width: calc(106px + (175 - 106) * ((100vw - 320px) / (1920 - 320))), $height: 3px);
             bottom: calc(-7px + (6 - 7) * ((100vw - 320px) / (1920 - 320)));
             left: 0;
-            width: calc(106px + (175 - 106) * ((100vw - 320px) / (1920 - 320)));
-            height: 3px;
             background: #ffa53b;
         }
 
@@ -3172,14 +3164,14 @@
     }
 
     .delivery-box {
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))));
         margin-top: 20px;
         align-items: center;
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))));
 
         li {
             .delivery-box {
-                align-items: center;
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
+                align-items: center;
                 margin-top: 0;
 
                 .delivery-icon {
@@ -3227,8 +3219,8 @@
             margin-top: -11px;
 
             img {
-                object-fit: contain;
                 @include pseudowh($width: 74%, $height: 100%);
+                object-fit: contain;
             }
         }
 
@@ -3295,11 +3287,9 @@
         }
 
         .team-iamge {
+            @include pseudowh($width: 50%, $height: auto);
             border-radius: 100%;
             position: relative;
-            width: 50%;
-            height: auto;
-            @include pseudowh($width: 50%, $height: auto);
             overflow: hidden;
             margin: 0 auto;
 
@@ -3342,19 +3332,19 @@
             }
 
             .team-media {
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
                 position: relative;
                 margin-top: 15px;
                 justify-content: center;
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
                 transition: all 0.3s ease-in-out;
 
                 li {
                     a {
                         @include flex_common;
+                        @include pseudowh($width: 30px, $height: 30px);
                         font-size: 16px;
                         color: $white;
                         border-radius: 5px;
-                        @include pseudowh($width: 30px, $height: 30px);
                         background-color: #ededed;
 
                         &.fb-bg {
@@ -3457,8 +3447,8 @@
         }
 
         .reviewer-profile {
-            align-items: center;
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(12px + (19 - 12) * ((100vw - 320px) / (1920 - 320))));
+            align-items: center;
 
             .reviewer-image {
                 @include pseudowh($width: calc(65px + (75 - 65) * ((100vw - 320px) / (1920 - 320))), $height: auto);
@@ -3527,10 +3517,10 @@
         z-index: 0;
 
         @include mq-max(lg) {
+            @include pseudowh($width: 300px, $height: 100vh);
             position: fixed;
             top: 0;
             left: -320px;
-            @include pseudowh($width: 300px, $height: 100vh);
             border-radius: 0;
             z-index: 6;
             overflow-y: auto;
@@ -3543,15 +3533,14 @@
         }
 
         .close-button {
+            @include pseudowh($width: 30px, $height: 30px);
+            @include flex_common;
             position: absolute;
             top: 10px;
             right: 10px;
             z-index: 1;
-            width: 30px;
-            height: 30px;
             background: $light-gray;
             border-radius: 100%;
-            @include flex_common;
 
             .close-sidebar {
                 border: none;
@@ -3570,8 +3559,7 @@
                 overflow: hidden;
 
                 img {
-                    height: 150px;
-                    width: 100%;
+                    @include pseudowh($width: 100%, $height: 150px);
                     object-fit: cover;
 
                     @include mq-max(lg) {
@@ -3589,14 +3577,14 @@
                 }
 
                 .cover-icon {
+                    @include pseudowh($width: 30px, $height: 30px);
+                    @include flex_common;
                     position: absolute;
                     top: 8px;
                     right: 8px;
                     z-index: 1;
                     background-color: $white;
-                    @include pseudowh($width: 30px, $height: 30px);
                     border-radius: 100%;
-                    @include flex_common;
                     color: $content-color;
                 }
             }
@@ -3612,8 +3600,7 @@
                     position: relative;
 
                     img {
-                        width: calc(93px + (108 - 93) * ((100vw - 320px) / (1920 - 320)));
-                        height: calc(93px + (108 - 93) * ((100vw - 320px) / (1920 - 320)));
+                        @include pseudowh($width: calc(93px + (108 - 93) * ((100vw - 320px) / (1920 - 320))), $height: calc(93px + (108 - 93) * ((100vw - 320px) / (1920 - 320))));
                         object-fit: contain;
                         background-color: $light-gray;
                         border-radius: 100%;
@@ -3623,14 +3610,14 @@
                     }
 
                     .cover-icon {
+                        @include pseudowh($width: 30px, $height: 30px);
+                        @include flex_common;
                         position: absolute;
                         bottom: 0;
                         left: 55%;
                         z-index: 1;
                         background-color: $white;
-                        @include pseudowh($width: 30px, $height: 30px);
                         border-radius: 100%;
-                        @include flex_common;
                         color: $content-color;
 
                         i {
@@ -3703,10 +3690,10 @@
                         color: var(--theme-color);
 
                         &::before {
+                            @include pseudowh;
                             @include pos;
                             top: 0;
                             left: 0;
-                            @include pseudowh;
                             background: var(--theme-color2);
                             z-index: -1;
                             opacity: 0.1;
@@ -3762,11 +3749,11 @@
                 margin: 30px 0;
 
                 .totle-contain {
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
                     background-color: $white;
                     padding: calc(16px + (25 - 16) * ((100vw - 320px) / (1920 - 320)));
                     border-radius: 9px;
                     box-shadow: 0 0 8px rgba($title-color, 0.08);
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
                     align-items: center;
                     position: relative;
                     overflow: hidden;
@@ -3785,9 +3772,9 @@
                     }
 
                     .img-1 {
+                        @include center(vertical);
                         width: calc(78px + (90 - 78) * ((100vw - 320px) / (1920 - 320)));
                         position: absolute;
-                        @include center(vertical);
                         opacity: 0.12;
                         right: -30px;
                         transition: all 0.3s ease-in-out;
@@ -3855,8 +3842,8 @@
 
                 .order-box {
                     .order-container {
-                        align-items: center;
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))));
+                        align-items: center;
 
                         .order-icon {
                             position: relative;
@@ -3868,9 +3855,9 @@
 
                             &::before {
                                 @include pos;
-                                top: 0;
-                                left: 0;
                                 @include pseudowh;
+                                left: 0;
+                                top: 0;
                                 background-color: var(--theme-color);
                                 opacity: 0.1;
                                 z-index: -1;
@@ -3917,12 +3904,12 @@
                     }
 
                     .product-order-detail {
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 20px);
                         background-color: $light-gray;
                         padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
                         margin-top: 30px;
                         border-radius: 8px;
                         align-items: center;
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 20px);
 
                         @include mq-max(xl) {
                             display: block;
@@ -4101,8 +4088,8 @@
                                     }
 
                                     h4 {
-                                        align-items: center;
                                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
+                                        align-items: center;
                                         font-weight: 500;
                                         color: $title-color;
 
@@ -4122,8 +4109,8 @@
                 }
 
                 .button-group {
-                    align-items: center;
                     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
+                    align-items: center;
 
                     button {
                         background-color: $light-gray;
@@ -4173,10 +4160,10 @@
                     padding: 0;
 
                     .card-details {
+                        @include flex_common;
                         min-height: 130px;
                         background: #d2d2d2;
                         color: $title-color;
-                        @include flex_common;
                         text-align: center;
 
                         h5 {
@@ -4266,10 +4253,8 @@
                     }
 
                     .name-detail {
+                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
                         margin-top: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
 
                         .name {
                             h5 {
@@ -4418,8 +4403,8 @@
                     padding-bottom: 15px;
 
                     ul {
-                        align-items: center;
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (26 - 10) * ((100vw - 320px) / (1920 - 320))));
+                        align-items: center;
 
                         [dir="rtl"] & {
                             padding-right: 0;
@@ -4427,8 +4412,8 @@
 
                         li {
                             .location-box {
-                                align-items: center;
                                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 7px);
+                                align-items: center;
                                 color: $content-color;
 
                                 .feather {
@@ -4496,9 +4481,9 @@
 
                                         &::before {
                                             @include pos;
+                                            @include pseudowh;
                                             top: 0;
                                             left: 0;
-                                            @include pseudowh;
                                             background: var(--theme-color2);
                                             opacity: 0.08;
                                             z-index: -1;
@@ -4551,8 +4536,8 @@
                             }
 
                             &:before {
-                                content: "";
                                 @include pseudowh($width: 19px, $height: 19px);
+                                content: "";
                                 border-radius: 100%;
                                 left: 2px;
                                 top: 2px;
@@ -4592,8 +4577,8 @@
                             }
 
                             &:before {
-                                content: "";
                                 @include pseudowh($width: 19px, $height: 19px);
+                                content: "";
                                 border-radius: 100%;
                                 left: 2px;
                                 top: 2px;
@@ -4636,10 +4621,10 @@
     }
 
     .order-details-contain {
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))));
         background-color: $light-gray;
         padding: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
         border-radius: 8px;
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))));
         height: 100%;
 
         .order-tracking-icon {
@@ -4769,11 +4754,11 @@
                 }
 
                 &:before {
-                    padding-top: 2px;
-                    content: "";
                     @include font;
                     @include flex_common;
                     @include pseudowh($width: 30px, $height: 30px);
+                    padding-top: 2px;
+                    content: "";
                     color: $white;
                     background: #959595;
                     line-height: 35px;
@@ -4832,11 +4817,11 @@
                 }
 
                 &:before {
-                    padding-top: 2px;
-                    content: "\f00c";
                     @include font;
                     @include flex_common;
                     @include pseudowh($width: 30px, $height: 30px);
+                    padding-top: 2px;
+                    content: "\f00c";
                     color: $white;
                     background-color: var(--theme-color);
                     line-height: 35px;

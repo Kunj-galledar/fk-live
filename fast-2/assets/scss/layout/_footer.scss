@@ -133,8 +133,8 @@ footer {
                 }
 
                 .address {
-                    margin-top: calc(7px + (30 - 7) * ((100vw - 320px) / (1920 - 320)));
                     @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320))));
+                    margin-top: calc(7px + (30 - 7) * ((100vw - 320px) / (1920 - 320)));
 
                     [dir="rtl"] & {
                         padding-left: unset;
@@ -299,8 +299,8 @@ footer {
             }
 
             ul {
-                align-items: center;
                 @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+                align-items: center;
 
                 [dir="rtl"] & {
                     padding: 0;
@@ -417,8 +417,8 @@ footer {
     }
 
     .sub-footer {
-        border-top: 1px dashed #c1c1c1;
         @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        border-top: 1px dashed #c1c1c1;
 
         @include mq-max(lg) {
             display: block;
@@ -489,9 +489,9 @@ footer {
         }
 
         ul {
+            @include flex_common ($dis: flex, $align: center, $justify: space-between);
             flex-wrap: wrap;
             gap: 6px;
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
             @include mq-max(lg) {
                 display: block;
@@ -651,9 +651,7 @@ footer {
         }
 
         .footer-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: calc(7px + (16 - 7) * ((100vw - 320px) / (1920 - 320)));
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(7px + (16 - 7) * ((100vw - 320px) / (1920 - 320))));
 
             [dir="rtl"] & {
                 padding-right: 0;
@@ -713,10 +711,6 @@ footer {
                         @include pos;
                         @include pseudowh($width: 5px, $height: 5px);
                         @include center(vertical);
-                        // width: 5px;
-                        // height: 5px;
-                        // top: 50%;
-                        // transform: translateY(-50%);
                         left: -20px;
                         border-radius: 100%;
                         opacity: 0;
@@ -735,11 +729,7 @@ footer {
                             @include pseudowh($width: unset, $height: unset);
                             @include center(vertical);
                             content: "\f105";
-                            // top: 50%;
-                            // transform: translateY(-50%);
                             left: 0;
-                            // width: unset;
-                            // height: unset;
                             opacity: 0;
                             background: none;
                             color: var(--theme-color);
