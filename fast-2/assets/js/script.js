@@ -177,7 +177,6 @@ $('.qty-box .quantity-left-minus').on('click', function () {
     }
 });
 
-
 /*=====================
   07. Tap to Top js
    ==========================*/

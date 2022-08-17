@@ -601,7 +601,7 @@ header {
                     box-shadow: none;
 
                     @include mq-max(xl) {
-                         width: 320px;
+                         width: calc(300px + (320 - 300) * ((100vw - 1200px) / (1920 - 1200)));
                          transform: translateX(-100%);
                          z-index: 7;
                     }
@@ -810,6 +810,16 @@ header {
                     padding: 20px;
                     border-radius: 10px;
 
+                    &-left {
+                         left: 0;
+                         transform: translateX(0%) translateY(-15px);
+
+                         [dir="rtl"] & {
+                              left: unset;
+                              right: 0;
+                         }
+                    }
+
                     li {
                          display: block;
                          width: 100%;
@@ -966,6 +976,10 @@ header {
                               [dir="rtl"] & {
                                    transform: translateX(0);
                               }
+                         }
+
+                         .dropdown-menu-center {
+                              transform: translateX(0%) translateY(0);
                          }
 
                          .dropdown-menu-left {

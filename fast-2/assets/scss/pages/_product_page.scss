@@ -242,13 +242,16 @@
             border-bottom: 1px solid $border-color;
             padding-bottom: 16px;
 
-
             p {
                 color: $content-color;
                 line-height: 1.7;
                 margin: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) 0 0;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 width: 80%;
+
+                @include mq-max(md) {
+                    width: 100%;
+                }
             }
         }
 
@@ -287,6 +290,7 @@
         .note-box {
             @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(7px + (15 - 7) * ((100vw - 320px) / (1920 - 320))));
             align-items: center;
+            margin-top: 20px;
 
             @include mq-max(md) {
                 justify-content: center;
@@ -328,6 +332,8 @@
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
             align-items: center;
             margin-top: 20px;
+            border-bottom: 1px solid #ececec;
+            padding-bottom: 16px;
 
             .team-box {
                 padding: 0;
@@ -377,7 +383,7 @@
                 margin-top: 20px;
 
                 .product-info-list {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 5px);
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(8px + (17 - 8) * ((100vw - 320px) / (1920 - 320))));
                     align-items: flex-start;
                     text-align: left;
                     display: inline-block;
@@ -387,17 +393,72 @@
                     border-radius: 12px;
                     width: 80%;
 
-                    @include mq-max(sm) {
-                        flex-wrap: wrap;
-                        gap: 0;
+                    @include mq-max(xs) {
+                        column-count: 1;
+                        padding: 15px;
+                    }
+
+                    &-2 {
+                        display: flex;
+
+                        @media (max-width: 1500px) {
+                            width: 100%;
+                        }
+
+                        @media (max-width: 1450px) {
+                            column-count: 1;
+                            padding: 15px;
+                        }
+
+                        @include mq-max(xl) {
+                            column-count: 2;
+                            display: block;
+                            padding-bottom: 4px;
+
+                            li {
+                                margin-bottom: 8px;
+                            }
+                        }
+
+                        @include mq-max(xs) {
+                            display: flex;
+                            padding-bottom: 15px;
+
+                            li {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    &-3 {
+                        width: 50%;
+
+                        li {
+                            margin-bottom: 7px;
+
+                            @include mq-max(2xs) {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        @include mq-max(2xl) {
+                            width: 80%;
+                        }
+
+                        @include mq-max(md) {
+                            width: 100%;
+                        }
+
+                        @include mq-max(2xs) {
+                            display: flex;
+                        }
                     }
 
                     li {
                         padding-left: 13px;
                         width: 100%;
-                        font-size: 15px;
+                        font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                         position: relative;
-                        margin-bottom: 12px;
                         color: #777;
 
                         @include mq-max(sm) {
@@ -435,87 +496,6 @@
                         }
                     }
                 }
-
-                .product-info-list-2 {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 5px);
-                    align-items: flex-start;
-                    text-align: left;
-
-                    @include mq-max(sm) {
-                        flex-wrap: wrap;
-                        gap: 0;
-                    }
-
-                    .list-1 {
-                        width: 37%;
-
-                        @include mq-max(3xl) {
-                            width: 50%;
-                        }
-
-                        @include mq-max(sm) {
-                            width: 100%;
-                        }
-
-                        @include mq-max(xs) {
-                            text-align: center;
-
-                        }
-                    }
-
-                    .list-2 {
-                        width: 50%;
-
-                        @include mq-max(sm) {
-                            width: 100%;
-                        }
-
-                        @include mq-max(xs) {
-                            text-align: center;
-
-                        }
-                    }
-
-                    li {
-                        padding-left: 13px;
-                        width: 100%;
-                        font-size: 15px;
-                        position: relative;
-
-                        @include mq-max(sm) {
-                            width: auto;
-                            margin-left: 18px;
-                        }
-
-                        @include mq-max(xs) {
-                            margin-left: unset;
-                            width: 100%;
-                            padding-left: unset;
-
-                            &::after {
-                                content: none !important;
-                            }
-                        }
-
-                        &::after {
-                            @include pos;
-                            @include center(vertical);
-                            @include pseudowh($width: 5px, $height: 5px);
-                            left: 0;
-                            background-color: $content-color;
-                            border-radius: 100%;
-                        }
-
-                        a {
-                            font-weight: 600;
-                            margin-left: 5px;
-
-                            +a {
-                                margin-left: 0;
-                            }
-                        }
-                    }
-                }
             }
 
             .pickup-icon {
@@ -532,6 +512,10 @@
                     margin-bottom: 5px;
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     line-height: 1.6;
+
+                    @include mq-max(md) {
+                        width: 100%;
+                    }
                 }
 
                 h6 {

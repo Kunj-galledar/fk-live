@@ -36,6 +36,11 @@ header {
         }
 
         h6 {
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            overflow: hidden;
+
             a {
                 text-decoration: underline;
                 font-weight: 600;
@@ -156,7 +161,7 @@ header {
             }
 
             ul {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(4px + (11 - 4) * ((100vw - 320px) / (1920 - 320))));
 
                 li {
                     position: relative;
@@ -1163,12 +1168,25 @@ header {
                                 }
                             }
 
+                            .according-menu {
+                                margin-left: auto;
+
+                                [dir="rtl"] & {
+                                    margin-left: unset;
+                                    margin-right: auto;
+                                }
+                            }
+
                             i {
                                 margin-left: auto;
 
                                 [dir="rtl"] & {
                                     margin-left: unset;
                                     margin-right: auto;
+                                }
+
+                                @include mq-max(md) {
+                                    display: none;
                                 }
                             }
                         }

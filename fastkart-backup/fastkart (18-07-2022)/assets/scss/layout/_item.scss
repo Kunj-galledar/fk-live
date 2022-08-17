@@ -1,0 +1,217 @@
+/**=====================
+     Item scss
+==========================**/
+.theme-setting {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    right: -111px;
+    z-index: 3;
+
+    &-2 {
+        right: -141px;
+
+        @include mq-max(md) {
+            right: -111px;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        [dir="rtl"] & {
+            padding-right: 0;
+        }
+
+        li {
+            box-shadow: 0px 2px 8px rgba($title-color, 0.09);
+            padding: 10px;
+            background-color: $white;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &.dark {
+                display: flex;
+                padding: 0;
+                background-color: transparent;
+            }
+
+            &.rtl {
+                h5 {
+                    padding: 0;
+                }
+            }
+
+            h5 {
+                text-align: center;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                font-weight: 500;
+                position: relative;
+                background-color: $white;
+                padding: 10px;
+                font-size: 14px;
+                margin-top: 4px;
+
+                [dir="rtl"] & {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 5px;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 5px;
+                }
+
+                +h5 {
+                    &:before {
+                        @include pos;
+                        @include center(vertical);
+                        left: 0;
+                        width: 1px;
+                        height: 70%;
+                        background-color: rgba($title-color, 0.15);
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 0;
+                        }
+                    }
+                }
+
+                i {
+                    margin-right: 5px;
+
+                    [dir="rtl"] & {
+                        margin-right: unset;
+                        margin-left: 5px;
+                    }
+                }
+            }
+
+            &.color-picker {
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                box-shadow: none;
+
+                .form-control {
+                    padding: 0;
+                    border: none;
+
+                    .form-control-color {
+                        padding: 0;
+                        font-size: 27px;
+                        border: none;
+                        width: 43px;
+                        height: auto;
+
+                        [dir="rtl"] & {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+
+            &.item-section-box {
+                transform: rotate(-90deg);
+                padding: 10px;
+                background-color: var(--theme-color);
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+                @include mq-max(md) {
+                    display: none;
+                }
+
+                .button-item {
+                    @include flex_common;
+                    border-radius: 7px 0 0 7px;
+                    background-color: var(--theme-color);
+                    z-index: 1;
+
+                    .item-btn {
+                        border: none;
+                        background-color: transparent;
+                        color: $white;
+                        padding: 0px 3px;
+
+                        .icli {
+                            font-size: 22px;
+                        }
+                    }
+                }
+
+                .item-section {
+                    position: fixed;
+                    @include center(vertical);
+                    right: -180px;
+                    background-color: var(--theme-color);
+                    color: $white;
+                    border-radius: 7px 0 0 7px;
+                    padding: 15px;
+                    transition: all .3s ease-in-out;
+                    z-index: 9;
+
+                    &.active {
+                        right: 0;
+                    }
+
+                    .close-button {
+                        position: absolute;
+                        top: 5px;
+                        left: 4px;
+                        color: $white;
+                        border: none;
+                        background-color: transparent;
+                    }
+
+                    h6 {
+                        @include flex_common ($dis: flex, $align: center, $justify: space-evenly);
+                        margin-top: 10px;
+
+                        .icli {
+                            font-size: 22px;
+                        }
+                    }
+
+                    .items-image {
+                        @include flex_common;
+                        margin: 10px 0;
+                        flex-wrap: unset;
+                        gap: unset;
+
+                        [dir="rtl"] & {
+                            padding-left: unset;
+                            padding-right: 0;
+                        }
+
+                        li {
+                            background-color: $white;
+                            @include pseudowh($width: 30px, $height: 30px);
+                            @include flex_common;
+                            border-radius: 50%;
+                            border: 1px solid var(--theme-color);
+                            color: var(--theme-color);
+                            font-weight: 600;
+                            font-size: 13px;
+
+                            +li {
+                                margin-left: -10px;
+
+                                [dir="rtl"] & {
+                                    margin-left: unset;
+                                    margin-right: -10px;
+                                }
+                            }
+
+                            img {
+                                @include pseudowh($width: 15px, $height: 15px);
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

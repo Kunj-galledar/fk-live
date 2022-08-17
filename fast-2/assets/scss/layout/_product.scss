@@ -1,6 +1,92 @@
 /**=====================
      Product scss
 ==========================**/
+.add-to-cart-box {
+     background-color: #f8f8f8;
+     border-radius: 50px;
+     position: relative;
+
+     .btn-add-cart {
+          padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) 0;
+          width: 100%;
+          font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+          margin-top: 10px;
+          color: $content-color;
+          border-radius: 50px;
+          font-weight: 500;
+
+          i {
+               @include center(vertical);
+               @include flex_common;
+               @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))));
+               background-color: $white;
+               border-radius: 100%;
+               color: var(--theme-color);
+               position: absolute;
+               right: 5px;
+
+               @include mq-max(xs) {
+                    display: none;
+               }
+          }
+     }
+
+     .qty-box {
+          @include pseudowh;
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin: 0;
+          display: none;
+
+          &.open {
+               display: block;
+          }
+
+          .input-group {
+               background-color: $light-gray;
+               border-radius: 50px;
+               padding: 4px;
+               text-align: center;
+               z-index: 0;
+
+               &.theme-bg-white {
+                    background-color: $white;
+               }
+
+               button {
+                    @include pseudowh($width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))), $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))));
+                    @include flex_common;
+                    border: none;
+                    padding: 0;
+                    background-color: $white;
+                    z-index: 0;
+                    border-radius: 100% !important;
+
+                    i {
+                         font-size: 13px;
+                         color: var(--theme-color);
+                         margin-top: 1px;
+                    }
+
+                    &:focus {
+                         box-shadow: none;
+                    }
+               }
+
+               input {
+                    height: auto;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 14px;
+                    color: $content-color;
+               }
+          }
+     }
+}
+
 .qty-box {
      margin-top: 10px;
      width: 100%;
@@ -493,8 +579,7 @@
                gap: calc(4px + (7 - 4) * ((100vw - 320px) / (1920 - 320)));
 
                h6 {
-                    color: $content-color;
-                    font-weight: 400;
+                    font-weight: 500;
                }
           }
      }
@@ -513,7 +598,7 @@
 
      .sold {
           font-weight: 600;
-          margin-top: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
+          margin-top: 3px;
           line-height: 21px;
           font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
 
@@ -524,12 +609,13 @@
 
           del {
                font-weight: 400;
+               margin-left: 6px;
                font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
           }
 
           &.weight {
                font-size: 13px;
-               margin-top: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
+               margin: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))) 0;
                line-height: normal;
           }
      }
@@ -539,30 +625,87 @@
      }
 
      .counter-box {
-          display: flex;
-          align-items: center;
-
-          @include mq-max(xs) {
-               display: block;
-          }
+          display: block;
+          position: relative;
 
           h6 {
                margin-top: 0;
           }
 
-          .qty-box {
-               margin-right: auto;
+          .addtocart_btn {
 
-               [dir="rtl"] & {
-                    margin-right: unset;
-                    margin-left: auto;
+               .add-button,
+               .add_cart {
+                    @include flex_common;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    padding: 7px 11px;
+                    background-color: var(--theme-color);
+                    color: $white;
+                    font-size: 16px;
+                    font-weight: 600;
+                    transition: all 0.3s ease;
+
+                    span {
+                         position: relative;
+                         left: unset;
+                         right: unset;
+                         bottom: unset;
+                         font-size: 15px;
+                         margin-right: 8px;
+
+                         @include mq-max(xs) {
+                              display: none;
+                         }
+                    }
                }
 
-               @include mq-max(xs) {
-                    width: 100%;
-                    margin: 10px 0 0 0;
+               .qty-box {
+                    display: none;
+                    transition: all 0.3s ease;
+                    z-index: 1;
+                    margin-top: 0;
+                    max-width: 155px;
+
+                    &.open {
+                         display: block;
+                         position: absolute;
+                         right: 0;
+                         bottom: 0;
+                         width: 100%;
+                         transition: all 0.3s ease;
+                    }
+               }
+
+               .input-group {
+                    box-shadow: 0 2px 4px 0 #dedede;
+                    border-radius: 2px;
+                    padding: 4px;
+                    text-align: center;
+                    z-index: 0;
+                    background-color: $white;
+
+                    .btn {
+                         padding: 7px 12px;
+                         font-size: 10px;
+                         line-height: 1;
+                         border-radius: 2px !important;
+                         background-color: #f8f8f8;
+
+                         i {
+                              font-size: 15px;
+                         }
+                    }
+
+                    .form-control {
+                         padding: 2px;
+                         text-align: center;
+                         border-color: #f9f9f9;
+                    }
                }
           }
+
      }
 
      .price {
