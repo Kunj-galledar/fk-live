@@ -35,6 +35,14 @@
     justify-content: space-between;
     margin-bottom: 14px;
 
+    span {
+        a {
+            &:hover {
+                color: var(--theme-color);
+            }
+        }
+    }
+
     &-2 {
         margin-top: 18px;
     }
@@ -749,6 +757,10 @@
             display: flex;
             flex-wrap: wrap;
             margin: 10px -5px 0;
+
+            @include mq-max(md) {
+                justify-content: center;
+            }
 
             h5 {
                 display: inline-block;

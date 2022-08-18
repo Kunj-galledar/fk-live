@@ -31,7 +31,14 @@
                     opacity: 1;
 
                     @include mq-max(sm) {
-                        right: -14px;
+                        right: 8px;
+                        top: 8px;
+                        z-index: 1;
+                        background: var(--theme-color);
+                        width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        border-radius: 0;
+                        border-bottom-left-radius: 6px;
 
                         [dir="rtl"] & {
                             right: unset;
@@ -39,16 +46,18 @@
                         }
                     }
 
-                    [dir="rtl"] & {
-                        right: unset;
-                        left: -50px;
-                    }
-
                     &:before {
                         content: "\f00d";
                         font-family: "Font Awesome 5 Free";
                         font-weight: 900;
                         font-size: 22px;
+
+                        @include mq-max(sm) {
+                            font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                            // z-index: 1;
+                            position: absolute;
+                            @include center(both);
+                        }
                     }
                 }
             }
@@ -221,52 +230,61 @@
 }
 
 // Shipping Mdoal Start
-.modal-header {
-    border: none;
-    padding: 0;
-
-    .btn-close {
-        width: 54px;
-        height: 54px;
-        top: -50px;
-        right: -50px;
-        line-height: 54px;
-        position: absolute;
-        text-decoration: none;
-        text-align: center;
-        color: $white;
-        background: 0 0;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s linear;
-        opacity: 1;
-
-        @include mq-max(sm) {
-            right: -14px;
-
-            [dir="rtl"] & {
-                right: unset;
-                left: -14px;
-            }
-        }
-
-        [dir="rtl"] & {
-            right: unset;
-            left: -50px;
-        }
-
-        &:before {
-            content: "\f00d";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 22px;
-        }
-    }
-}
-
 .shipping-modal {
     .modal-dialog {
         .modal-content {
+            .modal-header {
+                border: none;
+                padding: 0;
+
+                .btn-close {
+                    width: 54px;
+                    height: 54px;
+                    top: -50px;
+                    right: -50px;
+                    line-height: 54px;
+                    position: absolute;
+                    text-decoration: none;
+                    text-align: center;
+                    color: $white;
+                    background: 0 0;
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.2s linear;
+                    opacity: 1;
+
+                    @include mq-max(sm) {
+                        right: 8px;
+                        top: 8px;
+                        z-index: 1;
+                        background: var(--theme-color);
+                        width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        border-radius: 0;
+                        border-bottom-left-radius: 6px;
+
+                        [dir="rtl"] & {
+                            right: unset;
+                            left: -14px;
+                        }
+                    }
+
+                    &:before {
+                        content: "\f00d";
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        font-size: 22px;
+
+                        @include mq-max(sm) {
+                            font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                            // z-index: 1;
+                            position: absolute;
+                            @include center(both);
+                        }
+                    }
+                }
+            }
+
             .modal-body {
                 padding: calc(15px + (40 - 15) * ((100vw - 320px) / (1920 - 320)));
 
@@ -323,7 +341,14 @@
                     opacity: 1;
 
                     @include mq-max(sm) {
-                        right: -14px;
+                        right: 8px;
+                        top: 8px;
+                        z-index: 1;
+                        background: var(--theme-color);
+                        width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        border-radius: 0;
+                        border-bottom-left-radius: 6px;
 
                         [dir="rtl"] & {
                             right: unset;
@@ -336,6 +361,13 @@
                         font-family: "Font Awesome 5 Free";
                         font-weight: 900;
                         font-size: 22px;
+
+                        @include mq-max(sm) {
+                            font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                            // z-index: 1;
+                            position: absolute;
+                            @include center(both);
+                        }
                     }
                 }
             }
@@ -437,7 +469,11 @@
                 }
 
                 .shop-cart-button {
-                    margin: -8px;
+                    // margin: -8px;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
 
                     @include mq-max(2xs) {
                         @include flex_common;
@@ -447,7 +483,7 @@
                         border: 1px solid var(--theme-color);
                         background: $white;
                         color: var(--theme-color);
-                        margin: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
+                        // margin: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
                         padding: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320))) calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
                         font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
 
@@ -469,7 +505,52 @@
             .modal-header {
                 padding: 0;
 
-                button {
+                // button {
+                //     // width: 54px;
+                //     // height: 54px;
+                //     top: -50px;
+                //     right: -50px;
+                //     line-height: 54px;
+                //     position: absolute;
+                //     text-decoration: none;
+                //     text-align: center;
+                //     color: $white;
+                //     background: 0 0;
+                //     border: none;
+                //     cursor: pointer;
+                //     transition: all 0.2s linear;
+                //     opacity: 1;
+
+                //     // &::before {
+                //     //     content: none;
+                //     // }
+
+                //     @include mq-max(sm) {
+                //         right: 8px;
+                //         top: 8px;
+                //         z-index: 1;
+                //         background: var(--theme-color);
+                //         width: 20px;
+                //         height: 20px;
+                //         border-radius: 0;
+                //         border-bottom-left-radius: 6px;
+
+                //         [dir="rtl"] & {
+                //             right: unset;
+                //             left: -14px;
+                //         }
+                //     }
+
+                //     .fa-times {
+                //         font-size: 22px;
+                //     }
+
+                //     // @include mq-max(xs) {
+                //     //     display: none;
+                //     // }
+                // }
+
+                .btn-close {
                     width: 54px;
                     height: 54px;
                     top: -50px;
@@ -485,12 +566,34 @@
                     transition: all 0.2s linear;
                     opacity: 1;
 
-                    .fa-times {
-                        font-size: 22px;
+                    @include mq-max(sm) {
+                        right: 8px;
+                        top: 8px;
+                        z-index: 1;
+                        background: var(--theme-color);
+                        width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        border-radius: 0;
+                        border-bottom-left-radius: 6px;
+
+                        [dir="rtl"] & {
+                            right: unset;
+                            left: -14px;
+                        }
                     }
 
-                    @include mq-max(xs) {
-                        display: none;
+                    &:before {
+                        content: "\f00d";
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        font-size: 22px;
+
+                        @include mq-max(sm) {
+                            font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                            // z-index: 1;
+                            position: absolute;
+                            @include center(both);
+                        }
                     }
                 }
             }
@@ -517,7 +620,14 @@
         opacity: 1;
 
         @include mq-max(sm) {
-            right: -14px;
+            right: 8px;
+            top: 8px;
+            z-index: 1;
+            background: var(--theme-color);
+            width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+            height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+            border-radius: 0;
+            border-bottom-left-radius: 6px;
 
             [dir="rtl"] & {
                 right: unset;
@@ -530,6 +640,13 @@
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
             font-size: 22px;
+
+            @include mq-max(sm) {
+                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                // z-index: 1;
+                position: absolute;
+                @include center(both);
+            }
         }
     }
 
@@ -769,7 +886,14 @@
                 opacity: 1;
 
                 @include mq-max(sm) {
-                    right: -14px;
+                    right: 8px;
+                    top: 8px;
+                    z-index: 1;
+                    background: var(--theme-color);
+                    width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    border-radius: 0;
+                    border-bottom-left-radius: 6px;
 
                     [dir="rtl"] & {
                         right: unset;
@@ -782,6 +906,13 @@
                     font-family: "Font Awesome 5 Free";
                     font-weight: 900;
                     font-size: 22px;
+
+                    @include mq-max(sm) {
+                        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                        // z-index: 1;
+                        position: absolute;
+                        @include center(both);
+                    }
                 }
             }
         }
@@ -837,7 +968,14 @@
                 opacity: 1;
 
                 @include mq-max(sm) {
-                    right: -14px;
+                    right: 8px;
+                    top: 8px;
+                    z-index: 1;
+                    background: var(--theme-color);
+                    width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    border-radius: 0;
+                    border-bottom-left-radius: 6px;
 
                     [dir="rtl"] & {
                         right: unset;
@@ -850,6 +988,13 @@
                     font-family: "Font Awesome 5 Free";
                     font-weight: 900;
                     font-size: 22px;
+
+                    @include mq-max(sm) {
+                        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                        // z-index: 1;
+                        position: absolute;
+                        @include center(both);
+                    }
                 }
             }
         }
@@ -911,7 +1056,14 @@
                 opacity: 1;
 
                 @include mq-max(sm) {
-                    right: -14px;
+                    right: 8px;
+                    top: 8px;
+                    z-index: 1;
+                    background: var(--theme-color);
+                    width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    border-radius: 0;
+                    border-bottom-left-radius: 6px;
 
                     [dir="rtl"] & {
                         right: unset;
@@ -924,6 +1076,13 @@
                     font-family: "Font Awesome 5 Free";
                     font-weight: 900;
                     font-size: 22px;
+
+                    @include mq-max(sm) {
+                        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                        // z-index: 1;
+                        position: absolute;
+                        @include center(both);
+                    }
                 }
             }
         }
@@ -985,7 +1144,14 @@
                 opacity: 1;
 
                 @include mq-max(sm) {
-                    right: -14px;
+                    right: 8px;
+                    top: 8px;
+                    z-index: 1;
+                    background: var(--theme-color);
+                    width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    border-radius: 0;
+                    border-bottom-left-radius: 6px;
 
                     [dir="rtl"] & {
                         right: unset;
@@ -998,6 +1164,13 @@
                     font-family: "Font Awesome 5 Free";
                     font-weight: 900;
                     font-size: 22px;
+
+                    @include mq-max(sm) {
+                        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                        // z-index: 1;
+                        position: absolute;
+                        @include center(both);
+                    }
                 }
             }
         }

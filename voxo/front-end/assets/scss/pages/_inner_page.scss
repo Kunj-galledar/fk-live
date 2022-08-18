@@ -91,20 +91,24 @@
   ==========================**/
 .social-media {
     display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
 
     &.media-center {
         justify-content: center;
     }
 
     a {
-        +a {
-            margin-left: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
+        display: block;
+        // +a {
+        //     margin-left: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
 
-            [dir="rtl"] & {
-                margin-left: unset;
-                margin-right: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
-            }
-        }
+        //     [dir="rtl"] & {
+        //         margin-left: unset;
+        //         margin-right: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
+        //     }
+        // }
     }
 
     .social-icon-box {
@@ -4815,6 +4819,14 @@ hr {
             text-decoration: none;
             cursor: pointer;
             font-weight: 600;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
 
             button {
                 color: $black1;

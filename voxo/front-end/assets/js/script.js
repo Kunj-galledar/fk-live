@@ -636,16 +636,16 @@
         $(".product-list-section").addClass("list-style");
     });
     $('.two-grid').on('click', function (e) {
-        $(".product-list-section").removeClass("row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 list-style").addClass("row-cols-2");
+        $(".product-list-section").removeClass("row-cols-xl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 list-style").addClass("row-cols-2");
     });
     $('.three-grid').on('click', function (e) {
-        $(".product-list-section").removeClass("row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 list-style").addClass("row-cols-md-3 row-cols-2");
+        $(".product-list-section").removeClass("row-cols-xl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 list-style").addClass("row-cols-md-3 row-cols-2");
     });
     $('.grid-btn').on('click', function (e) {
-        $(".product-list-section").removeClass("row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 list-style").addClass("row-cols-lg-4 row-cols-md-3 row-cols-2");
+        $(".product-list-section").removeClass("row-cols-xl-5 row-cols-xl-4 row-cols-md-3 row-cols-2 list-style").addClass("row-cols-xl-4 row-cols-md-3 row-cols-2");
     });
     $('.five-grid').on('click', function (e) {
-        $(".product-list-section").removeClass("list-style").addClass("row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2");
+        $(".product-list-section").removeClass("list-style").addClass("row-cols-xl-5 row-cols-xl-4 row-cols-md-3 row-cols-2");
     });
     var contentwidth = $(window).width();
     if (contentwidth < "1199") {

@@ -285,17 +285,18 @@
                             align-items: center;
                             margin-bottom: 0;
                             flex-wrap: wrap;
-                            margin: -5px;
+                            gap: 10px;
+                            // margin: -5px;
 
                             li {
-                                margin-top: 0;
-                                margin: 5px;
+                                margin: 0;
+                                // margin: 5px;
 
                                 a {
+                                    border-radius: 5px;
                                     width: 30px;
                                     height: 30px;
                                     background-color: $red;
-                                    border-radius: 5px;
                                     @include flex_common;
 
                                     i {
@@ -622,11 +623,18 @@
     }
 
     .offcanvas-header {
-        @include flex_common;
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        padding-left: 0;
+        padding-right: 0;
 
-        h5 {
-            margin-top: -5px;
+        button {
+            margin: 0;
+            padding: 0;
         }
+
+        // h5 {
+        //     margin-top: -5px;
+        // }
     }
 
     .offcanvas-body {
