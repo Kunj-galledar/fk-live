@@ -58,13 +58,27 @@
 
 .search-section {
     .search-bar {
+
+        .search-input,
+        .search-button {
+            border-radius: 4px;
+        }
+
         .input-group {
             width: 50%;
             margin: 26px auto 110px;
+
+            @include mq-max(lg) {
+                width: 80%;
+            }
+
+            @include mq-max(xs) {
+                width: 100%;
+            }
         }
 
         button {
-            padding: 15px 35px;
+            padding: 15px calc(24px + (35 - 24) * ((100vw - 320px) / (1920 - 320)));
             background-color: var(--theme-color);
             color: $white;
             border: 1px solid var(--theme-colors);
@@ -400,6 +414,10 @@
                 font-size: 18px;
                 color: $black1;
                 font-weight: 300;
+
+                [dir="rtl"] & {
+                    text-align: right;
+                }
             }
 
             label {
@@ -717,7 +735,7 @@
         }
 
         p {
-            font-size: 16px;
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
             line-height: 1.6;
             color: $font-light;
         }
@@ -957,7 +975,7 @@
 }
 
 .faq-section {
-    margin-top: -160px;
+    margin-top: calc(-85px + (-160 - -85) * ((100vw - 320px) / (1920 - 320)));
 
     .faq-contain {
         text-align: center;
@@ -990,11 +1008,9 @@
         h5 {
             color: $font-light;
             font-weight: 300;
-            margin-top: 10px;
             line-height: 1.6;
-            margin-bottom: -2px;
-            margin: 0 auto -2px;
-            letter-spacing: 0.03em;
+            margin: 10px auto -2px;
+            letter-spacing: 0.48px;
         }
     }
 }
@@ -3375,6 +3391,10 @@ hr {
                 margin-top: 5px;
                 display: block;
                 font-weight: 600;
+
+                &:hover {
+                    color: var(--theme-color);
+                }
             }
         }
     }
