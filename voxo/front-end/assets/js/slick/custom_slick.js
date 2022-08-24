@@ -561,6 +561,7 @@ $(".category-slider1").slick({
   arrows: true,
   slidesToShow: 4,
   slidesToScroll: 1,
+  // rtl: true,
   responsive: [{
       breakpoint: 1425,
       settings: {
@@ -767,10 +768,10 @@ $(document).ready(function () {
     arrows: false,
     infinite: true,
     responsive: [{
-      breakpoint: 576,
+      breakpoint: 992,
       settings: {
         vertical: false,
       },
-    }, ],
+    }],
   });
 });

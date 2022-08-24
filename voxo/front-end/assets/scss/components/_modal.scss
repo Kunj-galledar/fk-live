@@ -30,31 +30,36 @@
                     transition: all 0.2s linear;
                     opacity: 1;
 
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: -50px;
+                    }
+
                     @include mq-max(sm) {
-                        right: 8px;
-                        top: 8px;
+                        right: 0;
+                        top: 0;
                         z-index: 1;
                         background: var(--theme-color);
-                        width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-                        height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
                         border-radius: 0;
                         border-bottom-left-radius: 6px;
 
                         [dir="rtl"] & {
                             right: unset;
-                            left: -14px;
+                            left: 0;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 6px;
                         }
                     }
 
                     &:before {
                         content: "\f00d";
-                        font-family: "Font Awesome 5 Free";
-                        font-weight: 900;
+                        @include font;
                         font-size: 22px;
 
                         @include mq-max(sm) {
                             font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                            // z-index: 1;
                             position: absolute;
                             @include center(both);
                         }
@@ -65,7 +70,6 @@
             .modal-body {
                 padding: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
                 position: relative;
-                overflow: hidden;
                 z-index: 1;
 
                 img {
@@ -119,6 +123,63 @@
         .modal-content {
             background-color: transparent;
             border: none;
+
+            .modal-header {
+                padding: 0;
+                border: none;
+
+                .btn-close {
+                    width: 54px;
+                    height: 54px;
+                    top: -50px;
+                    right: -50px;
+                    line-height: 54px;
+                    position: absolute;
+                    text-decoration: none;
+                    text-align: center;
+                    color: $white;
+                    background: 0 0;
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.2s linear;
+                    opacity: 1;
+
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: -50px;
+                    }
+
+                    @include mq-max(sm) {
+                        right: 0;
+                        top: 0;
+                        z-index: 1;
+                        background: var(--theme-color);
+                        width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                        border-radius: 0;
+                        border-bottom-left-radius: 6px;
+
+                        [dir="rtl"] & {
+                            right: unset;
+                            left: 0;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 6px;
+                        }
+                    }
+
+                    &:before {
+                        content: "\f00d";
+                        @include font;
+                        font-size: 22px;
+
+                        @include mq-max(sm) {
+                            font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                            position: absolute;
+                            @include center(both);
+                        }
+                    }
+                }
+            }
 
             .modal-body {
                 padding: 0;
@@ -214,9 +275,55 @@
 
     .product-box {
         .btn-close {
-            right: 0;
-            top: 0;
-            z-index: 1;
+            width: 54px;
+            height: 54px;
+            top: -50px;
+            right: -50px;
+            line-height: 54px;
+            position: absolute;
+            text-decoration: none;
+            text-align: center;
+            color: $white;
+            background: 0 0;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s linear;
+            opacity: 1;
+
+            [dir="rtl"] & {
+                right: unset;
+                left: -50px;
+            }
+
+            @include mq-max(sm) {
+                right: 0;
+                top: 0;
+                z-index: 1;
+                background: var(--theme-color);
+                width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                border-radius: 0;
+                border-bottom-left-radius: 6px;
+
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 0;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 6px;
+                }
+            }
+
+            &:before {
+                content: "\f00d";
+                @include font;
+                font-size: 22px;
+
+                @include mq-max(sm) {
+                    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                    position: absolute;
+                    @include center(both);
+                }
+            }
         }
 
         .product-image {
@@ -253,31 +360,36 @@
                     transition: all 0.2s linear;
                     opacity: 1;
 
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: -50px;
+                    }
+
                     @include mq-max(sm) {
-                        right: 8px;
-                        top: 8px;
+                        right: 0;
+                        top: 0;
                         z-index: 1;
                         background: var(--theme-color);
-                        width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-                        height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
                         border-radius: 0;
                         border-bottom-left-radius: 6px;
 
                         [dir="rtl"] & {
                             right: unset;
-                            left: -14px;
+                            left: 0;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 6px;
                         }
                     }
 
                     &:before {
                         content: "\f00d";
-                        font-family: "Font Awesome 5 Free";
-                        font-weight: 900;
+                        @include font;
                         font-size: 22px;
 
                         @include mq-max(sm) {
                             font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                            // z-index: 1;
                             position: absolute;
                             @include center(both);
                         }
@@ -340,31 +452,36 @@
                     transition: all 0.2s linear;
                     opacity: 1;
 
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: -50px;
+                    }
+
                     @include mq-max(sm) {
-                        right: 8px;
-                        top: 8px;
+                        right: 0;
+                        top: 0;
                         z-index: 1;
                         background: var(--theme-color);
-                        width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-                        height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
                         border-radius: 0;
                         border-bottom-left-radius: 6px;
 
                         [dir="rtl"] & {
                             right: unset;
-                            left: -14px;
+                            left: 0;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 6px;
                         }
                     }
 
                     &:before {
                         content: "\f00d";
-                        font-family: "Font Awesome 5 Free";
-                        font-weight: 900;
+                        @include font;
                         font-size: 22px;
 
                         @include mq-max(sm) {
                             font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                            // z-index: 1;
                             position: absolute;
                             @include center(both);
                         }
@@ -400,8 +517,17 @@
                         color: $white;
                         @include flex_common;
 
+                        [dir="rtl"] & {
+                            margin-right: unset;
+                            margin-left: 10px;
+                        }
+
                         @include mq-max(sm) {
                             margin: 0 auto 12px;
+
+                            [dir="rtl"] & {
+                                margin: 0 auto 12px;
+                            }
                         }
                     }
                 }
@@ -426,9 +552,19 @@
                     .modal-contain-details {
                         margin-left: 10px;
 
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 10px;
+                        }
+
                         @include mq-max(sm) {
                             text-align: center;
                             margin-left: 0;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 0;
+                            }
                         }
                     }
 
@@ -469,7 +605,6 @@
                 }
 
                 .shop-cart-button {
-                    // margin: -8px;
                     display: flex;
                     align-items: center;
                     flex-wrap: nowrap;
@@ -483,7 +618,6 @@
                         border: 1px solid var(--theme-color);
                         background: $white;
                         color: var(--theme-color);
-                        // margin: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
                         padding: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320))) calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
                         font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
 
@@ -504,51 +638,7 @@
         .modal-content {
             .modal-header {
                 padding: 0;
-
-                // button {
-                //     // width: 54px;
-                //     // height: 54px;
-                //     top: -50px;
-                //     right: -50px;
-                //     line-height: 54px;
-                //     position: absolute;
-                //     text-decoration: none;
-                //     text-align: center;
-                //     color: $white;
-                //     background: 0 0;
-                //     border: none;
-                //     cursor: pointer;
-                //     transition: all 0.2s linear;
-                //     opacity: 1;
-
-                //     // &::before {
-                //     //     content: none;
-                //     // }
-
-                //     @include mq-max(sm) {
-                //         right: 8px;
-                //         top: 8px;
-                //         z-index: 1;
-                //         background: var(--theme-color);
-                //         width: 20px;
-                //         height: 20px;
-                //         border-radius: 0;
-                //         border-bottom-left-radius: 6px;
-
-                //         [dir="rtl"] & {
-                //             right: unset;
-                //             left: -14px;
-                //         }
-                //     }
-
-                //     .fa-times {
-                //         font-size: 22px;
-                //     }
-
-                //     // @include mq-max(xs) {
-                //     //     display: none;
-                //     // }
-                // }
+                border: none;
 
                 .btn-close {
                     width: 54px;
@@ -566,31 +656,36 @@
                     transition: all 0.2s linear;
                     opacity: 1;
 
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: -50px;
+                    }
+
                     @include mq-max(sm) {
-                        right: 8px;
-                        top: 8px;
+                        right: 0;
+                        top: 0;
                         z-index: 1;
                         background: var(--theme-color);
-                        width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-                        height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                        width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                        height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
                         border-radius: 0;
                         border-bottom-left-radius: 6px;
 
                         [dir="rtl"] & {
                             right: unset;
-                            left: -14px;
+                            left: 0;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 6px;
                         }
                     }
 
                     &:before {
                         content: "\f00d";
-                        font-family: "Font Awesome 5 Free";
-                        font-weight: 900;
+                        @include font;
                         font-size: 22px;
 
                         @include mq-max(sm) {
                             font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                            // z-index: 1;
                             position: absolute;
                             @include center(both);
                         }
@@ -603,137 +698,194 @@
 
 // size modal end
 .quick-view-modal {
-    .btn-close {
-        width: 54px;
-        height: 54px;
-        top: -50px;
-        right: -50px;
-        line-height: 54px;
-        position: absolute;
-        text-decoration: none;
-        text-align: center;
-        color: $white;
-        background: 0 0;
+    .modal-content {
         border: none;
-        cursor: pointer;
-        transition: all 0.2s linear;
-        opacity: 1;
 
-        @include mq-max(sm) {
-            right: 8px;
-            top: 8px;
-            z-index: 1;
-            background: var(--theme-color);
-            width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-            height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-            border-radius: 0;
-            border-bottom-left-radius: 6px;
+        .btn-close {
+            width: 54px;
+            height: 54px;
+            top: -50px;
+            right: -50px;
+            line-height: 54px;
+            position: absolute;
+            text-decoration: none;
+            text-align: center;
+            color: $white;
+            background: 0 0;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s linear;
+            opacity: 1;
 
             [dir="rtl"] & {
                 right: unset;
-                left: -14px;
+                left: -50px;
             }
-        }
-
-        &:before {
-            content: "\f00d";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 22px;
 
             @include mq-max(sm) {
-                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                // z-index: 1;
-                position: absolute;
-                @include center(both);
-            }
-        }
-    }
+                right: 0;
+                top: 0;
+                z-index: 1;
+                background: var(--theme-color);
+                width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                border-radius: 0;
+                border-bottom-left-radius: 6px;
 
-    .modal-body {
-        padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-    }
-
-    .quick-view-image {
-        position: relative;
-
-        img {
-            width: 100%;
-
-            @include mq-max(lg) {
-                max-height: 400px;
-                object-fit: cover;
-            }
-        }
-
-        .quick-nav {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-
-            .slick-slide {
-                >div {
-                    img {
-                        margin: 0;
-                        border: 1px solid $border-color;
-                        width: 40px;
-                        height: 40px;
-                        object-fit: cover;
-                    }
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 0;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 6px;
                 }
+            }
 
-                &.slick-current {
+            &:before {
+                content: "\f00d";
+                @include font;
+                font-size: 22px;
+
+                @include mq-max(sm) {
+                    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
+                    position: absolute;
+                    @include center(both);
+                }
+            }
+        }
+
+        .modal-body {
+            padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        .quick-view-image {
+            position: relative;
+
+            img {
+                width: 100%;
+
+                @include mq-max(lg) {
+                    max-height: 400px;
+                    object-fit: cover;
+                }
+            }
+
+            .quick-nav {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+
+                .slick-slide {
                     >div {
                         img {
-                            border: 1px solid var(--theme-color);
+                            margin: 0;
+                            border: 1px solid $border-color;
+                            width: 40px;
+                            height: 40px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    &.slick-current {
+                        >div {
+                            img {
+                                border: 1px solid var(--theme-color);
+                            }
                         }
                     }
                 }
             }
         }
-    }
 
-    .product-right {
-        &.veg-product-right {
-            h2 {
-                font-size: 26px;
-            }
-
-            .product-details {
-                margin-top: 10px;
-            }
-
-            .product-btns {
-                a {
-                    font-size: 14px;
+        .product-right {
+            &.veg-product-right {
+                h2 {
+                    font-size: 26px;
                 }
-            }
 
-            .price {
-                display: block;
+                .product-details {
+                    margin-top: 10px;
+                }
 
-                li {
-                    width: 100%;
+                .product-btns {
+                    a {
+                        font-size: 14px;
+                    }
+                }
 
-                    .custome-form-check {
+                .price {
+                    display: block;
+
+                    li {
                         width: 100%;
-                        padding: 15px 8px 15px 30px;
-                        border-radius: 4px;
-                        border: 1px solid $american-gray;
-                        transition: all 0.3s ease-in-out;
-                        box-shadow: 0 4px 10px rgba($black1, $alpha: 0.1);
-                        background: $background-color;
+
+                        .custome-form-check {
+                            width: 100%;
+                            padding: 15px 8px 15px 30px;
+                            border-radius: 4px;
+                            border: 1px solid $american-gray;
+                            transition: all 0.3s ease-in-out;
+                            box-shadow: 0 4px 10px rgba($black1, $alpha: 0.1);
+                            background: $background-color;
+                        }
+                    }
+                }
+
+                .veg-details {
+                    margin-top: 30px;
+                    padding: 20px 0;
+                    border-top: 1px dashed $border-color;
+
+                    p {
+                        line-height: 1.7;
+                    }
+
+                    @include mq-max(lg) {
+                        margin-top: 20px;
+                    }
+
+                    @include mq-max(sm) {
+                        margin-top: 15px;
+                        padding: 15px 0;
                     }
                 }
             }
 
-            .veg-details {
-                margin-top: 30px;
+            h2 {
+                font-weight: 500;
+            }
+
+            h6 {
+                font-weight: 400;
+            }
+
+            h4 {
+                margin-bottom: 10px;
+                text-transform: capitalize;
+            }
+
+            .price {
+                display: flex;
+                align-items: center;
+
+                h3 {
+                    padding-right: 20px;
+
+                    [dir="rtl"] & {
+                        padding-right: unset;
+                        padding-left: 20px;
+                    }
+                }
+            }
+
+            .color-types {
+                margin-top: 20px;
                 padding: 20px 0;
                 border-top: 1px dashed $border-color;
 
-                p {
-                    line-height: 1.7;
+                &.veg-details {
+                    p {
+                        line-height: 1.7;
+                    }
                 }
 
                 @include mq-max(lg) {
@@ -745,115 +897,73 @@
                     padding: 15px 0;
                 }
             }
-        }
 
-        h2 {
-            font-weight: 500;
-        }
+            .size-detail {
+                padding: 20px 0;
+                border-top: 1px dashed $border-color;
 
-        h6 {
-            font-weight: 400;
-        }
-
-        h4 {
-            margin-bottom: 10px;
-            text-transform: capitalize;
-        }
-
-        .price {
-            display: flex;
-            align-items: center;
-
-            h3 {
-                padding-right: 20px;
-
-                [dir="rtl"] & {
-                    padding-right: unset;
-                    padding-left: 20px;
+                @include mq-max(sm) {
+                    padding: 15px 0;
                 }
-            }
-        }
 
-        .color-types {
-            margin-top: 20px;
-            padding: 20px 0;
-            border-top: 1px dashed $border-color;
+                ul {
+                    display: flex;
 
-            &.veg-details {
-                p {
-                    line-height: 1.7;
+                    li {
+                        width: 30px;
+                        height: 30px;
+                        text-align: center;
+                        border: 1px solid $border-color;
+                        cursor: pointer;
+                        @include flex_common;
+
+                        &.selected {
+                            box-shadow: 0 2px 7px rgba($black1, 0.2);
+                        }
+
+                        +li {
+                            margin-left: 10px;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
                 }
             }
 
-            @include mq-max(lg) {
+            .product-details {
+                padding: 20px 0;
                 margin-top: 20px;
-            }
+                border-top: 1px dashed $border-color;
+                border-bottom: 1px dashed $border-color;
 
-            @include mq-max(sm) {
-                margin-top: 15px;
-                padding: 15px 0;
-            }
-        }
+                @include mq-max(sm) {
+                    padding: 15px 0;
+                }
 
-        .size-detail {
-            padding: 20px 0;
-            border-top: 1px dashed $border-color;
+                ul {
+                    li {
+                        display: block;
 
-            @include mq-max(sm) {
-                padding: 15px 0;
-            }
+                        +li {
+                            margin-top: 5px;
+                        }
 
-            ul {
-                display: flex;
-
-                li {
-                    width: 30px;
-                    height: 30px;
-                    text-align: center;
-                    border: 1px solid $border-color;
-                    cursor: pointer;
-                    @include flex_common;
-
-                    &.selected {
-                        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
-                    }
-
-                    +li {
-                        margin-left: 10px;
+                        span {
+                            min-width: 150px;
+                        }
                     }
                 }
             }
-        }
 
-        .product-details {
-            padding: 20px 0;
-            border-top: 1px dashed $border-color;
-            border-bottom: 1px dashed $border-color;
+            .product-btns {
+                margin-top: 20px;
 
-            @include mq-max(sm) {
-                padding: 15px 0;
-            }
-
-            ul {
-                li {
-                    display: block;
-
-                    +li {
-                        margin-top: 5px;
-                    }
-
-                    span {
-                        min-width: 150px;
-                    }
+                @include mq-max(sm) {
+                    margin-top: 15px;
                 }
-            }
-        }
-
-        .product-btns {
-            margin-top: 20px;
-
-            @include mq-max(sm) {
-                margin-top: 15px;
             }
         }
     }
@@ -885,31 +995,36 @@
                 transition: all 0.2s linear;
                 opacity: 1;
 
+                [dir="rtl"] & {
+                    right: unset;
+                    left: -50px;
+                }
+
                 @include mq-max(sm) {
-                    right: 8px;
-                    top: 8px;
+                    right: 0;
+                    top: 0;
                     z-index: 1;
                     background: var(--theme-color);
-                    width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-                    height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                    height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
                     border-radius: 0;
                     border-bottom-left-radius: 6px;
 
                     [dir="rtl"] & {
                         right: unset;
-                        left: -14px;
+                        left: 0;
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 6px;
                     }
                 }
 
                 &:before {
                     content: "\f00d";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
+                    @include font;
                     font-size: 22px;
 
                     @include mq-max(sm) {
                         font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                        // z-index: 1;
                         position: absolute;
                         @include center(both);
                     }
@@ -933,7 +1048,7 @@
                     margin-right: 10px;
 
                     [dir="rtl"] & {
-                        margin-right: 0;
+                        margin-right: unset;
                         margin-left: 10px;
                     }
                 }
@@ -967,31 +1082,36 @@
                 transition: all 0.2s linear;
                 opacity: 1;
 
+                [dir="rtl"] & {
+                    right: unset;
+                    left: -50px;
+                }
+
                 @include mq-max(sm) {
-                    right: 8px;
-                    top: 8px;
+                    right: 0;
+                    top: 0;
                     z-index: 1;
                     background: var(--theme-color);
-                    width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-                    height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                    height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
                     border-radius: 0;
                     border-bottom-left-radius: 6px;
 
                     [dir="rtl"] & {
                         right: unset;
-                        left: -14px;
+                        left: 0;
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 6px;
                     }
                 }
 
                 &:before {
                     content: "\f00d";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
+                    @include font;
                     font-size: 22px;
 
                     @include mq-max(sm) {
                         font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                        // z-index: 1;
                         position: absolute;
                         @include center(both);
                     }
@@ -1055,31 +1175,36 @@
                 transition: all 0.2s linear;
                 opacity: 1;
 
+                [dir="rtl"] & {
+                    right: unset;
+                    left: -50px;
+                }
+
                 @include mq-max(sm) {
-                    right: 8px;
-                    top: 8px;
+                    right: 0;
+                    top: 0;
                     z-index: 1;
                     background: var(--theme-color);
-                    width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-                    height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                    height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
                     border-radius: 0;
                     border-bottom-left-radius: 6px;
 
                     [dir="rtl"] & {
                         right: unset;
-                        left: -14px;
+                        left: 0;
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 6px;
                     }
                 }
 
                 &:before {
                     content: "\f00d";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
+                    @include font;
                     font-size: 22px;
 
                     @include mq-max(sm) {
                         font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                        // z-index: 1;
                         position: absolute;
                         @include center(both);
                     }
@@ -1143,31 +1268,36 @@
                 transition: all 0.2s linear;
                 opacity: 1;
 
+                [dir="rtl"] & {
+                    right: unset;
+                    left: -50px;
+                }
+
                 @include mq-max(sm) {
-                    right: 8px;
-                    top: 8px;
+                    right: 0;
+                    top: 0;
                     z-index: 1;
                     background: var(--theme-color);
-                    width: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
-                    height: calc(15px + (20 - 15) * ((100vw - 320px) / (575 - 320)));
+                    width: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
+                    height: calc(25px + (33 - 25) * ((100vw - 320px) / (575 - 320)));
                     border-radius: 0;
                     border-bottom-left-radius: 6px;
 
                     [dir="rtl"] & {
                         right: unset;
-                        left: -14px;
+                        left: 0;
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 6px;
                     }
                 }
 
                 &:before {
                     content: "\f00d";
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
+                    @include font;
                     font-size: 22px;
 
                     @include mq-max(sm) {
                         font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (575 - 320)));
-                        // z-index: 1;
                         position: absolute;
                         @include center(both);
                     }
