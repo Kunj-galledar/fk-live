@@ -1,3 +1,6 @@
+/**=====================
+     Zoom Filter js
+==========================**/
 if ($(window).width() > 991) {
   $('.details-image').on('afterChange', function (event, slick, currentSlide, nextSlide) {
     var imgs = $('.image_zoom_cls');

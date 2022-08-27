@@ -1,3 +1,6 @@
+/**=====================
+     Infinite Scroll js
+==========================**/
 $(function () {
   $(".product-load-more .col-grid-box").slice(0, 8).show();
   $(".loadMore").on("click", function (e) {

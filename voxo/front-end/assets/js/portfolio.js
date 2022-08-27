@@ -1,3 +1,6 @@
+/**=====================
+     Portfolio js
+==========================**/
 // magnific start
 $(".parent-container").magnificPopup({
   delegate: "a",

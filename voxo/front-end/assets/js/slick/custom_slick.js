@@ -424,48 +424,47 @@ $(".slide-7-1").slick({
 });
 
 $(".our-product").slick({
-  dots: true,
   infinite: true,
   speed: 500,
   arrows: false,
   slidesToShow: 5,
-  slidesToScroll: 1,
+  slidesToScroll: 2,
   responsive: [{
-      breakpoint: 1630,
-      settings: {
-        slidesToShow: 6,
-      },
-    },
-    {
-      breakpoint: 1367,
-      settings: {
-        slidesToShow: 5,
-      },
-    },
-    {
-      breakpoint: 1200,
+      breakpoint: 1340,
       settings: {
         slidesToShow: 4,
       },
     },
     {
-      breakpoint: 992,
+      breakpoint: 1030,
       settings: {
         slidesToShow: 3,
       },
     },
     {
-      breakpoint: 740,
+      breakpoint: 750,
       settings: {
         slidesToShow: 2,
       },
     },
-    {
-      breakpoint: 481,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
+    // {
+    //   breakpoint: 45,
+    //   settings: {
+    //     slidesToShow: 3,
+    //   },
+    // },
+    // {
+    //   breakpoint: 45,
+    //   settings: {
+    //     slidesToShow: 2,
+    //   },
+    // },
+    // {
+    //   breakpoint: 56,
+    //   settings: {
+    //     slidesToShow: 2,
+    //   },
+    // },
   ],
 });
 

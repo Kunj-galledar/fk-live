@@ -1,3 +1,6 @@
+/**=====================
+     Custome Threesixty js
+==========================**/
 var threesixty = new ThreeSixty(document.getElementById('threesixty'), {
     image: 'https://s3.eu-central-1.amazonaws.com/threesixty.js/watch.jpg',
     width: 320,

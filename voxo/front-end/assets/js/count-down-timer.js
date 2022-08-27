@@ -1,3 +1,6 @@
+/**=====================
+     Count Down Timer js
+==========================**/
 var sec = 900,
   countDiv = document.getElementById("timer"),
   secpass,

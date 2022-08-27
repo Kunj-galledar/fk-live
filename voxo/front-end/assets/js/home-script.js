@@ -1,3 +1,6 @@
+/**=====================
+     Home Script js
+==========================**/
 // product image change js
 $(".product-img ul li").on("click", function (e) {
   $(this).addClass("active").siblings(".active").removeClass("active");

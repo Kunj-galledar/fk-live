@@ -1,3 +1,6 @@
+/**=====================
+     Filter js
+==========================**/
 $(".filter-btn").click(function () {
   $(".bg-overlay, .category-option").addClass("show");
 });

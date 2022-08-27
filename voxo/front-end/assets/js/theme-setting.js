@@ -8,7 +8,7 @@ document.getElementById("ColorPicker1").onchange = function () {
 };
 
 /*========================
- Dark local storage setting js
+ Dark local js
  ==========================*/
 $("#darkButton").on("click", function () {
   if ($("body").hasClass("light")) {
@@ -33,7 +33,7 @@ $("#darkButton").on("click", function () {
 });
 
 /*========================
-   RTL local storage setting js
+   RTL local js
    ==========================*/
 $(".rtl-button").on("click", function () {
   if ($("body").hasClass("ltr")) {

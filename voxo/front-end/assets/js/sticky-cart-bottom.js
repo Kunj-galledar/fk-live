@@ -1,3 +1,6 @@
+/**=====================
+     Sticky Cart Bottom js
+==========================**/
 $(window).scroll(function () {
   var scroll = $(window).scrollTop();
   var width_content = jQuery(window).width();

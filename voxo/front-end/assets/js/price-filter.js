@@ -1,5 +1,7 @@
+/**=====================
+     Price Filter js
+==========================**/
 // Trigger
-
 $(function () {
   var $range = $(".js-range-slider"),
     $inputFrom = $(".js-input-from"),
