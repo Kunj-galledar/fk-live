@@ -40,6 +40,14 @@ section,
     padding: 0 calc(12px + (160 - 12) * ((100vw - 320px) / (1920 - 320)));
 }
 
+.container-fluid-md {
+    padding: 0 calc(12px + (50 - 12) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.container-fluid-xs {
+    padding: 0 25px;
+}
+
 .section-small-space {
     padding: 30px 0;
 }
@@ -66,7 +74,7 @@ section,
 
 // Position Center
 .p-center-left {
-    @include flex_common ($dis: flex, $align: center, $justify: flex-start);
+    @include flex_common($dis: flex, $align: center, $justify: flex-start);
 
     [dir="rtl"] & {
         justify-content: flex-end;
@@ -78,7 +86,7 @@ section,
 }
 
 .p-center-right {
-    @include flex_common ($dis: flex, $align: center, $justify: flex-end);
+    @include flex_common($dis: flex, $align: center, $justify: flex-end);
 
     [dir="rtl"] & {
         justify-content: flex-start;
@@ -87,7 +95,7 @@ section,
 
 // Position Bottom
 .p-bottom-left {
-    @include flex_common ($dis: flex, $align: flex-end, $justify: flex-start);
+    @include flex_common($dis: flex, $align: flex-end, $justify: flex-start);
 
     [dir="rtl"] & {
         justify-content: flex-end;
@@ -95,11 +103,11 @@ section,
 }
 
 .p-bottom-center {
-    @include flex_common ($dis: flex, $align: flex-end, $justify: center);
+    @include flex_common($dis: flex, $align: flex-end, $justify: center);
 }
 
 .p-bottom-right {
-    @include flex_common ($dis: flex, $align: flex-end, $justify: flex-end);
+    @include flex_common($dis: flex, $align: flex-end, $justify: flex-end);
 }
 
 .p-sticky {
@@ -119,7 +127,7 @@ section,
 .g-8 {
     margin: -8px;
 
-    >div {
+    > div {
         padding: 8px;
     }
 }
@@ -147,7 +155,7 @@ section,
     li {
         line-height: 0;
 
-        +li {
+        + li {
             margin-left: 2px;
 
             [dir="rtl"] & {
@@ -188,6 +196,11 @@ section,
     text-align: left;
 }
 
+.mstart-auto {
+    margin-left: auto !important;
+    text-align: left;
+}
+
 .fw-500 {
     font-weight: 500;
 }
@@ -219,6 +232,18 @@ section,
 
 .bg-gray {
     background-color: $light-gray !important;
+}
+
+.bg-theme {
+    background-color: var(--theme-color);
+}
+
+.bg-gradient-color {
+    background: linear-gradient(149.8deg, #f8f8fb 17.21%, #f3f5f9 79.21%);
+}
+
+.orange-color {
+    color: #ffbc5d !important;
 }
 
 // Font Family

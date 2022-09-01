@@ -85,6 +85,12 @@ body {
     }
 }
 
+.offer-banner {
+    .banner-detail {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+}
+
 .product-box {
     .label-tag {
         color: #ffffff;
@@ -95,6 +101,18 @@ body {
 
         &-bar-light {
             background-color: #2a2d2d;
+        }
+    }
+
+    .counter-box {
+        .addtocart_btn {
+            .input-group {
+                box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.12);
+
+                .btn {
+                    background-color: #1d1d22;
+                }
+            }
         }
     }
 }
@@ -129,13 +147,18 @@ body {
 
 .compare-section {
     .compare-table {
-        border-color: #777777;
+        border-color: rgba(119, 119, 119, 0.3);
 
         tr {
+            td {
+                .compare-image {
+                    background-color: #1d1d22;
+                }
+            }
 
             td,
             th {
-                border-color: #777777;
+                border-color: rgba(119, 119, 119, 0.3);
             }
         }
     }
@@ -763,6 +786,40 @@ footer {
 }
 
 header {
+    .onhover-category-list {
+        .onhover-category-box {
+            box-shadow: 0 0 8px rgba(119, 119, 119, 0.4);
+        }
+    }
+
+    .timer-notification {
+        h6 {
+            color: #ffffff;
+        }
+    }
+
+    .header-top {
+        .about-list {
+            li {
+                +li {
+                    &::after {
+                        background-color: rgba(221, 221, 221, 0.3);
+                    }
+                }
+
+                .theme-form-select {
+                    .dropdown-toggle {
+                        &::before {
+                            color: #ddd;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
     .nav-about-2 {
         background-color: #1d1d22;
     }
@@ -920,6 +977,22 @@ header {
 }
 
 .header-2 {
+    .header-nav-left {
+        .category-dropdown {
+            box-shadow: 0 0 8px rgba(119, 119, 119, 0.4);
+
+            .category-list {
+                li {
+                    .category-name {
+                        img {
+                            filter: invert(1) brightness(100);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .dropdown-category {
         span {
             color: #ffffff;
@@ -927,7 +1000,15 @@ header {
     }
 
     .top-nav {
+        border-bottom-color: rgba(119, 119, 119, 0.4);
+
         .middle-box {
+            .searchbar-box {
+                input {
+                    border-color: rgba(119, 119, 119, 0.4);
+                }
+            }
+
             .searchbar-box-2 {
                 .search-button {
                     color: #ffffff;
@@ -1111,11 +1192,11 @@ header {
 .tab-style-color {
     .nav-item {
         .nav-link {
-            color: #222222 !important;
+            color: #222222;
 
             &.active,
             &:hover {
-                color: #222222 !important;
+                color: #222222;
             }
         }
     }
@@ -1123,6 +1204,15 @@ header {
 
 .banner-contain-3 {
     .banner-detail {
+        &.banner-details-dark {
+
+            h3,
+            h4,
+            h6 {
+                color: #fff;
+            }
+        }
+
         .banner-list {
             li {
                 .delivery-box {
@@ -1178,6 +1268,8 @@ header {
 }
 
 .product-box-4 {
+    border-color: rgba(119, 119, 119, .4);
+
     h5 {
         color: #4a5568;
 
@@ -1205,7 +1297,7 @@ header {
     .product-detail {
         a {
             .name {
-                color: #222222;
+                color: #fff;
             }
         }
 
@@ -2151,6 +2243,14 @@ header {
         .modal-content {
             .modal-body {
                 .right-sidebar-modal {
+                    .select-size {
+                        .select-form-size {
+                            background-color: #1d1d22;
+                            border-color: #1d1d22;
+                            color: #fff;
+                        }
+                    }
+
                     .select-wight {
                         .select-form-wight {
                             background-color: #1d1d22;
@@ -2163,8 +2263,10 @@ header {
                         }
                     }
 
-                    .add-cart-button {
-                        background-color: #1d1d22;
+                    .modal-button {
+                        .add-cart-button {
+                            background-color: #1d1d22;
+                        }
                     }
                 }
             }
@@ -2370,6 +2472,10 @@ header {
         .bank-footer {
             h4 {
                 color: #ffffff;
+
+                input {
+                    color: #ffffff;
+                }
             }
         }
     }
@@ -2459,6 +2565,90 @@ header {
             h6 {
                 background-color: #1d1d22;
             }
+        }
+    }
+}
+
+.vendore-breadscrumb-section {
+    .breadscrumb-contain {
+        h2 {
+            color: #222222;
+        }
+
+        form {
+            .form-control {
+                background-color: #ffffff;
+            }
+        }
+    }
+}
+
+.add-to-cart-box {
+    background-color: #2a2d2d !important;
+
+    &.bg-white {
+        background-color: #2a2d2d !important;
+
+        .btn-add-cart {
+            background-color: #2a2d2d;
+
+            i {
+                background-color: #1d1d22;
+            }
+        }
+    }
+
+    .btn-add-cart {
+        background-color: #1d1d22;
+    }
+
+    .cart_qty {
+        .input-group {
+            &.bg-white {
+                background-color: #2a2d2d !important;
+            }
+        }
+    }
+}
+
+.vendor-detail-box {
+    box-shadow: 0 0 8px #1d1d22;
+
+    .vendor-name {
+        .vendor-logo {
+            img {
+                filter: invert(1) brightness(100);
+            }
+        }
+    }
+
+    .vendor-tag {
+        ul {
+            li {
+                background-color: #1d1d22;
+            }
+        }
+    }
+}
+
+.vendor-bottom {
+    border-bottom: 1px solid rgba(119, 119, 119, 0.4);
+}
+
+.vendor-detail-box-2 {
+    .share-contact {
+
+        .vendor-share,
+        .vendor-contect {
+            h5 {
+                color: #fff;
+            }
+        }
+    }
+
+    .vendor-name {
+        h3 {
+            color: #ffffff;
         }
     }
 }

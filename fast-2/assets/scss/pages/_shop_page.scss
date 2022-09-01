@@ -469,6 +469,8 @@
                [dir="rtl"] & {
                     border-right: unset;
                     border-left: unset;
+                    left: unset;
+                    right: -350px;
                }
           }
 
@@ -485,16 +487,31 @@
                     border-left: unset;
                     left: unset;
                     right: -350px;
+
+                    [dir="rtl"] & {
+                         left: -350px;
+                         right: unset;
+                    }
                }
 
                &.show {
                     left: unset;
                     right: 0;
+
+                    [dir="rtl"] & {
+                         right: unset;
+                         left: 0;
+                    }
                }
           }
 
           &.show {
                left: 0;
+
+               [dir="rtl"] & {
+                    right: 0;
+                    left: unset;
+               }
           }
 
           .shop-left-sidebar {
@@ -507,6 +524,10 @@
 
                @include mq-max(lg) {
                     padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+
+                    [dir="rtl"] & {
+                         padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    }
                }
 
                &.shop-right-sidebar {
@@ -520,6 +541,10 @@
 
                     @include mq-max(lg) {
                          padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+
+                         [dir="rtl"] & {
+                              padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+                         }
                     }
 
                     .back-button {
@@ -656,6 +681,13 @@
                                    font-weight: 600;
                                    margin-bottom: 9px;
 
+                                   &.collapsed {
+                                        &::before {
+                                             content: "\f107";
+                                             transform: rotate(180deg);
+                                        }
+                                   }
+
                                    &:focus {
                                         border-color: unset;
                                         box-shadow: none;
@@ -675,6 +707,7 @@
                                         background-color: #f7f6f4;
                                         font-size: 15px;
                                         border-radius: 100%;
+                                        transition: all .3s ease-in-out;
 
                                         [dir="rtl"] & {
                                              right: unset;

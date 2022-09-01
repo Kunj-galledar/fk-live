@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------
 
- Template Name:Fastkart
+ Template Name: Fastkart
  Template URI: themes.pixelstrap.com/Fastkart
  Description: This is Ecommerce website
  Author: Pixelstrap
@@ -19,17 +19,19 @@
 // 09. Tooltip js
 // 10. Cookie Bar js
 // 11. Image To Background js
-// 12. Hide header on scroll down js
-// 13. search box function Js
-// 14. Wishlist Js
-// 15. Loader Js
-// 16. header Dropdown Js
-// 17. Add to Cart Show Js
-// 18. active class Js
-// 19. Hide header on scroll down js
-// 20. setting - option open js
-// 21. user-dashboard profile change js
-// 22. Wishlist box remove js
+// 12. search box function Js
+// 13. Wishlist Js
+// 14. Loader Js
+// 15. header Dropdown Js
+// 16. Add to Cart Show Js
+// 17. active class Js
+// 18. Scroll down header fix js
+// 19. setting - option open js
+// 20. user-dashboard profile change js
+// 21. Wishlist box remove js
+// 22. Category Box js
+// 23. remove notication bar js
+// 24. category box js
 
 (function ($) {
     "use strict";
@@ -250,7 +252,7 @@ $(".bg-img").each(function () {
 });
 
 /*=====================
-   13. search box function Js
+   12. search box function Js
    ==========================*/
 $(".search-box").on("click", function () {
     $(this).closest(".rightside-box").find(".search-full").addClass("open");
@@ -268,7 +270,7 @@ $(window).on("load resize", function () {
 });
 
 /*=====================
-   14. Wishlist Js
+   13. Wishlist Js
    ==========================*/
 $(".notifi-wishlist").on("click", function () {
     $.notify({
@@ -309,7 +311,7 @@ $(".notifi-wishlist").on("click", function () {
 });
 
 /*=====================
-   15. Loader Js
+   14. Loader Js
    ==========================*/
 const loaderEl = document.getElementsByClassName("fullpage-loader")[0];
 document.addEventListener("readystatechange", (event) => {
@@ -319,12 +321,12 @@ document.addEventListener("readystatechange", (event) => {
 
         setTimeout(() => {
             loaderEl.parentNode.removeChild(loaderEl);
-        }, 2000);
+        }, 100);
     }
 });
 
 /*=====================
-    16. header Dropdown Js
+    15. header Dropdown Js
  ==========================*/
 $(".dropdown-menu li a").on('click', function () {
     var a = $(this).closest("a");
@@ -337,7 +339,7 @@ $(".dropdown-menu li a").on('click', function () {
 });
 
 /*=====================
-   17. Add to Cart Show Js
+   16. Add to Cart Show Js
    ==========================*/
 $(".addCart").click(function () {
     $(".add-cart-box").addClass("show");
@@ -350,7 +352,7 @@ $(".add-cart-box .btn-close").click(function () {
 });
 
 /*=====================
-   18. active class Js
+   17. active class Js
    ==========================*/
 $(".product-packege .select-packege li a").click(function () {
     $("li a").removeClass("active");
@@ -358,7 +360,7 @@ $(".product-packege .select-packege li a").click(function () {
 });
 
 /*=====================
-   19. Hide header on scroll down js
+   18. Scroll down header fix js
    ==========================*/
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
@@ -369,7 +371,7 @@ $(window).scroll(function () {
 });
 
 /*=====================
-   20. setting-option open js
+   19. setting-option open js
    ==========================*/
 $(".theme-option .setting-box .setting-button").click(function () {
     $(".theme-setting-2").toggleClass("active");
@@ -377,7 +379,7 @@ $(".theme-option .setting-box .setting-button").click(function () {
 });
 
 /*=====================
-   21. user-dashboard profile change js
+   20. user-dashboard profile change js
    ==========================*/
 function readURL(uploader) {
     $('.update_img').attr('src',
@@ -385,7 +387,7 @@ function readURL(uploader) {
 };
 
 /*=====================
-   22. Wishlist box remove js
+   21. Wishlist box remove js
    ==========================*/
 $(".close_button").click(function () {
     $(this).closest(".product-box-contain").fadeOut("slow", function () {
@@ -394,7 +396,7 @@ $(".close_button").click(function () {
 });
 
 /*=====================
-   23. Category Box js
+   22. Category Box js
    ==========================*/
 $(".mobile-category").click(function () {
     $(".bg-overlay, .category-dropdown").addClass("show");
@@ -411,7 +413,7 @@ $(".close-notification").click(function () {
 });
 
 /*=====================
-    03. category box js
+    24. category box js
 ==========================*/
 var contentwidth = $(window).width();
 if (contentwidth < "767") {

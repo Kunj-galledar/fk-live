@@ -19,6 +19,7 @@ $("#darkButton").on("click", function () {
         .getElementById("color-link")
         .setAttribute("href", "../assets/css/dark.css");
 });
+
 $("#lightButton").on("click", function () {
     var href = $("#color-link").attr("href");
     $("body").removeClass("dark");

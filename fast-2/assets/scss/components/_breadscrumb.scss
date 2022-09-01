@@ -252,3 +252,79 @@
         }
     }
 }
+
+.vendore-breadscrumb-section {
+    background-image: url("../images/vendor-page/breadcrumb.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: calc(52px + (100 - 52) * ((100vw - 320px) / (1920 - 320))) 0px;
+
+    .breadscrumb-contain {
+        width: 50%;
+        margin: 0 auto;
+
+        @include mq-max(2xl) {
+            width: 63%;
+        }
+
+        @include mq-max(lg) {
+            width: 85%;
+        }
+
+        @include mq-max(md) {
+            width: 100%;
+        }
+
+        h2 {
+            font-size: calc(27px + (54 - 27) * ((100vw - 320px) / (1920 - 320)));
+            text-align: center;
+            margin-bottom: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        form {
+            position: relative;
+
+            span {
+                position: absolute;
+                @include center(vertical);
+                left: 16px;
+
+                [dir="rtl"] & {
+                    left: unset;
+                    right: 16px;
+                }
+
+                i {
+                    font-size: calc(21px + (27 - 21) * ((100vw - 320px) / (1920 - 320)));
+                    color: var(--theme-color);
+                }
+            }
+
+            .form-control {
+                padding: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))) calc(95px + (122 - 95) * ((100vw - 320px) / (1920 - 320))) calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))) calc(48px + (59 - 48) * ((100vw - 320px) / (1920 - 320)));
+                border: none;
+
+                [dir="rtl"] & {
+                    padding-left: calc(95px + (122 - 95) * ((100vw - 320px) / (1920 - 320)));
+                    padding-right: calc(48px + (59 - 48) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+
+            button {
+                position: absolute;
+                @include center(vertical);
+                right: calc(3px + (6 - 3) * ((100vw - 320px) / (1920 - 320)));
+                padding: 0;
+                font-size: calc(14px + (17 - 14) * ((100vw - 320px) / (1920 - 320)));
+                width: calc(77px + (108 - 77) * ((100vw - 320px) / (1920 - 320)));
+                height: calc(33px + (42 - 33) * ((100vw - 320px) / (1920 - 320)));
+
+                [dir="rtl"] & {
+                    right: unset;
+                    left: calc(3px + (6 - 3) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+        }
+    }
+}
