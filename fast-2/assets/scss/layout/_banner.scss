@@ -70,6 +70,10 @@
             font-weight: 500;
             margin-top: 13px;
 
+            &-white {
+                background-color: rgba($color: $white, $alpha: 0.2);
+            }
+
             &.code-2 {
                 background-color: rgba(153, 105, 31, 0.5);
             }
@@ -207,6 +211,42 @@
             font-weight: 600;
             font-size: calc(17px + (21 - 17) * ((100vw - 320px) / (1920 - 320)));
             color: $title-color;
+        }
+    }
+
+    .banner-detail-2 {
+        @include pseudowh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320))) calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320)));
+
+        [dir="rtl"] & {
+            left: unset;
+            right: 0;
+        }
+
+        >div {
+            background: linear-gradient(180deg, rgba($white, 0.2) 24.21%, rgba($white, 0.2) 75.22%);
+            padding: 22px;
+            backdrop-filter: blur(2px);
+        }
+
+        h3 {
+            font-size: calc(27px + (36 - 27) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 700;
+            color: $white;
+        }
+
+        h2 {
+            font-size: calc(42px + (59 - 42) * ((100vw - 1199px) / (1920 - 1199)));
+            font-weight: 700;
+        }
+
+        button {
+            background-color: var(--theme-color);
+            color: $white;
+            margin: 9px auto 0;
         }
     }
 }

@@ -19,10 +19,8 @@
           i {
                @include center(vertical);
                @include flex_common;
-               @include pseudowh(
-                    $width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
-                    $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320)))
-               );
+               @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
+                    $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))));
                background-color: $white;
                border-radius: 100%;
                color: var(--theme-color);
@@ -59,10 +57,8 @@
                }
 
                button {
-                    @include pseudowh(
-                         $width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))),
-                         $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320)))
-                    );
+                    @include pseudowh($width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))),
+                         $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))));
                     @include flex_common;
                     border: none;
                     padding: 0;
@@ -103,10 +99,8 @@
           i {
                @include center(vertical);
                @include flex_common;
-               @include pseudowh(
-                    $width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
-                    $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320)))
-               );
+               @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
+                    $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))));
                border-radius: 100%;
                color: var(--theme-color);
                position: absolute;
@@ -141,10 +135,8 @@
                }
 
                button {
-                    @include pseudowh(
-                         $width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))),
-                         $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320)))
-                    );
+                    @include pseudowh($width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))),
+                         $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))));
                     @include flex_common;
                     border: none;
                     padding: 0;
@@ -193,10 +185,8 @@
           }
 
           button {
-               @include pseudowh(
-                    $width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))),
-                    $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320)))
-               );
+               @include pseudowh($width: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))),
+                    $height: calc(26px + (35 - 26) * ((100vw - 320px) / (1920 - 320))));
                @include flex_common;
                border: none;
                padding: 0;
@@ -241,7 +231,7 @@
                border: none;
 
                li {
-                    + li {
+                    +li {
                          &::before {
                               left: -25px;
 
@@ -253,8 +243,10 @@
                     }
 
                     .counter {
-                         h5 {
-                              font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+                         >div {
+                              h5 {
+                                   font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+                              }
                          }
                     }
                }
@@ -276,7 +268,7 @@
           li {
                position: relative;
 
-               + li {
+               +li {
                     &::before {
                          @include pos($pos: absolute, $content: ":");
                          @include center(vertical);
@@ -290,14 +282,19 @@
                }
 
                .counter {
-                    h5 {
-                         font-weight: 600;
-                         margin-bottom: 4px;
-                    }
+                    >div {
+                         display: flex;
+                         align-items: center;
 
-                    h6 {
-                         color: $content-color;
-                         font-size: 13px;
+                         h5 {
+                              font-weight: 600;
+                              margin-bottom: 4px;
+                         }
+
+                         h6 {
+                              color: $content-color;
+                              font-size: 13px;
+                         }
                     }
                }
           }
@@ -356,11 +353,9 @@
                }
 
                .category-list {
-                    @include flex_wrap(
-                         $dis: flex,
+                    @include flex_wrap($dis: flex,
                          $wrap: nowrap,
-                         $gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)))
-                    );
+                         $gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))));
                     align-items: center;
                     color: $title-color;
 
@@ -425,15 +420,18 @@
      &.menu-xl {
           position: sticky;
           top: 130px;
+
           ul {
                gap: 28px;
                border-bottom: none;
+
                li {
                     .category-list {
                          img {
                               width: 35px;
                               height: 35px;
                          }
+
                          h5 {
                               font-size: 17px;
                          }
@@ -456,7 +454,7 @@
           }
 
           .row {
-               > div {
+               >div {
                     &:last-child {
                          border-top: 1px solid #ddd;
                     }
@@ -466,7 +464,7 @@
 
      .slider-5-1 {
           .slick-slide {
-               > .row {
+               >.row {
                     border-right: 1px solid rgba($content-color, 0.3);
                     margin-left: 0;
 
@@ -478,10 +476,10 @@
           }
      }
 
-     > .product-box-slider {
-          > div {
-               > .row {
-                    > div {
+     >.product-box-slider {
+          >div {
+               >.row {
+                    >div {
                          &:nth-child(n + 6) {
                               border-top: 1px solid rgba($content-color, 0.3);
                          }
@@ -550,7 +548,7 @@
                }
           }
 
-          + .product-box-bg {
+          +.product-box-bg {
                margin-top: 20px !important;
 
                @include mq-max(sm) {
@@ -657,7 +655,7 @@
                          }
                     }
 
-                    + li {
+                    +li {
                          &:after {
                               @include pos;
                               @include pseudowh($width: 1px, $height: 100%);
@@ -767,6 +765,7 @@
           }
 
           .addtocart_btn {
+
                .add-button,
                .add_cart {
                     @include flex_common;
@@ -857,7 +856,7 @@
           height: 80px;
           position: relative;
 
-          + li {
+          +li {
                margin-top: 50px;
 
                @include mq-max(sm) {
@@ -972,8 +971,7 @@
 }
 
 .product-category {
-     padding: calc(19px + (36 - 19) * ((100vw - 320px) / (1920 - 320)))
-          calc(16px + (25 - 16) * ((100vw - 320px) / (1920 - 320)));
+     padding: calc(19px + (36 - 19) * ((100vw - 320px) / (1920 - 320))) calc(16px + (25 - 16) * ((100vw - 320px) / (1920 - 320)));
      background-color: $light-gray;
 
      .product-category-list {
@@ -1014,7 +1012,7 @@
                     }
                }
 
-               + li {
+               +li {
                     margin-top: calc(14px + (26 - 14) * ((100vw - 320px) / (1920 - 320)));
                }
 
@@ -1065,13 +1063,12 @@
           backdrop-filter: blur(4px);
           width: 90%;
           margin: -50px auto 0;
-          padding: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)))
-               calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
+          padding: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320))) calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
           border-radius: 5px;
           box-shadow: 0px 4px 10px rgba(47, 88, 80, 0.05);
           background-color: rgba($white, 0.8);
 
-          > div {
+          >div {
                position: relative;
           }
 
@@ -1142,7 +1139,7 @@
           position: relative;
           overflow: hidden;
 
-          + .top-selling-contain {
+          +.top-selling-contain {
                margin-top: calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                &:before {
@@ -1180,14 +1177,12 @@
 
           .top-selling-image {
                overflow: hidden;
+               @include pseudowh($width: calc(80px + (100 - 80) * ((100vw - 320px) / (1920 - 320))),
+                    $height: calc(80px + (100 - 80) * ((100vw - 320px) / (1920 - 320))));
+               border-radius: 5px;
 
                img {
-                    @include pseudowh(
-                         $width: calc(80px + (100 - 80) * ((100vw - 320px) / (1920 - 320))),
-                         $height: calc(80px + (100 - 80) * ((100vw - 320px) / (1920 - 320)))
-                    );
                     object-fit: contain;
-                    border-radius: 5px;
                     transition: all 0.3s ease-in-out;
                }
           }
@@ -1295,7 +1290,7 @@
           }
      }
 
-     + .product-box-2 {
+     +.product-box-2 {
           margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
      }
 
@@ -1440,7 +1435,7 @@
      align-items: center;
      position: relative;
 
-     + .product-offcer-contain {
+     +.product-offcer-contain {
           margin-top: 50px;
 
           &::before {
@@ -1571,7 +1566,7 @@
                }
 
                li {
-                    + li {
+                    +li {
                          margin-left: 8px;
 
                          [dir="rtl"] & {
@@ -1581,10 +1576,8 @@
                     }
 
                     a {
-                         @include pseudowh(
-                              $width: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))),
-                              $height: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320)))
-                         );
+                         @include pseudowh($width: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))),
+                              $height: calc(36px + (48 - 36) * ((100vw - 320px) / (1920 - 320))));
                          @include flex_common;
                          background-color: $white;
                          box-shadow: 0px 5.57831px 13.9458px rgba($black, 0.05);
@@ -1592,10 +1585,8 @@
                          color: $title-color;
 
                          svg {
-                              @include pseudowh(
-                                   $width: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))),
-                                   $height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)))
-                              );
+                              @include pseudowh($width: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))),
+                                   $height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))));
                          }
                     }
                }
@@ -1606,7 +1597,7 @@
 // =============================================== New Product Style ===============================================
 .product-list-section {
      &.list-style {
-          > div {
+          >div {
                width: 100%;
 
                .product-box-3 {
@@ -1712,10 +1703,8 @@
                }
 
                img {
-                    @include pseudowh(
-                         $width: 100%,
-                         $height: calc(100px + (140 - 100) * ((100vw - 320px) / (1920 - 320)))
-                    );
+                    @include pseudowh($width: 100%,
+                         $height: calc(100px + (140 - 100) * ((100vw - 320px) / (1920 - 320))));
                     object-fit: contain;
                     transition: all 0.3s ease-in-out;
                }
@@ -1751,7 +1740,7 @@
                               }
                          }
 
-                         + li {
+                         +li {
                               &:after {
                                    @include pos;
                                    @include pseudowh($width: 1px, $height: 100%);
@@ -1967,7 +1956,7 @@
      position: relative;
      text-align: center;
 
-     + .product-box-4 {
+     +.product-box-4 {
           margin-top: 20px !important;
      }
 
@@ -2171,6 +2160,7 @@
           position: relative;
 
           .addtocart_btn {
+
                .add-button,
                .add_cart {
                     transition: all 0.3s ease;
@@ -2436,9 +2426,11 @@
 .product-box-5 {
      .product-image {
           position: relative;
+
           .bg-size {
                border-radius: 10px;
           }
+
           .wishlist-top {
                position: absolute;
                top: 10px;
@@ -2446,10 +2438,12 @@
                background-color: $white;
                padding: 5px;
                border-radius: 5px;
+
                svg {
                     width: 18px;
                }
           }
+
           .product-option {
                @include center(horizontal);
                @include flex_common($dis: flex, $align: center, $justify: space-between);
@@ -2482,7 +2476,7 @@
                          }
                     }
 
-                    + li {
+                    +li {
                          &:after {
                               @include pos;
                               @include pseudowh($width: 1px, $height: 100%);
@@ -2505,6 +2499,7 @@
                border-radius: 10px;
           }
      }
+
      &:hover {
           .product-image {
                a {
@@ -2523,6 +2518,7 @@
      .product-detail {
           padding-top: 10px;
           text-align: center;
+
           a {
                color: $title-color;
                display: block;
@@ -2533,6 +2529,7 @@
 
                h5 {
                     margin-bottom: 6px;
+
                     &.name {
                          font-weight: 600;
                          line-height: 22px;
@@ -2555,7 +2552,7 @@
           }
      }
 
-     + .product-box-5 {
+     +.product-box-5 {
           margin-top: 30px !important;
      }
 }
@@ -2597,10 +2594,8 @@
           }
 
           .product-image {
-               @include pseudowh(
-                    $width: calc(84px + (116 - 84) * ((100vw - 320px) / (1920 - 320))),
-                    $height: calc(84px + (116 - 84) * ((100vw - 320px) / (1920 - 320)))
-               );
+               @include pseudowh($width: calc(84px + (116 - 84) * ((100vw - 320px) / (1920 - 320))),
+                    $height: calc(84px + (116 - 84) * ((100vw - 320px) / (1920 - 320))));
                border: 1px solid $border-color;
                border-radius: 12px;
                padding: 15px;
