@@ -90,34 +90,63 @@
      }
 }
 
-.add-to-cart-btn {
+.add-to-cart-btn-2 {
      .btn {
+          @include flex_common;
+          @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
+               $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))));
           position: absolute;
-          right: 10px;
-          bottom: 15px;
+          right: 0;
+          bottom: 0;
+          // width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320)));
+          // height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320)));
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+          background-color: #f7f7f7;
+          padding: 0;
+          border-radius: 100%;
+          color: var(--theme-color);
 
-          i {
-               @include center(vertical);
-               @include flex_common;
-               @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
-                    $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))));
-               border-radius: 100%;
-               color: var(--theme-color);
-               position: absolute;
-               right: 5px;
-               background-color: #f7f7f7;
+          [dir="rtl"] & {
+               right: unset;
+               left: 0;
           }
+
+          // i {
+          //      @include center(vertical);
+          //      // @include flex_common;
+          //      // @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
+          //      //      $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))));
+          //      border-radius: 100%;
+          //      color: var(--theme-color);
+          //      position: absolute;
+          //      right: 5px;
+          //      background-color: #f7f7f7;
+          // }
      }
 
-     .qty-box {
+     .qty-box-2 {
           display: none;
-          bottom: 10px;
+          bottom: 0;
           position: absolute;
-          right: 15px;
-          top: unset;
+          left: 0;
+          // transform: translateX(-50%);
+          // right: unset;
+          // top: unset;
+          width: 100%;
           height: auto;
           margin-left: auto;
-          max-width: 88%;
+          max-width: 190px;
+
+          [dir="rtl"] & {
+               left: unset;
+               right: 0;
+          }
+
+          &.qty-box-3 {
+               max-width: 203px;
+          }
 
           &.open {
                display: block;
@@ -125,14 +154,15 @@
 
           .input-group {
                background-color: $light-gray;
-               border-radius: 50px;
+               border-radius: 5px;
                padding: 4px;
                text-align: center;
                z-index: 0;
+               // bottom: -10px;
 
-               &.theme-bg-white {
-                    background-color: $white;
-               }
+               // &.theme-bg-white {
+               //      background-color: $white;
+               // }
 
                button {
                     @include pseudowh($width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))),
@@ -142,7 +172,7 @@
                     padding: 0;
                     background-color: $white;
                     z-index: 0;
-                    border-radius: 100% !important;
+                    border-radius: 3px !important;
 
                     i {
                          font-size: 13px;
@@ -226,7 +256,7 @@
 
           ul {
                padding: 14px 18px;
-               background: linear-gradient(187.77deg, #fafafa 5.52%, #f8f8f8 94%);
+               background-color: #f8f8f8;
                border-radius: 8px;
                border: none;
 
@@ -243,10 +273,12 @@
                     }
 
                     .counter {
+                         text-align: center;
+
                          >div {
-                              h5 {
-                                   font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
-                              }
+                              font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+                              // h5 {
+                              // }
                          }
                     }
                }
@@ -559,7 +591,7 @@
 
      &.product-white-bg {
           background-color: $white;
-          border-radius: 16px;
+          border-radius: calc(9px + (16 - 9) * ((100vw - 320px) / (1920 - 320)));
           padding: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320)));
           border: 1px solid #eee;
 

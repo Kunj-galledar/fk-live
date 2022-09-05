@@ -92,7 +92,7 @@ footer {
                             }
                         }
 
-                        + li {
+                        +li {
                             margin-top: calc(4px + (15 - 4) * ((100vw - 320px) / (1920 - 320)));
                         }
                     }
@@ -132,11 +132,9 @@ footer {
                 }
 
                 .address {
-                    @include flex_wrap(
-                        $dis: flex,
+                    @include flex_wrap($dis: flex,
                         $wrap: wrap,
-                        $gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)))
-                    );
+                        $gap: calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320))));
                     margin-top: calc(7px + (30 - 7) * ((100vw - 320px) / (1920 - 320)));
 
                     [dir="rtl"] & {
@@ -289,7 +287,7 @@ footer {
                         }
                     }
 
-                    + li {
+                    +li {
                         margin-top: calc(4px + (15 - 4) * ((100vw - 320px) / (1920 - 320)));
                     }
                 }
@@ -479,7 +477,7 @@ footer {
                         }
                     }
 
-                    + li {
+                    +li {
                         margin-left: 8px;
 
                         [dir="rtl"] & {
@@ -852,10 +850,26 @@ footer {
 .footer-sm {
     margin-left: 320px;
     background-color: $white;
+
+    [dir="rtl"] & {
+        margin-left: unset;
+        margin-right: 320px;
+    }
+
+    @include mq-max(xl) {
+        margin-left: 0;
+
+        [dir="rtl"] & {
+            margin-left: unset;
+            margin-right: 0;
+        }
+    }
+
     &:after,
     &:before {
         display: none;
     }
+
     .sub-footer {
         border-top: none;
         padding: 20px 0;

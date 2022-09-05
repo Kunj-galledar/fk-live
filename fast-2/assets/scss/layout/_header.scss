@@ -1379,6 +1379,23 @@ header {
         margin-left: 320px;
         border-bottom: 1px solid #ececec;
 
+        [dir="rtl"] & {
+            left: unset;
+            right: 0;
+            margin-left: unset;
+            margin-right: 320px;
+        }
+
+        @include mq-max(xl) {
+            width: 100%;
+            margin-left: 0;
+
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 0;
+            }
+        }
+
         .top-nav {
             padding: 18px 0;
         }

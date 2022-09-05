@@ -46,10 +46,10 @@
  /***** DISPLAY THE CLOCK AND STOP IT WHEN IT REACHES ZERO *****/
  function initializeClock(id, endtime) {
      var clock = document.getElementById(id);
-     var daysSpan = clock.querySelector('.days h5');
-     var hoursSpan = clock.querySelector('.hours h5');
-     var minutesSpan = clock.querySelector('.minutes h5');
-     var secondsSpan = clock.querySelector('.seconds h5');
+     var daysSpan = clock.querySelector('.days');
+     var hoursSpan = clock.querySelector('.hours');
+     var minutesSpan = clock.querySelector('.minutes');
+     var secondsSpan = clock.querySelector('.seconds');
 
      function updateClock() {
          var t = getTimeRemaining(endtime);
