@@ -211,6 +211,11 @@
                                 .media-body {
                                     margin-left: 0;
 
+                                    [dir="rtl"] & {
+                                        margin-left: unset;
+                                        margin-right: 0;
+                                    }
+
                                     span {
                                         font-weight: 600;
                                         font-size: 15px;
@@ -417,6 +422,11 @@
                                 right: -10px;
                                 opacity: 0.15;
                                 font-size: 50px;
+
+                                [dir="rtl"] & {
+                                    right: unset;
+                                    left: -10px;
+                                }
                             }
                         }
                     }
@@ -468,6 +478,11 @@
                                     font-weight: 500;
                                     color: inherit;
                                     display: inline-block;
+
+                                    [dir="rtl"] & {
+                                        padding-right: unset;
+                                        padding-left: 10px;
+                                    }
                                 }
 
                                 p {
@@ -550,6 +565,10 @@
 
                             p {
                                 margin-bottom: 8px;
+
+                                i {
+                                    font-size: 11px;
+                                }
                             }
                         }
 
@@ -559,10 +578,6 @@
                         }
 
                         p {
-                            i {
-                                font-size: 11px;
-                            }
-
                             span {
                                 color: $light-font;
                             }
@@ -593,14 +608,9 @@
                                     transition: color 0.3s ease;
                                 }
 
-                                svg {
-                                    stroke: var(--theme-color);
-                                    transition: stroke 0.3s ease;
-
-                                    path {
-                                        stroke: var(--theme-color);
-                                        transition: stroke 0.3s ease;
-                                    }
+                                i {
+                                    color: var(--theme-color);
+                                    // transition: stroke 0.3s ease;
                                 }
                             }
                         }
@@ -609,15 +619,26 @@
                             padding-top: 10px !important;
                         }
 
-                        span {
-                            color: $dark-color;
-                        }
+                        a {
+                            display: flex;
+                            align-items: center;
 
-                        svg {
-                            width: 16px;
-                            vertical-align: bottom;
-                            margin-right: 10px;
-                            stroke: $dark-color;
+                            span {
+                                color: $dark-color;
+                            }
+
+                            i {
+                                // width: 16px;
+                                // vertical-align: bottom;
+                                margin-right: 10px;
+                                color: $dark-color;
+                                transition: all .3s ease-in-out;
+
+                                [dir="rtl"] & {
+                                    margin-right: unset;
+                                    margin-left: 10px;
+                                }
+                            }
                         }
                     }
                 }
@@ -1196,6 +1217,10 @@
 
                             img {
                                 width: 70%;
+
+                                &.main-logo {
+                                    width: 100%;
+                                }
                             }
                         }
                     }
@@ -1244,10 +1269,16 @@
                                 transition: all 0.3s ease;
                             }
 
+                            .according-menu {
+                                display: block;
+                            }
+
                             .sidebar-main {
                                 .sidebar-links {
                                     .simplebar-wrapper {
                                         .simplebar-mask {
+                                            top: 260px;
+
                                             .simplebar-content-wrapper {
                                                 .simplebar-content {
                                                     >li {
@@ -1290,9 +1321,26 @@
                             .logo-icon-wrapper {
                                 display: none;
                             }
+
+                            .user-section {
+                                .user-profile {
+                                    width: 100px;
+                                    height: 100px;
+                                }
+                            }
+
+                            .simplebar-offset {
+                                top: 18px;
+                            }
+                        }
+
+                        .simplebar-offset {
+                            top: 0;
                         }
 
                         .user-section {
+                            padding-bottom: 0;
+
                             .user-profile {
                                 width: 50px;
                                 height: 50px;
@@ -1309,6 +1357,8 @@
                             .sidebar-links {
                                 .simplebar-wrapper {
                                     .simplebar-mask {
+                                        top: 226px;
+
                                         .simplebar-content-wrapper {
                                             .simplebar-content {
                                                 >li {
@@ -1347,6 +1397,7 @@
                         .logo-icon-wrapper {
                             text-align: right;
                             display: block;
+                            padding: 14px;
                         }
 
                         .mobile-sidebar {
@@ -1524,6 +1575,11 @@
                                                         color: $grey-3;
                                                         transition: all 0.3s ease;
                                                         line-height: 1;
+
+                                                        [dir="rtl"] & {
+                                                            margin-right: unset;
+                                                            margin-left: 10px;
+                                                        }
                                                     }
 
                                                     .sub-arrow {
@@ -1541,8 +1597,8 @@
                                                     }
                                                 }
 
-                                                &:first-child {
-                                                    display: none !important;
+                                                &.back-btn {
+                                                    display: none;
                                                 }
 
                                                 .sidebar-submenu {
@@ -1755,19 +1811,19 @@
 
                                                         .according-menu {
                                                             i {
-                                                                color: $black1;
+                                                                color: #efefef;
                                                             }
                                                         }
 
                                                         svg,
                                                         i {
-                                                            color: $white !important;
-                                                            transition: all 0.3s ease;
+                                                            color: $white;
+                                                            transition: all 0.3s ease-in-out;
                                                         }
 
                                                         span {
                                                             color: $white;
-                                                            transition: all 0.3s ease;
+                                                            transition: all 0.3s ease-in-out;
                                                         }
                                                     }
                                                 }

@@ -5549,7 +5549,7 @@
         margin-bottom: 20px;
 
         .image {
-            @include pseudowh($width: calc(92px + (105 - 92) * ((100vw - 320px) / (1920 - 320))), $height: calc(92px + (105 - 92) * ((100vw - 320px) / (1920 - 320))));
+            @include pseudowh($width: 66px, $height: 66px);
             border-radius: 11px;
         }
 
@@ -5613,6 +5613,10 @@
                     padding: 4px;
                     box-shadow: 0 0 2px rgba($title-color, 0.2);
                     color: $content-color;
+                    transition: all 0.3s ease-in-out;
+                    &:hover{
+                        transform: scale(1.1) translateY(-7px);
+                    }
 
                     &:last-child {
                         padding-top: 5px;

@@ -21,8 +21,14 @@
 .toggle-sidebar {
     position: absolute;
     right: 20px;
+    top: 20px;
     cursor: pointer;
-    top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+
     svg {
         width: $header-wrapper-nav-icon-size;
         height: $header-wrapper-nav-icon-size;
@@ -48,13 +54,15 @@
 
     &:hover {
         &:before {
-            height: 40px;
-            width: 40px;
+            height: 100%;
+            width: 100%;
             transform: scale(1);
             transition: all 0.3s ease;
+            top: 0;
+            left: 0;
         }
 
-        > svg {
+        >svg {
             color: var(--theme-color) !important;
             stroke: var(--theme-color) !important;
         }
@@ -139,7 +147,6 @@
             opacity: 0;
             visibility: hidden;
             display: block !important;
-            -webkit-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
 
             &.show {
@@ -158,13 +165,13 @@
                     border-radius: 5px;
                     transition: all 0.3s ease;
 
-                    > a {
-                        > span {
+                    >a {
+                        >span {
                             color: var(--theme-color);
                             transition: all 0.3s ease;
                         }
 
-                        > svg {
+                        >svg {
                             stroke: var(--theme-color);
                             transition: all 0.3s ease;
                         }
@@ -172,7 +179,7 @@
                 }
             }
 
-            > li {
+            >li {
                 position: relative;
                 width: 100%;
 
@@ -199,7 +206,7 @@
                     vertical-align: middle;
                 }
 
-                > .header-level-sub-menu {
+                >.header-level-sub-menu {
                     position: absolute;
                     padding: 0.7rem 0.5rem;
                     left: 173px;
@@ -266,7 +273,7 @@
         }
 
         .link-section {
-            > div {
+            >div {
                 h6 {
                     margin-top: 20px;
                 }
@@ -291,7 +298,7 @@
         }
 
         .mega-box {
-            & + .mega-box {
+            &+.mega-box {
                 padding-left: 30px;
                 border-left: 1px solid $light-semi-gray;
             }
@@ -366,7 +373,7 @@
             }
 
             .svg-icon {
-                & ~ div {
+                &~div {
                     h6 {
                         margin-top: 10px;
                         margin-bottom: 5px;
@@ -434,7 +441,7 @@
     }
 
     div {
-        > div {
+        >div {
             a {
                 margin-bottom: 0px;
                 display: inline-block;

@@ -34,7 +34,7 @@ th {
 
 	> :not(:last-child) {
 		> :last-child {
-			> * {
+			>* {
 				border-bottom-color: inherit;
 			}
 		}
@@ -115,6 +115,7 @@ th {
 }
 
 .table[class*="bg-"] {
+
 	th,
 	td {
 		color: $white;
@@ -122,8 +123,8 @@ th {
 }
 
 .table-hover {
-	> tbody {
-		> tr:hover {
+	>tbody {
+		>tr:hover {
 			--bs-table-accent-bg: #f6f6f6;
 		}
 	}
@@ -182,6 +183,7 @@ th {
 
 //Sizing class
 .table-xl {
+
 	td,
 	th {
 		padding: $table-xl-padding;
@@ -190,6 +192,7 @@ th {
 }
 
 .table-lg {
+
 	td,
 	th {
 		padding: $table-lg-padding;
@@ -198,6 +201,7 @@ th {
 }
 
 .table-de {
+
 	td,
 	th {
 		padding: $table-de-padding;
@@ -205,6 +209,7 @@ th {
 }
 
 .table-sm {
+
 	th,
 	td {
 		padding: $table-sm-padding;
@@ -213,6 +218,7 @@ th {
 }
 
 .table-xs {
+
 	th,
 	td {
 		padding: $table-xs-padding;
@@ -222,6 +228,7 @@ th {
 
 //Table Border
 .table-border-horizontal {
+
 	tr,
 	th,
 	td {
@@ -231,6 +238,7 @@ th {
 }
 
 .table-border-vertical {
+
 	tr,
 	th,
 	td {
@@ -284,6 +292,7 @@ th {
 }
 
 .table-bordered {
+
 	thead,
 	tbody,
 	tfoot,
@@ -332,18 +341,27 @@ table {
 					padding: 5px 10px;
 				}
 
-				&:first-child {
-					img {
-						width: 70px;
-						border-radius: 5px;
-						max-height: 70px;
-						object-fit: contain;
-					}
+				.table-image {
+					width: 65px;
+					height: 65px;
+					margin: 0 auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
 				}
 
-				a {
-					// color: inherit !important;
-				}
+				// &:first-child {
+				// 	img {
+				// 		width: 70px;
+				// 		border-radius: 5px;
+				// 		max-height: 70px;
+				// 		object-fit: contain;
+				// 	}
+				// }
+
+				// a {
+				// 	// color: inherit !important;
+				// }
 
 				&.order-cancle {
 					span {
@@ -430,9 +448,11 @@ table {
 }
 
 .all-package-catogories {
+
 	thead,
 	tbody {
 		tr {
+
 			th,
 			td {
 				&:nth-child(2) {
@@ -481,6 +501,7 @@ table {
 	thead,
 	tbody {
 		tr {
+
 			th,
 			td {
 				&:nth-child(2) {
@@ -515,6 +536,7 @@ table {
 	thead,
 	tbody {
 		tr {
+
 			th,
 			td {
 				&:nth-child(2) {
@@ -639,16 +661,16 @@ table {
 						border-radius: 4px;
 						font-size: 12px;
 						padding: 3px 10px;
-						font-weight: 700;
+						font-weight: 600;
 
 						&.success {
 							background-color: rgba(129, 186, 0, 0.2);
-							color: #81ba00;
+							color: var(--theme-color);
 						}
 
 						&.warning {
 							background-color: rgba(226, 36, 84, 0.1);
-							color: var(--theme-color);
+							color: #e22453;
 						}
 					}
 				}
@@ -747,8 +769,7 @@ table {
 				border-top: 0;
 				border-bottom: 1px solid $light-blue !important;
 				text-align: left;
-				padding: calc(0px + (16 - 0) * ((100vw - 320px) / (1920 - 320)))
-					calc(6px + (16 - 6) * ((100vw - 320px) / (1920 - 320)));
+				padding: calc(0px + (16 - 0) * ((100vw - 320px) / (1920 - 320))) calc(6px + (16 - 6) * ((100vw - 320px) / (1920 - 320)));
 				min-width: 175px;
 
 				[dir="rtl"] & {
@@ -918,10 +939,20 @@ table {
 
 				&:first-child {
 					padding-left: 0;
+
+					[dir="rtl"] & {
+						padding-left: unset;
+						padding-right: 0;
+					}
 				}
 
 				&:last-child {
 					padding-right: 0;
+
+					[dir="rtl"] & {
+						padding-right: unset;
+						padding-left: 0;
+					}
 				}
 
 				&.td-color {
@@ -947,7 +978,7 @@ table {
 						&:first-child {
 							.transactions-icon {
 								background-color: rgba(226, 36, 84, 0.12);
-								color: #0da487;
+								color: #e22453;
 							}
 						}
 					}
@@ -971,14 +1002,15 @@ table {
 						width: 40px;
 						height: 40px;
 						background-color: rgba(226, 36, 84, 0.12);
+						color: #e22453;
 						display: flex;
 						align-items: center;
 						justify-content: center;
-						color: var(--theme-color);
+						// color: var(--theme-color);
 						margin-right: 15px;
 
-						svg {
-							width: 20px;
+						i {
+							font-size: 20px;
 						}
 					}
 
@@ -1300,6 +1332,7 @@ table {
 	thead,
 	tbody {
 		tr {
+
 			th,
 			td {
 				&:nth-child(2) {
@@ -1332,6 +1365,7 @@ table {
 	thead,
 	tbody {
 		tr {
+
 			th,
 			td {
 				&:nth-child(2) {
@@ -1472,7 +1506,7 @@ table {
 						}
 					}
 
-					span + span {
+					span+span {
 						color: $grey-9;
 					}
 				}
@@ -1537,7 +1571,7 @@ table {
 						}
 					}
 
-					span + span {
+					span+span {
 						color: $grey-9;
 					}
 				}
@@ -1595,7 +1629,7 @@ table {
 							color: #2b2b2be6 !important;
 						}
 
-						span + span {
+						span+span {
 							color: $grey-9;
 						}
 					}
@@ -1605,7 +1639,7 @@ table {
 						color: #2b2b2be6;
 					}
 
-					span + span {
+					span+span {
 						color: $grey-9;
 					}
 				}
@@ -1617,6 +1651,7 @@ table {
 .all-cars-table,
 .all-hotel-table,
 .all-package {
+
 	th:nth-child(n + 6),
 	td:nth-child(n + 6) {
 		text-align: center;
@@ -1624,6 +1659,7 @@ table {
 }
 
 .all-restaurant-table {
+
 	th:nth-child(n + 6),
 	td:nth-child(n + 6) {
 		text-align: center;
@@ -1631,6 +1667,7 @@ table {
 }
 
 .all-driver-table {
+
 	th:nth-child(n + 4),
 	td:nth-child(n + 4) {
 		text-align: center;
@@ -1750,9 +1787,11 @@ table {
 }
 
 .dashboard-table {
+
 	thead,
 	tbody {
 		tr {
+
 			th,
 			td {
 				padding: 0.75rem 0.75rem 0.75rem 0;
@@ -1789,12 +1828,15 @@ table {
 					.ri-eye-line {
 						color: $warning-color;
 					}
+
 					.ri-pencil-line {
 						color: #4aa4d9;
 					}
+
 					.ri-delete-bin-line {
 						color: $secondary-color;
 					}
+
 					.lnr {
 						font-size: 16px;
 
@@ -1818,7 +1860,7 @@ table {
 
 .order-details-table {
 	.table-details {
-		+ .table-details {
+		+.table-details {
 			margin-top: 30px;
 		}
 
@@ -2050,7 +2092,7 @@ table {
 	.cart-buttons {
 		padding-top: 35px;
 
-		> div {
+		>div {
 			&:last-child {
 				text-align: right;
 				padding-right: 38px;
@@ -2179,12 +2221,15 @@ table {
 .search-area {
 	display: flex;
 	align-items: center;
+
 	.input-group {
 		width: 30%;
 	}
+
 	.form-select {
 		padding: 8px 38px 8px 10px;
 	}
+
 	.btn-solid {
 		padding: 9px 10px;
 		margin-left: 14px;
@@ -2199,9 +2244,11 @@ table {
 	margin-top: 15px;
 	padding-top: 15px;
 	border-top: 1px solid #ecf3fa;
+
 	.form-control {
 		padding: 6px 20px 6px 12px;
 	}
+
 	.input-group-text {
 		margin-bottom: 0;
 	}
