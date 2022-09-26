@@ -364,3 +364,25 @@ $(function () {
         }
     });
 });
+
+/*=====================
+  05. btn-cart open close js
+   ==========================*/
+$(document).ready(function () {
+    $('.button-item').on("click", function () {
+        $('.item-section').addClass("active");
+    });
+
+    $('.close-button').on("click", function () {
+        $('.item-section').removeClass("active");
+    });
+
+    $('.buy-button').on("click", function () {
+        setTimeout(function () {
+            $('.item-section').addClass("active")
+        }, 1500);
+        setTimeout(function () {
+            $('.item-section').removeClass('active');
+        }, 5000);
+    });
+});

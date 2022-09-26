@@ -4,7 +4,7 @@
 .form-space {
     margin-bottom: -10px;
 
-    > div {
+    >div {
         margin-bottom: 10px;
     }
 }
@@ -13,18 +13,28 @@
     padding: 0;
 }
 
+.form-control {
+    &:focus {
+        box-shadow: none;
+        border-color: var(--theme-color);
+    }
+}
+
 .bootstrap-tagsinput {
     background-color: #f9f9f6 !important;
+
     .tag {
         font-size: 13px;
         padding: 3px 15px;
         line-height: 2;
         background-color: var(--theme-color);
         border-radius: 5px;
+
         [data-role="remove"] {
             &:hover {
                 box-shadow: none;
             }
+
             &:after {
                 content: "\EB99";
                 font-family: remixicon !important;
@@ -94,6 +104,7 @@
     }
 
     &-2 {
+
         input[type="text"],
         input[type="email"],
         input[type="search"],
@@ -116,12 +127,6 @@
     &-2 {
         input[type="file"] {
             padding: 6px 10px !important;
-        }
-    }
-
-    .form-control {
-        :focus {
-            box-shadow: 0 0 0 0.2rem rgba(171, 140, 228, 0.05);
         }
     }
 
@@ -294,10 +299,12 @@
 
 .variation-table {
     border-color: #efefef;
+
     .form-control {
         border-color: #efefef;
         background-color: $inner-bg !important;
     }
+
     &.table {
         th {
             font-size: 14px;
@@ -311,14 +318,17 @@
     padding: 20px;
     border: 1px dashed #d1d1d1;
     border-radius: 10px;
+
     h5 {
         color: #1a0dab;
         font-size: 20px;
         line-height: 1.5;
     }
+
     .link {
         color: #202124;
     }
+
     p {
         color: #4d5156;
         font-size: 14px;

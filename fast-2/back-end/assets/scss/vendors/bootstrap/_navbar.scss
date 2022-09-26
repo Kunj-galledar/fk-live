@@ -36,14 +36,13 @@
     justify-content: space-between;
   }
 
-  >.container,
-  >.container-fluid {
+  > .container,
+  > .container-fluid {
     @extend %container-flex-properties;
   }
 
-  @each $breakpoint,
-  $container-max-width in $container-max-widths {
-    >.container#{breakpoint-infix($breakpoint, $container-max-widths)} {
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    > .container#{breakpoint-infix($breakpoint, $container-max-widths)} {
       @extend %container-flex-properties;
     }
   }
@@ -59,12 +58,12 @@
   padding-bottom: $navbar-brand-padding-y;
   margin-right: $navbar-brand-margin-end;
   @include font-size($navbar-brand-font-size);
-  text-decoration: if($link-decoration==none, null, none);
+  text-decoration: if($link-decoration == none, null, none);
   white-space: nowrap;
 
   &:hover,
   &:focus {
-    text-decoration: if($link-hover-decoration==underline, none, null);
+    text-decoration: if($link-hover-decoration == underline, none, null);
   }
 }
 
@@ -110,10 +109,11 @@
 // the default flexbox row orientation. Requires the use of `flex-wrap: wrap`
 // on the `.navbar` parent.
 .navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
   // For always expanded or extra full navbars, ensure content aligns itself
   // properly vertically. Can be easily overridden with flex utilities.
   align-items: center;
-  width: 100%;
 }
 
 // Button for toggling the navbar when in its collapsed state
@@ -149,6 +149,12 @@
   background-size: 100%;
 }
 
+.navbar-nav-scroll {
+  max-height: var(--#{$variable-prefix}scroll-height, 75vh);
+  overflow-y: auto;
+}
+
+// scss-docs-start navbar-expand-loop
 // Generate series of `.navbar-expand-*` responsive classes for configuring
 // where your navbar collapses.
 .navbar-expand {
@@ -175,8 +181,13 @@
           }
         }
 
+        .navbar-nav-scroll {
+          overflow: visible;
+        }
+
         .navbar-collapse {
           display: flex !important; // stylelint-disable-line declaration-no-important
+          flex-basis: auto;
         }
 
         .navbar-toggler {
@@ -186,6 +197,7 @@
     }
   }
 }
+// scss-docs-end navbar-expand-loop
 
 
 // Navbar themes
@@ -217,7 +229,7 @@
       }
     }
 
-    .show>.nav-link,
+    .show > .nav-link,
     .nav-link.active {
       color: $navbar-light-active-color;
     }
@@ -237,7 +249,7 @@
 
     a,
     a:hover,
-    a:focus {
+    a:focus  {
       color: $navbar-light-active-color;
     }
   }
@@ -268,7 +280,7 @@
       }
     }
 
-    .show>.nav-link,
+    .show > .nav-link,
     .nav-link.active {
       color: $navbar-dark-active-color;
     }
@@ -285,7 +297,6 @@
 
   .navbar-text {
     color: $navbar-dark-color;
-
     a,
     a:hover,
     a:focus {

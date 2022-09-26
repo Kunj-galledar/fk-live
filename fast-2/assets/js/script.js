@@ -85,10 +85,10 @@
     });
     var contentwidth = $(window).width();
     if (contentwidth < "1199") {
-        $(".grid-options .grid-btn").addClass("active");
+        $(".grid-options ul .grid-btn").addClass("active");
     }
-    if (contentwidth < "991") {
-        $(".grid-options .three-grid").addClass("active");
+    if (contentwidth < "1399") {
+        $(".grid-options ul .three-grid").addClass("active");
     }
 })(jQuery);
 

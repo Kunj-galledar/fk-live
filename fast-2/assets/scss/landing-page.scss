@@ -223,13 +223,13 @@ a {
 
 // Button Scss
 .btn {
+    @include flex_common;
     color: $title-color;
     padding: calc(7px + (14 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
     font-weight: 500;
     background: transparent;
     transition: all 0.3s ease;
     position: relative;
-    @include flex_common;
     border: none;
     font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
     z-index: 0;
@@ -253,13 +253,13 @@ a {
 }
 
 .btn-md {
+    @include flex_common;
     color: $title-color;
     padding: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))) calc(11px + (19 - 11) * ((100vw - 320px) / (1920 - 320)));
     font-weight: 500;
     background: transparent;
     transition: all 0.3s ease;
     position: relative;
-    @include flex_common;
     border: none;
     font-size: 16px;
     z-index: 0;
@@ -282,6 +282,7 @@ a {
     }
 
     &-animation {
+        @include flex_common;
         overflow: hidden;
         color: $white;
         border-radius: 5px;
@@ -289,7 +290,6 @@ a {
         background: transparent;
         transition: all 0.3s ease;
         position: relative;
-        @include flex_common;
         background: #ff6b6b;
         background: linear-gradient(90deg, #ff6b6b 0%, #ff4f4f 100%);
         border: none;
@@ -367,15 +367,15 @@ a {
 
         &.slick-prev,
         &.slick-next {
+            @include pseudowh($width: auto, $height: auto);
             bottom: -5px;
             top: unset;
             transform: unset;
             z-index: 1;
-            @include pseudowh($width: auto, $height: auto);
 
             &::before {
-                content: "";
                 @include font;
+                content: "";
                 color: $title-color;
                 opacity: 1;
             }
@@ -399,10 +399,10 @@ a {
     }
 
     .slick-dots {
+        @include flex_common;
         position: relative;
         bottom: 0;
         margin-top: calc(18px + (35 - 18) * ((100vw - 320px) / (1920 - 320)));
-        @include flex_common;
 
         li {
             @include pseudowh($width: auto, $height: auto);
@@ -413,7 +413,7 @@ a {
                 border-radius: 100%;
                 padding: 0;
                 margin: 0;
-                background-color: $title-color;
+                background-color: var(--theme-color);
                 transition: all 0.5s ease;
 
                 &::before {
@@ -423,10 +423,10 @@ a {
 
             &.slick-active {
                 button {
-                    margin: 0;
                     @include pseudowh($width: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))), $height: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
+                    margin: 0;
                     background-color: $white;
-                    border: 1px solid $title-color;
+                    border: 1px solid var(--theme-color);
                     transition: all 0.5s ease;
                     border-radius: 100%;
                 }
@@ -536,7 +536,7 @@ header {
 
         .navbar-collapse {
             .navbar-nav {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 37px);
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(22px + (37 - 22) * ((100vw - 1200px) / (1920 - 1200))));
 
                 @include mq-max(xl) {
                     padding: calc(11px + (20 - 11) * ((100vw - 320px) / (1199 - 320))) calc(19px + (26 - 19) * ((100vw - 320px) / (1199 - 320)));
@@ -647,9 +647,9 @@ header {
     }
 
     .home-contain {
+        @include center(horizontal);
         position: absolute;
         top: calc(82px + (180 - 82) * ((100vw - 320px) / (1920 - 320)));
-        @include center(horizontal);
         text-align: center;
 
         @include mq-max(lg) {
@@ -695,11 +695,26 @@ header {
                 z-index: 0;
 
                 img {
+                    @include center(vertical);
+                    @include pseudowh;
                     z-index: -1;
                     position: absolute;
-                    @include center(vertical);
                     left: 0;
-                    @include pseudowh;
+                }
+            }
+        }
+
+        .page-button-group {
+            margin-top: calc(14px + (21 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+            ul {
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(9px + (15 - 9) * ((100vw - 320px) / (1920 - 320))));
+                justify-content: center;
+
+                li {
+                    .page-button {
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    }
                 }
             }
         }
@@ -736,16 +751,29 @@ header {
                 position: relative;
 
                 .link-button {
+                    @include flex_common;
+                    @include pseudowh;
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(13, 164, 135, 0.3);
-                    @include flex_common;
+                    // background-color: #0da487;
+                    position: relative;
                     transition: all 0.3s ease-in-out;
                     transform-origin: center;
                     transform: scale(0);
+                    z-index: 0;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: var(--theme-color);
+                        opacity: 0.3;
+                        z-index: -1;
+                    }
                 }
 
                 img {
@@ -755,10 +783,8 @@ header {
         }
 
         .layout-name {
+            @include flex_common ($dis: flex, $align: center, $justify: space-between);
             margin-top: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
 
             h3 {
                 font-weight: 600;
@@ -767,6 +793,36 @@ header {
 
             h5 {
                 color: $content-color;
+            }
+        }
+    }
+
+    .custome-nav-tabs {
+        gap: 15px;
+        justify-content: center;
+        border-bottom: none;
+        margin-bottom: 27px;
+
+        .nav-item {
+            &.show {
+                .nav-link {
+                    color: $white;
+                    background-color: var(--theme-color);
+                }
+            }
+
+            .nav-link {
+                margin: 0;
+                background-color: #f8f8f8;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                color: $content-color;
+
+                &.active {
+                    color: $white;
+                    background-color: var(--theme-color);
+                }
             }
         }
     }
@@ -813,7 +869,7 @@ header {
     .feature-grid {
         >div {
             &:first-child {
-                padding-top: 150px;
+                padding-top: 100px;
 
                 @include mq-max(xl) {
                     padding-top: 0;
@@ -821,7 +877,7 @@ header {
             }
 
             &:last-child {
-                padding-top: 223px;
+                padding-top: 150px;
 
                 @include mq-max(xl) {
                     padding-top: 0;
@@ -954,13 +1010,14 @@ header {
                     background-color: transparent;
                     border: none;
                     white-space: nowrap;
+                    border-bottom: 4px solid transparent;
+                    padding-bottom: calc(8px + (13 - 8) * ((100vw - 320px) / (1920 - 320)));
 
                     &.active {
                         border-bottom: 4px solid $white;
                         border-top: transparent;
                         position: relative;
                         background: transparent;
-                        padding-bottom: calc(8px + (13 - 8) * ((100vw - 320px) / (1920 - 320)));
                     }
                 }
             }
@@ -994,12 +1051,12 @@ header {
                 }
 
                 .visit-button {
+                    @include flex_common;
+                    @include pseudowh;
                     position: absolute;
                     top: 0;
                     left: 0;
-                    @include pseudowh;
                     background-color: rgba($title-color, 0.161);
-                    @include flex_common;
                     transform-origin: center;
                     transform: scale(0);
                     transition: all 0.3s ease-in-out;
@@ -1028,9 +1085,10 @@ header {
         width: 100%;
 
         .swiper-slide {
-            width: 100%;
             @include flex_common;
+            width: 100%;
             border-radius: 8px;
+            cursor: col-resize;
         }
     }
 }
@@ -1095,9 +1153,9 @@ header {
         }
 
         .core-feature-image {
+            @include flex_common;
             box-shadow: 0px 39px 30px rgba($title-color, 0.05);
             background-color: $white;
-            @include flex_common;
             border-radius: 100%;
             margin: 0 auto;
             transition: 0.4s ease-in;
@@ -1153,9 +1211,9 @@ footer {
             .rating {
                 li {
                     .feather {
+                        @include pseudowh($width: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))), $height: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))));
                         fill: #FFB016;
                         stroke: #FFB016;
-                        @include pseudowh($width: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))), $height: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
             }

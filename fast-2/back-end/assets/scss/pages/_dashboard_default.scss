@@ -33,13 +33,13 @@ $badge-light-color in (primary, $primary-color),
     background-color: rgba($success-color, 0.2);
 }
 
-.table {
-    thead {
-        th {
-            border-bottom: 2px solid $light-gray;
-        }
-    }
-}
+// .table {
+//     thead {
+//         th {
+//             border-bottom: 2px solid $light-gray;
+//         }
+//     }
+// }
 
 .profile-greeting {
     background-image: url(../images/dashboard/bg.jpg);
@@ -188,7 +188,7 @@ $badge-light-color in (primary, $primary-color),
                     line-height: 36px;
                     font-weight: 500;
                     margin: 0;
-                    font-size: 1rem;
+                    font-size: 16px;
                 }
 
                 p {
@@ -555,49 +555,49 @@ $badge-light-color in (primary, $primary-color),
         }
     }
 
-    .card-header-right-icon {
-        .dropdown {
-            .dropdown-toggle {
-                background-color: rgba(115, 102, 255, 0.08);
-                color: $primary-color;
-                border-radius: 10px;
-                padding: 5px 15px;
-                width: 100px;
-                text-align: left;
+    // .card-header-right-icon {
+    //     .dropdown {
+    //         .dropdown-toggle {
+    //             background-color: rgba(115, 102, 255, 0.08);
+    //             color: $primary-color;
+    //             border-radius: 10px;
+    //             padding: 5px 15px;
+    //             width: 100px;
+    //             text-align: left;
 
-                &:after {
-                    position: absolute;
-                    top: 50%;
-                    right: 10px;
-                    transform: translateY(-50%);
-                    content: "\f107";
-                    border: none;
-                    font-family: "FontAwesome";
-                    font-size: 18px;
-                    margin: 0;
-                }
-            }
+    //             &:after {
+    //                 position: absolute;
+    //                 top: 50%;
+    //                 right: 10px;
+    //                 transform: translateY(-50%);
+    //                 content: "\f107";
+    //                 border: none;
+    //                 font-family: "FontAwesome";
+    //                 font-size: 18px;
+    //                 margin: 0;
+    //             }
+    //         }
 
-            .dropdown-menu {
-                box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
-                border: none;
-                padding: 0;
+    //         .dropdown-menu {
+    //             box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
+    //             border: none;
+    //             padding: 0;
 
-                .dropdown-item {
-                    color: #2b2b2b;
-                    opacity: 0.6;
-                    font-size: 13px;
-                    padding: 6px 12px;
-                    border-top: 1px solid $light-semi-gray;
-                    background: $white;
+    //             .dropdown-item {
+    //                 color: #2b2b2b;
+    //                 opacity: 0.6;
+    //                 font-size: 13px;
+    //                 padding: 6px 12px;
+    //                 border-top: 1px solid $light-semi-gray;
+    //                 background: $white;
 
-                    &:hover {
-                        background-color: $white;
-                    }
-                }
-            }
-        }
-    }
+    //                 &:hover {
+    //                     background-color: $white;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     .bottom-btn {
         text-align: center;
@@ -2304,11 +2304,11 @@ span.twitter-typeahead {
             }
         }
 
-        .table-bordered {
-            td {
-                vertical-align: middle;
-            }
-        }
+        // .table-bordered {
+        //     td {
+        //         vertical-align: middle;
+        //     }
+        // }
     }
 
     .table-border-radius {
@@ -3204,9 +3204,9 @@ footer {
     }
 }
 
-.footer {
-    margin-left: unset !important;
-}
+// .footer {
+//     margin-left: unset !important;
+// }
 
 @media only screen and (max-width: 360px) {
     .footer {
@@ -3338,12 +3338,70 @@ footer {
         font-weight: 700;
         font-size: 20px;
     }
+
+    h4 {
+        font-size: 16px;
+        font-weight: 500;
+    }
 }
 
 .dropdown {
-    .dropdown-toggle {
-        background-color: rgba($primary-color, 0.12%);
+    &.icon-dropdown {
+        background-color: #f9f9f6;
+        border: 1px solid #efefef;
+
+        .dropdown-toggle {
+            padding: calc(7px + (14 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
+            width: 100%;
+            background-color: #f9f9f6 !important;
+            color: #444;
+            height: 40px;
+            font-size: 17px;
+            text-align: left;
+            justify-content: flex-start;
+            padding-left: 8px;
+            padding-right: 20px;
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                content: "\f0dd";
+                font-weight: 800;
+                font-family: "Font Awesome 5 Free";
+                border: none;
+                font-size: 14px;
+                margin: 0;
+                color: #777;
+            }
+        }
+
+        .dropdown-menu {
+            li {
+                display: inline-block;
+                // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                // gap: 8px;
+                // width: 100%;
+
+                a {
+                    width: 100px;
+                    height: 100px;
+                    display: block;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
     }
+
+    // .dropdown-toggle {
+    //     background-color: rgba($primary-color, 0.12%);
+    // }
 }
 
 .apexcharts-toolbar {
@@ -3677,5 +3735,49 @@ footer {
 .pie-chart {
     .apexcharts-legend-text {
         line-height: 22px;
+    }
+}
+
+.dashboard-category {
+    .category-image {
+        width: 100%;
+        height: 105px;
+        padding: 21px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 11px;
+        display: block;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--theme-color);
+            opacity: 0.08;
+            z-index: -1;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .category-name {
+        width: 70%;
+        margin: 10px auto 0;
+        display: block;
+
+        h6 {
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            overflow: hidden;
+            color: $grey-3;
+        }
     }
 }

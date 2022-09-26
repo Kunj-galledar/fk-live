@@ -886,6 +886,48 @@ $('.left-slider-image').slick({
     asNavFor: '.product-main',
     dots: false,
     focusOnSelect: true,
+    // vertical: false,
+    responsive: [{
+            breakpoint: 1400,
+            settings: {
+                vertical: false,
+            }
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                vertical: false,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                vertical: false,
+            }
+        }, {
+            breakpoint: 430,
+            settings: {
+                slidesToShow: 3,
+                vertical: false,
+            }
+        },
+    ]
+});
+
+$('.product-main-2').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.left-slider-image-2'
+});
+
+$('.left-slider-image-2').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: '.product-main-2',
+    dots: false,
+    focusOnSelect: true,
     vertical: true,
     responsive: [{
             breakpoint: 1400,

@@ -18,7 +18,6 @@
 .popover {
     background-color: $white;
     border: none;
-    -webkit-box-shadow: 0 0 20px rgba($primary-color, 0.1);
     box-shadow: 0 0 20px rgba($primary-color, 0.1);
 
     .popover-header {
@@ -117,6 +116,7 @@
 }
 
 // dropdown css end
+
 // accordian css start
 .default-according {
     .card {
@@ -180,8 +180,10 @@
 
     .nav-bottom {
         .nav-item {
-            .nav-link.active {
-                border-color: $light-semi-gray;
+            .nav-link {
+                &.active {
+                    border-color: $light-semi-gray;
+                }
             }
         }
     }
@@ -216,7 +218,6 @@
 }
 
 .dropdown-menu {
-    -webkit-box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
     box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
     border: none;
     padding: 0;
@@ -246,17 +247,20 @@
     .nav-tabs {
         .nav-item {
             .nav-link {
-                &.active {
-                    border-bottom: 2px solid $primary-color;
-                }
 
-                &.show {
-                    border-bottom: 2px solid $primary-color;
-                }
-
+                &.active,
+                &.show,
                 &:focus {
                     border-bottom: 2px solid $primary-color;
                 }
+
+                // &.show {
+                //     border-bottom: 2px solid $primary-color;
+                // }
+
+                // &:focus {
+                //     border-bottom: 2px solid $primary-color;
+                // }
             }
         }
     }
@@ -273,8 +277,10 @@
 }
 
 .timeliny {
-    .timeliny-dot::before {
-        font-size: $btn-lg-font-size;
+    .timeliny-dot {
+        &::before {
+            font-size: $btn-lg-font-size;
+        }
     }
 }
 

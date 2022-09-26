@@ -942,6 +942,18 @@
                          @include mq-max(md) {
                               display: none;
                          }
+
+                         ul {
+                              li {
+                                   &.active {
+                                        background: var(--theme-color);
+
+                                        img {
+                                             filter: invert(1) brightness(100);
+                                        }
+                                   }
+                              }
+                         }
                     }
 
                     ul {
@@ -1079,7 +1091,7 @@
                     padding-top: 16px;
 
                     li {
-                         padding: 9px 34px 9px 11px;
+                         padding: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) calc(28px + (34 - 28) * ((100vw - 320px) / (1920 - 320))) calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
                          background-color: #f9f8f6;
                          position: relative;
                          border-radius: 4px;

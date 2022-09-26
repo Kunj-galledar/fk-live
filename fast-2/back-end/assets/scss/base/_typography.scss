@@ -7,6 +7,11 @@ body {
     overflow-x: hidden;
     font-family: $public-sans;
     color: $theme-body-font-color;
+
+    ::selection {
+        background-color: transparent;
+        color: var(--theme-color);
+    }
 }
 
 ul {
@@ -97,7 +102,7 @@ blockquote {
 }
 
 .row {
-    > div {
+    >div {
         position: relative;
     }
 }
@@ -135,6 +140,7 @@ label {
 
 //Typography css start
 .typography {
+
     h1,
     .h1,
     h2,
@@ -185,7 +191,7 @@ pre {
 
     .owl-nav {
         &.disabled {
-            & + .owl-dots {
+            &+.owl-dots {
                 margin-bottom: -10px;
                 margin-top: 25px;
             }
@@ -194,7 +200,7 @@ pre {
 }
 
 .click2edit {
-    & ~ .note-editor {
+    &~.note-editor {
         &.note-frame {
             margin-bottom: 30px;
         }
@@ -247,8 +253,8 @@ pre {
     }
 
     span {
-        + span {
-            + span {
+        +span {
+            +span {
                 background-color: $white;
                 color: var(--theme-color);
                 border-radius: 4px;
@@ -353,6 +359,7 @@ pre {
 }
 
 fieldset {
+
     .bootstrap-touchspin-postfix,
     .bootstrap-touchspin-prefix {
         border-radius: 0;
@@ -366,12 +373,20 @@ fieldset {
     }
 }
 
-.f1 .f1-steps .f1-step .f1-step-icon {
-    padding: 12px;
+.f1 {
+    .f1-steps {
+        .f1-step {
+            .f1-step-icon {
+                padding: 12px;
+            }
+        }
+    }
 }
 
-.form-inline .form-group {
-    display: flex;
+.form-inline {
+    .form-group {
+        display: flex;
+    }
 }
 
 .input-group-text {

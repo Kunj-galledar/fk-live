@@ -18,53 +18,58 @@
     font-size: calc(16px + (23 - 16) * ((100vw - 320px) / (1920 - 320)));
 }
 
-.toggle-sidebar {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
+.logo-wrapper {
+    position: relative;
 
-    svg {
-        width: $header-wrapper-nav-icon-size;
-        height: $header-wrapper-nav-icon-size;
-    }
-
-    i {
-        font-size: 22px;
-    }
-
-    &:before {
-        content: "";
+    .toggle-sidebar {
         position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 40px;
         width: 40px;
-        background-color: rgba($primary-color, 0.1);
-        border-radius: 100%;
-        left: -11px;
-        z-index: -2;
-        top: -8px;
-        transform: scale(0);
-        transition: all 0.3s ease;
-    }
 
-    &:hover {
-        &:before {
-            height: 100%;
-            width: 100%;
-            transform: scale(1);
-            transition: all 0.3s ease;
-            top: 0;
-            left: 0;
+        svg {
+            width: $header-wrapper-nav-icon-size;
+            height: $header-wrapper-nav-icon-size;
         }
 
-        >svg {
-            color: var(--theme-color) !important;
-            stroke: var(--theme-color) !important;
+        i {
+            font-size: 22px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            background-color: rgba($primary-color, 0.1);
+            border-radius: 100%;
+            left: -11px;
+            z-index: -2;
+            top: -8px;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            &:before {
+                height: 100%;
+                width: 100%;
+                transform: scale(1);
+                transition: all 0.3s ease;
+                top: 0;
+                left: 0;
+            }
+
+            >svg {
+                color: var(--theme-color) !important;
+                stroke: var(--theme-color) !important;
+            }
         }
     }
 }

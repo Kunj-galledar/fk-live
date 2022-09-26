@@ -389,7 +389,7 @@
                     display: inline-block;
                     column-count: 2;
                     background-color: #f9f9f9;
-                    padding: 15px 15px 3px;
+                    padding: 15px;
                     border-radius: 12px;
                     width: 80%;
 
@@ -619,7 +619,7 @@
             touch-action: pan-x;
             overflow: auto;
             padding-bottom: 13px;
-            width: 70%;
+            // width: 70%;
 
             >ul {
                 display: flex;
@@ -772,9 +772,9 @@
     width: 100%;
     z-index: 9;
     background-color: $white;
-    padding: 6px 0;
-    box-shadow: 0 0 3px 1px rgba($title-color, 0.16);
-    transition: all 0.5s ease;
+    padding: calc(11px + (6 - 11) * ((100vw - 320px) / (1920 - 320))) 0;
+    box-shadow: 0 0 3px 1px rgba($title-color, 0.06);
+    transition: all 0.3s ease;
 
     .cart-content {
         display: flex;
@@ -832,7 +832,7 @@
 
             h6 {
                 font-size: 15px;
-                margin-top: 3px;
+                margin-top: 6px;
 
                 del {
                     margin-left: 7px;
@@ -860,7 +860,7 @@
     .selection-section {
         display: flex;
         align-items: center;
-        margin: 0 10px;
+        margin: 0 25px 0 auto;
 
         @include mq-max(sm) {
             display: none;
@@ -873,6 +873,16 @@
 
             &:focus {
                 box-shadow: none;
+            }
+        }
+
+        .product-qty {
+            height: 51px;
+
+            .input-group {
+                button {
+                    height: 100%;
+                }
             }
         }
 
@@ -898,7 +908,8 @@
         }
 
         a {
-            padding: 12px 40px; 
+            padding: 12px 40px;
+
             @include mq-max(sm) {
                 width: 100%;
                 @include flex_common;
@@ -946,13 +957,17 @@
 .stickyCart {
     padding-bottom: 94px;
 
+    .theme-option-2 {
+        bottom: calc(74px + (90 - 74) * ((100vw - 320px) / (1920 - 320)));
+    }
+
     @include mq-max(sm) {
         padding-bottom: 0;
     }
 
     .sticky-bottom-cart {
         bottom: 0;
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
     }
 
     .recently-purchase {

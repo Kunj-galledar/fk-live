@@ -5,10 +5,18 @@
     background-color: $footer_bg_color;
     box-shadow: $footer_box_shadow;
     padding: 15px;
+    position: fixed;
     bottom: 0;
-    left: 0;
-    margin-left: 280px;
+    right: 27px;
+    width: calc(100vw - 340px);
+    // left: unset;
+    // top: unset;
     transition: 0.5s;
+
+    @include mq-max(lg) {
+        width: 100%;
+        right: 0;
+    }
 
     &.footer-dark {
         background-color: $footer_dark_color;

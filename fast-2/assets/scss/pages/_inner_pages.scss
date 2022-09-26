@@ -3522,7 +3522,7 @@
         border-radius: 10px;
         overflow: hidden;
         position: sticky;
-        top: 10px;
+        top: 107px;
         z-index: 0;
 
         @include mq-max(lg) {
@@ -5464,7 +5464,7 @@
 ==========================**/
 .seller-grid-box {
     background-color: $light-gray;
-    padding: calc(19px + (40 - 19) * ((100vw - 320px) / (1920 - 320)));
+    padding: calc(12px + (25 - 12) * ((100vw - 320px) / (1920 - 320)));
     border-radius: 14px;
     position: relative;
     box-shadow: 0 0 10px rgba($title-color, 0.05);
@@ -5478,6 +5478,7 @@
             .saller-contact {
                 @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 5px);
                 align-items: flex-start;
+                width: 100%;
 
                 .seller-icon {
                     i {
@@ -5502,7 +5503,7 @@
         }
 
         .contain-name {
-            @include flex_common ($dis: flex, $align: flex-start, $justify: space-between);
+            @include flex_common ($dis: flex, $align: flex-end, $justify: space-between);
 
             h6 {
                 color: $content-color;
@@ -5530,7 +5531,7 @@
             }
 
             .grid-image {
-                @include pseudowh($width: calc(110px + (125 - 110) * ((100vw - 320px) / (1920 - 320))), $height: auto);
+                @include pseudowh($width: 100px, $height: auto);
                 @include flex_common;
                 background: $white;
                 padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
@@ -5614,7 +5615,8 @@
                     box-shadow: 0 0 2px rgba($title-color, 0.2);
                     color: $content-color;
                     transition: all 0.3s ease-in-out;
-                    &:hover{
+
+                    &:hover {
                         transform: scale(1.1) translateY(-7px);
                     }
 

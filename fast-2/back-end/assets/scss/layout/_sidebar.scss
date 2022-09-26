@@ -146,16 +146,21 @@
 
                     &:before {
                         position: absolute;
-                        left: 38px;
+                        left: 28px;
                         top: 50%;
+                        transform: translateY(-50%);
                         z-index: 1;
                         cursor: pointer;
-                        transform: translate(-50%, -50%);
                         font-size: 18px;
-                        color: $dark-gray;
+                        color: #898989;
                         content: "\F0D1";
                         font-family: remixicon !important;
                         font-style: normal;
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 28px;
+                        }
                     }
                 }
             }
@@ -1423,12 +1428,12 @@
                                         .simplebar-content-wrapper {
                                             .simplebar-content {
                                                 >li {
-                                                    .sidebar-link {
-                                                        &::before {
-                                                            right: 20px;
-                                                            left: unset;
-                                                        }
-                                                    }
+                                                    // .sidebar-link {
+                                                    //     &::before {
+                                                    //         right: 20px;
+                                                    //         left: unset;
+                                                    //     }
+                                                    // }
 
                                                     a {
                                                         span {
@@ -1527,7 +1532,7 @@
                                             >li {
                                                 display: block;
                                                 width: 100%;
-                                                padding: 0 0 0 15px;
+                                                padding: 0 15px;
                                                 position: relative;
 
                                                 &.sidebar-main-title {
@@ -1579,6 +1584,14 @@
                                                         [dir="rtl"] & {
                                                             margin-right: unset;
                                                             margin-left: 10px;
+                                                        }
+                                                    }
+
+                                                    .according-menu {
+                                                        margin-right: unset;
+
+                                                        i {
+                                                            margin-right: unset;
                                                         }
                                                     }
 
@@ -1793,11 +1806,25 @@
                                                 }
 
                                                 .sidebar-link {
-                                                    border-top-left-radius: 50px;
-                                                    border-bottom-left-radius: 50px;
-                                                    transition: all 0.5s ease;
+                                                    border-radius: 5px;
+                                                    transition: all 0.5s ease-in-out;
                                                     display: block;
                                                     margin-top: 8px;
+                                                    z-index: 0;
+                                                    position: relative;
+                                                    overflow: hidden;
+
+                                                    &:before {
+                                                        content: "";
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 100%;
+                                                        height: 100%;
+                                                        background-color: var(--theme-color);
+                                                        opacity: 0;
+                                                        z-index: -1;
+                                                    }
 
                                                     &:hover {
                                                         background-color: rgba($white, $alpha: 0.06);
@@ -1806,23 +1833,27 @@
                                                     &.active {
                                                         transition: all 0.5s ease;
                                                         position: relative;
-                                                        background-color: var(--theme-color);
+                                                        // background-color: var(--theme-color);
                                                         color: $white;
+
+                                                        &:before {
+                                                            opacity: 0.1;
+                                                        }
 
                                                         .according-menu {
                                                             i {
-                                                                color: #efefef;
+                                                                color: var(--theme-color);
                                                             }
                                                         }
 
                                                         svg,
                                                         i {
-                                                            color: $white;
+                                                            color: var(--theme-color);
                                                             transition: all 0.3s ease-in-out;
                                                         }
 
                                                         span {
-                                                            color: $white;
+                                                            color: var(--theme-color);
                                                             transition: all 0.3s ease-in-out;
                                                         }
                                                     }
@@ -1886,11 +1917,12 @@
                 margin-top: 90px;
                 margin-left: 280px;
                 background-color: $inner-bg;
-                background-image: url("../images/bg-body.png");
-                background-repeat: no-repeat;
-                background-position: right;
-                background-attachment: fixed;
+                // background-image: url("../images/bg-body.png");
+                // background-repeat: no-repeat;
+                // background-position: right;
+                // background-attachment: fixed;
                 padding-top: 25px;
+                padding-bottom: 34px;
             }
         }
 

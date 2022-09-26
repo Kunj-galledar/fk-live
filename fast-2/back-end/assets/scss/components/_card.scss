@@ -5,6 +5,7 @@
     cursor: pointer;
     position: relative;
     margin: 0 16px 0 0;
+    z-index: 0;
 
     &:before {
         transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
@@ -48,6 +49,7 @@
         font-size: 16px;
         color: $theme-font-color;
         text-transform: capitalize;
+
         &.btn {
             font-size: 14px;
             color: $white;
@@ -131,6 +133,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
         .right-options {
             ul {
                 display: flex;
@@ -161,6 +164,10 @@
     &.card-tiles {
         border: 1px solid #ddd;
     }
+
+    // .card-header-top {
+    //     padding: 16px;
+    // }
 
     .card-header {
         background-color: $card-header-bg-color;
@@ -242,6 +249,10 @@
             }
         }
 
+        &-top {
+            padding: 16px;
+        }
+
         &.card-no-border {
             border-bottom: none !important;
         }
@@ -257,7 +268,7 @@
             }
         }
 
-        > span {
+        >span {
             font-size: $card-header-span-size;
             color: $card-header-span-color;
             margin-top: 5px;
@@ -311,11 +322,37 @@
                 }
             }
         }
+
+        .best-selling-box {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-right: 6px;
+                font-weight: 700;
+                color: $title-color;
+
+                [dir="rtl"] & {
+                    margin-right: unset;
+                    margin-left: 6px;
+                }
+            }
+
+            .dropdown {
+                .dropdown-toggle {
+                    color: $content-color;
+                }
+            }
+        }
     }
 
     .card-body {
         padding: $card-padding;
         background-color: $card-body-bg-color;
+
+        &-2 {
+            padding: 16px;
+        }
 
         p {
             &:last-child {
@@ -325,7 +362,7 @@
     }
 
     .sub-title {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba($black, 0.1);
         padding-bottom: 5px;
         margin-bottom: 8px;
         font-size: 18px;
@@ -347,7 +384,7 @@
             width: 100%;
             height: 100%;
             display: flex;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba($white, 0.7);
             z-index: 8;
             align-items: center;
             justify-content: center;
@@ -469,8 +506,8 @@
     .card-footer {
         padding: 0;
 
-        > div {
-            + div {
+        >div {
+            +div {
                 border-left: 1px solid $light-semi-gray;
             }
 
