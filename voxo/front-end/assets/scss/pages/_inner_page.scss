@@ -57,6 +57,18 @@
 }
 
 .search-section {
+    &-2{
+        .search-bar {
+            input{
+                &.input-group {
+                    margin: 26px auto 110px;
+                } 
+                &:focus{
+                    background-color: $white;
+                }
+            }
+        }
+    }
     .search-bar {
 
         .search-input,
@@ -66,7 +78,7 @@
 
         .input-group {
             width: 50%;
-            margin: 26px auto 110px;
+            // margin: 26px auto 110px;
 
             @include mq-max(lg) {
                 width: 80%;
@@ -85,6 +97,7 @@
 
             i {
                 color: $white;
+                font-size: 15px;
             }
 
             &.search-button {
@@ -95,6 +108,7 @@
         input {
             &:focus {
                 border-color: $border-color;
+                z-index: 0;
             }
         }
     }
@@ -2561,6 +2575,7 @@
                         }
 
                         &:hover {
+                            color: var(--theme-color);
                             .fas {
                                 color: var(--theme-color);
                             }
@@ -3092,7 +3107,7 @@ tfoot {
         height: 25px;
     }
 
-    .custome-imput-group {
+    .custome-input-group {
         .form-control {
             padding: 6px 12px;
         }
