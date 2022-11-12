@@ -1,7 +1,6 @@
 /**=====================
     Typography css start
 ==========================**/
-//Custom css Start
 body {
     font-size: $body-font-size;
     overflow-x: hidden;
@@ -102,7 +101,7 @@ blockquote {
 }
 
 .row {
-    >div {
+    > div {
         position: relative;
     }
 }
@@ -136,11 +135,7 @@ label {
     }
 }
 
-//Custom css End
-
-//Typography css start
 .typography {
-
     h1,
     .h1,
     h2,
@@ -172,7 +167,6 @@ pre {
     padding: $pre-tag-padding;
 }
 
-//Typography css end
 .owl-theme {
     .owl-dots {
         .owl-dot {
@@ -191,7 +185,7 @@ pre {
 
     .owl-nav {
         &.disabled {
-            &+.owl-dots {
+            & + .owl-dots {
                 margin-bottom: -10px;
                 margin-top: 25px;
             }
@@ -200,7 +194,7 @@ pre {
 }
 
 .click2edit {
-    &~.note-editor {
+    & ~ .note-editor {
         &.note-frame {
             margin-bottom: 30px;
         }
@@ -216,6 +210,12 @@ pre {
 .note-editor {
     &.note-frame {
         border-color: $light-color;
+    }
+}
+
+.btn-close {
+    &:focus {
+        box-shadow: none;
     }
 }
 
@@ -240,7 +240,6 @@ pre {
     }
 }
 
-// index page notify
 .alert-theme {
     button {
         top: 25px !important;
@@ -253,8 +252,8 @@ pre {
     }
 
     span {
-        +span {
-            +span {
+        + span {
+            + span {
                 background-color: $white;
                 color: var(--theme-color);
                 border-radius: 4px;
@@ -269,8 +268,7 @@ pre {
 
     .progress {
         margin-top: -2px !important;
-        height: 2px;
-        width: 100%;
+        @include pseudowh($width: 100%, $height: 2px);
 
         .progress-bar {
             background-color: var(--theme-color);
@@ -299,8 +297,7 @@ pre {
 }
 
 .ace-editor {
-    height: 400px;
-    width: 100%;
+    @include pseudowh($width: 100%, $height: 400px);
 }
 
 .editor-toolbar {
@@ -338,7 +335,6 @@ pre {
     background-color: var(--theme-color);
 }
 
-// sweetalert css
 .swal-button {
     background-color: var(--theme-color);
 
@@ -359,7 +355,6 @@ pre {
 }
 
 fieldset {
-
     .bootstrap-touchspin-postfix,
     .bootstrap-touchspin-prefix {
         border-radius: 0;
@@ -395,7 +390,6 @@ fieldset {
     }
 }
 
-// animated modal css
 .animated-modal {
     .form-select {
         display: inline-block;

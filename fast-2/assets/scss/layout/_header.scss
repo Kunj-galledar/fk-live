@@ -1360,6 +1360,11 @@ header {
                     margin-left: auto;
                     display: flex;
                     align-items: center;
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: auto;
+                    }
                 }
             }
         }
@@ -1449,6 +1454,19 @@ header {
 
         &.bg-theme {
             background-color: transparent;
+        }
+
+        .navbar-expand-xl {
+            .dropdown:hover {
+                .dropdown-menu-2 {
+                    @media (min-width: 1200px) {
+                        [dir="rtl"] & {
+                            transform: translateX(-50%) translateY(0);
+                        }
+
+                    }
+                }
+            }
         }
     }
 
@@ -1643,6 +1661,8 @@ header {
             }
 
             a {
+                display: block;
+
                 img {
                     display: block;
                     margin: 0px auto;
@@ -1660,12 +1680,8 @@ header {
                 .icli {
                     display: inline-block;
                     margin: 0 auto;
-                    font-size: 22px;
+                    font-size: calc(20px + (22 - 20) * ((100vw - 320px) / (1920 - 320)));
                     color: $white;
-                }
-
-                @include mq-max(2xs) {
-                    height: 20px;
                 }
 
                 span {

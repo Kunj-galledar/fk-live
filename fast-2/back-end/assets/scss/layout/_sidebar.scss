@@ -2,19 +2,16 @@
     Sidebar CSS Start
 ==========================**/
 %sidebar-after {
-    position: absolute;
-    content: "";
+    @include pos;
     top: 48%;
     width: 6px;
-    border-top: 2px solid #595c60;
+    border-top: 2px solid $white;
 }
 
 %horizontal-after {
-    position: absolute;
-    content: "";
+    @include pos;
     top: 49%;
-    width: 5px;
-    height: 1px;
+    @include pseudowh($width: 5px, $height: 1px);
     border-radius: 100%;
 }
 
@@ -39,27 +36,23 @@
     overflow: hidden;
 
     &:before {
-        width: 0;
-        height: 0;
+        @include pseudowh($width: 0, $height: 0);
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
         border-bottom: 7px solid $white;
-        content: "";
+        @include pos;
         top: -7px;
-        position: absolute;
         left: 10px;
         z-index: 2;
     }
 
     &:after {
-        width: 0;
-        height: 0;
+        @include pseudowh($width: 0, $height: 0);
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
         border-bottom: 7px solid $light-background;
-        content: "";
+        @include pos;
         top: -7px;
-        position: absolute;
         left: 10px;
         z-index: 1;
     }
@@ -93,7 +86,6 @@
         z-index: $main-header-z-index;
         transition: $sidebar-transition;
         background-color: $white;
-        box-shadow: $main-header-shadow;
 
         .header-wrapper {
             width: 100%;
@@ -105,26 +97,34 @@
             .search-full {
                 position: relative;
                 z-index: 1;
-                height: auto;
-                flex: 1 0 23%;
+                @include pseudowh($width: 40%, $height: auto);
                 transition: all 0.3s ease;
 
                 &.open {
                     display: block;
-                    height: 100%;
-                    width: 100%;
+                    @include pseudowh;
                     animation: zoomIn 0.5s ease-in-out;
                     transform: scale(1);
                     transition: all 0.3s ease;
                 }
 
                 input {
-                    font-size: 16px;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                     line-height: 32px;
-                    padding-left: 60px;
+                    padding-left: 30px;
                     width: 100% !important;
                     background-color: $inner-bg;
-                    border-radius: 10px;
+                    border-radius: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+                    padding-right: 60px;
+
+                    @include mq-max(lg) {
+                        padding-left: 17px;
+
+                        [dir="rtl"] & {
+                            padding-left: unset;
+                            padding-right: 17px;
+                        }
+                    }
 
                     &:focus {
                         outline: none !important;
@@ -133,33 +133,41 @@
 
                 .form-group {
                     .close-search {
+                        @include center(vertical);
+                        @include pseudowh($width: 18px, $height: 25px);
                         position: absolute;
                         font-size: 15px;
                         right: 20px;
-                        width: 18px;
-                        height: 25px;
-                        top: 30px;
                         display: none;
                         color: $dark-gray;
                         cursor: pointer;
                     }
 
                     &:before {
-                        position: absolute;
-                        left: 28px;
-                        top: 50%;
-                        transform: translateY(-50%);
+                        @include pos($pos: absolute, $content: "\F0D1");
+                        @include center(vertical);
+                        right: 0;
                         z-index: 1;
                         cursor: pointer;
                         font-size: 18px;
-                        color: #898989;
-                        content: "\F0D1";
+                        color: $white;
                         font-family: remixicon !important;
                         font-style: normal;
+                        background-color: #ffa53b;
+                        padding: 10px 18px 9px;
+                        border-radius: 0 8px 8px 0;
 
                         [dir="rtl"] & {
-                            left: unset;
-                            right: 28px;
+                            border-radius: 8px 0px 0px 8px;
+                        }
+
+                        @media only screen and (max-width: 762px) {
+                            content: none;
+                        }
+
+                        [dir="rtl"] & {
+                            left: 0;
+                            right: unset;
                         }
                     }
                 }
@@ -167,6 +175,13 @@
 
             .nav-right {
                 justify-content: flex-end;
+                display: flex;
+                margin-left: auto;
+
+                [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: auto;
+                }
 
                 ul {
                     li {
@@ -214,11 +229,11 @@
 
                             .profile-media {
                                 .media-body {
-                                    margin-left: 0;
+                                    margin-left: 15px;
 
                                     [dir="rtl"] & {
                                         margin-left: unset;
-                                        margin-right: 0;
+                                        margin-right: 15px;
                                     }
 
                                     span {
@@ -228,9 +243,9 @@
                                     }
 
                                     p {
-                                        font-size: 20px;
+                                        font-size: 12px;
                                         line-height: 1;
-                                        color: $content-color;
+                                        color: $theme-body-font-color;
 
                                         .fa-angle-down {
                                             margin-left: 5px;
@@ -244,8 +259,7 @@
                                 }
 
                                 .user-profile {
-                                    width: 40px;
-                                    height: 40px;
+                                    @include pseudowh($width: 40px, $height: 40px);
                                     object-fit: cover;
                                 }
                             }
@@ -253,17 +267,19 @@
                     }
                 }
 
-                >ul {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-end;
+                > ul {
+                    @include flex_common($dis: flex, $align: center, $justify: flex-end);
 
-                    >li {
-                        padding: 6px 10px;
-                        margin-right: 5px;
+                    > li {
+                        padding: 0 8px;
+                        margin-right: 10px;
                         font-size: 18px;
                         display: inline-block;
                         position: relative;
+
+                        @media only screen and (max-width: 575.98px) {
+                            margin-right: 4px;
+                        }
 
                         .badge {
                             position: absolute;
@@ -273,6 +289,7 @@
                             font-size: 11px;
                             font-weight: 700;
                             font-family: $public-sans;
+                            background-color: #ff7272;
                         }
 
                         span {
@@ -322,8 +339,7 @@
                 }
 
                 .flip-card {
-                    width: 220px;
-                    height: 245px;
+                    @include pseudowh($width: 220px, $height: 245px);
                     background-color: transparent;
 
                     .flip-card-inner {
@@ -340,8 +356,7 @@
                             border-radius: 10px;
                             overflow: hidden;
                             box-shadow: 0 0 20px rgba(89, 102, 122, 0.1);
-                            width: 220px;
-                            height: 240px;
+                            @include pseudowh($width: 220px, $height: 240px);
 
                             button {
                                 background-color: $transparent-color;
@@ -421,8 +436,7 @@
                             span,
                             i {
                                 position: absolute;
-                                width: 50px;
-                                height: 50px;
+                                @include pseudowh($width: 50px, $height: 50px);
                                 top: -5px;
                                 right: -10px;
                                 opacity: 0.15;
@@ -455,7 +469,7 @@
                             opacity: 0.6;
                         }
 
-                        &+li {
+                        & + li {
                             padding-top: 15px;
                             padding-bottom: 0px;
                         }
@@ -477,7 +491,7 @@
                             }
 
                             .media-body {
-                                >span {
+                                > span {
                                     letter-spacing: 0.8px;
                                     padding-right: 10px;
                                     font-weight: 500;
@@ -507,8 +521,10 @@
                 .notification-box {
                     position: relative;
 
-                    svg {
-                        animation: tada 1.5s ease infinite;
+                    svg,
+                    .ri-notification-line {
+                        animation: bell 1s ease-out;
+                        transform-origin: center top;
                     }
                 }
 
@@ -526,7 +542,7 @@
                             align-items: center;
                         }
 
-                        &+li {
+                        & + li {
                             padding-bottom: 10px;
                         }
                     }
@@ -565,7 +581,7 @@
                     left: unset;
 
                     li {
-                        &+li {
+                        & + li {
                             padding-top: 8px;
 
                             p {
@@ -615,7 +631,6 @@
 
                                 i {
                                     color: var(--theme-color);
-                                    // transition: stroke 0.3s ease;
                                 }
                             }
                         }
@@ -627,17 +642,16 @@
                         a {
                             display: flex;
                             align-items: center;
+                            gap: 10px;
 
                             span {
                                 color: $dark-color;
                             }
 
                             i {
-                                // width: 16px;
-                                // vertical-align: bottom;
                                 margin-right: 10px;
                                 color: $dark-color;
-                                transition: all .3s ease-in-out;
+                                transition: all 0.3s ease-in-out;
 
                                 [dir="rtl"] & {
                                     margin-right: unset;
@@ -670,7 +684,7 @@
             padding-top: $page-title-padding;
             padding-bottom: $page-title-padding;
 
-            >.row {
+            > .row {
                 .col-6 {
                     &:first-child {
                         display: flex;
@@ -714,7 +728,7 @@
                 }
 
                 .breadcrumb-item {
-                    &+.breadcrumb-item {
+                    & + .breadcrumb-item {
                         &:before {
                             content: $breadcrumb-content;
                         }
@@ -724,8 +738,7 @@
                         color: var(--theme-color);
 
                         svg {
-                            width: 16px;
-                            height: 16px;
+                            @include pseudowh($width: 16px, $height: 16px);
                             color: $dark-color;
                             vertical-align: text-top;
                         }
@@ -762,7 +775,7 @@
             }
 
             .sidebar-wrapper {
-                height: 54px;
+                @include pseudowh($width: 100vw, $height: 54px);
                 line-height: inherit;
                 top: 81px;
                 background: $white;
@@ -771,7 +784,6 @@
                 z-index: 1;
                 overflow-y: visible;
                 position: fixed;
-                width: 100vw;
                 border-top: 1px solid $light-semi-gray;
 
                 .badge {
@@ -796,9 +808,7 @@
                         top: 0px;
                         padding: 15px;
                         background-color: $white;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        @include flex_common;
                         z-index: 1;
                         cursor: pointer;
 
@@ -849,7 +859,7 @@
                                     li {
                                         a {
                                             &.active {
-                                                color: var(--theme-color);
+                                                color: $white;
 
                                                 &:after {
                                                     background-color: var(--theme-color);
@@ -865,13 +875,13 @@
                             .simplebar-mask {
                                 .simplebar-content-wrapper {
                                     .simplebar-content {
-                                        >li {
+                                        > li {
                                             position: relative;
                                             padding-bottom: 10px;
 
                                             &:hover {
-                                                >a {
-                                                    >span {
+                                                > a {
+                                                    > span {
                                                         transition: all 0.3s ease;
                                                     }
                                                 }
@@ -889,7 +899,7 @@
                                                 display: none !important;
                                             }
 
-                                            >a {
+                                            > a {
                                                 display: block;
                                                 color: $theme-body-font-color;
                                                 line-height: 23px;
@@ -981,7 +991,7 @@
                                                 z-index: 4;
                                                 box-shadow: 0 0 1px 0 $dark-gray;
                                                 padding: 30px;
-                                                background: white;
+                                                background: $white;
                                                 width: 95%;
                                                 border-radius: 4px;
                                                 display: block !important;
@@ -1037,12 +1047,10 @@
                                                                     }
 
                                                                     &:after {
-                                                                        position: absolute;
-                                                                        content: "";
+                                                                        @include pos;
                                                                         left: -12px;
                                                                         top: 50%;
-                                                                        width: 5px;
-                                                                        height: 1px;
+                                                                        @include pseudowh($width: 5px, $height: 1px);
                                                                         background-color: $light-semi-font;
                                                                     }
                                                                 }
@@ -1053,7 +1061,7 @@
                                             }
 
                                             &:hover {
-                                                >a {
+                                                > a {
                                                     &:after {
                                                         left: 0;
                                                         right: 0;
@@ -1125,7 +1133,6 @@
 
     &.material-icon {
         .left-header {
-
             .level-menu,
             .mega-menu {
                 .nav-link {
@@ -1150,7 +1157,7 @@
             margin: 0 0 15px;
         }
 
-        >div {
+        > div {
             background-color: rgba($white, 0.06);
             padding: 16px;
             border-radius: 10px;
@@ -1205,13 +1212,37 @@
                     position: fixed;
                     top: 0;
                     z-index: 7;
-                    height: auto;
                     line-height: inherit;
-                    background: $white;
-                    width: 280px;
+                    background: var(--theme-color);
+                    @include pseudowh($width: 280px, $height: auto);
                     text-align: left;
-                    // transition: 0.3s;
                     box-shadow: 0 0 21px 0 rgba($semi-dark, 0.1);
+                    background: linear-gradient(-45deg, #0da487, #009289, #ffa53b);
+                    background-size: 400% 400%;
+                    animation: gradient 15s ease infinite;
+                    overflow: hidden;
+
+                    #sidebarEffect {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        @include pseudowh;
+                        opacity: 0.04;
+                    }
+
+                    @keyframes gradient {
+                        0% {
+                            background-position: 0% 50%;
+                        }
+
+                        50% {
+                            background-position: 100% 50%;
+                        }
+
+                        100% {
+                            background-position: 0% 50%;
+                        }
+                    }
 
                     .logo-wrapper,
                     .logo-icon-wrapper {
@@ -1235,15 +1266,12 @@
                     }
 
                     .user-section {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        @include flex_common;
                         text-align: center;
                         padding: 15px 0 25px;
 
                         .user-profile {
-                            width: 100px;
-                            height: 100px;
+                            @include pseudowh($width: 100px, $height: 100px);
                             object-fit: cover;
                         }
 
@@ -1252,17 +1280,17 @@
                                 font-size: 16px;
                                 font-weight: 500;
                                 margin-top: 10px;
+                                color: $white;
                             }
 
                             p {
-                                color: $grey-13;
+                                color: #eeeeee;
                             }
                         }
                     }
 
                     &.close_icon {
                         width: 74px;
-                        // transition: all 0.3s ease;
 
                         &:hover {
                             width: 280px;
@@ -1282,13 +1310,10 @@
                                 .sidebar-links {
                                     .simplebar-wrapper {
                                         .simplebar-mask {
-                                            top: 260px;
-
                                             .simplebar-content-wrapper {
                                                 .simplebar-content {
-                                                    >li {
+                                                    > li {
                                                         max-width: unset;
-                                                        // margin: initial;
                                                         transition: all 0.3s ease;
 
                                                         .sidebar-submenu {
@@ -1297,7 +1322,7 @@
                                                             }
                                                         }
 
-                                                        >a {
+                                                        > a {
                                                             padding: 12px 15px;
                                                             transition: all 0.3s ease;
 
@@ -1329,8 +1354,7 @@
 
                             .user-section {
                                 .user-profile {
-                                    width: 100px;
-                                    height: 100px;
+                                    @include pseudowh($width: 100px, $height: 100px);
                                 }
                             }
 
@@ -1347,8 +1371,7 @@
                             padding-bottom: 0;
 
                             .user-profile {
-                                width: 50px;
-                                height: 50px;
+                                @include pseudowh($width: 50px, $height: 50px);
                             }
                         }
 
@@ -1362,12 +1385,9 @@
                             .sidebar-links {
                                 .simplebar-wrapper {
                                     .simplebar-mask {
-                                        top: 226px;
-
                                         .simplebar-content-wrapper {
                                             .simplebar-content {
-                                                >li {
-                                                    // max-width: 86px;
+                                                > li {
                                                     margin: 0;
                                                     transition: all 0.3s ease;
 
@@ -1409,13 +1429,13 @@
                             transform: translate(183px);
                         }
 
-                        ~.page-body,
-                        ~footer {
+                        ~ .page-body,
+                        ~ footer {
                             margin-left: 80px;
                             transition: 0.5s;
                         }
 
-                        ~.footer-fix {
+                        ~ .footer-fix {
                             width: calc(100% - 90px);
                         }
 
@@ -1427,14 +1447,7 @@
                                     .simplebar-mask {
                                         .simplebar-content-wrapper {
                                             .simplebar-content {
-                                                >li {
-                                                    // .sidebar-link {
-                                                    //     &::before {
-                                                    //         right: 20px;
-                                                    //         left: unset;
-                                                    //     }
-                                                    // }
-
+                                                > li {
                                                     a {
                                                         span {
                                                             display: none;
@@ -1449,7 +1462,7 @@
                                 .sidebar-list {
                                     .sidebar-title {
                                         &.active {
-                                            ~.sidebar-submenu {
+                                            ~ .sidebar-submenu {
                                                 display: none;
                                             }
                                         }
@@ -1464,7 +1477,6 @@
                     }
 
                     .sidebar-main {
-
                         .left-arrow,
                         .right-arrow {
                             display: none;
@@ -1488,7 +1500,7 @@
                                         letter-spacing: 0.7px;
                                         font-family: $public-sans;
                                         text-transform: capitalize;
-                                        color: $grey-3;
+                                        color: $white;
                                     }
 
                                     &.link-nav {
@@ -1513,15 +1525,13 @@
                                 padding: 0;
 
                                 .mobile-back {
+                                    @include flex_common($dis: flex, $align: center, $justify: flex-end);
                                     padding: 20px;
                                     color: $theme-font-color;
                                     font-weight: 700;
                                     text-transform: uppercase;
                                     border-bottom: 1px solid #efefef;
                                     cursor: pointer;
-                                    display: flex;
-                                    justify-content: flex-end;
-                                    align-items: center;
                                 }
                             }
 
@@ -1529,7 +1539,7 @@
                                 .simplebar-mask {
                                     .simplebar-content-wrapper {
                                         .simplebar-content {
-                                            >li {
+                                            > li {
                                                 display: block;
                                                 width: 100%;
                                                 padding: 0 15px;
@@ -1549,7 +1559,7 @@
                                                     }
 
                                                     &:hover {
-                                                        >a {
+                                                        > a {
                                                             &:hover {
                                                                 transition: all 0.3s ease;
                                                             }
@@ -1564,20 +1574,19 @@
                                                     display: flex !important;
 
                                                     svg {
-                                                        width: 18px;
+                                                        @include pseudowh($width: 18px, $height: 18px);
                                                         margin-right: 10px;
                                                         vertical-align: bottom;
                                                         float: none;
                                                         stroke-width: 1.5px;
                                                         color: $grey-3;
-                                                        height: 18px;
                                                         transition: all 0.3s ease;
                                                     }
 
                                                     i {
                                                         font-size: 20px;
                                                         margin-right: 10px;
-                                                        color: $grey-3;
+                                                        color: $white;
                                                         transition: all 0.3s ease;
                                                         line-height: 1;
 
@@ -1592,6 +1601,11 @@
 
                                                         i {
                                                             margin-right: unset;
+
+                                                            [dir="rtl"] & {
+                                                                margin-left: unset;
+                                                                margin-right: 10px;
+                                                            }
                                                         }
                                                     }
 
@@ -1619,7 +1633,7 @@
                                                     padding: 0;
                                                     position: relative !important;
 
-                                                    >li {
+                                                    > li {
                                                         a {
                                                             padding-left: 40px !important;
                                                             font-weight: 400;
@@ -1638,14 +1652,8 @@
 
                                                     li {
                                                         &:hover {
-                                                            >a {
-                                                                color: var(--theme-color);
+                                                            > a {
                                                                 transition: all 0.3s ease;
-
-                                                                &:after {
-                                                                    border-top: 2px solid var(--theme-color);
-                                                                    transition: all 0.3s ease;
-                                                                }
                                                             }
                                                         }
 
@@ -1675,7 +1683,7 @@
                                                         a {
                                                             padding: 7px 25px;
                                                             font-size: 14px;
-                                                            color: rgba($theme-body-font-color, 0.6);
+                                                            color: $white;
                                                             display: block;
                                                             position: relative;
                                                             letter-spacing: 0.06em;
@@ -1687,7 +1695,7 @@
                                                             text-overflow: ellipsis;
 
                                                             &.active {
-                                                                color: var(--theme-color) !important;
+                                                                color: $white !important;
                                                             }
 
                                                             &:after {
@@ -1705,7 +1713,7 @@
                                                 &.mega-menu {
                                                     .sidebar-title {
                                                         &.active {
-                                                            ~.mega-menu-container {
+                                                            ~ .mega-menu-container {
                                                                 display: block !important;
                                                             }
                                                         }
@@ -1815,13 +1823,11 @@
                                                     overflow: hidden;
 
                                                     &:before {
-                                                        content: "";
-                                                        position: absolute;
+                                                        @include pos;
                                                         top: 0;
                                                         left: 0;
-                                                        width: 100%;
-                                                        height: 100%;
-                                                        background-color: var(--theme-color);
+                                                        @include pseudowh;
+                                                        background-color: $white;
                                                         opacity: 0;
                                                         z-index: -1;
                                                     }
@@ -1833,7 +1839,6 @@
                                                     &.active {
                                                         transition: all 0.5s ease;
                                                         position: relative;
-                                                        // background-color: var(--theme-color);
                                                         color: $white;
 
                                                         &:before {
@@ -1842,18 +1847,23 @@
 
                                                         .according-menu {
                                                             i {
-                                                                color: var(--theme-color);
+                                                                color: $white;
+
+                                                                [dir="rtl"] & {
+                                                                    margin-left: unset;
+                                                                    margin-right: 10px;
+                                                                }
                                                             }
                                                         }
 
                                                         svg,
                                                         i {
-                                                            color: var(--theme-color);
+                                                            color: $white;
                                                             transition: all 0.3s ease-in-out;
                                                         }
 
                                                         span {
-                                                            color: var(--theme-color);
+                                                            color: $white;
                                                             transition: all 0.3s ease-in-out;
                                                         }
                                                     }
@@ -1917,12 +1927,8 @@
                 margin-top: 90px;
                 margin-left: 280px;
                 background-color: $inner-bg;
-                // background-image: url("../images/bg-body.png");
-                // background-repeat: no-repeat;
-                // background-position: right;
-                // background-attachment: fixed;
                 padding-top: 25px;
-                padding-bottom: 34px;
+                padding-bottom: 54px !important;
             }
         }
 
@@ -1952,7 +1958,7 @@
                             .simplebar-mask {
                                 .simplebar-content-wrapper {
                                     .simplebar-content {
-                                        >li {
+                                        > li {
                                             .mega-menu-container {
                                                 .mega-box {
                                                     .link-section {
@@ -2059,13 +2065,12 @@
 
     // compact icon css
     &.compact-sidebar {
-        ~.bg-overlay1 {
+        ~ .bg-overlay1 {
             transition: 0.8s;
 
             &.active {
                 z-index: 8;
-                height: 100vh;
-                width: 100vw;
+                @include pseudowh($width: 100vw, $height: 100vh);
                 background-color: rgba($black, 0.2);
                 position: fixed;
                 top: 0;
@@ -2125,18 +2130,16 @@
                 top: 0;
                 z-index: 9;
 
-                >div {
-                    height: auto;
+                > div {
+                    @include pseudowh($width: 150px, $height: auto);
                     line-height: inherit;
                     background: $white;
-                    width: 150px;
                     text-align: left;
                     transition: 0.3s;
                     box-shadow: 0 0 21px 0 rgba(89, 102, 122, 0.1);
                 }
 
                 .sidebar-main {
-
                     .left-arrow,
                     .right-arrow {
                         display: none;
@@ -2169,8 +2172,8 @@
                                         color: $primary-color;
                                     }
 
-                                    ~.sidebar-submenu,
-                                    ~.mega-menu-container {
+                                    ~ .sidebar-submenu,
+                                    ~ .mega-menu-container {
                                         animation: fadeInLeft 300ms ease-in-out;
                                     }
                                 }
@@ -2186,10 +2189,9 @@
                             .mega-menu-container {
                                 position: fixed;
                                 top: 0px;
-                                height: calc(100vh - 0px);
                                 overflow: auto;
                                 left: 150px;
-                                width: 230px;
+                                @include pseudowh($width: 230px, $height: calc(100vh - 0px));
                                 background-color: $white;
                                 box-shadow: 0 16px 15px 15px rgba(126, 55, 216, 0.03);
                                 transition: all 0.5s ease-in-out;
@@ -2232,15 +2234,14 @@
                                     }
                                 }
 
-                                >li {
-                                    >a {
+                                > li {
+                                    > a {
                                         &::after {
-                                            position: absolute;
-                                            content: "";
+                                            @include pos;
                                             left: 20px;
                                             top: 48%;
                                             width: 6px;
-                                            border-top: 2px solid #595c60;
+                                            border-top: 2px solid $white;
                                         }
                                     }
                                 }
@@ -2263,12 +2264,11 @@
                                                 margin-bottom: 0;
 
                                                 &::after {
-                                                    position: absolute;
-                                                    content: "";
+                                                    @include pos;
                                                     left: 20px;
                                                     top: 48%;
                                                     width: 6px;
-                                                    border-top: 2px solid #595c60;
+                                                    border-top: 2px solid $white;
                                                 }
                                             }
                                         }
@@ -2296,7 +2296,7 @@
                                     margin: 0 auto 6px;
                                 }
 
-                                >span {
+                                > span {
                                     display: block;
                                     font-weight: 500;
                                     letter-spacing: 1px;
@@ -2330,8 +2330,8 @@
                 &.close_icon {
                     transform: translateX(-150px);
 
-                    ~.page-body,
-                    ~.footer {
+                    ~ .page-body,
+                    ~ .footer {
                         margin-left: 0px;
                     }
                 }
@@ -2386,7 +2386,7 @@
             }
 
             div.sidebar-wrapper {
-                >div {
+                > div {
                     width: 90px;
                 }
 
@@ -2430,7 +2430,7 @@
                                     width: 20px;
                                 }
 
-                                >span {
+                                > span {
                                     display: none;
                                 }
                             }
@@ -2442,7 +2442,7 @@
                             }
 
                             a {
-                                >span {
+                                > span {
                                     display: none;
                                 }
                             }
@@ -2453,8 +2453,8 @@
                 &.close_icon {
                     transform: translateX(-150px);
 
-                    ~.page-body,
-                    ~.footer {
+                    ~ .page-body,
+                    ~ .footer {
                         margin-left: 0px;
                     }
                 }
@@ -2476,27 +2476,26 @@
             .nav-menus {
                 .profile-nav {
                     .media-body {
-
-                        >span,
-                        >p {
+                        > span,
+                        > p {
                             color: $white !important;
                         }
                     }
                 }
 
-                >li {
-                    >svg {
+                > li {
+                    > svg {
                         stroke: $white;
                     }
 
-                    >a {
-                        >svg {
+                    > a {
+                        > svg {
                             stroke: $white;
                         }
                     }
 
-                    >div,
-                    >span {
+                    > div,
+                    > span {
                         .lang-txt {
                             color: $white;
                         }
@@ -2551,7 +2550,7 @@
         }
 
         .page-body-wrapper {
-            .breadcrumb-item+.breadcrumb-item::before {
+            .breadcrumb-item + .breadcrumb-item::before {
                 color: $white;
             }
 
@@ -2600,7 +2599,7 @@
                 border-radius: 15px;
                 margin-top: 30px;
 
-                >.row {
+                > .row {
                     .col-6 {
                         flex: 0 0 100%;
                         max-width: 100%;
@@ -2668,7 +2667,7 @@
         .chart_data_right {
             .card-body {
                 .chart-main {
-                    >div {
+                    > div {
                         &:last-child {
                             .media {
                                 border-right: none !important;
@@ -2732,11 +2731,11 @@
                         display: none;
                     }
 
-                    ~.page-body {
+                    ~ .page-body {
                         margin-left: 0px;
                     }
 
-                    ~footer {
+                    ~ footer {
                         margin-left: 0px;
                     }
 
@@ -2759,11 +2758,9 @@
         position: relative;
 
         &::before {
-            position: absolute;
-            content: "";
+            @include pos;
             left: 0;
-            width: 100%;
-            height: 300px;
+            @include pseudowh($width: 100%, $height: 300px);
             background-image: $gradient-primary;
         }
 
@@ -2835,7 +2832,7 @@
                     bottom: 1px solid $light-semi-gray;
                 }
 
-                >div {
+                > div {
                     overflow-x: hidden;
                 }
             }
@@ -2869,7 +2866,7 @@
                                 .simplebar-mask {
                                     .simplebar-content-wrapper {
                                         .simplebar-content {
-                                            >li {
+                                            > li {
                                                 .mega-menu-container {
                                                     right: -18%;
                                                     width: 91%;
@@ -2898,7 +2895,7 @@
                                 .simplebar-mask {
                                     .simplebar-content-wrapper {
                                         .simplebar-content {
-                                            >li {
+                                            > li {
                                                 .mega-menu-container {
                                                     right: -54%;
                                                     width: 75%;
@@ -2922,7 +2919,7 @@
                     .simplebar-mask {
                         .simplebar-content-wrapper {
                             .simplebar-content {
-                                >li {
+                                > li {
                                     margin-right: 8px;
                                 }
                             }
@@ -2945,7 +2942,7 @@
                                 .simplebar-mask {
                                     .simplebar-content-wrapper {
                                         .simplebar-content {
-                                            >li {
+                                            > li {
                                                 .mega-menu-container {
                                                     right: -49%;
                                                     width: 70%;
@@ -2981,8 +2978,8 @@
         .page-header {
             .header-wrapper {
                 .nav-right {
-                    >ul {
-                        >li {
+                    > ul {
+                        > li {
                             padding: 6px;
                         }
                     }
@@ -3023,7 +3020,7 @@
                                 .simplebar-mask {
                                     .simplebar-content-wrapper {
                                         .simplebar-content {
-                                            >li {
+                                            > li {
                                                 .mega-menu-container {
                                                     right: -35%;
                                                     width: 56%;
@@ -3069,7 +3066,7 @@
                             .simplebar-mask {
                                 .simplebar-content-wrapper {
                                     .simplebar-content {
-                                        >li {
+                                        > li {
                                             .sidebar-submenu {
                                                 width: 200px;
                                                 opacity: 0;
@@ -3161,18 +3158,15 @@
 }
 
 @media only screen and (min-width: 768px) {
-
     // material icon css
     .page-wrapper {
         &.material-icon {
             position: relative;
 
             &::before {
-                position: absolute;
-                content: "";
+                @include pos;
                 left: 0;
-                width: 100%;
-                height: 240px;
+                @include pseudowh($width: 100%, $height: 240px);
                 background: $gradient-primary;
             }
 
@@ -3180,7 +3174,7 @@
                 color: rgba($white, 0.8);
 
                 &:hover {
-                    >svg {
+                    > svg {
                         color: $white !important;
                         stroke: $white !important;
                     }
@@ -3188,7 +3182,6 @@
             }
 
             .left-header {
-
                 .mega-menu,
                 .level-menu {
                     .nav-link {
@@ -3212,8 +3205,8 @@
 
                 .header-wrapper {
                     .nav-right {
-                        >ul {
-                            >li {
+                        > ul {
+                            > li {
                                 color: $white;
 
                                 .notification-box,
@@ -3223,13 +3216,13 @@
                                     }
                                 }
 
-                                >a {
-                                    >svg {
+                                > a {
+                                    > svg {
                                         stroke: $white;
                                     }
                                 }
 
-                                >svg {
+                                > svg {
                                     stroke: $white;
                                 }
                             }
@@ -3277,7 +3270,7 @@
 
                 div.sidebar-wrapper {
                     &.close_icon {
-                        ~.page-body {
+                        ~ .page-body {
                             padding-left: 15px;
                             margin: 0 auto !important;
                         }
@@ -3299,7 +3292,7 @@
                                 color: rgba($white, 0.6);
                             }
 
-                            +.breadcrumb-item {
+                            + .breadcrumb-item {
                                 &::before {
                                     color: rgba($white, 0.8);
                                 }
@@ -3335,7 +3328,6 @@
 .active-color {
     a {
         &:active {
-
             svg,
             span {
                 color: #0000ff !important;

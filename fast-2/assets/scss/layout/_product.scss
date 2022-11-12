@@ -16,7 +16,7 @@
           border-radius: 50px;
           font-weight: 500;
 
-          i {
+          .add-icon {
                @include center(vertical);
                @include flex_common;
                @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
@@ -25,10 +25,22 @@
                border-radius: 100%;
                color: var(--theme-color);
                position: absolute;
-               right: 5px;
+               right: 4px;
+
+               &.bg-light-orange {
+                    background-color: #f9f8f6;
+               }
+
+               &.bg-light-gray {
+                    background-color: #f8f8f8;
+               }
 
                @include mq-max(xs) {
                     display: none;
+               }
+
+               i {
+                    font-size: 13px;
                }
           }
      }
@@ -98,11 +110,6 @@
           position: absolute;
           right: 0;
           bottom: 0;
-          // width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320)));
-          // height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320)));
-          // display: flex;
-          // align-items: center;
-          // justify-content: center;
           background-color: #f7f7f7;
           padding: 0;
           border-radius: 100%;
@@ -112,18 +119,6 @@
                right: unset;
                left: 0;
           }
-
-          // i {
-          //      @include center(vertical);
-          //      // @include flex_common;
-          //      // @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
-          //      //      $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))));
-          //      border-radius: 100%;
-          //      color: var(--theme-color);
-          //      position: absolute;
-          //      right: 5px;
-          //      background-color: #f7f7f7;
-          // }
      }
 
      .qty-box-2 {
@@ -131,9 +126,6 @@
           bottom: 0;
           position: absolute;
           left: 0;
-          // transform: translateX(-50%);
-          // right: unset;
-          // top: unset;
           width: 100%;
           height: auto;
           margin-left: auto;
@@ -158,11 +150,6 @@
                padding: 4px;
                text-align: center;
                z-index: 0;
-               // bottom: -10px;
-
-               // &.theme-bg-white {
-               //      background-color: $white;
-               // }
 
                button {
                     @include pseudowh($width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))),
@@ -277,8 +264,6 @@
 
                          >div {
                               font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
-                              // h5 {
-                              // }
                          }
                     }
                }
@@ -366,11 +351,6 @@
           @include flex_wrap($dis: flex, $wrap: wrap, $gap: 23px);
           border-bottom: 1px dashed rgba($content-color, 0.5);
 
-          [dir="rtl"] & {
-               padding-left: unset;
-               padding-right: 0;
-          }
-
           &.value-list {
                margin-top: 35px;
                border: none;
@@ -438,6 +418,11 @@
                                    background-color: var(--theme-color);
                                    z-index: -1;
                                    transition: all 0.3s ease-in-out;
+
+                                   [dir="rtl"] & {
+                                        left: unset;
+                                        right: 0;
+                                   }
                               }
                          }
                     }
@@ -546,7 +531,7 @@
 }
 
 .product-box {
-     padding: 14px;
+     padding: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320)));
      border-right: 1px solid rgba($content-color, 0.3);
      position: relative;
      transition: all 0.3s ease-in-out;
@@ -2086,6 +2071,10 @@
      h5 {
           display: flex;
           margin-top: 6px;
+
+          span {
+               margin-left: 3px;
+          }
      }
 
      .product-image {
@@ -2369,11 +2358,31 @@
 
                     @include mq-max(xs) {
                          margin-bottom: 9px;
+                         width: 100%;
                     }
 
                     @media (max-width: 336px) {
                          display: block;
                          width: 100%;
+                    }
+
+                    .counter {
+                         @include mq-max(xs) {
+                              width: 100%;
+                         }
+
+                         input {
+                              @include mq-max(xs) {
+                                   width: 100%;
+                              }
+                         }
+
+                         .qty-left-minus,
+                         .qty-right-plus {
+                              @include mq-max(xs) {
+                                   width: 85px;
+                              }
+                         }
                     }
                }
 

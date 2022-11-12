@@ -408,7 +408,8 @@ a {
             @include pseudowh($width: auto, $height: auto);
 
             button {
-                @include pseudowh($width: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))), $height: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
+                @include pseudowh($width: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))),
+                    $height: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
                 border: 1px solid transparent;
                 border-radius: 100%;
                 padding: 0;
@@ -423,7 +424,8 @@ a {
 
             &.slick-active {
                 button {
-                    @include pseudowh($width: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))), $height: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
+                    @include pseudowh($width: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))),
+                        $height: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))));
                     margin: 0;
                     background-color: $white;
                     border: 1px solid var(--theme-color);
@@ -536,7 +538,9 @@ header {
 
         .navbar-collapse {
             .navbar-nav {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: calc(22px + (37 - 22) * ((100vw - 1200px) / (1920 - 1200))));
+                @include flex_wrap($dis: flex,
+                    $wrap: nowrap,
+                    $gap: calc(22px + (37 - 22) * ((100vw - 1200px) / (1920 - 1200))));
 
                 @include mq-max(xl) {
                     padding: calc(11px + (20 - 11) * ((100vw - 320px) / (1199 - 320))) calc(19px + (26 - 19) * ((100vw - 320px) / (1199 - 320)));
@@ -666,7 +670,7 @@ header {
             gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)));
 
             li {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 10px);
                 align-items: center;
 
                 img {
@@ -708,7 +712,9 @@ header {
             margin-top: calc(14px + (21 - 14) * ((100vw - 320px) / (1920 - 320)));
 
             ul {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(9px + (15 - 9) * ((100vw - 320px) / (1920 - 320))));
+                @include flex_wrap($dis: flex,
+                    $wrap: wrap,
+                    $gap: calc(9px + (15 - 9) * ((100vw - 320px) / (1920 - 320))));
                 justify-content: center;
 
                 li {
@@ -724,16 +730,19 @@ header {
 // Home Pages Section
 .layout-section {
     .layout-page-box {
-        padding: 15px;
-        box-shadow: 0 0 30px rgba($title-color, 0.05);
+        padding: 0;
         background-color: $white;
         position: relative;
+        transition: all 0.5s ease;
 
         @include mq-max(sm) {
             margin-bottom: 0;
         }
 
         &:hover {
+            transform: translateY(-8px);
+            transition: all 0.5s ease;
+
             .layout-image {
                 a {
                     .link-button {
@@ -741,9 +750,19 @@ header {
                     }
                 }
             }
+
+            .layout-name {
+                color: var(--theme-color);
+
+                &:before {
+                    opacity: 1;
+                }
+            }
         }
 
         .layout-image {
+            position: relative;
+
             a {
                 display: block;
                 height: auto;
@@ -777,22 +796,42 @@ header {
                 }
 
                 img {
-                    height: auto;
+                    height: 300px;
+                    padding: 0;
+                    background-color: $white;
+                    object-fit: cover;
+                    object-position: top left;
+                    box-shadow: 0 15px 70px rgba($title-color, 0.07);
+
+                    @media (max-width: 1367px) {
+                        height: 250px;
+                    }
+
+                    @media (max-width: 768px) {
+                        height: 220px;
+                    }
+
+                    @media (max-width: 576px) {
+                        height: 310px;
+                    }
+
+                    @media (max-width: 380px) {
+                        height: 190px;
+                    }
                 }
             }
         }
 
         .layout-name {
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
-            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+            color: #222;
 
-            h3 {
+            h4 {
+                font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 600;
-                margin-bottom: 5px;
-            }
-
-            h5 {
-                color: $content-color;
             }
         }
     }
@@ -816,8 +855,9 @@ header {
                 background-color: #f8f8f8;
                 border: none;
                 border-radius: 4px;
-                font-size: 16px;
+                font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
                 color: $content-color;
+                padding: 10px 20px;
 
                 &.active {
                     color: $white;
@@ -937,7 +977,8 @@ header {
                 position: relative;
 
                 .main-img {
-                    @include pseudowh($width: 100%, $height: calc(180px + (263 - 180) * ((100vw - 320px) / (1920 - 320))));
+                    @include pseudowh($width: 100%,
+                        $height: calc(180px + (263 - 180) * ((100vw - 320px) / (1920 - 320))));
                     object-fit: contain;
                 }
 
@@ -1000,7 +1041,7 @@ header {
         .shop-nav-tabs {
             border: none;
             margin-bottom: calc(17px + (40 - 17) * ((100vw - 320px) / (1920 - 320)));
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
 
             .nav-item {
                 .nav-link {
@@ -1035,19 +1076,22 @@ header {
             &:hover {
                 transform: translateY(-8px);
 
-                a {
+                >div {
                     .visit-button {
                         transform: scale(1);
                     }
                 }
             }
 
-            a {
-                display: block;
+            >div {
                 position: relative;
 
-                img {
-                    box-shadow: -4.31566px 6.47349px 21.5783px rgba($title-color, 0.06);
+                a {
+                    display: block;
+
+                    img {
+                        box-shadow: -4.31566px 6.47349px 21.5783px rgba($title-color, 0.06);
+                    }
                 }
 
                 .visit-button {
@@ -1119,21 +1163,24 @@ header {
                 &:first-child,
                 &:last-child {
                     .core-feature-image {
-                        @include pseudowh($width: calc(118px + (178 - 118) * ((100vw - 320px) / (1920 - 320))), $height: calc(118px + (178 - 118) * ((100vw - 320px) / (1920 - 320))));
+                        @include pseudowh($width: calc(118px + (178 - 118) * ((100vw - 320px) / (1920 - 320))),
+                            $height: calc(118px + (178 - 118) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
 
                 &:nth-child(2),
                 &:nth-child(4) {
                     .core-feature-image {
-                        @include pseudowh($width: calc(118px + (142 - 118) * ((100vw - 320px) / (1920 - 320))), $height: calc(118px + (142 - 118) * ((100vw - 320px) / (1920 - 320))));
+                        @include pseudowh($width: calc(118px + (142 - 118) * ((100vw - 320px) / (1920 - 320))),
+                            $height: calc(118px + (142 - 118) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
 
                 &:nth-child(3),
                 &:nth-child(5) {
                     .core-feature-image {
-                        @include pseudowh($width: calc(118px + (155 - 118) * ((100vw - 320px) / (1920 - 320))), $height: calc(118px + (155 - 118) * ((100vw - 320px) / (1920 - 320))));
+                        @include pseudowh($width: calc(118px + (155 - 118) * ((100vw - 320px) / (1920 - 320))),
+                            $height: calc(118px + (155 - 118) * ((100vw - 320px) / (1920 - 320))));
                     }
                 }
             }
@@ -1161,7 +1208,8 @@ header {
             transition: 0.4s ease-in;
 
             img {
-                @include pseudowh($width: calc(50px + (85 - 50) * ((100vw - 320px) / (1920 - 320))), $height: calc(50px + (85 - 50) * ((100vw - 320px) / (1920 - 320))));
+                @include pseudowh($width: calc(50px + (85 - 50) * ((100vw - 320px) / (1920 - 320))),
+                    $height: calc(50px + (85 - 50) * ((100vw - 320px) / (1920 - 320))));
                 transition: 0.4s ease-in;
                 object-fit: contain;
             }
@@ -1211,9 +1259,10 @@ footer {
             .rating {
                 li {
                     .feather {
-                        @include pseudowh($width: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))), $height: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))));
-                        fill: #FFB016;
-                        stroke: #FFB016;
+                        @include pseudowh($width: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))),
+                            $height: calc(19px + (25 - 19) * ((100vw - 320px) / (1920 - 320))));
+                        fill: #ffb016;
+                        stroke: #ffb016;
                     }
                 }
             }
@@ -1227,6 +1276,16 @@ footer {
 
         h4 {
             font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+}
+
+.mySwiper {
+    .swiper-pagination {
+        bottom: -29px;
+
+        .swiper-pagination-bullet-active {
+            background-color: var(--theme-color);
         }
     }
 }

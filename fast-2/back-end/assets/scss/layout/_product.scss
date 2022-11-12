@@ -2,7 +2,6 @@
     background-color: #f8f8f8;
     border-radius: 50px;
     position: relative;
-    // max-width: 250px;
 
     .btn-add-cart {
         padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) 0;
@@ -16,8 +15,10 @@
         i {
             @include center(vertical);
             @include flex_common;
-            @include pseudowh($width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
-                $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))));
+            @include pseudowh(
+                $width: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320))),
+                $height: calc(30px + (37 - 30) * ((100vw - 320px) / (1920 - 320)))
+            );
             background-color: #f9f9f6;
             border-radius: 100%;
             color: var(--theme-color);
@@ -50,13 +51,11 @@
             z-index: 0;
             justify-content: space-between;
 
-            // &.theme-bg-white {
-            //     background-color: $white;
-            // }
-
             button {
-                @include pseudowh($width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))),
-                    $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))));
+                @include pseudowh(
+                    $width: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320))),
+                    $height: calc(29px + (35 - 29) * ((100vw - 320px) / (1920 - 320)))
+                );
                 @include flex_common;
                 border: none;
                 padding: 0;
@@ -67,12 +66,10 @@
                 overflow: hidden;
 
                 &::before {
-                    content: "";
-                    position: absolute;
+                    @include pos;
                     top: 0;
                     left: 0;
-                    width: 100%;
-                    height: 100%;
+                    @include pseudowh;
                     background-color: $white;
                     opacity: 0.2;
                     z-index: -1;
@@ -109,10 +106,6 @@
     border-radius: 5px;
     transition: all 0.4s ease-in-out;
 
-    // &.theme-bg-white {
-    //     background-color: $white;
-    // }
-
     &:hover {
         box-shadow: 0 0 8px rgba($title-color, 0.08);
 
@@ -147,8 +140,7 @@
             }
 
             img {
-                @include pseudowh($width: 100%,
-                    $height: calc(100px + (140 - 100) * ((100vw - 320px) / (1920 - 320))));
+                @include pseudowh($width: 100%, $height: calc(100px + (140 - 100) * ((100vw - 320px) / (1920 - 320))));
                 object-fit: contain;
                 transition: all 0.3s ease-in-out;
             }
@@ -184,7 +176,7 @@
                         }
                     }
 
-                    +li {
+                    + li {
                         &:after {
                             @include pos;
                             @include pseudowh($width: 1px, $height: 100%);
@@ -277,10 +269,6 @@
                 margin-bottom: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
             }
 
-            // .product-content {
-            //     display: none;
-            // }
-
             a {
                 color: $title-color;
 
@@ -292,6 +280,7 @@
             .name {
                 font-weight: 500;
                 line-height: calc(21px + (24 - 21) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
                 display: -webkit-box;
@@ -309,18 +298,6 @@
         .price {
             margin-top: 6px;
             font-weight: 600;
-            // font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
-
-            // del {
-            //     margin-left: 4px;
-            //     font-weight: 400;
-            //     color: #777;
-            //     font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
-            // }
-
-            // span {
-            //     font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
-            // }
         }
     }
 }

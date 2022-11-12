@@ -1,3 +1,7 @@
+/**=====================
+      Script Js
+  ==========================**/
+
 (function ($) {
     "use strict";
     $(document).on('click', function (e) {
@@ -239,14 +243,10 @@ $('.bg-img').each(function () {
     });
     el.hide();
 });
-
 $("#dropdownMenuButton").click(function () {
     $(".dropdown-menu").toggleClass("show")
 });
 
-/*=====================
-    Log In functions
- ==========================*/
 $(function () {
     $(".input input")
         .focus(function () {
@@ -286,11 +286,11 @@ $(function () {
             oX = parseInt($(this).offset().left),
             oY = parseInt($(this).offset().top);
         $(".x-" + oX + ".y-" + oY + "").animate({
-                width: "500px",
-                height: "500px",
-                top: "-250px",
-                left: "-250px",
-            },
+            width: "500px",
+            height: "500px",
+            top: "-250px",
+            left: "-250px",
+        },
             600
         );
         $("button", this).addClass("active");
@@ -311,9 +311,9 @@ $(function () {
             }, 600);
 
             $(this).animate({
-                    width: "140px",
-                    height: "140px",
-                },
+                width: "140px",
+                height: "140px",
+            },
                 500,
                 function () {
                     $(".box").removeClass("back");
@@ -365,9 +365,6 @@ $(function () {
     });
 });
 
-/*=====================
-  05. btn-cart open close js
-   ==========================*/
 $(document).ready(function () {
     $('.button-item').on("click", function () {
         $('.item-section').addClass("active");

@@ -372,7 +372,7 @@ $('.slider-3-blog').slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2500,
     responsive: [{
             breakpoint: 1550,
@@ -575,6 +575,36 @@ $('.slider-4-half').slick({
             settings: {
                 slidesToShow: 1,
                 centerPadding: '0',
+            }
+        },
+    ]
+});
+
+$('.slider-4-banner').slick({
+    arrows: false,
+    dots: false,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [{
+            breakpoint: 1410,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 980,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1,
+                fade: true,
             }
         },
     ]
@@ -1356,4 +1386,40 @@ $('.notification-slider').slick({
     autoplay: true,
     autoplaySpeed: 2500,
     arrows: false,
+});
+
+$('.banner-slider').slick({
+    arrows: false,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    dots: false,
+    responsive: [{
+            breakpoint: 1387,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 966,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 34,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                fade: true,
+            }
+        },
+    ]
 });

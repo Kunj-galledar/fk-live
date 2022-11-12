@@ -31,13 +31,17 @@
 }
 
 @mixin center($position) {
-    @if $position== "vertical" {
+    @if $position=="vertical" {
         top: 50%;
         transform: translateY(-50%);
-    } @else if $position== "horizontal" {
+    }
+
+    @else if $position=="horizontal" {
         left: 50%;
         transform: translateX(-50%);
-    } @else if $position== "both" {
+    }
+
+    @else if $position=="both" {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -45,14 +49,6 @@
 }
 
 /*======= position css ends  ======= */
-
-/*======= font awesome css start  ======= */
-@mixin font($weight: 900, $family: $fontawesome) {
-    font-family: $family;
-    font-weight: $weight;
-}
-
-/*======= font awesome css ends  ======= */
 
 /*======= align css starts  ======= */
 @mixin rtl($property, $ltr-value, $rtl-value) {

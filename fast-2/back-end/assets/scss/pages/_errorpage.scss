@@ -2,9 +2,7 @@
      Error-page CSS Start
 ==========================**/
 .error-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex_common;
     min-height: 100vh;
     text-align: center;
 
@@ -97,8 +95,7 @@
     }
 
     .line-bottom {
-        width: 10%;
-        height: 5px;
+        @include pseudowh($width: 10%, $height: 5px);
         background-color: $warning-color;
         border: none;
     }

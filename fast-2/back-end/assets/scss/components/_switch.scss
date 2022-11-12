@@ -36,8 +36,7 @@
 	transition: .4s;
 
 	&:before {
-		position: absolute;
-		content: "";
+		@include pos;
 		height: 26px;
 		width: 26px;
 		left: 4px;
@@ -51,10 +50,9 @@
 .icon-state {
 	.switch-state {
 		&:after {
-			content: "\efb8";
+			@include pos($pos: absolute, $content: "\efb8");
 			font-family: $font-ICO;
 			left: 10px;
-			position: absolute;
 			top: 10px;
 			color: $dark-color;
 			transition: .4s;

@@ -116,8 +116,7 @@
                         right: 3px;
                         border-radius: 3px;
                         border: none;
-                        padding: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320)))
-                            calc(8px + (21 - 8) * ((100vw - 320px) / (1920 - 320)));
+                        padding: calc(10px + (12 - 10) * ((100vw - 320px) / (1920 - 320))) calc(8px + (21 - 8) * ((100vw - 320px) / (1920 - 320)));
                         font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                         color: $white;
                         font-weight: 500;
@@ -156,19 +155,18 @@
 
         .newsletter-detail {
             @include pseudowh;
-            padding: calc(50px + (20 - 50) * ((100vw - 320px) / (1920 - 320)))
-                calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
+            padding: calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
             z-index: 1;
 
             h2 {
-                font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
                 margin-bottom: 10px;
-                margin-top: -4px;
+                // margin-top: -4px;
             }
 
             h4 {
                 margin-bottom: 8px;
-                font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
                 line-height: 1.3;
                 font-weight: 300;
             }
@@ -209,6 +207,8 @@
         }
 
         .shape-box {
+            @include pseudowh;
+            @include flex_common;
             position: relative;
             z-index: 1;
             text-align: center;

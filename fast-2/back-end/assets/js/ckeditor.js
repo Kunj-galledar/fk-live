@@ -8984,6 +8984,7 @@ function (e, t) {
                 t && s || !t && !a ? (e = s, r = !0) : (e = a, r = !1);
                 const c = i.mapper.toViewElement(e);
                 if (c) return void
+
                 function (e, t, i, n, o, r) {
                     const s = `data-${r.group}-${t?"start":"end"}-${i?"before":"after"}`,
                         a = e.hasAttribute(s) ? e.getAttribute(s).split(",") : [];
@@ -11952,6 +11953,7 @@ function (e, t) {
                         if (n.start.parent == n.end.parent) return !1;
                         return e.checkChild(i, "paragraph")
                     }(o, t)) return void
+
                 function (e, t) {
                     const i = e.model.schema.getLimitElement(t);
                     e.remove(e.createRangeIn(i)), rl(e, e.createPositionAt(i, 0), t)

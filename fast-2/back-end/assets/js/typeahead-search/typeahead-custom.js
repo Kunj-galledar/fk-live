@@ -60,5 +60,4 @@ $(document).ready(function () {
     .on('typeahead:asynccancel typeahead:asyncreceive', function () {
       $('.Typeahead-spinner').hide();
     });
-
 });

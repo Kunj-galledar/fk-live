@@ -21,6 +21,7 @@
         background-color: $white;
         width: 45px;
         z-index: 1;
+        fill: var(--theme-color);
 
         &.bg-gray {
             background-color: $light-gray;
@@ -60,7 +61,7 @@
                 @include flex_common;
                 background-color: $danger-color;
                 color: $white;
-                padding: 12px 11px;
+                padding: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) calc(9px + (11 - 9) * ((100vw - 320px) / (1920 - 320)));
                 border-radius: 5px;
 
                 @media (max-width: 1265px) {
@@ -86,6 +87,7 @@
                 .name {
                     font-weight: 600;
                     margin-right: 8px;
+                    line-height: 1;
 
                     [dir="rtl"] & {
                         margin-left: 8px;
@@ -106,6 +108,7 @@
                         li {
                             @include flex_common;
                             position: relative;
+                            line-height: 1;
 
                             +li {
                                 margin-left: 15px;
@@ -235,5 +238,56 @@
         font-size: 15px;
         color: $content-color;
         line-height: 1.6;
+    }
+}
+
+.title-flex-2 {
+    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+    @media (max-width: 850px) {
+        display: block;
+    }
+
+    .timing-box {
+        display: inline-block;
+
+        .timing {
+            @include flex_common;
+            background-color: $danger-color;
+            color: $white;
+            padding: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) calc(9px + (11 - 9) * ((100vw - 320px) / (1920 - 320)));
+            border-radius: 5px;
+
+            @media (max-width: 850px) {
+                margin-top: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+            }
+
+            i {
+                -webkit-text-stroke: 1px $white;
+                color: transparent;
+                margin-right: 9px;
+            }
+
+            .feather {
+                @include pseudowh($width: 17px, $height: 17px);
+                margin-right: 9px;
+
+                [dir="rtl"] & {
+                    margin-left: 9px;
+                    margin-right: unset;
+                }
+            }
+
+            .name {
+                font-weight: 600;
+                margin-right: 8px;
+                line-height: 1;
+
+                [dir="rtl"] & {
+                    margin-left: 8px;
+                    margin-right: unset;
+                }
+            }
+        }
     }
 }

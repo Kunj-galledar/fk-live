@@ -15,6 +15,24 @@ body {
 		color: $dark-all-font-color;
 		background-color: $dark-body-background;
 
+		.dashboard-category {
+			.category-image {
+				&:before {
+					background-color: #1d1e26;
+				}
+
+				img {
+					filter: brightness(100);
+				}
+			}
+
+			.category-name {
+				h6 {
+					color: #ddd;
+				}
+			}
+		}
+
 		.page-wrapper {
 			.page-header {
 				.header-wrapper {
@@ -56,6 +74,41 @@ body {
 
 		.title-header {
 			color: $gray-light;
+		}
+
+		.roles-form {
+			>div {
+				&:nth-child(odd) {
+					ul {
+						background-color: #1d1e26;
+					}
+				}
+			}
+
+			ul {
+				li {
+					&:first-child {
+						color: #fff;
+					}
+				}
+			}
+		}
+
+		.title-header {
+			&.option-title {
+				.selected-options {
+					ul {
+						background-color: #1d1e26;
+						color: #ddd;
+
+						li {
+							a {
+								color: #ddd;
+							}
+						}
+					}
+				}
+			}
 		}
 
 		.card {
@@ -341,20 +394,6 @@ body {
 			background-color: $dark-body-background !important;
 		}
 
-		// .single-section {
-		// 	.description-section {
-		// 		.description-details {
-		// 			.menu-part {
-		// 				// .rooms-box {
-		// 				// 	.room-title {
-		// 				// 		color: $dark-all-font-color;
-		// 				// 	}
-		// 				// }
-		// 			}
-		// 		}
-		// 	}
-		// }
-
 		.theme-form input[type="text"],
 		.theme-form input[type="email"],
 		.theme-form input[type="search"],
@@ -581,7 +620,6 @@ body {
 
 			&.dropdown-menu {
 				background-color: $dark-card-background;
-				-webkit-box-shadow: 0 0 14px $dark-body-background;
 				box-shadow: 0 0 14px $dark-body-background;
 			}
 
@@ -3089,45 +3127,6 @@ body {
 							}
 						}
 
-						// .table-double,
-						// .table-dotted,
-						// .table-dashed {
-						// 	border-left-color: $dark-card-border;
-						// 	border-right-color: $dark-card-border;
-						// }
-
-						// .table-bordered {
-						// 	border-color: $dark-card-border !important;
-
-						// 	td,
-						// 	th {
-						// 		border-color: $dark-card-border !important;
-						// 	}
-						// }
-
-						// .table-inverse {
-						// 	tbody {
-						// 		tr {
-						// 			&:nth-of-type(odd) {
-						// 				&:hover {
-						// 					td {
-						// 						color: $dark-all-font-color;
-						// 					}
-						// 				}
-						// 			}
-						// 		}
-						// 	}
-						// }
-
-						// .table-border-vertical {
-
-						// 	tr,
-						// 	th,
-						// 	td {
-						// 		border-right: 1px solid $dark-border-color;
-						// 	}
-						// }
-
 						.table-styling {
 
 							thead,
@@ -4124,35 +4123,22 @@ body {
 						}
 					}
 
-					// .table-hover {
-					// 	>tbody {
-					// 		>tr {
-					// 			&:hover {
-					// 				--bs-table-accent-bg: $dark-body-background;
+					ul {
+						&.the-icons {
+							li {
+								border: 1px dotted $dark-card-border;
+								color: $sidebar-submenu-font-color;
+								display: inline-block;
+								padding: 10px;
 
-					// 				td,
-					// 				th {
-					// 					color: $white;
-					// 				}
-					// 			}
-					// 		}
-					// 	}
-					// }
+								&:hover {
+									background: $black;
+									box-shadow: 0 0 3px $dark-card-background;
+								}
 
-					ul.the-icons {
-						li {
-							border: 1px dotted $dark-card-border;
-							color: $sidebar-submenu-font-color;
-							display: inline-block;
-							padding: 10px;
-
-							&:hover {
-								background: $black;
-								box-shadow: 0 0 3px $dark-card-background;
-							}
-
-							em {
-								display: none;
+								em {
+									display: none;
+								}
 							}
 						}
 					}
@@ -7088,18 +7074,6 @@ body {
 								}
 							}
 						}
-
-						// .rooms-box{
-						// 	 .room-detail {
-						// 	 	.facility-detail {
-						// 	 		li {
-						// 	 			img {
-						// 	 				filter: invert(1);
-						// 	 			}
-						// 	 		}
-						// 	 	}
-						// 	 }
-						// }
 					}
 				}
 			}
@@ -7239,12 +7213,6 @@ body {
 			}
 		}
 
-		// .rooms-box {
-		// 	tr {
-		// 		background-color: $dark-card-background;
-		// 	}
-		// }
-
 		.single-section {
 			.description-section {
 				.description-details {
@@ -7254,20 +7222,6 @@ body {
 								color: $dark-all-font-color;
 							}
 						}
-
-						// .rooms-box {
-						// 	.room-detail {
-						// 		.facility-detail {
-						// 			li {
-						// 				color: $dark-all-font-color;
-
-						// 				i {
-						// 					color: $dark-all-font-color;
-						// 				}
-						// 			}
-						// 		}
-						// 	}
-						// }
 					}
 				}
 			}
@@ -7684,11 +7638,11 @@ body {
 		}
 	}
 
-	&[class*="dark-"] {
-		.for-white {
-			display: none;
-		}
-	}
+	// &[class*="dark-"] {
+	// 	.for-white {
+	// 		display: none;
+	// 	}
+	// }
 }
 
 // =======================  Dark Body only  =======================

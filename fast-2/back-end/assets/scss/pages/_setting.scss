@@ -7,10 +7,8 @@
 
     &__img {
         img {
-            width: 150px;
-            height: 150px;
+            @include pseudowh($width: 150px, $height: 150px);
             border-radius: 5px;
-
             object-fit: cover;
         }
     }
@@ -40,8 +38,7 @@
 
         &__img {
             img {
-                width: 130px;
-                height: 130px;
+                @include pseudowh($width: 130px, $height: 130px);
                 border-radius: 4px;
             }
         }
@@ -53,10 +50,9 @@
 
     input {
         position: relative;
-        height: 50px;
+        @include pseudowh($width: 100%, $height: 50px);
         opacity: 0;
         z-index: 1;
-        width: 100%;
         cursor: pointer;
     }
 
@@ -76,15 +72,13 @@
         }
 
         svg {
-            width: 20px;
-            height: 20px;
+            @include pseudowh($width: 20px, $height: 20px);
             vertical-align: middle;
         }
 
         @media only screen and (max-width: 600px) {
             & {
-                left: 50%;
-                transform: translateX(-50%);
+                @include center(horizontal);
                 width: 70%;
             }
         }
@@ -93,8 +87,7 @@
     @media only screen and (max-width: 600px) {
         & {
             label {
-                left: 50%;
-                transform: translateX(-50%);
+                @include center(horizontal);
             }
         }
     }

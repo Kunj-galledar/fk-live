@@ -22,12 +22,10 @@
     left: -14px;
 
     &:before {
-        position: absolute;
+        @include pos;
         top: 30px;
         left: 0;
-        width: 0;
-        height: 0;
-        content: "";
+        @include pseudowh($width: 0, $height: 0);
         border: 7px solid transparent;
         border-top-color: $dark-color;
         border-right-color: $dark-color;
@@ -58,13 +56,11 @@
 
 .ribbon-bookmark {
     &:before {
-        position: absolute;
+        @include pos;
         top: 0;
         left: 100%;
         display: block;
-        width: 0;
-        height: 0;
-        content: '';
+        @include pseudowh($width: 0, $height: 0);
         border: 15px solid $dark-color;
         border-right: 10px solid transparent;
     }
@@ -79,12 +75,10 @@
     right: -14px;
 
     &:before {
-        position: absolute;
+        @include pos;
         top: 30px;
         right: 0;
-        width: 0;
-        height: 0;
-        content: "";
+        @include pseudowh($width: 0, $height: 0);
         border: 7px solid transparent;
         border-top-color: $dark-color;
         border-right-color: $dark-color;
@@ -97,12 +91,10 @@
     top: auto;
 
     &:before {
-        position: absolute;
+        @include pos;
         bottom: 30px;
         left: 0;
-        width: 0;
-        height: 0;
-        content: "";
+        @include pseudowh($width: 0, $height: 0);
         border: 7px solid transparent;
         border-top-color: $dark-color;
         border-right-color: $dark-color;
@@ -116,12 +108,10 @@
     top: auto;
 
     &:before {
-        position: absolute;
+        @include pos;
         bottom: 30px;
         right: 0;
-        width: 0;
-        height: 0;
-        content: "";
+        @include pseudowh($width: 0, $height: 0);
         border: 7px solid transparent;
         border-top-color: $dark-color;
         border-right-color: $dark-color;
@@ -138,8 +128,7 @@
 .ribbon-vertical-left {
     clear: none;
     padding: 0 5px;
-    height: 70px;
-    width: 30px;
+    @include pseudowh($width: 30px, $height: 70px);
     line-height: 70px;
     text-align: center;
     left: 12px;
@@ -149,8 +138,7 @@
 .ribbon-vertical-right {
     clear: none;
     padding: 0 5px;
-    height: 70px;
-    width: 30px;
+    @include pseudowh($width: 30px, $height: 70px);
     line-height: 70px;
     text-align: center;
     top: -2px;

@@ -20,25 +20,21 @@
     &:before {
         transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
         transform: rotate(-45deg) scale(0, 0);
-        content: "";
-        position: absolute;
+        @include pos;
         left: 0.25rem;
         top: 0.225rem;
         z-index: 1;
-        width: 0.75rem;
-        height: 0.375rem;
+        @include pseudowh($width: 0.75rem, $height: 0.375rem);
         border: 2px solid var(--theme-color);
         border-top-style: none;
         border-right-style: none;
     }
 
     &:after {
-        content: "";
-        position: absolute;
+        @include pos;
         top: -0.125rem;
         left: 0;
-        width: 1.3rem;
-        height: 1.3rem;
+        @include pseudowh($width: 1.3rem, $height: 1.3rem);
         background: $white;
         border: 2px solid $gray-light;
         cursor: pointer;
@@ -57,24 +53,20 @@
     &:before {
         transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
         transform: scale(0, 0);
-        content: "";
-        position: absolute;
+        @include pos;
         top: 0;
         left: 0.125rem;
         z-index: 1;
-        width: 0.75rem;
-        height: 0.75rem;
+        @include pseudowh($width: 0.75rem, $height: 0.75rem);
         background: var(--theme-color);
         border-radius: 50%;
     }
 
     &:after {
-        content: "";
-        position: absolute;
+        @include pos;
         top: -0.25rem;
         left: -0.125rem;
-        width: 1.25rem;
-        height: 1.25rem;
+        @include pseudowh($width: 1.25rem, $height: 1.25rem);
         background: $white;
         border: 2px solid $light-gray;
         border-radius: 50%;
@@ -95,26 +87,21 @@
         margin-bottom: 10px;
 
         &::before {
-            content: "";
+            @include pos;
             display: inline-block;
-            position: absolute;
-            width: 19px;
-            height: 19px;
+            @include pseudowh($width: 19px, $height: 19px);
             left: 0;
             margin-left: -16px;
             border: 1px solid $light-semi-gray;
             border-radius: 3px;
             background-color: $white;
-            -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
-            -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
             transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
         }
 
         &::after {
             display: inline-block;
             position: absolute;
-            width: 16px;
-            height: 16px;
+            @include pseudowh($width: 16px, $height: 16px);
             left: 0;
             top: 0;
             margin-left: -20px;
@@ -303,39 +290,27 @@ $btn-color in (primary, var(--theme-color)),
         cursor: pointer;
 
         &::before {
-            content: "";
+            @include pos;
             display: inline-block;
-            position: absolute;
-            width: 19px;
-            height: 19px;
+            @include pseudowh($width: 19px, $height: 19px);
             left: 0;
             margin-left: -20px;
             border: 1px solid $light-semi-gray;
             border-radius: 50%;
             background-color: $white;
-            -webkit-transition: border 0.15s ease-in-out;
-            -o-transition: border 0.15s ease-in-out;
             transition: border 0.15s ease-in-out;
         }
 
         &::after {
             display: inline-block;
-            position: absolute;
-            content: " ";
-            width: 9px;
-            height: 9px;
+            @include pos;
+            @include pseudowh($width: 9px, $height: 9px);
             left: 5px;
             top: 5px;
             margin-left: -20px;
             border-radius: 50%;
             background-color: $dark-gray;
-            -webkit-transform: scale(0, 0);
-            -ms-transform: scale(0, 0);
-            -o-transform: scale(0, 0);
             transform: scale(0, 0);
-            -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
-            -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
-            -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
             transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
         }
     }
@@ -355,9 +330,6 @@ $btn-color in (primary, var(--theme-color)),
         &:checked {
             &+label {
                 &::after {
-                    -webkit-transform: scale(1, 1);
-                    -ms-transform: scale(1, 1);
-                    -o-transform: scale(1, 1);
                     transform: scale(1, 1);
                 }
 
@@ -388,8 +360,7 @@ $btn-color in (primary, var(--theme-color)),
     .toggle-button-cover {
         display: table-cell;
         position: relative;
-        width: 100%;
-        height: auto;
+        @include pseudowh($width: 100%, $height: auto);
         box-sizing: border-box;
     }
 
@@ -429,8 +400,7 @@ $btn-color in (primary, var(--theme-color)),
     .button {
         position: relative;
         top: 50%;
-        width: 100px;
-        height: 35px;
+        @include pseudowh($width: 100px, $height: 35px);
         margin: 0;
         overflow: hidden;
     }
@@ -451,8 +421,7 @@ $btn-color in (primary, var(--theme-color)),
 
     .checkbox {
         position: relative;
-        width: 100%;
-        height: 100%;
+        @include pseudowh;
         padding: 0;
         margin: 0;
         opacity: 0;
@@ -463,11 +432,9 @@ $btn-color in (primary, var(--theme-color)),
     #button-9 {
         .knobs {
             &:before {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 30px;
-                height: auto;
+                @include center(vertical);
+                @include pseudowh($width: 30px, $height: auto);
+                @include pos($pos: absolute, $content: "YES");
                 font-size: 10px;
                 font-weight: bold;
                 text-align: center;
@@ -475,7 +442,6 @@ $btn-color in (primary, var(--theme-color)),
                 padding-top: 4px;
                 border-radius: 50%;
                 transition: 0.4s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
-                content: "YES";
                 left: 4px;
                 color: $white;
                 opacity: 0;
@@ -483,11 +449,9 @@ $btn-color in (primary, var(--theme-color)),
             }
 
             &:after {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 30px;
-                height: auto;
+                @include center(vertical);
+                @include pseudowh($width: 30px, $height: auto);
+                @include pos($pos: absolute, $content: "NO");
                 font-size: 10px;
                 font-weight: bold;
                 text-align: center;
@@ -495,7 +459,6 @@ $btn-color in (primary, var(--theme-color)),
                 padding-top: 4px;
                 border-radius: 50%;
                 transition: 0.4s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
-                content: "NO";
                 right: -24px;
                 color: $white;
                 z-index: 2;
@@ -503,10 +466,9 @@ $btn-color in (primary, var(--theme-color)),
             }
 
             span {
+                @include pseudowh($width: 30px, $height: 30px);
                 position: absolute;
                 top: 4px;
-                width: 30px;
-                height: 30px;
                 font-size: 10px;
                 font-weight: bold;
                 text-align: center;
@@ -558,8 +520,7 @@ $btn-color in (primary, var(--theme-color)),
 
         >i {
             display: inline-block;
-            width: 15px;
-            height: 15px;
+            @include pseudowh($width: 15px, $height: 15px);
             border-radius: 50%;
             margin-right: 5px;
             vertical-align: middle;

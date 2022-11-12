@@ -54,11 +54,6 @@ footer {
                 }
 
                 ul {
-                    [dir="rtl"] & {
-                        padding-left: unset;
-                        padding-right: 0;
-                    }
-
                     &.address {
                         margin-top: calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
 
@@ -129,6 +124,10 @@ footer {
                     line-height: 27px;
                     margin-bottom: 0;
                     width: 88%;
+
+                    @include mq-max(2xs) {
+                        width: 100%;
+                    }
                 }
 
                 .address {
@@ -200,10 +199,6 @@ footer {
             }
 
             ul {
-                [dir="rtl"] & {
-                    padding-right: 0;
-                }
-
                 &.address {
                     margin-top: calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
 
@@ -303,10 +298,6 @@ footer {
                 @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
                 align-items: center;
 
-                [dir="rtl"] & {
-                    padding: 0;
-                }
-
                 li {
                     display: inline-block;
 
@@ -318,7 +309,7 @@ footer {
                         display: block;
 
                         img {
-                            width: 140px;
+                            width: calc(114px + (140 - 114) * ((100vw - 320px) / (1920 - 320)));
                         }
                     }
                 }
@@ -334,11 +325,6 @@ footer {
             }
 
             ul {
-                [dir="rtl"] & {
-                    padding-left: unset;
-                    padding-right: 0;
-                }
-
                 li {
                     display: block;
                     margin-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
@@ -456,10 +442,6 @@ footer {
             ul {
                 display: flex;
                 align-items: center;
-
-                [dir="rtl"] & {
-                    padding: 0;
-                }
 
                 li {
                     &:hover {
@@ -591,6 +573,7 @@ footer {
                     opacity: 0.06;
                     border-radius: 50%;
                     z-index: -1;
+                    transition: all 0.3s ease-in-out;
                 }
 
                 &:hover {

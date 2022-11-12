@@ -1,13 +1,10 @@
 /**=====================
     Button CSS start
 ==========================**/
-// .btn-link {
-//     color: var(--theme-color);
-// }
-
 .btn {
     @include flex_common;
-    padding: calc(7px + (14 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
+    padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)))
+        calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
@@ -19,14 +16,6 @@
     &:focus {
         box-shadow: none;
     }
-
-    // &:hover {
-    //     color: $white;
-
-    //     .icon {
-    //         transform: translateX(3px);
-    //     }
-    // }
 
     &.dark-button {
         background: linear-gradient(93.33deg, #222221 12.35%, #2f2f2d 99.38%) !important;
@@ -55,17 +44,18 @@
     &-animation {
         @include flex_common;
         overflow: hidden;
-        color: var(--theme-color);
+        color: $white;
         border-radius: 5px;
         font-weight: 600;
         background: transparent;
         transition: all 0.3s ease;
         position: relative;
-        background: #eef9f7;
+        background: var(--theme-color);
         border: none;
         z-index: 0;
-        padding: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
-        border: 1px solid #eef9f7;
+        padding: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320)))
+            calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
+        border: 1px solid var(--theme-color);
 
         i {
             transition: 0.3s ease;
@@ -97,7 +87,8 @@
     }
 
     &-md {
-        padding: calc(8px + (11 - 8) * ((100vw - 320px) / (1920 - 320))) calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(8px + (11 - 8) * ((100vw - 320px) / (1920 - 320)))
+            calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 500;
     }
@@ -145,7 +136,8 @@
     }
 
     &-category {
-        padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320))) calc(16px + (27 - 16) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)))
+            calc(16px + (27 - 16) * ((100vw - 320px) / (1920 - 320)));
         letter-spacing: 0.8px;
         font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 700;
@@ -175,12 +167,14 @@
     &.active {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($primary-color, 8%),
-                0%,
-                darken($primary-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($primary-color, 8%),
+            0%,
+            darken($primary-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -194,12 +188,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($secondary-color, 8%),
-                0%,
-                darken($secondary-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($secondary-color, 8%),
+            0%,
+            darken($secondary-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -213,12 +209,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($success-color, 8%),
-                0%,
-                darken($success-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($success-color, 8%),
+            0%,
+            darken($success-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -232,12 +230,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($danger-color, 8%),
-                0%,
-                darken($danger-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($danger-color, 8%),
+            0%,
+            darken($danger-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -251,12 +251,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($warning-color, 8%),
-                0%,
-                darken($warning-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($warning-color, 8%),
+            0%,
+            darken($warning-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -270,12 +272,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($info-color, 8%),
-                0%,
-                darken($info-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($info-color, 8%),
+            0%,
+            darken($info-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -289,12 +293,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($light-color, 8%),
-                0%,
-                darken($light-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($light-color, 8%),
+            0%,
+            darken($light-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -308,12 +314,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($dark-color, 8%),
-                0%,
-                darken($dark-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($dark-color, 8%),
+            0%,
+            darken($dark-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -332,10 +340,6 @@
 @mixin btn-pill-last($radius) {
     border-radius: 0 $radius + px $radius + px 0;
 }
-
-// .btn {
-//     padding: $btn-padding;
-// }
 
 .btn-lg {
     font-size: $btn-lg-font-size;
@@ -359,16 +363,10 @@
     margin-bottom: -20px;
 }
 
-// outline buttons//
-@each $btn-name,
-$btn-color in (primary, $primary-color),
-(secondary, $secondary-color),
-(success, $success-color),
-(danger, $danger-color),
-(info, $info-color),
-(light, $light-color),
-(dark, $dark-color),
-(warning, $warning-color) {
+// outline buttons
+@each $btn-name, $btn-color in (primary, $primary-color), (secondary, $secondary-color), (success, $success-color),
+    (danger, $danger-color), (info, $info-color), (light, $light-color), (dark, $dark-color), (warning, $warning-color)
+{
     .btn-air-#{$btn-name} {
         box-shadow: 0 5px 10px 2px rgba(88, 103, 221, 0.19) !important;
 
@@ -470,9 +468,7 @@ $btn-color in (primary, $primary-color),
 
 .btn-showcase {
     margin-bottom: -10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    @include flex_common($dis: flex, $align: center, $justify: space-around);
 
     .btn {
         margin-bottom: 10px;
@@ -515,7 +511,7 @@ $btn-color in (primary, $primary-color),
 }
 
 .btn-group-showcase {
-    >div {
+    > div {
         margin-bottom: -20px;
 
         label {
@@ -552,8 +548,7 @@ $btn-color in (primary, $primary-color),
     transition: opacity 0.3s;
 
     &::after {
-        content: "";
-        position: absolute;
+        @include pos;
         top: 100%;
         left: 50%;
         margin-left: -5px;
@@ -569,10 +564,8 @@ $btn-color in (primary, $primary-color),
     display: flex;
 
     svg {
+        @include pseudowh($width: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))), $height: auto);
         margin-right: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
-
-        width: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
-        height: auto;
     }
 
     &:hover {

@@ -120,10 +120,8 @@
                                 position: relative;
 
                                 &:before {
-                                    position: absolute;
-                                    content: '';
-                                    width: 4px;
-                                    height: 4px;
+                                    @include pos;
+                                    @include pseudowh($width: 4px, $height: 4px);
                                     border-radius: 100%;
                                     background-color: $dark-gray;
                                     left: -15px;

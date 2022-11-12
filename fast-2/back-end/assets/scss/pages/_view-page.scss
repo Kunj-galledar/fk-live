@@ -50,8 +50,7 @@
             position: relative;
 
             svg {
-                width: 30px;
-                height: auto;
+                @include pseudowh($width: 30px, $height: auto);
                 fill: var(--theme-color);
             }
 
@@ -74,14 +73,11 @@
             }
 
             &:after {
-                content: "";
-                width: 1px;
-                height: 25px;
+                @include pos;
+                @include pseudowh($width: 1px, $height: 25px);
                 background-color: var(--theme-color);
-                position: absolute;
                 right: 0;
-                top: 50%;
-                transform: translateY(-50%);
+                @include center(vertical);
             }
 
             &:last-child {
@@ -193,10 +189,8 @@
                                 text-decoration: none;
 
                                 &:before {
-                                    content: "";
-                                    position: absolute;
-                                    width: 0;
-                                    height: 0;
+                                    @include pos;
+                                    @include pseudowh($width: 0, $height: 0);
                                     border-left: 7px solid transparent;
                                     border-right: 7px solid transparent;
                                     border-top: 6px solid #353535;
@@ -442,17 +436,14 @@
                             position: absolute;
                             left: 0;
                             top: 0;
-                            width: 100%;
-                            height: 100%;
+                            @include pseudowh;
                             z-index: 1;
                             transition: all 0.4s ease;
 
                             i {
                                 position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                color: white;
+                                @include center(both);
+                                color: $white;
                                 font-size: 22px;
                                 display: none;
                                 transition: all 0.4s ease;
@@ -597,8 +588,7 @@
 
                 &.map {
                     iframe {
-                        width: 100%;
-                        height: 420px;
+                        @include pseudowh($width: 100%, $height: 420px);
                         margin-bottom: -5px;
                     }
                 }
@@ -666,113 +656,6 @@
                 +.menu-part {
                     margin-top: 20px;
                 }
-
-                // .rooms-box {
-                //     width: 100%;
-
-                //     tbody {
-                //         tr {
-                //             display: block;
-
-                //             +tr {
-                //                 margin-top: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
-                //             }
-                //         }
-                //     }
-
-                //     td {
-                //         &:first-child {
-                //             width: 25%;
-                //         }
-
-                //         &:nth-child(2) {
-                //             width: 55%;
-                //         }
-
-                //         &:nth-child(3) {
-                //             width: 20%;
-                //             text-align: right;
-                //         }
-                //     }
-
-                //     .price-details {
-                //         display: flex;
-                //         align-items: center;
-                //         justify-content: flex-end;
-
-                //         h6 {
-                //             font-size: 14px;
-                //             margin-bottom: 3px;
-                //             color: rgba($black, 0.74);
-                //         }
-
-                //         h5 {
-                //             font-weight: 700;
-                //             margin-bottom: 0;
-                //             font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
-                //         }
-
-                //         .btn {
-                //             padding: 6px 14px;
-                //             font-size: 14px;
-                //             border-radius: 0;
-                //             margin-top: 7px;
-                //         }
-
-                //         span {
-                //             display: block;
-                //             color: rgba($black, 0.72);
-                //         }
-                //     }
-
-                //     .room-detail {
-                //         padding: 20px;
-                //         display: flex;
-                //         align-items: center;
-                //         justify-content: center;
-
-                //         h6 {
-                //             font-weight: 500;
-                //             text-transform: capitalize;
-                //             font-size: 16px;
-                //             letter-spacing: 0.05em;
-                //         }
-
-                //         .row {
-                //             width: 100%;
-                //         }
-
-                //         .facility-detail {
-                //             li {
-                //                 display: block;
-                //                 color: rgba($black, 0.52);
-                //                 text-transform: capitalize;
-                //                 line-height: 28px;
-                //                 font-size: 13px;
-                //                 letter-spacing: 0.06em;
-
-                //                 img {
-                //                     margin-right: 8px;
-                //                     width: 20px;
-                //                 }
-
-                //                 i {
-                //                     font-size: 12px;
-                //                     margin-right: 5px;
-                //                     color: rgba($black, 0.5);
-                //                 }
-                //             }
-                //         }
-                //     }
-
-                //     .room-title {
-                //         text-transform: capitalize;
-                //         font-weight: 600;
-                //         font-size: 17px;
-                //         color: var(--theme-color);
-                //         margin-bottom: 10px;
-                //     }
-                // }
             }
 
             &.full-slider {
@@ -780,10 +663,8 @@
                     margin-top: 0;
                     box-shadow: none;
                     margin-bottom: 0;
-                    display: flex;
+                    @include flex_common;
                     height: 100vh;
-                    justify-content: center;
-                    align-items: center;
                     padding-top: 70px;
 
                     .row {
@@ -800,7 +681,7 @@
 
                 .nav-tabs {
                     margin: 25px 0;
-                    background-color: white;
+                    background-color: $white;
                     border-bottom: none;
                     overflow-x: auto;
                     overflow-y: hidden;
@@ -909,8 +790,7 @@
             margin-bottom: 10px;
 
             img {
-                height: 100px;
-                width: 100%;
+                @include pseudowh($width: 100%, $height: 100px);
             }
 
             iframe,
@@ -918,8 +798,7 @@
                 position: absolute;
                 left: 0;
                 top: 0;
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 opacity: 0.0001;
                 z-index: 1;
             }
@@ -927,8 +806,7 @@
             h6 {
                 position: absolute;
                 bottom: 10px;
-                left: 50%;
-                transform: translateX(-50%);
+                @include center(horizontal);
                 color: $grey-darker;
                 text-transform: capitalize;
                 font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
@@ -1034,8 +912,7 @@
             .selector {
                 select {
                     cursor: pointer;
-                    width: 100%;
-                    height: 38px;
+                    @include pseudowh($width: 100%, $height: 38px);
                     background-color: transparent;
                     font-size: 1rem;
                     margin-top: 10px;
@@ -1152,11 +1029,9 @@
         }
 
         .weather-sec {
-            display: flex;
             text-align: center;
             margin-top: 10px;
-            justify-content: center;
-            align-items: center;
+            @include flex_common;
 
             li {
                 svg {
@@ -1191,8 +1066,7 @@
                 padding: 9px;
                 background-color: var(--theme-color);
                 border-radius: 100%;
-                width: 32px;
-                height: 32px;
+                @include pseudowh($width: 32px, $height: 32px);
                 text-align: center;
                 margin-right: 3px;
             }
@@ -1265,22 +1139,18 @@
                             position: relative;
 
                             &:after {
-                                content: "";
+                                @include pos;
                                 left: 0;
-                                position: absolute;
-                                width: 14px;
-                                height: 14px;
+                                @include pseudowh($width: 14px, $height: 14px);
                                 border: 1px solid green;
                                 top: 2px;
                             }
 
                             &:before {
-                                content: "";
+                                @include pos;
                                 left: 3px;
-                                width: 8px;
-                                height: 8px;
+                                @include pseudowh($width: 8px, $height: 8px);
                                 background-color: green;
-                                position: absolute;
                                 border-radius: 100%;
                                 top: 5px;
                             }
@@ -1293,22 +1163,18 @@
                             position: relative;
 
                             &:after {
-                                content: "";
+                                @include pos;
                                 left: 0;
-                                position: absolute;
-                                width: 14px;
-                                height: 14px;
+                                @include pseudowh($width: 14px, $height: 14px);
                                 border: 1px solid red;
                                 top: 2px;
                             }
 
                             &:before {
-                                content: "";
+                                @include pos;
                                 left: 3px;
-                                width: 8px;
-                                height: 8px;
+                                @include pseudowh($width: 8px, $height: 8px);
                                 background-color: red;
-                                position: absolute;
                                 border-radius: 100%;
                                 top: 5px;
                             }
@@ -1671,22 +1537,18 @@
                         position: relative;
 
                         &:after {
-                            content: "";
+                            @include pos;
                             left: 0;
-                            position: absolute;
-                            width: 14px;
-                            height: 14px;
+                            @include pseudowh($width: 14px, $height: 14px);
                             border: 1px solid green;
                             top: 2px;
                         }
 
                         &:before {
-                            content: "";
+                            @include pos;
                             left: 3px;
-                            width: 8px;
-                            height: 8px;
+                            @include pseudowh($width: 8px, $height: 8px);
                             background-color: green;
-                            position: absolute;
                             border-radius: 100%;
                             top: 5px;
                         }
@@ -1699,22 +1561,18 @@
                         position: relative;
 
                         &:after {
-                            content: "";
+                            @include pos;
                             left: 0;
-                            position: absolute;
-                            width: 14px;
-                            height: 14px;
+                            @include pseudowh($width: 14px, $height: 14px);
                             border: 1px solid red;
                             top: 2px;
                         }
 
                         &:before {
-                            content: "";
+                            @include pos;
                             left: 3px;
-                            width: 8px;
-                            height: 8px;
+                            @include pseudowh($width: 8px, $height: 8px);
                             background-color: red;
-                            position: absolute;
                             border-radius: 100%;
                             top: 5px;
                         }
@@ -1757,8 +1615,7 @@
 }
 
 .slick-dots li {
-    width: 0;
-    height: 0;
+    @include pseudowh($width: 0, $height: 0);
 }
 
 //cab-single detail
@@ -1767,9 +1624,7 @@
     margin-top: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
 
     .title-car {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
         h5,
         h6 {

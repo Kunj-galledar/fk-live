@@ -2,11 +2,8 @@
      Loader CSS Start
 ==========================**/
 .loader-wrapper {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex_common;
+    @include pseudowh;
     position: fixed;
     background-color: $white;
     z-index: 9999;
@@ -14,26 +11,21 @@
 
     /*Color Loader*/
     .loader-index {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex_common;
         position: relative;
         filter: url("#goo");
 
         &:after {
-            content: "";
-            width: 4em;
-            height: 4em;
+            @include pos;
+            @include pseudowh($width: 4em, $height: 4em);
             background: var(--theme-color);
             border-radius: 50%;
-            position: absolute;
             transform: scale(0.5);
             animation: grow 2s cubic-bezier(0.14, 0.05, 0.55, 0.5) infinite alternate;
         }
 
         span {
-            width: 2em;
-            height: 2em;
+            @include pseudowh($width: 2em, $height: 2em);
             background: var(--theme-secondary);
             border-radius: 50%;
             margin-right: 2em;
@@ -42,24 +34,20 @@
             animation: move 4s ease-in-out infinite;
 
             &:before {
-                content: "";
-                width: 2em;
-                height: 2em;
+                @include pos;
+                @include pseudowh($width: 2em, $height: 2em);
                 background: var(--theme-color);
                 border-radius: 50%;
-                position: absolute;
                 left: 3em;
                 transform: translateX(0em);
                 animation: shrink 2s ease-in-out infinite;
             }
 
             &:after {
-                content: "";
-                width: 2em;
-                height: 2em;
+                @include pseudowh($width: 2em, $height: 2em);
+                @include pos;
                 background: $info-color;
                 border-radius: 50%;
-                position: absolute;
                 right: 3em;
                 transform: translateX(0em);
                 animation: shrink 2s ease-in-out infinite;
@@ -100,8 +88,7 @@
     }
 
     svg {
-        width: 0;
-        height: 0;
+        @include pseudowh($width: 0, $height: 0);
     }
 
     /*Color Loader*/
@@ -125,14 +112,12 @@
         z-index: 2;
 
         &:before {
-            position: absolute;
-            content: "";
-            height: 1px;
+            @include pos;
             background: linear-gradient(to right, var(--theme-secondary), var(--theme-color), $info-color);
             color: $white;
             top: 2.75em;
+            @include pseudowh($width: 2.5em, $height: 1px);
             left: 0.75em;
-            width: 2.5em;
             font-weight: 400;
             font-variant: small-caps;
             font-size: 0.5em;
@@ -140,24 +125,20 @@
     }
 
     img {
-        width: calc(290px + (400 - 290) * ((100vw - 320px) / (1920 - 320)));
-        height: auto;
+        @include pseudowh($width: calc(290px + (400 - 290) * ((100vw - 320px) / (1920 - 320))), $height: auto);
     }
 }
 
 .loader-box {
     height: 150px;
     text-align: center;
-    display: flex;
-    align-items: center;
+    @include flex_common;
     vertical-align: middle;
-    justify-content: center;
     transition: 0.3s color, 0.3s border, 0.3s transform, 0.3s opacity;
 
     [class*="loader-"] {
         display: inline-block;
-        width: 50px;
-        height: 50px;
+        @include pseudowh($width: 50px, $height: 50px);
         color: inherit;
         vertical-align: middle;
     }
@@ -221,11 +202,9 @@
         position: relative;
 
         &:before {
-            content: "";
+            @include pos;
             display: block;
-            width: 0;
-            height: 0;
-            position: absolute;
+            @include pseudowh($width: 0, $height: 0);
             top: -0.2em;
             left: 50%;
             border: 0.2em solid $info-color;
@@ -251,11 +230,9 @@
         position: relative;
 
         &:before {
-            content: "";
+            @include pos;
             display: block;
-            width: inherit;
-            height: inherit;
-            position: absolute;
+            @include pseudowh($width: inherit, $height: inherit);
             top: -0.2em;
             left: -0.2em;
             border: 0.2em solid $warning-color;
@@ -303,12 +280,10 @@
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
             border: 0.2em solid var(--theme-color);
             border-radius: 50%;
-            width: inherit;
-            height: inherit;
-            position: absolute;
+            @include pseudowh($width: inherit, $height: inherit);
             top: 0;
             left: 0;
             animation: loader-07 1s linear infinite;
@@ -345,13 +320,11 @@
 
         &:before,
         &:after {
-            content: "";
-            width: inherit;
-            height: inherit;
+            @include pos;
+            @include pseudowh($width: inherit, $height: inherit);
             border-radius: 50%;
             background-color: var(--theme-secondary);
             opacity: 0.6;
-            position: absolute;
             top: 0;
             left: 0;
             animation: loader-08 2s infinite ease-in-out;
@@ -397,12 +370,10 @@
 
         &:before,
         &:after {
-            content: "";
-            width: 0;
-            height: 0;
+            @include pseudowh($width: 0, $height: 0);
+            @include pos;
             border: 0.5em solid $info-color;
             display: block;
-            position: absolute;
             border-radius: 100%;
             animation: loader-10-2 2s infinite ease-in-out;
         }
@@ -461,9 +432,8 @@
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
             display: block;
-            position: absolute;
             background-color: $danger-color;
             left: 50%;
             right: 0;
@@ -520,12 +490,10 @@
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
             display: block;
-            position: absolute;
+            @include pseudowh($width: inherit, $height: inherit);
             top: 0;
-            width: inherit;
-            height: inherit;
         }
     }
 
@@ -552,10 +520,8 @@
 
         &:after,
         &:before {
-            content: "";
-            position: absolute;
-            width: inherit;
-            height: inherit;
+            @include pos;
+            @include pseudowh($width: inherit, $height: inherit);
             border-radius: inherit;
             box-shadow: inherit;
             animation: inherit;
@@ -587,16 +553,13 @@
         position: relative;
         animation: loader-15 1s ease-in-out infinite;
         animation-delay: 0.4s;
-        width: 0.25em;
-        height: 0.5em;
+        @include pseudowh($width: 0.25em, $height: 0.5em);
         margin: 0 0.5em;
 
         &:after,
         &:before {
-            content: "";
-            position: absolute;
-            width: inherit;
-            height: inherit;
+            @include pos;
+            @include pseudowh($width: inherit, $height: inherit);
             background: inherit;
             animation: inherit;
         }
@@ -631,13 +594,11 @@
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
             display: block;
-            position: absolute;
             top: 0;
             left: 0;
-            width: inherit;
-            height: inherit;
+            @include pseudowh($width: inherit, $height: inherit);
             border-radius: 50%;
             animation: 1s spin linear infinite;
         }
@@ -715,10 +676,8 @@
 
         &:after,
         &:before {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 10px;
+            @include pos;
+            @include pseudowh($width: 10px, $height: 10px);
             border-radius: 50%;
             opacity: 0.8;
         }
@@ -756,9 +715,8 @@
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
             display: block;
-            position: absolute;
             border-radius: 50%;
             border: 0.1em solid transparent;
             border-bottom-color: $danger-color;
@@ -768,13 +726,11 @@
         }
 
         &:before {
-            width: 40px;
-            height: 40px;
+            @include pseudowh($width: 40px, $height: 40px);
         }
 
         &:after {
-            width: 30px;
-            height: 30px;
+            @include pseudowh($width: 30px, $height: 30px);
             top: 0.1em;
             left: 0.1em;
             animation-direction: reverse;
@@ -813,8 +769,7 @@
 
         &:after,
         &:before {
-            position: absolute;
-            content: "";
+            @include pos;
             background-color: var(--theme-secondary);
             top: 24px;
             left: 24px;
@@ -848,13 +803,11 @@
 
         &:before,
         &:after {
-            position: absolute;
-            content: "";
+            @include pos;
         }
 
         &:before {
-            width: 80%;
-            height: 80%;
+            @include pseudowh($width: 80%, $height: 80%);
             left: 10%;
             bottom: 10%;
             border-radius: 100% 100% 100% 0;
@@ -864,8 +817,7 @@
         }
 
         &:after {
-            width: 1em;
-            height: 0.3em;
+            @include pseudowh($width: 1em, $height: 0.3em);
             border-radius: 100%;
             left: 0;
             background-color: rgba(255, 255, 255, 0.2);
@@ -897,14 +849,12 @@
 
         &:after,
         &:before {
-            position: absolute;
-            content: "";
+            @include pos;
             background-color: $info-color;
         }
 
         &:after {
-            width: 50%;
-            height: 0.1em;
+            @include pseudowh($width: 50%, $height: 0.1em);
             left: 50%;
             top: 50%;
             transform-origin: left center;
@@ -912,8 +862,7 @@
         }
 
         &:before {
-            width: 100%;
-            height: 40%;
+            @include pseudowh($width: 100%, $height: 40%);
             left: 0;
             bottom: 0;
         }
@@ -937,12 +886,10 @@
         animation: loader-23 5s linear infinite;
 
         &:after {
-            width: 0.07em;
-            height: 100%;
+            @include pseudowh($width: 0.07em, $height: 100%);
             background-color: $warning-color;
             border-radius: 0px 0.5em 0.5em 0px;
-            position: absolute;
-            content: "";
+            @include pos;
             top: 0;
             left: calc(100% + 0.1em);
         }
@@ -959,21 +906,18 @@
     }
 
     .loader-24 {
-        width: 0.8em;
-        height: 1em;
+        @include pseudowh($width: 0.8em, $height: 1em);
         border: 0.1em $danger-color solid;
         border-radius: 0px 0px 0.2em 0.2em;
         position: relative;
 
         &:after,
         &:before {
-            position: absolute;
-            content: "";
+            @include pos;
         }
 
         &:after {
-            width: 0.2em;
-            height: 50%;
+            @include pseudowh($width: 0.2em, $height: 50%);
             border: 0.1em $danger-color solid;
             border-left: none;
             border-radius: 0px 0.5em 0.5em 0px;
@@ -982,8 +926,7 @@
         }
 
         &:before {
-            width: 0.1em;
-            height: 0.3em;
+            @include pseudowh($width: 0.1em, $height: 0.3em);
             background-color: $danger-color;
             top: -0.3em;
             left: 0.05em;
@@ -1008,10 +951,8 @@
         animation: loader-25-1 5s linear infinite;
 
         &:after {
-            width: 0.2em;
-            height: 0.2em;
-            position: absolute;
-            content: "";
+            @include pseudowh($width: 0.2em, $height: 0.2em);
+            @include pos;
             background-color: var(--theme-color);
             bottom: calc(100% + 0.2em);
             left: -0.4em;
@@ -1052,8 +993,7 @@
     }
 
     .loader-26 {
-        width: 0.5em;
-        height: 0.5em;
+        @include pseudowh($width: 0.5em, $height: 0.5em);
         background-color: var(--theme-secondary);
         box-shadow: 1em 0px 0px var(--theme-secondary);
         border-radius: 50%;
@@ -1099,11 +1039,9 @@
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
             display: block;
-            width: 0;
-            height: 0;
-            position: absolute;
+            @include pseudowh($width: 0, $height: 0);
             border: 0.2em solid transparent;
             border-bottom-color: $info-color;
         }
@@ -1140,13 +1078,11 @@
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
             display: block;
-            position: absolute;
             top: 0;
             left: 0;
-            width: inherit;
-            height: inherit;
+            @include pseudowh($width: inherit, $height: inherit);
             border-radius: inherit;
             animation: 1s loader-31 ease-out infinite;
         }
@@ -1179,11 +1115,9 @@
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
             display: block;
-            width: inherit;
-            height: inherit;
-            position: absolute;
+            @include pseudowh($width: inherit, $height: inherit);
             border-radius: 50%;
         }
 
@@ -1214,15 +1148,12 @@
 
     .loader-34 {
         position: relative;
-        width: 1em;
-        height: 0.5em;
+        @include pseudowh($width: 1em, $height: 0.5em);
 
         &:after,
         &:before {
-            position: absolute;
-            content: "";
-            height: 0.4em;
-            width: 0.4em;
+            @include pos;
+            @include pseudowh($width: 0.4em, $height: 0.4em);
             top: 0;
             background-color: var(--theme-color);
             border-radius: 50%;
@@ -1247,13 +1178,11 @@
         }
 
         65% {
-            height: 0.4em;
-            width: 0.4em;
+            @include pseudowh($width: 0.4em, $height: 0.4em);
         }
 
         100% {
-            height: 0.5em;
-            width: 0.3em;
+            @include pseudowh($width: 0.3em, $height: 0.5em);
             transform: translatex(0.2em);
         }
     }
@@ -1264,13 +1193,11 @@
         }
 
         65% {
-            height: 0.4em;
-            width: 0.4em;
+            @include pseudowh($width: 0.4em, $height: 0.4em);
         }
 
         100% {
-            height: 0.5em;
-            width: 0.3em;
+            @include pseudowh($width: 0.3em, $height: 0.5em);
             transform: translatex(-0.2em);
         }
     }
@@ -1283,12 +1210,10 @@
             border-radius: 50%;
             background-color: var(--theme-secondary);
             animation: loader-35 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
-            content: "";
-            width: inherit;
-            height: inherit;
+            @include pos;
+            @include pseudowh($width: inherit, $height: inherit);
             top: 0;
             left: 0;
-            position: absolute;
         }
     }
 
@@ -1321,11 +1246,9 @@
 
         &:before,
         &:after {
-            content: "";
-            width: 0.8em;
-            height: 0.8em;
+            @include pos;
+            @include pseudowh($width: 0.8em, $height: 0.8em);
             display: block;
-            position: absolute;
             top: calc(50% - 0.4em);
             left: calc(50% - 0.4em);
             border-left: 0.08em solid $info-color;
@@ -1334,8 +1257,7 @@
         }
 
         &:after {
-            width: 0.6em;
-            height: 0.6em;
+            @include pseudowh($width: 0.6em, $height: 0.6em);
             top: calc(50% - 0.3em);
             left: calc(50% - 0.3em);
             border: 0;
@@ -1355,8 +1277,7 @@
     }
 
     .loader-38 {
-        height: 0.1em;
-        width: 0.1em;
+        @include pseudowh($width: 0.1em, $height: 0.1em);
         box-shadow: -0.2em -0.2em 0 0.1em $info-color, -0.2em -0.2em 0 0.1em $info-color, -0.2em -0.2em 0 0.1em $info-color, -0.2em -0.2em 0 0.1em $info-color;
         animation: loader-38 6s infinite;
     }
@@ -1416,32 +1337,26 @@
     }
 
     .loader-39 {
+        @include pseudowh($width: 0.15em, $height: 0.15em);
         position: relative;
-        width: 0.15em;
-        height: 0.15em;
         background-color: $warning-color;
         border-radius: 100%;
         animation: loader-39-1 30s infinite linear;
 
         &:before,
         &:after {
-            content: "";
+            @include pos;
+            @include center(both);
             border-radius: 100%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         &:before {
-            width: 20px;
-            height: 60px;
+            @include pseudowh($width: 20px, $height: 60px);
             animation: loader-39-2 0.8s linear infinite;
         }
 
         &:after {
-            width: 60px;
-            height: 20px;
+            @include pseudowh($width: 60px, $height: 20px);
             animation: loader-39-2 1.2s linear infinite;
         }
     }
@@ -1486,11 +1401,9 @@
 
         &:after,
         &:before {
-            content: "";
+            @include pos;
+            @include pseudowh($width: inherit, $height: inherit);
             border-radius: 50%;
-            position: absolute;
-            width: inherit;
-            height: inherit;
             animation: loader-40 2s infinite linear;
         }
 
@@ -1541,8 +1454,7 @@
     }
 
     .loader-42 {
-        width: 2em;
-        height: 0.66em;
+        @include pseudowh($width: 2em, $height: 0.66em);
         border: 0.05em var(--theme-secondary) solid;
         border-radius: 0.1em;
         background: linear-gradient(-60deg, transparent 0%, transparent 50%, var(--theme-secondary) 50%, var(--theme-secondary) 75%, transparent 75%, transparent);

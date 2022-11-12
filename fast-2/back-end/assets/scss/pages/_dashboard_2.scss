@@ -65,14 +65,11 @@
     position: relative;
 
     .ecommerce-box {
-        width: 60px;
-        height: 60px;
+        @include pseudowh($width: 60px, $height: 60px);
 
         &.light-bg-primary {
+            @include flex_common;
             background-color: rgba($primary-color, 0.15);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             border-radius: 100%;
         }
     }
@@ -88,8 +85,7 @@
 
 .dash-map {
     #map {
-        height: 300px;
-        width: 100%;
+        @include pseudowh($width: 100%, $height: 300px);
 
         .gmnoprint {
             display: none;
@@ -104,6 +100,7 @@
 .new-update {
     .media {
         .media-body {
+
             span,
             p {
                 font-weight: 500;
@@ -117,20 +114,24 @@
         align-items: center;
 
         .activity-line {
+            @include pseudowh($width: 4px, $height: 57%);
             top: 132px;
-            height: 57%;
             position: absolute;
-            width: 4px;
             background-color: $input-bg-color;
             margin: 0 auto;
             left: 46px;
             z-index: 1;
         }
 
-        @each $circle-name, $circle-color in (primary, var(--theme-color)), (secondary, $secondary-color),
-            (success, $success-color), (danger, $danger-color), (info, $info-color), (light, $light-color),
-            (dark, $dark-color), (warning, $warning-color)
-        {
+        @each $circle-name,
+        $circle-color in (primary, var(--theme-color)),
+        (secondary, $secondary-color),
+        (success, $success-color),
+        (danger, $danger-color),
+        (info, $info-color),
+        (light, $light-color),
+        (dark, $dark-color),
+        (warning, $warning-color) {
             .circle-dot-#{$circle-name} {
                 background-color: rgba($circle-color, 0.25);
                 border-radius: 100%;
@@ -141,7 +142,7 @@
             }
         }
 
-        + .media {
+        +.media {
             margin-top: 45px;
         }
 
@@ -157,13 +158,17 @@
     }
 }
 
-@each $activity-dot-name, $activity-dot-color in (primary, var(--theme-color)), (secondary, $secondary-color),
-    (success, $success-color), (danger, $danger-color), (info, $info-color), (light, $light-color), (dark, $dark-color),
-    (warning, $warning-color)
-{
+@each $activity-dot-name,
+$activity-dot-color in (primary, var(--theme-color)),
+(secondary, $secondary-color),
+(success, $success-color),
+(danger, $danger-color),
+(info, $info-color),
+(light, $light-color),
+(dark, $dark-color),
+(warning, $warning-color) {
     .activity-dot-#{$activity-dot-name} {
-        width: 16px;
-        height: 16px;
+        @include pseudowh($width: 16px, $height: 16px);
         background-color: $white;
         border-radius: 100%;
         border: 3px solid $activity-dot-color;
@@ -180,8 +185,7 @@
     .offer-slider {
         background: $gradient-primary;
         border-radius: 15px;
-        height: 200px;
-        width: 100%;
+        @include pseudowh($width: 100%, $height: 200px);
 
         .carousel-control-prev {
             right: 0;
@@ -200,8 +204,7 @@
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            width: 12px;
-            height: 12px;
+            @include pseudowh($width: 12px, $height: 12px);
             background-color: rgba($white, 0.1);
             border-radius: 10px;
         }
@@ -213,10 +216,8 @@
 
         .selling-slide {
             .d-flex {
+                @include flex_common;
                 height: 73%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
 
             p {
@@ -271,7 +272,7 @@
     .goal-status {
         ul {
             li {
-                + li {
+                +li {
                     margin-top: 30px;
                     padding-top: 30px;
                 }
@@ -295,7 +296,7 @@
         }
 
         .rate-card {
-            > ul {
+            >ul {
                 li {
                     &:last-child {
                         border-top: none;
@@ -304,7 +305,7 @@
             }
         }
 
-        > ul {
+        >ul {
             li {
                 &:last-child {
                     border-top: none;
@@ -323,22 +324,18 @@
         }
 
         .progress {
-            background-image: linear-gradient(
-                to right,
-                $transparent-color 15%,
-                rgba($info-color, 0.1) 25%,
-                $transparent-color
-            );
+            background-image: linear-gradient(to right,
+                    $transparent-color 15%,
+                    rgba($info-color, 0.1) 25%,
+                    $transparent-color);
         }
 
         .progress-gradient-primary {
             border-radius: 15%;
-            background-image: linear-gradient(
-                to right,
-                $transparent-color 25%,
-                rgba($info-color, 0.1),
-                var(--theme-color)
-            );
+            background-image: linear-gradient(to right,
+                    $transparent-color 25%,
+                    rgba($info-color, 0.1),
+                    var(--theme-color));
 
             &:after {
                 display: none;
@@ -371,6 +368,7 @@
         }
 
         tr {
+
             th,
             td {
                 padding: 19px 10px;
@@ -429,8 +427,7 @@
                         position: relative;
 
                         .status-circle {
-                            width: 10px;
-                            height: 10px;
+                            @include pseudowh($width: 10px, $height: 10px);
                             top: 2px;
                             left: 32px;
                             opacity: 0;
@@ -501,6 +498,7 @@
     table {
         thead {
             tr {
+
                 th,
                 td {
                     border: none;
@@ -578,8 +576,9 @@
     .risk-col {
         .goal-status {
             &.row {
-                > div,
-                > ul {
+
+                >div,
+                >ul {
                     flex: 0 0 50%;
                     max-width: 50%;
                 }
@@ -589,7 +588,7 @@
 
     .total-users {
         .goal-status {
-            > ul {
+            >ul {
                 li {
                     &:first-child {
                         border-top: none;
@@ -668,7 +667,7 @@
     .offer-box {
         .offer-slider {
             .selling-slide {
-                > div {
+                >div {
                     flex: 0 0 25%;
                     max-width: 25%;
 
@@ -689,7 +688,7 @@
 
 @media only screen and (max-width: 1305px) {
     .size-column {
-        > .xl-50 {
+        >.xl-50 {
             max-width: 100%;
             flex: 0 0 100%;
         }
@@ -730,7 +729,7 @@
             .selling-slide {
                 padding-bottom: 40px;
 
-                > div {
+                >div {
                     &:nth-child(2) {
                         order: -1;
                     }
@@ -755,7 +754,7 @@
 
     .activity-timeline {
         .media {
-            + .media {
+            +.media {
                 margin-top: 30px;
             }
 
@@ -773,8 +772,7 @@
 
     .ecommerce-widgets {
         .ecommerce-box {
-            width: 50px;
-            height: 50px;
+            @include pseudowh($width: 50px, $height: 50px);
         }
 
         .fa-heart {
@@ -824,6 +822,7 @@
                 padding-bottom: 20px;
 
                 .d-flex {
+
                     .left-content,
                     .right-content {
                         text-align: center;
@@ -842,7 +841,7 @@
 @media only screen and (max-width: 575px) {
     .activity-timeline {
         .media {
-            + .media {
+            +.media {
                 margin-top: 20px;
             }
         }
@@ -871,8 +870,9 @@
     .risk-col {
         .goal-status {
             &.row {
-                > div,
-                > ul {
+
+                >div,
+                >ul {
                     flex: 0 0 100%;
                     max-width: 100%;
                 }
@@ -882,7 +882,7 @@
 
     .total-users {
         .goal-status {
-            > ul {
+            >ul {
                 li {
                     &:first-child {
                         border-top: 1px solid $light-gray;
@@ -907,6 +907,7 @@
         table {
             tr {
                 td {
+
                     &:first-child,
                     &:nth-child(2) {
                         min-width: 160px;

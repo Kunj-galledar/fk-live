@@ -95,11 +95,9 @@
         box-shadow: inset 0px -200px 100px -13px rgba(0, 0, 0, 0.6);
         transition: all 0.3s ease;
         border-radius: 5px;
-        content: "";
-        position: absolute;
-        height: 100%;
+        @include pos;
+        @include pseudowh;
         top: 0;
-        width: 100%;
         bottom: 0;
     }
 
@@ -250,9 +248,8 @@
         img {
             margin-right: 30px;
             border-radius: 10px;
-            height: 90px;
+            @include pseudowh($width: 90px, $height: 90px);
             padding: 7px;
-            width: 90px;
             border: 1px solid $light-semi-gray;
         }
 

@@ -36,10 +36,8 @@
         position: relative;
 
         &:before {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
+            @include pos;
+            @include pseudowh;
             background-color: rgba(115, 102, 255, 0.1);
             border-radius: 5px;
             transform: scale(0);
@@ -47,10 +45,8 @@
         }
 
         &:after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 0;
+            @include pos;
+            @include pseudowh($width: 0, $height: 0);
             border-color: transparent;
             border-style: solid;
             top: 12px;
@@ -192,8 +188,7 @@
 
             input {
                 border: 1px solid $gray-60;
-                height: 35px;
-                width: 35px;
+                @include pseudowh($width: 35px, $height: 35px);
                 border-radius: 5px;
                 background-color: $white;
                 margin-right: 5px;
@@ -203,8 +198,7 @@
         .layout-grid {
             &.customizer-mix {
                 .color-layout {
-                    height: 70px;
-                    width: 80px;
+                    @include pseudowh($width: 80px, $height: 70px);
                     border: 1px solid #f6f7fb;
                     border-radius: 5px;
                 }
@@ -230,8 +224,7 @@
         }
 
         .color-layout {
-            height: 35px;
-            width: 35px;
+            @include pseudowh($width: 35px, $height: 35px);
             border-radius: 6px;
             display: inline-block;
             margin-right: 3px;
@@ -240,8 +233,7 @@
 
             >div {
                 background-color: #7366ff;
-                height: 100%;
-                width: 100%;
+                @include pseudowh;
                 border-radius: 5px;
             }
 
@@ -284,8 +276,7 @@
 
         .main-layout {
             >li {
-                height: 65px;
-                width: 85px;
+                @include pseudowh($width: 85px, $height: 65px);
                 border: 1px solid $light-color;
                 border-radius: 10px;
                 display: inline-block;
@@ -307,8 +298,7 @@
         .sidebar-type,
         .sidebar-setting {
             >li {
-                height: 70px;
-                width: 85px;
+                @include pseudowh($width: 70px, $height: 85px);
                 border: 1px solid $light-color;
                 border-radius: 5px;
                 display: inline-block;
@@ -328,15 +318,13 @@
 
                                 &.bg-dark,
                                 &.sidebar {
-                                    width: 100%;
-                                    height: 10px;
+                                    @include pseudowh($width: 100%, $height: 10px);
                                     display: block;
                                 }
 
                                 &.bg-light,
                                 &.body {
-                                    height: calc(100% - 10px);
-                                    width: 100%;
+                                    @include pseudowh($width: 100%, $height: calc(100% - 10px));
                                 }
                             }
                         }
@@ -362,8 +350,7 @@
 
             >li {
                 display: block;
-                width: unset;
-                height: unset;
+                @include pseudowh($width: unset, $height: unset);
                 margin-bottom: 30px;
 
                 .layout-img {
@@ -398,8 +385,7 @@
 
                 >li {
                     display: inline-block;
-                    width: 4px;
-                    height: 4px;
+                    @include pseudowh($width: 4px, $height: 4px);
                     border-radius: 5px;
                     top: calc(50% - 3px);
                     background-color: var(--theme-color);
@@ -431,8 +417,7 @@
                 background-color: $white;
 
                 .sidebar {
-                    width: 18px;
-                    height: 100%;
+                    @include pseudowh($width: 18px, $height: 100%);
                     border-radius: 3px;
                     display: inline-block;
                     margin-right: 3px;
@@ -448,10 +433,9 @@
                 }
 
                 .body {
-                    width: calc(100% - 25px);
+                    @include pseudowh($width: calc(100% - 25px), $height: 100%);
                     padding: 0;
                     margin: 0;
-                    height: 100%;
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;

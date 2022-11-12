@@ -1091,7 +1091,7 @@
                 cursor: pointer;
 
                 @include mq-max(lg) {
-                    width: calc(190px + (220 - 190) * ((100vw - 320px) / (1920 - 320)));
+                    width: calc(195px + (220 - 195) * ((100vw - 320px) / (1920 - 320)));
                 }
 
                 &::before {
@@ -1506,6 +1506,938 @@
     }
 }
 
+.checkout-section-2 {
+    .left-sidebar-checkout {
+        .checkout-detail-box {
+            >ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: calc(17px + (45 - 17) * ((100vw - 320px) / (1920 - 320)));
+
+                >li {
+                    position: relative;
+                    width: 100%;
+
+                    &:last-child {
+                        .checkout-box {
+                            &::before {
+                                content: none;
+                            }
+                        }
+                    }
+
+                    .checkout-icon {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        padding: 6px;
+                        background-color: #f8f8f8;
+
+                        [dir="rtl"] & {
+                            left: unset;
+                            right: 0;
+                        }
+
+                        @include mq-max(sm) {
+                            display: none;
+                        }
+
+                        .lord-icon {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .checkout-box {
+                        padding: calc(14px + (29 - 14) * ((100vw - 320px) / (1920 - 320)));
+                        background-color: #f8f8f8;
+                        border-radius: 8px;
+                        box-shadow: 0 0 8px #eee;
+                        margin-left: 66px;
+                        position: relative;
+
+                        [dir="rtl"] & {
+                            margin-left: unset;
+                            margin-right: 66px;
+                        }
+
+                        @include mq-max(sm) {
+                            margin-left: 0;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: 0;
+                            }
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 25px;
+                            left: -42px;
+                            width: 0;
+                            height: 115%;
+                            border-left: 1px dashed rgba($title-color, 0.18);
+                            z-index: -1;
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: -42px;
+                            }
+
+                            @include mq-max(sm) {
+                                content: none;
+                            }
+                        }
+
+                        .checkout-title {
+                            margin-bottom: calc(9px + (17 - 9) * ((100vw - 320px) / (1920 - 320)));
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            h4 {
+                                font-weight: 600;
+                                font-size: calc(16px + (19 - 16) * ((100vw - 320px) / (1920 - 320)));
+                            }
+                        }
+
+                        .checkout-detail {
+
+                            // Delivery Address
+                            .delivery-address-box {
+                                border-radius: 8px;
+                                padding: calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
+                                background-color: $white;
+                                height: 100%;
+                                box-shadow: 0 0 9px rgba($black, 0.07);
+
+                                >div {
+                                    display: flex;
+                                    position: relative;
+
+                                    .label {
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        background-color: var(--theme-color);
+                                        padding: 2px 8px;
+                                        border-radius: 4px;
+                                        color: $white;
+                                        font-size: 12px;
+                                        letter-spacing: 0.8px;
+
+                                        [dir="rtl"] & {
+                                            right: unset;
+                                            left: 0;
+                                        }
+                                    }
+
+                                    .form-check {
+                                        .form-check-input {
+                                            @include pseudowh($width: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))), $height: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320))));
+                                            margin-top: 2px;
+
+                                            &:checked {
+                                                background-color: var(--theme-color);
+                                                border-color: var(--theme-color);
+                                            }
+
+                                            &:checked[type="radio"] {
+                                                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+                                            }
+
+                                            &:focus {
+                                                box-shadow: none;
+                                            }
+                                        }
+                                    }
+
+                                    .delivery-address-detail {
+                                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
+                                        margin-left: 10px;
+                                        width: calc(85% + (75 - 85) * ((100vw - 320px) / (1920 - 320)));
+
+                                        [dir="rtl"] & {
+                                            margin-left: unset;
+                                            margin-right: 10px;
+                                            padding-right: 0;
+                                        }
+
+                                        li {
+                                            display: block;
+                                            width: 100%;
+                                        }
+
+                                        p,
+                                        h6 {
+                                            line-height: 1.4;
+                                            margin-bottom: 0;
+                                            font-weight: 400;
+                                            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                                            span {
+                                                margin-right: 4px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .add-address {
+                                @include flex_common;
+                                padding: 30px;
+                                height: 100%;
+                                text-align: center;
+                                cursor: pointer;
+                                background-color: $white;
+                                box-shadow: 0 0 9px rgba($black, 0.07);
+                                border-radius: 8px;
+                            }
+
+                            // Delivery Option
+                            .delivery-option {
+                                padding: calc(17px + (26 - 17) * ((100vw - 320px) / (1920 - 320)));
+                                background-color: $white;
+                                border-radius: 5px;
+
+                                .select-option {
+                                    @include mq-max(3xl) {
+                                        margin-top: 6px;
+                                    }
+                                }
+
+                                .date-box {
+                                    position: relative;
+
+                                    i {
+                                        @include center(vertical);
+                                        position: absolute;
+                                        right: 17px;
+                                        font-size: 18px;
+                                        color: $content-color;
+                                    }
+                                }
+
+                                .delivery-category {
+                                    display: flex;
+                                    align-items: center;
+                                    height: 100%;
+
+                                    @include mq-max(md) {
+                                        display: block;
+                                    }
+                                }
+
+                                .custom-form-check {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-bottom: 0;
+                                    min-height: auto;
+
+                                    [dir="rtl"] & {
+                                        padding-left: unset;
+                                        padding-right: 1.5rem;
+                                    }
+
+                                    .form-check-label {
+                                        font-size: calc(15px + (19 - 15) * ((100vw - 320px) / (1920 - 320)));
+                                        padding-left: 12px;
+                                        font-weight: 500;
+
+                                        [dir="rtl"] & {
+                                            padding-left: unset;
+                                            padding-right: 12px;
+                                        }
+                                    }
+                                }
+
+                                .delivery-date {
+                                    font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                    font-weight: 500;
+                                    border: 1px solid $border-color;
+                                    background-color: $white;
+                                    display: flex;
+                                    align-items: center;
+                                    color: $content-color;
+                                    width: 100%;
+                                    padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(15px + (25 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+                                    input {
+                                        font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                        font-weight: 500;
+                                        border: none;
+                                        background-color: $white;
+                                        display: flex;
+                                        align-items: center;
+                                        color: $content-color;
+                                        width: 100%;
+                                    }
+                                }
+
+                                .delivery-time {
+                                    display: flex;
+                                    align-items: center;
+                                    height: 100%;
+
+                                    .dropdown-toggle {
+                                        font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                        font-weight: 500;
+                                        border: 1px solid $border-color;
+                                        background-color: $white;
+                                        display: flex;
+                                        align-items: center;
+                                        color: $content-color;
+
+                                        i {
+                                            -webkit-text-stroke: 1px $content-color;
+                                            color: transparent;
+                                            font-size: 18px;
+                                            margin-right: 10px;
+                                        }
+
+                                        &::after {
+                                            content: none;
+                                        }
+
+                                        &::before {
+                                            @include pos($pos: absolute, $content: "\f107");
+                                            @include font;
+                                            @include center(vertical);
+                                            right: 20px;
+                                        }
+                                    }
+
+                                    .dropdown-menu {
+                                        border: 1px solid transparent;
+                                        box-shadow: 0 6px 5px rgba($black, 0.1);
+
+                                        li {
+                                            a {
+                                                &:active {
+                                                    color: $black;
+                                                    text-decoration: none;
+                                                    background-color: $border-color;
+                                                }
+                                            }
+
+                                            +li {
+                                                margin-top: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .future-box {
+                                display: none;
+
+                                &.show {
+                                    display: block;
+                                }
+
+                                .future-option {
+                                    padding: calc(17px + (26 - 17) * ((100vw - 320px) / (1920 - 320)));
+                                    background-color: $white;
+                                    border-radius: 5px;
+
+                                    .delivery-items {
+                                        display: flex;
+                                        align-items: center;
+                                        height: 100%;
+
+                                        @include mq-max(sm) {
+                                            display: flex;
+                                            align-items: center;
+                                        }
+
+                                        @include mq-max(xs) {
+                                            display: block;
+                                        }
+
+                                        h5 {
+                                            letter-spacing: 0.5px;
+                                            display: flex;
+                                            align-items: center;
+
+                                            &.items {
+                                                margin-bottom: 5px;
+
+                                                @include mq-max(sm) {
+                                                    margin-bottom: 0;
+                                                }
+
+                                                @include mq-max(xs) {
+                                                    margin-bottom: 5px;
+                                                }
+
+                                                span {
+                                                    text-decoration: underline;
+                                                }
+                                            }
+
+                                            &.charge {
+                                                @include mq-max(sm) {
+                                                    margin-top: 8px;
+                                                }
+                                            }
+
+                                            i {
+                                                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+                                                margin-left: 7px;
+                                                color: rgba($black, 0.25);
+
+                                                [dir="rtl"] & {
+                                                    margin-left: unset;
+                                                    margin-right: 7px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .payment-button {
+                                padding: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) calc(15px + (25 - 15) * ((100vw - 320px) / (1920 - 320)));
+                                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                font-weight: 500;
+                            }
+
+                            // Payment Method
+                            .payment-method {
+                                .custom-form-check {
+                                    label {
+                                        font-weight: 500;
+                                        font-size: 17px;
+                                    }
+                                }
+                            }
+
+                            .credit-card-box {
+                                .credit-detail {
+                                    position: relative;
+                                }
+                            }
+
+                            .credit-info {
+                                label {
+                                    font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                    font-weight: 500;
+                                }
+                            }
+
+                            .payment-option {
+                                padding: 20px;
+                                box-shadow: 0 0 5px rgba($black, 0.17);
+                                border-radius: 8px;
+                                position: relative;
+
+                                .form-check {
+                                    .form-check-input {
+                                        margin-top: 4px;
+                                    }
+
+                                    label {
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        padding-left: 10px;
+                                    }
+                                }
+
+                                img {
+                                    @include center(vertical);
+                                    position: absolute;
+                                    right: 20px;
+                                    width: 60px;
+                                }
+                            }
+
+                            .custom-accordion {
+                                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))));
+                                align-items: center;
+
+                                .accordion-item {
+                                    border: none;
+                                    border-radius: 6px;
+                                    overflow: hidden;
+                                    display: block;
+                                    width: 100%;
+
+                                    .accordion-header {
+                                        .accordion-button {
+                                            color: $content-color;
+                                            position: relative;
+                                            padding: 0;
+
+                                            &::after {
+                                                content: none;
+                                            }
+
+                                            &::before {
+                                                @include pos($pos: absolute, $content: "\f107");
+                                                @include font;
+                                                @include center(vertical);
+                                                right: 30px;
+                                                transition: transform 0.2s ease-in-out;
+
+                                                [dir="rtl"] & {
+                                                    right: unset;
+                                                    left: 30px;
+                                                }
+                                            }
+
+                                            &:not(.collapsed) {
+                                                color: $title-color;
+                                                background-color: transparent;
+                                                box-shadow: none;
+
+                                                &::before {
+                                                    top: 20%;
+                                                    transform: rotate(-180deg) translateY(-50%);
+                                                }
+                                            }
+
+                                            .form-check {
+                                                display: flex;
+                                                align-items: center;
+                                                width: 100%;
+
+                                                .form-check-label {
+                                                    font-weight: 500;
+                                                    color: $title-color;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    width: 100%;
+                                                    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+                                                    padding: 16px 20px;
+
+                                                    [dir="rtl"] & {
+                                                        padding-right: 0;
+                                                    }
+
+                                                    @include mq-max(xs) {
+                                                        margin-top: 5px;
+                                                    }
+
+                                                    .form-check-input {
+                                                        margin-right: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+
+                                                        [dir="rtl"] & {
+                                                            margin-left: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+                                                            margin-right: unset;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .accordion-collapse {
+                                        .accordion-body {
+                                            padding-top: 0;
+
+                                            .cod-review {
+                                                margin: 0;
+                                                line-height: 1.5;
+                                                color: $content-color;
+
+                                                a {
+                                                    &:hover {
+                                                        color: var(--theme-color);
+                                                    }
+                                                }
+                                            }
+
+                                            .custom-form-check {
+                                                margin-bottom: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
+                                                display: flex;
+                                                align-items: center;
+
+                                                [dir="rtl"] & {
+                                                    padding-left: unset;
+                                                    padding-right: 0;
+                                                }
+
+                                                label {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    font-size: calc(14px + (17 - 14) * ((100vw - 320px) / (1920 - 320)));
+                                                }
+
+                                                input {
+                                                    margin-right: 10px;
+
+                                                    [dir="rtl"] & {
+                                                        margin-right: unset;
+                                                        margin-left: 10px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right-side-summery-box {
+        // background-color: #f8f8f8;
+        // padding: 28px;
+        position: sticky;
+        top: 110px;
+
+        .summery-box-2 {
+            border-radius: 7px;
+            background-color: #f8f8f8;
+            padding: calc(14px + (29 - 14) * ((100vw - 320px) / (1920 - 320)));
+            // border-radius: 5px;
+            // background-color: $light-gray;
+            // box-shadow: 0 0 9px rgba($title-color, 0.07);
+            // border-radius: 8px;
+            // overflow: hidden;
+
+            .summery-header {
+                padding-bottom: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+                // display: flex;
+                // align-items: center;
+                border-bottom: 1px solid $border-color;
+                margin-bottom: 10px;
+
+                h3 {
+                    font-weight: 600;
+                }
+
+                a {
+                    font-weight: 500;
+                    margin-left: auto;
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+                    &:hover {
+                        color: var(--theme-color);
+                    }
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: auto;
+                    }
+                }
+            }
+
+            .summery-contain {
+                // padding: 16px calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+                border-bottom: 1px solid $border-color;
+
+                &::-webkit-scrollbar-track {
+                    background-color: $content-color;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: var(--theme-color);
+                    border-radius: 4px;
+                }
+
+                .checkout-image {
+                    width: calc(41px + (52 - 41) * ((100vw - 320px) / (1920 - 320)));
+                    height: calc(41px + (52 - 41) * ((100vw - 320px) / (1920 - 320)));
+                    object-fit: contain;
+                    margin-right: 10px;
+
+                    [dir="rtl"] & {
+                        margin-right: unset;
+                        margin-left: 10px;
+                    }
+                }
+
+                .coupon-cart {
+                    .coupon-box {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 4px;
+
+                        .btn-apply {
+                            background: var(--theme-color);
+                            color: $white;
+                            padding: 0 calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
+                            font-weight: 700;
+                            border: none;
+                        }
+
+                        .form-control {
+                            border: 2px solid var(--theme-color);
+                            padding: 10px;
+                        }
+                    }
+                }
+
+                ul {
+                    [dir="rtl"] & {
+                        padding-right: 0;
+                    }
+
+                    li {
+                        padding: 10px 0;
+                        display: flex;
+                        align-items: center;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                            color: $content-color;
+
+                            &.price {
+                                color: $content-color;
+                                margin-left: auto;
+
+                                [dir="rtl"] & {
+                                    margin-left: unset;
+                                    margin-right: auto;
+                                }
+
+                                .shpping-contain {
+                                    display: block;
+                                    font-weight: 400;
+                                    font-size: 13px;
+                                    margin-top: 3px;
+                                }
+                            }
+
+                            span {
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .summery-contain {
+                // padding: calc(11px + (16 - 11) * ((100vw - 320px) / (1920 - 320))) 0;
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 10px;
+
+                [dir="rtl"] & {
+                    padding-bottom: 10px;
+                    padding: 0;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: transparent;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: var(--theme-color);
+                    border-radius: 4px;
+                }
+
+                li {
+                    padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320))) 0;
+                    display: flex;
+                    align-items: center;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    p {
+                        font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+
+                    h4 {
+                        font-size: 15px;
+                        color: $content-color;
+
+                        &.price {
+                            color: $content-color;
+                            margin-left: auto;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: auto;
+                            }
+
+                            .shpping-contain {
+                                display: block;
+                                font-weight: 400;
+                                font-size: 13px;
+                                margin-top: 3px;
+                            }
+                        }
+
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .summery-total {
+                // padding: 0 calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+                margin-top: 0px;
+                padding-top: 5px;
+
+                [dir="rtl"] & {
+                    padding: 0;
+                    padding-top: 5px;
+                }
+
+                li {
+                    padding-top: 8px;
+                    display: flex;
+                    align-items: center;
+
+                    h4 {
+                        font-size: 17px;
+                        color: $title-color;
+
+                        &.price {
+                            margin-left: auto;
+
+                            [dir="rtl"] & {
+                                margin-left: unset;
+                                margin-right: auto;
+                            }
+                        }
+
+                        span {
+                            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                            font-weight: 600;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        padding: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) 0;
+
+                        h4 {
+                            font-weight: 600;
+                            color: var(--theme-color);
+                        }
+                    }
+
+                    &:last-child {
+                        border-top: 1px solid $border-color;
+                        padding-top: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+
+                        h4 {
+                            font-weight: 600;
+                            font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+                        }
+                    }
+                }
+            }
+        }
+
+        .checkout-offer {
+            margin-top: 24px;
+            border-radius: 7px;
+            background-color: #f8f8f8;
+            padding: calc(14px + (29 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+            .offer-title {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320)));
+
+                .offer-icon {
+                    width: 20px;
+                }
+
+                .offer-name {
+                    h6 {
+                        font-weight: 600;
+                        font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+                        line-height: 1;
+                        margin-bottom: -2px;
+                    }
+                }
+            }
+
+            .offer-detail {
+                display: flex;
+                flex-wrap: wrap;
+                gap: calc(11px + (16 - 11) * ((100vw - 320px) / (1920 - 320)));
+                height: 100%;
+                overflow: hidden auto;
+                max-height: 104px;
+
+                [dir="rtl"] & {
+                    padding: 0;
+                }
+
+                &::-webkit-scrollbar-track {
+                    border-radius: 10px;
+                    background-color: rgba($color: #555, $alpha: .14);
+                }
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                    background-color: #f5f5f5;
+                    border-radius: 50px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: rgba($color: #555, $alpha: .5);
+                }
+
+                li {
+                    display: block;
+
+                    p {
+                        color: $content-color;
+                        line-height: 1.5;
+                        position: relative;
+                        padding-left: 23px;
+                        font-size: calc(13px + (13 - 13) * ((100vw - 320px) / (1920 - 320)));
+                        margin: 0;
+
+                        [dir="rtl"] & {
+                            padding-left: unset;
+                            padding-right: 23px;
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 7px;
+                            left: 7px;
+                            width: 5px;
+                            height: 5px;
+                            background-color: $content-color;
+                            border-radius: 100%;
+
+                            [dir="rtl"] & {
+                                left: unset;
+                                right: 7px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /**=====================
      Contact Us Scss
 ==========================**/
@@ -1515,8 +2447,27 @@
             text-align: center;
             margin-bottom: calc(25px + (64 - 25) * ((100vw - 320px) / (1920 - 320)));
 
+            @include mq-max(xl) {
+                margin-bottom: 0;
+                @include flex_common;
+                @include pseudowh;
+            }
+
+            @include mq-max(lg) {
+                margin-bottom: calc(25px + (64 - 25) * ((100vw - 320px) / (1920 - 320)));
+            }
+
             img {
                 width: 60%;
+
+                @include mq-max(xl) {
+                    width: 77%;
+                }
+
+                @include mq-max(lg) {
+                    width: 60%;
+                    margin-bottom: calc(25px + (64 - 25) * ((100vw - 320px) / (1920 - 320)));
+                }
             }
         }
 
@@ -1952,6 +2903,14 @@
 
 .faq-box-contain {
     .faq-contain {
+        margin-bottom: 0;
+        position: sticky;
+        top: 92px;
+
+        @include mq-max(xl) {
+            margin-bottom: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
+        }
+
         h2 {
             font-weight: 700;
             font-size: calc(28px + (56 - 28) * ((100vw - 320px) / (1920 - 320)));
@@ -1964,13 +2923,16 @@
             line-height: 1.5;
             color: $content-color;
 
-            @media (max-width: 1399px) {
+            // @media (max-width: 1399px) {
+            //     width: 70%;
+            // }
+            @include mq-max(xl) {
                 width: 70%;
             }
 
-            @include mq-max(xl) {
-                width: 85%;
-            }
+            // @include mq-max(xl) {
+            //     width: 85%;
+            // }
 
             @include mq-max(lg) {
                 width: 90%;
@@ -3037,7 +3999,7 @@
     }
 
     h2 {
-        font-size: calc(28px + (40 - 28) * ((100vw - 320px) / (1920 - 320)));
+        font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1920 - 320)));
         margin-bottom: calc(12px + (30 - 12) * ((100vw - 320px) / (1920 - 320)));
         width: 80%;
         line-height: 1.3;
@@ -3089,7 +4051,7 @@
 .fresh-vegetable-section {
     .fresh-image {
         margin-top: 30px;
-        border-radius: 50px 0;
+        border-radius: calc(12px + (50 - 12) * ((100vw - 320px) / (1920 - 320))) 0;
         overflow: hidden;
         transition: all 0.3s ease-in-out;
 
@@ -3106,7 +4068,7 @@
     }
 
     .fresh-image-2 {
-        border-radius: 0 50px;
+        border-radius: 0 calc(12px + (50 - 12) * ((100vw - 320px) / (1920 - 320)));
         overflow: hidden;
         transition: all 0.3s ease-in-out;
 
@@ -3507,7 +4469,6 @@
 
     &.dashboard-flex {
         display: flex;
-        // align-items: center;
 
         button {
             margin-left: auto;
@@ -4962,6 +5923,12 @@
     }
 }
 
+.order-success-2 {
+    tbody {
+        border-top: none;
+    }
+}
+
 /**=====================
      Search Scss
 ==========================**/
@@ -5079,29 +6046,32 @@
     }
 
     .vendor-share {
+        display: flex;
+        align-items: center;
+
         h5 {
-            display: flex;
             font-weight: 600;
+        }
 
-            ul {
-                margin-left: 15px;
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 12px;
+        ul {
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
 
-                [dir="rtl"] & {
-                    padding: 0;
-                    margin-left: unset;
-                    margin-right: 15px;
-                }
+            [dir="rtl"] & {
+                padding: 0;
+                margin-left: unset;
+                margin-right: 15px;
+            }
 
-                li {
-                    a {
-                        color: $content-color;
-                        display: block;
-                        font-size: 16px;
-                    }
+            li {
+                a {
+                    color: $content-color;
+                    display: block;
+                    font-size: 16px;
+                    line-height: 1;
                 }
             }
         }
@@ -5144,13 +6114,17 @@
     .vendor-name {
         height: 100%;
 
-        h3 {
-            font-weight: 600;
-            text-transform: uppercase;
+        .vendor-list-name {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             gap: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        h3 {
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
         }
 
         .vendor-rating {
@@ -5228,29 +6202,29 @@
                 display: block;
                 font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 600;
+            }
 
-                ul {
-                    @include flex_common;
-                    margin-top: 8px;
-                    flex-wrap: wrap;
-                    gap: 10px;
+            ul {
+                @include flex_common;
+                margin-top: 8px;
+                flex-wrap: wrap;
+                gap: 10px;
 
-                    [dir="rtl"] & {
-                        padding: 0;
-                    }
+                [dir="rtl"] & {
+                    padding: 0;
+                }
 
-                    li {
-                        position: relative;
+                li {
+                    position: relative;
 
-                        a {
-                            color: #f1f1f1;
-                            font-size: 16px;
-                            width: 20px;
-                            height: 20px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
+                    a {
+                        color: #f1f1f1;
+                        font-size: 16px;
+                        width: 20px;
+                        height: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
                 }
             }
@@ -5555,16 +6529,19 @@
         }
 
         .contain-name {
-            width: calc(100% - 105px);
+            width: calc(100% - 66px - 18px);
 
-            h6 {
-                color: $content-color;
+            .since-number {
                 margin-bottom: 1px;
                 display: flex;
                 align-items: center;
 
                 @include mq-max(xs) {
                     display: block;
+                }
+
+                h6 {
+                    color: $content-color;
                 }
 
                 .product-rating {
@@ -5714,6 +6691,18 @@
 .order-table {
     margin-bottom: 0;
 
+    &-2 {
+        tbody {
+            border-top: none !important;
+
+            tr {
+                td {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
     thead {
         tr {
             th {
@@ -5727,7 +6716,7 @@
     }
 
     tbody {
-        border-top: 1px solid $border-color !important;
+        border-top: 1px solid $border-color;
 
         tr {
             &:last-child {

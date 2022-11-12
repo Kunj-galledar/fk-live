@@ -91,6 +91,24 @@
                 }
             }
 
+            &.furniture-heading {
+                span {
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-image: url(../images/furniture/banner/line.png);
+                        width: 100%;
+                        height: 100%;
+                        top: 90%;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+
             &.poster-1 {
                 line-height: calc(23px + (68 - 23) * ((100vw - 320px) / (1920 - 320)));
             }
@@ -406,6 +424,47 @@
     }
 }
 
+.home-section-small {
+    .home-contain {
+        .home-detail {
+            &.home-width {
+                width: 50%;
+
+                &:before {
+                    @include mq-max(2xs) {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(255, 255, 255, 0.25);
+                        z-index: -1;
+                    }
+                }
+
+                @include mq-max(lg) {
+                    width: 60%;
+                }
+
+                @include mq-max(2xs) {
+                    width: 100%;
+                }
+            }
+        }
+
+        &.home-small {
+            .home-detail {
+                padding: calc(20px + (50 - 20) * ((100vw - 767px) / (1920 - 767))) calc(12px + (50 - 12) * ((100vw - 767px) / (1920 - 767)));
+
+                h4 {
+                    font-size: calc(14px + (22 - 14) * ((100vw - 767px) / (1920 - 767)));
+                }
+            }
+        }
+    }
+}
+
 .home-search {
     background-image: linear-gradient(to right top,
             #0da487,
@@ -497,7 +556,7 @@
         overflow: auto;
         padding-top: 0;
         background-color: $white;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
 
         [dir="rtl"] & {
             right: 0;
@@ -582,11 +641,29 @@
 }
 
 .home-search-full {
-    height: 100vh;
+    height: 70vh;
+
+    @include mq-max(sm) {
+        height: 50vh;
+    }
 
     .home-contain {
         .home-detail {
-            height: 100vh;
+            height: 70vh;
+            padding: 0;
+            padding-top: 64px;
+
+            @include mq-max(sm) {
+                height: 50vh;
+            }
+
+            @include mq-max(md) {
+                padding-top: 48px;
+            }
+
+            @include mq-max(xs) {
+                padding: 48px 15px 0;
+            }
 
             >div {
                 width: 50%;
@@ -605,6 +682,7 @@
                 text-transform: inherit;
                 margin-left: auto;
                 margin-right: auto;
+                margin-top: -18px;
 
                 [dir="rtl"] & {
                     text-align: center;
@@ -658,6 +736,63 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.home-section-ratio {
+    .ratio_180 {
+        .bg-size {
+            &:before {
+                @include mq-max(lg) {
+                    padding-top: 128%;
+                }
+            }
+        }
+    }
+
+    .custom-ratio {
+        @include mq-max(lg) {
+            order: -1;
+        }
+    }
+}
+
+.home-furniture {
+    .feature-detail {
+        h2 {
+            font-size: calc(32px + (51 - 32) * ((100vw - 1200px) / (1920 - 1200)));
+        }
+
+        h3 {
+            background-color: #FFA53B;
+            font-size: calc(29px + (40 - 29) * ((100vw - 1200px) / (1920 - 1200)));
+            color: $white;
+            padding: 4px calc(9px + (13 - 9) * ((100vw - 1200px) / (1920 - 1200)));
+            font-weight: 700;
+        }
+    }
+}
+
+.furniture-contain-2 {
+    .home-detail {
+        width: calc(100% + (75 - 100) * ((100vw - 320px) / (1920 - 320)));
+
+        &::before {
+            @include mq-max(md) {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #ffffff, $alpha: 0.4);
+                z-index: -1;
+            }
+        }
+
+        h1 {
+            width: calc(100% + (75 - 100) * ((100vw - 320px) / (1920 - 320)));
         }
     }
 }

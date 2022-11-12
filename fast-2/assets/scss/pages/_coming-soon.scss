@@ -40,21 +40,21 @@
             ul {
                 @include flex_common;
                 flex-wrap: wrap;
-                gap: 28px;
+                gap: calc(16px + (28 - 16) * ((100vw - 320px) / (1920 - 320)));
 
                 li {
-                    @include pseudowh($width: 90px, $height: 90px);
+                    @include pseudowh($width: calc(62px + (90 - 62) * ((100vw - 320px) / (1920 - 320))), $height: calc(62px + (90 - 62) * ((100vw - 320px) / (1920 - 320))));
                     @include flex_common;
                     position: relative;
                     background-color: $white;
-                    border-radius: 10px;
+                    border-radius: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
 
                     +li {
                         &::after {
                             @include pos($pos: absolute, $content: ":");
                             @include center(vertical);
-                            left: -17px;
-                            font-size: 30px;
+                            left: calc(-10px + (-17 - -10) * ((100vw - 320px) / (1920 - 320)));
+                            font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 320)));
                             color: var(--theme-color);
 
                             [dir="rtl"] & {
@@ -64,13 +64,13 @@
                         }
                     }
 
-                    @media (max-width: 357px) {
-                        &:nth-child(3) {
-                            &::after {
-                                content: none;
-                            }
-                        }
-                    }
+                    // @media (max-width: 357px) {
+                    //     &:nth-child(3) {
+                    //         &::after {
+                    //             content: none;
+                    //         }
+                    //     }
+                    // }
 
                     .counter {
                         display: block;
@@ -80,13 +80,14 @@
                             font-size: calc(22px + (27 - 22) * ((100vw - 320px) / (1920 - 320)));
                             font-weight: 600;
                             color: var(--theme-color);
+                            line-height: 1;
                         }
 
                         p {
                             margin-bottom: 0;
                             margin-top: 5px;
                             color: $content-color;
-                            font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+                            font-size: calc(13px + (17 - 13) * ((100vw - 320px) / (1920 - 320)));
                         }
                     }
                 }

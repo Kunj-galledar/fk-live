@@ -20,9 +20,8 @@
 #right-history {
     top: 81px;
     right: -320px;
-    height: 100%;
+    @include pseudowh($width: 320px, $height: 100%);
     position: fixed;
-    width: 320px;
     z-index: 9;
     background-color: $white;
     transition: 0.5s;
@@ -43,7 +42,7 @@
 }
 
 .history-details {
-    > div {
+    >div {
         padding: 30px 0;
     }
 
@@ -148,7 +147,7 @@
                             font-size: 13px;
                         }
 
-                        + li {
+                        +li {
                             padding-left: 10px;
                             margin-left: 5px;
                             border-left: 2px solid $light-color;
@@ -174,7 +173,7 @@
                         margin-bottom: 0;
                     }
 
-                    > span {
+                    >span {
                         float: right;
                     }
                 }
@@ -200,8 +199,9 @@
 
         .nav-link,
         .show {
+
             &.active,
-            > .nav-link {
+            >.nav-link {
                 background-color: rgba($primary-color, 0.05);
                 color: $theme-body-font-color;
             }
@@ -217,7 +217,7 @@
                 }
             }
 
-            + .nav-link {
+            +.nav-link {
                 border-top: 1px solid $light-color;
             }
         }
@@ -344,14 +344,14 @@
     .contact-options {
         form {
             .row {
-                > div {
+                >div {
                     .row {
-                        > div {
-                            > div {
+                        >div {
+                            >div {
                                 margin-bottom: 0;
                             }
 
-                            + div {
+                            +div {
                                 margin-top: 15px;
                             }
                         }
