@@ -142,30 +142,6 @@ span {
   color: $content-color !important;
 }
 
-// button {
-//   &:focus {
-//     outline: none;
-//   }
-// }
-
-// .btn-close {
-//   &:focus {
-//     box-shadow: none;
-//   }
-// }
-
-// :focus {
-//   outline: none;
-// }
-
-// .form-control {
-//   background-color: $white;
-
-//   &:focus {
-//     box-shadow: none;
-//   }
-// }
-
 /**=====================
        typography css end
   ==========================**/
@@ -175,22 +151,19 @@ span {
 ==========================**/
 .btn {
   position: relative;
-  padding: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))) calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-  font-weight: 600;
+  padding: 8px 10px;
   z-index: 1;
   transition: all 0.5s;
   border-radius: 0;
   font-weight: bold;
-  font-size: calc(12px + (13 - 12) * ((100vw - 320px) / (1920 - 320)));
+  font-size: 14px;
   text-transform: capitalize;
 
   &-submit {
     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-    // background-color: $elec3;
     color: var(--theme-color);
 
     &:hover {
-      // color: $elec3;
       background-color: var(--theme-color);
     }
   }
@@ -232,7 +205,6 @@ span {
   }
 
   &-light {
-    // color: $lightsilver;
     position: relative;
     background-color: #eee1e6;
     border: 1px solid transparent;
@@ -283,7 +255,6 @@ span {
   }
 
   &-light-theme {
-    // background-color: $theme-light-color;
     color: var(--theme-color);
     padding: calc(6px + (14 - 6) * ((100vw - 320px) / (1920 - 320))) calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
 
@@ -309,7 +280,6 @@ span {
   }
 
   &-theme-1 {
-    // background-color: rgba($light-demo-7, 0.6);
     transform: scale(100%);
     border: 1px solid var(--theme-color);
 
@@ -388,7 +358,6 @@ span {
 
 .btn-white {
   padding: 6px 20px;
-  // color: $theme-font-color;
   background-color: unset;
   border: 1px solid $white;
 
@@ -480,64 +449,6 @@ span {
     }
   }
 
-  // .invoice-body {
-  //   // padding: calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320)));
-
-  //   .table th,
-  //   .table td {
-  //     border-top: none;
-  //   }
-
-  //   .table {
-  //     font-size: 16px;
-
-  //     thead {
-  //       th {
-  //         text-transform: uppercase;
-  //         font-weight: 400;
-  //         padding-bottom: 16px;
-  //         color: black;
-  //         border-bottom: 1px solid var(--theme-color);
-
-  //         &:first-child {
-  //           text-align: center;
-  //         }
-  //       }
-  //     }
-
-  //     td {
-  //       color: #646464;
-  //     }
-
-  //     tbody {
-
-  //       td,
-  //       th {
-  //         padding-top: 10px;
-  //         padding-bottom: 10px;
-  //         text-transform: capitalize;
-
-  //         &:first-child {
-  //           text-align: center;
-  //         }
-  //       }
-
-  //       th {
-  //         font-weight: normal;
-  //         color: #646464;
-  //       }
-  //     }
-
-  //     tfoot {
-  //       // border-top: 1px solid $gray-light;
-
-  //       td {
-  //         padding-top: 15px;
-  //       }
-  //     }
-  //   }
-  // }
-
   .invoice-footer {
     padding: calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320)));
   }
@@ -558,7 +469,6 @@ span {
       font-weight: bold;
       padding-top: 20px;
       margin-top: 20px;
-      // border-top: 1px solid $gray-light;
       line-height: 1;
     }
   }
@@ -596,12 +506,22 @@ span {
           display: flex;
           align-items: center;
           flex-wrap: nowrap;
-          gap: 50px;
+          gap: calc(15px + (50 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+          @include mq-max(xs) {
+            display: block;
+          }
 
           .address-box {
             background-color: $light-gray;
-            padding: 18px 30px;
+            padding: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))) calc(17px + (30 - 17) * ((100vw - 320px) / (1920 - 320)));
             width: 100%;
+
+            &:last-child {
+              @include mq-max(xs) {
+                margin-top: 15px;
+              }
+            }
 
             ul {
               display: flex;
@@ -609,11 +529,12 @@ span {
               gap: 4px;
 
               li {
-                font-size: 15px;
+                font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                 font-weight: 700;
                 color: $title-color;
                 width: 100%;
                 display: block;
+                white-space: nowrap;
               }
             }
           }
@@ -630,7 +551,6 @@ span {
             border-top: 1px solid #E2E2E2;
           }
 
-          // margin-bottom: 0;
           thead {
             tr {
               th {
@@ -638,7 +558,8 @@ span {
                 font-weight: 700;
                 text-align: center;
                 border-left: 1px solid #E2E2E2;
-                padding: 12px;
+                padding: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
+                white-space: nowrap;
               }
             }
           }
@@ -652,6 +573,7 @@ span {
                 color: $content-color;
                 border-left: 1px solid #E2E2E2;
                 padding: 18px;
+                white-space: nowrap;
               }
             }
           }
@@ -665,10 +587,9 @@ span {
           border: 1px solid #E2E2E2;
 
           >:not(:first-child) {
-            border-top: 1px solid #E2E2E2;
+            border-top: none;
           }
 
-          // margin-bottom: 0;
           thead {
             tr {
               th {
@@ -677,7 +598,6 @@ span {
                 text-align: center;
                 background-color: var(--theme-color);
                 color: $white;
-                // border-left: 1px solid #E2E2E2;
                 padding: 12px;
               }
             }
@@ -685,6 +605,12 @@ span {
 
           tbody {
             tr {
+              &:nth-child(even) {
+                td {
+                  background-color: #F7F7F7;
+                }
+              }
+
               td {
                 font-weight: 700;
                 vertical-align: middle;
@@ -692,7 +618,18 @@ span {
                 text-align: center;
                 color: $title-color;
                 border-left: 1px solid #E2E2E2;
+                border-bottom: none;
                 padding: 9px 18px;
+
+                .item-detail {
+                  display: flex;
+                  flex-wrap: wrap;
+
+                  li {
+                    width: 100%;
+                    white-space: nowrap;
+                  }
+                }
               }
             }
           }
@@ -704,8 +641,16 @@ span {
           display: flex;
           align-items: center;
           justify-content: flex-end;
-          gap: 53px;
+          gap: calc(5px + (53 - 5) * ((100vw - 320px) / (1920 - 320)));
           padding: 0 10px;
+
+          @media (max-width: 390px) {
+            justify-content: flex-start;
+          }
+
+          @include mq-max(2xs) {
+            justify-content: space-between;
+          }
 
           li {
             font-size: 15px;
@@ -720,513 +665,502 @@ span {
       align-items: flex-end;
       justify-content: space-between;
       padding: 0;
-      margin-top: 40px;
+      margin-top: calc(19px + (40 - 19) * ((100vw - 320px) / (1920 - 320)));
+
+      @media (max-width: 390px) {
+        display: block;
+      }
 
       .signature-box {
         display: inline-block;
 
         img {
           display: block;
-          width: 96px;
+          width: calc(80px + (96 - 80) * ((100vw - 320px) / (1920 - 320)));
           text-align: center;
           margin: 0 auto;
         }
 
         h5 {
-          // display: inline-block;
-          padding: 12px 12px 0;
+          padding: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320))) calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320))) 0;
           text-align: center;
           border-top: 1px solid #E2E2E2;
-          margin-top: 12px;
+          margin-top: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320)));
         }
       }
 
-      .print-button {
-        background-color: $title-color;
+      .button-group {
+        @media (max-width: 390px) {
+          margin-top: 15px;
+        }
+
+        .print-button {
+          background-color: $title-color;
+        }
       }
     }
   }
 }
 
-// invoice 1
-// .theme-invoice-1 {
-//   .invoice-header {
-//     padding: calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320)));
-//     background-color: $lightsilver;
-//     position: relative;
-
-//     h4 {
-//       font-size: 16px;
-//     }
-
-//     .upper-icon {
-//       position: absolute;
-//       width: calc(50px + (70 - 50) * ((100vw - 320px) / (1920 - 320)));
-//       height: calc(50px + (70 - 50) * ((100vw - 320px) / (1920 - 320)));
-//       top: 0;
-//       right: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
-//       @include flex_common;
-//       background-color: var(--theme-color);
-
-//       img {
-//         width: calc(22px + (30 - 22) * ((100vw - 320px) / (1920 - 320)));
-//       }
-//     }
-
-//     .header-content {
-//       margin-top: 50px;
-
-//       h2 {
-//         font-size: 30px;
-//         margin-bottom: -5px;
-//       }
-//     }
-
-//     .detail-bottom {
-//       padding-top: 24px;
-//       margin-top: 24px;
-//       border-top: 1px solid $gray-light;
-
-//       ul {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-
-//         li {
-//           display: flex;
-//           align-items: center;
-//           font-size: 16px;
-
-//           span {
-//             color: var(--theme-color);
-//             text-transform: capitalize;
-//           }
-
-//           h4 {
-//             margin-bottom: 0;
-//             margin-left: 4px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// // invoice 2
-// .theme-invoice-2 {
-//   h4 {
-//     font-size: 16px;
-//     color: #646464;
-//   }
-
-//   .invoice-header {
-//     padding: calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320))) 0;
-
-//     .top-bar {
-//       display: flex;
-//       justify-content: space-between;
-//     }
-//   }
-
-//   .invoice-wrapper {
-//     .invoice-body {
-//       .table {
-//         thead {
-//           th {
-//             padding-bottom: 24px;
-//             border-color: $gray-light !important;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .invoice-body {
-//     .date-detail {
-//       display: flex;
-//       align-items: center;
-//       justify-content: space-between;
-//       padding-bottom: 30px;
-//       border-bottom: 2px solid var(--theme-color);
-//       margin-bottom: 20px;
-
-//       li {
-//         span {
-//           font-size: 18px;
-//           text-transform: capitalize;
-//           margin-bottom: 2px;
-//           display: block;
-//         }
-
-//         &.total-amount {
-//           span {
-//             font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
-//             font-weight: 700;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .background-img {
-//     border-radius: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)));
-//     margin-top: calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320)));
-//   }
-// }
-
-// // invoice 3
-// .theme-invoice-3 {
-//   .invoice-header {
-//     padding: calc(15px + (55 - 15) * ((100vw - 320px) / (1920 - 320)));
-//     background-color: $lightsilver;
-//     border-bottom: 1px solid #e6e6e6;
-//     display: flex;
-//     align-items: center;
-
-//     ul {
-//       display: flex;
-//       align-items: center;
-//       justify-content: space-between;
-//       width: 100%;
-//       flex-wrap: wrap;
-
-//       li {
-//         display: flex;
-//         align-items: center;
-
-//         i {
-//           border-radius: 8px;
-//           background-color: var(--theme-color);
-//           width: 34px;
-//           height: 34px;
-//           @include flex_common;
-//           color: white;
-//           font-size: 16px;
-//         }
-
-//         h4 {
-//           margin-bottom: 0;
-//           margin-left: 10px;
-//         }
-//       }
-//     }
-//   }
-
-//   .date-detail {
-//     li {
-//       display: flex;
-//       align-items: center;
-
-//       span {
-//         font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
-//         text-transform: capitalize;
-//         color: var(--theme-color);
-//         margin-right: 8px;
-//       }
-
-//       h4 {
-//         margin-bottom: 0;
-//       }
-//     }
-//   }
-
-//   .invoice-wrapper {
-//     .invoice-footer {
-//       padding: calc(15px + (55 - 15) * ((100vw - 320px) / (1920 - 320)));
-//     }
-
-//     .invoice-body {
-//       padding: calc(15px + (55 - 15) * ((100vw - 320px) / (1920 - 320)));
-
-//       .top-sec {
-//         padding-bottom: calc(15px + (35 - 15) * ((100vw - 320px) / (1920 - 320)));
-//       }
-
-//       .table {
-//         thead {
-//           background-color: var(--theme-color);
-
-//           th {
-//             padding-top: 20px;
-//             padding-bottom: 20px;
-//             color: white;
-//             border-bottom: 0 !important;
-
-//             &:first-child {
-//               text-align: center;
-//             }
-//           }
-//         }
-
-//         tbody {
-//           th {
-//             &:first-child {
-//               text-align: center;
-//             }
-//           }
-//         }
-
-//         tfoot {
-//           border-top: 0;
-//           background-color: #f7f7f7;
-
-//           td {
-//             padding-top: 20px;
-//             padding-bottom: 20px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// // invoice 4
-// .theme-invoice-4 {
-//   .invoice-header {
-//     padding: calc(15px + (55 - 15) * ((100vw - 320px) / (1920 - 320)));
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     position: relative;
-//     z-index: 1;
-//     overflow: hidden;
-
-//     .background-invoice {
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       width: 100%;
-//       z-index: -1;
-//     }
-//   }
-
-//   .table-striped {
-//     >tbody {
-//       >tr:nth-of-type(even) {
-//         background-color: $light-blue;
-//       }
-
-//       >tr:nth-of-type(odd) {
-//         --bs-table-accent-bg: white;
-//         color: #646464;
-//       }
-//     }
-//   }
-
-//   .invoice-wrapper {
-//     .invoice-body {
-//       padding: 0;
-//       z-index: 1;
-//       position: relative;
-
-//       .table {
-//         thead {
-//           background-color: $light-blue;
-//           color: $black1;
-
-//           th {
-//             border-bottom: 0 !important;
-//             padding: 18px;
-//           }
-//         }
-
-//         tbody {
-
-//           th,
-//           td {
-//             padding: 18px 18px !important;
-//             font-size: 18px;
-
-//             &:first-child {
-//               text-align: center;
-//             }
-//           }
-//         }
-
-//         tfoot {
-//           border-top: 0;
-//         }
-//       }
-//     }
-
-//     .invoice-footer {
-//       padding: calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320)));
-//       background-color: $lightsilver;
-//       position: relative;
-
-//       .design-shape {
-//         position: absolute;
-//         top: -34px;
-//       }
-
-//       ul {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-
-//         @include mq-max(xs) {
-//           display: block;
-//         }
-
-//         li {
-//           display: flex;
-//           align-items: center;
-
-//           @include mq-max(xs) {
-//             margin-bottom: 25px;
-//           }
-
-//           i {
-//             margin-right: 30px;
-//             color: var(--theme-color);
-//             font-size: 20px;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   .top-sec {
-//     padding: 0 calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (45 - 15) * ((100vw - 320px) / (1920 - 320)));
-//   }
-
-//   .title-sec {
-//     padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320)));
-//     background-color: $lightsilver;
-//     border-top: 1px solid #ececec;
-//     border-bottom: 1px solid #ececec;
-//     position: relative;
-
-//     .title {
-//       position: absolute;
-//       left: 50%;
-//       top: 50%;
-//       transform: translate(-50%, -50%);
-//     }
-//   }
-
-//   .table-sec {
-//     padding: calc(15px + (40 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320)));
-
-//     .table-footer {
-//       background-color: var(--theme-color);
-//       display: inline-block;
-//       font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
-//       color: $white;
-//       margin-top: 30px;
-//       position: relative;
-//       padding: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))) calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-//       z-index: 1;
-//       transition: all 0.5s;
-//       border-radius: 0;
-//       font-weight: bold;
-//       text-transform: capitalize;
-//     }
-//   }
-// }
-
-// // invoice 5
-// .theme-invoice-5 {
-//   .date-detail {
-//     li {
-//       display: flex;
-//       align-items: center;
-
-//       span {
-//         font-size: 18px;
-//         text-transform: capitalize;
-//         margin-right: 8px;
-//       }
-
-//       h4 {
-//         margin-bottom: 0;
-//       }
-//     }
-//   }
-
-//   .invoice-header {
-//     padding: calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320))) calc(30px + (110 - 30) * ((100vw - 320px) / (1920 - 320)));
-//     position: relative;
-//     overflow: hidden;
-//     color: white;
-
-//     h4,
-//     h2 {
-//       color: white;
-//       line-height: 21px;
-//     }
-
-//     .background-img {
-//       position: absolute;
-//       left: 0;
-//       top: 0;
-//       width: 100%;
-//       height: 100%;
-//     }
-//   }
-
-//   .invoice-footer {
-//     padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320)));
-//   }
-
-//   .invoice-wrapper {
-//     .invoice-body {
-//       padding: calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320)));
-
-//       .table {
-//         margin-top: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
-
-//         thead {
-//           th {
-//             border-bottom: 2px solid var(--theme-color) !important;
-//           }
-//         }
-
-//         tfoot {
-//           border-top: 0;
-//           background-color: #f7f7f7;
-
-//           td {
-//             padding-top: 15px;
-//             padding-bottom: 15px;
-//           }
-//         }
-//       }
-//     }
-
-//     .authorise-sign {
-//       bottom: calc(15px + (65 - 15) * ((100vw - 320px) / (1920 - 320)));
-//     }
-//   }
-
-//   .header-panel {
-//     padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-//     margin-top: calc(-75px + (-130 - -75) * ((100vw - 991px) / (1920 - 991)));
-//     position: relative;
-//     background-color: white;
-//     border-radius: 12px;
-//     box-shadow: 0px 7px 8px 1px #f4f4f4;
-
-//     ul {
-//       display: flex;
-//       flex-wrap: wrap;
-//       align-items: center;
-//       justify-content: space-between;
-
-//       li {
-//         display: flex;
-//         align-items: center;
-
-//         img {
-//           width: 150px;
-//         }
-
-//         i {
-//           margin-right: 30px;
-//           color: var(--theme-color);
-//           font-size: 20px;
-//         }
-//       }
-//     }
-//   }
-// }
+// Invoice 2
+.theme-invoice-2 {
+  .invoice-wrapper {
+    .invoice-header {
+      background-image: url(../images/shape.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 86px;
+      background-position: center;
+      padding: 32px 42px 0;
+      margin-bottom: 80px;
+
+      .header-contain {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        @include mq-max(md) {
+          display: block;
+        }
+
+        .header-left {
+          background-image: url(../images/shape-1.svg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          padding: 42px 50px;
+          display: block;
+          width: 284px;
+
+          @include mq-max(md) {
+            padding: 34px 25px;
+            width: 235px;
+          }
+
+          @include mq-max(xs) {
+            background-color: #f7f7f7;
+          }
+
+          img {
+            width: 150px;
+
+            @include mq-max(md) {
+              width: 135px;
+            }
+          }
+        }
+
+        .header-right {
+          h3 {
+            font-size: calc(24px + (35 - 24) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 800;
+            letter-spacing: calc(1.5px + (5 - 1.5) * ((100vw - 320px) / (1920 - 320)));
+
+            @include mq-max(md) {
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+    }
+
+    .invoice-body {
+      .top-sec {
+        .details-box {
+          display: flex;
+          align-items: center;
+          flex-wrap: nowrap;
+          gap: 247px;
+          padding-left: calc(17px + (24 - 17) * ((100vw - 320px) / (1920 - 320)));
+          padding-right: calc(17px + (24 - 17) * ((100vw - 320px) / (1920 - 320)));
+          justify-content: space-between;
+
+          @include mq-max(md) {
+            gap: 85px;
+          }
+
+          @include mq-max(xs) {
+            display: block;
+          }
+
+          .address-box {
+            &:last-child {
+              @include mq-max(xs) {
+                margin-top: 15px;
+              }
+            }
+
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 4px;
+
+              li {
+                font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                font-weight: 700;
+                color: $title-color;
+                width: 100%;
+                display: block;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+
+      .body-date {
+        ul {
+          padding: calc(10px + (18 - 10) * ((100vw - 320px) / (1920 - 320))) calc(17px + (25 - 17) * ((100vw - 320px) / (1920 - 320)));
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: #F7F7F7;
+          margin-top: 17px;
+
+          @media (max-width: 530px) {
+            display: block;
+          }
+
+          li {
+            font-size: 13px;
+            font-weight: 700;
+
+            @media (max-width: 530px) {
+              width: 100%;
+            }
+
+            +li {
+              @media (max-width: 530px) {
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      .table-borderless {
+        padding: 16px;
+
+        table {
+          border-collapse: collapse;
+          width: 100%;
+
+          >:not(:first-child) {
+            border: none;
+          }
+
+          thead {
+            tr {
+              th {
+                background-color: var(--theme-color);
+                color: $white;
+                border-right: 3px solid $white;
+                text-align: center;
+                padding: 10px 17px;
+              }
+            }
+          }
+
+          tbody {
+            tr {
+              &:nth-child(even) {
+                td {
+                  background-color: #F7F7F7;
+                }
+              }
+
+              td {
+                font-size: 14px;
+                font-weight: 700;
+                vertical-align: middle;
+                text-align: center;
+                border: none;
+                border-right: 3px solid $white;
+
+                .table-details {
+                  display: flex;
+                  flex-wrap: wrap;
+
+                  li {
+                    font-weight: 700;
+                    white-space: nowrap;
+                    font-size: 13px;
+
+                    &:last-child {
+                      font-size: 12px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          tfoot {
+            tr {
+              td {
+                background-color: #F7F7F7;
+                padding: 15px 10px;
+                border: none;
+
+                .table-price {
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  flex-wrap: wrap;
+                  gap: 60px;
+
+                  li {
+                    font-weight: 15px;
+                    font-weight: 800;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .invoice-footer {
+      padding-left: 16px;
+      padding-right: 16px;
+
+      .button-group {
+        @media (max-width: 390px) {
+          margin-top: 15px;
+        }
+
+        ul {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .print-button {
+          background-color: $title-color;
+        }
+      }
+    }
+  }
+}
+
+// Invoice 3
+.theme-invoice-3 {
+  .invoice-wrapper {
+    .invoice-header {
+      background-color: #f7f7f7;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 15px;
+
+      .header-left {
+        padding: 24px 28px;
+        padding-top: 0;
+        padding-right: 0;
+
+        @include mq-max(xs) {
+          padding: 24px 28px;
+        }
+
+        .header-address {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: calc(20px + (30 - 20) * ((100vw - 320px) / (767 - 320)));
+          gap: 46px;
+
+          @include mq-max(xs) {
+            display: block;
+            width: 100%;
+          }
+
+          >div {
+            width: 100%;
+
+            ul {
+              li {
+                font-size: 14px;
+                font-weight: 700;
+              }
+            }
+          }
+
+          .address-right {
+            @include mq-max(xs) {
+              margin-top: 10px;
+            }
+
+            ul {
+              li {
+                white-space: nowrap;
+                display: block;
+                width: 100%;
+              }
+            }
+          }
+
+          .address-left {
+            ul {
+              li {
+                display: block;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .header-right {
+        background-image: url(../images/shape-3.svg);
+        background-position: bottom;
+        padding: 0 19px 29px;
+        background-repeat: no-repeat;
+        height: 173px;
+        margin-right: 28px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+
+        @include mq-max(md) {
+          display: none;
+        }
+
+        h3 {
+          color: $white;
+          font-size: 31px;
+          font-weight: 800;
+          letter-spacing: 1.6px;
+        }
+      }
+    }
+
+    .invoice-body {
+      padding: 24px;
+      padding-bottom: 0;
+
+      .table-product {
+        &.table>:not(:first-child) {
+          border-top: none;
+        }
+
+        thead {
+          tr {
+            th {
+              background-color: #F7F7F7;
+              color: var(--theme-color);
+              padding: 10px 20px;
+              text-align: center;
+              border: none;
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            &:last-child {
+              td {
+                border-bottom: 1px solid #E2E2E2;
+              }
+            }
+
+            td {
+              text-align: center;
+              padding: 16px;
+              font-size: 14px;
+              font-weight: 700;
+              border: none;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        tfoot {
+          tr {
+            td {
+              border: none;
+              color: var(--theme-color);
+              font-weight: 800;
+              font-size: 15px;
+              padding: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .invoice-footer {
+      margin-top: 27px;
+      padding: 0;
+
+      .button-group {
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-bottom: 22px;
+
+        @media (max-width: 390px) {
+          margin-top: 15px;
+        }
+
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .print-button {
+          background-color: $title-color;
+        }
+      }
+
+      .support-box {
+        background-color: #F7F7F7;
+        padding: calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320))) calc(19px + (28 - 19) * ((100vw - 320px) / (1920 - 320)));
+
+        >ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          @include mq-max(md) {
+            flex-wrap: wrap;
+            gap: 9px;
+          }
+
+          >li {
+            // @include mq-max(md) {
+            //   display: block;
+            //   width: 100%;
+            // }
+
+            .support-detail {
+              display: flex;
+              align-items: center;
+              flex-wrap: nowrap;
+              gap: 7px;
+
+              .support-icon {
+                i {
+                  font-size: calc(20px + (22 - 20) * ((100vw - 320px) / (1920 - 320)));
+                }
+              }
+
+              .support-content {
+                ul {
+                  li {
+                    display: block;
+                    color: $content-color;
+                    font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 600;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

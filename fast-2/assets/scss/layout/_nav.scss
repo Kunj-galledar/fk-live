@@ -60,6 +60,29 @@ header {
           .nav-item {
                margin-bottom: 0;
 
+               .new-dropdown {
+                    position: absolute;
+                    top: -9px;
+                    right: 3px;
+                    background-color: $danger-color;
+                    font-size: 11px;
+                    padding: 1px 5px;
+                    color: $white;
+                    font-weight: 700;
+                    border-radius: 3px;
+
+                    &::after {
+                         content: "";
+                         position: absolute;
+                         top: 14px;
+                         right: 2px;
+                         width: 8px;
+                         height: 8px;
+                         background-color: $danger-color;
+                         transform: rotate(45deg);
+                    }
+               }
+
                &:hover {
                     color: var(--theme-color);
                }
@@ -87,6 +110,16 @@ header {
                     >a {
                          display: block;
                          position: relative;
+
+                         .new-text {
+                              font-size: 10px;
+                              background-color: #ff4f4f;
+                              color: #fff;
+                              line-height: 1;
+                              padding: 2px 3px;
+                              font-weight: 700;
+                              border-radius: 3px;
+                         }
 
                          &::before {
                               @include pos($pos: absolute, $content: "\f105");
