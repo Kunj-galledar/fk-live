@@ -2,145 +2,142 @@
      typography scss
 ==========================**/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: $montserrat;
-  position: relative;
-  font-size: 14px;
-  color: $title-color;
-  margin: 0;
-  background-color: $white;
-  transition: all 0.3s ease-in-out;
-  padding-right: 0 !important;
-  width: 375px;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0 auto;
-  box-shadow: 0 0 8px 3px rgba(34, 34, 34, 0.1);
+    font-family: $montserrat;
+    position: relative;
+    font-size: 14px;
+    color: $title-color;
+    margin: 0;
+    background-color: rgba(var(--white), $alpha: 1.0);
+    transition: all 0.3s ease-in-out;
+    max-width: 375px;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 0 8px 3px rgba($title-color, 0.1);
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   background-image: url(../images/bg.png);
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 182px;
-  //   height: 182px;
-  //   background-repeat: no-repeat;
-  //   background-position: bottom;
-  //   background-size: cover;
-  //   background-attachment: fixed;
-  // }
+    &.learning-body {
+        font-family: $inter;
+    }
 
-  .background-image {
-    position: fixed;
-    bottom: 0;
-    width: 182px;
-    height: 182px;
-    z-index: -1;
-  }
+    .background-image {
+        position: fixed;
+        bottom: 84px;
+        width: 182px;
+        height: 182px;
+        z-index: -1;
+    }
 }
 
 a {
-  color: var(--theme-color);
-  transition: 0.5s ease;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
+    color: rgba(var(--theme-color), $alpha: 1.0);
     transition: 0.5s ease;
-  }
+    text-decoration: none;
 
-  &:focus {
-    outline: none;
-  }
+    &:hover {
+        text-decoration: none;
+        transition: 0.5s ease;
+    }
+
+    &:focus {
+        outline: none;
+    }
 }
 
 button {
-  &:focus {
-    outline: none;
-  }
+    &:focus {
+        outline: none;
+    }
 }
 
 .btn-close {
-  &:focus {
-    box-shadow: none;
-  }
+    &:focus {
+        box-shadow: none;
+    }
 }
 
 :focus {
-  outline: none;
+    outline: none;
 }
 
 .form-control {
-  background-color: $white;
+    background-color: rgba(var(--white), $alpha: 1.0);
 
-  &:focus {
-    box-shadow: none;
-    border-color: var(--theme-color);
-  }
+    &:focus {
+        box-shadow: none;
+        border-color: rgba(var(--theme-color), $alpha: 1.0);
+    }
 }
 
 span {
-  display: inline-block;
+    display: inline-block;
 }
 
 .theme-color {
-  color: var(--theme-color);
+    color: rgba(var(--theme-color), $alpha: 1.0);
 }
 
 .theme-bg-color {
-  background: var(--theme-color);
+    background: rgba(var(--theme-color), $alpha: 1.0);
 }
 
 h1 {
-  font-weight: 600;
-  font-size: 28px;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 0;
 }
 
 h2 {
-  font-size: 20px;
-  font-weight: 600;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
 h3 {
-  font-size: 18px;
+    font-size: 18px;
+    margin-bottom: 0;
 }
 
 h4 {
-  font-size: 16px;
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
 h5 {
-  font-size: 14px;
+    font-size: 14px;
+    margin-bottom: 0;
 }
 
 h6 {
-  font-size: 12px;
+    font-size: 12px;
+    margin-bottom: 0;
 }
 
 p {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
+
+    &:hover {
+        color: unset;
+    }
 }
 
 ul {
-  padding-left: 0;
-  margin-bottom: 0;
+    padding-left: 0;
+    margin-bottom: 0;
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
-input[type="radio"] {
-  accent-color: green;
-  margin-inline: 15px;
+.fw-500 {
+    font-weight: 500;
 }

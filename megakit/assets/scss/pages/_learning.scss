@@ -1,0 +1,284 @@
+/*=====================
+    Continue Reading CSS Start
+==========================*/
+.continue-reading-section {
+    .reading-list {
+        width: 320px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            z-index: -1;
+            opacity: 0.1;
+            border-radius: 10px;
+        }
+
+        .reading-box {
+            padding: 12px;
+            box-shadow: 0px 0px 4px rgba(var(--title), 0.09);
+            border-radius: 10px;
+            position: relative;
+            background: rgba(var(--white), 1);
+            z-index: 0;
+
+
+
+            .reading-detail {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-wrap: nowrap;
+
+                .reading-image {
+                    width: calc(50% - 64px);
+                    height: 52px;
+                    border-radius: 5px;
+                    overflow: hidden;
+                }
+
+                .reading-name {
+                    h5 {
+                        color: rgba(var(--title), 1);
+                        line-height: 1.3;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        display: -webkit-box;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            .reading-view {
+                margin-top: 12px;
+
+                .progress {
+                    height: 3px;
+                    border-radius: 50px;
+
+                    .progress-bar {
+                        width: 50%;
+                        background-color: rgba(var(--theme-color), 1);
+                    }
+                }
+
+                h6 {
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Continue Reading CSS End
+==========================*/
+
+/*=====================
+    Feature Course CSS Start
+==========================*/
+.feature-course-section {
+    .feature-box {
+        position: relative;
+        border-radius: 9px;
+        padding: 8px;
+        z-index: 0;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            z-index: -1;
+            opacity: 0.05;
+        }
+
+        .feature-image {
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .feature-detail {
+            margin-top: 6px;
+
+            h6 {
+                color: rgba(var(--title), 1);
+                line-height: 1.4;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                overflow: hidden;
+            }
+
+            .rate-course {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 8px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 3px;
+                    color: rgba(var(--title), 1);
+
+                    i {
+                        color: rgba(var(--yellow), 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Feature Course CSS End
+==========================*/
+
+/*=====================
+    Popular Course CSS Start
+==========================*/
+.popular-course-section {
+    .popular-box {
+        padding: 9px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0px 0px 5px rgba(var(--black), 0.08);
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 9px;
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(147.23deg, #223352 10.7%, #415D6C 85.56%);
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .popular-image {
+            border-radius: 8px;
+            overflow: hidden;
+            width: calc(100% - 117px);
+        }
+
+        .popular-detail {
+            width: calc(100% - 9px);
+
+            h6 {
+                color: rgba(var(--title), 1);
+                line-height: 1.4;
+            }
+
+            .video-play {
+                margin: 4px 0;
+                color: rgba(var(--content), 1);
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 3px;
+
+                i,
+                span {
+                    line-height: 1;
+                }
+
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            .rating-box {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                >li {
+                    .rating {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 3px;
+
+                        >li {
+                            line-height: 1;
+
+                            i {
+                                color: rgba(var(--yellow), 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Popular Course CSS End
+==========================*/
+
+/*=====================
+    Top instructors CSS Start
+==========================*/
+.top-instructors-section {
+    .instructors-box {
+        .instructors-list {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 15px;
+            white-space: nowrap;
+            overflow: auto hidden;
+
+            li {
+                .instructors-contain {
+                    text-align: center;
+
+                    .instructors-image {
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 100%;
+                        overflow: hidden;
+                        margin: 0 auto;
+                    }
+
+                    .instructors-detail {
+                        margin-top: 5px;
+
+                        h5 {
+                            color: rgba(var(--title), 1);
+                        }
+
+                        h6 {
+                            margin-top: 5px;
+                            color: rgba(var(--content), 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Top instructors CSS End
+==========================*/

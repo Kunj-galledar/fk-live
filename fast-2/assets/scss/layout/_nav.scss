@@ -60,26 +60,43 @@ header {
           .nav-item {
                margin-bottom: 0;
 
-               .new-dropdown {
-                    position: absolute;
-                    top: -9px;
-                    right: 3px;
-                    background-color: $danger-color;
-                    font-size: 11px;
-                    padding: 1px 5px;
-                    color: $white;
-                    font-weight: 700;
-                    border-radius: 3px;
+               .new-pages {
+                    @include mq-max(xl) {
+                         justify-content: unset !important;
+                    }
 
-                    &::after {
-                         content: "";
+                    .new-dropdown {
                          position: absolute;
-                         top: 14px;
-                         right: 2px;
-                         width: 8px;
-                         height: 8px;
+                         top: -7px;
+                         right: 3px;
                          background-color: $danger-color;
-                         transform: rotate(45deg);
+                         font-size: 10px;
+                         padding: 1px 4px;
+                         color: #fff;
+                         font-weight: 600;
+                         border-top-left-radius: 5px;
+                         border-bottom-right-radius: 5px;
+
+                         [dir="rtl"] & {
+                              border-top-left-radius: unset;
+                              border-top-right-radius: 5px;
+                              border-bottom-right-radius: unset;
+                              border-bottom-left-radius: 5px;
+                         }
+
+                         @include mq-max(xl) {
+                              position: relative;
+                              top: unset;
+                              left: unset;
+                              right: unset;
+                              margin-left: 9px;
+                              border-radius: 3px;
+
+                              [dir="rtl"] & {
+                                   margin-left: unset;
+                                   margin-right: 9px;
+                              }
+                         }
                     }
                }
 
@@ -112,13 +129,16 @@ header {
                          position: relative;
 
                          .new-text {
-                              font-size: 10px;
-                              background-color: #ff4f4f;
-                              color: #fff;
-                              line-height: 1;
-                              padding: 2px 3px;
-                              font-weight: 700;
-                              border-radius: 3px;
+                              i {
+                                   font-size: 12px;
+                                   margin-left: 4px;
+                                   color: var(--theme-color);
+
+                                   [dir="rtl"] & {
+                                        margin-left: unset;
+                                        margin-right: 4px;
+                                   }
+                              }
                          }
 
                          &::before {
@@ -140,9 +160,18 @@ header {
                               visibility: visible;
                               opacity: 1;
 
+                              @include mq-max(xl) {
+                                   left: unset;
+                              }
+
                               [dir="rtl"] & {
                                    left: unset;
                                    right: 113%;
+
+                                   @include mq-max(xl) {
+                                        left: unset;
+                                        right: unset;
+                                   }
                               }
                          }
                     }
@@ -165,6 +194,19 @@ header {
                          [dir="rtl"] & {
                               right: 123%;
                               left: unset;
+                         }
+
+                         @include mq-max(xl) {
+                              position: relative;
+                              top: unset;
+                              left: unset;
+                              opacity: 1;
+                              min-width: auto;
+                              z-index: 1;
+                              visibility: visible;
+                              box-shadow: none;
+                              margin: 5px 0 12px 29px;
+                              padding: 0;
                          }
 
                          li {
@@ -1284,6 +1326,7 @@ header {
                          .dropdown-menu {
                               li {
                                    display: block;
+                                   width: 100%;
                               }
 
                               .dropdown-item {
@@ -1328,6 +1371,46 @@ header {
                     &.show {
                          display: block !important;
                     }
+               }
+          }
+     }
+}
+
+.new-nav-item {
+     @include mq-max(xl) {
+          justify-content: unset !important;
+     }
+
+     .new-dropdown {
+          position: absolute;
+          top: -7px;
+          right: 3px;
+          background-color: $danger-color;
+          font-size: 10px;
+          padding: 1px 4px;
+          color: #fff;
+          font-weight: 600;
+          border-top-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+
+          [dir="rtl"] & {
+               border-top-left-radius: unset;
+               border-top-right-radius: 5px;
+               border-bottom-right-radius: unset;
+               border-bottom-left-radius: 5px;
+          }
+
+          @include mq-max(xl) {
+               position: relative;
+               top: unset;
+               left: unset;
+               right: unset;
+               margin-left: 9px;
+               border-radius: 3px;
+
+               [dir="rtl"] & {
+                    margin-left: unset;
+                    margin-right: 9px;
                }
           }
      }

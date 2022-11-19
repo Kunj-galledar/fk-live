@@ -1,0 +1,322 @@
+/*=====================
+    Modal CSS Start
+==========================*/
+.offcanvas {
+    &.theme-offcanvas {
+        width: 320px;
+    }
+
+    &.sidemenu-offcanvas {
+        .offcanvas-header {
+            .profile-box {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                .profile-image {
+                    width: 40px;
+                }
+
+                .profile-name {
+                    h6 {
+                        margin-bottom: 2px;
+                        color: $main-content;
+                    }
+
+                    h5 {
+                        color: var(--theme-color);
+                        margin-bottom: 2px;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .btn-close {
+                margin: 0;
+                font-size: 21px;
+                padding: 0;
+                background: unset;
+                display: flex;
+                align-items: center;
+                opacity: 0.8;
+
+                // i {
+                //     font-size: 21px;
+                // }
+            }
+        }
+
+        .offcanvas-body {
+            .sidebar-menu {
+                li {
+                    +li {
+                        border-top: 1px solid rgba($title-color, 0.1);
+                        padding-top: 9px;
+                        margin-top: 9px;
+                    }
+
+                    .menu-list {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .list-icon {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 9px;
+
+                            i {
+                                font-size: 20px;
+                                color: $title-color;
+                                position: relative;
+                            }
+
+                            h4 {
+                                font-weight: 600;
+                            }
+                        }
+
+                        .list-option {
+                            .grid-item {
+                                .switch {
+                                    display: inline-block;
+                                    height: 28px;
+                                    position: relative;
+                                    width: 56px;
+
+                                    input {
+                                        opacity: 0;
+                                        width: 0;
+                                        height: 0;
+
+                                        &:checked+.slider {
+                                            background-color: var(--theme-color);
+
+                                            &:before {
+                                                transform: translateX(27px);
+                                            }
+                                        }
+                                    }
+
+                                    .slider {
+                                        position: absolute;
+                                        cursor: pointer;
+                                        top: 0;
+                                        left: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        background-color: $main-content;
+                                        transition: .4s;
+
+                                        &::before {
+                                            background-color: rgba(var(--white), $alpha: 1.0);
+                                            bottom: 3px;
+                                            @include pos;
+                                            height: 23px;
+                                            left: 3px;
+                                            transition: .4s;
+                                            width: 23px;
+                                        }
+
+                                        &.round {
+                                            border-radius: 34px;
+
+                                            &:before {
+                                                border-radius: 50%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.learning-offcanvas {
+        .offcanvas-header {
+            background-image: url(../images/learning/header-bg.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 120px;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+
+            .profile-box {
+                display: flex;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 13px;
+
+                .profile-image {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    margin-bottom: -34px;
+                }
+
+                .profile-name {
+                    h4 {
+                        margin-bottom: 4px;
+                    }
+
+                    h6 {
+                        font-weight: 400;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .btn-close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background-color: rgba(var(--white), 1);
+                opacity: 1;
+                border-radius: 100%;
+                width: 22px;
+                height: 22px;
+                @include flex_common;
+                font-size: 16px;
+                padding: 0;
+                margin: 0;
+                background-image: none;
+            }
+        }
+
+        .offcanvas-body {
+            padding: 45px 0 0;
+
+            .menu-setting-list {
+                padding: 0 23px 0 15px;
+
+                li {
+                    +li {
+                        margin-top: 15px;
+                    }
+
+                    .menu-setting-box {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: nowrap;
+                        gap: 11px;
+                        color: rgba(var(--title), 1);
+
+                        .setting-icon {
+                            width: 30px;
+                            height: 30px;
+                            background-color: rgba(var(--white), $alpha: 1.0);
+                            box-shadow: 2px 1px 4px rgba(var(--black), 0.05);
+                            border-radius: 4px;
+                            @include flex_common;
+
+                            i {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .setting-name {
+                            display: flex;
+                            align-items: center;
+
+                            h4 {
+                                font-weight: 400;
+
+                            }
+                        }
+
+                        .setting-arrow {
+                            margin-left: auto;
+
+                            i {
+                                font-size: 20px;
+                            }
+                        }
+
+                        // .list-icon {
+                        //     display: flex;
+                        //     align-items: center;
+                        //     flex-wrap: wrap;
+                        //     gap: 9px;
+
+                        //     i {
+                        //         font-size: 20px;
+                        //         color: $title-color;
+                        //         position: relative;
+                        //     }
+
+                        //     h4 {
+                        //         font-weight: 600;
+                        //     }
+                        // }
+
+                        // .list-option {
+                        //     .grid-item {
+                        //         .switch {
+                        //             display: inline-block;
+                        //             height: 28px;
+                        //             position: relative;
+                        //             width: 56px;
+
+                        //             input {
+                        //                 opacity: 0;
+                        //                 width: 0;
+                        //                 height: 0;
+
+                        //                 &:checked+.slider {
+                        //                     background-color: var(--theme-color);
+
+                        //                     &:before {
+                        //                         transform: translateX(27px);
+                        //                     }
+                        //                 }
+                        //             }
+
+                        //             .slider {
+                        //                 position: absolute;
+                        //                 cursor: pointer;
+                        //                 top: 0;
+                        //                 left: 0;
+                        //                 right: 0;
+                        //                 bottom: 0;
+                        //                 background-color: $main-content;
+                        //                 transition: .4s;
+
+                        //                 &::before {
+                        //                     background-color: rgba(var(--white), $alpha: 1.0);
+                        //                     bottom: 3px;
+                        //                     @include pos;
+                        //                     height: 23px;
+                        //                     left: 3px;
+                        //                     transition: .4s;
+                        //                     width: 23px;
+                        //                 }
+
+                        //                 &.round {
+                        //                     border-radius: 34px;
+
+                        //                     &:before {
+                        //                         border-radius: 50%;
+                        //                     }
+                        //                 }
+                        //             }
+                        //         }
+                        //     }
+                        // }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Modal CSS End
+==========================*/
