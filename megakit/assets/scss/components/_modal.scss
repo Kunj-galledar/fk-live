@@ -315,6 +315,108 @@
             }
         }
     }
+
+    &.filter-button {
+        border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        height: auto;
+
+        .offcanvas-header {
+            display: block;
+            padding: 20px 15px;
+            background: #F8F8F8;
+        }
+
+        .offcanvas-body {
+            .filter-box-list {
+                .filter-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 16px;
+
+                    li {
+                        width: 100%;
+
+
+
+                        .filter-box {
+                            background-color: rgba(var(--white), 1);
+                            border: 1px solid rgba(var(--border-color), 1);
+                            border-radius: 6px;
+                            padding: 15px;
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 10px;
+                            position: relative;
+                            overflow: hidden;
+
+                            &.active {
+                                border: 1px solid rgba(var(--theme-color), 1);
+                                // .filter-box {
+
+                                .check-box {
+                                    @include flex_common;
+                                }
+
+                                .filter-icon {
+                                    color: rgba(var(--theme-color), 1);
+
+                                    svg {
+                                        stroke: rgba(var(--theme-color), 1);
+                                    }
+                                }
+
+                                .filter-name {
+                                    color: rgba(var(--theme-color), 1);
+                                }
+
+                                // }
+                            }
+
+                            .check-box {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 21px;
+                                height: 21px;
+                                background-color: rgba(var(--theme-color), 1);
+                                color: rgba(var(--white), 1);
+                                font-weight: 700;
+                                display: none;
+                            }
+
+                            .filter-icon {
+                                font-size: 17px;
+                                color: rgba(var(--content), 1);
+                                line-height: 1;
+                                width: 21px;
+                                height: 17px;
+                                @include flex_common;
+
+                                svg {
+                                    width: 100%;
+                                    height: 100%;
+                                    stroke: rgba(var(--content), 1);
+                                }
+                            }
+
+                            .filter-name {
+                                color: rgba(var(--content), 1);
+                                // margin-bottom: -1px;
+                            }
+                        }
+                    }
+                }
+
+                .apply-button {
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
 }
 
 /*=====================
