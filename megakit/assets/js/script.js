@@ -1,6 +1,22 @@
-var selector = '.filter-box-list .filter-list li';
+// var selector = '.filter-box-list .filter-list li';
 
-$(selector).on('click', function () {
-    $(selector).removeClass('active');
-    $(this).addClass('active');
-});
+// $(selector).on('click', function () {
+//     $(selector).removeClass('active');
+//     $(this).addClass('active');
+// });
+
+
+// function showhide() {
+//     var moreText = document.getElementById("more");
+//     var btnText = document.getElementById("toggle");
+
+//     if (dots.style.display === "none") {
+//         dots.style.display = "inline";
+//         btnText.innerHTML = "Read more";
+//         moreText.style.display = "none";
+//     } else {
+//         dots.style.display = "none";
+//         btnText.innerHTML = "Read less";
+//         moreText.style.display = "inline";
+//     }
+// }

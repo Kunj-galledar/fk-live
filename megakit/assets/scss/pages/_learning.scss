@@ -339,3 +339,361 @@
 /*=====================
     Top instructors CSS End
 ==========================*/
+
+/*=====================
+    Coupon CSS Start
+==========================*/
+.coupon-section {
+    .coupon-box {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px;
+        background-color: rgb(245, 247, 247);
+        border-radius: 4px;
+        color: rgba(var(--title), 1);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(147.23deg, #223352 10.7%, #415D6C 85.56%);
+            opacity: 0.08;
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        svg {
+            fill: rgba(var(--title), 1);
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        i {
+            margin-left: auto;
+            font-size: 19px;
+            line-height: 1;
+        }
+    }
+}
+
+/*=====================
+    Coupon CSS End
+==========================*/
+
+/*=====================
+    Summary CSS Start
+==========================*/
+.summary-section {
+    .summary-table {
+        tbody {
+            tr {
+                &:first-child {
+                    td {
+                        padding-inline: 0;
+                        padding-top: 0;
+
+                        &:last-child {
+                            padding-inline: 0;
+                            text-align: right;
+                            padding-top: 0;
+                        }
+                    }
+                }
+
+                td {
+                    padding: 6px 0;
+                    border: none;
+
+                    &:last-child {
+                        text-align: right;
+                    }
+
+                    &.text-danger {
+                        color: rgba(var(--danger), 1);
+                    }
+                }
+
+                &:last-child {
+                    td {
+                        border-bottom: 1px solid rgba(157, 172, 177, 0.2);
+                        padding-bottom: 14px;
+                    }
+                }
+            }
+        }
+
+        tfoot {
+            tr {
+                td {
+                    padding: 12px 0 0;
+                    border: none;
+                    color: rgba(var(--title), 1);
+                    font-weight: 500;
+                    font-size: 16px;
+
+                    &:last-child {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Summary CSS End
+==========================*/
+
+/*=====================
+    Total Box CSS Start
+==========================*/
+.total-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0 18px 18px;
+    width: -webkit-fill-available;
+    background: linear-gradient(147.23deg, #223352 10.7%, #415D6C 85.56%);
+    box-shadow: 0px 0px 4px rgba(var(--black), 0.09);
+    border-radius: 10px;
+    color: rgba(var(--white), 1);
+    padding: 10px 17px;
+    display: flex;
+    align-items: center;
+
+    .total-left {
+        padding-right: 21px;
+        border-right: 1px solid rgba(var(--content), 0.2);
+
+        h5 {
+            color: rgba(var(--content), 1);
+            margin-bottom: 2px;
+            font-size: 13px;
+        }
+
+        h4 {
+            font-size: 15px;
+        }
+    }
+
+    .total-right {
+        width: 100%;
+        @include flex_common;
+
+        i {
+            font-size: 23px;
+            line-height: 1;
+
+            &:last-child {
+                margin-left: -16px;
+            }
+        }
+    }
+}
+
+.total-box-2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0 18px 18px;
+    width: -webkit-fill-available;
+    background: linear-gradient(147.23deg, #223352 10.7%, #415D6C 85.56%);
+    box-shadow: 0px 0px 4px rgba(var(--black), 0.09);
+    border-radius: 10px;
+    color: rgba(var(--white), 1);
+    padding: 10px 17px;
+    display: flex;
+    align-items: center;
+    z-index: 9;
+
+    .total-left {
+        padding-right: 18px;
+        border-right: 1px solid rgba(var(--content), 0.2);
+
+        h5 {
+            color: rgba(var(--white), 1);
+            font-size: 18px;
+            margin: 0;
+            line-height: 1;
+            width: 24px;
+            height: 24px;
+            @include flex_common;
+        }
+
+        h4 {
+            font-size: 15px;
+        }
+    }
+
+    .total-right {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 17px;
+        @include flex_common;
+
+        i {
+            font-size: 19px;
+            line-height: 1;
+        }
+
+        h4 {
+            line-height: 1;
+        }
+    }
+}
+
+/*=====================
+    Total Box CSS End
+==========================*/
+
+/*=====================
+    Payment CSS Start
+==========================*/
+.payment-section {
+    .payment-list-box {
+        .payment-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+
+            li {
+                width: 100%;
+
+                .payment-box {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: 10px;
+
+                    .payment-icon {
+                        width: 39px;
+                        height: 39px;
+                        background-color: rgba(var(--white), 1);
+                        box-shadow: 2px 1px 4px rgba(var(--black), 0.05);
+                        border-radius: 4px;
+                        padding: 8px;
+                    }
+
+                    .payment-name {
+                        width: calc(100% - 39px);
+
+                        form {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+
+                            .form-check {
+                                padding: 0;
+                                margin: 0;
+                                min-height: auto;
+
+                                .form-check-label {
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    display: block;
+                                    color: rgba(var(--title), 1);
+                                }
+                            }
+
+                            // .form-radio{
+
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Payment CSS End
+==========================*/
+
+/*=====================
+    Video Name CSS Start
+==========================*/
+.video-name-section {
+    .name-title {
+        h5 {
+            font-weight: 400;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: rgba(var(--orange), 1);
+        }
+
+        h4 {
+            font-weight: 600;
+            font-size: 16px;
+            color: rgba(var(--title), 1);
+            margin-bottom: 5px;
+            width: 95%;
+        }
+
+        .course-number {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+
+            li {
+                font-weight: 400;
+                font-size: 14px;
+                color: rgba(var(--content), 1);
+                position: relative;
+
+                +li {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -14px;
+                        width: 4px;
+                        height: 4px;
+                        background-color: rgba(var(--content), 1);
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Video Name CSS End
+==========================*/
+
+/*=====================
+    About Course CSS Start
+==========================*/
+.about-course-section {
+    .about-detail {
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            margin: 0;
+            color: rgba(var(--content), 1);
+            line-height: 1.5;
+        }
+    }
+}
+
+/*=====================
+    About Course CSS End
+==========================*/

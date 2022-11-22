@@ -69,6 +69,101 @@
     }
 }
 
+.learning-theme-dropdown {
+    .dropdown-toggle {
+        background: #F5F7F7;
+        border-radius: 4px;
+        color: rgba(var(--content), 1);
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 13px 17px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(147.23deg, #223352 10.7%, #415D6C 85.56%);
+            opacity: 0.08;
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        &:active {
+            background-color: #F5F7F7;
+            border-color: transparent;
+            color: rgba(var(--content), 1);
+        }
+
+        i {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        &::after {
+            content: none;
+        }
+    }
+
+    .dropdown-menu {
+        width: 100%;
+
+        li {
+            .dropdown-item {
+
+                &:active,
+                &.active {
+                    background-color: #F5F7F7;
+                    color: rgba(var(--title), 1);
+                }
+            }
+        }
+    }
+}
+
+.custome-radio-box {
+    display: inline-block;
+    margin-right: 10px;
+
+    &-2 {
+        .form-check-input {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    [dir="rtl"] & {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+
+    .form-check-input {
+        transition: all 0.3s ease-in-out;
+        margin-top: 2px;
+        background-color: rgba(var(--white), 1);
+
+        &:checked {
+            background-color: rgba(var(--theme-color), 1);
+            border-color: rgba(var(--theme-color), 1);
+        }
+
+        &:active {
+            filter: none;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
 /*===================== 
     Form Css End
 ==========================*/
