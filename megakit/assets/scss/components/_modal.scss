@@ -417,6 +417,189 @@
             }
         }
     }
+
+    &.apply-coupon-offcanvas {
+        border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        overflow: hidden;
+        height: auto;
+
+        .offcanvas-header {
+            display: block;
+            padding: 20px 15px;
+            background: #F8F8F8;
+        }
+
+        .offcanvas-body {
+            .search-box {
+                position: relative;
+
+                .form-control {
+                    padding-left: 46px;
+                }
+
+                svg {
+                    fill: rgba(var(--title), 1);
+                    width: 18px;
+                    height: 18px;
+                    @include flex_common;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 15px;
+                }
+            }
+
+            .coupon-list-box {
+                margin-top: 23px;
+
+                li {
+                    +li {
+                        border-top: 1px solid rgba(var(--content), 0.2);
+                        margin-top: 11px;
+                        padding-top: 24px;
+                    }
+
+                    .coupon-box {
+                        .top-bar {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 8px;
+
+                            h5 {
+                                text-transform: uppercase;
+                                font-weight: 700;
+                            }
+
+                            span {
+                                background-color: rgba(var(--content), 0.1);
+                                padding: 3px 8px;
+                                font-size: 12px;
+                                border-radius: 2px;
+                            }
+
+                            a {
+                                text-transform: uppercase;
+                                margin-left: auto;
+                                font-size: 14px;
+                                font-weight: 700;
+                                color: rgba(var(--title), 1);
+                            }
+                        }
+
+                        p {
+                            font-size: 12px;
+                            margin-bottom: 6px;
+                            margin-top: 2px;
+                            line-height: 1.45;
+                            color: rgba(var(--content), 1);
+                        }
+
+                        a {
+                            color: #198754;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.share-modal {
+        border-top: none;
+
+        .offcanvas-body {
+            .product-detail-box {
+                .share-detail {
+                    .share-title {
+                        padding-bottom: 10px;
+                        // border-bottom: 1px solid $border-color;
+                        margin-bottom: 23px;
+
+                        h3 {
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-bottom: 5px;
+                        }
+
+                        p {
+                            line-height: 1.5;
+                            color: #777;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .copy-link {
+                        .social-media-share {
+                            margin-top: 20px;
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: nowrap;
+                            gap: 18px;
+                            overflow: auto;
+
+                            li {
+                                text-align: center;
+
+                                a {
+                                    width: 50px;
+                                    height: 50px;
+                                    border-radius: 8px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    &.fb {
+                                        background-color: #3b5998;
+                                    }
+
+                                    &.twitter {
+                                        background-color: #4099ff;
+                                    }
+
+                                    &.google {
+                                        background-color: #db4a39;
+                                    }
+
+                                    &.link {
+                                        background-color: #0077b5;
+                                    }
+
+                                    &.mail {
+                                        background-color: #4a89dc;
+                                    }
+
+                                    &.more {
+                                        background-color: #c92228;
+                                    }
+
+                                    &.whatsapp {
+                                        background-color: #34af23;
+                                    }
+
+                                    &.pint {
+                                        background-color: #c92228;
+                                    }
+
+                                    i {
+                                        font-size: 21px;
+                                        color: rgba(var(--white), 1);
+                                    }
+                                }
+
+                                h6 {
+                                    font-weight: 600;
+                                    color: rgba(var(--content), 1);
+                                    margin-top: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*=====================

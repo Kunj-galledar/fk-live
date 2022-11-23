@@ -6,6 +6,8 @@
      spaceBetween: 12,
      centeredSlides: false,
      slidesPerGroup: 1,
+     slidesPerView: "auto",
+     //  spaceBetween: 30,
      //  loop: true,
      //  loopFillGroupWithBlank: true,
      //  pagination: {

@@ -63,17 +63,19 @@
     <!-- header end -->
 
     <!-- Total Box Start -->
-    <a href="checkout.html" class="total-box">
-        <div class="total-left">
-            <h5>Total</h5>
-            <h4>$151.00</h4>
-        </div>
-        <div class="total-right">
-            <h4>Complete Checkout</h4>
-            <i class="ri-arrow-right-s-line"></i>
-            <i class="ri-arrow-right-s-line"></i>
-        </div>
-    </a>
+    <div class="total-box">
+        <a href="checkout.html">
+            <div class="total-left">
+                <h5>Total</h5>
+                <h4>$151.00</h4>
+            </div>
+            <div class="total-right">
+                <h4>Complete Checkout</h4>
+                <i class="ri-arrow-right-s-line"></i>
+                <i class="ri-arrow-right-s-line"></i>
+            </div>
+        </a>
+    </div>
     <!-- Total Box End -->
 
     <!-- Popular Course Start -->
@@ -141,64 +143,215 @@
             <div class="title">
                 <h4>Payments:</h4>
             </div>
-            <div class="payment-list-box">
-                <ul class="payment-list">
-                    <li>
-                        <div class="payment-box">
-                            <div class="payment-icon">
-                                <img src="../assets/images/learning/payment/dabit.svg" class="img-fluid" alt="">
-                            </div>
-                            <div class="payment-name">
-                                <form>
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="dabit">Debit/Credit Card</label>
-                                    </div>
-                                    <div class="form-radio custome-radio-box custome-radio-box-2 me-0">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="dabit"
-                                            checked>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
 
-                    <li>
-                        <div class="payment-box">
-                            <div class="payment-icon">
-                                <img src="../assets/images/learning/payment/wallets.svg" class="img-fluid" alt="">
-                            </div>
-                            <div class="payment-name">
-                                <form>
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="wallets">Wallets</label>
-                                    </div>
-                                    <div class="form-radio custome-radio-box custome-radio-box-2 me-0">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault1"
-                                            id="wallets">
-                                    </div>
-                                </form>
+            <div class="accordion payment-box" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <div class="accordion-button payment-box" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne">
+                            <div class="payment-box">
+                                <div class="payment-icon">
+                                    <img src="../assets/images/learning/payment/dabit.svg" class="img-fluid" alt="">
+                                </div>
+                                <div class="payment-name">
+                                    <form>
+                                        <div class="form-check custome-radio-box custome-radio-box-2">
+                                            <label class="form-check-label" for="dabit">Debit/Credit Card</label>
+                                            <input class="form-check-input" type="radio" name="wallets" id="dabit">
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </li>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="TEXT" class="form-control" id="name"
+                                                placeholder="Name On Card">
+                                            <label for="name">Name On Card</label>
+                                        </div>
+                                    </div>
 
-                    <li>
-                        <div class="payment-box">
-                            <div class="payment-icon">
-                                <img src="../assets/images/learning/payment/net-banking.svg" class="img-fluid" alt="">
-                            </div>
-                            <div class="payment-name">
-                                <form>
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="net">Net Banking</label>
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="card"
+                                                placeholder="Card Number">
+                                            <label for="card">Card Number</label>
+                                        </div>
                                     </div>
-                                    <div class="form-radio custome-radio-box custome-radio-box-2 me-0">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="net">
+
+                                    <div class="col-sm-8">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="expiration"
+                                                placeholder="Expiration Date">
+                                            <label for="expiration">Expiration Date</label>
+                                        </div>
                                     </div>
-                                </form>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-floating mb-3">
+                                            <input type="number" class="form-control" id="cvv" placeholder="CVV">
+                                            <label for="cvv">CVV</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="wallet">
+                        <div class="accordion-button payment-box" data-bs-toggle="collapse" data-bs-target="#wallets">
+                            <div class="payment-box">
+                                <div class="payment-icon">
+                                    <img src="../assets/images/learning/payment/wallets.svg" class="img-fluid" alt="">
+                                </div>
+                                <div class="payment-name">
+                                    <form>
+                                        <div class="form-check custome-radio-box custome-radio-box-2">
+                                            <label class="form-check-label" for="wallet">Wallets</label>
+                                            <input class="form-check-input" type="radio" name="wallets" id="wallet">
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
+                    </h2>
+                    <div id="wallets" class="accordion-collapse collapse" aria-labelledby="wallet"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="title">
+                                <h4>Net Baking</h4>
+                            </div>
+                            <ul class="net-banking-list">
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="net" id="wallet">
+                                        <label class="form-check-label" for="wallet">Industrial & Commercial
+                                            Bank</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="wallet1">
+                                        <label class="form-check-label" for="wallet1">Construction Bank
+                                            Corp.</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="wallet2">
+                                        <label class="form-check-label" for="wallet2">Agricultural
+                                            Bank</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="wallet3">
+                                        <label class="form-check-label" for="wallet3">HSBC Holdings</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="wallet4">
+                                        <label class="form-check-label" for="wallet4">Bank of America</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="wallet5">
+                                        <label class="form-check-label" for="wallet5">JPMorgan Chase &
+                                            Co.</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="net">
+                        <div class="accordion-button payment-box" data-bs-toggle="collapse"
+                            data-bs-target="#net-banking">
+                            <div class="payment-box">
+                                <div class="payment-icon">
+                                    <img src="../assets/images/learning/payment/net-banking.svg" class="img-fluid"
+                                        alt="">
+                                </div>
+                                <div class="payment-name">
+                                    <form>
+                                        <div class="form-check custome-radio-box custome-radio-box-2">
+                                            <label class="form-check-label" for="net">Net banking</label>
+                                            <input class="form-check-input" type="radio" name="wallets" id="net">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </h2>
+                    <div id="net-banking" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="title">
+                                <h4>Net Baking</h4>
+                            </div>
+                            <ul class="net-banking-list">
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="net" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">Airtel Money</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2">
+                                        <label class="form-check-label" for="flexRadioDefault2">Adyen</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault3">
+                                        <label class="form-check-label" for="flexRadioDefault3">Apply Pay</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault4">
+                                        <label class="form-check-label" for="flexRadioDefault4">AlliedWallet</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault5">
+                                        <label class="form-check-label" for="flexRadioDefault5">Brinks</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check custome-radio-box custome-radio-box-2">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault6">
+                                        <label class="form-check-label" for="flexRadioDefault6">CardFree</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
