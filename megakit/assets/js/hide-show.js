@@ -3,10 +3,10 @@ function showhide() {
     var btnText = document.getElementById("toggle");
 
     if (dots.style.display === "none") {
-        dots.style.display = "inline";
+        dots.style.display = "block";
         moreText.style.display = "none";
     } else {
         dots.style.display = "none";
-        moreText.style.display = "inline";
+        moreText.style.display = "block";
     }
 }

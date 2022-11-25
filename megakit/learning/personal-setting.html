@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="header-bottom header-bottom-2">
-                        <h2 class="fw-500 text-white">Personal Setting</h2>
+                        <h2 class="fw-500 text-white">Edit Profile</h2>
                     </div>
                 </div>
             </div>
@@ -65,150 +65,100 @@
     <!-- Edit Profile Section Start -->
     <section class="section-t-space edit-profile-section">
         <div class="custom-container">
-            <div class="title">
+            <!-- <div class="title">
                 <h4>Edit Profile</h4>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-12">
-
+                    <div class="edit-image">
+                        <div class="profile-pic">
+                            <label class="-label" for="file">
+                                <span class="glyphicon glyphicon-camera"></span>
+                                <span><i class="ri-pencil-fill"></i></span>
+                            </label>
+                            <input id="file" type="file" onchange="loadFile(event)" />
+                            <img src="../assets/images/learning/menu-profile.jpg" id="output" alt="" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Edit Profile Section End -->
 
-    <!-- Divider Setting Start -->
-    <section class="section-t-space section-b-space">
-        <div class="divider"></div>
-    </section>
-    <!-- Divider Setting End -->
-
-    <!-- coupon Section Start -->
-    <div class="coupon-section">
+    <!-- account name setion start -->
+    <setion class="section-t-space account-name-section">
         <div class="custom-container">
-            <div class="title">
-                <h4>Coupons:</h4>
-            </div>
             <div class="row">
                 <div class="col-12">
-                    <a href="coupon.html" class="coupon-box">
-                        <svg>
-                            <use xlink:href="../assets/images/learning/discount.svg#discount"></use>
-                        </svg>
+                    <div class="acount-form-box">
+                        <form>
+                            <div class="learning-theme-form">
+                                <label for="fname" class="form-label">First Name</label>
+                                <input type="text" class="form-control" placeholder="First Name" id="fname">
+                            </div>
+                            <div class="learning-theme-form">
+                                <label for="lname" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="Last Name" id="lname">
+                            </div>
+                            <div class="learning-theme-form">
+                                <label for="bio" class="form-label">Bio</label>
+                                <textarea class="form-control" placeholder="Enter Your Bio" id="bio"
+                                    rows="3"></textarea>
+                            </div>
+                            <div class="learning-theme-form">
+                                <label for="bio" class="form-label">Language</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option disabled selected>----- Select Language -----</option>
+                                    <option value="1">English</option>
+                                    <option value="2">Chinese</option>
+                                    <option value="3">Hindi</option>
+                                    <option value="4">Spanish</option>
+                                    <option value="5">French</option>
+                                    <option value="6">Arabic</option>
+                                    <option value="7">Bangla</option>
+                                    <option value="8">Russian</option>
+                                    <option value="9">German</option>
+                                    <option value="10">Tamil</option>
+                                    <option value="11">Urdu</option>
+                                    <option value="12">Gujarati</option>
+                                </select>
+                            </div>
+                            <div class="learning-theme-form select-gender">
+                                <label for="bio" class="form-label">Gender</label>
+                                <ul class="gender-list">
+                                    <li>
+                                        <div class="form-check custome-radio-box custome-radio-box-2">
+                                            <input class="form-check-input" type="radio" checked name="gender"
+                                                id="male">
+                                            <label class="form-check-label" for="male">Male</label>
+                                        </div>
+                                    </li>
 
-                        <span>Apply Coupons</span>
-                        <i class="ri-arrow-right-s-line"></i>
-                    </a>
+                                    <li>
+                                        <div class="form-check custome-radio-box custome-radio-box-2">
+                                            <input class="form-check-input" type="radio" name="gender" id="female">
+                                            <label class="form-check-label" for="female">Female</label>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="form-check custome-radio-box custome-radio-box-2">
+                                            <input class="form-check-input" type="radio" name="gender" id="other">
+                                            <label class="form-check-label" for="other">Other</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="submit" class="btn mt-4">Save Setting</button>
+                            <!-- <a href="sign-in.html" class="btn mt-4">Submit</a> -->
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- coupon Section End -->
-
-    <!-- Divider Setting Start -->
-    <section class="section-t-space section-b-space">
-        <div class="divider"></div>
-    </section>
-    <!-- Divider Setting End -->
-
-    <!-- Summary Section Start -->
-    <section class="summary-section">
-        <div class="custom-container">
-            <div class="title">
-                <h4>Summary</h4>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <table class="table summary-table">
-                        <tbody>
-                            <tr>
-                                <td>Original Price:</td>
-                                <td>$150.00</td>
-                            </tr>
-                            <tr>
-                                <td>Discounts:</td>
-                                <td class="text-danger">-$50.00</td>
-                            </tr>
-                            <tr>
-                                <td>Tax</td>
-                                <td>+$20.00</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>Total:</td>
-                                <td>$120.00</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Summary Section End -->
-
-    <!-- Filter Offcanvas Start -->
-    <div class="offcanvas filter-button offcanvas-bottom" tabindex="-1" id="filter-button"
-        aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Sort by: </h5>
-        </div>
-        <div class="offcanvas-body">
-            <div class="filter-box-list">
-                <ul class="filter-list">
-                    <li>
-                        <a href="javascript:void(0)" class="filter-box">
-                            <div class="filter-icon">
-                                <i class="ri-thumb-up-line"></i>
-                            </div>
-                            <div class="filter-name">
-                                <h5>Popularity</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" class="filter-box active">
-                            <div class="check-box">
-                                <i class="ri-check-line"></i>
-                            </div>
-                            <div class="filter-icon">
-                                <svg>
-                                    <use xlink:href="../assets/images/learning/low-high.svg#low"></use>
-                                </svg>
-                            </div>
-                            <div class="filter-name">
-                                <h5>Price: Low to High</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" class="filter-box">
-                            <div class="filter-icon">
-                                <svg>
-                                    <use xlink:href="../assets/images/learning/high-low.svg#high"></use>
-                                </svg>
-                            </div>
-                            <div class="filter-name">
-                                <h5>Price: High to Low</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" class="filter-box">
-                            <div class="filter-icon">
-                                <i class="ri-star-line"></i>
-                            </div>
-                            <div class="filter-name">
-                                <h5>User Ratings: Highest</h5>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <button class="btn apply-button">Apply</button>
-            </div>
-        </div>
-    </div>
-    <!-- Filter Offcanvas End -->
+    </setion>
+    <!-- account name setion end -->
 
 
     <!-- Bootstrap js-->
@@ -218,8 +168,18 @@
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/custom_swiper.js"></script>
 
+    <!-- image change js -->
+    <script src="../assets/js/image-change.js"></script>
+
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
+
+    <script>
+        var loadFile = function (event) {
+            var image = document.getElementById("output");
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
 </body>
 
 </html>

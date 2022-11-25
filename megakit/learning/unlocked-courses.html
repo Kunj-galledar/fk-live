@@ -93,8 +93,8 @@
                     <div class="about-detail">
                         <p>In a shocking finding, scientist discovered a herd of unicorns living
                             in a remote, previously unexplored valley.<span id="dots">...</span></p>
-                        <p id="more">One female unicorn was especially friendly, and the researchers were able to
-                            communicate with the animals. They even named her.</p>
+                        <p id="more" class="more">One female unicorn was especially friendly, and the researchers were
+                            able to communicate with the animals. They even named her.</p>
                         <button class="btn hide-show-button" onclick="showhide()" id="toggle">
                             <i class="ri-arrow-down-s-line"></i>
                         </button>
@@ -106,7 +106,7 @@
     <!-- About Course Section End -->
 
     <!-- Course Section Start -->
-    <div class="section course-section section-t-space">
+    <div class="section course-section section-t-space section-b-space">
         <div class="custom-container">
             <div class="row">
                 <div class="col-12">
@@ -244,7 +244,8 @@
                                     </li>
 
                                     <li>
-                                        <div class="option-box">
+                                        <div class="option-box" data-bs-toggle="offcanvas" href="#certificate"
+                                            role="button">
                                             <div class="option-icon">
                                                 <i class="ri-award-line"></i>
                                             </div>
@@ -255,7 +256,8 @@
                                     </li>
 
                                     <li>
-                                        <div class="option-box">
+                                        <div class="option-box" data-bs-toggle="offcanvas" href="#question"
+                                            role="button">
                                             <div class="option-icon">
                                                 <i class="ri-question-line"></i>
                                             </div>
@@ -266,7 +268,7 @@
                                     </li>
 
                                     <li>
-                                        <div class="option-box">
+                                        <div class="option-box" data-bs-toggle="offcanvas" href="#notes" role="button">
                                             <div class="option-icon">
                                                 <i class="ri-file-text-line"></i>
                                             </div>
@@ -277,7 +279,7 @@
                                     </li>
 
                                     <li>
-                                        <div class="option-box">
+                                        <div class="option-box" id="liveToastBtn" role="button">
                                             <div class="option-icon">
                                                 <i class="ri-download-2-line"></i>
                                             </div>
@@ -296,17 +298,15 @@
     </div>
     <!-- Course Section End -->
 
-    <!-- space box start -->
-    <div class="spacing-box"></div>
-    <!-- space box End -->
-
     <!-- share product offcanvas start -->
-    <div class="offcanvas share-modal offcanvas-bottom h-auto" tabindex="-1" id="shareCourse">
+    <div class="offcanvas share-modal learning-bottom-offcanvas offcanvas-bottom" tabindex="-1" id="shareCourse">
+        <div class="offcanvas-header">
+            <h5>Share the product</h5>
+        </div>
         <div class="offcanvas-body">
             <div class="product-detail-box">
                 <div class="share-detail">
                     <div class="share-title">
-                        <h3>Share the product</h3>
                         <p class="text-content">Share our page with the world, increase
                             your page exposure with the world.</p>
                     </div>
@@ -344,6 +344,18 @@
                                 <h6>Mail</h6>
                             </li>
                             <li>
+                                <a href="javascript:void(0)" class="whatsapp">
+                                    <i class="ri-whatsapp-line"></i>
+                                </a>
+                                <h6>Whatsapp</h6>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="pint">
+                                    <i class="ri-pinterest-line"></i>
+                                </a>
+                                <h6>Pinterest</h6>
+                            </li>
+                            <li>
                                 <a href="javascript:void(0)" class="more">
                                     <i class="ri-more-fill"></i>
                                 </a>
@@ -357,6 +369,373 @@
     </div>
     <!-- share product offcanvas end -->
 
+    <!-- certificate offcanvas start -->
+    <div class="offcanvas certificate-modal learning-bottom-offcanvas offcanvas-bottom" tabindex="-1" id="certificate">
+        <div class="offcanvas-header">
+            <h5>Course Certificate</h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="product-detail-box">
+                <div class="certificate-box">
+                    <div class="certificate-image">
+                        <img src="../assets/images/learning/certificate.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="certificate-content">
+                        <p>You can share your Certificate section of your Profile, on printed Resumes, CVs or other
+                            documents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- certificate offcanvas end -->
+
+    <!-- Question & Answer offcanvas start -->
+    <div class="offcanvas question-modal learning-bottom-offcanvas offcanvas-bottom" tabindex="-1" id="question">
+        <div class="offcanvas-header">
+            <h5>Question & Answer</h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="accordion question-accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            <span>1.</span>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet praesentium rem debitis
+                                nemo! Pariatur adipisci suscipit saepe! Blanditiis ullam laboriosam at debitis deleniti
+                                ab, nesciunt doloremque eius, voluptate non eaque.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo">
+                            <span>2.</span>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet praesentium rem debitis
+                                nemo! Pariatur adipisci suscipit saepe! Blanditiis ullam laboriosam at debitis deleniti
+                                ab, nesciunt doloremque eius, voluptate non eaque.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree">
+                            <span>3.</span>
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet praesentium rem debitis
+                                nemo! Pariatur adipisci suscipit saepe! Blanditiis ullam laboriosam at debitis deleniti
+                                ab, nesciunt doloremque eius, voluptate non eaque.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Question & Answer offcanvas end -->
+
+    <!-- Notes offcanvas start -->
+    <div class="offcanvas notes-modal learning-bottom-offcanvas offcanvas-bottom" tabindex="-1" id="notes">
+        <div class="offcanvas-header">
+            <h5>Share Notes</h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="note-box">
+                <div class="note-text">
+                    <label for="noteBook" class="form-label">Enter Your Note</label>
+                </div>
+                <div class="note-form">
+                    <textarea class="form-control" id="noteBook" rows="3"
+                        placeholder="Enter your Note at 07:11"></textarea>
+                    <button class="btn">
+                        <i class="ri-save-line"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="note-review-box">
+                <ul class="nav nav-pills note-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-note-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-note" type="button" role="tab" aria-controls="pills-note"
+                            aria-selected="true">Notes</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-high-tab" data-bs-toggle="pill" data-bs-target="#pills-high"
+                            type="button" role="tab" aria-controls="pills-high"
+                            aria-selected="false">Highlights</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-favorite-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-favorite" type="button" role="tab" aria-controls="pills-favorite"
+                            aria-selected="false">Favorite Notes</button>
+                    </li>
+                </ul>
+                <div class="tab-content note-list-box" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-note" role="tabpanel">
+                        <ul class="note-list">
+                            <li>
+                                <div class="note-review-box-list favorite-box">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="pills-high" role="tabpanel">
+                        <ul class="note-list">
+                            <li>
+                                <div class="note-review-box-list favorite-box">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="pills-favorite" role="tabpanel">
+                        <ul class="note-list">
+                            <li>
+                                <div class="note-review-box-list favorite-box">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list favorite-box">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list favorite-box">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list favorite-box">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="note-review-box-list favorite-box">
+                                    <div class="favrite-icon">
+                                        <i class="ri-star-fill"></i>
+                                    </div>
+                                    <div class="note-title">
+                                        <h5>General Setup Instructions & Installing MongoDB on macOS</h5>
+                                    </div>
+                                    <div class="note-content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+                                            provident quasi nihil repudiandae soluta! Quaerat pariatur necessitatibus
+                                            consectetur dignissimos minima delectus quos, repellat est aliquam vitae
+                                            ipsam soluta tempora.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Notes offcanvas end -->
+
+    <!-- Archive offcanvas start -->
+    <div class="toast-container archive-toast position-fixed top-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">Successfully Archive this course</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+    <!-- Archive offcanvas end -->
+
     <!-- Bootstrap js-->
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 
@@ -369,6 +748,17 @@
 
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+        if (toastTrigger) {
+            toastTrigger.addEventListener('click', () => {
+                const toast = new bootstrap.Toast(toastLiveExample)
+
+                toast.show()
+            })
+        }
+    </script>
 </body>
 
 </html>

@@ -909,6 +909,10 @@
             margin: 0;
             color: rgba(var(--content), 1);
             line-height: 1.5;
+
+            &.more {
+                padding-bottom: 28px;
+            }
         }
 
         .hide-show-button {
@@ -920,6 +924,7 @@
             left: 0;
             color: rgba(var(--title), 1);
             border: none;
+            padding: 0;
         }
     }
 }
@@ -994,4 +999,264 @@
 
 /*=====================
     Instructors Section CSS End
+==========================*/
+
+/*=====================
+    Term & Condition CSS Start
+==========================*/
+.term-condition-section {
+    .term-condition-box {
+        .term-content {
+            p {
+                color: rgba(var(--content), 1);
+                line-height: 1.5;
+                font-size: 13px;
+                margin: 0;
+
+                a {
+                    &:hover {
+                        color: rgba(var(--theme-color), 1);
+                    }
+                }
+            }
+
+            .social-media-list {
+                margin: 9px 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 3px;
+
+                li {
+                    width: 100%;
+                    list-style: disc;
+                    margin-left: 30px;
+
+                    a {
+                        color: rgba(var(--theme-color2), 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Term & Condition CSS End
+==========================*/
+
+/*=====================
+    Account Security CSS Start
+==========================*/
+.account-security-section {
+    .account-email-box {
+        .email-box {
+            position: relative;
+
+            .email-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50px;
+                height: 100%;
+                font-size: 20px;
+                color: rgba(var(--title), 1);
+                @include flex_common;
+                background: transparent;
+
+                &:active {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Account Security CSS End
+==========================*/
+
+/*=====================
+    App Settings CSS Start
+==========================*/
+.app-seting-section {
+    .sidebar-menu {
+        li {
+            +li {
+                border-top: 1px solid rgba(var(--title), 0.1);
+                padding-top: 9px;
+                margin-top: 9px;
+            }
+
+            .menu-list {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .list-icon {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 9px;
+
+                    i {
+                        font-size: 20px;
+                        color: rgba(var(--title), 1);
+                        position: relative;
+                    }
+
+                    h4 {
+                        font-weight: 600;
+                    }
+                }
+
+                .list-option {
+                    .grid-item {
+                        .switch {
+                            display: inline-block;
+                            height: 28px;
+                            position: relative;
+                            width: 56px;
+
+                            input {
+                                opacity: 0;
+                                width: 0;
+                                height: 0;
+
+                                &:checked+.slider {
+                                    background-color: rgba(var(--theme-color), 1);
+
+                                    &:before {
+                                        transform: translateX(27px);
+                                    }
+                                }
+                            }
+
+                            .slider {
+                                position: absolute;
+                                cursor: pointer;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                background-color: rgba(var(--content), 1);
+                                transition: .4s;
+
+                                &::before {
+                                    background-color: rgba(var(--white), $alpha: 1.0);
+                                    bottom: 3px;
+                                    @include pos;
+                                    height: 23px;
+                                    left: 3px;
+                                    transition: .4s;
+                                    width: 23px;
+                                }
+
+                                &.round {
+                                    border-radius: 34px;
+
+                                    &:before {
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    App Settings CSS End
+==========================*/
+
+/*=====================
+    Persnol Setting Scss Start
+==========================*/
+.edit-profile-section {
+    .edit-image {
+        .profile-pic {
+            color: transparent;
+            transition: all 0.3s ease;
+            @include flex_common;
+            position: relative;
+            overflow: hidden;
+            padding: 4px;
+        }
+
+        .profile-pic input {
+            display: none;
+        }
+
+        .profile-pic img {
+            position: absolute;
+            object-fit: cover;
+            width: 115px;
+            height: 115px;
+            border: 6px solid rgba(var(--white), 1);
+            box-shadow: 0 0 10px 0 rgba(var(--black), 0.1);
+            border-radius: 100px;
+            z-index: 0;
+        }
+
+        .profile-pic .-label {
+            cursor: pointer;
+            height: 115px;
+            width: 115px;
+        }
+
+        .profile-pic:hover .-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(var(--black), 0.58);
+            z-index: 10000;
+            color: rgba(var(--white), 1);
+            transition: background-color 0.2s ease-in-out;
+            border-radius: 100px;
+            margin-bottom: 0;
+        }
+
+        .profile-pic span {
+            font-size: 25px;
+        }
+    }
+}
+
+.account-name-section {
+    .acount-form-box {
+        form {
+            .select-gender {
+                .gender-list {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 11px;
+
+                    li {
+                        .form-check {
+                            margin: 0;
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 4px;
+                            min-height: auto;
+
+                            .form-check-label {
+                                font-size: 15px;
+                                font-weight: 400;
+                                color: rgba(var(--title), 1);
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*=====================
+    Persnol Setting Scss End
 ==========================*/
