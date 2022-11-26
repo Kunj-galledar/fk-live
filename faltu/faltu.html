@@ -1,7 +1,49 @@
-when i click add to bag, i dont see the pop screen for selecting the variables
+.edit-profile-section {
+    .edit-image {
+        .profile-pic {
+            color: transparent;
+            transition: all 0.3s ease;
+            @include flex_common;
+            position: relative;
+            overflow: hidden;
+            padding: 4px;
+        }
 
-the product grids are not looking good
+        .profile-pic input {
+            display: none;
+        }
 
-can you make the product grids look similar to amazon's?
+        .profile-pic img {
+            position: absolute;
+            object-fit: cover;
+            width: 115px;
+            height: 115px;
+            border: 6px solid rgba(var(--white), 1);
+            box-shadow: 0 0 10px 0 rgba(var(--black), 0.1);
+            border-radius: 100px;
+            z-index: 0;
+        }
 
-[imgpsh_fullsize_anim (1).jpg](https://trello.com/1/cards/633bb5d97370d9029b57810e/attachments/633fc488eaeeda039417fe56/download/imgpsh_fullsize_anim_(1).jpg)    can you add a field below Last name - labeled "Cedula",
+        .profile-pic .-label {
+            cursor: pointer;
+            height: 115px;
+            width: 115px;
+        }
+
+        .profile-pic:hover .-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(var(--black), 0.58);
+            z-index: 10000;
+            color: rgba(var(--white), 1);
+            transition: background-color 0.2s ease-in-out;
+            border-radius: 100px;
+            margin-bottom: 0;
+        }
+
+        .profile-pic span {
+            font-size: 25px;
+        }
+    }
+}
