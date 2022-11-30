@@ -19,3 +19,12 @@
      //      prevEl: ".swiper-button-prev",
      //  },
  });
+
+ var swiper = new Swiper(".story-slider", {
+     slidesPerView: 5,
+     spaceBetween: 11,
+     pagination: {
+         el: ".swiper-pagination",
+         clickable: true,
+     },
+ });
