@@ -6,7 +6,7 @@
         width: 320px;
     }
 
-    &.learning-bottom-offcanvas {
+    &.theme-bottom-offcanvas {
         border: none;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -17,6 +17,15 @@
             display: block;
             padding: 20px 15px;
             background-color: rgba(var(--light-bg), 1);
+
+            h5 {
+                margin-top: -3px;
+                margin-bottom: -3px;
+            }
+
+            .btn-close {
+                display: none;
+            }
         }
     }
 
@@ -744,6 +753,213 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    &.chat-history-modal {
+        .offcanvas-body {
+            .chat-history-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+
+                li {
+                    width: 100%;
+
+                    a {
+                        color: rgba(var(--title), 1);
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: nowrap;
+                        gap: 12px;
+
+                        h5 {
+                            color: rgba(var(--title), 1);
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.cab-sidebar-offcanvas {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        .offcanvas-header {
+            padding-top: 23px;
+            padding-bottom: 0;
+
+            .profile-box {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: 9px;
+
+                .profile-image {
+                    width: 68px;
+                    height: 68px;
+                    border-radius: 100%;
+                    overflow: hidden;
+                }
+
+                .profile-name {
+                    h4 {
+                        margin-bottom: 5px;
+                        color: rgba(var(--title), 1);
+                    }
+
+                    h5 {
+                        color: rgba(var(--content), 1);
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .offcanvas-body {
+            margin-top: 21px;
+
+            .profile-menu-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 14px;
+
+                li {
+                    width: 100%;
+
+                    a {
+                        border: 1px solid #F3F3F3;
+                        border-radius: 18px;
+                        padding: 14px 21px;
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: nowrap;
+                        gap: 11px;
+
+                        .menu-icon {
+                            font-size: 20px;
+                            line-height: 1;
+                            color: rgba(var(--title), 1);
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                        .menu-name {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                            color: rgba(var(--title), 1);
+
+                            i {
+                                font-size: 20px;
+                                width: 20px;
+                                height: 20px;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme-modal {
+    .modal-content {
+        border: none;
+
+        .modal-header {
+            padding-bottom: 0;
+            border: none;
+
+            h3 {
+                font-weight: 400;
+            }
+
+            .btn-close {
+                background-image: none;
+                width: unset;
+                font-size: 19px;
+                height: unset;
+                opacity: 1;
+                color: rgba(var(--title), 1);
+                line-height: 1;
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+
+                i {
+                    line-height: 1;
+                }
+            }
+        }
+
+        .modal-body {
+            h5 {
+                color: rgba(var(--title), 1);
+                font-weight: 400;
+            }
+        }
+
+        .modal-footer {
+            flex-wrap: nowrap;
+            gap: 12px;
+            border: none;
+            padding-top: 0;
+
+            button {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.delete-modal-2 {
+    .modal-content {
+        .modal-body {
+            .delete-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+
+                li {
+                    width: 100%;
+                    font-size: 13px;
+                    color: rgba(var(--title), 1);
+                    font-weight: 400;
+                    padding-left: 10px;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        background-color: rgba(var(--title), 1);
+                        width: 3px;
+                        height: 3px;
+                        border-radius: 100%;
+                    }
+                }
+            }
+
+            h5 {
+                color: rgba(var(--title), 1);
+                font-weight: 400;
+            }
+        }
+
+        .modal-footer {
+            flex-wrap: nowrap;
+            gap: 12px;
+
+            button {
+                margin: 0;
             }
         }
     }

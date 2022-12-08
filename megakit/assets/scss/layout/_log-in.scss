@@ -211,3 +211,202 @@
 /*=====================
     Chatting log-in Css End
 ==========================*/
+
+/*=====================
+    Cab-booking log-in Css Start
+==========================*/
+.cab-booking-login-section {
+    margin-top: 24px;
+
+    .cab-booking-nav-pills {
+        .cab-nav-pills {
+            flex-wrap: nowrap;
+            padding: 5px;
+            background-color: rgba(244, 244, 244, 1);
+            border-radius: 16px;
+            margin-bottom: 25px;
+
+            .nav-item {
+                width: 100%;
+
+                .nav-link {
+                    width: 100%;
+                    font-weight: 400;
+                    font-size: 18px;
+                    border-radius: 15px;
+                    padding: 11px;
+                    color: rgba(var(--title), 1);
+
+                    &.active {
+                        font-weight: 500;
+                        background: var(--gradient);
+                        color: rgba(var(--white), 1);
+                    }
+                }
+            }
+        }
+    }
+
+    .social-list {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+
+        li {
+            width: 100%;
+
+            a {
+                @include flex_common;
+                flex-wrap: nowrap;
+                gap: 11px;
+                background: #FAFAFA;
+                border-radius: 14px;
+                padding: 17px;
+                color: rgba(var(--title), 1);
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                h4 {
+                    font-weight: 400;
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+.number-section {
+    padding-top: 43px;
+
+    .number-title {
+        h2 {
+            font-weight: 500;
+            font-size: 20px;
+            color: rgba(var(--title), 1);
+            margin-bottom: 13px;
+        }
+
+        h4 {
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(var(--content), 1);
+            margin-bottom: 33px;
+            line-height: 1.5;
+        }
+    }
+
+    .cab-dropdown {
+        .dropdown-link {
+            font-weight: 400;
+            font-size: 18px;
+            color: rgba(var(--content), 1);
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            flex-wrap: nowrap;
+            gap: 13px;
+            background-color: transparent;
+            border: 1px solid rgba(var(--border), 1);
+            border-radius: 22px;
+            margin-bottom: 20px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "\EA4E";
+                top: 50%;
+                transform: translateY(-50%);
+                right: 25px;
+                font-family: remixicon !important;
+                font-style: normal;
+                font-size: 22px;
+            }
+
+            img {
+                width: 31px;
+                height: 21px;
+                border-radius: 6px;
+            }
+        }
+
+        .dropdown-menu {
+            width: 100%;
+            border-radius: 22px;
+            border: 1px solid rgba(var(--border), 1);
+            padding: 8px 16px;
+            // display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            &.show {
+                display: flex;
+            }
+
+            li {
+                width: 100%;
+                position: relative;
+
+                +li {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -7px;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background-color: rgba(var(--content), 0.3);
+                        z-index: -1;
+                    }
+                }
+
+                .dropdown-item {
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: rgba(var(--content), 1);
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: 13px;
+                    background-color: transparent;
+                    padding: 0;
+
+                    img {
+                        width: 31px;
+                        height: 21px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.resend-box {
+    margin-top: 16px;
+    text-align: center;
+    @include flex_common;
+    flex-wrap: nowrap;
+    gap: 5px;
+
+    h6 {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(var(--content), 1);
+    }
+
+    .time {
+        ul {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 3px;
+        }
+    }
+}
+
+/*=====================
+    Cab-booking log-in Css End
+==========================*/

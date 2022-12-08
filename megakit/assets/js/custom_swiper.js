@@ -7,17 +7,6 @@
      centeredSlides: false,
      slidesPerGroup: 1,
      slidesPerView: "auto",
-     //  spaceBetween: 30,
-     //  loop: true,
-     //  loopFillGroupWithBlank: true,
-     //  pagination: {
-     //      el: ".swiper-pagination",
-     //      clickable: true,
-     //  },
-     //  navigation: {
-     //      nextEl: ".swiper-button-next",
-     //      prevEl: ".swiper-button-prev",
-     //  },
  });
 
  var swiper = new Swiper(".story-slider", {
@@ -26,5 +15,12 @@
      pagination: {
          el: ".swiper-pagination",
          clickable: true,
+     },
+ });
+
+ var swiper = new Swiper(".cab-onboarding-slider", {
+     slidesPerView: 1,
+     pagination: {
+         el: ".swiper-pagination",
      },
  });

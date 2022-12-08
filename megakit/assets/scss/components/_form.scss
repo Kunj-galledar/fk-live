@@ -143,6 +143,10 @@
 
 .chatting-form-select {
     .form-label {
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
         font-weight: 400;
         font-size: 12px;
         color: rgba(var(--content), 1);
@@ -188,6 +192,10 @@
         &:focus {
             box-shadow: none;
         }
+
+        &-border {
+            border-bottom-color: rgba(var(--border-color), 0.3);
+        }
     }
 }
 
@@ -223,6 +231,195 @@
 
         &:focus {
             box-shadow: none;
+        }
+    }
+}
+
+.chatting-radio-box {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    min-height: auto;
+    gap: 10px;
+
+    .form-check-input {
+        transition: all 0.3s ease-in-out;
+        margin-top: -1px;
+        background-color: rgba(var(--white), 1);
+
+        &:checked {
+            background-color: rgba(var(--title), 1);
+            border-color: rgba(var(--title), 1);
+        }
+
+        &:active {
+            filter: none;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.chatting-form-switch {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    min-height: auto;
+
+    .form-check-label {
+        h5 {
+            font-size: 14px;
+            color: rgba(var(--title), 1);
+            margin-bottom: 3px;
+        }
+
+        h6 {
+            color: rgba(var(--content), 1);
+            font-weight: 400;
+        }
+    }
+
+    .switch-box {
+        input[type="checkbox"] {
+            display: none;
+
+            +label {
+                transition: all 0.3s ease-in-out;
+
+                .bar {
+                    background: rgba(var(--content), 1);
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 100%;
+                    transition: all 0.3s ease-in-out;
+                    cursor: pointer;
+                }
+            }
+
+            &:checked {
+                +label {
+                    background-color: rgba(var(--title), 0.4);
+
+                    .bar {
+                        background: rgba(var(--title), 1);
+                        transform: translateX(25px);
+                    }
+                }
+            }
+        }
+
+        label {
+            border-radius: 50px;
+
+            .switch {
+                background: rgba(var(--border-color), 0.2);
+                width: 47px;
+                border-radius: 50px;
+                padding: 3px;
+                position: relative;
+            }
+        }
+    }
+}
+
+.theme-color-modal {
+    .modal-content {
+        .modal-body {
+            .delete-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+
+                li {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.cab-form-control {
+    position: relative;
+
+    .form-control {
+        background-color: transparent;
+        border: 1px solid rgba(var(--border), 1);
+        font-weight: 400;
+        font-size: 18px;
+        padding: 18px 26px;
+        border-radius: 22px;
+        color: rgba(var(--title), 1);
+        margin-bottom: 20px;
+
+        &::placeholder {
+            color: rgba(var(--content), 1);
+            font-weight: 400;
+        }
+    }
+
+    i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 25px;
+        color: rgba(var(--content), 1);
+        font-size: 24px;
+    }
+
+    &-flex {
+        .form-group {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 14px;
+
+            .form-control {
+                background-color: transparent;
+                border: 1px solid rgba(var(--border), 1);
+                font-weight: 400;
+                font-size: 18px;
+                padding: 18px 26px;
+                border-radius: 22px;
+                color: rgba(var(--title), 1);
+                margin-bottom: 0;
+                width: 58px;
+                height: 58px;
+                padding: 0;
+                border-radius: 15px;
+
+                &:focus {
+                    background: var(--gradient);
+                    color: rgba(var(--white), 1);
+                    border-color: transparent;
+
+                    &::placeholder {
+                        color: rgba(var(--white), 1);
+                    }
+                }
+            }
+        }
+    }
+
+    &-bg {
+        img {
+            width: 31px;
+            height: 21px;
+            border-radius: 6px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 25px;
+        }
+
+        .form-control {
+            padding-left: 69px;
+            padding-right: 54px;
+            background-color: #F8F8F8;
+            border: none;
         }
     }
 }
