@@ -1,0 +1,42 @@
+/*=====================
+    Buy page CSS start
+==========================*/
+
+.buy-product {
+  margin-top: 30px;
+}
+.buy-prouct-button {
+  margin-top: 425px;
+  text-align: center;
+}
+
+.buy-accordion {
+  margin-top: 20px;
+  border: 1px solid rgba(var(--white), 0.1);
+  border-radius: 8px;
+  padding: 0 15px;
+  .theme-accordion-item {
+    border-top: none;
+    .theme-accordion-btn {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(var(--white), 0.1);
+
+      &.collapsed {
+        border-bottom: 1px solid rgba(var(--white), 0);
+      }
+    }
+
+    .accordion-button:not(.collapsed) {
+      &::after {
+        transform: rotate(-90deg);
+        background-image: none;
+      }
+    }
+    .accordion-collapse {
+      .accordion-theme-body {
+        padding: 15px 0;
+      }
+    }
+  }
+}

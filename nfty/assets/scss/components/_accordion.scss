@@ -1,0 +1,88 @@
+/*=====================
+    accordion CSS start
+==========================*/
+.theme-accordion {
+  .accordion-item {
+    background: transparent;
+    border-top: solid 1px rgba(var(--white), 0.1);
+    .accordion-button:not(.collapsed) {
+      &::after {
+        transform: rotate(90deg);
+        background-image: none;
+      }
+    }
+    .accordion-button {
+      background: transparent;
+      display: flex;
+      color: rgba(var(--font-color), 1);
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0;
+      padding-right: 0;
+      &::after {
+        margin: 0;
+        content: "\EA6E";
+        font-family: remixicon !important;
+        width: auto;
+        height: auto;
+        background-image: none;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+      .nft-horizontal-box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .product-details {
+          display: flex;
+          span {
+            margin-right: 20px;
+          }
+          .product-img {
+            width: 43px;
+            height: 43px;
+            border-radius: 6px;
+          }
+          .product-content {
+            margin-left: 10px;
+            h4 {
+              color: rgba(var(--font-color), 1);
+            }
+            h6 {
+              color: rgba(var(--content-color), 1);
+              margin-top: 10px;
+            }
+          }
+        }
+        .counter {
+          display: flex;
+          align-items: center;
+          color: rgba(var(--font-color), 1);
+          margin-left: auto;
+          margin-right: 15px;
+
+          .arrow {
+            width: 20px;
+          }
+        }
+      }
+    }
+    .accordion-body {
+      .nft-horizontal-content {
+        display: flex;
+        justify-content: space-around;
+        h5 {
+          color: rgba(var(--content-color), 1);
+          text-align: center;
+        }
+        h6 {
+          color: rgba(var(--font-color), 1);
+          text-align: center;
+        }
+      }
+    }
+  }
+}
