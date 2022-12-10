@@ -10,16 +10,6 @@
     width: auto !important;
 }
 
-@each $badge-light-name, $badge-light-color in (primary, $primary-color), (secondary, $secondary-color),
-    (success, $success-color), (danger, $danger-color), (info, $info-color), (light, $light-color), (dark, $dark-color),
-    (warning, $warning-color)
-{
-    .badge-light-#{$badge-light-name} {
-        background-color: lighten($badge-light-color, 38%);
-        color: $badge-light-color;
-    }
-}
-
 .badge-light-primary {
     background-color: rgba($primary-color, 0.1);
 }
@@ -230,10 +220,6 @@
                             left: -40%;
                             top: 27%;
                         }
-
-                        &:last-child:before {
-                            background-color: $danger-color;
-                        }
                     }
                 }
             }
@@ -329,6 +315,7 @@
                         .small-chart2 {
                             svg {
                                 .ct-series-a {
+
                                     .ct-point,
                                     .ct-line,
                                     .ct-bar,
@@ -338,6 +325,7 @@
                                 }
 
                                 .ct-series-b {
+
                                     .ct-point,
                                     .ct-line,
                                     .ct-bar,
@@ -366,6 +354,7 @@
 
                             svg {
                                 .ct-series-a {
+
                                     .ct-point,
                                     .ct-line,
                                     .ct-bar,
@@ -375,6 +364,7 @@
                                 }
 
                                 .ct-series-b {
+
                                     .ct-point,
                                     .ct-line,
                                     .ct-bar,
@@ -823,6 +813,7 @@
                                 }
 
                                 @keyframes wave {
+
                                     0%,
                                     60%,
                                     100% {
@@ -1055,8 +1046,8 @@
 //index dashboard css ends
 
 .crm-activity {
-    > li {
-        + li {
+    >li {
+        +li {
             border-top: 1px solid $light-semi-gray;
             margin-top: 10px;
             padding-top: 10px;
@@ -1088,7 +1079,7 @@
             display: inline-block;
             line-height: 1;
 
-            + li {
+            +li {
                 border-left: 1px solid $light-semi-gray;
                 padding-left: 10px;
                 margin-left: 5px;
@@ -1219,14 +1210,6 @@
     }
 }
 
-.bg-danger {
-    .media.static-top-widget {
-        .align-self-center {
-            background-color: $danger-color;
-        }
-    }
-}
-
 .widget-joins {
     &:before {
         @include pos;
@@ -1256,7 +1239,7 @@
         .media-body {
             text-align: left;
 
-            > span {
+            >span {
                 color: $theme-body-sub-title-color;
             }
 
@@ -1365,6 +1348,7 @@
 }
 
 .testimonial {
+
     #owl-carousel-testimonial,
     #owl-carousel-testimonial-rtl {
         .owl-stage-outer {
@@ -1639,6 +1623,7 @@
 //chart widget css
 
 .chart-widget-top {
+
     #chart-widget1,
     #chart-widget2,
     #chart-widget3 {
@@ -1914,6 +1899,7 @@
 
 .live-products {
     .ct-series-a {
+
         .ct-area,
         .ct-point,
         .ct-line,
@@ -1937,6 +1923,7 @@
 .uses,
 .monthly {
     .ct-series-a {
+
         .ct-area,
         .ct-point,
         .ct-line,
@@ -1948,6 +1935,7 @@
     }
 
     .ct-series-b {
+
         .ct-area,
         .ct-point,
         .ct-line,
@@ -1959,6 +1947,7 @@
     }
 
     .ct-series-c {
+
         .ct-area,
         .ct-point,
         .ct-line,
@@ -2319,7 +2308,7 @@ footer {
 
     .chart_data_left {
         .row {
-            > div {
+            >div {
                 .media {
                     .right-chart-content {
                         margin-left: 10px !important;
@@ -2339,7 +2328,7 @@ footer {
 @media screen and (max-width: 1366px) {
     .chart_data_left {
         .row {
-            > div {
+            >div {
                 &:first-child {
                     .media {
                         padding-left: 40px;
@@ -2379,8 +2368,8 @@ footer {
         overflow: hidden;
 
         .card-body {
-            > .row {
-                > div {
+            >.row {
+                >div {
                     flex: 0 0 100%;
                     max-width: 100%;
 
@@ -2391,7 +2380,7 @@ footer {
                             margin-bottom: 0;
                             display: inline-block;
 
-                            + .left_side_earning {
+                            +.left_side_earning {
                                 flex: 0 0 33%;
                                 max-width: 33%;
                             }
@@ -2486,10 +2475,10 @@ footer {
         margin-top: 0;
 
         .card-body {
-            > .row {
-                > div {
+            >.row {
+                >div {
                     .row {
-                        > div {
+                        >div {
                             &:last-child {
                                 padding-left: 0;
                             }
@@ -2502,7 +2491,7 @@ footer {
 
                     .chart-left {
                         .left_side_earning {
-                            + .left_side_earning {
+                            +.left_side_earning {
                                 flex: 0 0 50%;
                                 max-width: 50%;
                             }
@@ -2524,7 +2513,7 @@ footer {
                 }
 
                 .border-top {
-                    > div {
+                    >div {
                         &:last-child {
                             margin-top: 40px;
                         }
@@ -2550,9 +2539,9 @@ footer {
         }
 
         .row {
-            > div {
-                + div {
-                    + div {
+            >div {
+                +div {
+                    +div {
                         .media {
                             padding-top: 0 !important;
                         }
@@ -2596,9 +2585,9 @@ footer {
         }
 
         .card-body {
-            > .row {
+            >.row {
                 .border-top {
-                    > div {
+                    >div {
                         &:last-child {
                             margin-top: 20px;
                         }
@@ -2609,7 +2598,7 @@ footer {
                     padding-bottom: 20px;
                 }
 
-                > div {
+                >div {
                     .chart-left {
                         padding: 20px;
 
@@ -2642,7 +2631,7 @@ footer {
         }
 
         .row {
-            > div {
+            >div {
                 .media {
                     &:first-child {
                         padding-left: 20px;
@@ -2722,13 +2711,13 @@ footer {
     .dashboard-sec {
         .earning-card {
             .card-body {
-                > .row {
-                    > div {
+                >.row {
+                    >div {
                         .chart-right {
-                            > .row {
+                            >.row {
                                 ul {
                                     li {
-                                        + li {
+                                        +li {
                                             margin-left: 25px;
                                         }
                                     }
@@ -2756,7 +2745,7 @@ footer {
                     border-right: none;
                 }
 
-                > div {
+                >div {
                     &:nth-child(3) {
                         border-right: 1px solid $light-gray;
                     }
@@ -2799,7 +2788,7 @@ footer {
         .card {
             .card-body {
                 .row {
-                    > div {
+                    >div {
                         .media {
                             padding: 15px;
                         }
@@ -2823,15 +2812,15 @@ footer {
 
     .earning-card {
         .card-body {
-            > .row {
-                > div {
+            >.row {
+                >div {
                     .chart-left {
                         padding: 15px;
 
                         .left_side_earning {
                             margin-bottom: 15px;
 
-                            + .left_side_earning,
+                            +.left_side_earning,
                             &:first-child {
                                 flex: 0 0 100%;
                                 max-width: 100%;
@@ -2870,8 +2859,8 @@ footer {
                 }
 
                 .border-top {
-                    > div {
-                        + div {
+                    >div {
+                        +div {
                             margin-top: 15px;
                             padding: 0;
 
@@ -2900,13 +2889,13 @@ footer {
     .dashboard-sec {
         .earning-card {
             .card-body {
-                > .row {
-                    > div {
+                >.row {
+                    >div {
                         .chart-right {
-                            > .row {
+                            >.row {
                                 ul {
                                     li {
-                                        + li {
+                                        +li {
                                             margin-left: 15px;
                                         }
                                     }
@@ -2915,7 +2904,7 @@ footer {
                                 .inner-top-right {
                                     ul {
                                         li {
-                                            + li {
+                                            +li {
                                                 margin-left: 28px;
                                             }
                                         }
@@ -2942,7 +2931,7 @@ footer {
     .news {
         .card {
             .card-body {
-                > .news-update {
+                >.news-update {
                     padding: 15px;
                 }
             }
@@ -3203,8 +3192,7 @@ footer {
 
         .dropdown-toggle {
             @include pseudowh($width: 100%, $height: 40px);
-            padding: calc(7px + (14 - 7) * ((100vw - 320px) / (1920 - 320)))
-                calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
+            padding: calc(7px + (14 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
             background-color: #f9f9f6 !important;
             color: #444;
             font-size: 17px;
@@ -3364,7 +3352,7 @@ footer {
 
 .media {
     .media-body {
-        > span {
+        >span {
             color: $grey-13;
         }
     }
@@ -3548,6 +3536,7 @@ footer {
 
 .dashboard-tours,
 .image_section {
+
     .slick-prev:before,
     .slick-next:before {
         display: none;
@@ -3561,6 +3550,7 @@ footer {
         margin: 0 8px;
 
         button {
+
             &:hover,
             &:focus,
             &:active {
@@ -3676,7 +3666,7 @@ footer {
             }
 
             .media-body {
-                > span {
+                >span {
                     font-size: 16px;
                 }
             }
@@ -3739,7 +3729,7 @@ footer {
             @include flex_common;
             border-radius: 3px;
 
-            > a {
+            >a {
                 i {
                     color: $white;
                 }
@@ -3803,11 +3793,11 @@ footer {
         visibility: hidden;
     }
 
-    :checked + label {
+    :checked+label {
         border-color: var(--theme-color);
     }
 
-    :checked + label:before {
+    :checked+label:before {
         content: "✓";
         background-color: var(--theme-color);
         border-color: var(--theme-color);
@@ -3816,7 +3806,7 @@ footer {
         visibility: visible;
     }
 
-    :checked + label img {
+    :checked+label img {
         transform: scale(0.9);
         z-index: -1;
     }

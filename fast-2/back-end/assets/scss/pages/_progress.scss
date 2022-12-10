@@ -61,46 +61,6 @@
 	}
 }
 
-@each $progress-gradient-name,
-$progress-gradient-color in (primary, var(--theme-color)),
-(secondary, $secondary-color),
-(success, $success-color),
-(danger, $danger-color),
-(info, $info-color),
-(light, $light-color),
-(dark, $dark-color),
-(warning, $warning-color) {
-	.progress-gradient-#{$progress-gradient-name} {
-		background-image: linear-gradient(to right, $transparent-color, $progress-gradient-color);
-		position: relative;
-
-		&:hover {
-			background-size: 100%;
-		}
-
-		&::after {
-			@include pos;
-			top: -3px;
-			right: -1px;
-			background-color: $progress-gradient-color;
-			@include pseudowh($width: 10px, $height: 10px);
-			border-radius: 100%;
-			box-shadow: 0 0 17px 4px rgba($progress-gradient-color, 0.36);
-		}
-
-		.animate-circle {
-			position: absolute;
-			top: -11px;
-			right: -8px;
-			@include pseudowh($width: 25px, $height: 25px);
-			border: 5px solid $progress-gradient-color;
-			border-radius: 70px;
-			animation: heartbit 1s ease-out;
-			animation-iteration-count: infinite;
-		}
-	}
-}
-
 /**=====================
      Progress CSS Ends
 ==========================**/

@@ -26,45 +26,6 @@
 					}
 				}
 			}
-
-			&[sidebar-layout="iconcolor-sidebar"] {
-				.sidebar-main {
-					.sidebar-links {
-						.simplebar-wrapper {
-							.simplebar-mask {
-								.simplebar-content-wrapper {
-									.simplebar-content {
-										>li {
-											$colors: $success-color, $secondary-color, $primary-color, $danger-color, $info-color, $warning-color, $light-color;
-											$repeat: 60;
-
-											@for $i from 1 through $repeat {
-												&:nth-child(#{length($colors)}n+#{$i}) {
-													svg {
-														color: lighten(nth($colors, random(length($colors))), 15%) !important;
-													}
-
-													&:hover {
-														a {
-															svg {
-																stroke: lighten(nth($colors, random(length($colors))), 15%) !important;
-															}
-
-															&:hover {
-																background-color: rgba(nth($colors, random(length($colors))), 0.15) !important;
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 }

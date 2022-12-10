@@ -1901,70 +1901,6 @@ body {
 			}
 		}
 
-		$alert-name: primary,
-		secondary,
-		success,
-		danger,
-		warning,
-		info,
-		light,
-		dark;
-		$alert-color: $primary-color,
-		$secondary-color,
-		$success-color,
-		$danger-color,
-		$warning-color,
-		$info-color,
-		$light-color,
-		$dark-color;
-
-		@each $var in $alert-name {
-			$i: index($alert-name, $var);
-
-			.alert-#{$var} {
-				background-color: rgba(nth($alert-color, $i), 0.8) !important;
-				border-color: rgba(nth($alert-color, $i), 0.9) !important;
-				color: $white;
-
-				.progress {
-					height: 5px;
-					background-color: darken(nth($alert-color, $i), 1%);
-					border-radius: 0;
-				}
-
-				.progress-bar {
-					background-color: lighten(nth($alert-color, $i), 50%);
-				}
-			}
-
-			.alert-#{$var}.inverse {
-				background-color: $transparent-color !important;
-
-				.btn-close {
-					filter: brightness(1) invert(1);
-				}
-			}
-
-			.alert-#{$var}.outline,
-			.alert-#{$var}.outline-2x {
-				.btn-close {
-					filter: brightness(1) invert(1);
-				}
-			}
-
-			.dismiss-text {
-				.alert-dismissible {
-					.btn-close {
-						filter: unset;
-
-						.bg-light {
-							color: $theme-body-font-color !important;
-						}
-					}
-				}
-			}
-		}
-
 		.options {
 			>div {
 				border: 1px solid $dark-card-border;
@@ -5417,11 +5353,6 @@ body {
 				color: $warning-color !important;
 			}
 
-			.form-control-danger {
-				border-color: $danger-color !important;
-				color: $danger-color !important;
-			}
-
 			.form-control-inverse {
 				border-color: $white !important;
 				color: $white !important;
@@ -5449,11 +5380,6 @@ body {
 
 			.form-control-warning-fill {
 				background-color: $warning-color !important;
-				color: $white !important;
-			}
-
-			.form-control-danger-fill {
-				background-color: $danger-color !important;
 				color: $white !important;
 			}
 
@@ -6222,19 +6148,6 @@ body {
 			color: $info-color;
 		}
 
-		.token {
-
-			&.boolean,
-			&.constant,
-			&.deleted,
-			&.number,
-			&.property,
-			&.symbol,
-			&.tag {
-				color: $danger-color;
-			}
-		}
-
 		.loader-box {
 			&.card-loader {
 				background-color: $dark-card-background;
@@ -6392,96 +6305,6 @@ body {
 
 						&:hover {
 							background-color: $dark-body-background;
-						}
-					}
-				}
-			}
-		}
-
-		@each $btn-name,
-		$btn-color in (primary, var(--theme-color)),
-		(secondary, $secondary-color),
-		(success, $success-color),
-		(danger, $danger-color),
-		(info, $info-color),
-		(light, $light-color),
-		(dark, $dark-color),
-		(warning, $warning-color) {
-			.radio-#{$btn-name} {
-				input[type="radio"] {
-					&+label {
-						&::before {
-							border-color: $btn-color !important;
-						}
-
-						&::after {
-							background-color: $btn-color;
-						}
-					}
-
-					&:checked {
-						&+label {
-							&::before {
-								border-color: $btn-color !important;
-							}
-
-							&::after {
-								background-color: $btn-color;
-							}
-						}
-					}
-				}
-			}
-		}
-
-		@each $btn-name,
-		$btn-color in (primary, var(--theme-color)),
-		(secondary, $secondary-color),
-		(success, $success-color),
-		(danger, $danger-color),
-		(info, $info-color),
-		(light, $light-color),
-		(dark, $dark-color),
-		(warning, $warning-color) {
-			.checkbox-#{$btn-name} {
-				label {
-					&::before {
-						border-color: $btn-color !important;
-					}
-				}
-			}
-		}
-
-		@each $btn-name,
-		$btn-color in (primary, var(--theme-color)),
-		(secondary, $secondary-color),
-		(success, $success-color),
-		(danger, $danger-color),
-		(info, $info-color),
-		(light, $light-color),
-		(dark, $dark-color),
-		(warning, $warning-color) {
-			.checkbox-solid-#{$btn-name} {
-				label {
-					&:before {
-						background-color: $btn-color !important;
-						border-color: $btn-color !important;
-						color: $white !important;
-					}
-				}
-
-				input[type="checkbox"] {
-					&:checked {
-						&+label {
-							&::before {
-								background-color: $btn-color !important;
-								border-color: $btn-color !important;
-								color: $white !important;
-							}
-
-							&::after {
-								color: $white !important;
-							}
 						}
 					}
 				}
