@@ -53,7 +53,7 @@
         border-color: rgba(var(--white), $alpha: 1.0);
         color: var(--theme-color);
         background: rgba(var(--white), $alpha: 1.0);
-        padding: 16px;
+        padding: 12px;
 
         &:hover,
         &:active {
@@ -63,11 +63,36 @@
         }
     }
 
+    &-food-btn {
+        background-color: rgba(var(--primary), 1);
+        color: rgba(var(--white), 1);
+        border-radius: 12px;
+
+        &:hover {
+            background-color: rgba(var(--primary), 1);
+            color: rgba(var(--white), 1);
+        }
+    }
+
+    &-food-white {
+        background-color: rgba(var(--white), 1);
+        color: rgba(var(--title), 1);
+        border-radius: 12px;
+
+        &:hover {
+            background-color: rgba(var(--white), 1);
+            color: rgba(var(--title), 1);
+        }
+    }
+
+    &-shadow {
+        box-shadow: $shadow3;
+    }
+
     &-white-outline {
         border: 2px solid rgba(var(--white), $alpha: 1.0);
         color: rgba(var(--white), $alpha: 1.0);
         background: transparent;
-        padding: 16px;
 
         &:hover,
         &:active {
@@ -121,9 +146,18 @@
     background-color: transparent;
     border-radius: 18px;
 
+    @include mq-max(md) {
+        padding: calc(14px + (17 - 14) * ((100vw - 320px) / (767 - 320)));
+        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (767 - 320)));
+    }
+
     &-gradient {
         background: var(--gradient2);
         color: rgba(var(--white), 1.0);
+
+        &:hover {
+            color: rgba(var(--white), 1.0);
+        }
     }
 
     &-border {

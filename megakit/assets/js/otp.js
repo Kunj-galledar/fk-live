@@ -1,13 +1,92 @@
- let digitValidate = function (ele) {
-     console.log(ele.value);
-     ele.value = ele.value.replace(/[^0-9]/g, "");
- };
+// Six Input otp box
+function getCodeBoxElement(index) {
+    return document.getElementById('codeBox' + index);
+}
 
- let tabChange = function (val) {
-     let ele = document.querySelectorAll("input");
-     if (ele[val - 1].value != "") {
-         ele[val].focus();
-     } else if (ele[val - 1].value == "") {
-         ele[val - 2].focus();
-     }
- };
+function onKeyUpEvent(index, event) {
+    const eventCode = event.which || event.keyCode;
+    if (getCodeBoxElement(index).value.length === 1) {
+        if (index !== 6) {
+            getCodeBoxElement(index + 1).focus();
+        } else {
+            getCodeBoxElement(index).blur();
+            // Submit code
+            console.log('submit code ');
+        }
+    }
+    if (eventCode === 8 && index !== 1) {
+        getCodeBoxElement(index - 1).focus();
+    }
+}
+
+function onFocusEvent(index) {
+    for (item = 1; item < index; item++) {
+        const currentElement = getCodeBoxElement(item);
+        if (!currentElement.value) {
+            currentElement.focus();
+            break;
+        }
+    }
+}
+
+// Four Input otp box
+function getCodeBoxElement(index) {
+    return document.getElementById('form' + index);
+}
+
+function onKeyUpEvent(index, event) {
+    const eventCode = event.which || event.keyCode;
+    if (getCodeBoxElement(index).value.length === 1) {
+        if (index !== 4) {
+            getCodeBoxElement(index + 1).focus();
+        } else {
+            getCodeBoxElement(index).blur();
+            // Submit code
+            console.log('submit code ');
+        }
+    }
+    if (eventCode === 8 && index !== 1) {
+        getCodeBoxElement(index - 1).focus();
+    }
+}
+
+function onFocusEvent(index) {
+    for (item = 1; item < index; item++) {
+        const currentElement = getCodeBoxElement(item);
+        if (!currentElement.value) {
+            currentElement.focus();
+            break;
+        }
+    }
+}
+
+// Five Input otp box
+function getCodeBoxElement(index) {
+    return document.getElementById('five' + index);
+}
+
+function onKeyUpEvent(index, event) {
+    const eventCode = event.which || event.keyCode;
+    if (getCodeBoxElement(index).value.length === 1) {
+        if (index !== 6) {
+            getCodeBoxElement(index + 1).focus();
+        } else {
+            getCodeBoxElement(index).blur();
+            // Submit code
+            console.log('submit code ');
+        }
+    }
+    if (eventCode === 8 && index !== 1) {
+        getCodeBoxElement(index - 1).focus();
+    }
+}
+
+function onFocusEvent(index) {
+    for (item = 1; item < index; item++) {
+        const currentElement = getCodeBoxElement(item);
+        if (!currentElement.value) {
+            currentElement.focus();
+            break;
+        }
+    }
+}

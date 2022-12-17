@@ -134,7 +134,7 @@ header {
         }
 
         .video-header {
-            .bg-ovarlay {
+            .bg-overlay {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -164,115 +164,115 @@ header {
 /*=====================
     Chatting Header CSS Start
 ==========================*/
-.chatting-header {
-    padding-top: 15px;
+// .chatting-header {
+//     padding-top: 15px;
 
-    .header-box {
-        display: flex;
-        align-items: center;
+//     .header-box {
+//         display: flex;
+//         align-items: center;
 
-        .arrow-box {
-            font-size: 25px;
-            width: 30px;
-            height: 30px;
-            @include flex_common;
-            margin-right: 4px;
-        }
+//         .arrow-box {
+//             font-size: 25px;
+//             width: 30px;
+//             height: 30px;
+//             @include flex_common;
+//             margin-right: 4px;
+//         }
 
-        .add-member {
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            gap: 11px;
-            margin-left: auto;
+//         .add-member {
+//             display: flex;
+//             align-items: center;
+//             flex-wrap: nowrap;
+//             gap: 11px;
+//             margin-left: auto;
 
-            i {
-                font-size: 20px;
-            }
-        }
+//             i {
+//                 font-size: 20px;
+//             }
+//         }
 
-        .calling-box {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            gap: 15px;
+//         .calling-box {
+//             margin-left: auto;
+//             display: flex;
+//             align-items: center;
+//             flex-wrap: nowrap;
+//             gap: 15px;
 
-            @media (max-width: 600px) {
-                gap: calc(7px + (15 - 7) * ((100vw - 320px) / (600 - 320)));
-            }
+//             @media (max-width: 600px) {
+//                 gap: calc(7px + (15 - 7) * ((100vw - 320px) / (600 - 320)));
+//             }
 
-            i {
-                font-size: 23px;
-                color: rgba(var(--title), 1);
-            }
-        }
+//             i {
+//                 font-size: 23px;
+//                 color: rgba(var(--title), 1);
+//             }
+//         }
 
-        .header-profile {
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            gap: 11px;
+//         .header-profile {
+//             display: flex;
+//             align-items: center;
+//             flex-wrap: nowrap;
+//             gap: 11px;
 
-            .profile-image {
-                width: 52px;
-                height: 52px;
-                overflow: hidden;
-                border-radius: 100%;
-                @include flex_common;
-            }
+//             .profile-image {
+//                 width: 52px;
+//                 height: 52px;
+//                 overflow: hidden;
+//                 border-radius: 100%;
+//                 @include flex_common;
+//             }
 
-            .name-contect {
-                width: calc(100% - 52px - 3px);
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 3px;
+//             .name-contact {
+//                 width: calc(100% - 52px - 3px);
+//                 display: flex;
+//                 align-items: center;
+//                 flex-wrap: wrap;
+//                 gap: 3px;
 
-                h5,
-                h6 {
-                    width: 100%;
-                    color: rgba(var(--title), 1);
-                }
+//                 h5,
+//                 h6 {
+//                     width: 100%;
+//                     color: rgba(var(--title), 1);
+//                 }
 
-                h6 {
-                    font-size: 10px;
-                }
-            }
-        }
+//                 h6 {
+//                     font-size: 10px;
+//                 }
+//             }
+//         }
 
-        .left-header {
-            width: 86px;
-            // height: 26px;
-            @include flex_common;
-        }
+//         .left-header {
+//             width: 86px;
+//             // height: 26px;
+//             @include flex_common;
+//         }
 
-        .right-header {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            gap: 7px;
-            color: rgba(var(--title), 1);
+//         .right-header {
+//             margin-left: auto;
+//             display: flex;
+//             align-items: center;
+//             flex-wrap: nowrap;
+//             gap: 7px;
+//             color: rgba(var(--title), 1);
 
-            button {
-                padding: 0;
-                color: rgba(var(--title), 1);
-                line-height: 1;
-            }
+//             button {
+//                 padding: 0;
+//                 color: rgba(var(--title), 1);
+//                 line-height: 1;
+//             }
 
-            i {
-                &.ri-search-line {
-                    font-size: 23px;
-                }
+//             i {
+//                 &.ri-search-line {
+//                     font-size: 23px;
+//                 }
 
-                &.ri-more-2-line {
-                    font-size: 20px;
-                }
-            }
-        }
-    }
-}
+//                 &.ri-more-2-line {
+//                     font-size: 20px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 /*=====================
     Chatting Header CSS End
@@ -293,6 +293,7 @@ header {
     top: 17px;
     left: 0;
     width: 100%;
+    z-index: 1;
 
     .header-box {
         display: flex;
@@ -345,15 +346,127 @@ header {
                 }
             }
         }
+
+        .header-title {
+            width: calc(100% - 50px - 10px);
+            margin-left: 10px;
+        }
     }
 }
 
 /*=====================
-    Cab Header CSS End
+    Food Header CSS
 ==========================*/
+.header-style-3 {
+    padding: 27px 0 0;
+
+    .header-box {
+        display: flex;
+        margin-bottom: 17px;
+
+        .left-box {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 5px;
+
+            .header-icon {
+                width: 28px;
+                height: 28px;
+                transform: scaleX(-1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    background: linear-gradient(270deg, #FFA000 -5.38%, #FFD54F 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 20px;
+                }
+            }
+
+            .header-content {
+                h4 {
+                    display: flex;
+                    align-items: center;
+                    font-weight: 500;
+                    color: rgba(var(--title), 1);
+                    margin-bottom: 3px;
+
+                    i {
+                        line-height: 1;
+                    }
+                }
+
+                h6 {
+                    font-weight: 400;
+                    font-size: 13px;
+                    color: rgba(var(--content), 1);
+                }
+            }
+        }
+
+        .right-box {
+            margin-left: auto;
+            font-size: 18px;
+
+            .header-icon {
+                color: rgba(var(--title), 1);
+            }
+        }
+    }
+
+    &.header-bg {
+        background-image: url(../svg/header-shape.svg);
+        height: 70px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom center;
+        padding-top: 23px;
+    }
+
+    .header-box-2 {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 11px;
+
+        .header-icon {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            color: rgba(var(--white), 1);
+            @include flex_common;
+
+            i {
+                font-size: 20px;
+            }
+        }
+
+        .header-title {
+            width: calc(100% - 30px - 11px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h3 {
+                font-weight: 600;
+                font-size: 18px;
+                color: rgba(var(--white), 1);
+            }
+
+            i {
+                font-size: 18px;
+                color: rgba(var(--white), 1);
+                line-height: 1;
+            }
+        }
+    }
+}
 
 /*=====================
-   Learning Mobile CSS Start
+   Learning Mobile CSS
 ==========================*/
 .learning-mobile {
     position: fixed;
@@ -449,11 +562,7 @@ header {
 }
 
 /*=====================
-   Learning Mobile CSS End
-==========================*/
-
-/*=====================
-    Chatting Mobile CSS Start
+    Chatting Mobile CSS
 ==========================*/
 .chatting-mobile-section {
     position: fixed;
@@ -474,7 +583,7 @@ header {
         align-items: center;
         justify-content: space-between;
 
-        @media (max-width:600px) {
+        @include mq-max(md) {
             padding: 9px calc(27px + (54 - 27) * ((100vw - 320px) / (600 - 320)));
         }
 
@@ -583,5 +692,74 @@ header {
 }
 
 /*=====================
-    Chatting Mobile CSS End
+    Food Mobile CSS
 ==========================*/
+.food-mobile-section {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 15px 20px;
+    max-width: 600px;
+    background-color: #fff9ed;
+    z-index: 9;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(var(--white), 1);
+        box-shadow: $shadow3;
+        border-radius: 18px;
+        padding: 10px 29px;
+
+        li {
+            &.active {
+                a {
+                    color: rgba(var(--title), 1);
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            a {
+                text-align: center;
+                display: block;
+                color: rgba(var(--content), 1);
+                position: relative;
+                width: 100%;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -10px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #FEAF18;
+                    opacity: 0;
+                }
+
+                i {
+                    line-height: 1;
+                    font-size: 22px;
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: transparent;
+                    stroke: rgba(var(--content), 1);
+                    margin-bottom: 5px;
+                }
+
+                h5 {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

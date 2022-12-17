@@ -20,9 +20,6 @@
     <!-- Bootstrap link -->
     <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.min.css">
 
-    <!-- swiper link -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/swiper-bundle.min.css">
-
     <!-- Remix Icon link -->
     <link rel="stylesheet" type="text/css" href="../assets/css/remixicon.css">
 
@@ -35,59 +32,58 @@
     <!-- number section start -->
     <section class="number-section">
         <div class="custom-container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="number-title">
-                        <h2>Verify Number</h2>
-                        <h4>We have send the code verification to your mobile number</h4>
-                        <form>
-                            <div class="mb-2 cab-form-control cab-form-control-bg">
-                                <img src="../assets/images/cab-booking/flag/1.jpg" alt="">
-                                <input type="number" class="form-control" id="password" placeholder="987-654-321"
-                                    disabled>
-                                <a href="enter-number.html">
-                                    <i class="ri-edit-box-line"></i>
-                                </a>
-                            </div>
+            <div class="number-title">
+                <h2>Verify Number</h2>
+                <h4>We have send the code verification to your mobile number</h4>
+                <form class="form-style-3">
+                    <div class="mb-2 form-control-bg">
+                        <img src="../assets/images/cab-booking/flag/1.jpg" alt="">
+                        <input type="number" class="form-control" id="password" placeholder="987-654-321" disabled>
+                        <a href="enter-number.html">
+                            <i class="ri-edit-box-line"></i>
+                        </a>
+                    </div>
 
-                            <div class="cab-form-control cab-form-control-flex">
-                                <div class="form-group">
-                                    <input type="number" class="form-control text-center" placeholder="0" max="1">
-                                    <input type="number" class="form-control text-center" placeholder="0" max="1">
-                                    <input type="number" class="form-control text-center" placeholder="0" max="1">
-                                    <input type="number" class="form-control text-center" placeholder="0" max="1">
-                                    <input type="number" class="form-control text-center" placeholder="0" max="1">
-                                    <input type="number" class="form-control text-center" placeholder="0" max="1">
+                    <div class="form-control-flex">
+                        <input type="number" class="form-control text-center" placeholder="0" maxlength="1"
+                            id="codeBox1" onkeyup="onKeyUpEvent(1, event)" onfocus="onFocusEvent(1)">
+                        <input type="number" class="form-control text-center" placeholder="0" maxlength="1"
+                            id="codeBox2" onkeyup="onKeyUpEvent(2, event)" onfocus="onFocusEvent(2)">
+                        <input type="number" class="form-control text-center" placeholder="0" maxlength="1"
+                            id="codeBox3" onkeyup="onKeyUpEvent(3, event)" onfocus="onFocusEvent(3)">
+                        <input type="number" class="form-control text-center" placeholder="0" maxlength="1"
+                            id="codeBox4" onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)">
+                        <input type="number" class="form-control text-center" placeholder="0" maxlength="1"
+                            id="codeBox3" onkeyup="onKeyUpEvent(5, event)" onfocus="onFocusEvent(5)">
+                        <input type="number" class="form-control text-center" placeholder="0" maxlength="1"
+                            id="codeBox4" onkeyup="onKeyUpEvent(6, event)" onfocus="onFocusEvent(6)">
+                    </div>
+                    <a href="gps-turned-off.html"
+                        class="cab-button cab-button-gradient d-block text-center w-100 mt-4">Submit</a>
+                    <a href="javascript:void(0)"
+                        class="cab-button cab-button-border d-block text-center w-100 mt-4">Resend</a>
+                </form>
+
+                <div class="resend-box">
+                    <h6>Resend code in</h6>
+                    <div class="time" id="timer" data-minutes="1" data-seconds="2">
+                        <ul>
+                            <li>
+                                <div class="counter">
+                                    <div class="minutes">
+                                        <h6></h6>
+                                    </div>
                                 </div>
-                            </div>
-                            <a href="gps-turned-off.html"
-                                class="cab-button cab-button-gradient d-block text-center w-100 mt-4">Submit</a>
-                            <a href="javascript:void(0)"
-                                class="cab-button cab-button-border d-block text-center w-100 mt-4">Resend</a>
-                        </form>
-
-                        <div class="resend-box">
-                            <h6>Resend code in</h6>
-                            <div class="time" id="timer" data-minutes="1" data-seconds="2">
-                                <ul>
-                                    <li>
-                                        <div class="counter">
-                                            <div class="minutes">
-                                                <h6></h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <span>:</span>
-                                    <li>
-                                        <div class="counter">
-                                            <div class="seconds">
-                                                <h6></h6>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                            </li>
+                            <span>:</span>
+                            <li>
+                                <div class="counter">
+                                    <div class="seconds">
+                                        <h6></h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -103,10 +99,6 @@
 
     <!-- timer js -->
     <script src="../assets/js/timer1.js"></script>
-
-    <!-- swiper js -->
-    <script src="../assets/js/swiper-bundle.min.js"></script>
-    <script src="../assets/js/custom_swiper.js"></script>
 
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
