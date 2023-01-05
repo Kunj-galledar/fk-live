@@ -1,0 +1,151 @@
+/*=====================
+    Reset CSS
+==========================*/
+.custom-container {
+    padding: 0 15px;
+}
+
+.mt-35 {
+    margin-top: 35px !important;
+}
+
+.px-15 {
+    padding-inline: 15px !important;
+}
+
+.pt-45 {
+    padding-top: 45px;
+}
+
+.pt-25 {
+    padding-top: 25px;
+}
+
+.h-102 {
+    height: 102px;
+}
+
+.h-136 {
+    height: 136px;
+}
+
+.ps-15 {
+    padding-left: 15px;
+}
+
+.mt-35 {
+    margin-top: 35px;
+}
+
+.mt-200 {
+    margin-top: 200px;
+}
+
+.section-t-space {
+    padding-top: 25px;
+}
+
+.section-t-sm-space {
+    padding-top: 18px;
+}
+
+.section-b-sm-space {
+    padding-bottom: 18px;
+}
+
+.section-b-space {
+    padding-bottom: 25px !important;
+}
+
+.p-center {
+    @include flex_common;
+}
+
+.content-color {
+    color: rgba(var(--content), 1);
+}
+
+.title-color {
+    color: rgba(var(--title), 1) !important;
+}
+
+.theme-color {
+    color: rgba(var(--theme-color), 1);
+}
+
+.theme-bg-color {
+    background-color: rgba(var(--theme-color), 1);
+}
+
+.primary-color {
+    color: rgba(var(--primary), 1);
+}
+
+.divider {
+    background: #F5F7F7;
+    box-shadow: inset 0px 4px 4px #F0F2F3;
+    width: 100%;
+    height: 10px;
+}
+
+.bottom-space {
+    padding-bottom: 100px;
+}
+
+// Position Top
+.p-top-left {
+    display: flex;
+    justify-content: flex-start;
+
+    [dir="rtl"] & {
+        justify-content: flex-end;
+    }
+}
+
+.p-top-center {
+    display: flex;
+    justify-content: center;
+}
+
+.p-top-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+// Position Center
+.p-center-left {
+    @include flex_common($dis: flex, $align: center, $justify: flex-start);
+
+    [dir="rtl"] & {
+        justify-content: flex-end;
+    }
+}
+
+.p-center {
+    @include flex_common;
+}
+
+.p-center-right {
+    @include flex_common($dis: flex, $align: center, $justify: flex-end);
+
+    [dir="rtl"] & {
+        justify-content: flex-start;
+    }
+}
+
+// Position Bottom
+.p-bottom-left {
+    @include flex_common($dis: flex, $align: flex-end, $justify: flex-start);
+
+    [dir="rtl"] & {
+        justify-content: flex-end;
+    }
+}
+
+.p-bottom-center {
+    @include flex_common($dis: flex, $align: flex-end, $justify: center);
+}
+
+.p-bottom-right {
+    @include flex_common($dis: flex, $align: flex-end, $justify: flex-end);
+}
