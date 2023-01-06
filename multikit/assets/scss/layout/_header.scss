@@ -160,115 +160,115 @@ header {
 /*=====================
     Chatting Header CSS
 ==========================*/
-// .chatting-header {
-//     padding-top: 15px;
+.chatting-header {
+    padding-top: 15px;
 
-//     .header-box {
-//         display: flex;
-//         align-items: center;
+    .header-box {
+        display: flex;
+        align-items: center;
 
-//         .arrow-box {
-//             font-size: 25px;
-//             width: 30px;
-//             height: 30px;
-//             @include flex_common;
-//             margin-right: 4px;
-//         }
+        .arrow-box {
+            font-size: 25px;
+            width: 30px;
+            height: 30px;
+            @include flex_common;
+            margin-right: 4px;
+        }
 
-//         .add-member {
-//             display: flex;
-//             align-items: center;
-//             flex-wrap: nowrap;
-//             gap: 11px;
-//             margin-left: auto;
+        .add-member {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 11px;
+            margin-left: auto;
 
-//             i {
-//                 font-size: 20px;
-//             }
-//         }
+            i {
+                font-size: 20px;
+            }
+        }
 
-//         .calling-box {
-//             margin-left: auto;
-//             display: flex;
-//             align-items: center;
-//             flex-wrap: nowrap;
-//             gap: 15px;
+        .calling-box {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 15px;
 
-//             @media (max-width: 600px) {
-//                 gap: calc(7px + (15 - 7) * ((100vw - 320px) / (600 - 320)));
-//             }
+            @media (max-width: 600px) {
+                gap: calc(7px + (15 - 7) * ((100vw - 320px) / (600 - 320)));
+            }
 
-//             i {
-//                 font-size: 23px;
-//                 color: rgba(var(--title), 1);
-//             }
-//         }
+            i {
+                font-size: 23px;
+                color: rgba(var(--title), 1);
+            }
+        }
 
-//         .header-profile {
-//             display: flex;
-//             align-items: center;
-//             flex-wrap: nowrap;
-//             gap: 11px;
+        .header-profile {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 11px;
 
-//             .profile-image {
-//                 width: 52px;
-//                 height: 52px;
-//                 overflow: hidden;
-//                 border-radius: 100%;
-//                 @include flex_common;
-//             }
+            .profile-image {
+                width: 52px;
+                height: 52px;
+                overflow: hidden;
+                border-radius: 100%;
+                @include flex_common;
+            }
 
-//             .name-contact {
-//                 width: calc(100% - 52px - 3px);
-//                 display: flex;
-//                 align-items: center;
-//                 flex-wrap: wrap;
-//                 gap: 3px;
+            .name-contact {
+                width: calc(100% - 52px - 3px);
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 3px;
 
-//                 h5,
-//                 h6 {
-//                     width: 100%;
-//                     color: rgba(var(--title), 1);
-//                 }
+                h5,
+                h6 {
+                    width: 100%;
+                    color: rgba(var(--title), 1);
+                }
 
-//                 h6 {
-//                     font-size: 10px;
-//                 }
-//             }
-//         }
+                h6 {
+                    font-size: 10px;
+                }
+            }
+        }
 
-//         .left-header {
-//             width: 86px;
-//             // height: 26px;
-//             @include flex_common;
-//         }
+        .left-header {
+            width: 86px;
+            // height: 26px;
+            @include flex_common;
+        }
 
-//         .right-header {
-//             margin-left: auto;
-//             display: flex;
-//             align-items: center;
-//             flex-wrap: nowrap;
-//             gap: 7px;
-//             color: rgba(var(--title), 1);
+        .right-header {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 7px;
+            color: rgba(var(--title), 1);
 
-//             button {
-//                 padding: 0;
-//                 color: rgba(var(--title), 1);
-//                 line-height: 1;
-//             }
+            button {
+                padding: 0;
+                color: rgba(var(--title), 1);
+                line-height: 1;
+            }
 
-//             i {
-//                 &.ri-search-line {
-//                     font-size: 23px;
-//                 }
+            i {
+                &.ri-search-line {
+                    font-size: 23px;
+                }
 
-//                 &.ri-more-2-line {
-//                     font-size: 20px;
-//                 }
-//             }
-//         }
-//     }
-// }
+                &.ri-more-2-line {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
 
 /*=====================
     Cab Header CSS
@@ -475,6 +475,10 @@ header {
                 align-items: center;
                 flex-wrap: nowrap;
                 gap: 8px;
+
+                @include mq-max(md) {
+                    gap: calc(5px + (8 - 5) * ((100vw - 320px) / (767 - 320)));
+                }
 
                 li {
                     display: flex;
@@ -786,10 +790,14 @@ header {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    padding: 0 15px 20px;
+    padding: 20px 15px;
     max-width: 600px;
     background-color: #fff9ed;
     z-index: 9;
+
+    @include mq-max(md) {
+        padding: calc(11px + (20 - 11) * ((100vw - 320px) / (767 - 320))) calc(8px + (15 - 8) * ((100vw - 320px) / (767 - 320)));
+    }
 
     ul {
         display: flex;
@@ -799,6 +807,10 @@ header {
         box-shadow: $shadow3;
         border-radius: 18px;
         padding: 10px 29px;
+
+        @include mq-max(md) {
+            padding-inline: calc(19px + (29 - 19) * ((100vw - 320px) / (767 - 320)));
+        }
 
         li {
             &.active {

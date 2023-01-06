@@ -96,10 +96,10 @@
 // });
 
 
-$(".addcart-button").click(function () {
-    $(this).next().addClass("open");
-    $(".add-to-cart-box .qty-input").val('1');
-});
+// $(".addcart-button").click(function () {
+//     $(this).next().addClass("open");
+//     $(".add-to-cart-box .qty-input").val('1');
+// });
 
 $('.add-to-cart-box').on('click', function () {
     var $qty = $(this).siblings(".qty-input");
@@ -109,7 +109,7 @@ $('.add-to-cart-box').on('click', function () {
     }
 });
 
-$('.qty-left-minus').on('click', function () {
+$('.mins-button').on('click', function () {
     var $qty = $(this).siblings(".qty-input");
     var _val = $($qty).val();
     if (_val == '1') {
@@ -122,7 +122,7 @@ $('.qty-left-minus').on('click', function () {
     }
 });
 
-$('.qty-right-plus').click(function () {
+$('.plus-button').click(function () {
     if ($(this).prev().val() < 9) {
         $(this).prev().val(+$(this).prev().val() + 1);
     }
