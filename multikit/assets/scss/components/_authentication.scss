@@ -78,9 +78,10 @@
             position: relative;
             overflow: hidden;
             padding: 4px;
-            height: 82px;
+            @include pseudowh($width: 82px, $height: 82px);
+            // height: 82px;
+            // width: 82px;
             margin: 0 auto;
-            width: 82px;
             background-color: rgba(var(--white), 0.4);
             border-radius: 100%;
 
@@ -91,8 +92,9 @@
             img {
                 position: absolute;
                 object-fit: cover;
-                width: 115px;
-                height: 115px;
+                @include pseudowh($width: 115px, $height: 115px);
+                // width: 115px;
+                // height: 115px;
                 border: 6px solid rgba(var(--white), 1);
                 box-shadow: 0 0 10px 0 rgba(var(--black), 0.1);
                 border-radius: 100px;
@@ -101,8 +103,9 @@
 
             .-label {
                 cursor: pointer;
-                height: 100%;
-                width: 100%;
+                @include pseudowh;
+                // height: 100%;
+                // width: 100%;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -110,8 +113,9 @@
 
             .camera-icon {
                 fill: rgba(var(--title), 1);
-                width: 30px;
-                height: 30px;
+                @include pseudowh($width: 30px, $height: 30px);
+                // width: 30px;
+                // height: 30px;
             }
 
             span {
@@ -135,8 +139,9 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
-            height: 133px;
+            @include pseudowh($width: 100%, $height: 133px);
+            // width: 100%;
+            // height: 133px;
             background: linear-gradient(0deg, rgba(var(--theme-color), 1) 0%, rgba(205, 233, 221, 0) 82.04%);
         }
     }
@@ -164,8 +169,9 @@
 
         .arrow-box {
             font-size: 25px;
-            width: 30px;
-            height: 30px;
+            @include pseudowh($width: 30px, $height: 30px);
+            // width: 30px;
+            // height: 30px;
             @include flex_common;
             margin-right: 4px;
         }
@@ -206,8 +212,9 @@
             gap: 11px;
 
             .profile-image {
-                width: 52px;
-                height: 52px;
+                @include pseudowh($width: 52px, $height: 52px);
+                // width: 52px;
+                // height: 52px;
                 overflow: hidden;
                 border-radius: 100%;
                 @include flex_common;
@@ -302,8 +309,9 @@
         left: 0;
         background-image: url(../images/food/splash.png);
         background-position: bottom;
-        width: 100%;
-        height: 355px;
+        @include pseudowh($width: 100%, $height: 355px);
+        // width: 100%;
+        // height: 355px;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -375,8 +383,9 @@
         font-size: 24px;
         margin-top: 36px;
         color: rgba(var(--title), 1);
-        width: auto;
-        height: auto;
+        @include pseudowh($width: auto, $height: auto);
+        // width: auto;
+        // height: auto;
         padding: 0;
         line-height: 1;
     }
@@ -402,8 +411,9 @@
     }
 
     .location-box {
-        width: 236px;
-        height: 236px;
+        @include pseudowh($width: 236px, $height: 236px);
+        // width: 236px;
+        // height: 236px;
         margin: 0 auto 88px;
     }
 }
