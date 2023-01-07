@@ -6,14 +6,22 @@ header {
         background-color: transparent;
         display: block;
         padding: 0;
-        background-image: url(../images/learning/header-bg.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+
+        background: {
+            image: url(../images/learning/header-bg.jpg);
+            position: center;
+            repeat: no-repeat;
+            size: cover;
+        }
+
+        // background-image: url(../images/learning/header-bg.jpg);
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
 
         .top-header {
-            align-items: center;
             display: flex;
+            align-items: center;
             justify-content: space-between;
             position: absolute;
             top: 0;
@@ -52,14 +60,22 @@ header {
                 }
 
                 img {
-                    width: 20px;
-                    height: 20px;
+                    @include pseudowh($width: 20px, $height: 20px);
+                    // width: 20px;
+                    // height: 20px;
                     margin-left: 7px;
                     object-fit: contain;
-                    animation-name: wave-animation;
-                    animation-duration: 2.5s;
-                    animation-iteration-count: infinite;
                     transform-origin: 70% 70%;
+
+                    animation: {
+                        name: wave-animation;
+                        duration: 2.5s;
+                        iteration-count: infinite;
+                    }
+
+                    // animation-name: wave-animation;
+                    // animation-duration: 2.5s;
+                    // animation-iteration-count: infinite;
                 }
             }
 
@@ -79,8 +95,9 @@ header {
             padding: 16px 0;
 
             .profile-image {
-                width: 80px;
-                height: 80px;
+                @include pseudowh($width: 80px, $height: 80px);
+                // width: 80px;
+                // height: 80px;
                 border-radius: 8px;
                 overflow: hidden;
                 margin-bottom: -34px;
@@ -138,6 +155,7 @@ header {
                 position: absolute;
                 top: 0;
                 left: 0;
+                @include pseudowh;
                 width: 100%;
                 height: 100%;
                 background-color: rgba(var(--black), 0.6);
@@ -147,8 +165,9 @@ header {
                 position: absolute;
                 @include center(both);
                 border-radius: 100%;
-                width: 37px;
-                height: 37px;
+                @include pseudowh($width: 37px, $height: 37px);
+                // width: 37px;
+                // height: 37px;
                 background-color: rgba(var(--white), 1);
                 @include flex_common;
                 font-size: 20px;
@@ -169,8 +188,9 @@ header {
 
         .arrow-box {
             font-size: 25px;
-            width: 30px;
-            height: 30px;
+            @include pseudowh($width: 30px, $height: 30px);
+            // width: 30px;
+            // height: 30px;
             @include flex_common;
             margin-right: 4px;
         }
@@ -211,8 +231,9 @@ header {
             gap: 11px;
 
             .profile-image {
-                width: 52px;
-                height: 52px;
+                @include pseudowh($width: 52px, $height: 52px);
+                // width: 52px;
+                // height: 52px;
                 overflow: hidden;
                 border-radius: 100%;
                 @include flex_common;
@@ -294,8 +315,9 @@ header {
         gap: 10px;
 
         .header-left {
-            width: 50px;
-            height: 50px;
+            @include pseudowh($width: 50px, $height: 50px);
+            // width: 50px;
+            // height: 50px;
             background-color: rgba(var(--white), 1);
             box-shadow: 2px 3px 6px rgba(var(--content), 0.19);
             border-radius: 12px;
@@ -376,8 +398,9 @@ header {
             gap: 5px;
 
             .header-icon {
-                width: 28px;
-                height: 28px;
+                @include pseudowh($width: 28px, $height: 28px);
+                // width: 28px;
+                // height: 28px;
                 transform: scaleX(-1);
                 display: flex;
                 align-items: center;
@@ -385,9 +408,9 @@ header {
 
                 i {
                     background: linear-gradient(270deg, #FFA000 -5.38%, #FFD54F 100%);
+                    font-size: 20px;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
-                    font-size: 20px;
                 }
             }
 
@@ -438,8 +461,9 @@ header {
         gap: 8px;
 
         .company-image {
-            width: 75px;
-            height: 75px;
+            @include pseudowh($width: 75px, $height: 75px);
+            // width: 75px;
+            // height: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -449,8 +473,9 @@ header {
 
             img {
                 object-fit: contain;
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
+                // width: 100%;
+                // height: 100%;
             }
         }
 
@@ -494,8 +519,9 @@ header {
                     }
 
                     &.dots {
-                        width: 4px;
-                        height: 4px;
+                        @include pseudowh($width: 4px, $height: 4px);
+                        // width: 4px;
+                        // height: 4px;
                         background-color: rgba(var(--white), 1);
                         border-radius: 100%;
                     }
@@ -525,8 +551,9 @@ header {
         }
 
         .header-icon {
-            width: 30px;
-            height: 30px;
+            @include pseudowh($width: 30px, $height: 30px);
+            // width: 30px;
+            // height: 30px;
             font-size: 16px;
             color: rgba(var(--white), 1);
             @include flex_common;
@@ -586,8 +613,9 @@ header {
                     font-size: 21px;
                     line-height: 1;
                     margin-bottom: 2px;
-                    width: 45px;
-                    height: 25px;
+                    @include pseudowh($width: 45px, $height: 25px);
+                    // width: 45px;
+                    // height: 25px;
                     margin: 0 auto;
 
                     i {
@@ -607,8 +635,9 @@ header {
 
             &.active {
                 .mobile-icon {
-                    width: 50px;
-                    height: 50px;
+                    @include pseudowh($width: 50px, $height: 50px);
+                    // width: 50px;
+                    // height: 50px;
                     margin-top: -36px;
                     position: relative;
                     z-index: 0;
@@ -616,8 +645,9 @@ header {
                     &::before {
                         @include pos;
                         @include center(both);
-                        width: 120%;
-                        height: 120%;
+                        @include pseudowh($width: 120%, $height: 120%);
+                        // width: 120%;
+                        // height: 120%;
                         background: rgba(var(--white), $alpha: 1.0);
                         z-index: -1;
                         border-radius: 100%;
@@ -627,8 +657,9 @@ header {
                     i {
                         @include flex_common;
                         background: var(--gradient);
-                        width: 50px;
-                        height: 50px;
+                        @include pseudowh($width: 50px, $height: 50px);
+                        // width: 50px;
+                        // height: 50px;
                         color: rgba(var(--white), $alpha: 1.0);
                         border-radius: 100%;
                     }
@@ -700,8 +731,9 @@ header {
                 i {
                     font-size: 24px;
                     line-height: 1;
-                    width: 24px;
-                    height: 24px;
+                    @include pseudowh($width: 24px, $height: 24px);
+                    // width: 24px;
+                    // height: 24px;
                     @include flex_common;
                     margin: 0 auto;
 
@@ -746,8 +778,9 @@ header {
                 display: block;
 
                 &.end-call {
-                    width: 44px;
-                    height: 44px;
+                    @include pseudowh($width: 44px, $height: 44px);
+                    // width: 44px;
+                    // height: 44px;
                     background-color: #A72C2C;
                     border-radius: 100%;
                     @include flex_common;
@@ -761,8 +794,9 @@ header {
                 i {
                     font-size: 24px;
                     line-height: 1;
-                    width: 24px;
-                    height: 24px;
+                    @include pseudowh($width: 24px, $height: 24px);
+                    // width: 24px;
+                    // height: 24px;
                     @include flex_common;
                     margin: 0 auto;
 
@@ -835,8 +869,9 @@ header {
                     position: absolute;
                     top: -10px;
                     left: 0;
-                    width: 100%;
-                    height: 1px;
+                    @include pseudowh($width: 100%, $height: 1px);
+                    // width: 100%;
+                    // height: 1px;
                     background-color: rgba(var(--primary), 1);
                     opacity: 0;
                 }
@@ -847,8 +882,9 @@ header {
                 }
 
                 svg {
-                    width: 20px;
-                    height: 20px;
+                    @include pseudowh($width: 20px, $height: 20px);
+                    // width: 20px;
+                    // height: 20px;
                     fill: transparent;
                     stroke: rgba(var(--content), 1);
                     margin-bottom: 5px;

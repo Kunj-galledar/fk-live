@@ -123,8 +123,9 @@
 
         .form-check-input {
             vertical-align: middle;
-            width: 16px;
-            height: 16px;
+            @include pseudowh($width: 16px, $height: 16px);
+            // width: 16px;
+            // height: 16px;
             border-radius: 10px;
             background: none;
             border: 0;
@@ -154,8 +155,9 @@
 
         input {
             vertical-align: middle;
-            width: 16px;
-            height: 16px;
+            @include pseudowh($width: 16px, $height: 16px);
+            // width: 16px;
+            // height: 16px;
             border-radius: 10px;
             background: none;
             border: 0;
@@ -205,8 +207,9 @@
             position: absolute;
             color: rgba(var(--title), 1);
             line-height: 1;
-            height: 100%;
-            width: 46px;
+            @include pseudowh($width: 46px, $height: 100%);
+            // height: 100%;
+            // width: 46px;
             border-radius: 0;
             @include flex_common;
         }
@@ -280,8 +283,9 @@
                 position: absolute;
                 bottom: -5px;
                 right: -5px;
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
+                // width: 100%;
+                // height: 100%;
                 background: var(--gradient);
                 opacity: 0.08;
                 border-radius: 4px;
@@ -431,14 +435,16 @@
             font-size: 18px;
             color: rgba(var(--title), 1);
             margin-bottom: 0;
-            width: 58px;
-            height: 58px;
+            @include pseudowh($width: 58px, $height: 58px);
+            // width: 58px;
+            // height: 58px;
             padding: 0;
             border-radius: 15px;
 
             @include mq-max(md) {
-                width: calc(49px + (58 - 49) * ((100vw - 320px) / (767 - 320)));
-                height: calc(49px + (58 - 49) * ((100vw - 320px) / (767 - 320)));
+                @include pseudowh($width: calc(49px + (58 - 49) * ((100vw - 320px) / (767 - 320))), $height: calc(49px + (58 - 49) * ((100vw - 320px) / (767 - 320))));
+                // width: calc(49px + (58 - 49) * ((100vw - 320px) / (767 - 320)));
+                // height: calc(49px + (58 - 49) * ((100vw - 320px) / (767 - 320)));
                 font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (767 - 320)));
             }
 
@@ -456,8 +462,9 @@
 
     .form-control-bg {
         img {
-            width: 31px;
-            height: 21px;
+            @include pseudowh($width: 31px, $height: 21px);
+            // width: 31px;
+            // height: 21px;
             border-radius: 6px;
             position: absolute;
             top: 50%;
@@ -501,8 +508,9 @@
             }
 
             img {
-                width: 31px;
-                height: 21px;
+                @include pseudowh($width: 31px, $height: 21px);
+                // width: 31px;
+                // height: 21px;
                 border-radius: 6px;
             }
         }
@@ -529,8 +537,9 @@
                         position: absolute;
                         top: -7px;
                         left: 0;
-                        width: 100%;
-                        height: 1px;
+                        @include pseudowh($width: 100%, $height: 1px);
+                        // width: 100%;
+                        // height: 1px;
                         background-color: rgba(var(--content), 0.3);
                         z-index: -1;
                     }
@@ -548,8 +557,9 @@
                     padding: 0;
 
                     img {
-                        width: 31px;
-                        height: 21px;
+                        @include pseudowh($width: 31px, $height: 21px);
+                        // width: 31px;
+                        // height: 21px;
                         border-radius: 6px;
                     }
                 }
@@ -654,21 +664,27 @@
                     opacity: 1;
                     display: block;
                     background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
-                    width: 20px;
-                    height: 20px;
+                    @include pseudowh($width: 20px, $height: 20px);
+                    // width: 20px;
+                    // height: 20px;
                     border-width: thin;
                 }
             }
         }
     }
 
-    .form-control[type="date"]::-webkit-calendar-picker-indicator {
-        color: rgba(0, 0, 0, 0);
-        display: block;
-        background: url(../svg/calendar.svg) no-repeat;
-        width: 20px;
-        height: 20px;
-        // border-width: thin;
+    .form-control {
+        &[type="date"] {
+            &::-webkit-calendar-picker-indicator {
+                color: rgba(0, 0, 0, 0);
+                display: block;
+                background: url(../svg/calendar.svg) no-repeat;
+                @include pseudowh($width: 20px, $height: 20px);
+                // width: 20px;
+                // height: 20px;
+                // border-width: thin;
+            }
+        }
     }
 
     .form-flex {
@@ -677,8 +693,9 @@
         justify-content: space-between;
 
         .form-control {
-            width: 60px;
-            height: 60px;
+            @include pseudowh($width: 60px, $height: 60px);
+            // width: 60px;
+            // height: 60px;
         }
     }
 
