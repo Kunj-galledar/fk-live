@@ -91,12 +91,12 @@
 }
 
 .theme-table {
-	table-layout: fixed;
 	border: none;
 
 	thead {
 		tr {
 			th {
+				white-space: nowrap;
 				border: none;
 				padding: 12px 15px !important;
 				background-color: #f3f3f3 !important;
@@ -132,10 +132,10 @@
 					align-items: center;
 
 					.user-checkbox {
-						margin-bottom: 0;
+						margin-bottom: -5px;
 						padding: 0;
 						margin-right: 10px;
-						margin-top: -5px;
+						min-height: auto;
 					}
 				}
 			}
@@ -155,7 +155,6 @@
 			th,
 			td {
 				&:first-child {
-					max-width: none !important;
 					border-top-left-radius: 9px;
 					border-bottom-left-radius: 9px;
 
@@ -285,6 +284,7 @@ th {
 
 	td {
 		color: $table-row-color;
+		white-space: nowrap;
 
 		a {
 			i {
@@ -294,7 +294,12 @@ th {
 			}
 
 			span {
+				white-space: nowrap;
 				color: $table-heading-color;
+
+				&:last-child {
+					margin-top: 3px;
+				}
 			}
 		}
 	}
@@ -419,10 +424,6 @@ table {
 				min-width: 170px;
 				padding: 15px !important;
 
-				&:first-child {
-					max-width: 160px !important;
-				}
-
 				&:last-child {
 					text-align: center;
 				}
@@ -434,6 +435,7 @@ table {
 		tr {
 			td {
 				text-align: center;
+				white-space: nowrap;
 
 				&.td-price {
 					font-weight: 800;
@@ -490,10 +492,6 @@ table {
 						font-weight: 700;
 						position: relative;
 					}
-				}
-
-				&:first-child {
-					max-width: 160px;
 				}
 
 				&:nth-child(3) {
@@ -795,7 +793,7 @@ table {
 				min-width: 150px;
 
 				&:first-child {
-					font-weight: 700;
+					font-weight: 500;
 				}
 
 				&.status-danger {
@@ -1855,7 +1853,7 @@ table {
 	position: relative;
 	height: 150px;
 
-	// &:hover,
+	&:hover,
 	&.dragover {
 		background: #ecf0f5;
 	}
@@ -2102,7 +2100,6 @@ table {
 }
 
 .custom-role-table {
-	table-layout: fixed;
 	border: none;
 
 	.table {

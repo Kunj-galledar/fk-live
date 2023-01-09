@@ -42,12 +42,13 @@
     font-size: 22px;
 
     a {
-        font-size: 16px;
+        font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
         color: $theme-font-color;
         text-transform: capitalize;
         display: block;
 
         &.btn {
+            padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
             font-size: 14px;
             color: $white;
         }
@@ -125,10 +126,6 @@
     &.option-title {
         @include flex_common($dis: flex, $align: center, $justify: space-between);
 
-        @include mq-max(xs) {
-            display: block;
-        }
-
         @include mq-max(sm) {
             h5 {
                 display: inline-block;
@@ -164,6 +161,12 @@
                 display: flex;
                 align-items: center;
                 gap: calc(9px + (15 - 9) * ((100vw - 320px) / (1920 - 320)));
+
+                li {
+                    &:last-child {
+                        margin-left: auto;
+                    }
+                }
             }
         }
     }
@@ -175,6 +178,10 @@
     letter-spacing: 0.5px;
     border-radius: 15px;
     padding: 25px;
+
+    &-table {
+        padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320)));
+    }
 
     &.card-hover {
         transition: all 0.3s ease;

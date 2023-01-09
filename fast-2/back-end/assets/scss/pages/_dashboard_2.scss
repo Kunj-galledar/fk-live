@@ -123,6 +123,25 @@
             z-index: 1;
         }
 
+        @each $circle-name,
+        $circle-color in (primary, var(--theme-color)),
+        (secondary, $secondary-color),
+        (success, $success-color),
+        (danger, $danger-color),
+        (info, $info-color),
+        (light, $light-color),
+        (dark, $dark-color),
+        (warning, $warning-color) {
+            .circle-dot-#{$circle-name} {
+                background-color: rgba($circle-color, 0.25);
+                border-radius: 100%;
+                padding: 6px;
+                font-size: 5px;
+                color: $circle-color;
+                animation: round 1.3s ease-in-out infinite;
+            }
+        }
+
         +.media {
             margin-top: 45px;
         }
@@ -136,6 +155,26 @@
                 margin-top: 2px;
             }
         }
+    }
+}
+
+@each $activity-dot-name,
+$activity-dot-color in (primary, var(--theme-color)),
+(secondary, $secondary-color),
+(success, $success-color),
+(danger, $danger-color),
+(info, $info-color),
+(light, $light-color),
+(dark, $dark-color),
+(warning, $warning-color) {
+    .activity-dot-#{$activity-dot-name} {
+        @include pseudowh($width: 16px, $height: 16px);
+        background-color: $white;
+        border-radius: 100%;
+        border: 3px solid $activity-dot-color;
+        box-shadow: 0.5px 4.33px 15px 0px rgba($activity-dot-color, 0.25);
+        position: relative;
+        z-index: 2;
     }
 }
 

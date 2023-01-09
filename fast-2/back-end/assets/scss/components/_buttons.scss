@@ -3,7 +3,8 @@
 ==========================**/
 .btn {
     @include flex_common;
-    padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
+    padding: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)))
+        calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
@@ -52,7 +53,8 @@
         background: var(--theme-color);
         border: none;
         z-index: 0;
-        padding: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320))) calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
+        padding: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320)))
+            calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
         border: 1px solid var(--theme-color);
 
         i {
@@ -85,7 +87,8 @@
     }
 
     &-md {
-        padding: calc(8px + (11 - 8) * ((100vw - 320px) / (1920 - 320))) calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(8px + (11 - 8) * ((100vw - 320px) / (1920 - 320)))
+            calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 500;
     }
@@ -133,7 +136,8 @@
     }
 
     &-category {
-        padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320))) calc(16px + (27 - 16) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)))
+            calc(16px + (27 - 16) * ((100vw - 320px) / (1920 - 320)));
         letter-spacing: 0.8px;
         font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 700;
@@ -163,12 +167,14 @@
     &.active {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($primary-color, 8%),
-                0%,
-                darken($primary-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($primary-color, 8%),
+            0%,
+            darken($primary-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -182,12 +188,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($secondary-color, 8%),
-                0%,
-                darken($secondary-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($secondary-color, 8%),
+            0%,
+            darken($secondary-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -201,12 +209,35 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($success-color, 8%),
-                0%,
-                darken($success-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($success-color, 8%),
+            0%,
+            darken($success-color, 8%),
+            100%,
+            $white
+        ) !important;
+    }
+}
+
+.btn-danger-gradien {
+    @include btn-gradien(60, lighten($danger-color, 8%), 0%, darken($danger-color, 8%), 100%, $white);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.hover {
+        transition: 1.5s;
+        background-position: right center;
+        background-image: linear-gradient(
+            to right,
+            lighten($danger-color, 8%),
+            0%,
+            darken($danger-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -220,12 +251,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($warning-color, 8%),
-                0%,
-                darken($warning-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($warning-color, 8%),
+            0%,
+            darken($warning-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -239,12 +272,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($info-color, 8%),
-                0%,
-                darken($info-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($info-color, 8%),
+            0%,
+            darken($info-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -258,12 +293,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($light-color, 8%),
-                0%,
-                darken($light-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($light-color, 8%),
+            0%,
+            darken($light-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -277,12 +314,14 @@
     &.hover {
         transition: 1.5s;
         background-position: right center;
-        background-image: linear-gradient(to right,
-                lighten($dark-color, 8%),
-                0%,
-                darken($dark-color, 8%),
-                100%,
-                $white) !important;
+        background-image: linear-gradient(
+            to right,
+            lighten($dark-color, 8%),
+            0%,
+            darken($dark-color, 8%),
+            100%,
+            $white
+        ) !important;
     }
 }
 
@@ -322,6 +361,30 @@
     }
 
     margin-bottom: -20px;
+}
+
+// outline buttons
+@each $btn-name, $btn-color in (primary, $primary-color), (secondary, $secondary-color), (success, $success-color),
+    (danger, $danger-color), (info, $info-color), (light, $light-color), (dark, $dark-color), (warning, $warning-color)
+{
+    .btn-air-#{$btn-name} {
+        box-shadow: 0 5px 10px 2px rgba(88, 103, 221, 0.19) !important;
+
+        &:hover,
+        &:active,
+        &:not([disabled]):not(.disabled):active {
+            background-color: darken($btn-color, 10%);
+            border-color: darken($btn-color, 10%);
+        }
+    }
+
+    .input-air-#{$btn-name} {
+        box-shadow: 0 3px 5px 1px rgba($btn-color, 0.1) !important;
+
+        &:focus {
+            border-color: $btn-color;
+        }
+    }
 }
 
 .btn-outline {
@@ -448,7 +511,7 @@
 }
 
 .btn-group-showcase {
-    >div {
+    > div {
         margin-bottom: -20px;
 
         label {

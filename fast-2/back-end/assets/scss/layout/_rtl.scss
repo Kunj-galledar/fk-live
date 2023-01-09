@@ -1208,6 +1208,30 @@ html[dir="rtl"] {
         }
     }
 
+    @each $progress-gradient-name,
+    $progress-gradient-color in (primary, var(--theme-color)),
+    (secondary, $secondary-color),
+    (success, $success-color),
+    (danger, $danger-color),
+    (info, $info-color),
+    (light, $light-color),
+    (dark, $dark-color),
+    (warning, $warning-color) {
+        .progress-gradient-#{$progress-gradient-name} {
+            background-image: linear-gradient(to right, $progress-gradient-color, $transparent-color);
+
+            &::after {
+                right: unset;
+                left: -1px;
+            }
+
+            .animate-circle {
+                right: unset;
+                left: -8px;
+            }
+        }
+    }
+
     .progress-animate {
         span {
             left: -10px;
@@ -3513,6 +3537,19 @@ html[dir="rtl"] {
         i {
             left: unset;
             right: 0;
+        }
+    }
+
+    @each $var in $alert-name {
+        $i: index($alert-name, $var);
+
+        .alert-#{$var}.inverse {
+            &:before {
+                border-right: 7px solid nth($alert-color, $i);
+                right: 54px;
+                left: unset;
+                border-left: unset;
+            }
         }
     }
 

@@ -166,6 +166,38 @@ $or: $warning-color;
     }
 }
 
+//warning Color
+
+//Danger Color
+$m-val:13;
+$or:$danger-color;
+
+@while $m-val>=1 {
+    .red-color ul li {
+        &:nth-child(#{$m-val}) {
+            $or: lighten($or, 2%);
+            background-color: $or;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+
+            span:before {
+                content: "#{$or}";
+                display: block;
+                color: $white;
+                text-align: center;
+            }
+
+            $m-val: $m-val - 1;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+//Danger Color
+
 //Pink Color
 $m-val:13;
 $or:#e6155e;
