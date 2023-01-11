@@ -62,3 +62,27 @@
      //  slidesPerView: "auto",
      spaceBetween: 10,
  });
+
+ var swiper = new Swiper(".hotel-slider", {
+     effect: "fade",
+     pagination: {
+         el: ".swiper-pagination",
+     },
+ });
+
+ var swiper = new Swiper(".hotel-slider-4", {
+     slidesPerView: 5,
+     breakpoints: {
+         0: {
+             slidesPerView: 4.5,
+         },
+         406: {
+             slidesPerView: 5,
+         },
+     },
+ });
+
+ var swiper = new Swiper(".view-slider", {
+     slidesPerView: 1.7,
+     spaceBetween: 16,
+ });

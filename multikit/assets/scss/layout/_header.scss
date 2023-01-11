@@ -161,6 +161,10 @@ header {
                 background-color: rgba(var(--black), 0.6);
             }
 
+            img {
+                width: 100%;
+            }
+
             .video-icon {
                 position: absolute;
                 @include center(both);
@@ -893,6 +897,44 @@ header {
                 h5 {
                     font-weight: 400;
                 }
+            }
+        }
+    }
+}
+
+/* Header Style 3 */
+.header-style-3 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        i {
+            font-size: 19px;
+        }
+    }
+
+    .header-right {
+        text-align: right;
+        display: block;
+        color: rgba(var(--title-color), 1);
+
+        i {
+            font-size: 18px;
+            position: relative;
+
+            &::after {
+                @include pos;
+                top: 0px;
+                right: 3px;
+                width: 5px;
+                height: 5px;
+                background-color: rgba(var(--danger-color), 1);
+                border-radius: 100%;
+                animation: flash 2s linear infinite;
             }
         }
     }

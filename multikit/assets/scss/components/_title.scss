@@ -2,7 +2,7 @@
     Title Scss
 ==========================*/
 .title {
-    color: rgba(var(--title), $alpha: 1.0);
+    color: rgba(var(--title), 1);
     margin-bottom: 15px;
 
     &-flex {
@@ -46,16 +46,20 @@
     h4 {
         font-weight: 600;
         font-size: 16px;
-        color: rgba(var(--title), $alpha: 1.0);
+        color: rgba(var(--title), 1);
+
+        @include mq-max(md) {
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (767 - 320)));
+        }
     }
 
     h5 {
         font-weight: 600;
-        color: rgba(var(--title), $alpha: 1.0);
+        color: rgba(var(--title), 1);
     }
 
     a {
         font-weight: 600;
-        color: rgba(var(--primary), $alpha: 1.0);
+        color: rgba(var(--primary), 1);
     }
 }
