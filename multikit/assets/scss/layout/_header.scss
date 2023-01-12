@@ -6,18 +6,10 @@ header {
         background-color: transparent;
         display: block;
         padding: 0;
-
-        background: {
-            image: url(../images/learning/header-bg.jpg);
-            position: center;
-            repeat: no-repeat;
-            size: cover;
-        }
-
-        // background-image: url(../images/learning/header-bg.jpg);
-        // background-position: center;
-        // background-repeat: no-repeat;
-        // background-size: cover;
+        background-image: url(../images/learning/header-bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         .top-header {
             display: flex;
@@ -61,21 +53,12 @@ header {
 
                 img {
                     @include pseudowh($width: 20px, $height: 20px);
-                    // width: 20px;
-                    // height: 20px;
                     margin-left: 7px;
                     object-fit: contain;
                     transform-origin: 70% 70%;
-
-                    animation: {
-                        name: wave-animation;
-                        duration: 2.5s;
-                        iteration-count: infinite;
-                    }
-
-                    // animation-name: wave-animation;
-                    // animation-duration: 2.5s;
-                    // animation-iteration-count: infinite;
+                    animation-name: wave-animation;
+                    animation-duration: 2.5s;
+                    animation-iteration-count: infinite;
                 }
             }
 
@@ -96,8 +79,6 @@ header {
 
             .profile-image {
                 @include pseudowh($width: 80px, $height: 80px);
-                // width: 80px;
-                // height: 80px;
                 border-radius: 8px;
                 overflow: hidden;
                 margin-bottom: -34px;
@@ -170,8 +151,6 @@ header {
                 @include center(both);
                 border-radius: 100%;
                 @include pseudowh($width: 37px, $height: 37px);
-                // width: 37px;
-                // height: 37px;
                 background-color: rgba(var(--white), 1);
                 @include flex_common;
                 font-size: 20px;
@@ -193,8 +172,6 @@ header {
         .arrow-box {
             font-size: 25px;
             @include pseudowh($width: 30px, $height: 30px);
-            // width: 30px;
-            // height: 30px;
             @include flex_common;
             margin-right: 4px;
         }
@@ -236,8 +213,6 @@ header {
 
             .profile-image {
                 @include pseudowh($width: 52px, $height: 52px);
-                // width: 52px;
-                // height: 52px;
                 overflow: hidden;
                 border-radius: 100%;
                 @include flex_common;
@@ -264,7 +239,6 @@ header {
 
         .left-header {
             width: 86px;
-            // height: 26px;
             @include flex_common;
         }
 
@@ -320,15 +294,11 @@ header {
 
         .header-left {
             @include pseudowh($width: 50px, $height: 50px);
-            // width: 50px;
-            // height: 50px;
             background-color: rgba(var(--white), 1);
             box-shadow: 2px 3px 6px rgba(var(--content), 0.19);
             border-radius: 12px;
             font-size: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flex_common;
             color: rgba(var(--title), 1);
             border-color: transparent;
         }
@@ -403,8 +373,6 @@ header {
 
             .header-icon {
                 @include pseudowh($width: 28px, $height: 28px);
-                // width: 28px;
-                // height: 28px;
                 transform: scaleX(-1);
                 display: flex;
                 align-items: center;
@@ -466,8 +434,6 @@ header {
 
         .company-image {
             @include pseudowh($width: 75px, $height: 75px);
-            // width: 75px;
-            // height: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -478,8 +444,6 @@ header {
             img {
                 object-fit: contain;
                 @include pseudowh;
-                // width: 100%;
-                // height: 100%;
             }
         }
 
@@ -514,7 +478,6 @@ header {
                     align-items: center;
                     font-weight: 400;
                     font-size: 13px;
-                    // color: #fff;
                     flex-wrap: nowrap;
                     gap: 4px;
 
@@ -524,8 +487,6 @@ header {
 
                     &.dots {
                         @include pseudowh($width: 4px, $height: 4px);
-                        // width: 4px;
-                        // height: 4px;
                         background-color: rgba(var(--white), 1);
                         border-radius: 100%;
                     }
@@ -556,8 +517,6 @@ header {
 
         .header-icon {
             @include pseudowh($width: 30px, $height: 30px);
-            // width: 30px;
-            // height: 30px;
             font-size: 16px;
             color: rgba(var(--white), 1);
             @include flex_common;
@@ -618,8 +577,6 @@ header {
                     line-height: 1;
                     margin-bottom: 2px;
                     @include pseudowh($width: 45px, $height: 25px);
-                    // width: 45px;
-                    // height: 25px;
                     margin: 0 auto;
 
                     i {
@@ -640,8 +597,6 @@ header {
             &.active {
                 .mobile-icon {
                     @include pseudowh($width: 50px, $height: 50px);
-                    // width: 50px;
-                    // height: 50px;
                     margin-top: -36px;
                     position: relative;
                     z-index: 0;
@@ -650,8 +605,6 @@ header {
                         @include pos;
                         @include center(both);
                         @include pseudowh($width: 120%, $height: 120%);
-                        // width: 120%;
-                        // height: 120%;
                         background: rgba(var(--white), $alpha: 1.0);
                         z-index: -1;
                         border-radius: 100%;
@@ -662,8 +615,6 @@ header {
                         @include flex_common;
                         background: var(--gradient);
                         @include pseudowh($width: 50px, $height: 50px);
-                        // width: 50px;
-                        // height: 50px;
                         color: rgba(var(--white), $alpha: 1.0);
                         border-radius: 100%;
                     }
@@ -736,8 +687,6 @@ header {
                     font-size: 24px;
                     line-height: 1;
                     @include pseudowh($width: 24px, $height: 24px);
-                    // width: 24px;
-                    // height: 24px;
                     @include flex_common;
                     margin: 0 auto;
 
@@ -765,7 +714,6 @@ header {
     padding: 0 15px 22px;
     max-width: 600px;
     z-index: 9;
-    // background-color: rgba(var(--white), 1);
 
     .mobile-list {
         background-color: rgba(var(--grey), 1);
@@ -783,8 +731,6 @@ header {
 
                 &.end-call {
                     @include pseudowh($width: 44px, $height: 44px);
-                    // width: 44px;
-                    // height: 44px;
                     background-color: #A72C2C;
                     border-radius: 100%;
                     @include flex_common;
@@ -799,8 +745,6 @@ header {
                     font-size: 24px;
                     line-height: 1;
                     @include pseudowh($width: 24px, $height: 24px);
-                    // width: 24px;
-                    // height: 24px;
                     @include flex_common;
                     margin: 0 auto;
 
@@ -874,8 +818,6 @@ header {
                     top: -10px;
                     left: 0;
                     @include pseudowh($width: 100%, $height: 1px);
-                    // width: 100%;
-                    // height: 1px;
                     background-color: rgba(var(--primary), 1);
                     opacity: 0;
                 }
@@ -887,8 +829,6 @@ header {
 
                 svg {
                     @include pseudowh($width: 20px, $height: 20px);
-                    // width: 20px;
-                    // height: 20px;
                     fill: transparent;
                     stroke: rgba(var(--content), 1);
                     margin-bottom: 5px;
@@ -902,8 +842,8 @@ header {
     }
 }
 
-/* Header Style 3 */
-.header-style-3 {
+/* Header Style 4 */
+.header-style-4 {
     padding-top: 16px;
     padding-bottom: 16px;
 
@@ -911,6 +851,12 @@ header {
         display: flex;
         align-items: center;
         gap: 8px;
+
+        button {
+            &:active {
+                border-color: transparent;
+            }
+        }
 
         i {
             font-size: 19px;
@@ -935,6 +881,62 @@ header {
                 background-color: rgba(var(--danger-color), 1);
                 border-radius: 100%;
                 animation: flash 2s linear infinite;
+            }
+        }
+    }
+}
+
+
+/* ---------- Header Style 3 ---------- */
+.hotel-booking-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(var(--white), 1);
+    z-index: 9;
+    box-shadow: 0px -1px 4px rgba(var(--black), 0.04);
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 17px;
+
+        li {
+            text-align: center;
+
+            &.active {
+                .mobile-box {
+                    .mobile-icon {
+                        i {
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 100%;
+                                background: linear-gradient(180deg, #0363DA 0%, #5546CB 100%);
+                                opacity: 0.5;
+                                z-index: -1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mobile-box {
+                .mobile-icon {
+                    i {
+                        font-size: 20px;
+                        color: rgba(var(--title), 1);
+                        position: relative;
+                    }
+                }
             }
         }
     }

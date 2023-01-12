@@ -79,8 +79,6 @@
             overflow: hidden;
             padding: 4px;
             @include pseudowh($width: 82px, $height: 82px);
-            // height: 82px;
-            // width: 82px;
             margin: 0 auto;
             background-color: rgba(var(--white), 0.4);
             border-radius: 100%;
@@ -93,8 +91,6 @@
                 position: absolute;
                 object-fit: cover;
                 @include pseudowh($width: 115px, $height: 115px);
-                // width: 115px;
-                // height: 115px;
                 border: 6px solid rgba(var(--white), 1);
                 box-shadow: 0 0 10px 0 rgba(var(--black), 0.1);
                 border-radius: 100px;
@@ -104,8 +100,6 @@
             .-label {
                 cursor: pointer;
                 @include pseudowh;
-                // height: 100%;
-                // width: 100%;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -114,8 +108,6 @@
             .camera-icon {
                 fill: rgba(var(--title), 1);
                 @include pseudowh($width: 30px, $height: 30px);
-                // width: 30px;
-                // height: 30px;
             }
 
             span {
@@ -140,8 +132,6 @@
             bottom: 0;
             left: 0;
             @include pseudowh($width: 100%, $height: 133px);
-            // width: 100%;
-            // height: 133px;
             background: linear-gradient(0deg, rgba(var(--theme-color), 1) 0%, rgba(205, 233, 221, 0) 82.04%);
         }
     }
@@ -170,8 +160,6 @@
         .arrow-box {
             font-size: 25px;
             @include pseudowh($width: 30px, $height: 30px);
-            // width: 30px;
-            // height: 30px;
             @include flex_common;
             margin-right: 4px;
         }
@@ -213,8 +201,6 @@
 
             .profile-image {
                 @include pseudowh($width: 52px, $height: 52px);
-                // width: 52px;
-                // height: 52px;
                 overflow: hidden;
                 border-radius: 100%;
                 @include flex_common;
@@ -241,7 +227,6 @@
 
         .left-header {
             width: 86px;
-            // height: 26px;
             @include flex_common;
         }
 
@@ -310,8 +295,6 @@
         background-image: url(../images/food/splash.png);
         background-position: bottom;
         @include pseudowh($width: 100%, $height: 355px);
-        // width: 100%;
-        // height: 355px;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -384,8 +367,6 @@
         margin-top: 36px;
         color: rgba(var(--title), 1);
         @include pseudowh($width: auto, $height: auto);
-        // width: auto;
-        // height: auto;
         padding: 0;
         line-height: 1;
     }
@@ -412,8 +393,6 @@
 
     .location-box {
         @include pseudowh($width: 236px, $height: 236px);
-        // width: 236px;
-        // height: 236px;
         margin: 0 auto 88px;
     }
 }
@@ -424,8 +403,6 @@
 
     &-bg {
         @include pseudowh($width: 100%, $height: 100vh);
-        // width: 100%;
-        // height: 100vh;
         background: linear-gradient(180deg, #0363DA 0%, #5546CB 100%);
     }
 
@@ -437,13 +414,10 @@
         position: relative;
 
         &::before {
-            content: "";
-            position: absolute;
+            @include pos;
             top: -13px;
             left: 0;
             @include pseudowh($width: 100%, $height: 100vh);
-            // width: 100%;
-            // height: 100vh;
             background: rgba(var(--white), 0.6);
             border-radius: 25px 25px 0px 0px;
             z-index: -1;
