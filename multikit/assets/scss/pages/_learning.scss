@@ -6,8 +6,7 @@
         position: relative;
 
         &::after {
-            content: "";
-            position: absolute;
+            @include pos;
             bottom: -5px;
             right: -5px;
             width: 100%;
@@ -93,8 +92,7 @@
         display: block;
 
         &::before {
-            content: "";
-            position: absolute;
+            @include pos;
             top: 0;
             left: 0;
             width: 100%;
@@ -165,8 +163,7 @@
         z-index: 0;
 
         &::before {
-            content: "";
-            position: absolute;
+            @include pos;
             top: 0;
             left: 0;
             width: 100%;
@@ -255,8 +252,7 @@
         z-index: 0;
 
         &::before {
-            content: "";
-            position: absolute;
+            @include pos;
             top: 0;
             left: 0;
             width: 100%;
@@ -368,8 +364,7 @@
         position: relative;
 
         &::before {
-            content: "";
-            position: absolute;
+            @include pos;
             bottom: -5px;
             right: -5px;
             width: 100%;
@@ -476,8 +471,7 @@
 .total-box {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     padding: 15px 18px;
     width: 100%;
     max-width: 600px;
@@ -529,7 +523,7 @@
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     padding: 15px 18px;
     width: 100%;
     max-width: 600px;
@@ -710,10 +704,8 @@
 
                 +li {
                     &::before {
-                        content: "";
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
+                        @include pos;
+                        @include center(vertical);
                         left: -14px;
                         width: 4px;
                         height: 4px;

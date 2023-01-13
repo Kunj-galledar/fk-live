@@ -113,8 +113,7 @@ header {
 
             i {
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
+                @include center(vertical);
                 left: 15px;
                 z-index: 0;
                 font-size: 18px;
@@ -326,8 +325,7 @@ header {
 
                 i {
                     position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    @include center(vertical);
                     left: 18px;
                     font-size: 20px;
                     color: rgba(var(--content), 1);
@@ -552,8 +550,7 @@ header {
 ==========================*/
 .learning-mobile {
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     bottom: -1px;
     width: 100%;
     max-width: 600px;
@@ -643,8 +640,7 @@ header {
 .chatting-mobile-section {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     padding: 0 15px 22px;
     max-width: 600px;
@@ -708,8 +704,7 @@ header {
 .audio-video-menu-section {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     padding: 0 15px 22px;
     max-width: 600px;
@@ -769,8 +764,7 @@ header {
 .food-mobile-section {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     padding: 20px 15px;
     max-width: 600px;
@@ -813,8 +807,7 @@ header {
                 width: 100%;
 
                 &::before {
-                    content: "";
-                    position: absolute;
+                    @include pos;
                     top: -10px;
                     left: 0;
                     @include pseudowh($width: 100%, $height: 1px);
@@ -884,15 +877,152 @@ header {
             }
         }
     }
+
+    .top-header {
+        background: var(--gradient-color);
+        box-shadow: 0px 4px 9px rgba(var(--black), 0.1);
+        border-radius: 0px 0px 15px 15px;
+        color: rgba(var(--white), 1);
+        padding: 31px 0 11px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 9px;
+
+            a {
+                line-height: 1;
+
+                i {
+                    font-size: 28px;
+                    line-height: 1;
+                    color: rgba(var(--white), 1);
+                }
+            }
+
+            .name-date {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                li {
+                    font-weight: 500;
+                    font-size: 16px;
+
+                    &.dots {
+                        width: 4px;
+                        height: 4px;
+                        background-color: rgba(var(--white), 1);
+                        border-radius: 100%;
+                    }
+                }
+            }
+
+            &-2 {
+                >div {
+                    h4 {
+                        font-weight: 500;
+                        font-size: 16px;
+                    }
+
+                    .name-date {
+                        li {
+                            font-weight: 400;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 6px;
+            color: rgba(var(--white), 1);
+
+            i {
+                font-size: 15px;
+            }
+
+            h5 {
+                font-weight: 400;
+            }
+        }
+    }
+
+    .bottom-header {
+        background: rgba(var(--white), 1);
+        box-shadow: 0px 2px 7px rgba(var(--black), 0.04);
+        border-radius: 0px 0px 15px 15px;
+        padding-top: 85px;
+        padding-bottom: 12px;
+
+        .filter-list {
+            display: flex;
+            align-items: center;
+
+            li {
+                width: 100%;
+                text-align: center;
+
+                +li {
+                    border-left: 1px solid rgba(var(--content), 0.6);
+                }
+
+                a {
+                    @include flex_common;
+                    gap: 5px;
+                    color: rgba(var(--title), 1);
+
+                    i {
+                        font-size: 19px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+
+        .search-form {
+            position: relative;
+
+            i {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 16px;
+                line-height: 1;
+                color: rgba(var(--title), 1);
+
+                &.target-icon {
+                    color: rgba(var(--content), 1);
+                    right: 0;
+                }
+            }
+
+            .form-control {
+                border: none;
+                padding-inline: 25px;
+            }
+        }
+    }
 }
 
 
-/* ---------- Header Style 3 ---------- */
+/* ---------- Mobile Style 4 ---------- */
 .hotel-booking-mobile {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     max-width: 600px;
     background-color: rgba(var(--white), 1);
@@ -913,8 +1043,7 @@ header {
                     .mobile-icon {
                         i {
                             &::after {
-                                content: "";
-                                position: absolute;
+                                @include pos;
                                 top: 0;
                                 left: 0;
                                 width: 12px;

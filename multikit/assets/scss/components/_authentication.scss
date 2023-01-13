@@ -47,12 +47,10 @@
         text-align: center;
 
         &::before {
-            content: "";
-            position: absolute;
+            @include pos;
             border-top: 1px dashed #CACACA;
             width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
+            @include center(vertical);
             left: 0;
             z-index: -1;
         }

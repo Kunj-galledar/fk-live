@@ -62,4 +62,16 @@
         font-weight: 600;
         color: rgba(var(--primary), 1);
     }
+
+    &-sm {
+        h4 {
+            //    font-weight: 600;
+            font-size: 15px;
+            color: rgba(var(--content), 1);
+
+            @include mq-max(md) {
+                font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (767 - 320)));
+            }
+        }
+    }
 }

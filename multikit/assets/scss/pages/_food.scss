@@ -106,9 +106,7 @@
 
                 h4 {
                     position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                    @include center(both);
                     white-space: nowrap;
                     font-weight: 600;
                     color: rgba(var(--white), 1);
@@ -1016,10 +1014,8 @@
             position: relative;
 
             &::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
+                @include pos;
+                @include center(vertical);
                 left: 19px;
                 width: 0;
                 height: 80%;
@@ -1329,8 +1325,7 @@
     z-index: 1;
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     max-width: 600px;
     background-color: rgba(var(--white), 1);
@@ -1569,8 +1564,7 @@
     position: fixed;
     bottom: 0;
     max-width: 600px;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     background-color: rgba(var(--white), 1);
     box-shadow: $drop-shadow;

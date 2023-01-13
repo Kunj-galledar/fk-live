@@ -86,3 +86,10 @@
      slidesPerView: 1.7,
      spaceBetween: 16,
  });
+
+ var swiper = new Swiper(".fingHotel", {
+     //   slidesPerView: 1.7,
+     spaceBetween: 10,
+     loop: true,
+     loopFillGroupWithBlank: true,
+ });

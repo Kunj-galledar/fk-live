@@ -334,6 +334,11 @@
 
                 .apply-button {
                     margin-top: 25px;
+
+                    &-2 {
+                        background: var(--gradient-color);
+                        color: rgba(var(--white), 1);
+                    }
                 }
             }
         }
@@ -358,8 +363,7 @@
                     @include pseudowh($width: 18px, $height: 18px);
                     @include flex_common;
                     position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    @include center(vertical);
                     left: 15px;
                 }
             }
@@ -656,8 +660,7 @@
                     gap: 9px;
 
                     &::before {
-                        content: "";
-                        position: absolute;
+                        @include pos;
                         top: 0;
                         left: 0;
                         @include pseudowh;
@@ -1130,6 +1133,45 @@
             }
         }
     }
+
+    &.price-filter-offcanvas {
+        .offcanvas-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h4 {
+                font-weight: 600;
+                font-size: 16px;
+                color: rgba(var(--title), 1);
+            }
+
+            .btn-close {
+                margin: 0;
+                padding: 0;
+                background: none;
+                font-size: 20px;
+                opacity: 1;
+                width: auto;
+                height: auto;
+                line-height: 1;
+            }
+        }
+
+        .offcanvas-body {
+            .button-group {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(var(--white), 1);
+                display: flex;
+                align-items: center;
+                padding: 9px 16px;
+                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+            }
+        }
+    }
 }
 
 .theme-modal {
@@ -1198,10 +1240,8 @@
                     position: relative;
 
                     &::before {
-                        content: "";
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
+                        @include pos;
+                        @include center(vertical);
                         left: 0;
                         background-color: rgba(var(--title), 1);
                         @include pseudowh($width: 3px, $height: 3px);
