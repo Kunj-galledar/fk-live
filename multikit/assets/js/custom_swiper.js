@@ -93,3 +93,14 @@
      loop: true,
      loopFillGroupWithBlank: true,
  });
+
+ var swiper = new Swiper(".room-view-slider", {
+     slidesPerView: 1,
+     centeredSlides: true,
+     spaceBetween: 30,
+     grabCursor: true,
+     pagination: {
+         el: ".swiper-pagination",
+         type: "fraction",
+     },
+ });

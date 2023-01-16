@@ -5,10 +5,6 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById("hotel"), {
         center: new google.maps.LatLng(0, 0),
         zoom: 0,
-        // center: {
-        //   lat: -33.9,
-        //   lng: 151.2
-        // },
         center: new google.maps.LatLng(0, 0),
         styles: [{
             "featureType": "water",
@@ -146,7 +142,7 @@ function setMarkers(map) {
     // Origins, anchor positions and coordinates of the marker increase in the X
     // direction to the right and in the Y direction down.
     const image = {
-        url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTheEcJMQ0OZqhjThHXWXAugOiENaSwFBeRNQ&usqp=CAU",
         labelOrigin: new google.maps.Point(130, 10),
         // This marker is 20 pixels wide by 32 pixels high.
         size: new google.maps.Size(20, 32),
