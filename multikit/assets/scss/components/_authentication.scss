@@ -115,10 +115,8 @@
     }
 
     .from-flex {
-        display: flex;
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 13px);
         align-items: center;
-        flex-wrap: nowrap;
-        gap: 13px;
         margin-bottom: 28px;
     }
 
@@ -163,10 +161,8 @@
         }
 
         .add-member {
-            display: flex;
+            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
             align-items: center;
-            flex-wrap: nowrap;
-            gap: 11px;
             margin-left: auto;
 
             i {
@@ -176,10 +172,8 @@
 
         .calling-box {
             margin-left: auto;
-            display: flex;
+            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
             align-items: center;
-            flex-wrap: nowrap;
-            gap: 15px;
 
             @include mq-max(md) {
                 gap: calc(7px + (15 - 7) * ((100vw - 320px) / (600 - 320)));
@@ -192,10 +186,8 @@
         }
 
         .header-profile {
-            display: flex;
+            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
             align-items: center;
-            flex-wrap: nowrap;
-            gap: 11px;
 
             .profile-image {
                 @include pseudowh($width: 52px, $height: 52px);
@@ -206,10 +198,8 @@
 
             .name-contact {
                 width: calc(100% - 52px - 3px);
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
                 align-items: center;
-                flex-wrap: wrap;
-                gap: 3px;
 
                 h5,
                 h6 {
@@ -230,10 +220,8 @@
 
         .right-header {
             margin-left: auto;
-            display: flex;
+            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 7px);
             align-items: center;
-            flex-wrap: nowrap;
-            gap: 7px;
             color: rgba(var(--title), 1);
 
             button {

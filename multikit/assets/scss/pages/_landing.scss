@@ -19,16 +19,12 @@
 ==========================*/
 .main-header {
     background-color: rgba(var(--theme-color), 1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex_common ($dis: flex, $align: center, $justify: space-between);
     padding: 16px;
 
     .header-left {
-        display: flex;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
         align-items: center;
-        flex-wrap: wrap;
-        gap: 9px;
 
         a {
             border: none;
@@ -52,10 +48,9 @@
                 animation: flash 2s linear infinite;
                 background-color: rgba(var(--white), $alpha: 1.0);
                 border-radius: 100%;
-                height: 5px;
+                @include pseudowh($width: 5px, $height: 5px);
                 right: 4px;
                 top: 3px;
-                width: 5px;
                 z-index: 1;
             }
 
@@ -63,10 +58,9 @@
                 @include pos;
                 background-color: rgba(var(--theme-color), 1);
                 border-radius: 100%;
-                height: 8px;
+                @include pseudowh($width: 8px, $height: 8px);
                 right: 3px;
                 top: 2px;
-                width: 8px;
                 z-index: 0;
             }
 
@@ -107,9 +101,7 @@
         max-width: 375px;
         margin: 0 auto;
         padding-inline: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
         li {
             &.active {
@@ -175,10 +167,8 @@
     margin-top: -33px;
 
     .blog-list {
-        display: flex;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 17px);
         align-items: center;
-        flex-wrap: wrap;
-        gap: 17px;
 
         li {
             width: 100%;
@@ -214,8 +204,7 @@
                     position: absolute;
                     top: 0;
                     right: 0;
-                    width: 134px;
-                    height: 100%;
+                    @include pseudowh($width: 134px, $height: 100%);
 
                     img {
                         object-fit: cover;
@@ -225,6 +214,7 @@
             }
 
             .blog-box-2 {
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
                 background-color: rgba(var(--white), $alpha: 1.0);
                 width: 100%;
                 border: 1px solid #ECECEC;
@@ -232,11 +222,8 @@
                 padding: 15px;
                 position: relative;
                 overflow: hidden;
-                display: flex;
-                align-items: center;
                 flex-wrap: nowrap;
                 display: block;
-                justify-content: space-between;
 
                 .blog-name {
                     display: flex;
@@ -281,8 +268,7 @@
 
                 .blog-image {
                     img {
-                        width: auto;
-                        height: 47px;
+                        @include pseudowh($width: auto, $height: 47px);
                         max-width: unset;
                     }
                 }

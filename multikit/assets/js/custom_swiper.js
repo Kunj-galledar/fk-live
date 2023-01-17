@@ -47,19 +47,16 @@
 
  var swiper = new Swiper(".category-slider", {
      slidesPerView: 3.8,
-     //  slidesPerView: "auto",
      spaceBetween: 10,
  });
 
  var swiper = new Swiper(".feature-slider", {
      slidesPerView: 2.3,
-     //  slidesPerView: "auto",
      spaceBetween: 10,
  });
 
  var swiper = new Swiper(".slider-4", {
      slidesPerView: 4.3,
-     //  slidesPerView: "auto",
      spaceBetween: 10,
  });
 
@@ -88,7 +85,6 @@
  });
 
  var swiper = new Swiper(".fingHotel", {
-     //   slidesPerView: 1.7,
      spaceBetween: 10,
      loop: true,
      loopFillGroupWithBlank: true,
@@ -103,4 +99,9 @@
          el: ".swiper-pagination",
          type: "fraction",
      },
+ });
+
+ var swiper = new Swiper(".top-reviewer-slider", {
+     slidesPerView: 1.1,
+     spaceBetween: 16,
  });

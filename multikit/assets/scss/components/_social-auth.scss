@@ -3,16 +3,12 @@
 ==========================*/
 /* Social style 1 */
 .social-style-1 {
-    display: flex;
+    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 8px;
     margin-top: 15px;
 
     a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex_common;
         flex-wrap: nowrap;
         gap: 8px;
         padding: 11px;
@@ -48,9 +44,7 @@
 /* Social style 2 */
 .social-style-2 {
     margin-top: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
+    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
 
     li {
         width: 100%;
@@ -86,18 +80,14 @@
     }
 
     ul {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 11px;
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
         justify-content: center;
 
         li {
             a {
                 @include pseudowh($width: 54px, $height: 54px);
                 background: rgba(var(--white), 1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include flex_common;
                 box-shadow: $shadow3;
                 border-radius: 14px;
             }

@@ -66,9 +66,7 @@
     padding: 18px 0 100px;
 
     .chatting-title {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
         color: rgba(var(--title), 1);
 
         i {
@@ -78,9 +76,7 @@
     }
 
     .chatting-title-2 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
         margin-bottom: 15px;
 
         h5 {
@@ -105,10 +101,8 @@
                 }
 
                 .chatting-box {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
                     align-items: center;
-                    flex-wrap: nowrap;
-                    gap: 10px;
 
                     &.unread-story {
                         .chatting-image {
@@ -201,16 +195,12 @@
 
                     .chatting-content {
                         width: calc(100% - 52px - 10px);
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
+                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                         .chatting-name {
                             margin-right: auto;
                             width: 100%;
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 5px;
+                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);
                             justify-content: flex-end;
 
                             h5 {
@@ -231,9 +221,7 @@
 
                         .chatting-message {
                             width: 32%;
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 5px;
+                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);
                             justify-content: flex-end;
                             text-align: right;
 
@@ -277,10 +265,8 @@
                 }
 
                 .chatting-video {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
                     align-items: center;
-                    flex-wrap: nowrap;
-                    gap: 10px;
 
                     &.video-chatting {
                         .chatting-content {
@@ -346,16 +332,12 @@
 
                     .chatting-content {
                         width: calc(100% - 52px - 10px);
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
+                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                         .chatting-name {
                             margin-right: auto;
                             width: 100%;
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 5px;
+                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);
 
                             h5 {
                                 color: rgba(var(--title), 1);
@@ -363,10 +345,8 @@
                             }
 
                             h6 {
-                                display: flex;
+                                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 5px);
                                 align-items: center;
-                                flex-wrap: nowrap;
-                                gap: 5px;
                                 font-weight: 400;
                                 color: rgba(var(--content), 1);
 
@@ -433,19 +413,15 @@
 
     .account-setting-list-box {
         .account-setting-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 25px);
 
             li {
                 width: 100%;
 
                 .setting-name {
                     color: rgba(var(--title), 1);
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 13px);
                     align-items: center;
-                    flex-wrap: wrap;
-                    gap: 13px;
 
                     i {
                         font-size: 24px;
@@ -475,10 +451,8 @@
         .profile-name-time {
             margin-top: 18px;
             text-align: center;
-            display: flex;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
             align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
 
             h3 {
                 width: 100%;
@@ -516,14 +490,6 @@
         width: 96px;
         height: 104px;
     }
-}
-
-:root {
-    --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --msger-bg: #fff;
-    --border: 2px solid #ddd;
-    --left-msg-bg: #EEEEEE;
-    --right-msg-bg: #848F8F;
 }
 
 .message-box {
@@ -702,9 +668,7 @@
             margin-top: 10px;
 
             .contect-list {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include flex_common;
                 flex-wrap: wrap;
                 gap: 20px;
 
@@ -716,9 +680,7 @@
                         border-radius: 4px;
                         color: rgba(var(--title), 1);
                         font-size: 16px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        @include flex_common;
                     }
                 }
             }
@@ -732,8 +694,7 @@
             border-radius: 8px;
 
             img {
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 object-fit: cover;
                 border-radius: 8px;
                 background-color: transparent;
@@ -753,8 +714,7 @@
                 z-index: 2;
                 left: 0;
                 top: 0;
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 overflow: auto;
                 background-color: rgba(var(--black), 1);
             }
@@ -802,9 +762,7 @@
                 z-index: 1;
                 height: 40px;
                 background-color: rgba(var(--title), 1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include flex_common;
                 border-radius: 5px;
             }
 
@@ -818,18 +776,14 @@
 
         .user-setting {
             .setting-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 22px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 22px);
 
                 li {
                     width: 100%;
 
                     a {
-                        display: flex;
+                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 6px);
                         align-items: center;
-                        flex-wrap: wrap;
-                        gap: 6px;
                         color: rgba(var(--title), 1);
 
                         i {
@@ -884,19 +838,15 @@
             }
 
             .new-chat {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
                 align-items: center;
-                flex-wrap: nowrap;
-                gap: 10px;
 
                 .new-chat-icon {
                     width: 52px;
                     height: 52px;
                     background-color: rgba(var(--theme-color), 1);
                     border-radius: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @include flex_common;
                     font-size: 16px;
                     color: rgba(var(--title), 1);
 
@@ -914,10 +864,8 @@
             }
 
             .new-chat-box {
-                display: flex;
                 align-items: center;
-                flex-wrap: nowrap;
-                gap: 10px;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
 
                 &.unread-story {
                     .chatting-image {
@@ -1009,17 +957,13 @@
                 }
 
                 .chatting-content {
+                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
                     width: calc(100% - 52px - 10px);
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
 
                     .chatting-name {
                         margin-right: auto;
                         width: 100%;
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 5px;
+                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
                         justify-content: flex-end;
 
                         h5 {
@@ -1040,9 +984,7 @@
 
                     .chatting-message {
                         width: 32%;
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 5px;
+                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);
                         justify-content: flex-end;
                         text-align: right;
 
@@ -1086,10 +1028,8 @@
             }
 
             .chatting-video {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
                 align-items: center;
-                flex-wrap: nowrap;
-                gap: 10px;
 
                 &.video-chatting {
                     .chatting-content {
@@ -1155,16 +1095,12 @@
 
                 .chatting-content {
                     width: calc(100% - 52px - 10px);
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                     .chatting-name {
                         margin-right: auto;
                         width: 100%;
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 5px;
+                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);
 
                         h5 {
                             color: rgba(var(--title), 1);
@@ -1172,10 +1108,8 @@
                         }
 
                         h6 {
-                            display: flex;
+                            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 5px);
                             align-items: center;
-                            flex-wrap: nowrap;
-                            gap: 5px;
                             font-weight: 400;
                             color: rgba(var(--content), 1);
 
@@ -1223,10 +1157,8 @@
             }
 
             .chat-box {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
                 align-items: center;
-                flex-wrap: nowrap;
-                gap: 15px;
 
                 .chat-icon {
                     font-size: 17px;
@@ -1252,9 +1184,7 @@
 
 .display-setting-section {
     .checkbox-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 17px;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 17px);
 
         li {
             width: 100%;
@@ -1280,19 +1210,15 @@
 .chat-history-section {
     .chat-history-box {
         .chat-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
 
             li {
                 width: 100%;
 
                 a {
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
                     color: rgba(var(--title), 1);
-                    display: flex;
                     align-items: center;
-                    flex-wrap: nowrap;
-                    gap: 12px;
 
                     h5 {
                         color: rgba(var(--title), 1);
@@ -1339,9 +1265,7 @@
     .back-list {
         margin-left: 43px;
         margin-top: 13px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 4px);
 
         li {
             width: 100%;
@@ -1362,9 +1286,7 @@
     .back-box-list {
         margin-left: 43px;
         margin-top: 15px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
 
         li {
             width: 100%;

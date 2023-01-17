@@ -33,6 +33,37 @@
             border-radius: 6px;
             font-weight: 500;
         }
+
+        &-outline {
+            font-weight: 500;
+            position: relative;
+            padding: 15px;
+            color: rgba(var(--title), 1);
+            background: rgba(var(--white), 1);
+            background-clip: padding-box;
+            border: solid 1px transparent;
+            border-radius: 6px;
+            font-size: 16px;
+            @include flex_common;
+            gap: 5px;
+
+            i {
+                line-height: 1;
+                font-size: 18px;
+            }
+
+            &:before {
+                @include pos;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: -1px;
+                border-radius: inherit;
+                background: var(--gradient-color);
+            }
+        }
     }
 
     &-gradient-2 {
@@ -191,10 +222,8 @@
     font-weight: 600;
     font-size: 16px;
     border-radius: 6px;
-    display: flex;
+    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 6px);
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 6px;
 
     &:active {
         background-color: rgba(var(--primary), 1);

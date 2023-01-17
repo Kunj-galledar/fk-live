@@ -32,10 +32,8 @@
     &.sidemenu-offcanvas {
         .offcanvas-header {
             .profile-box {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
                 align-items: center;
-                flex-wrap: wrap;
-                gap: 8px;
 
                 .profile-image {
                     width: 40px;
@@ -76,15 +74,11 @@
                     }
 
                     .menu-list {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
+                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                         .list-icon {
-                            display: flex;
+                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
                             align-items: center;
-                            flex-wrap: wrap;
-                            gap: 9px;
 
                             i {
                                 font-size: 20px;
@@ -165,10 +159,8 @@
             position: relative;
 
             .profile-box {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 13px);
                 align-items: flex-end;
-                flex-wrap: wrap;
-                gap: 13px;
 
                 .profile-image {
                     @include pseudowh($width: 80px, $height: 80px);
@@ -217,10 +209,8 @@
                     }
 
                     .menu-setting-box {
-                        display: flex;
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
                         align-items: center;
-                        flex-wrap: nowrap;
-                        gap: 11px;
                         color: rgba(var(--title), 1);
 
                         .setting-icon {
@@ -262,9 +252,7 @@
         .offcanvas-body {
             .filter-box-list {
                 .filter-list {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 16px;
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 16px);
 
                     li {
                         width: 100%;
@@ -274,10 +262,8 @@
                             border: 1px solid rgba(var(--border-color), 1);
                             border-radius: 6px;
                             padding: 15px;
-                            display: flex;
+                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
                             align-items: center;
-                            flex-wrap: wrap;
-                            gap: 10px;
                             position: relative;
                             overflow: hidden;
 
@@ -380,10 +366,8 @@
 
                     .coupon-box {
                         .top-bar {
-                            display: flex;
+                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
                             align-items: center;
-                            flex-wrap: wrap;
-                            gap: 8px;
 
                             h5 {
                                 text-transform: uppercase;
@@ -449,10 +433,8 @@
 
                         .social-media-share {
                             padding-bottom: 9px;
-                            display: flex;
+                            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
                             align-items: center;
-                            flex-wrap: nowrap;
-                            gap: 8px;
                             overflow: auto;
 
                             li {
@@ -460,11 +442,9 @@
 
                                 a {
                                     @include pseudowh($width: 42px, $height: 42px);
+                                    @include flex_common;
                                     margin: 0 auto;
                                     border-radius: 8px;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
 
                                     &.fb {
                                         background-color: #3b5998;
@@ -522,10 +502,8 @@
         .offcanvas-body {
             .product-detail-box {
                 .certificate-box {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
                     align-items: center;
-                    flex-wrap: nowrap;
-                    gap: 8px;
 
                     .certificate-image {
                         width: 160px;
@@ -552,9 +530,7 @@
             margin-top: 6px;
 
             .question-accordion {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
 
                 .accordion-item {
                     border: none;
@@ -567,9 +543,7 @@
                             font-size: 15px;
                             padding: 0 0 11px;
                             font-weight: 500;
-                            display: flex;
-                            flex-wrap: nowrap;
-                            gap: 7px;
+                            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 7px);
                             align-items: flex-end;
                             color: rgba(var(--black), 1);
                             background-color: transparent;
@@ -635,9 +609,7 @@
                         top: 10px;
                         right: 10px;
                         @include pseudowh($width: 28px, $height: 28px);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        @include flex_common;
                         color: rgba(var(--title), 1);
                         font-size: 20px;
                         background: transparent;
@@ -649,15 +621,13 @@
                 margin-top: 26px;
 
                 .note-pills {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
                     align-items: center;
-                    flex-wrap: nowrap;
                     padding: 8px;
                     position: relative;
                     z-index: 0;
                     border-radius: 6px;
                     overflow: hidden;
-                    gap: 9px;
 
                     &::before {
                         @include pos;
@@ -689,9 +659,7 @@
                     .tab-pane {
                         .note-list {
                             margin-top: 10px;
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 8px;
+                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
                             max-height: 325px;
                             overflow: auto;
 
@@ -748,19 +716,15 @@
     &.chat-history-modal {
         .offcanvas-body {
             .chat-history-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
 
                 li {
                     width: 100%;
 
                     a {
                         color: rgba(var(--title), 1);
-                        display: flex;
                         align-items: center;
-                        flex-wrap: nowrap;
-                        gap: 12px;
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
 
                         h5 {
                             color: rgba(var(--title), 1);
@@ -781,10 +745,8 @@
             padding-bottom: 0;
 
             .profile-box {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
                 align-items: center;
-                flex-wrap: nowrap;
-                gap: 9px;
 
                 .profile-image {
                     @include pseudowh($width: 68px, $height: 68px);
@@ -810,9 +772,7 @@
             margin-top: 21px;
 
             .profile-menu-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 14px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
 
                 li {
                     width: 100%;
@@ -833,10 +793,8 @@
                         border: 1px solid #F3F3F3;
                         border-radius: 18px;
                         padding: 14px 21px;
-                        display: flex;
                         align-items: center;
-                        flex-wrap: nowrap;
-                        gap: 11px;
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
 
                         .menu-icon {
                             font-size: 20px;
@@ -846,9 +804,7 @@
                         }
 
                         .menu-name {
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
+                            @include flex_common ($dis: flex, $align: center, $justify: space-between);
                             width: 100%;
                             color: rgba(var(--title), 1);
 
@@ -915,9 +871,7 @@
             }
 
             .food-select {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 14px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
                 padding-bottom: 19px;
                 margin-bottom: 11px;
                 border-bottom: 1px solid #F9F9F9;
@@ -926,9 +880,7 @@
                     margin: 0;
                     padding: 0;
                     min-height: auto;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
                     width: 100%;
 
                     .form-check-input {
@@ -969,9 +921,7 @@
             }
 
             .total-price {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 h5 {
                     font-weight: 400;
@@ -1030,9 +980,7 @@
             }
 
             .total-price {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 h5 {
                     font-weight: 400;
@@ -1063,9 +1011,7 @@
             .sidemenu-header {
                 margin-top: 31px;
                 margin-bottom: 28px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 img {
                     width: 107px;
@@ -1106,9 +1052,7 @@
             margin-top: 23px;
 
             .sidebar-menu-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 21px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 21px);
 
                 li {
                     width: 100%;
@@ -1121,9 +1065,7 @@
 
                     a {
                         color: rgba(var(--title), 1);
-                        display: flex;
-                        align-items: center;
-                        gap: 12px;
+                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
 
                         i {
                             font-size: 20px;
@@ -1136,9 +1078,7 @@
 
     &.price-filter-offcanvas {
         .offcanvas-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
             h4 {
                 font-weight: 600;
@@ -1168,7 +1108,7 @@
                 display: flex;
                 align-items: center;
                 padding: 9px 16px;
-                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+                box-shadow: 0px 0px 4px rgba(var(--black), 0.05);
             }
         }
     }
@@ -1227,9 +1167,7 @@
     .modal-content {
         .modal-body {
             .delete-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 6px);
 
                 li {
                     width: 100%;
@@ -1242,9 +1180,9 @@
                     &::before {
                         @include pos;
                         @include center(vertical);
+                        @include pseudowh($width: 3px, $height: 3px);
                         left: 0;
                         background-color: rgba(var(--title), 1);
-                        @include pseudowh($width: 3px, $height: 3px);
                         border-radius: 100%;
                     }
                 }

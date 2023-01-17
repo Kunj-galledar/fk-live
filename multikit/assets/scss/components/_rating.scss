@@ -2,16 +2,15 @@
     Rating Scss
 ==========================*/
 .rating {
+    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
     gap: 5px;
 
     ul {
-        display: flex;
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 2px);
         align-items: center;
-        flex-wrap: nowrap;
-        gap: 2px;
         color: #E0E0E0;
 
         li {

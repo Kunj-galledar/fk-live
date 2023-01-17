@@ -9,8 +9,7 @@
             @include pos;
             bottom: -5px;
             right: -5px;
-            width: 100%;
-            height: 100%;
+            @include pseudowh;
             background: var(--gradient);
             z-index: -1;
             opacity: 0.1;
@@ -28,14 +27,11 @@
 
 
             .reading-detail {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
                 align-items: center;
-                gap: 12px;
-                flex-wrap: nowrap;
 
                 .reading-image {
-                    width: 54px;
-                    height: 52px;
+                    @include pseudowh($width: 54px, $height: 52px);
                     border-radius: 5px;
                     overflow: hidden;
                 }
@@ -95,8 +91,7 @@
             @include pos;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            @include pseudowh;
             background: var(--gradient);
             z-index: -1;
             opacity: 0.05;
@@ -120,16 +115,12 @@
             }
 
             .rate-course {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
                 margin-top: 8px;
 
                 li {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
                     align-items: center;
-                    flex-wrap: wrap;
-                    gap: 3px;
                     color: rgba(var(--title), 1);
 
                     i {
@@ -155,10 +146,8 @@
         overflow: hidden;
         box-shadow: 0px 0px 5px rgba(var(--black), 0.08);
         border-radius: 9px;
-        display: flex;
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
         align-items: center;
-        flex-wrap: nowrap;
-        gap: 9px;
         position: relative;
         z-index: 0;
 
@@ -166,8 +155,7 @@
             @include pos;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            @include pseudowh;
             background: var(--gradient);
             opacity: 0.05;
             z-index: -1;
@@ -176,8 +164,7 @@
         .popular-image {
             border-radius: 8px;
             overflow: hidden;
-            width: 117px;
-            height: 84px;
+            @include pseudowh($width: 117px, $height: 84px);
         }
 
         .popular-detail {
@@ -193,12 +180,10 @@
             }
 
             .video-play {
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
                 margin: 4px 0;
                 color: rgba(var(--content), 1);
-                display: flex;
                 align-items: center;
-                flex-wrap: wrap;
-                gap: 3px;
 
                 i,
                 span {
@@ -211,18 +196,14 @@
             }
 
             .rating-box {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 >li {
                     font-size: 12px;
 
                     .rating {
-                        display: flex;
+                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
                         align-items: center;
-                        flex-wrap: wrap;
-                        gap: 3px;
 
                         >li {
                             line-height: 1;
@@ -244,10 +225,8 @@
         overflow: hidden;
         box-shadow: 0px 0px 5px rgba(var(--black), 0.08);
         border-radius: 9px;
-        display: flex;
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
         align-items: center;
-        flex-wrap: nowrap;
-        gap: 9px;
         position: relative;
         z-index: 0;
 
@@ -255,8 +234,7 @@
             @include pos;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            @include pseudowh;
             background: var(--gradient);
             opacity: 0.05;
             z-index: -1;
@@ -265,8 +243,7 @@
         .popular-image {
             border-radius: 8px;
             overflow: hidden;
-            width: 96px;
-            height: 70px;
+            @include pseudowh($width: 96px, $height: 70px);
         }
 
         .popular-detail {
@@ -284,8 +261,7 @@
 
         .remove-button {
             line-height: 1;
-            width: 18px;
-            height: 18px;
+            @include pseudowh($width: 18px, $height: 18px);
             background: rgba(var(--white), 1);
             box-shadow: 0px 0px 2px rgba(var(--black), 0.08);
             border-radius: 3px;
@@ -307,10 +283,8 @@
 .top-instructors-section {
     .instructors-box {
         .instructors-list {
-            display: flex;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
             align-items: center;
-            flex-wrap: nowrap;
-            gap: 15px;
             white-space: nowrap;
             overflow: auto hidden;
 
@@ -319,8 +293,7 @@
                     text-align: center;
 
                     .instructors-image {
-                        width: 64px;
-                        height: 64px;
+                        @include pseudowh($width: 64px, $height: 64px);
                         border-radius: 100%;
                         overflow: hidden;
                         margin: 0 auto;
@@ -353,12 +326,10 @@
 ==========================*/
 .coupon-section {
     .coupon-box {
-        display: flex;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
         align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
         padding: 15px;
-        background-color: rgb(245, 247, 247);
+        background-color: #f5f7f7;
         border-radius: 4px;
         color: rgba(var(--title), 1);
         position: relative;
@@ -367,8 +338,7 @@
             @include pos;
             bottom: -5px;
             right: -5px;
-            width: 100%;
-            height: 100%;
+            @include pseudowh;
             background: var(--gradient);
             opacity: 0.08;
             border-radius: 4px;
@@ -377,11 +347,8 @@
 
         svg {
             fill: rgba(var(--title), 1);
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include pseudowh($width: 18px, $height: 18px);
+            @include flex_common;
         }
 
         span {
@@ -549,8 +516,7 @@
                 font-size: 18px;
                 margin: 0;
                 line-height: 1;
-                width: 24px;
-                height: 24px;
+                @include pseudowh($width: 24px, $height: 24px);
                 @include flex_common;
             }
 
@@ -586,9 +552,7 @@
 ==========================*/
 .payment-section {
     .payment-box {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 9px;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
 
         .accordion-item {
             border: none;
@@ -603,15 +567,12 @@
                     border-radius: calc(0.375rem - 1px);
 
                     .payment-box {
-                        display: flex;
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
                         align-items: center;
-                        flex-wrap: nowrap;
-                        gap: 11px;
 
                         .payment-icon {
                             @include flex_common;
-                            width: 39px;
-                            height: 39px;
+                            @include pseudowh($width: 39px, $height: 39px);
                             background-color: rgba(var(--white), 1);
                             box-shadow: 2px 1px 4px rgba(var(--black), 0.05);
                             border-radius: 4px;
@@ -645,10 +606,8 @@
 
             .accordion-body {
                 .net-banking-list {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 6px);
                     align-items: center;
-                    flex-wrap: wrap;
-                    gap: 6px;
 
                     li {
                         display: block;
@@ -691,10 +650,8 @@
         }
 
         .course-number {
-            display: flex;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 25px);
             align-items: center;
-            flex-wrap: wrap;
-            gap: 25px;
 
             li {
                 font-weight: 400;
@@ -707,8 +664,7 @@
                         @include pos;
                         @include center(vertical);
                         left: -14px;
-                        width: 4px;
-                        height: 4px;
+                        @include pseudowh($width: 4px, $height: 4px);
                         background-color: rgba(var(--content), 1);
                         border-radius: 100%;
                     }
@@ -718,19 +674,15 @@
     }
 
     .name-box {
-        display: flex;
         align-items: flex-end;
-        flex-wrap: nowrap;
-        gap: 14px;
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 14px);
 
         .course-price {
             padding: 11px 8px;
             background-color: rgba(var(--content), 0.1);
             box-shadow: 0px 0px 0px rgba(var(--black), 0.25);
             border-radius: 6px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3px;
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
             justify-content: center;
         }
     }
@@ -781,14 +733,11 @@
 ==========================*/
 .instructors-section {
     .instructors-box {
-        display: flex;
         align-items: center;
-        flex-wrap: nowrap;
-        gap: 12px;
+        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
 
         .instructors-image {
-            width: 104px;
-            height: 104px;
+            @include pseudowh($width: 104px, $height: 104px);
             border-radius: 6px;
             overflow: hidden;
         }
@@ -804,10 +753,8 @@
             }
 
             .review-list {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
                 align-items: center;
-                flex-wrap: wrap;
-                gap: 9px;
                 margin-bottom: 10px;
 
                 @media (max-width: 349px) {
@@ -826,10 +773,8 @@
             }
 
             .social-media {
-                display: flex;
                 align-items: center;
-                flex-wrap: nowrap;
-                gap: 13px;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 13px);
 
                 li {
                     font-size: 18px;
@@ -866,9 +811,7 @@
 
             .social-media-list {
                 margin: 9px 0;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 3px;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
 
                 li {
                     width: 100%;
@@ -900,8 +843,7 @@
                 position: absolute;
                 top: 0;
                 right: 0;
-                width: 50px;
-                height: 100%;
+                @include pseudowh($width: 50px, $height: 100%);
                 font-size: 20px;
                 color: rgba(var(--title), 1);
                 @include flex_common;
@@ -932,15 +874,11 @@
             }
 
             .menu-list {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 .list-icon {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
                     align-items: center;
-                    flex-wrap: wrap;
-                    gap: 9px;
 
                     i {
                         font-size: 20px;
@@ -957,14 +895,12 @@
                     .grid-item {
                         .switch {
                             display: inline-block;
-                            height: 28px;
                             position: relative;
-                            width: 56px;
+                            @include pseudowh($width: 56px, $height: 28px);
 
                             input {
                                 opacity: 0;
-                                width: 0;
-                                height: 0;
+                                @include pseudowh($width: 0, $height: 0);
 
                                 &:checked+.slider {
                                     background-color: rgba(var(--theme-color), 1);
@@ -989,10 +925,9 @@
                                     background-color: rgba(var(--white), $alpha: 1.0);
                                     bottom: 3px;
                                     @include pos;
-                                    height: 23px;
+                                    @include pseudowh($width: 23px, $height: 23px);
                                     left: 3px;
                                     transition: .4s;
-                                    width: 23px;
                                 }
 
                                 &.round {
@@ -1023,9 +958,7 @@
         .profile-pic {
             color: transparent;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flex_common;
             position: relative;
             overflow: hidden;
             padding: 4px;
@@ -1037,16 +970,14 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 cursor: pointer;
                 opacity: 0;
             }
 
             img {
                 object-fit: cover;
-                width: 115px;
-                height: 115px;
+                @include pseudowh($width: 115px, $height: 115px);
                 border: 6px solid rgba(var(--white), 1);
                 box-shadow: 0 0 10px 0 rgba(var(--black), 0.1);
                 border-radius: 100px;
@@ -1055,8 +986,7 @@
 
             .-label {
                 cursor: pointer;
-                height: 115px;
-                width: 115px;
+                @include pseudowh($width: 115px, $height: 115px);
             }
 
             span {
@@ -1071,18 +1001,14 @@
         form {
             .select-gender {
                 .gender-list {
-                    display: flex;
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
                     align-items: center;
-                    flex-wrap: wrap;
-                    gap: 11px;
 
                     li {
                         .form-check {
                             margin: 0;
-                            display: flex;
                             align-items: center;
-                            flex-wrap: wrap;
-                            gap: 4px;
+                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 4px);
                             min-height: auto;
 
                             .form-check-label {
@@ -1099,9 +1025,7 @@
     }
 
     .gender-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);
 
         li {
             width: 100%;
