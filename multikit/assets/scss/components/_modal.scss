@@ -1065,6 +1065,7 @@
 
                     a {
                         color: rgba(var(--title), 1);
+                        align-items: center;
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
 
                         i {
@@ -1109,6 +1110,60 @@
                 align-items: center;
                 padding: 9px 16px;
                 box-shadow: 0px 0px 4px rgba(var(--black), 0.05);
+            }
+        }
+    }
+
+    &.amenities-offcanvas {
+        .offcanvas-body {
+            padding-inline: 15px;
+
+            .amenities-list-2 {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+                gap: 23px;
+                text-align: center;
+
+                @media (max-width: 767px) {
+                    gap: calc(5px + (23 - 5) * ((100vw - 320px) / (767 - 320)));
+                }
+
+                li {
+                    .amenities-box {
+                        color: rgba(var(--title), 1);
+
+                        .amenities-icon {
+                            background-color: rgba(var(--light-bg), 1);
+                            border-radius: 10px;
+                            width: 45px;
+                            height: 45px;
+                            @include flex_common;
+                            font-size: 20px;
+                            margin: 0 auto 8px;
+
+                            svg {
+                                width: 24px;
+                                height: 24px;
+                                fill: transparent;
+                                stroke: rgba(var(--title), 1);
+                            }
+
+                            h3 {
+                                font-weight: 400;
+                            }
+                        }
+
+                        h5 {
+                            font-weight: 400;
+                            font-size: 13px;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            display: -webkit-box;
+                            overflow: hidden;
+
+                        }
+                    }
+                }
             }
         }
     }
