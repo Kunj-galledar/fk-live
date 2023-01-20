@@ -1,15 +1,6 @@
  /**=====================
      Quantity 2 js
 ==========================**/
-// $(".add-to-cart-box, .btn-add-cart").click(function () {
-    
-//     $(this).addClass("hide");
-// });
-// $(".qty-left-minus").click(function () {
-//     $(".add-to-cart-box, .btn-add-cart").removeClass("hide");
-// });
-
-
  $(".addcart-button").click(function () {
      $(this).next().addClass("open");
      $(".add-to-cart-box .qty-input").val('1');
