@@ -1,1 +1,65 @@
 <div class="col-3 animate__animated wow animate__fadeInUp" data-wow-delay=".2s" data-wow-duration="2s">
+
+
+
+
+
+
+
+
+	<nav class="header-nav-middle">
+  <div class="main-nav navbar navbar-expand-xl navbar-light navbar-sticky">
+    <a href="javascript:void(0)" class="d-xl-none d-inline-block mobile-menu" (click)="openMenu()"><i
+        class="ri-menu-line"></i></a>
+    <div class="offcanvas offcanvas-collapse order-xl-2" [class.show]="show" id="primaryMenu">
+      <button class="btn-close d-xl-none d-block" (click)="openMenu()" type="button" aria-label="Close"></button>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+          <li class="nav-item mb-3 d-xl-none d-block">
+            <a class="nav-link dropdown-toggle btn btn-primary btn-wide justify-content-center text-white"
+              href="javascript:void(0)" data-bs-toggle="dropdown">Abonnement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" [routerLink]="['/products']" (click)="openMenu()">Produkter</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle" [routerLink]="['/calculator']"
+              routerLinkActive="router-link-active" (click)="openMenu()">Bleiekalkulator</a>
+          </li>
+
+          <li class="nav-item">
+            <a [routerLink]="['/about']" class="nav-link dropdown-toggle" (click)="openMenu()">Om oss</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="javascript:void(0)" (click)="openMenu()">Kontakt</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" (click)="openDropdown()" href="javascript:void(0)">Min side</a>
+            <ul class="dropdown-menu" [class.open]="open">
+              <li>
+                <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/profile']" fragment="1">Min
+                  profil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/profile']" fragment="2">Mine
+                  ordrer</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="javascript:void(0)">Mine abonnementer</a>
+              </li>
+              <li>
+                <a class="dropdown-item" *ngIf="!(access_token$ | async)" [routerLink]="['/login']">Logg Inn</a>
+                <a class="dropdown-item" *ngIf="access_token$ | async" (click)="logOut()">Logg ut</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<a class="menu-overlay" [class.show]="show" (click)="openMenu()"></a>
