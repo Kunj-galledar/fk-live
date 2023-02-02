@@ -11,6 +11,7 @@
                 @include pseudowh($width: 32px, $height: 32px);
                 position: relative;
                 margin: 0 auto;
+                display: block;
 
                 &:after {
                     @include pos;
@@ -36,6 +37,7 @@
     .destinations-box {
         .hotel-view-box {
             .view-image {
+                display: block;
                 border-radius: 9px;
                 overflow: hidden;
                 margin-bottom: 7px;
@@ -139,22 +141,6 @@
                         align-items: center;
                     }
 
-                    .rating {
-                        i {
-                            color: rgba(var(--yellow), 1);
-                            font-size: 14px;
-                        }
-
-                        h6 {
-                            margin: 0;
-
-                            span {
-                                color: rgba(var(--content), 1);
-                                margin-left: 4px;
-                            }
-                        }
-                    }
-
                     .price-button {
                         position: absolute;
                         bottom: 13px;
@@ -188,17 +174,27 @@
 
         li {
             a {
-                padding: 8px 16px;
+                padding: 13px 26px;
                 @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
                 align-items: center;
                 color: rgba(var(--title), 1);
                 background: rgba(var(--light-bg), 1);
                 width: max-content;
                 border-radius: 5px;
+                transition: all 0.3s ease-in-out;
+
+                &.active {
+                    background: var(--gradient-color);
+                    color: rgba(var(--white), 1);
+
+                    img {
+                        filter: invert(1) brightness(100);
+                    }
+                }
 
                 img {
-                    width: 28px;
-                    height: 28px;
+                    @include pseudowh($width: 28px, $height: 28px);
+                    transition: all 0.3s ease-in-out;
                 }
             }
         }
@@ -1225,6 +1221,11 @@
                     border-radius: 6px;
                     @include flex_common;
                     padding: 12px;
+
+                    img {
+                        @include pseudowh;
+                        object-fit: contain;
+                    }
                 }
 
                 .payment-contant {
@@ -1284,6 +1285,273 @@
                 font-size: 14px;
                 line-height: 1.5;
             }
+        }
+    }
+}
+
+/* ---------- Setting ---------- */
+.setting-section {
+    .setting-header {
+        background: var(--gradient-color);
+        box-shadow: 0px 4px 9px rgba(var(--black), 0.1);
+        border-radius: 0px 0px 22px 22px;
+        height: 253px;
+        display: block;
+        padding: 0 15px;
+
+        .sidemenu-header {
+            padding-top: 21px;
+            padding-bottom: 31px;
+            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+            img {
+                width: 107px;
+            }
+
+            .btn-close {
+                width: 26px;
+                height: 26px;
+                background: rgba(var(--white), 0.2);
+                border-radius: 4px;
+                font-size: 14px;
+                color: rgba(var(--white), 1);
+                @include flex_common;
+                margin: 0;
+                padding: 0;
+                opacity: 1;
+            }
+        }
+
+        .sidebar-profile-box {
+            text-align: center;
+
+            .profile-image {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+                border-radius: 22px;
+                overflow: hidden;
+            }
+
+            .profile-name {
+                margin-top: 9px;
+            }
+        }
+    }
+
+    .setting-list {
+        margin-top: 23px;
+
+        .sidebar-menu-list {
+            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 21px);
+
+            li {
+                width: 100%;
+
+                &:last-child {
+                    a {
+                        color: #0363DA;
+                    }
+                }
+
+                a {
+                    color: rgba(var(--title), 1);
+                    align-items: center;
+                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
+
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Wishlist ---------- */
+.wishlist-list {
+    li {
+        +li {
+            margin-top: 17px;
+            padding-top: 17px;
+            border-top: 1px solid rgba(248, 248, 248, 1);
+        }
+
+        .wishlist-box {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 12px;
+            padding: 0 15px;
+
+            @include mq-max(md) {
+                gap: calc(8px + (12 - 8) * ((100vw - 320px) / (600 - 320)));
+            }
+
+            .wishlist-image {
+                width: 130px;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            .wishlist-content {
+                width: calc(100% - 130px - 12px);
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                label {
+                    font-size: 12px;
+                    letter-spacing: 2.3px;
+                    text-transform: uppercase;
+                    margin-bottom: 4px;
+                }
+
+                h5 {
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+
+                h6 {
+                    color: rgba(var(--content), 1);
+                    margin-top: 5px;
+
+                    i {
+                        color: #f25f65;
+                    }
+                }
+
+                h4 {
+                    margin-top: 16px;
+                    font-weight: 600;
+                    font-size: 17px;
+                    color: rgba(var(--theme-color), 1);
+                }
+
+                button {
+                    width: auto;
+                    padding: 8px 16px;
+                    line-height: 1;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+
+                .delete-icon {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    color: rgba(var(--content), 1);
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Hotel history list ---------- */
+.hotel-history-tab {
+    .hotel-history-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        li {
+            width: 100%;
+
+            .hotel-history-box {
+                background-color: rgba(var(--light-bg), 1);
+                border-radius: 9px;
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+
+                .hotel-image {
+                    @include pseudowh($width: 126px, $height: 102px);
+                    width: 126px;
+                    height: 102px;
+                }
+
+                .hotel-details {
+                    width: calc(100% - 126px - 9px);
+                    padding: 14px 11px 14px 0;
+
+                    h5 {
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: rgba(var(--title), 1);
+                    }
+
+                    h6 {
+                        font-size: 13px;
+                        margin-top: 7px;
+                        margin-bottom: 7px;
+                        color: rgba(var(--content), 1);
+                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                        align-items: center;
+                    }
+
+                    .price-button {
+                        position: absolute;
+                        bottom: 13px;
+                        right: 11px;
+                        display: inline-block;
+                        width: auto;
+                        font-weight: 400;
+                        font-size: 12px;
+                        background: var(--gradient-color);
+                        border-radius: 6px;
+                        color: rgba(var(--white), 1);
+                        padding: 3px 5px;
+
+                        span {
+                            font-size: 8px;
+                            margin-left: 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Notification List ---------- */
+.notification-list {
+    li {
+        &:nth-child(even) {
+            margin: 8px 0;
+        }
+
+        .notification-box {
+            .date {
+                color: rgba(var(--content), 1);
+                margin-bottom: 5px;
+                text-transform: capitalize;
+            }
+
+            h5 {
+                margin-bottom: 7px;
+                font-weight: 600;
+                color: rgba(var(--title), 1);
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                text-transform: capitalize;
+
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            p {
+                line-height: 1.5;
+                color: rgba(var(--content), 1);
+                margin: 0;
+            }
+        }
+
+        .divider {
+            height: 7px;
         }
     }
 }

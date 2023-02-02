@@ -1030,6 +1030,10 @@
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
                 color: rgba(var(--title), 1);
 
+                @include mq-max(md) {
+                    padding: calc(10px + (19 - 10) * ((100vw - 320px) / (600 - 320)));
+                }
+
                 .notification-icon {
                     @include flex_common;
                     width: 42px;

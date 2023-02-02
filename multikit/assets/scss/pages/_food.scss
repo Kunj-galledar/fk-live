@@ -29,7 +29,7 @@
     gap: 8px;
 
     @include mq-max(md) {
-        gap: calc(5px + (8 - 5) * ((100vw - 320px) / (767 - 320)));
+        gap: calc(5px + (8 - 5) * ((100vw - 320px) / (600 - 320)));
     }
 
     li {
@@ -100,7 +100,7 @@
                 height: 38px;
 
                 @include mq-max(md) {
-                    width: calc(110px + (141 - 110) * ((100vw - 320px) / (767 - 320)));
+                    width: calc(110px + (141 - 110) * ((100vw - 320px) / (600 - 320)));
                     height: 100%;
                 }
 
@@ -113,7 +113,7 @@
                     font-size: 16px;
 
                     @include mq-max(md) {
-                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (767 - 320)));
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
                     }
                 }
             }
@@ -1300,7 +1300,7 @@
         font-size: 18px;
 
         @include mq-max(md) {
-            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (767 - 320)));
+            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
         }
 
         &:active {
@@ -1522,6 +1522,46 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.wallet-section {
+    .wallet-box {
+        background-color: rgba(var(--white), 1);
+        border-radius: 6px;
+        padding: 18px 12px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        box-shadow: 2px 3px 6px rgba(213, 213, 213, 0.19);
+        justify-content: space-between;
+
+        .wallets-balance {
+            h5 {
+                font-weight: 400;
+                color: rgba(var(--content), 1);
+            }
+
+            h4 {
+                font-weight: 600;
+                margin-top: 4px;
+            }
+        }
+
+        .wallets-icon {
+            i {
+                font-size: 23px;
+            }
+        }
+
+        .other-upi {
+            background-color: rgba(var(--white), 1);
+            border-radius: 6px;
+            padding: 18px 12px;
+            box-shadow: 2px 3px 6px rgba(213, 213, 213, 0.19);
         }
     }
 }

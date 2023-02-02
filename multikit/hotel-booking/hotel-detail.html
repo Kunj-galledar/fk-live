@@ -43,8 +43,9 @@
 
             <ul class="right-right">
                 <li>
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" id="heart-box">
                         <i class="ri-heart-3-line"></i>
+                        <!-- <i class="ri-heart-fill fill-heart"></i> -->
                     </a>
                 </li>
                 <li>
@@ -260,7 +261,7 @@
                         <div id="hotel"></div>
                     </div>
 
-                    <ul class="nav nav-pills location-nav-pills" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills location-nav-pills" id="pills-tab1" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="pills-transport-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-transport" type="button" role="tab">Transport</button>
@@ -276,7 +277,7 @@
                                 data-bs-target="#pills-food" type="button" role="tab">Food</button>
                         </li>
                     </ul>
-                    <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-content" id="pills-tabContent1">
                         <div class="tab-pane transport-tab fade show active" id="pills-transport" role="tabpanel"
                             tabindex="0">
                             <ul class="transport-box-list">
@@ -622,6 +623,35 @@
 
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
+
+    <script>
+        const btn = document.getElementById('heart-box');
+        const para = document.querySelectorAll('.ri-heart-3-line');
+
+        btn.addEventListener('click', () => {
+            para.forEach(el => {
+                el.classList.toggle('ri-heart-3-fill');
+            })
+        })
+        // document.querySelector('.class1').addEventListener('click', classToggle);
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     var faqContainers = document.getElementsByClassName('heart-box');
+        //     var faqToggle = document.getElementsByTagName('body')[0];
+        //     for (var i = 0; i < faqContainers.length; i++) {
+
+        //         faqContainers[i].addEventListener('click', function () {
+
+        //             if (faqToggle.classList.contains('ri-heart-3-line')) {
+        //                 faqToggle.classList.remove('faq-display');
+        //                 // alert("remove faq display!");
+        //             } else {
+        //                 faqToggle.classList.add('faq-display');
+        //                 // alert("add faq display!");
+        //             }
+        //         });
+        //     }
+        // });
+    </script>
 </body>
 
 </html>

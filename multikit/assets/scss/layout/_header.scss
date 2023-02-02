@@ -442,7 +442,7 @@ header {
                 @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
 
                 @include mq-max(md) {
-                    gap: calc(5px + (8 - 5) * ((100vw - 320px) / (767 - 320)));
+                    gap: calc(5px + (8 - 5) * ((100vw - 320px) / (600 - 320)));
                 }
 
                 li {
@@ -732,7 +732,7 @@ header {
     z-index: 9;
 
     @include mq-max(md) {
-        padding: calc(11px + (20 - 11) * ((100vw - 320px) / (767 - 320))) calc(8px + (15 - 8) * ((100vw - 320px) / (767 - 320)));
+        padding: calc(11px + (20 - 11) * ((100vw - 320px) / (600 - 320))) calc(8px + (15 - 8) * ((100vw - 320px) / (600 - 320)));
     }
 
     ul {
@@ -743,7 +743,7 @@ header {
         padding: 10px 29px;
 
         @include mq-max(md) {
-            padding-inline: calc(19px + (29 - 19) * ((100vw - 320px) / (767 - 320)));
+            padding-inline: calc(19px + (29 - 19) * ((100vw - 320px) / (600 - 320)));
         }
 
         li {
@@ -1013,6 +1013,14 @@ header {
                     @include flex_common;
                     font-size: 17px;
                     color: rgba(var(--title), 1);
+
+                    i {
+                        line-height: 1;
+
+                        &.ri-heart-3-fill {
+                            color: #ff3200;
+                        }
+                    }
                 }
             }
         }

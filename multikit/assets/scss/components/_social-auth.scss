@@ -13,17 +13,21 @@
         gap: 8px;
         padding: 11px;
         position: relative;
-        background: transparent;
-        color: #164150;
+        background-color: transparent;
+        color: rgba(var(--title), 1);
         border-radius: 5px;
         overflow: hidden;
         z-index: 0;
 
+        &:hover {
+            color: rgba(var(--title), 1);
+        }
+
         &::before {
             @include pos;
+            @include pseudowh;
             top: 0;
             left: 0;
-            @include pseudowh;
             background: var(--gradient);
             opacity: 0.05;
             z-index: -1;
