@@ -132,8 +132,6 @@ header {
                 top: 0;
                 left: 0;
                 @include pseudowh;
-                width: 100%;
-                height: 100%;
                 background-color: rgba(var(--black), 0.6);
             }
 
@@ -142,12 +140,12 @@ header {
             }
 
             .video-icon {
-                position: absolute;
                 @include center(both);
-                border-radius: 100%;
                 @include pseudowh($width: 37px, $height: 37px);
-                background-color: rgba(var(--white), 1);
                 @include flex_common;
+                position: absolute;
+                border-radius: 100%;
+                background-color: rgba(var(--white), 1);
                 font-size: 20px;
             }
         }
@@ -283,7 +281,14 @@ header {
             font-size: 24px;
             @include flex_common;
             color: rgba(var(--title), 1);
-            border-color: transparent;
+            border: none;
+            padding: 0;
+
+            @include mq-max(md) {
+                @include pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))), $height: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))));
+                border-radius: calc(8px + (12 - 8) * ((100vw - 320px) / (600 - 320)));
+                font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (600 - 320)));
+            }
         }
 
         .header-search-box {
@@ -566,7 +571,7 @@ header {
                         @include pos;
                         @include center(both);
                         @include pseudowh($width: 120%, $height: 120%);
-                        background: rgba(var(--white), $alpha: 1.0);
+                        background-color: rgba(var(--white), 1);
                         z-index: -1;
                         border-radius: 100%;
                         box-shadow: 0px -1px 4px rgba(var(--black), 0.08);
@@ -793,7 +798,7 @@ header {
     }
 }
 
-/* Header Style 4 */
+/* ---------- Header Style 4 ---------- */
 .header-style-4 {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -801,9 +806,8 @@ header {
     position: relative;
 
     .header-left {
-        display: flex;
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
         align-items: center;
-        gap: 8px;
 
         button {
             &:active {
@@ -829,8 +833,7 @@ header {
                 @include pos;
                 top: 0px;
                 right: 3px;
-                width: 5px;
-                height: 5px;
+                @include pseudowh($width: 5px, $height: 5px);
                 background-color: rgba(var(--danger-color), 1);
                 border-radius: 100%;
                 animation: flash 2s linear infinite;
@@ -865,17 +868,15 @@ header {
             }
 
             .name-date {
-                display: flex;
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
                 align-items: center;
-                gap: 10px;
 
                 li {
                     font-weight: 500;
                     font-size: 16px;
 
                     &.dots {
-                        width: 4px;
-                        height: 4px;
+                        @include pseudowh($width: 4px, $height: 4px);
                         background-color: rgba(var(--white), 1);
                         border-radius: 100%;
                     }
@@ -915,7 +916,7 @@ header {
     }
 
     .bottom-header {
-        background: rgba(var(--white), 1);
+        background-color: rgba(var(--white), 1);
         box-shadow: 0px 2px 7px rgba(var(--black), 0.04);
         border-radius: 0px 0px 15px 15px;
         padding-top: 85px;
@@ -951,8 +952,7 @@ header {
 
             i {
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
+                @include center(vertical);
                 font-size: 16px;
                 line-height: 1;
                 color: rgba(var(--title), 1);
@@ -988,9 +988,8 @@ header {
 
         .left-header {
             a {
-                width: 28px;
-                height: 28px;
-                background: rgba(var(--white), 1);
+                @include pseudowh($width: 28px, $height: 28px);
+                background-color: rgba(var(--white), 1);
                 box-shadow: 0px 0px 4px rgba(83, 83, 83, 0.25);
                 border-radius: 100%;
                 @include flex_common;
@@ -1005,9 +1004,8 @@ header {
 
             li {
                 a {
-                    width: 28px;
-                    height: 28px;
-                    background: rgba(var(--white), 1);
+                    @include pseudowh($width: 28px, $height: 28px);
+                    background-color: rgba(var(--white), 1);
                     box-shadow: 0px 0px 4px rgba(83, 83, 83, 0.25);
                     border-radius: 100%;
                     @include flex_common;
@@ -1028,7 +1026,7 @@ header {
 }
 
 
-/* ---------- Mobile Style 4 ---------- */
+/* Mobile Style 4 */
 .hotel-booking-mobile {
     position: fixed;
     bottom: 0;
@@ -1054,8 +1052,7 @@ header {
                                 @include pos;
                                 top: 0;
                                 left: 0;
-                                width: 12px;
-                                height: 12px;
+                                @include pseudowh($width: 12px, $height: 12px);
                                 border-radius: 100%;
                                 background: linear-gradient(180deg, #0363DA 0%, #5546CB 100%);
                                 opacity: 0.5;
@@ -1073,6 +1070,128 @@ header {
                         color: rgba(var(--title), 1);
                         position: relative;
                     }
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Header Style 5 ---------- */
+.header-style-5 {
+    position: relative;
+    padding: 16px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-left {
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
+        align-items: center;
+
+        button {
+            padding: 0;
+            @include pseudowh($width: unset, $height: unset);
+            line-height: 1;
+            margin: 0;
+
+            &:active {
+                border-color: transparent;
+            }
+        }
+
+        .header-title {
+            font-weight: 600;
+            color: rgba(var(--title), 1);
+        }
+
+        i {
+            font-size: 19px;
+        }
+    }
+
+    .header-right {
+        @include flex_common ($dis: flex, $align: center, $justify: flex-end);
+        gap: 15px;
+
+        a {
+            font-size: 20px;
+            color: #373737;
+
+            &.notification {
+                position: relative;
+
+                &::after {
+                    @include pos;
+                    top: 5px;
+                    right: 3px;
+                    @include pseudowh($width: 6px, $height: 6px);
+                    background-color: rgba(var(--theme-color), 1);
+                    border-radius: 100%;
+                    animation: flash 2s linear infinite;
+                }
+
+                &::before {
+                    @include pos;
+                    top: 4px;
+                    right: 3px;
+                    @include pseudowh($width: 6px, $height: 6px);
+                    background-color: rgba(var(--white), 1);
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* Mobile Style 5 */
+.mobile-style-5 {
+    position: fixed;
+    bottom: 0;
+    @include center(horizontal);
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(55, 55, 55, 1);
+    z-index: 9;
+    box-shadow: 0px -1px 4px rgba(var(--black), 0.04);
+
+    ul {
+        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        padding: 17px 37px;
+
+        @include mq-max(md) {
+            padding: calc(14px + (17 - 14) * ((100vw - 320px) / (600 - 320))) calc(23px + (37 - 23) * ((100vw - 320px) / (600 - 320)));
+        }
+
+        li {
+            text-align: center;
+
+            &.active {
+                .mobile-box {
+                    color: rgba(var(--content), 1);
+
+                    h6 {
+                        display: block;
+                    }
+                }
+            }
+
+            .mobile-box {
+                color: #6A6A6A;
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: 6px;
+
+                i {
+                    font-size: 20px;
+                    position: relative;
+                    line-height: 1;
+                }
+
+                h6 {
+                    display: none;
+                    font-weight: 500;
+                    font-size: 16px;
                 }
             }
         }

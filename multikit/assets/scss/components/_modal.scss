@@ -57,7 +57,7 @@
                 margin: 0;
                 font-size: 21px;
                 padding: 0;
-                background: unset;
+                background-color: unset;
                 display: flex;
                 align-items: center;
                 opacity: 0.8;
@@ -612,7 +612,7 @@
                         @include flex_common;
                         color: rgba(var(--title), 1);
                         font-size: 20px;
-                        background: transparent;
+                        background-color: transparent;
                     }
                 }
             }
@@ -743,6 +743,7 @@
         .offcanvas-header {
             padding-top: 23px;
             padding-bottom: 0;
+            position: relative;
 
             .profile-box {
                 @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
@@ -766,13 +767,32 @@
                     }
                 }
             }
+
+            .close-button {
+                position: absolute;
+                top: 13px;
+                right: 20px;
+                @include pseudowh($width: 23px, $height: 23px);
+                padding: 0;
+                background: var(--gradient2);
+                color: rgba(var(--white), 1);
+                line-height: 1;
+                @include flex_common;
+                font-size: 14px;
+                font-weight: 600;
+            }
         }
 
         .offcanvas-body {
             margin-top: 21px;
+            padding: 0 15px;
 
             .profile-menu-list {
                 @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
+
+                @include mq-max(md) {
+                    gap: calc(9px + (14 - 9) * ((100vw - 320px) / (767 - 320)));
+                }
 
                 li {
                     width: 100%;
@@ -795,6 +815,11 @@
                         padding: 14px 21px;
                         align-items: center;
                         @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+
+                        @include mq-max(md) {
+                            border-radius: calc(11px + (18 - 11) * ((100vw - 320px) / (767 - 320)));
+                            padding: calc(11px + (14 - 11) * ((100vw - 320px) / (767 - 320))) calc(17px + (21 - 17) * ((100vw - 320px) / (767 - 320)));
+                        }
 
                         .menu-icon {
                             font-size: 20px;
@@ -1018,9 +1043,8 @@
                 }
 
                 .btn-close {
-                    width: 26px;
-                    height: 26px;
-                    background: rgba(var(--white), 0.2);
+                    @include pseudowh($width: 26px, $height: 26px);
+                    background-color: rgba(var(--white), 0.2);
                     border-radius: 4px;
                     font-size: 14px;
                     color: rgba(var(--white), 1);
@@ -1035,8 +1059,7 @@
                 text-align: center;
 
                 .profile-image {
-                    width: 80px;
-                    height: 80px;
+                    @include pseudowh($width: 80px, $height: 80px);
                     margin: 0 auto;
                     border-radius: 22px;
                     overflow: hidden;
@@ -1090,11 +1113,10 @@
             .btn-close {
                 margin: 0;
                 padding: 0;
-                background: none;
+                background-color: none;
                 font-size: 20px;
                 opacity: 1;
-                width: auto;
-                height: auto;
+                @include pseudowh($width: auto, $height: auto);
                 line-height: 1;
             }
         }
@@ -1105,7 +1127,7 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                background: rgba(var(--white), 1);
+                background-color: rgba(var(--white), 1);
                 display: flex;
                 align-items: center;
                 padding: 9px 16px;
@@ -1135,15 +1157,13 @@
                         .amenities-icon {
                             background-color: rgba(var(--light-bg), 1);
                             border-radius: 10px;
-                            width: 45px;
-                            height: 45px;
+                            @include pseudowh($width: 45px, $height: 45px);
                             @include flex_common;
                             font-size: 20px;
                             margin: 0 auto 8px;
 
                             svg {
-                                width: 24px;
-                                height: 24px;
+                                @include pseudowh($width: 24px, $height: 24px);
                                 fill: transparent;
                                 stroke: rgba(var(--title), 1);
                             }
@@ -1197,15 +1217,13 @@
             margin-bottom: 20px;
 
             .location-icon {
-                width: 24px;
-                height: 24px;
+                @include pseudowh($width: 24px, $height: 24px);
                 background-color: #ffe9c0;
                 border-radius: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 color: #e0b764;
-                // margin-top: 5px;
             }
 
             h6 {
@@ -1245,11 +1263,10 @@
             .btn-close {
                 padding: 0;
                 margin: 0;
-                background: none;
+                background-color: none;
                 font-size: 22px;
                 position: relative;
-                width: auto;
-                height: auto;
+                @include pseudowh($width: auto, $height: auto);
                 line-height: 1;
                 display: flex;
 
@@ -1265,9 +1282,130 @@
             left: 0;
             width: 100%;
             display: flex;
-            background: rgba(var(--white), 1);
+            background-color: rgba(var(--white), 1);
             box-shadow: 0px 0px 4px rgba(var(--black), 0.05);
             padding: 9px 18px;
+        }
+    }
+
+    &.ecommerce-sidebar {
+        width: 320px;
+        border: none;
+
+        @include mq-max(md) {
+            width: calc(280px + (320 - 280) * ((100vw - 320px) / (600 - 320)));
+        }
+
+        .btn-close {
+            @include pseudowh($width: 38px, $height: 38px);
+            padding: 0;
+            margin: 0;
+            background-color: rgba(var(--theme-color), 1);
+            opacity: 1;
+            border-radius: 0;
+            background-image: unset;
+            color: rgba(var(--white), 1);
+            font-size: 26px;
+            position: absolute;
+            top: 0;
+            left: 280px;
+            line-height: 1;
+
+            @include mq-max(md) {
+                @include pseudowh($width: calc(33px + (38 - 33) * ((100vw - 320px) / (600 - 320))), $height: calc(33px + (38 - 33) * ((100vw - 320px) / (600 - 320))));
+                left: calc(280px + (320 - 280) * ((100vw - 320px) / (600 - 320)));
+                font-size: calc(21px + (26 - 21) * ((100vw - 320px) / (600 - 320)));
+            }
+        }
+
+        .offcanvas-header {
+            padding: 0;
+
+            .sidebar-profile {
+                width: 100%;
+                margin-top: 62px;
+                margin-bottom: 30px;
+
+                @include mq-max(md) {
+                    margin-top: calc(37px + (62 - 37) * ((100vw - 320px) / (600 - 320)));
+                }
+
+                .profile-image {
+                    @include pseudowh($width: 92px, $height: 92px);
+                    border-radius: 100%;
+                    overflow: hidden;
+                    margin-inline: auto;
+                    margin-bottom: 11px;
+                }
+            }
+
+            .profile-name {
+                text-align: center;
+                color: rgba(var(--title), 1);
+
+                h4 {
+                    font-weight: 500;
+                    font-size: 16px;
+                    margin-bottom: 7px;
+
+                    @include mq-max(md) {
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+                    }
+                }
+
+                h5 {
+                    font-weight: 400;
+
+                    @include mq-max(md) {
+                        font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (600 - 320)));
+                    }
+                }
+            }
+        }
+
+        .offcanvas-body {
+            padding: 0 15px;
+
+            .sidebar-list {
+                li {
+                    +li {
+                        margin-top: 18px;
+                        padding-top: 18px;
+                        border-top: 1px solid rgba(237, 239, 244, 0.6);
+
+                        @include mq-max(md) {
+                            margin-top: calc(9px + (18 - 9) * ((100vw - 320px) / (600 - 320)));
+                            padding-top: calc(9px + (18 - 9) * ((100vw - 320px) / (600 - 320)));
+                        }
+                    }
+
+                    a {
+                        color: rgba(var(--title), 1);
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: nowrap;
+                        gap: 14px;
+
+                        @include mq-max(md) {
+                            gap: calc(9px + (14 - 9) * ((100vw - 320px) / (600 - 320)));
+                        }
+
+                        i {
+                            font-size: 20px;
+
+                            @include mq-max(md) {
+                                font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (600 - 320)));
+                            }
+                        }
+
+                        h5 {
+                            @include mq-max(md) {
+                                font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

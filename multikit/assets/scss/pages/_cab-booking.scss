@@ -1,4 +1,7 @@
-.sign-dividor {
+/*===================== 
+    Cab Booking Css
+==========================*/
+.sign-divider {
     margin-top: 35px;
     text-align: center;
     position: relative;
@@ -7,8 +10,7 @@
         @include pos;
         @include center(vertical);
         left: 0;
-        width: 100%;
-        height: 1px;
+        @include pseudowh($width: 100%, $height: 1px);
         border: 1px dashed rgba(var(--content), 1);
         z-index: -1;
     }
@@ -22,6 +24,7 @@
     }
 }
 
+/* ---------- GPS Css ---------- */
 .gps-section {
     padding-top: 100px;
 
@@ -61,20 +64,28 @@
     }
 }
 
+/* ---------- Booking Css ---------- */
 .booking-section {
     padding-top: 39px;
     padding-bottom: 63px;
     background-color: rgba(var(--white), 1);
-    margin-top: -35px;
     z-index: 1;
-    position: relative;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-radius: 25px 25px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+
+    @include mq-max(md) {
+        padding-top: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)));
+        padding-bottom: calc(43px + (63 - 43) * ((100vw - 320px) / (600 - 320)));
+    }
 
     &:before {
         @include pos;
-        width: 52px;
-        height: 4px;
+        @include pseudowh($width: 52px, $height: 4px);
         background-color: #E9E9E9;
         top: 14px;
         @include center(horizontal);
@@ -94,14 +105,12 @@
         margin-inline: 15px;
 
         .driver-image {
-            width: 50px;
-            height: 45px;
+            @include pseudowh($width: 50px, $height: 45px);
             border-radius: 8px;
             overflow: hidden;
 
             img {
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 object-fit: cover;
             }
         }
@@ -129,8 +138,7 @@
                 color: rgba(var(--title), 1);
 
                 li {
-                    width: 35px;
-                    height: 35px;
+                    @include pseudowh($width: 35px, $height: 35px);
                     background-color: #F9F9F9;
                     border-radius: 4px;
                     @include flex_common;
@@ -152,6 +160,12 @@
         .booking-title {
             color: rgba(var(--title), 1);
             margin-bottom: 16px;
+
+            h3 {
+                @include mq-max(md) {
+                    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
+                }
+            }
         }
 
         .address-location {
@@ -183,7 +197,7 @@
                         position: absolute;
                         @include center(vertical);
                         left: 22px;
-                        @include pseudowh($width: 100px, $height: 10px);
+                        @include pseudowh($width: 10px, $height: 10px);
                         background: var(--gradient);
 
                         &-2 {
@@ -218,15 +232,24 @@
     }
 }
 
+/* ---------- Ride Css ---------- */
 .ride-section {
     padding-top: 39px;
     padding-bottom: 63px;
     background-color: rgba(var(--white), 1);
-    margin-top: -35px;
     z-index: 1;
-    position: relative;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-radius: 25px 25px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+
+    @include mq-max(md) {
+        padding-top: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)));
+        padding-bottom: calc(43px + (63 - 43) * ((100vw - 320px) / (600 - 320)));
+    }
 
     &:before {
         @include pos;
@@ -248,17 +271,15 @@
             li {
                 width: 100%;
 
-                &.active {
-                    a {
-                        box-shadow: $shadow2;
-                    }
-                }
-
-                a {
+                .cab-ride-box {
                     padding: 12px;
                     align-items: center;
                     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
                     border-radius: 8px;
+
+                    &.active {
+                        box-shadow: $shadow2;
+                    }
 
                     .cab-image {
                         @include pseudowh($width: 70px, $height: 30px);
@@ -303,15 +324,24 @@
     }
 }
 
+/* ---------- Ride Details Css ---------- */
 .ride-details-section {
     padding-top: 39px;
     padding-bottom: 63px;
     background-color: rgba(var(--white), 1);
-    margin-top: -35px;
     z-index: 1;
-    position: relative;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-radius: 25px 25px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+
+    @include mq-max(md) {
+        padding-top: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)));
+        padding-bottom: calc(43px + (63 - 43) * ((100vw - 320px) / (600 - 320)));
+    }
 
     &:before {
         @include pos;
@@ -429,6 +459,7 @@
     }
 }
 
+/* ---------- Payment Option Css ---------- */
 .payment-option-section {
     padding-top: 20px;
 
@@ -443,6 +474,10 @@
     .payment-list-box {
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 16px);
 
+        @include mq-max(md) {
+            gap: calc(10px + (16 - 10) * ((100vw - 320px) / (600 - 320)));
+        }
+
         li {
             width: 100%;
 
@@ -452,14 +487,18 @@
                 border-radius: 18px;
                 padding: 16px 24px;
 
-                legend {
-                    color: rgba(var(--white), 1);
-                    font-weight: 600;
-                    margin-bottom: 5px;
-                    font-size: 18px;
-                    line-height: 26px;
-                    text-transform: uppercase;
+                @include mq-max(md) {
+                    padding: calc(13px + (16 - 13) * ((100vw - 320px) / (600 - 320))) calc(17px + (24 - 17) * ((100vw - 320px) / (600 - 320)));
                 }
+
+                // legend {
+                //     color: rgba(var(--white), 1);
+                //     font-weight: 600;
+                //     margin-bottom: 5px;
+                //     font-size: 18px;
+                //     line-height: 26px;
+                //     text-transform: uppercase;
+                // }
 
                 label {
                     position: relative;
@@ -471,12 +510,14 @@
                         margin-right: 6px;
                     }
 
-                    h4 {
+                    .wallet {
                         color: rgba(var(--title), 1);
                         line-height: 1;
+                        font-size: 16px;
+                        font-weight: 500;
                     }
 
-                    h5 {
+                    .balance {
                         line-height: 1;
                         color: rgba(var(--content), 1);
                         font-weight: 400;
@@ -496,11 +537,11 @@
                             @include pos;
                             display: block;
                             @include pseudowh($width: 20px, $height: 20px);
-                            background: #f4f4f4;
+                            background-color: #f4f4f4;
                             left: 0;
                             @include center(vertical);
                             border-radius: 10px;
-                            transition: background .3s linear;
+                            transition: background-color .3s linear;
                         }
 
                         &:after {
@@ -527,26 +568,32 @@
     }
 }
 
+/* ---------- Cab Pay Css ---------- */
 .cab-pay-section {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 600px;
     width: 100%;
     background-color: rgba(var(--white), 1);
     box-shadow: 0px 0px 6px rgba(192, 192, 192, 0.19);
     border-radius: 24px 24px 0px 0px;
-    padding-bottom: 52px;
+    padding-bottom: 15px;
     padding-top: 15px;
 
     .cab-pay-box {
-        margin-inline: 15px;
-
         .cab-name {
             align-items: center;
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 23px);
             border-bottom: 1px dashed rgba(var(--content), 1);
             padding-bottom: 14px;
             margin-bottom: 20px;
+
+            @include mq-max(md) {
+                padding-bottom: calc(8px + (14 - 8) * ((100vw - 320px) / (600 - 320)));
+                margin-bottom: calc(12px + (20 - 12) * ((100vw - 320px) / (600 - 320)));
+            }
 
             .cab-image {
                 @include pseudowh($width: 50px, $height: 50px);
@@ -601,27 +648,34 @@
     }
 }
 
+/* ---------- Booking Ride Css ---------- */
 .booking-ride-section {
     padding-top: 39px;
-    padding-bottom: 63px;
+    padding-bottom: 39px;
     background-color: rgba(var(--white), 1);
-    margin-top: -35px;
     z-index: 1;
-    position: relative;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-radius: 24px 24px 0px 0px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    max-width: 600px;
+
+    @include mq-max(md) {
+        padding-top: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)));
+        padding-bottom: calc(19px + (39 - 19) * ((100vw - 320px) / (600 - 320)));
+    }
 
     &:before {
         @include pos;
         @include pseudowh($width: 52px, $height: 4px);
+        @include center(horizontal);
         background-color: #E9E9E9;
         top: 14px;
-        @include center(horizontal);
     }
 
     .cab-drive-box {
-        align-items: center;
         @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+        align-items: center;
         background-color: rgba(var(--white), 1);
         box-shadow: $shadow2;
         border-radius: 13px;
@@ -631,6 +685,12 @@
         left: 0;
         width: -webkit-fill-available;
         margin-inline: 15px;
+
+        @include mq-max(md) {
+            padding: calc(10px + (17 - 10) * ((100vw - 320px) / (600 - 320)));
+            top: calc(-73px + (-88 - -73) * ((100vw - 320px) / (600 - 320)));
+            gap: calc(8px + (12 - 8) * ((100vw - 320px) / (600 - 320)));
+        }
 
         .driver-image {
             @include pseudowh($width: 50px, $height: 45px);
@@ -666,18 +726,32 @@
                 color: rgba(var(--title), 1);
 
                 li {
-                    @include pseudowh($width: 35px, $height: 35px);
-                    @include flex_common;
-                    background-color: #F9F9F9;
-                    border-radius: 4px;
-
                     &:last-child {
-                        background-color: rgba(var(--theme-color), 1);
-                        color: rgba(var(--white), 1);
+                        a {
+                            background-color: rgba(var(--theme-color), 1);
+                            color: rgba(var(--white), 1);
+                        }
                     }
 
-                    i {
-                        font-size: 20px;
+                    a {
+                        @include pseudowh($width: 35px, $height: 35px);
+                        @include flex_common;
+                        background-color: rgb(249, 249, 249);
+                        border-radius: 4px;
+                        color: rgba(var(--title), 1);
+
+                        @include mq-max(md) {
+                            @include pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (600 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (600 - 320))));
+                        }
+
+
+                        i {
+                            font-size: 20px;
+
+                            @include mq-max(md) {
+                                font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (600 - 320)));
+                            }
+                        }
                     }
                 }
             }
@@ -690,10 +764,19 @@
             align-items: center;
             margin-bottom: 18px;
 
+            @include mq-max(md) {
+                gap: calc(15px + (23 - 15) * ((100vw - 320px) / (600 - 320)));
+                margin-bottom: calc(11px + (18 - 11) * ((100vw - 320px) / (600 - 320)));
+            }
+
             .cab-image {
                 @include pseudowh($width: 50px, $height: 50px);
                 @include flex_common;
                 position: relative;
+
+                @include mq-max(md) {
+                    @include pseudowh($width: calc(42px + (50 - 42) * ((100vw - 320px) / (600 - 320))), $height: calc(42px + (50 - 42) * ((100vw - 320px) / (600 - 320))));
+                }
 
                 .cab-img {
                     z-index: 1;
@@ -711,11 +794,19 @@
                 h3 {
                     color: rgba(var(--title), 1);
                     margin-bottom: 5px;
+
+                    @include mq-max(md) {
+                        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
 
                 h4 {
                     font-weight: 400;
                     color: rgba(var(--content), 1);
+
+                    @include mq-max(md) {
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
             }
         }
@@ -730,7 +821,11 @@
                 color: rgba(var(--title), 1);
                 padding: 8px 20px;
                 border-radius: 50px;
-                background-color: #F8F8F8;
+                background-color: rgba(var(--light-bg), 1);
+
+                @include mq-max(md) {
+                    padding: calc(6px + (8 - 6) * ((100vw - 320px) / (600 - 320))) calc(12px + (20 - 12) * ((100vw - 320px) / (600 - 320)));
+                }
 
                 i {
                     font-size: 16px;
@@ -738,6 +833,10 @@
 
                 h5 {
                     font-weight: 400;
+
+                    @include mq-max(md) {
+                        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
             }
         }
@@ -746,12 +845,23 @@
             margin-top: 18px;
             @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
 
+            @include mq-max(md) {
+                gap: calc(8px + (15 - 8) * ((100vw - 320px) / (600 - 320)));
+                margin-top: calc(13px + (18 - 13) * ((100vw - 320px) / (600 - 320)));
+            }
+
             .btn {
                 font-weight: 500;
                 font-size: 18px;
                 padding: 13px;
                 border-radius: 18px;
                 color: rgba(var(--white), 1);
+
+                @include mq-max(md) {
+                    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
+                    padding: calc(9px + (13 - 9) * ((100vw - 320px) / (600 - 320)));
+                    border-radius: calc(13px + (18 - 13) * ((100vw - 320px) / (600 - 320)));
+                }
 
                 &.cancel-button {
                     background: var(--gradient2);
@@ -765,8 +875,9 @@
     }
 }
 
+/* ---------- Setting Css ---------- */
 .setting-section {
-    padding-top: 85px;
+    padding-top: 25px;
 
     .setting-box {
         .profile-box {
@@ -809,17 +920,17 @@
                 }
 
                 a {
-                    border-bottom: 1px solid #F3F3F3;
-                    align-items: center;
                     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
-                    padding-bottom: 12px;
                     margin-bottom: 24px;
+                    border-bottom: 1px solid rgba(var(--grey), 1);
+                    align-items: center;
+                    padding-bottom: 12px;
 
                     .menu-icon {
+                        @include pseudowh($width: 20px, $height: 20px);
                         font-size: 20px;
                         line-height: 1;
                         color: rgba(var(--title), 1);
-                        @include pseudowh($width: 20px, $height: 20px);
                     }
 
                     .menu-name {
@@ -828,8 +939,8 @@
                         color: rgba(var(--title), 1);
 
                         i {
-                            font-size: 20px;
                             @include pseudowh($width: 20px, $height: 20px);
+                            font-size: 20px;
                             line-height: 1;
                         }
                     }
@@ -839,6 +950,7 @@
     }
 }
 
+/* ---------- Your Ride Css ---------- */
 .your-ride-section {
     .your-ride-list {
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 18px);
@@ -877,8 +989,8 @@
                             }
 
                             .to-from {
-                                align-items: center;
                                 @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                                align-items: center;
 
                                 i {
                                     font-size: 15px;
@@ -911,12 +1023,11 @@
                                 }
 
                                 .shape-image {
-                                    position: absolute;
                                     @include center(vertical);
+                                    @include pseudowh($width: 100%, $height: 45px);
+                                    position: absolute;
                                     left: 0;
                                     z-index: -1;
-                                    width: 100%;
-                                    height: 45px;
                                 }
                             }
 
@@ -1002,6 +1113,7 @@
     }
 }
 
+/* ---------- Notification Css ---------- */
 .notification-section {
     .clear-button {
         display: block;
@@ -1015,19 +1127,19 @@
     }
 
     .notification-list {
-        margin-top: 15px;
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 22px);
+        margin-top: 15px;
 
         li {
             width: 100%;
 
             .notification-box {
+                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
                 padding: 19px;
                 border-radius: 9px;
                 box-shadow: 1px 3px 8px rgba(var(--border), 0.49);
                 position: relative;
                 background-color: rgba(var(--border), 0.15);
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
                 color: rgba(var(--title), 1);
 
                 @include mq-max(md) {
@@ -1036,8 +1148,7 @@
 
                 .notification-icon {
                     @include flex_common;
-                    width: 42px;
-                    height: 42px;
+                    @include pseudowh($width: 42px, $height: 42px);
                     background-color: rgba(var(--white), 1);
                     border-radius: 5px;
                     font-size: 18px;
@@ -1064,12 +1175,11 @@
                     }
 
                     .close-button {
+                        @include pseudowh($width: 20px, $height: 20px);
+                        @include flex_common;
                         background-color: rgba(var(--content), 0.4);
                         padding: 0;
-                        width: 20px;
-                        height: 20px;
                         border-radius: 100%;
-                        @include flex_common;
                         font-size: 12px;
                         color: rgba(var(--title), 1);
                         position: absolute;
@@ -1083,6 +1193,7 @@
     }
 }
 
+/* ---------- Map Css ---------- */
 .map-section {
     &-2 {
         #map {
@@ -1091,8 +1202,7 @@
     }
 
     #map {
-        width: 100%;
-        height: 500px;
+        @include pseudowh($width: 100%, $height: 100vh);
         z-index: 0;
 
         .leaflet-left {
@@ -1104,6 +1214,7 @@
     }
 }
 
+/* ---------- Wallet Css ---------- */
 .wallet-section {
     margin-top: 30px;
 
@@ -1152,6 +1263,7 @@
     }
 }
 
+/* ---------- Payment Option Css ---------- */
 .payment-option {
     a {
         background-color: rgba(var(--border), 0.5);
@@ -1162,12 +1274,13 @@
     }
 }
 
+/* ---------- Profile Image Change Css ---------- */
 .profile-image-change {
     .edit-image {
         .profile-pic {
+            @include flex_common;
             color: transparent;
             transition: all 0.3s ease;
-            @include flex_common;
             position: relative;
             overflow: hidden;
             padding: 4px;
@@ -1177,10 +1290,9 @@
             }
 
             img {
+                @include pseudowh($width: 115px, $height: 115px);
                 position: absolute;
                 object-fit: cover;
-                width: 115px;
-                height: 115px;
                 border: 6px solid rgba(var(--white), 1);
                 box-shadow: 0 0 10px 0 rgba(var(--black), 0.1);
                 border-radius: 100px;
@@ -1188,13 +1300,48 @@
             }
 
             .-label {
+                @include pseudowh($width: 115px, $height: 115px);
                 cursor: pointer;
-                height: 115px;
-                width: 115px;
             }
 
             span {
                 font-size: 25px;
+            }
+        }
+    }
+}
+
+/* ---------- Driver Detail Css ---------- */
+.driver-detail-section {
+    .driver-details {
+        text-align: center;
+
+        .driver-image {
+            width: 83px;
+            height: 83px;
+            border-radius: 7px;
+            overflow: hidden;
+            margin: 0 auto;
+            box-shadow: $shadow2;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .driver-content {
+            margin-top: 8px;
+
+            h4 {
+                color: rgba(var(--title), 1);
+            }
+
+            h5 {
+                color: rgba(var(--title), 0.7);
+                margin-top: 5px;
+                font-weight: 400;
             }
         }
     }

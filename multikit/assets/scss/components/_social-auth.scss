@@ -1,7 +1,7 @@
 /*=====================
     Social authentication Css
 ==========================*/
-/* Social style 1 */
+/* ---------- Social style 1 ---------- */
 .social-style-1 {
     @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
     align-items: center;
@@ -45,7 +45,7 @@
     }
 }
 
-/* Social style 2 */
+/* ---------- Social style 2 ---------- */
 .social-style-2 {
     margin-top: 18px;
     @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
@@ -57,7 +57,7 @@
             @include flex_common;
             flex-wrap: nowrap;
             gap: 11px;
-            background: #FAFAFA;
+            background-color: #FAFAFA;
             border-radius: 14px;
             padding: 17px;
             color: rgba(var(--title), 1);
@@ -69,12 +69,16 @@
             h4 {
                 font-weight: 400;
                 font-size: 17px;
+
+                @include mq-max(md) {
+                    font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (600 - 320)));
+                }
             }
         }
     }
 }
 
-/* Social style 3 */
+/* ---------- Social style 3 ---------- */
 .social-style-3 {
     margin-bottom: 145px;
 
@@ -90,10 +94,39 @@
         li {
             a {
                 @include pseudowh($width: 54px, $height: 54px);
-                background: rgba(var(--white), 1);
+                background-color: rgba(var(--white), 1);
                 @include flex_common;
                 box-shadow: $shadow3;
                 border-radius: 14px;
+            }
+        }
+    }
+}
+
+/* ---------- Social style 4 ---------- */
+.social-style-4 {
+    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
+
+    li {
+        width: 100%;
+
+        a {
+            @include flex_common;
+            flex-wrap: nowrap;
+            gap: 11px;
+            padding: 17px;
+            color: rgba(var(--content), 1);
+            border: 1px solid #545454;
+            border-radius: 6px;
+            background-color: transparent;
+
+            img {
+                @include pseudowh($width: 20px, $height: 20px);
+            }
+
+            h4 {
+                font-weight: 400;
+                font-size: 17px;
             }
         }
     }

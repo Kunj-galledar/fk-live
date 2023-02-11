@@ -10,7 +10,7 @@ function onKeyUpEvent(index, event) {
         } else {
             getCodeBoxElement(index).blur();
             // Submit code
-            console.log('submit code ');
+            console.log('submit code');
         }
     }
     if (eventCode === 4 && index !== 1) {

@@ -1,7 +1,7 @@
 /*=====================
     Onboarding Css
 ==========================*/
-/* learning onboarding */
+/* ---------- learning onboarding ---------- */
 .learning-onboarding-bg {
     background-image: url(../images/learning/bg.jpg);
     background-repeat: no-repeat;
@@ -79,7 +79,7 @@
     }
 }
 
-/* Chatting onboarding */
+/* ---------- Chatting onboarding ---------- */
 .chatting-onboarding-bg {
     background-color: rgba(var(--theme-color), 1);
 
@@ -90,14 +90,13 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
-            height: 133px;
+            @include pseudowh($width: 100%, $height: 133px);
             background: linear-gradient(0deg, rgba(var(--theme-color), 1) 0%, rgba(205, 233, 221, 0) 82.04%);
         }
     }
 }
 
-/* cab onbaording */
+/* ---------- cab onboarding ---------- */
 .cab-onboarding-section {
     .cab-onboarding {
         .cab-onboarding-box {
@@ -132,10 +131,9 @@
             position: relative;
 
             .swiper-pagination-bullet {
-                width: 55px;
-                height: 6px;
+                @include pseudowh($width: 55px, $height: 6px);
                 border-radius: 50px;
-                background: rgba(var(--light-gray), 1);
+                background-color: rgba(var(--light-gray), 1);
                 opacity: 1;
 
                 &-active {
@@ -146,8 +144,7 @@
     }
 
     .onboarding-button {
-        width: 66px;
-        height: 66px;
+        @include pseudowh($width: 66px, $height: 66px);
         border-radius: 100%;
         border: none;
         background: var(--gradient2);
@@ -157,7 +154,7 @@
     }
 }
 
-/* Hotel Booking onboarding */
+/* ---------- Hotel Booking onboarding ---------- */
 .hotel-onboarding {
     padding-top: 67px;
 
@@ -166,8 +163,7 @@
             margin-bottom: 64px;
 
             .hotel-image {
-                width: 306px;
-                height: 100%;
+                @include pseudowh($width: 306px, $height: 100%);
                 box-shadow: 0px 7px 6px rgba(var(--black), 0.22);
                 border-radius: 15px;
                 overflow: hidden;
@@ -179,8 +175,7 @@
                 }
 
                 img {
-                    width: 100%;
-                    height: 100%;
+                    @include pseudowh;
                     object-fit: contain;
                 }
             }
@@ -212,8 +207,7 @@
             bottom: 0;
 
             .swiper-pagination-bullet {
-                width: 6px;
-                height: 6px;
+                @include pseudowh($width: 6px, $height: 6px);
                 border-radius: 100px;
                 border: 2px solid rgba(74, 74, 74, 1);
                 background-color: transparent;
@@ -221,7 +215,7 @@
 
                 &-active {
                     width: 25px;
-                    background: rgba(74, 74, 74, 1);
+                    background-color: rgba(74, 74, 74, 1);
                 }
             }
         }
@@ -241,6 +235,41 @@
                 background: var(--gradient-color);
                 color: rgba(var(--white), 1);
             }
+        }
+    }
+}
+
+/* ---------- Ecommerce onboarding ---------- */
+.ecommerce-onboarding {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include pseudowh;
+}
+
+.onboarding-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include pseudowh;
+    background-color: rgba(55, 55, 55, 0.5);
+    z-index: 1;
+    text-align: center;
+
+    .onboarding-button-group {
+        position: fixed;
+        bottom: 50px;
+        width: 100%;
+        padding-inline: 15px;
+        @include center(horizontal);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 17px;
+        max-width: 600px;
+
+        p {
+            color: rgba(var(--content), 1);
+            margin: 0;
         }
     }
 }

@@ -1,3 +1,6 @@
+/*===================== 
+    Chatting Css
+==========================*/
 .story-section {
     margin-top: 19px;
 
@@ -14,22 +17,19 @@
             }
 
             .profile-image {
-                width: 52px;
-                height: 52px;
+                @include pseudowh($width: 52px, $height: 52px);
                 position: relative;
                 margin: 0 auto 4px;
 
                 img {
                     border-radius: 100%;
-                    width: 52px;
-                    height: 52px;
+                    @include pseudowh($width: 52px, $height: 52px);
                     object-fit: cover;
                 }
             }
 
             .add-story-button {
-                width: 20px;
-                height: 20px;
+                @include pseudowh($width: 20px, $height: 20px);
                 position: absolute;
                 bottom: 4px;
                 right: -3px;
@@ -120,8 +120,7 @@
                                 @include pos;
                                 bottom: 5px;
                                 right: 2px;
-                                width: 10px;
-                                height: 10px;
+                                @include pseudowh($width: 10px, $height: 10px);
                                 background-color: rgba(var(--theme-color), 1);
                                 border-radius: 100%;
                             }
@@ -181,14 +180,12 @@
                     }
 
                     .chatting-image {
-                        width: 52px;
-                        height: 52px;
+                        @include pseudowh($width: 52px, $height: 52px);
                         position: relative;
 
                         img {
                             border-radius: 100%;
-                            width: 52px;
-                            height: 52px;
+                            @include pseudowh($width: 52px, $height: 52px);
                             object-fit: cover;
                         }
                     }
@@ -237,8 +234,7 @@
 
                                 label {
                                     display: none;
-                                    width: 18px;
-                                    height: 18px;
+                                    @include pseudowh($width: 18px, $height: 18px);
                                     border-radius: 100%;
                                     background-color: rgba(var(--theme-color), 1);
                                     color: rgba(var(--title), 1);
@@ -318,14 +314,12 @@
                     }
 
                     .chatting-image {
-                        width: 52px;
-                        height: 52px;
+                        @include pseudowh($width: 52px, $height: 52px);
                         position: relative;
 
                         img {
                             border-radius: 100%;
-                            width: 52px;
-                            height: 52px;
+                            @include pseudowh($width: 52px, $height: 52px);
                             object-fit: cover;
                         }
                     }
@@ -387,8 +381,7 @@
         @include pos;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        @include pseudowh;
         background-image: url(../images/chatting/chatting-bg.png);
         background-repeat: no-repeat;
         background-position: center;
@@ -401,8 +394,7 @@
         @include pos;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        @include pseudowh;
         background-image: url(../images/logo/2.svg);
         background-repeat: no-repeat;
         background-position: center;
@@ -440,8 +432,7 @@
         @include center(horizontal);
 
         .audio-profle-image {
-            width: 158px;
-            height: 158px;
+            @include pseudowh($width: 158px, $height: 158px);
             border-radius: 100%;
             overflow: hidden;
             display: flex;
@@ -473,13 +464,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    @include pseudowh;
     z-index: -1;
 
     .main-image {
-        width: 100%;
-        height: 100%;
+        @include pseudowh;
         object-fit: cover;
     }
 
@@ -487,8 +476,7 @@
         position: absolute;
         top: 70px;
         right: 16px;
-        width: 96px;
-        height: 104px;
+        @include pseudowh($width: 96px, $height: 104px);
     }
 }
 
@@ -510,7 +498,7 @@
         justify-content: space-between;
         padding: 10px;
         border-bottom: var(--border);
-        background: #eee;
+        background-color: #eee;
         color: #666;
     }
 
@@ -592,7 +580,7 @@
 
     .msger-input {
         width: 100%;
-        background: #EEEEEE;
+        background-color: #EEEEEE;
         padding: 16px 54px 16px 48px;
         border-radius: 50px;
     }
@@ -600,8 +588,7 @@
     .msger-send-btn {
         padding: 0;
         border-radius: 100%;
-        width: 41px;
-        height: 41px;
+        @include pseudowh($width: 41px, $height: 41px);
         @include flex_common;
         position: absolute;
         @include center(vertical);
@@ -676,7 +663,7 @@
                     a {
                         width: 34px;
                         height: 34px;
-                        background: rgba(var(--theme-color), 1);
+                        background-color: rgba(var(--theme-color), 1);
                         border-radius: 4px;
                         color: rgba(var(--title), 1);
                         font-size: 16px;
@@ -1275,7 +1262,7 @@
     }
 
     .backup-button {
-        background: rgba(var(--title), 1);
+        background-color: rgba(var(--title), 1);
         width: auto;
         font-size: 14px;
         padding: 8px 14px;

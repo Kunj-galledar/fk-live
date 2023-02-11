@@ -28,6 +28,7 @@
  var swiper = new Swiper(".card-swiper", {
      slidesPerView: "auto",
      spaceBetween: 12,
+     centeredSlides: true,
      loop: true,
      pagination: {
          el: ".swiper-pagination",
@@ -104,4 +105,34 @@
  var swiper = new Swiper(".top-reviewer-slider", {
      slidesPerView: 1.1,
      spaceBetween: 16,
+ });
+
+ var swiper = new Swiper(".brand-slider", {
+     slidesPerView: 3,
+     centeredSlides: true,
+     speed: 6000,
+     autoplay: {
+         delay: 1,
+     },
+     loop: true,
+     allowTouchMove: false,
+     disableOnInteraction: true
+ });
+
+ var swiper = new Swiper(".thumbs-image", {
+     spaceBetween: 10,
+     slidesPerView: 4,
+     freeMode: true,
+     watchSlidesProgress: true,
+ });
+ var swiper2 = new Swiper(".main-slider", {
+     pagination: {
+         el: '.swiper-pagination',
+         paginationClickable: true,
+         clickable: true,
+     },
+     spaceBetween: 10,
+     thumbs: {
+         swiper: swiper,
+     },
  });
