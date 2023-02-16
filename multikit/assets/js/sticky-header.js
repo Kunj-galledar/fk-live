@@ -1,5 +1,3 @@
-// import throttle from "https://cdn.skypack.dev/lodash@4/throttle";
-
 const header = document.querySelector(".js-header");
 const section = document.querySelector(".js-section");
 

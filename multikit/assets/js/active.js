@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    // <-- add this wrapper
     var element = document.querySelectorAll(".cab-ride-box");
 
     if (element) {
