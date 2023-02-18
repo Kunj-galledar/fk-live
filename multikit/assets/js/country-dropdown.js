@@ -1,4 +1,6 @@
 mobiscroll.setOptions({
+    locale: mobiscroll
+        .localeEn,
     theme: 'windows',
     themeVariant: 'light'
 });
@@ -7,9 +9,11 @@ var inst = mobiscroll.select('#demo-country-picker', {
     display: 'anchored',
     filter: true,
     itemHeight: 40,
-    renderItem: function (item) {
+    renderItem: function (
+        item) {
         return '<div class="md-country-picker-item">' +
-            '<img class="md-country-picker-flag" src="https://img.mobiscroll.com/demos/flags/' + item.data.value + '.png" />' +
+            '<img class="md-country-picker-flag" src="https://img.mobiscroll.com/demos/flags/' +
+            item.data.value + '.png" />' +
             item.display + '</div>';
     }
 });
