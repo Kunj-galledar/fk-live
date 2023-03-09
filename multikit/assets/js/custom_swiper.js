@@ -136,3 +136,38 @@
          swiper: swiper,
      },
  });
+
+ var swiper = new Swiper(".banner-slider", {
+     slidesPerView: 1.15,
+     spaceBetween: 13,
+ });
+
+ var swiper = new Swiper(".slider-2-3", {
+     slidesPerView: 2.3,
+     spaceBetween: 11,
+ });
+
+ var swiper = new Swiper(".financial-slider", {
+     pagination: {
+         el: ".swiper-pagination",
+     },
+ });
+
+ var swiper = new Swiper(".bill-slider", {
+     slidesPerView: 2.2,
+     spaceBetween: 15,
+     breakpoints: {
+         0: {
+             slidesPerView: 1.7,
+         },
+         380: {
+             slidesPerView: 2,
+         },
+         405: {
+             slidesPerView: 2.2,
+         },
+         480: {
+             slidesPerView: 2.5,
+         },
+     },
+ });

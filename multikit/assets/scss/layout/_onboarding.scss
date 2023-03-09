@@ -99,6 +99,36 @@
 /* ---------- cab onboarding ---------- */
 .cab-onboarding-section {
     .cab-onboarding {
+        .autoplay-progress {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--swiper-theme-color);
+        }
+
+        .autoplay-progress svg {
+            --progress: 0;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            stroke-width: 4px;
+            stroke: var(--swiper-theme-color);
+            fill: none;
+            stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+            stroke-dasharray: 125.6;
+            transform: rotate(-90deg);
+        }
+
         .cab-onboarding-box {
             margin-top: 61px;
 
@@ -144,13 +174,19 @@
     }
 
     .onboarding-button {
+        position: fixed;
+        top: unset;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        color: rgba(var(--white), 1);
         @include pseudowh($width: 66px, $height: 66px);
         border-radius: 100%;
         border: none;
         background: var(--gradient2);
         font-size: 33px;
         @include flex_common;
-        margin: 68px auto 0;
     }
 }
 
@@ -315,5 +351,91 @@
                 gap: 15px;
             }
         }
+    }
+}
+
+/* ---------- Financial Onboarding ---------- */
+.financial-onboarding {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    @include flex_common;
+    // display: grid;
+    // place-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 189px;
+        background: linear-gradient(180deg, rgba(155, 1, 68, 0.28) 0%, rgba(155, 1, 68, 0.28) 0.01%, rgba(155, 1, 68, 0) 100%);
+        z-index: -1;
+    }
+
+    .card-image {
+        position: relative;
+        margin-bottom: 64px;
+
+        .shape-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            z-index: -1;
+        }
+
+        .card-1,
+        .card-2 {
+            width: 80%;
+        }
+
+        .card-1 {
+            transform: rotate(-19.58deg);
+        }
+
+        .card-2 {
+            transform: rotate(11.07deg);
+            margin-top: -40px;
+        }
+    }
+
+    .onborder-content {
+        h2 {
+            font-weight: 400;
+            font-size: 24px;
+            color: rgba(var(--theme-light-gray), 1);
+            margin-bottom: 13px;
+
+            @include mq-max(md) {
+                font-size: calc(21px + (24 - 21) * ((100vw - 320px) / (600 - 320)));
+                margin-bottom: calc(7px + (13 - 7) * ((100vw - 320px) / (600 - 320)));
+            }
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            margin: 0;
+            color: rgba(var(--theme-gray), 1);
+
+            @include mq-max(md) {
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+            }
+        }
+    }
+
+    .onboarding-button-group {
+        width: 100%;
+        padding-inline: 15px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
     }
 }

@@ -55,3 +55,38 @@
         }
     }
 }
+
+.financial-slider {
+    padding-top: 50px;
+
+    .swiper-pagination {
+        position: relative;
+        border: unset;
+        left: unset;
+        margin-top: 44px;
+
+        @include mq-max(md) {
+            margin-top: calc(27px + (44 - 27) * ((100vw - 320px) / (600 - 320)));
+        }
+
+        .swiper-pagination-bullet {
+            border: 0.8px solid #222222;
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+            transition: all 0.5s ease;
+            border-radius: 100px;
+            opacity: 1;
+            margin: 0;
+
+            +.swiper-pagination-bullet {
+                margin-left: 4px;
+            }
+
+            &-active {
+                width: 25px;
+                background-color: #222222;
+            }
+        }
+    }
+}

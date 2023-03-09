@@ -72,6 +72,10 @@
     a {
         font-weight: 600;
         color: rgba(var(--primary), 1);
+
+        &.theme-color {
+            color: rgba(var(--theme-color), 1);
+        }
     }
 
     &-sm {
@@ -83,5 +87,21 @@
                 font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (600 - 320)));
             }
         }
+    }
+}
+
+.title-3 {
+    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+    margin-bottom: 13px;
+
+    h5 {
+        font-weight: 500;
+        color: rgba(var(--white), 1);
+    }
+
+    a {
+        color: rgba(var(--theme-maroon), 1);
+        font-weight: 400;
+        font-size: 12px;
     }
 }

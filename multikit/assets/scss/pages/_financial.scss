@@ -1,0 +1,637 @@
+/* ---------- Add Card Css ---------- */
+.add-card-box {
+    padding: 19px 16px;
+    background-color: rgba(var(--theme-maroon), 1);
+    border: 1px solid #636363;
+    border-radius: 10px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/financial/bg.gif);
+        background-repeat: no-repeat;
+        z-index: -2;
+        opacity: 0.9;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: rgba(var(--theme-maroon), 0.9);
+    }
+
+    .top-card-name {
+        margin-bottom: 51px;
+
+        .name {
+            font-size: 15px;
+            color: rgba(var(--theme-light-gray), 1);
+            line-height: 1;
+        }
+
+        .pay {
+            font-size: 15px;
+            color: rgba(var(--theme-light-gray), 1);
+            margin-top: 7px;
+            line-height: 1;
+        }
+    }
+
+    .bottom-card-detail {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .available {
+            font-size: 15px;
+            color: #FFFFFF;
+            line-height: 1;
+        }
+
+        .add-card-button {
+            border: none;
+            padding: 8px 18px;
+            display: inline-block;
+            width: auto;
+            border-radius: 4px;
+            font-weight: 400;
+            font-size: 14px;
+            color: #141414;
+            line-height: 1;
+        }
+    }
+}
+
+/* ---------- Add Card Css ---------- */
+.pay-option-list {
+    margin-top: 23px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+    overflow: auto;
+    padding-bottom: 3px;
+
+    li {
+        width: 100%;
+
+        .pay-box {
+            text-align: center;
+            padding: 12px 24px;
+            background-color: #222222;
+            border-radius: 6px;
+            width: 100%;
+            display: block;
+            color: #FFFFFF;
+
+            &.send {
+                box-shadow: 2px 2px 0px #001AFF;
+            }
+
+            &.receive {
+                box-shadow: 2px 2px 0px #2629AF;
+            }
+
+            &.exchange {
+                box-shadow: 2px 2px 0px #57ADDD;
+            }
+
+            &.scan {
+                box-shadow: 2px 2px 0px #61C58B;
+            }
+
+            i {
+                font-size: 28px;
+            }
+
+            h6 {
+                font-weight: 400;
+                font-size: 12px;
+                width: 60px;
+                margin: 0 auto;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+/* ---------- Bills & Recharge Css ---------- */
+.bill-recharge-list {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+    overflow: auto;
+    justify-content: space-between;
+
+    li {
+        .recharge-box {
+            width: min-content;
+            display: block;
+            text-align: center;
+
+            .recharge-icon {
+                background-color: rgba(var(--dark-gray), 1);
+                border: 1px solid rgb(34, 34, 34);
+                box-shadow: 0px 0px 13px rgba(var(--black), 0.04);
+                border-radius: 6px;
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+                display: grid;
+                place-items: center;
+                color: rgba(var(--content), 1);
+                margin-bottom: 9px;
+
+                i {
+                    line-height: 1;
+                }
+            }
+
+            h6 {
+                font-weight: 400;
+                line-height: 1.5;
+                color: rgba(var(--theme-light-gray), 1);
+            }
+        }
+    }
+}
+
+/* ---------- People Css ---------- */
+.people-list-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    overflow: auto;
+    padding-bottom: 7px;
+    justify-content: space-between;
+
+    li {
+        .people-box {
+            text-align: center;
+
+            .people-image {
+                width: 58px;
+                height: 58px;
+                border-radius: 100%;
+                overflow: hidden;
+                filter: grayscale(1);
+            }
+
+            h6 {
+                margin-top: 10px;
+                color: rgba(var(--theme-light-gray), 1);
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+/* ---------- Recent Transactions Css ---------- */
+.transactions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    &.transactions-list-2 {
+        gap: 19px;
+    }
+
+    li {
+        width: 100%;
+
+        .transactions-box {
+            background-color: #141414;
+            box-shadow: 0px 0px 13px rgba(var(--black), 1);
+            border-radius: 5px;
+            padding: 11px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            &.transactions-box-2 {
+                border-radius: 10px;
+            }
+
+            .transactions-image {
+                width: 43px;
+                height: 46px;
+                background-color: #57ADDD;
+                border-radius: 10px;
+                color: rgba(var(--white), 1);
+                display: grid;
+                place-items: center;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                h2 {
+                    font-weight: 700;
+                    font-size: 22px;
+                }
+            }
+
+            .transactions-contain {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: calc(100% - 43px - 14px);
+                color: rgba(var(--theme-light-gray), 1);
+
+                h5 {
+                    font-weight: 400;
+                    margin-bottom: 6px;
+                }
+
+                h6 {
+                    font-weight: 400;
+                    color: rgba(var(--content), 1);
+                }
+
+                h4 {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Card Css ---------- */
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+
+    li {
+        width: 100%;
+
+        &:nth-child(odd) {
+            .card-details-box {
+                &::before {
+                    background-color: rgba(var(--theme-maroon), 0.9);
+                }
+            }
+        }
+
+        &:nth-child(even) {
+            .card-details-box {
+                &::before {
+                    background-color: rgba(34, 36, 157, 0.9);
+                }
+            }
+        }
+
+        .card-details-box {
+            padding: 19px 16px;
+            background-color: rgba(var(--theme-maroon), 1);
+            border: 1px solid rgb(99, 99, 99);
+            border-radius: 10px;
+            position: relative;
+            z-index: 0;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url(../images/financial/bg.gif);
+                background-repeat: no-repeat;
+                z-index: -2;
+                opacity: 0.9;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+
+            .card-name {
+                margin-bottom: 61px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+
+                .name {
+                    font-size: 15px;
+                    color: rgba(var(--white), 1);
+                    line-height: 1;
+                }
+
+                .pay {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: rgba(var(--white), 0.8);
+                    margin-top: 8px;
+                    line-height: 1;
+                }
+
+                .pay-image {
+                    width: 35px;
+                }
+            }
+
+            .card-bank-detail {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .bank-name {
+                    font-weight: 400;
+                    color: rgba(var(--white), 0.8);
+                    margin-bottom: 5px;
+                }
+
+                .available {
+                    font-size: 16px;
+                    color: rgba(var(--white), 1);
+                    line-height: 1;
+                }
+
+                .add-card-button {
+                    border: none;
+                    padding: 8px 18px;
+                    display: inline-block;
+                    width: auto;
+                    border-radius: 4px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: rgba(var(--dark-gray), 1);
+                    line-height: 1;
+                }
+            }
+        }
+
+        .add-card-button {
+            padding: 14px;
+            border: 1px solid #FBFBFB;
+            border-radius: 9px;
+            line-height: 1;
+            font-size: 15px;
+        }
+    }
+}
+
+/* ---------- Your Bills Css ---------- */
+.your-bills-section {
+    .bill-slider {
+        .swiper-slide {
+            &:nth-child(odd) {
+                .bill-box {
+                    background-color: rgba(var(--border-color), 1);
+                }
+            }
+
+            &:nth-child(even) {
+                .bill-box {
+                    background-color: #2629AF;
+
+                    .bill-name {
+                        h5 {
+                            color: rgba(var(--white), 1);
+                        }
+
+                        h6 {
+                            color: rgba(var(--theme-light-gray), 1);
+                        }
+                    }
+
+                    .bill-total {
+                        .total {
+                            color: rgba(var(--theme-light-gray), 1);
+                        }
+
+                        .pay {
+                            color: rgba(var(--white), 1);
+                        }
+                    }
+
+                    .bill-btn {
+                        border: 1px solid rgba(var(--white), 1);
+                        border-radius: 6px;
+                        padding: 7px;
+                        font-weight: 500;
+                        font-size: 12px;
+                        color: rgba(var(--white), 1);
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .bill-box {
+        background: rgba(var(--border-color), 1);
+        box-shadow: 0px 0px 13px rgba(var(--black), 0.04);
+        border-radius: 10px;
+        padding: 13px 12px 19px;
+
+        .bill-name {
+            margin-bottom: 29px;
+
+            h5 {
+                font-weight: 400;
+                font-size: 13px;
+                color: #4B4B4B;
+            }
+
+            h6 {
+                font-weight: 400;
+                font-size: 11px;
+                margin-top: 5px;
+                color: rgba(var(--content), 1);
+            }
+        }
+
+        .bill-total {
+            margin-bottom: 10px;
+
+            .total {
+                font-weight: 400;
+                font-size: 12px;
+                color: rgba(var(--content), 1);
+                margin-bottom: 3px;
+            }
+
+            .pay {
+                font-weight: 400;
+                font-size: 12px;
+                color: rgba(var(--theme-gray), 1);
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                .success {
+                    font-size: 11px;
+                    color: #3FB567;
+                }
+
+                .paid {
+                    font-weight: 400;
+                    font-size: 8px;
+                    padding: 3px 8px;
+                    background-color: rgba(var(--white), 1);
+                    border-radius: 100px;
+                    color: rgba(var(--dark), 1);
+                    line-height: 1;
+                }
+            }
+        }
+
+        .bill-btn {
+            border: 1px solid #2629AF;
+            border-radius: 6px;
+            padding: 7px;
+            font-weight: 500;
+            font-size: 12px;
+            color: #2629AF;
+            line-height: 1;
+        }
+    }
+}
+
+/* ---------- Activity Search Box CSS ---------- */
+.activity-search-box {
+    .form-box {
+        .form-control {
+            padding: 12px 22px;
+            border-radius: 100px;
+            background: rgba(var(--dark-gray), 1);
+            border: 1px solid rgb(34, 34, 34);
+            box-shadow: 0px 0px 13px rgba(var(--black), 0.04);
+            margin-top: 17px;
+            margin-bottom: 25px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1;
+            color: rgba(var(--theme-light-gray), 1);
+
+            &::placeholder {
+                color: rgba(var(--theme-gray), 1);
+            }
+        }
+    }
+}
+
+/* ---------- Payment Method Css ---------- */
+.payment-method-box {
+    margin-top: 20px;
+    padding: 12px 17px;
+    background: #222222;
+    box-shadow: 0px 4px 4px rgba(var(--black), 1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .payment-name {
+        h5 {
+            font-weight: 400;
+            color: rgba(var(--white), 1);
+            margin-bottom: 8px;
+        }
+
+        h6 {
+            font-weight: 400;
+            color: rgba(var(--theme-light-gray), 1);
+        }
+    }
+
+    .add-bank-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 17px;
+        color: rgba(var(--white), 1);
+        background: rgba(var(--theme-maroon), 1);
+        box-shadow: 0px 4px 4px rgba(var(--black), 0.25);
+        border-radius: 4px;
+        @include flex_common;
+
+        i {
+            line-height: 1;
+        }
+    }
+}
+
+/* ---------- Payment Method Css ---------- */
+.profile-menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+
+    li {
+        width: 100%;
+
+        .profile-menu-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: rgba(var(--theme-light-gray), 1);
+
+            i {
+                font-size: 18px;
+                line-height: 1;
+            }
+
+            img {
+                width: 18px;
+                height: 18px;
+                object-fit: contain;
+            }
+
+            h4 {
+                font-weight: 400;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+/* ---------- QR Code Scan box Css ---------- */
+.qr-code-scan-box {
+    width: 100%;
+    height: calc(100vh - 65px);
+    @include flex_common;
+
+    svg {
+        fill: transparent;
+        width: 230px;
+        height: 224px;
+    }
+
+    #cam {
+        border: 1px;
+        border-color: black;
+        border-style: solid;
+    }
+
+    #photo {
+        border: 1px;
+        border-color: black;
+        border-style: dashed;
+    }
+}
