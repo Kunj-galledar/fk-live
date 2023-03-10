@@ -95,7 +95,7 @@ function clearPhoto() {
 }
 
 document.getElementById('switchFrontBtn').onclick = (event) => {
-    switchCamera("user");
+    switchCamera("environment");
 }
 
 // document.getElementById('switchBackBtn').onclick = (event) => {
