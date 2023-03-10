@@ -98,13 +98,13 @@ document.getElementById('switchFrontBtn').onclick = (event) => {
     switchCamera("user");
 }
 
-document.getElementById('switchBackBtn').onclick = (event) => {
-    switchCamera("environment");
-}
+// document.getElementById('switchBackBtn').onclick = (event) => {
+//     switchCamera("environment");
+// }
 
-document.getElementById('snapBtn').onclick = (event) => {
-    takePicture();
-    event.preventDefault();
-}
+// document.getElementById('snapBtn').onclick = (event) => {
+//     takePicture();
+//     event.preventDefault();
+// }
 
 clearPhoto();
