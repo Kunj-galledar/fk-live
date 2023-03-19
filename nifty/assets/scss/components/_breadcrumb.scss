@@ -1,0 +1,35 @@
+.breadcrumb-section {
+    .breadcrumb-box {
+        border-bottom: 1px solid rgba(142, 156, 190, 0.2);
+        padding-bottom: calc(19px + (31 - 19) * ((100vw - 320px) / (1920 - 320)));
+
+        .breadcrumb-title {
+            font-weight: 700;
+            font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        nav {
+            .breadcrumb-item {
+                font-weight: 500;
+                line-height: 1;
+                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+                +.breadcrumb-item {
+                    &::before {
+                        content: url(../images/icons/breadcrumb-right-arrow.svg);
+                        line-height: 1;
+                        float: unset;
+                    }
+                }
+
+                &.active {
+                    color: rgba(var(--white), 1);
+                }
+
+                a {
+                    color: rgba(var(--dropdown-item-text-color), 1);
+                }
+            }
+        }
+    }
+}

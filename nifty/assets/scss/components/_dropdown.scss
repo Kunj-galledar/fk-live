@@ -1,0 +1,53 @@
+/**=====================
+    Dropdown css start
+==========================**/
+.dropdown-toggle {
+    &:after {
+        border: none;
+        background-image: url(../images/icons/chevron-down.png);
+        background-size: 10px;
+        background-position: right;
+        width: 10px;
+        height: 10px;
+        background-repeat: no-repeat;
+        vertical-align: -1px;
+    }
+}
+
+.dropdown-menu {
+    background-color: rgba(var(--dropdown-menu-bg), 1);
+    padding: 0;
+    overflow: hidden;
+
+    .dropdown-item {
+        color: rgba(var(--dropdown-item-text-color), 1);
+        padding: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320))) calc(9px + (16 - 9) * ((100vw - 320px) / (1920 - 320)));
+        border-bottom: 1px solid var(--header-form-border-color);
+
+        &.active,
+        &:active,
+        &:hover,
+        &:focus {
+            background: linear-gradient(180deg, $primary 0%, transparent 100%);
+            color: $white;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    li {
+        display: block;
+
+        &:last-child {
+            .dropdown-item {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+/**=====================
+    Dropdown css end
+==========================**/
