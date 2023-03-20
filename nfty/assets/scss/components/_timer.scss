@@ -1,0 +1,91 @@
+.timer {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+            .counter {
+                text-align: center;
+
+                div {
+                    h4 {
+                        width: 100%;
+                        gap: 8px;
+                        padding: 10px 19px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-blend-mode: overlay;
+                        background: rgba(255, 255, 255, 0.03);
+                        border-radius: 5px;
+                        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1),
+                            inset 0px 2px 4px rgba(165, 185, 231, 0.2);
+                    }
+
+                    span {
+                        font-weight: 500;
+                        font-size: 16px;
+                        color: #8E9CBE;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-time {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(var(--white), 0.44);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 9px 22px;
+    gap: 10px;
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, rgba(var(--white), 1) 0%, rgba(var(--black), 0) 100%);
+    border-image-slice: 1;
+    background-image: linear-gradient(180deg, rgba(var(--white), 1) 0%, rgba(var(--black), 0) 100%);
+    background-size: 1px 1px, calc(100% - (1 * 1px));
+    background-repeat: no-repeat;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+            position: relative;
+
+            +li {
+                padding-left: 6px;
+                margin-left: 6px;
+
+                &::after {
+                    content: ":";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -2px;
+                    font-size: 17px;
+                }
+            }
+
+            .counter {
+                text-align: center;
+
+                div {
+                    h4 {
+                        font-size: 20px;
+                        line-height: 1;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
