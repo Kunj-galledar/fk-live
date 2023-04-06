@@ -604,9 +604,17 @@
     display: flex;
     align-items: center;
 
+    @media (max-width: 768px) {
+        display: block;
+    }
+
     .profile-left-box {
         width: 258px;
         text-align: center;
+
+        @media (max-width: 768px) {
+            margin-inline: auto;
+        }
 
         .profile-image {
             padding: 0 24px 3px;
@@ -635,6 +643,10 @@
                     radial-gradient(73.6% 73.6% at 50% 26.4%, rgba(var(--dropdown-item-text-color), 1) 0%, rgba(var(--dropdown-item-text-color), 0) 100%);
                 -webkit-mask-composite: xor;
                 mask-composite: exclude;
+            }
+
+            @media (max-width: 768px) {
+                margin: 0 auto;
             }
 
             img {
@@ -694,6 +706,13 @@
         margin-left: 13px;
         position: relative;
 
+        @media (max-width: 768px) {
+            width: 100%;
+            margin: 20px 0 0;
+            padding: 0;
+            text-align: center;
+        }
+
         &::after {
             content: "";
             position: absolute;
@@ -703,6 +722,10 @@
             height: 175px;
             background-color: rgba(var(--dropdown-item-text-color), 0.2);
             left: 0;
+
+            @media (max-width: 768px) {
+                content: none;
+            }
         }
 
         .profile-discription {
@@ -726,11 +749,19 @@
             gap: 11px;
             border: none;
 
+            @media (max-width: 768px) {
+                margin-inline: auto;
+            }
+
             span {
                 margin: 0;
                 font-weight: 400;
                 font-size: 18px;
                 color: rgba(var(--dropdown-item-text-color), 1);
+
+                @media (max-width: 768px) {
+                    font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (768 - 320)));
+                }
             }
 
             svg {
@@ -852,7 +883,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        width: 100%;
+                        width: calc(100% - 19px - 84px);
 
                         h3 {
                             font-weight: 500;
