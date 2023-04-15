@@ -10,7 +10,7 @@
     .onboarding-top-contain {
         text-align: center;
         padding-top: 78px;
-        color: rgba(var(--white), $alpha: 1.0);
+        color: rgba(var(--white), 1);
 
         .onboarding-contain {
             h2 {
@@ -99,7 +99,7 @@
 /* ---------- cab onboarding ---------- */
 .cab-onboarding-section {
     .cab-onboarding {
-        .autoplay-progress {
+        .auto-play-progress {
             position: absolute;
             right: 16px;
             bottom: 16px;
@@ -111,22 +111,22 @@
             justify-content: center;
             font-weight: bold;
             color: var(--swiper-theme-color);
-        }
 
-        .autoplay-progress svg {
-            --progress: 0;
-            position: absolute;
-            left: 0;
-            top: 0px;
-            z-index: 10;
-            width: 100%;
-            height: 100%;
-            stroke-width: 4px;
-            stroke: var(--swiper-theme-color);
-            fill: none;
-            stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-            stroke-dasharray: 125.6;
-            transform: rotate(-90deg);
+            svg {
+                --progress: 0;
+                position: absolute;
+                left: 0;
+                top: 0px;
+                z-index: 10;
+                width: 100%;
+                height: 100%;
+                stroke-width: 4px;
+                stroke: var(--swiper-theme-color);
+                fill: none;
+                stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+                stroke-dasharray: 125.6;
+                transform: rotate(-90deg);
+            }
         }
 
         .cab-onboarding-box {
@@ -163,11 +163,11 @@
             .swiper-pagination-bullet {
                 @include pseudowh($width: 55px, $height: 6px);
                 border-radius: 50px;
-                background-color: rgba(var(--light-gray), 1);
+                background-color: #c4c4c4;
                 opacity: 1;
 
                 &-active {
-                    background: var(--gradient2);
+                    background: linear-gradient(180deg, #232526 0%, #414345 100%);
                 }
             }
         }
@@ -361,8 +361,6 @@
     width: 100%;
     height: 100vh;
     @include flex_common;
-    // display: grid;
-    // place-items: center;
     text-align: center;
     flex-wrap: wrap;
 
@@ -437,5 +435,153 @@
         align-items: center;
         gap: 5px;
         flex-wrap: wrap;
+    }
+}
+
+/* ---------- Blog Onboarding ---------- */
+.blogging-onboarding {
+    .onboarding-image {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .onbording-content {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 600px;
+        height: 430px;
+        padding-inline: 15px;
+        background: linear-gradient(0.73deg, rgba(var(--white), 1) 0.28%, rgba(var(--white), 0) 99.04%);
+        display: flex;
+        align-items: flex-end;
+
+        .slider-content {
+            margin-bottom: 67px;
+            width: 100%;
+
+            .onboading-content-box {
+                h3 {
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: rgba(var(--title), 1);
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 16px;
+                    margin: 8px 0 0;
+                    color: rgba(var(--content-dark), 1);
+                }
+            }
+        }
+
+        .next-button {
+            width: 54px;
+            height: 54px;
+            @include flex_common;
+            border-radius: 100%;
+            background-color: rgba(var(--title), 1);
+            font-size: 28px;
+            color: rgba(var(--white), 1);
+            position: absolute;
+            bottom: 44px;
+            right: 15px;
+        }
+    }
+}
+
+/* ---------- Fitness Onboarding ---------- */
+.fitness-onboarding-box {
+    background-image: url(../images/fitness/onboarding/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    .onboarding-content-box {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 418px;
+        background: linear-gradient(0.41deg, #0B0B0B .17%, rgba(16, 19, 24, 0.604167) 69.47%, rgba(24, 31, 44, 0) 99.46%);
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 53px;
+        max-width: 600px;
+
+        &.onboarding-small-space {
+            padding-bottom: 34px;
+        }
+
+        .main-title-box {
+            font-family: $rowdies;
+            border-left: 6px solid rgba(var(--theme-color), 1);
+            padding-left: 18px;
+            margin-bottom: 30px;
+
+            h1 {
+                font-weight: 300;
+                font-size: 35px;
+                margin-bottom: 11px;
+                color: rgba(var(--white), 1);
+                line-height: 1;
+            }
+
+            h2 {
+                font-weight: 300;
+                font-size: 25px;
+                color: #B1B1B1;
+                line-height: 1;
+            }
+        }
+
+        .fitness-button-group {
+            width: 100%;
+            font-family: 'Nunito';
+        }
+
+        span {
+            margin-top: 34px;
+            font-weight: 500;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            color: rgba(var(--white), 0.6);
+
+            a {
+                color: rgba(var(--white), 1);
+            }
+        }
+    }
+}
+
+/* ---------- NFT Onboarding ---------- */
+.nft-onboarding-box {
+    margin-top: 37px;
+
+    h2 {
+        font-weight: 600;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 16px;
+        margin-bottom: 26px;
     }
 }

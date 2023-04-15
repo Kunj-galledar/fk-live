@@ -120,6 +120,17 @@
     }
 }
 
+.tab-content-4 {
+    .tab-pane {
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            margin: 0;
+            color: #afafaf;
+        }
+    }
+}
+
 /* ---------- Tab Style 5 Scss ---------- */
 .tab-style-5 {
     flex-wrap: nowrap;
@@ -147,6 +158,144 @@
 
             img {
                 width: 25px;
+            }
+        }
+    }
+}
+
+/* ---------- Tab Style 6 Scss ---------- */
+.tab-style-6 {
+    flex-wrap: nowrap;
+    gap: 9px;
+    overflow: auto;
+    padding-bottom: 10px;
+
+    .nav-item {
+        .nav-link {
+            font-weight: 500;
+            border: 1px solid transparent;
+            background-color: rgba(20, 20, 20, 0.6);
+            border-radius: 100px;
+            color: rgba(var(--title), 0.6);
+            font-size: 13px;
+            padding: 7px 20px;
+
+            &.active {
+                color: rgba(var(--white), 1);
+                background: rgba(147, 3, 84, 0.3);
+                border-color: rgba(147, 3, 84, 0.6);
+            }
+        }
+    }
+}
+
+/* ---------- Tab Style 7 Scss ---------- */
+.tab-style-7 {
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow: auto;
+    padding-bottom: 8px;
+    margin-top: 14px;
+    margin-bottom: 26px;
+
+    .nav-item {
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 9px 26px;
+            border-radius: 100px;
+            width: max-content;
+            gap: 5px;
+            background-color: #FAFAFA;
+            color: rgba(var(--title), 1);
+            font-size: 14px;
+            line-height: 1;
+            font-weight: 400;
+
+            &.active {
+                color: rgba(var(--white), 1);
+                background-color: rgba(var(--title), 1);
+            }
+
+            img {
+                width: 25px;
+            }
+        }
+    }
+}
+
+/* ---------- Tab Style 8 Scss ---------- */
+.tab-style-8 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid #EDEDED;
+    padding-bottom: 3px;
+    margin-bottom: 18px;
+
+    .nav-item {
+        width: 100%;
+
+        .nav-link {
+            width: 100%;
+            border-radius: 0;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 9px;
+            position: relative;
+            color: rgba(var(--title), 1);
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                border-top: 2px solid #FF9C42;
+                opacity: 0;
+                transition: color 0.15s ease-in-out,
+                    background-color 0.15s ease-in-out,
+                    border-color 0.15s ease-in-out;
+            }
+
+            &.active {
+                color: rgba(var(--white), 1);
+                background-color: rgba(var(--theme-color), 1);
+
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Tab Style 9 Scss ---------- */
+.tab-style-9 {
+    background-color: #FAFAFA;
+    border-radius: 9px;
+    padding: 12px 14px 0;
+    flex-wrap: nowrap;
+    gap: 25px;
+    margin-bottom: 20px;
+
+    .nav-item {
+
+        .nav-link {
+            padding: 0;
+            font-weight: 500;
+            font-size: 16px;
+            color: rgba(var(--title), 1);
+            padding-bottom: 12px;
+            border-bottom: 1px solid transparent;
+            border-radius: 0;
+
+            &.active {
+                border-bottom-color: rgba(var(--theme-color), 1);
+                color: rgba(var(--theme-color), 1);
+                background-color: transparent;
             }
         }
     }

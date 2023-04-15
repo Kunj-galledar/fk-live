@@ -1155,6 +1155,8 @@
                 }
 
                 .chat-name {
+                    color: rgba(var(--title), 1);
+
                     h5 {
                         color: rgba(var(--title), 1);
                     }
@@ -1198,19 +1200,29 @@
 .chat-history-section {
     .chat-history-box {
         .chat-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
-
             li {
                 width: 100%;
 
+                +li {
+                    margin-top: 9px;
+                    padding-top: 9px;
+                    border-top: 1px solid rgba(var(--content), 0.1);
+                }
+
                 a {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
                     color: rgba(var(--title), 1);
                     align-items: center;
 
                     h5 {
                         color: rgba(var(--title), 1);
                         font-weight: 400;
+                        line-height: 1;
+                    }
+
+                    i {
+                        line-height: 1;
+                        font-size: 15px;
                     }
                 }
             }
@@ -1269,6 +1281,7 @@
         padding: 8px 14px;
         margin-top: 15px;
         margin-left: 43px;
+        color: rgba(var(--white), 1);
     }
 
     .back-box-list {
@@ -1286,6 +1299,102 @@
                     color: rgba(var(--content), 1);
                     margin-top: 1px;
                     font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+/* ----------- User Profile Section ----------- */
+.chat-backup-form {
+    .form-check {
+        margin: 0;
+        padding: 0;
+        min-height: auto;
+
+        +.form-check {
+            margin-top: 15px;
+        }
+
+        .form-check-input {
+            width: 22px;
+            float: unset;
+            margin: 0;
+            border: none;
+
+            &:after {
+                width: 19px;
+                height: 19px;
+                top: 0;
+                left: 0;
+            }
+
+            &::before {
+                width: 8px;
+                height: 5px;
+                left: 6px;
+                top: 6px;
+            }
+
+            &:checked {
+                &:after {
+                    background-color: rgba(var(--title), 1);
+                }
+            }
+        }
+
+        .form-check-label {
+            .first {
+                display: block;
+                font-size: 14px;
+                color: rgba(var(--title), 1);
+                font-weight: 500;
+                line-height: 1;
+                margin-bottom: 2px;
+            }
+
+            .second {
+                font-size: 13px;
+                color: rgba(var(--content), 1);
+                font-weight: 400;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+/* ----------- User Profile Section ----------- */
+.help-section {
+    margin-top: 12px;
+    background-color: rgba(var(--white), 1);
+    height: 100vh;
+    border-radius: 20px 20px 0px 0px;
+    padding: 18px 0 100px;
+
+    .help-list {
+        li {
+            width: 100%;
+
+            +li {
+                margin-top: 9px;
+                padding-top: 9px;
+                border-top: 1px solid rgba(var(--content), 0.1);
+            }
+
+            a {
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                color: rgba(var(--title), 1);
+                align-items: center;
+
+                h5 {
+                    color: rgba(var(--title), 1);
+                    font-weight: 400;
+                    line-height: 1;
+                }
+
+                i {
+                    line-height: 1;
+                    font-size: 15px;
                 }
             }
         }

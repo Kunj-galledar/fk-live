@@ -1,3 +1,60 @@
+/* ---------- Landing Header ---------- */
+.landing-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+    padding: 16px;
+
+    .header-left {
+        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
+        align-items: center;
+
+        a {
+            border: none;
+            font-size: 24px;
+            line-height: 0;
+            padding: 0;
+            display: block;
+
+            i {
+                line-height: 1;
+            }
+        }
+    }
+
+    .header-right {
+        .notification-box {
+            position: relative;
+
+            &::before {
+                @include pos;
+                animation: flash 2s linear infinite;
+                background-color: rgba(var(--title), 1);
+                border-radius: 100%;
+                @include pseudowh($width: 5px, $height: 5px);
+                right: 4px;
+                top: 3px;
+                z-index: 1;
+            }
+
+            a {
+                border: none;
+                font-size: 24px;
+                line-height: 0;
+                padding: 0;
+                display: block;
+                color: rgba(var(--title), 1);
+
+                i {
+                    line-height: 1;
+                }
+            }
+        }
+    }
+}
+
 /*=====================
     Learning Header CSS
 ==========================*/
@@ -10,6 +67,10 @@ header {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        &.bg-image-none {
+            background: none;
+        }
 
         .top-header {
             @include flex_common ($dis: flex, $align: center, $justify: space-between);
@@ -40,7 +101,7 @@ header {
             }
 
             .customer-name {
-                color: rgba(var(--white), $alpha: 1.0);
+                color: rgba(var(--white), 1);
                 display: flex;
                 align-items: center;
 
@@ -62,7 +123,7 @@ header {
 
             h5 {
                 font-weight: 500;
-                color: rgba(var(--white), $alpha: 1.0);
+                color: rgba(var(--white), 1);
                 margin-top: 5px;
             }
         }
@@ -516,158 +577,6 @@ header {
     }
 }
 
-/*=====================
-   Learning Mobile CSS
-==========================*/
-.learning-mobile {
-    position: fixed;
-    @include center(horizontal);
-    bottom: -1px;
-    width: 100%;
-    max-width: 600px;
-    z-index: 2;
-    background-color: rgba(var(--white), 1);
-    padding: 10px;
-    box-shadow: 0px 0px 4px rgba($title-color, 0.1);
-
-    ul {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
-
-        li {
-            .mobile-box {
-                text-align: center;
-                color: rgba(var(--theme-color2), $alpha: 1.0);
-
-                .mobile-icon {
-                    font-size: 21px;
-                    line-height: 1;
-                    margin-bottom: 2px;
-                    @include pseudowh($width: 45px, $height: 25px);
-                    margin: 0 auto;
-
-                    i {
-                        font-size: 20px;
-                    }
-                }
-
-                .mobile-name {
-                    font-size: 13px;
-
-                    h5 {
-                        font-size: 11px;
-                        font-weight: 400;
-                    }
-                }
-            }
-
-            &.active {
-                .mobile-icon {
-                    @include pseudowh($width: 50px, $height: 50px);
-                    margin-top: -36px;
-                    position: relative;
-                    z-index: 0;
-
-                    &::before {
-                        @include pos;
-                        @include center(both);
-                        @include pseudowh($width: 120%, $height: 120%);
-                        background-color: rgba(var(--white), 1);
-                        z-index: -1;
-                        border-radius: 100%;
-                        box-shadow: 0px -1px 4px rgba(var(--black), 0.08);
-                    }
-
-                    i {
-                        @include flex_common;
-                        background: var(--gradient);
-                        @include pseudowh($width: 50px, $height: 50px);
-                        color: rgba(var(--white), $alpha: 1.0);
-                        border-radius: 100%;
-                    }
-                }
-
-                .mobile-name {
-                    margin-top: 10px;
-
-                    h5 {
-                        font-weight: 600;
-                        color: rgba(var(--theme-color), 1);
-                    }
-                }
-
-                .mobile-box {
-                    color: var(--theme-color);
-                }
-            }
-        }
-    }
-}
-
-/*=====================
-    Chatting Mobile CSS
-==========================*/
-.chatting-mobile-section {
-    position: fixed;
-    bottom: 0;
-    @include center(horizontal);
-    width: 100%;
-    padding: 0 15px 22px;
-    max-width: 600px;
-    z-index: 1;
-    background-color: rgba(var(--white), 1);
-
-    .mobile-list {
-        background-color: rgba(var(--grey), 1);
-        border-radius: 50px;
-        padding: 9px 54px;
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
-
-        @include mq-max(md) {
-            padding: 9px calc(27px + (54 - 27) * ((100vw - 320px) / (600 - 320)));
-        }
-
-        li {
-            &.active {
-                a {
-                    i {
-                        &.unactive-icon {
-                            display: none;
-                        }
-
-                        &.active-icon {
-                            display: flex;
-                        }
-                    }
-                }
-            }
-
-            a {
-                text-align: center;
-                color: rgba(var(--title), 1);
-                display: block;
-
-                i {
-                    font-size: 24px;
-                    line-height: 1;
-                    @include pseudowh($width: 24px, $height: 24px);
-                    @include flex_common;
-                    margin: 0 auto;
-
-                    &.active-icon {
-                        display: none;
-                    }
-                }
-
-                h5 {
-                    font-weight: 400;
-                    font-size: 14px;
-                    margin-top: 4px;
-                }
-            }
-        }
-    }
-}
-
 .audio-video-menu-section {
     position: fixed;
     bottom: 0;
@@ -717,81 +626,6 @@ header {
                     font-weight: 400;
                     font-size: 14px;
                     margin-top: 4px;
-                }
-            }
-        }
-    }
-}
-
-/*=====================
-    Food Mobile CSS
-==========================*/
-.food-mobile-section {
-    position: fixed;
-    bottom: 0;
-    @include center(horizontal);
-    width: 100%;
-    padding: 20px 15px;
-    max-width: 600px;
-    background-color: #fff9ed;
-    z-index: 9;
-
-    @include mq-max(md) {
-        padding: calc(11px + (20 - 11) * ((100vw - 320px) / (600 - 320))) calc(8px + (15 - 8) * ((100vw - 320px) / (600 - 320)));
-    }
-
-    ul {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
-        background-color: rgba(var(--white), 1);
-        box-shadow: $shadow3;
-        border-radius: 18px;
-        padding: 10px 29px;
-
-        @include mq-max(md) {
-            padding-inline: calc(19px + (29 - 19) * ((100vw - 320px) / (600 - 320)));
-        }
-
-        li {
-            &.active {
-                a {
-                    color: rgba(var(--title), 1);
-
-                    &::before {
-                        opacity: 1;
-                    }
-                }
-            }
-
-            a {
-                text-align: center;
-                display: block;
-                color: rgba(var(--content), 1);
-                position: relative;
-                width: 100%;
-
-                &::before {
-                    @include pos;
-                    top: -10px;
-                    left: 0;
-                    @include pseudowh($width: 100%, $height: 1px);
-                    background-color: rgba(var(--primary), 1);
-                    opacity: 0;
-                }
-
-                i {
-                    line-height: 1;
-                    font-size: 22px;
-                }
-
-                svg {
-                    @include pseudowh($width: 20px, $height: 20px);
-                    fill: transparent;
-                    stroke: rgba(var(--content), 1);
-                    margin-bottom: 5px;
-                }
-
-                h5 {
-                    font-weight: 400;
                 }
             }
         }
@@ -975,7 +809,7 @@ header {
     }
 }
 
-.header-sytle-absolute {
+.header-style-absolute {
     position: absolute;
     top: 0;
     left: 0;
@@ -1018,56 +852,6 @@ header {
                         &.ri-heart-3-fill {
                             color: #ff3200;
                         }
-                    }
-                }
-            }
-        }
-    }
-}
-
-/* Mobile Style 4 */
-.hotel-booking-mobile {
-    position: fixed;
-    bottom: 0;
-    @include center(horizontal);
-    width: 100%;
-    max-width: 600px;
-    background-color: rgba(var(--white), 1);
-    z-index: 9;
-    box-shadow: 0px -1px 4px rgba(var(--black), 0.04);
-
-    ul {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
-        padding: 10px 17px;
-
-        li {
-            text-align: center;
-
-            &.active {
-                .mobile-box {
-                    .mobile-icon {
-                        i {
-                            &::after {
-                                @include pos;
-                                top: 0;
-                                left: 0;
-                                @include pseudowh($width: 12px, $height: 12px);
-                                border-radius: 100%;
-                                background: linear-gradient(180deg, #0363DA 0%, #5546CB 100%);
-                                opacity: 0.5;
-                                z-index: -1;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .mobile-box {
-                .mobile-icon {
-                    i {
-                        font-size: 20px;
-                        color: rgba(var(--title), 1);
-                        position: relative;
                     }
                 }
             }
@@ -1142,61 +926,6 @@ header {
     }
 }
 
-/* Mobile Style 5 */
-.mobile-style-5 {
-    position: fixed;
-    bottom: 0;
-    @include center(horizontal);
-    width: 100%;
-    max-width: 600px;
-    background-color: rgba(55, 55, 55, 1);
-    z-index: 9;
-    box-shadow: 0px -1px 4px rgba(var(--black), 0.04);
-
-    ul {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
-        padding: 17px 37px;
-
-        @include mq-max(md) {
-            padding: calc(14px + (17 - 14) * ((100vw - 320px) / (600 - 320))) calc(23px + (37 - 23) * ((100vw - 320px) / (600 - 320)));
-        }
-
-        li {
-            text-align: center;
-
-            &.active {
-                .mobile-box {
-                    color: rgba(var(--content), 1);
-
-                    h6 {
-                        display: block;
-                    }
-                }
-            }
-
-            .mobile-box {
-                color: #6A6A6A;
-                display: flex;
-                align-items: center;
-                flex-wrap: nowrap;
-                gap: 6px;
-
-                i {
-                    font-size: 20px;
-                    position: relative;
-                    line-height: 1;
-                }
-
-                h6 {
-                    display: none;
-                    font-weight: 500;
-                    font-size: 16px;
-                }
-            }
-        }
-    }
-}
-
 /* ---------- Header Style 6 ---------- */
 .header-style-6 {
     padding: 17px 15px 13px;
@@ -1228,6 +957,12 @@ header {
                 font-size: 20px;
             }
         }
+
+        .right-icon-list {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
     }
 
     .header-title {
@@ -1250,13 +985,17 @@ header {
         align-items: center;
         gap: 7px;
 
-        .menu-butn {
+        .menu-btn {
             padding: 0;
             border: none;
             line-height: 1;
+            display: flex;
+            color: #222;
+            background-color: transparent;
 
             i {
                 font-size: 20px;
+                line-height: 1;
             }
         }
 
@@ -1293,47 +1032,57 @@ header {
             height: 32px;
             border-radius: 100%;
             overflow: hidden;
+
+            &.profile-image-2 {
+                width: 36px;
+                height: 36px;
+            }
         }
     }
-}
 
-/* Mobile Style 6 */
-.mobile-style-6 {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(var(--theme-color), 1);
-    width: 100%;
-    max-width: 600px;
-    padding: 12px 20px;
-    z-index: 2;
+    &.search-header {
+        gap: 15px;
+        padding: 19px 15px 0;
+        margin: 0;
+        position: relative;
 
-    ul {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        .arrow-box {
+            box-shadow: none;
+            width: calc(12% - 15px);
+        }
 
-        li {
-            &.active {
-                a {
-                    color: rgba(var(--white), 1);
+        .search-input {
+            position: relative;
+            width: 88%;
+
+            input {
+                background: rgba(var(--white), 1);
+                box-shadow: 0px -1px 17px rgba(0, 0, 0, 0.05);
+                border: none;
+                border-radius: 5px;
+                padding: 12px 35px;
+            }
+
+            .search-icon {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 20px;
+                color: rgba(var(--content-dark), 1);
+
+                @media (max-width: 1012px) {
+                    display: none;
                 }
             }
 
-            a {
-                color: rgba(var(--white), 0.5);
-                display: block;
-                text-align: center;
-
-                i {
-                    font-size: 22px;
-                }
-
-                h6 {
-                    font-weight: 600;
-                    font-size: 12px;
-                }
+            .mic-icon {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 20px;
+                color: rgba(var(--content-dark), 1);
             }
         }
     }
@@ -1499,7 +1248,7 @@ header {
         color: #C4C4C4;
     }
 
-    .flast-light {
+    .flash-light {
         padding: 0;
         line-height: 1;
         border: none;
@@ -1519,85 +1268,264 @@ header {
     }
 }
 
-/* Mobile Style 7 */
-.mobile-style-7 {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #030303;
-    border: 1px solid #151515;
-    width: 100%;
-    max-width: 600px;
-    z-index: 2;
+.financial-profile-header {
+    padding: 12px 0;
+    border-radius: 0px 0px 9px 9px;
+    position: relative;
+    overflow: hidden;
 
-    ul {
-        padding: 9px 21px 12px;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/financial/bg.gif);
+        background-repeat: no-repeat;
+        z-index: -2;
+        opacity: 0.9;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: rgba(var(--theme-maroon), 0.9);
+    }
+
+    .header-box {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 7px;
 
-        li {
-            &.active {
-                a {
-                    color: rgba(var(--theme-maroon), 1);
+        .arrow-box {
+            font-size: 24px;
+            @include flex_common;
 
-                    &::after {
-                        opacity: 1;
-                    }
-                }
+            i {
+                color: #C4C4C4;
+            }
+        }
+
+        .header-profile {
+            display: flex;
+            gap: 11px;
+            align-items: center;
+
+            .profile-image {
+                width: 42px;
+                height: 42px;
+                overflow: hidden;
+                border-radius: 100%;
+                @include flex_common;
             }
 
-            a {
-                position: relative;
-                color: rgba(var(--white), 0.5);
-                display: block;
-                text-align: center;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: -10px;
-                    left: 0;
-                    width: 100%;
-                    height: 2px;
-                    background-color: rgba(var(--theme-maroon), 1);
-                    opacity: 0;
-                }
-
-                i {
-                    font-size: 22px;
+            .name-content {
+                h5 {
+                    color: rgba(var(--white), 1);
+                    margin-bottom: 4px;
                 }
 
                 h6 {
                     font-weight: 400;
-                    font-size: 12px;
+                    color: #C4C4C4;
                 }
             }
         }
     }
 
-    .qr-code-scanner-btn {
+    &.financial-small-header {
+        padding: 19px 0;
+
+        .header-box {
+            gap: 9px;
+
+            .arrow-box {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+/* ---------- Header Style 7 ---------- */
+.header-style-7 {
+    margin-bottom: 28px;
+
+    .header-box {
         display: flex;
         align-items: center;
+        padding-top: 23px;
+        justify-content: space-between;
+
+        .left-header {
+            h2 {
+                font-weight: 500;
+                color: #FFFFFF;
+                margin-bottom: 6px;
+
+                span {
+                    font-size: 19px;
+                    line-height: 1;
+                    transform-origin: 70% 70%;
+                    animation-name: wave-animation;
+                    animation-duration: 2.5s;
+                    animation-iteration-count: infinite;
+                }
+            }
+
+            h5 {
+                font-weight: 400;
+                color: #C4C4C4;
+            }
+        }
+
+        .right-header {
+            a {
+                width: 46px;
+                height: 46px;
+                border-radius: 100%;
+                overflow: hidden;
+                display: block;
+            }
+        }
+    }
+}
+
+/* ---------- Header Style 9 ---------- */
+.header-style-9 {
+    background-image: url(../images/fitness/header-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px 0px 20px 20px;
+    height: 166px;
+    color: #fff;
+    padding: 20px 15px 0;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 32px;
+
+    &::before {
+        content: "";
         position: absolute;
-        top: -66px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 13px 22px;
-        background: rgba(var(--theme-maroon), 0.3);
-        border: 1px solid rgba(var(--theme-maroon), 0.6);
-        border-radius: 100px;
-        color: rgba(var(--white), 1);
-        gap: 14px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 104px;
+        background: linear-gradient(180deg, #2F2F2F 0%, rgba(78, 78, 78, 0) 100%);
+        z-index: -1;
+    }
+
+    .left-header {
+        display: flex;
+        gap: 10px;
+
+        i {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .header-contain {
+            h4 {
+                font-weight: 500;
+                font-size: 18px;
+            }
+
+            h6 {
+                margin-top: 4px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.exercise-video-header {
+    background: linear-gradient(180deg, #000000 0%, #000000 0.01%, rgba(0, 0, 0, 0) 100%);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .exercise-header-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 15px 31px;
+
+        a {
+            font-size: 22px;
+            line-height: 1;
+            color: #fff;
+        }
+
+        h4 {
+            font-weight: 600;
+        }
+
+        .volume-icon {
+            font-size: 24px;
+            line-height: 1;
+        }
+    }
+}
+
+/* ---------- Header Style 10 ---------- */
+.header-style-10 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 18px;
+    padding-inline: 15px;
+
+    .arrow-box {
+        font-size: 26px;
+        color: #222;
+        line-height: 1;
 
         i {
             line-height: 1;
-            font-size: 15px;
+        }
+    }
+
+    .search-input {
+        position: relative;
+        width: calc(100% - 8px - 26px);
+
+        .form-control {
+            background: #FAFAFA;
+            border-radius: 9px;
+            width: 100%;
+            border: none;
+            padding-block: 17px;
+            padding-inline: 41px;
+            font-weight: 400;
+            font-size: 14px;
+            color: #222;
+
+            &::placeholder {
+                color: #AFAFAF;
+            }
         }
 
-        h5 {
-            line-height: 1;
+        i {
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #AFAFAF;
+
+            &.search-icon {
+                left: 15px;
+            }
+
+            &.mic-icon {
+                right: 15px;
+            }
         }
     }
 }

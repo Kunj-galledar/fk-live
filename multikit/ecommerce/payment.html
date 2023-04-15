@@ -18,7 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
 
     <!-- Bootstrap link -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
 
     <!-- Swiper css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/swiper-bundle.min.css">
@@ -146,7 +146,7 @@
 
                                 <li>
                                     <select name="bankname" class="form-control" required>
-                                        <option selected="selected" disabled>-- Select --</option>
+                                        <option value="" selected="selected" disabled>-- Select --</option>
                                         <option value="1">ALLAHABAD BANK </option>
                                         <option value="2">ANDHRA BANK</option>
                                         <option value="3">AXIS BANK</option>
@@ -366,7 +366,7 @@
                 <li>
                     <a href="#!">
                         <i class="ri-earth-line"></i>
-                        <h5>Langauge</h5>
+                        <h5>Language</h5>
                     </a>
                 </li>
 
@@ -394,7 +394,7 @@
     <div class="offcanvas offcanvas-bottom theme-bottom-offcanvas" tabindex="-1" id="editModal">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">Edit Your Address</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
             <form class="form-style-6">
@@ -426,73 +426,8 @@
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/custom_swiper.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
-
-    <script>
-        // var $table = document.querySelector(".minha-table");
-
-        // $table.addEventListener("click", function (ev) {
-        //     if (ev.target.tagName == "INPUT") {
-        //         if (ev.target.checked) {
-        //             ev.target.parentNode.parentNode.classList.add("selected");
-        //         } else {
-        //             ev.target.parentNode.parentNode.classList.remove("selected");
-        //         }
-        //     }
-        // });
-
-        // function toggleParentStyle(opts) {
-        //     var settings = {
-        //             'activeClass': 'active',
-        //             'targetElementSelector': '.minha-table',
-        //             'uniquelyActive': true
-        //         },
-        //         trigger = this;
-
-        //     for (var prop in opts) {
-        //         if (opts.hasOwnProperty(prop)) {
-        //             settings[prop] = opts[prop];
-        //         }
-        //     }
-
-        //     var selector = settings.targetElementSelector,
-        //         ancestor = trigger.closest(selector),
-        //         c = settings.activeClass,
-        //         selectedSibling = ancestor
-        //         .parentNode
-        //         .querySelector(selector + '.' + c);
-
-        //     if (settings.uniquelyActive && selectedSibling) {
-        //         selectedSibling.classList.remove(c);
-        //     }
-
-        //     ancestor.classList[ancestor.classList.contains(c) ? 'remove' : 'add'](c);
-
-        // }
-
-        // var radios = document.querySelectorAll('input[type=radio]'),
-        //     radiosArray = Array.prototype.slice.call(radios, 0);
-
-        // radiosArray.forEach(function (radio) {
-        //     radio.addEventListener('change', toggleParentStyle);
-        // });
-
-
-        var $input = $('input');
-
-        $(function () {
-            $input.filter(':checked').closest('.minha-table').addClass('active');
-        });
-
-        $input.on('change', function () {
-            $input.closest('.minha-table').removeClass('active');
-            $(this).closest('.minha-table').addClass('active');
-        });
-    </script>
 </body>
 
 </html>

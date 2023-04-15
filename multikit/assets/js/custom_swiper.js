@@ -171,3 +171,15 @@
          },
      },
  });
+
+ var swiper = new Swiper(".onboading-content-slider", {
+     slidesPerView: 1,
+     pagination: {
+         el: ".swiper-pagination",
+         clickable: true,
+     },
+     autoplay: {
+         delay: 5000,
+         disableOnInteraction: false,
+     },
+ });
