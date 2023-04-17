@@ -30,6 +30,7 @@
     align-items: center;
     color: rgba(var(--title), 1);
     gap: 8px;
+    flex-wrap: wrap;
 
     @include mq-max(md) {
         gap: calc(5px + (8 - 5) * ((100vw - 320px) / (600 - 320)));
@@ -128,7 +129,7 @@
     }
 }
 
-.category-section {
+.food-category-section {
     .swiper-slide {
         width: 33%;
 
@@ -137,7 +138,7 @@
         }
     }
 
-    .category-box {
+    .food-category-box {
         text-align: center;
 
         .category-image {
@@ -382,6 +383,14 @@
                 font-size: 11px;
                 margin: 3px 0 8px;
                 color: rgba(var(--content), 1);
+            }
+
+            .time-list {
+                li {
+                    h6 {
+                        margin: 0;
+                    }
+                }
             }
 
             .offer-box {
@@ -779,7 +788,12 @@
     background-color: rgba(var(--white), 1);
     margin-top: -35px;
     z-index: 1;
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 

@@ -328,121 +328,123 @@
     }
 }
 
-/* ---------- Product CSS ---------- */
-.address-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+/* ---------- Address Section CSS ---------- */
+.ecommerce-address-section {
+    .address-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
 
-    li {
-        width: 100%;
+        li {
+            width: 100%;
 
-        .address-box {
-            padding: 16px 14px;
-            border: 1px solid rgba(var(--light-bg), 0.6);
-            border-radius: 5px;
-            background-color: rgba(var(--light-bg), 0.6);
+            .address-box {
+                padding: 16px 14px;
+                border: 1px solid rgba(var(--light-bg), 0.6);
+                border-radius: 5px;
+                background-color: rgba(var(--light-bg), 0.6);
 
-            &.newclass {
-                background-color: rgba(255, 186, 70, 0.05);
-                border: 1px solid rgba(var(--theme-color), 1);
+                &.newclass {
+                    background-color: rgba(255, 186, 70, 0.05);
+                    border: 1px solid rgba(var(--theme-color), 1);
+
+                    .address-name {
+                        .address-icon {
+                            background-color: rgba(var(--theme-color), 1);
+                        }
+                    }
+                }
 
                 .address-name {
-                    .address-icon {
-                        background-color: rgba(var(--theme-color), 1);
-                    }
-                }
-            }
-
-            .address-name {
-                position: relative;
-                display: flex;
-                align-items: center;
-                flex-wrap: nowrap;
-                gap: 9px;
-                margin-bottom: 8px;
-
-                .address-icon {
-                    background-color: rgba(var(--title), 0.5);
-                    border-radius: 4px;
-                    width: 28px;
-                    height: 28px;
-                    @include flex_common;
-                    color: rgba(var(--white), 1);
-                    font-size: 18px;
-                }
-
-                h5 {
-                    color: rgba(var(--content), 1);
-                }
-
-                .edit-option {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-
-                    .dropdown-button {
-                        padding: 0;
-
-                        &:active,
-                        &.show {
-                            border-color: transparent;
-                        }
-                    }
-
-                    .dropdown-menu {
-                        padding: 12px;
-                        border: none;
-                        box-shadow: 2px 2px 8px rgba(var(--black), 0.05);
-
-                        li {
-                            +li {
-                                padding-top: 6px;
-                                margin-top: 6px;
-                                border-top: 1px solid rgba(237, 239, 244, 0.6);
-                            }
-
-                            .dropdown-item {
-                                display: flex;
-                                align-items: center;
-                                gap: 8px;
-                                color: rgba(var(--title), 1);
-                                padding: 0;
-
-                                &:hover {
-                                    background-color: transparent;
-                                }
-
-                                i {
-                                    line-height: 1;
-                                }
-
-                                span {
-                                    font-size: 13px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            .address-detail {
-                h5 {
-                    font-weight: 400;
-                    color: rgba(var(--title), 1);
-                }
-
-                p {
-                    font-weight: 400;
-                    color: rgba(var(--content), 1);
-                    line-height: 1.5;
-                    margin-top: 6px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    gap: 9px;
                     margin-bottom: 8px;
+
+                    .address-icon {
+                        background-color: rgba(var(--title), 0.5);
+                        border-radius: 4px;
+                        width: 28px;
+                        height: 28px;
+                        @include flex_common;
+                        color: rgba(var(--white), 1);
+                        font-size: 18px;
+                    }
+
+                    h5 {
+                        color: rgba(var(--content), 1);
+                    }
+
+                    .edit-option {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+
+                        .dropdown-button {
+                            padding: 0;
+
+                            &:active,
+                            &.show {
+                                border-color: transparent;
+                            }
+                        }
+
+                        .dropdown-menu {
+                            padding: 12px;
+                            border: none;
+                            box-shadow: 2px 2px 8px rgba(var(--black), 0.05);
+
+                            li {
+                                +li {
+                                    padding-top: 6px;
+                                    margin-top: 6px;
+                                    border-top: 1px solid rgba(237, 239, 244, 0.6);
+                                }
+
+                                .dropdown-item {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 8px;
+                                    color: rgba(var(--title), 1);
+                                    padding: 0;
+
+                                    &:hover {
+                                        background-color: transparent;
+                                    }
+
+                                    i {
+                                        line-height: 1;
+                                    }
+
+                                    span {
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
 
-                h6 {
-                    font-weight: 400;
-                    color: rgba(var(--content), 1);
+                .address-detail {
+                    h5 {
+                        font-weight: 400;
+                        color: rgba(var(--title), 1);
+                    }
+
+                    p {
+                        font-weight: 400;
+                        color: rgba(var(--content), 1);
+                        line-height: 1.5;
+                        margin-top: 6px;
+                        margin-bottom: 8px;
+                    }
+
+                    h6 {
+                        font-weight: 400;
+                        color: rgba(var(--content), 1);
+                    }
                 }
             }
         }
@@ -461,6 +463,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 
     @include mq-max(md) {
         padding-inline: calc(15px + (23 - 15) * ((100vw - 320px) / (600 - 320)));
@@ -908,7 +911,7 @@
 }
 
 /* ---------- Order Success CSS ---------- */
-.order-success-section {
+.ecommerce-order-success-section {
     padding-top: 60px;
     text-align: center;
 
@@ -1275,10 +1278,6 @@ footer {
             @include mq-max(md) {
                 font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (600 - 320)));
             }
-        }
-
-        span {
-            margin-top: 3px;
         }
     }
 
