@@ -75,9 +75,9 @@
     <!-- header Section End -->
 
     <!-- Mobile Menu Section Start -->
-    <div class="hotel-booking-mobile">
+    <div class="mobile-style-4">
         <ul>
-            <li class="active">
+            <li>
                 <a href="index.html" class="mobile-box">
                     <i class="ri-home-5-line"></i>
                     <h6 class="title-color">Home</h6>
@@ -91,7 +91,7 @@
                 </a>
             </li>
 
-            <li>
+            <li class="active">
                 <a href="booking.html" class="mobile-box">
                     <i class="ri-article-line"></i>
                     <h6 class="title-color">Bookings</h6>
@@ -234,72 +234,10 @@
     <!-- space box end -->
 
     <!-- Sort Offcanvas Start -->
-    <div class="offcanvas filter-button offcanvas-bottom theme-bottom-offcanvas" tabindex="-1" id="filter-button">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Sort by: </h5>
-        </div>
-        <div class="offcanvas-body">
-            <div class="filter-box-list">
-                <ul class="filter-list">
-                    <li>
-                        <a href="javascript:void(0)" class="filter-box">
-                            <div class="filter-icon">
-                                <i class="ri-thumb-up-line"></i>
-                            </div>
-                            <div class="filter-name">
-                                <h5>Popularity</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" class="filter-box active">
-                            <div class="check-box">
-                                <i class="ri-check-line"></i>
-                            </div>
-                            <div class="filter-icon">
-                                <svg>
-                                    <use xlink:href="../assets/images/learning/low-high.svg#low"></use>
-                                </svg>
-                            </div>
-                            <div class="filter-name">
-                                <h5>Price: Low to High</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" class="filter-box">
-                            <div class="filter-icon">
-                                <svg>
-                                    <use xlink:href="../assets/images/learning/high-low.svg#high"></use>
-                                </svg>
-                            </div>
-                            <div class="filter-name">
-                                <h5>Price: High to Low</h5>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" class="filter-box">
-                            <div class="filter-icon">
-                                <i class="ri-star-line"></i>
-                            </div>
-                            <div class="filter-name">
-                                <h5>User Ratings: Highest</h5>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <button class="btn apply-button apply-button-2" data-bs-dismiss="offcanvas">Apply</button>
-            </div>
-        </div>
-    </div>
-    <!-- Sort Offcanvas End -->
-
-    <!-- Filter Offcanvas Start -->
-    <div class="offcanvas offcanvas-bottom theme-bottom-offcanvas h-100 rounded-0" tabindex="-1" id="filter">
+    <div class="offcanvas offcanvas-bottom theme-bottom-offcanvas category-filter-offcanvas" tabindex="-1" id="filter">
         <div class="offcanvas-header">
             <h4 class="offcanvas-title">Filter</h4>
-            <button type="button" class="btn-close d-block" data-bs-dismiss="offcanvas">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
                 <i class="ri-close-fill"></i>
             </button>
         </div>
@@ -311,23 +249,22 @@
                         <h4>Pricing</h4>
                     </div>
 
-                    <div class="price-range-box">
-                        <div class="wrapper">
-                            <div class="slider">
-                                <div class="progress"></div>
+                    <div class="flex relative justify-center items-center mb-4 w-full mx-auto rounded">
+                        <div class="range-slider">
+                            <div class="progress"></div>
+                            <span class="range-min-wrapper">
+                                <input class="range-min" type="range" min="0" max="100" value="25">
+                            </span>
+                            <span class="range-max-wrapper">
+                                <input class="range-max" type="range" min="0" max="100" value="100">
+                            </span>
+                        </div>
+                        <div class="value-box">
+                            <div class="min-value numberVal">
+                                <input type="number" min="0" max="100" value="25" disabled>
                             </div>
-                            <div class="range-input">
-                                <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
-                                <input type="range" class="range-max" min="0" max="10000" value="7500" step="100">
-                            </div>
-
-                            <div class="price-input">
-                                <div class="field">
-                                    <input type="number" class="input-min" value="2500">
-                                </div>
-                                <div class="field">
-                                    <input type="number" class="input-max" value="7500">
-                                </div>
+                            <div class="max-value numberVal">
+                                <input type="number" min="0" max="100" value="50" disabled>
                             </div>
                         </div>
                     </div>
@@ -341,37 +278,28 @@
                     <h4>Property type</h4>
                 </div>
 
-                <ul class="hotel-type-list px-15">
-                    <li>
-                        <a href="javascript:void(0)">
+                <ul class="nav nav-pills hotel-type-list px-15 pb-2" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a href="" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home"
+                            role="tab">
                             <img src="../assets/images/hotel-booking/hotel-icon/1.png" class="img-fluid" alt="">
                             <h5>Hotels</h5>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="javascript:void(0)">
+                    <li class="nav-item" role="presentation">
+                        <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
                             <img src="../assets/images/hotel-booking/hotel-icon/2.png" class="img-fluid" alt="">
                             <h5>Motels</h5>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../assets/images/hotel-booking/hotel-icon/3.png" class="img-fluid" alt="">
-                            <h5>Appart.</h5>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="javascript:void(0)">
+                    <li class="nav-item" role="presentation">
+                        <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
                             <img src="../assets/images/hotel-booking/hotel-icon/4.png" class="img-fluid" alt="">
                             <h5>Villas</h5>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="javascript:void(0)">
+                    <li class="nav-item" role="presentation">
+                        <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
                             <img src="../assets/images/hotel-booking/hotel-icon/5.png" class="img-fluid" alt="">
                             <h5>Glamping</h5>
                         </a>
@@ -390,7 +318,7 @@
                     <ul class="nav nav-pills mb-3 hotel-type-pills" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-home" type="button" role="tab">Free Cancelation</button>
+                                data-bs-target="#pills-home" type="button" role="tab">Free Cancellation</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
@@ -442,13 +370,145 @@
             <!-- Rating Hotel End -->
 
             <!-- Button Group Start -->
-            <div class="button-group">
+            <div class="category-group">
                 <button class="btn">RESET</button>
                 <button class="btn btn-gradient btn-gradient-3">Apply Filter</button>
             </div>
             <!-- Button Group End -->
         </div>
     </div>
+    <!-- Sort Offcanvas End -->
+
+    <!-- Filter Offcanvas Start -->
+    <!-- <div class="offcanvas offcanvas-bottom theme-bottom-offcanvas h-100 rounded-0" tabindex="-1" id="filter">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title">Filter</h4>
+            <button type="button" class="btn-close d-block" data-bs-dismiss="offcanvas">
+                <i class="ri-close-fill"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body px-0">
+            <div class="price-range-section">
+                <div class="custom-container">
+                    <div class="title-2">
+                        <h4>Pricing</h4>
+                    </div>
+
+                    <div class="flex relative justify-center items-center mb-4 w-full mx-auto rounded">
+                        <div class="range-slider">
+                            <div class="progress"></div>
+                            <span class="range-min-wrapper">
+                                <input class="range-min" type="range" min="0" max="100" value="25">
+                            </span>
+                            <span class="range-max-wrapper">
+                                <input class="range-max" type="range" min="0" max="100" value="100">
+                            </span>
+                        </div>
+                        <div class="value-box">
+                            <div class="min-value numberVal">
+                                <input type="number" min="0" max="100" value="25" disabled>
+                            </div>
+                            <div class="max-value numberVal">
+                                <input type="number" min="0" max="100" value="50" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hotel-type-section">
+                <div class="title-2 px-15">
+                    <h4>Property type</h4>
+                </div>
+
+                <ul class="nav nav-pills hotel-type-list px-15 pb-2" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a href="" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home"
+                            role="tab">
+                            <img src="../assets/images/hotel-booking/hotel-icon/1.png" class="img-fluid" alt="">
+                            <h5>Hotels</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
+                            <img src="../assets/images/hotel-booking/hotel-icon/2.png" class="img-fluid" alt="">
+                            <h5>Motels</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
+                            <img src="../assets/images/hotel-booking/hotel-icon/4.png" class="img-fluid" alt="">
+                            <h5>Villas</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
+                            <img src="../assets/images/hotel-booking/hotel-icon/5.png" class="img-fluid" alt="">
+                            <h5>Glamping</h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hotel-type-section section-t-space-2">
+                <div class="custom-container">
+                    <div class="title-2">
+                        <h4>Popular Filter</h4>
+                    </div>
+
+                    <ul class="nav nav-pills mb-3 hotel-type-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-home" type="button" role="tab">Free Cancellation</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-profile" type="button" role="tab">Breakfast Available</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hotel-type-section">
+                <div class="title-2 px-15">
+                    <h4>Star Rating</h4>
+                </div>
+
+                <ul class="hotel-type-list px-15">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h5>5 Star(5)</h5>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h5>4 Star(25)</h5>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h5>3 Star(50)</h5>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h5>2 Star(69)</h5>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h5>1 Star(125)</h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="button-group">
+                <button class="btn">RESET</button>
+                <button class="btn btn-gradient btn-gradient-3">Apply Filter</button>
+            </div>
+        </div>
+    </div> -->
     <!-- Filter Offcanvas End -->
 
     <!-- Bootstrap js-->

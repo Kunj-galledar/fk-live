@@ -56,16 +56,16 @@
     <!-- header Section End -->
 
     <!-- Mobile Menu Section Start -->
-    <div class="hotel-booking-mobile">
+    <div class="mobile-style-4">
         <ul>
-            <li class="active">
+            <li>
                 <a href="index.html" class="mobile-box">
                     <i class="ri-home-5-line"></i>
                     <h6 class="title-color">Home</h6>
                 </a>
             </li>
 
-            <li>
+            <li class="active">
                 <a href="search.html" class="mobile-box">
                     <i class="ri-search-line"></i>
                     <h6 class="title-color">Search</h6>
@@ -125,9 +125,9 @@
 
                     <div class="col-12">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="email" placeholder="Room & Guets"
+                            <input type="email" class="form-control" id="email" placeholder="Room & Guest"
                                 value="1 Room, 2 Adults">
-                            <label for="email">Room & Guets</label>
+                            <label for="email">Room & Guest</label>
                         </div>
                     </div>
                 </div>
@@ -142,37 +142,27 @@
             <h4>Property type</h4>
         </div>
 
-        <ul class="hotel-type-list px-15 pb-2">
-            <li>
-                <a href="javascript:void(0)" class="active">
+        <ul class="nav nav-pills hotel-type-list px-15 pb-2" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a href="" class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
                     <img src="../assets/images/hotel-booking/hotel-icon/1.png" class="img-fluid" alt="">
                     <h5>Hotels</h5>
                 </a>
             </li>
-
-            <li>
-                <a href="javascript:void(0)">
+            <li class="nav-item" role="presentation">
+                <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
                     <img src="../assets/images/hotel-booking/hotel-icon/2.png" class="img-fluid" alt="">
                     <h5>Motels</h5>
                 </a>
             </li>
-
-            <li>
-                <a href="javascript:void(0)">
-                    <img src="../assets/images/hotel-booking/hotel-icon/3.png" class="img-fluid" alt="">
-                    <h5>Appart.</h5>
-                </a>
-            </li>
-
-            <li>
-                <a href="javascript:void(0)">
+            <li class="nav-item" role="presentation">
+                <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
                     <img src="../assets/images/hotel-booking/hotel-icon/4.png" class="img-fluid" alt="">
                     <h5>Villas</h5>
                 </a>
             </li>
-
-            <li>
-                <a href="javascript:void(0)">
+            <li class="nav-item" role="presentation">
+                <a href="" class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-home" role="tab">
                     <img src="../assets/images/hotel-booking/hotel-icon/5.png" class="img-fluid" alt="">
                     <h5>Glamping</h5>
                 </a>
@@ -191,7 +181,7 @@
             <ul class="nav nav-pills mb-3 hotel-type-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-home" type="button" role="tab">Free Cancelation</button>
+                        data-bs-target="#pills-home" type="button" role="tab">Free Cancellation</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
@@ -209,23 +199,22 @@
                 <h4>Pricing</h4>
             </div>
 
-            <div class="price-range-box">
-                <div class="wrapper">
-                    <div class="slider">
-                        <div class="progress"></div>
+            <div class="flex relative justify-center items-center mb-4 w-full mx-auto rounded">
+                <div class="range-slider">
+                    <div class="progress"></div>
+                    <span class="range-min-wrapper">
+                        <input class="range-min" type="range" min="0" max="100" value="25">
+                    </span>
+                    <span class="range-max-wrapper">
+                        <input class="range-max" type="range" min="0" max="100" value="100">
+                    </span>
+                </div>
+                <div class="value-box">
+                    <div class="min-value numberVal">
+                        <input type="number" min="0" max="100" value="25" disabled>
                     </div>
-                    <div class="range-input">
-                        <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
-                        <input type="range" class="range-max" min="0" max="10000" value="7500" step="100">
-                    </div>
-
-                    <div class="price-input">
-                        <div class="field">
-                            <input type="number" class="input-min" value="2500">
-                        </div>
-                        <div class="field">
-                            <input type="number" class="input-max" value="7500">
-                        </div>
+                    <div class="max-value numberVal">
+                        <input type="number" min="0" max="100" value="50" disabled>
                     </div>
                 </div>
             </div>
@@ -323,28 +312,11 @@
     <!-- Bootstrap js-->
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 
-    <!-- swiper js -->
-    <script src="../assets/js/swiper-bundle.min.js"></script>
-    <script src="../assets/js/custom_swiper.js"></script>
-
     <!-- range Slider Js -->
     <script src="../assets/js/range-slider.js"></script>
 
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
-
-    <script>
-        var element = document.getElementsByClassName("hotel-type-list")[0];
-        element.addEventListener("click", myFunction);
-
-        function myFunction(e) {
-            var elems = document.querySelector(".active");
-            if (elems != null) {
-                elems.classList.remove("active");
-            }
-            e.target.className = "active";
-        }
-    </script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 .add-card-box {
     padding: 19px 16px;
     background-color: rgba(var(--theme-maroon), 1);
-    border: 1px solid #636363;
+    border: 1px solid rgb(99, 99, 99);
     border-radius: 10px;
     position: relative;
     z-index: 0;
@@ -83,6 +83,7 @@
     flex-wrap: nowrap;
     overflow: auto;
     padding-bottom: 3px;
+    padding-right: 2px;
 
     li {
         width: 100%;
@@ -90,11 +91,11 @@
         .pay-box {
             text-align: center;
             padding: 12px 24px;
-            background-color: #222222;
+            background-color: rgba(var(--title), 1);
             border-radius: 6px;
             width: 100%;
             display: block;
-            color: #FFFFFF;
+            color: rgba(var(--white), 1);
 
             &.send {
                 box-shadow: 2px 2px 0px #001AFF;
@@ -145,7 +146,7 @@
 
             .recharge-icon {
                 background-color: rgba(var(--dark-gray), 1);
-                border: 1px solid rgb(34, 34, 34);
+                border: 1px solid rgba(var(--title), 1);
                 box-shadow: 0px 0px 13px rgba(var(--black), 0.04);
                 border-radius: 6px;
                 width: 60px;
@@ -541,7 +542,7 @@
 .payment-method-box {
     margin-top: 20px;
     padding: 12px 17px;
-    background: #222222;
+    background: rgba(var(--title), 1);
     box-shadow: 0px 4px 4px rgba(var(--black), 1);
     border-radius: 8px;
     display: flex;
@@ -783,7 +784,7 @@
     .msger-input {
         width: 100%;
         background-color: rgba(var(--dark), 0.6);
-        border: 1px solid #222222;
+        border: 1px solid rgba(var(--title), 1);
         backdrop-filter: blur(14px);
         font-weight: 400;
         font-size: 16px;
@@ -838,14 +839,14 @@
 
         .form-control {
             background-color: rgba(var(--dark), 0.6);
-            border: 1px solid #222222;
+            border: 1px solid rgba(var(--title), 1);
             backdrop-filter: blur(14.5px);
             border-radius: 16px;
             padding: 16px 20px;
             font-weight: 400;
             font-size: 18px;
             line-height: 1;
-            color: #4B4B4B;
+            color: rgb(75, 75, 75);
 
             &.number {
                 width: 72px;
@@ -881,7 +882,7 @@
         width: 100%;
 
         .invite-friend-box {
-            background: #141414;
+            background-color: rgb(20, 20, 20);
             padding: 11px;
             display: flex;
             align-items: center;
@@ -903,11 +904,11 @@
                 h5 {
                     font-weight: 400;
                     margin-bottom: 6px;
-                    color: #C4C4C4;
+                    color: rgb(196, 196, 196);
                 }
 
                 h6 {
-                    color: #696969;
+                    color: rgb(105, 105, 105);
                     font-weight: 400;
                 }
 
@@ -916,7 +917,7 @@
                     font-weight: 400;
                     font-size: 14px;
                     padding: 8px 19px;
-                    background: rgba(147, 3, 84, 0.3);
+                    background-color: rgba(147, 3, 84, 0.3);
                     border: 1px solid rgba(147, 3, 84, 0.6);
                     border-radius: 100px;
                     line-height: 1;
@@ -1001,6 +1002,10 @@
         &.form-flex-box {
             display: flex;
             gap: 16px;
+
+            >div {
+                width: 100%;
+            }
         }
 
         .form-label {
@@ -1011,7 +1016,7 @@
 
         .form-control {
             background-color: rgba(var(--dark), 0.6);
-            border: 1px solid #222222;
+            border: 1px solid rgba(var(--title), 1);
             padding: 14px 18px;
             font-weight: 400;
             font-size: 16px;
@@ -1030,6 +1035,10 @@
                     @include remix_icon;
                     color: rgba(var(--border-color), 1);
                     padding: 0 5px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 20px;
                 }
 
                 &::-webkit-calendar-picker-indicator {
@@ -1078,7 +1087,7 @@
                 width: 42px;
                 height: 21px;
                 padding: 0;
-                background-color: #222;
+                background-color: rgba(var(--title), 1);
                 background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
 
                 &:checked {
@@ -1130,7 +1139,7 @@
     .accordion {
         .accordion-item {
             background-color: transparent;
-            border: 1px solid #222222;
+            border: 1px solid rgba(var(--title), 1);
             border-radius: 13px;
             padding: 16px;
 

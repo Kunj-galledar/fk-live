@@ -58,35 +58,37 @@
 }
 
 /* ---------- Category CSS ---------- */
-.category-list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.cloth-category-section {
+    .category-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-    li {
-        .category-box {
-            display: block;
-            text-align: center;
+        li {
+            .category-box {
+                display: block;
+                text-align: center;
 
-            img {
-                width: 58px;
-                height: 58px;
-                border-radius: 100%;
-                margin-bottom: 10px;
+                img {
+                    width: 58px;
+                    height: 58px;
+                    border-radius: 100%;
+                    margin-bottom: 10px;
 
-                @include mq-max(md) {
-                    width: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320)));
-                    height: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320)));
+                    @include mq-max(md) {
+                        width: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320)));
+                        height: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
-            }
 
-            h5 {
-                font-weight: 500;
-                font-size: 13px;
-                color: rgba(var(--content), 1);
+                h5 {
+                    font-weight: 500;
+                    font-size: 13px;
+                    color: rgba(var(--content), 1);
 
-                @include mq-max(md) {
-                    font-size: calc(12px + (13 - 12) * ((100vw - 320px) / (600 - 320)));
+                    @include mq-max(md) {
+                        font-size: calc(12px + (13 - 12) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
             }
         }
@@ -1167,7 +1169,7 @@ footer {
     text-align: center;
     margin-bottom: 48px;
 
-    .social-meida-list {
+    .social-media-list {
         @include flex_common;
         gap: 25px;
         padding-bottom: 20px;

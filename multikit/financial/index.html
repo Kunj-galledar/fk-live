@@ -110,13 +110,13 @@
         <div class="custom-container">
             <ul class="pay-option-list">
                 <li>
-                    <a href="payment.html" class="pay-box send">
+                    <a href="#sendModal" class="pay-box send" data-bs-toggle="offcanvas">
                         <i class="ri-send-plane-line"></i>
                         <h6>Send</h6>
                     </a>
                 </li>
                 <li>
-                    <a href="payment.html" class="pay-box receive">
+                    <a href="#receiveModal" class="pay-box receive" data-bs-toggle="offcanvas">
                         <i class="ri-download-2-line"></i>
                         <h6>Receive</h6>
                     </a>
@@ -128,7 +128,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="payment.html" class="pay-box scan">
+                    <a href="scan.html" class="pay-box scan">
                         <i class="ri-qr-scan-line"></i>
                         <h6>Scan</h6>
                     </a>
@@ -350,6 +350,62 @@
     <!-- Divider Section Start -->
     <div class="bottom-space"></div>
     <!-- Divider Section End -->
+
+    <!-- Send Offcanvas Modal Start -->
+    <div class="offcanvas offcanvas-bottom send-offcanvas" tabindex="-1" id="sendModal">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title">Send Money</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="offcanvas-form">
+                <div class="form-box">
+                    <input type="number" class="form-control" placeholder="Enter mobile number or name">
+                    <i class="ri-contacts-book-line"></i>
+                </div>
+            </form>
+            <div class="pay-button-group">
+                <button class="financial-btn border-btn" data-bs-dismiss="offcanvas">Cancel</button>
+                <a href="payment.html" class="financial-btn theme-maroon-btn">Pay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Offcanvas Modal End -->
+
+    <!-- Send Offcanvas Modal Start -->
+    <div class="offcanvas offcanvas-bottom send-offcanvas" tabindex="-1" id="receiveModal">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title">Receive</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="offcanvas-form-2">
+                <div class="form-group-box">
+                    <div class="form-box">
+                        <input type="number" class="form-control" placeholder="Enter mobile number or name">
+                        <i class="ri-contacts-book-line"></i>
+                    </div>
+                </div>
+                <div class="form-group-box">
+                    <div class="form-box">
+                        <input type="number" class="form-control" placeholder="Enter amount">
+                        <i class="ri-wallet-2-line"></i>
+                    </div>
+                </div>
+            </form>
+            <div class="pay-button-group">
+                <a href="#!" class="financial-btn border-btn" data-bs-dismiss="offcanvas">Cancel</a>
+                <a href="#!" class="financial-btn theme-maroon-btn">Send Request</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Offcanvas Modal End -->
 
     <!-- Bootstrap js-->
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>

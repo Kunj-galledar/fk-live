@@ -434,8 +434,8 @@
     background-color: transparent;
 
     &.dark-btn {
-        color: #fff;
-        background-color: #454545;
+        color: rgba(var(--white), 1);
+        background-color: rgba(var(--main-dark), 1);
     }
 }
 
@@ -448,15 +448,14 @@
     text-align: center;
 
     .checkout-btn {
-        color: #464646;
-        border: 1px solid #AFAFAF;
+        color: rgba(var(--title), 1);
+        border: 1px solid rgb(175, 175, 175);
         border-radius: 6px;
         width: 100%;
         padding: 15px;
+
+        @include mq-max(md) {
+            padding: calc(11px + (15 - 11) * ((100vw - 320px) / (600 - 320)));
+        }
     }
 }
-
-// .btn:focus-within,
-// .form-input:focus-within {
-//     box-shadow: none;
-// }

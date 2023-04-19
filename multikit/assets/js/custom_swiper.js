@@ -172,7 +172,7 @@
      },
  });
 
- var swiper = new Swiper(".onboading-content-slider", {
+ var swiper = new Swiper(".onboarding-content-slider", {
      slidesPerView: 1,
      pagination: {
          el: ".swiper-pagination",
