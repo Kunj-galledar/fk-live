@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,9 +8,17 @@
 	<meta name="description" content="multikit">
 	<meta name="keywords" content="multikit">
 	<meta name="author" content="multikit">
-	<link rel="icon" href="assets/images/favicon/1.svg" type="image/x-icon" />
-	<link rel="shortcut icon" href="../" type="image/x-icon" />
+	<link rel="icon" href="assets/images/favicon/1.svg" type="image/x-icon">
+	<link rel="shortcut icon" href="../" type="image/x-icon">
 	<title>Multikit - Multi-purpose Html Template</title>
+	<link rel="manifest" href="./manifest.json">
+	<meta name="theme-color" content="#ff8d2f">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="multikit">
+	<meta name="msapplication-TileImage" content="assets/images/favicon/1.svg">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<!--Google font-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +27,7 @@
 		rel="stylesheet">
 
 	<!-- Bootstrap link -->
-	<link rel="stylesheet" type="text/css" href="./assets/css/vendors/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/vendors/bootstrap.rtl.min.css">
 
 	<!-- Remix Icon link -->
 	<link rel="stylesheet" type="text/css" href="assets/css/remixicon.css">
@@ -322,12 +330,35 @@
 	</div>
 	<!-- Notification offcanvas end -->
 
+	<!-- pwa install app popup start -->
+	<div class="offcanvas offcanvas-bottom addtohome-popup theme-offcanvas w-auto" tabindex="-1" id="offcanvas">
+		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+		<div class="offcanvas-body small">
+			<div class="app-info">
+				<div class="content">
+					<h3>Multikit App</h3>
+					<a>www.multikit-app.com</a>
+				</div>
+			</div>
+			<a href="#!" class="btn theme-bg-color text-white" id="installApp">Add to Home Screen</a>
+		</div>
+	</div>
+	<!-- pwa install app popup start -->
 
 	<!-- Bootstrap js-->
 	<script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 
+	<!-- homescreen popup js -->
+	<script src="assets/js/homescreen-popup.js"></script>
+
+	<!-- PWA offcanvas popup js -->
+	<script src="assets/js/offcanvas-popup.js"></script>
+
 	<!-- Theme js-->
 	<script src="assets/js/script.js"></script>
+
+	<!-- Theme Settings js-->
+	<script src="assets/js/theme-setting.js"></script>
 </body>
 
 </html>

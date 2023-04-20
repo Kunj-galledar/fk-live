@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,10 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="multikit">
     <meta name="keywords" content="multikit">
-    <meta name="author" content="multikit">
+    <title>Multikit - Multi-purpose Html Template</title>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ff8d2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="multikit">
+    <meta name="msapplication-TileImage" content="assets/images/favicon/1.svg">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="../assets/images/favicon/4.svg" type="image/x-icon" />
     <link rel="shortcut icon" href="../" type="image/x-icon" />
-    <title>Multikit - Multi-purpose Html Template</title>
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +26,7 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
 
     <!-- Bootstrap link -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.rtl.min.css">
 
     <!-- Swiper css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/swiper-bundle.min.css">
@@ -98,7 +105,7 @@
                 </div>
                 <div class="bottom-card-detail">
                     <h5 class="available">Available Balance: $ 2,562.50</h5>
-                    <button class="financial-btn add-card-button">Add</button>
+                    <a href="card.html" class="financial-btn add-card-button">Add</a>
                 </div>
             </div>
         </div>
@@ -146,7 +153,7 @@
 
         <ul class="bill-recharge-list px-15">
             <li>
-                <a href="#!" class="recharge-box">
+                <a href="chat.html" class="recharge-box">
                     <div class="recharge-icon">
                         <i class="ri-smartphone-line"></i>
                     </div>
@@ -155,7 +162,7 @@
             </li>
 
             <li>
-                <a href="#!" class="recharge-box">
+                <a href="chat.html" class="recharge-box">
                     <div class="recharge-icon">
                         <i class="ri-lightbulb-line"></i>
                     </div>
@@ -164,7 +171,7 @@
             </li>
 
             <li>
-                <a href="#!" class="recharge-box">
+                <a href="chat.html" class="recharge-box">
                     <div class="recharge-icon">
                         <i class="ri-bank-card-line"></i>
                     </div>
@@ -173,7 +180,7 @@
             </li>
 
             <li>
-                <a href="#!" class="recharge-box">
+                <a href="chat.html" class="recharge-box">
                     <div class="recharge-icon">
                         <i class="ri-router-line"></i>
                     </div>
@@ -193,7 +200,7 @@
 
         <ul class="people-list-box px-15">
             <li>
-                <a href="#!" class="people-box">
+                <a href="chat.html" class="people-box">
                     <div class="people-image">
                         <img src="../assets/images/financial/avtar/1.jpg" class="img-fluid" alt="">
                     </div>
@@ -202,7 +209,7 @@
             </li>
 
             <li>
-                <a href="#!" class="people-box">
+                <a href="chat.html" class="people-box">
                     <div class="people-image">
                         <img src="../assets/images/financial/avtar/2.jpg" class="img-fluid" alt="">
                     </div>
@@ -211,7 +218,7 @@
             </li>
 
             <li>
-                <a href="#!" class="people-box">
+                <a href="chat.html" class="people-box">
                     <div class="people-image">
                         <img src="../assets/images/financial/avtar/3.jpg" class="img-fluid" alt="">
                     </div>
@@ -220,7 +227,7 @@
             </li>
 
             <li>
-                <a href="#!" class="people-box">
+                <a href="chat.html" class="people-box">
                     <div class="people-image">
                         <img src="../assets/images/financial/avtar/4.jpg" class="img-fluid" alt="">
                     </div>
@@ -229,7 +236,7 @@
             </li>
 
             <li>
-                <a href="#!" class="people-box">
+                <a href="chat.html" class="people-box">
                     <div class="people-image">
                         <img src="../assets/images/financial/avtar/5.jpg" class="img-fluid" alt="">
                     </div>
@@ -313,7 +320,7 @@
                             <h6 class="total">Total Bill</h6>
                             <h6 class="pay">$120.00 <span class="success">Expired 2 july</span></h6>
                         </div>
-                        <a href="#!" class="financial-btn border-btn bill-btn">Pay</a>
+                        <a href="#payModal" class="financial-btn border-btn bill-btn" data-bs-toggle="offcanvas">Pay</a>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -372,10 +379,9 @@
             </div>
         </div>
     </div>
-
     <!-- Send Offcanvas Modal End -->
 
-    <!-- Send Offcanvas Modal Start -->
+    <!-- Receive Offcanvas Modal Start -->
     <div class="offcanvas offcanvas-bottom send-offcanvas" tabindex="-1" id="receiveModal">
         <div class="offcanvas-header">
             <h4 class="offcanvas-title">Receive</h4>
@@ -404,8 +410,38 @@
             </div>
         </div>
     </div>
+    <!-- Receive Offcanvas Modal End -->
 
-    <!-- Send Offcanvas Modal End -->
+    <!-- Receive Offcanvas Modal Start -->
+    <div class="offcanvas offcanvas-bottom send-offcanvas" tabindex="-1" id="payModal">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title">Water Bill</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="offcanvas-form-2">
+                <div class="form-group-box">
+                    <div class="form-box">
+                        <input type="number" class="form-control" placeholder="Enter mobile number or name">
+                        <i class="ri-contacts-book-line"></i>
+                    </div>
+                </div>
+                <div class="form-group-box">
+                    <div class="form-box">
+                        <input type="number" class="form-control" placeholder="Enter amount">
+                        <i class="ri-wallet-2-line"></i>
+                    </div>
+                </div>
+            </form>
+            <div class="pay-button-group">
+                <a href="#!" class="financial-btn border-btn" data-bs-dismiss="offcanvas">Cancel</a>
+                <a href="chat.html" class="financial-btn theme-maroon-btn">Pay</a>
+            </div>
+        </div>
+    </div>
+    <!-- Receive Offcanvas Modal End -->
 
     <!-- Bootstrap js-->
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
