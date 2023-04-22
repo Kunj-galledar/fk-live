@@ -28,8 +28,8 @@
         }
 
         [class="dark"] & {
-    color: #efefef;
-    }
+            color: #efefef;
+        }
 
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -234,3 +234,38 @@ Probot landing:
                                             <input class="countdown-remove" type="number" value="0">
                                             <span class="count-increase">+</span>
                                         </button>
+
+
+
+
+
+
+                                        &:focus {
+                ~.theme-option {
+                    li {
+                        &:first-child {
+                            .theme-setting-button {
+                                top: -57px;
+                                left: -21px;
+                                transform: scale(1);
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            .theme-setting-button {
+                                top: 0;
+                                left: -60px;
+                                transform: scale(1);
+                            }
+                        }
+
+                        &:last-child {
+                            .theme-setting-button {
+                                bottom: -57px;
+                                left: -21px;
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+            }

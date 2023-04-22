@@ -1,0 +1,599 @@
+/* ---------- Accordion Style Css ---------- */
+.accordion-style {
+    .accordion-item {
+        border: none;
+
+        +.accordion-item {
+            .accordion-header {
+                border-top: 1px solid rgba(var(--light-bg), 1);
+                padding-top: 16px;
+                margin-top: 16px;
+
+                @include mq-max(md) {
+                    padding-top: calc(11px + (16 - 11) * ((100vw - 320px) / (600 - 320)));
+                    margin-top: calc(11px + (16 - 11) * ((100vw - 320px) / (600 - 320)));
+                }
+            }
+        }
+
+        .accordion-header {
+            .accordion-button {
+                padding: 0;
+                box-shadow: none;
+                background-color: transparent;
+                color: rgba(var(--title), 1);
+                font-weight: 500;
+                font-size: 16px;
+
+                @include mq-max(md) {
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+                }
+
+                &:not(.collapsed) {
+                    &::before {
+                        content: "\F1AF";
+                    }
+                }
+
+                &::before {
+                    content: "\EA13";
+                    font-family: remixicon;
+                    font-style: normal;
+                    position: absolute;
+                    @include center(vertical);
+                    right: 0;
+                    font-size: 20px;
+                    transition: all .3s ease-in-out;
+
+                    [dir="rtl"] & {
+                        right: unset;
+                        left: 0;
+                    }
+                }
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+
+        .accordion-collapse {
+            &.show {
+                margin-top: 14px;
+            }
+
+            .product-review {
+                padding: 0;
+                background-color: transparent;
+            }
+
+            .rating-box {
+                display: flex;
+                align-items: center;
+                margin-bottom: 28px;
+
+                .total-rating {
+                    width: 25%;
+                    text-align: center;
+                    padding-right: 16px;
+                    margin-right: 16px;
+                    border-right: 1px solid rgba(var(--light-bg), 1);
+
+                    [dir="rtl"] & {
+                        padding-right: unset;
+                        padding-left: 16px;
+                        margin-right: unset;
+                        margin-left: 16px;
+                        border-right: unset;
+                        border-left: 1px solid rgba(var(--light-bg), 1);
+                    }
+
+                    .rating-number {
+                        @include pseudowh($width: 38px, $height: 38px);
+                        @include flex_common;
+                        background-color: rgba(var(--theme-color), 1);
+                        border-radius: 5px;
+                        margin: 0 auto 6px;
+
+                        h4 {
+                            color: rgba(var(--white), 1);
+                            font-weight: 600;
+                        }
+                    }
+
+                    h5 {
+                        font-weight: 400;
+                        color: rgba(var(--title), 1);
+                        line-height: 1.5;
+                    }
+                }
+
+                .category-rating {
+                    width: calc(100% - 25% - 16px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+
+                    li {
+                        width: 100%;
+
+                        .rating-progress {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+
+                            h5 {
+                                font-size: 13px;
+                                color: rgba(var(--content), 1);
+                            }
+
+                            .progress {
+                                @include pseudowh($width: 100%, $height: 3px);
+                                background-color: rgba(var(--light-bg), 1);
+                                border-radius: 100px;
+
+                                .progress-bar {
+                                    background-color: rgba(var(--theme-color), 1);
+                                    border-radius: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .product-comment {
+                li {
+                    +li {
+                        margin-top: 18px;
+                    }
+
+                    &:last-child {
+                        margin-top: 8px;
+                    }
+
+                    .all-comment {
+                        text-align: right;
+                        font-size: 13px;
+
+                        a {
+                            color: rgba(var(--title), 1);
+                        }
+                    }
+
+                    .product-review {
+                        background-color: rgba(var(--light-bg), 1);
+                        border-radius: 6px;
+                        padding: 11px 13px;
+
+                        .top-review {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 8px;
+
+                            .review-content {
+                                h5 {
+                                    color: rgba(var(--title), 1);
+                                }
+
+                                h6 {
+                                    color: rgba(var(--content), 1);
+                                    margin-top: 3px;
+                                }
+                            }
+
+                            .review-rate {
+                                @include pseudowh($width: 30px, $height: 30px);
+                                @include flex_common;
+                                background-color: rgba(var(--theme-color), 1);
+                                border-radius: 5px;
+
+                                h6 {
+                                    font-weight: 600;
+                                    color: rgba(var(--white), 1);
+                                    line-height: 1;
+                                }
+                            }
+                        }
+
+                        .review-comment {
+                            p {
+                                font-weight: 400;
+                                color: rgb(163, 163, 163);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .product-body {
+                padding: 12px;
+                background-color: rgba(var(--light-bg), 1);
+                border-radius: 6px;
+
+                p {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: rgba(var(--title), 0.7);
+                    margin: 0;
+                    line-height: 1.5;
+
+                    @include mq-max(md) {
+                        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                    }
+                }
+            }
+
+            .table-part {
+                margin-bottom: 0;
+
+                tr {
+                    color: rgba(var(--content), 1);
+
+                    th {
+                        border: 1px solid rgba(var(--light-bg), 1);
+                        background-color: rgba(var(--light-bg), 1);
+                        font-weight: 600;
+                        padding: 12px 16px;
+                        white-space: nowrap;
+                        color: rgba(var(--title), 1);
+
+                        @include mq-max(md) {
+                            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                        }
+                    }
+
+                    td {
+                        font-weight: 500;
+                        border: 1px solid rgba(var(--light-bg), 1);
+                        text-align: left;
+                        padding: 12px 16px;
+                        white-space: nowrap;
+
+                        @include mq-max(md) {
+                            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                        }
+
+                        [dir="rtl"] & {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+
+            .payment-list {
+                li {
+                    position: relative;
+                    background-color: rgba(var(--light-bg), 0.6);
+                    border-radius: 5px;
+                    width: 100%;
+                    overflow: hidden;
+
+                    +li {
+                        margin-top: 13px;
+                    }
+
+                    .form-check-input {
+                        @include pseudowh($width: 19px, $height: 19px);
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        border: none;
+                        border-radius: 0;
+                        border-bottom-left-radius: 3px;
+                        margin: 0;
+                        background-color: rgba(var(--light-bg), 1);
+                        z-index: 1;
+
+                        [dir="rtl"] & {
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 3px;
+                            right: unset;
+                            left: 0;
+                        }
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+
+                        &:checked {
+                            background-color: rgba(var(--theme-color), 1);
+
+                            &[type=radio] {
+                                background-image: url(../svg/check.svg);
+                                background-size: 15px;
+                            }
+                        }
+
+                        &:checked~.minha-table {
+                            border-color: rgba(var(--theme-color), 1);
+                        }
+                    }
+
+                    .minha-table {
+                        border: 1px solid transparent;
+                        border-radius: 5px;
+                        padding: 11px 24px;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        @include mq-max(md) {
+                            padding: calc(8px + (11 - 8) * ((100vw - 320px) / (600 - 320))) calc(13px + (24 - 13) * ((100vw - 320px) / (600 - 320)));
+                        }
+
+                        &.active {
+                            border-color: rgba(var(--theme-color), 1);
+                        }
+
+                        img {
+                            @include pseudowh($width: 39px, $height: 39px);
+                            object-fit: contain;
+
+                            @include mq-max(md) {
+                                @include pseudowh($width: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320))), $height: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320))));
+                            }
+                        }
+
+                        .form-check-input {
+                            @include pseudowh($width: 19px, $height: 19px);
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            border: none;
+                            border-radius: 0;
+                            border-bottom-left-radius: 3px;
+                            margin: 0;
+                            background-color: rgba(var(--light-bg), 1);
+
+                            &:focus {
+                                box-shadow: none;
+                            }
+
+                            &:checked {
+                                background-color: rgba(var(--theme-color), 1);
+
+                                &[type=radio] {
+                                    background-image: url(../svg/check.svg);
+                                    background-size: 15px;
+                                }
+                            }
+                        }
+
+                        span {
+                            font-weight: 400;
+                            color: rgba(var(--title), 1);
+                            font-size: 14px;
+
+                            @include mq-max(md) {
+                                font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                            }
+                        }
+                    }
+
+                    .form-control {
+                        padding: 11px 24px;
+                        color: rgba(var(--title), 1);
+                        font-size: 14px;
+                        background-color: rgba(var(--light-bg), 1);
+                        border-color: transparent;
+                        position: relative;
+
+                        @include mq-max(md) {
+                            padding: calc(8px + (11 - 8) * ((100vw - 320px) / (600 - 320))) calc(13px + (24 - 13) * ((100vw - 320px) / (600 - 320)));
+                            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                        }
+
+                        &::after {
+                            content: "\EA4E";
+                            font-family: remixicon;
+                            font-style: normal;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Accordion Style 1 Css ---------- */
+.accordion-style-1 {
+    .accordion-item {
+        border: none;
+
+        +.accordion-item {
+            margin-top: 22px;
+        }
+
+        .accordion-header {
+            .accordion-button {
+                padding: 0;
+                font-weight: 400;
+                font-size: 14px;
+                color: #1B1B3E;
+                background-color: transparent;
+                box-shadow: none;
+
+                &:not(.collapsed) {
+                    &:after {
+                        transform: rotate(90deg);
+                    }
+                }
+
+                &::after {
+                    content: "\EA6E";
+                    @include remix_icon;
+                    background: none;
+                    width: unset;
+                    height: inherit;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .accordion-collapse {
+            .accordion-body {
+                padding: 0 5px;
+                margin-top: 5px;
+
+                p {
+                    margin: 0;
+                    font-weight: 400;
+                    font-size: 12px;
+                    color: #8F8FB2;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Accordion Style 2 Css ---------- */
+.accordion-style-2 {
+    .accordion-item {
+        border: none;
+
+        +.accordion-item {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(143, 143, 178, 0.2);
+        }
+
+        .accordion-header {
+            .accordion-button {
+                padding: 0;
+                background-color: transparent;
+                font-weight: 500;
+                font-size: 16px;
+                color: rgba(var(--title), 1);
+                box-shadow: none;
+
+                &:not(.collapsed) {
+                    &:after {
+                        transform: rotate(90deg);
+                    }
+                }
+
+                &::after {
+                    background: none;
+                    content: "\EA6E";
+                    @include remix_icon;
+                    width: auto;
+                    height: auto;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .accordion-collapse {
+            .accordion-body {
+                padding: 0;
+                margin-top: 15px;
+
+                .payment-form {
+                    .custom-checkbox {
+                        display: flex;
+                        position: relative;
+                        align-items: center;
+                        background: rgba(var(--light-bg), 0.6);
+                        padding: 12px 20px;
+                        gap: 13px;
+                        border-radius: 5px;
+
+                        +.custom-checkbox {
+                            margin-top: 13px;
+                        }
+
+                        .add-card-button {
+                            border: none;
+                            padding: 0;
+                            font-weight: 400;
+                            font-size: 14px;
+                            background-color: transparent;
+                        }
+
+                        input[type="radio"] {
+                            width: 16px;
+                            height: 16px;
+                            appearance: none;
+                            border: 1px solid transparent;
+                            border-radius: 100%;
+                            vertical-align: middle;
+                            background-image: url(../images/grocery/radio-checked.svg);
+                            background-repeat: no-repeat;
+                            background-color: rgba(var(--white), 1);
+                            background-position: 50% 50%;
+                            background-size: 0 0;
+                            transition: .3s ease;
+
+                            &:active {
+                                background-color: #ddd;
+                            }
+
+                            &:checked {
+                                background-size: 50% 50%;
+
+                                + {
+                                    .custom-control-label {
+                                        &:before {
+                                            border-color: rgba(var(--theme-color), 1);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .custom-control-label {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        &:before {
+                            content: "";
+                            transition: .5s ease;
+                            position: absolute;
+                            border: 1px solid transparent;
+                            pointer-events: none;
+                            border-radius: 5px;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                        }
+
+                        img {
+                            width: 39px;
+                            height: 26px;
+                            object-fit: contain;
+                        }
+
+                        span {
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: rgba(var(--title), 1);
+                        }
+                    }
+                }
+
+                .card-form {
+                    .form-box {
+                        .form-control {
+                            padding-left: 16px;
+
+                            [dir="rtl"] & {
+                                padding-left: unset;
+                                padding-right: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

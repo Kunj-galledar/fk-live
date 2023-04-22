@@ -1,0 +1,55 @@
+/*===================== 
+    Learning Application Css
+==========================*/
+.setting-style-1 {
+    .menu-setting-list {
+        padding: 0 23px 0 15px;
+
+        li {
+            +li {
+                margin-top: 15px;
+            }
+
+            .menu-setting-box {
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+                align-items: center;
+                color: rgba(var(--title), 1);
+
+                .setting-icon {
+                    @include pseudowh($width: 30px, $height: 30px);
+                    @include flex_common;
+                    background-color: rgba(var(--white), 1);
+                    box-shadow: 2px 1px 4px rgba(var(--black), 0.05);
+                    border-radius: 4px;
+
+                    i {
+                        font-size: 16px;
+                    }
+                }
+
+                .setting-name {
+                    display: flex;
+                    align-items: center;
+
+                    h4 {
+                        font-weight: 400;
+
+                    }
+                }
+
+                .setting-arrow {
+                    margin-left: auto;
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                        margin-right: auto;
+                    }
+
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

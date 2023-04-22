@@ -14,6 +14,7 @@ var DropzoneExample = function () {
         };
         Dropzone.options.multiFileUpload = {
             paramName: "file",
+            addRemoveLinks: true,
             maxFiles: 10,
             maxFilesize: 10,
             accept: function (file, done) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,15 +8,15 @@
     <meta name="description" content="multikit">
     <meta name="keywords" content="multikit">
     <meta name="author" content="multikit">
-    <link rel="icon" href="../assets/images/favicon/2.svg" type="image/x-icon" />
-    <link rel="shortcut icon" href="../" type="image/x-icon" />
+    <link rel="icon" href="../assets/images/favicon/2.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../" type="image/x-icon">
     <title>Multikit - Multi-purpose Html Template</title>
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#ff8d2f">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="multikit">
-    <meta name="msapplication-TileImage" content="assets/images/favicon/1.svg">
+    <meta name="msapplication-TileImage" content="../assets/images/favicon/1.svg">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -26,13 +26,13 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
 
     <!-- Bootstrap link -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
 
     <!-- Remix Icon link -->
     <link rel="stylesheet" type="text/css" href="../assets/css/remixicon.css">
 
     <!-- Style Link -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link id="change-link" rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 
 <body class="blog-color">
@@ -187,37 +187,49 @@
                         </div>
                     </li>
                 </ul>
-                <div class="px-15" style="
-    position: fixed;
-    margin: 00;
-    max-width: calc(600px - 30px);
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-">
-                    <a href="index.html" class="blog-btn dark-btn next-button" style="
-    display: block;
-    width: 100%;
-    text-align: center;
-    bottom: 15px;
-    position: relative;
-    left: unset;
-    transform: unset;
-    max-width: unset;
-">Next</a>
+                <div class="next-button-box">
+                    <a href="index.html" class="blog-btn dark-btn next-button">Next</a>
                 </div>
             </div>
         </div>
-
     </section>
     <!-- Discover People Section End -->
+
+    <!-- Theme Option Setting Box Start -->
+    <div class="theme-setting-box">
+        <div class="theme-box">
+            <button class="theme-icon">
+                <i class="ri-menu-line"></i>
+            </button>
+            <ul class="theme-option">
+                <li>
+                    <button class="theme-setting-button" id="rtl-btn">
+                        <i class="ri-text-direction-r"></i>
+                    </button>
+                </li>
+                <li>
+                    <button class="theme-setting-button" id="dark-btn">
+                        <i class="ri-sun-line"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="../landing/index.html" class="theme-setting-button">
+                        <i class="ri-home-3-line"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Theme Option Setting Box End -->
 
     <!-- Bootstrap js-->
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
+
+    <!-- Theme Setting js-->
+    <script src="../assets/js/theme-setting.js"></script>
 </body>
 
 </html>

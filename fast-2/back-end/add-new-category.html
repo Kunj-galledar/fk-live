@@ -38,6 +38,9 @@
     <!-- remixicon css -->
     <link rel="stylesheet" type="text/css" href="assets/css/remixicon.css">
 
+
+    <link rel="stylesheet" type="text/css" href="assets/css/dropzone.css">
+
     <!-- Select2 css -->
     <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
 
@@ -445,7 +448,7 @@
                                                 <h5>Category Information</h5>
                                             </div>
 
-                                            <form class="theme-form theme-form-2 mega-form">
+                                            <div class="theme-form theme-form-2 mega-form">
                                                 <div class="mb-4 row align-items-center">
                                                     <label class="form-label-title col-sm-3 mb-0">Category Name</label>
                                                     <div class="col-sm-9">
@@ -458,13 +461,17 @@
                                                     <label class="col-sm-3 col-form-label form-label-title">Category
                                                         Image</label>
                                                     <div class="form-group col-sm-9">
-                                                        <div class="dropzone-wrapper">
-                                                            <div class="dropzone-desc">
-                                                                <i class="ri-upload-2-line"></i>
-                                                                <p>Choose an image file or drag it here.</p>
+                                                        <form class="dropzone custom-dropzone" id="multiFileUpload"
+                                                            action="/upload.php">
+                                                            <div class="dropzone-wrapper">
+                                                                <div class="dz-message needsclick">
+                                                                    <div>
+                                                                        <i class="icon-cloud-up"></i>
+                                                                        <h6>Drop files here or click to upload.</h6>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <input type="file" class="dropzone">
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
 
@@ -542,7 +549,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -631,7 +638,6 @@
 
     <!-- Theme js -->
     <script src="assets/js/script.js"></script>
-
 </body>
 
 </html>
