@@ -18,6 +18,8 @@ var filesToCache = [
   './assets/js/bootstrap/bootstrap.bundle.min.js',
   './assets/js/vendors/dist/aos.js',
   './assets/js/vendors/bootstrap/dist/js/bootstrap.bundle.min.js',
+  './assets/js/vendors/bootstrap/dist/js/bootstrap-alert.js',
+  './assets/js/vendors/bootstrap/dist/js/bootstrap-toast.js',
   './assets/js/vendors/swiper/swiper-bundle.min.js',
   './assets/js/vendors/apexcharts.min.js',
   './assets/js/active.js',

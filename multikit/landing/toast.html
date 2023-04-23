@@ -132,34 +132,13 @@
 
     <!-- Bootstrap js-->
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap/bootstrap-alert.js"></script>
 
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
 
     <!-- Theme Settings js-->
     <script src="../assets/js/theme-setting.js"></script>
-
-    <script>
-        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-
-        const alert = (message, type) => {
-            const wrapper = document.createElement('div')
-            wrapper.innerHTML = [
-                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-                ` <div class="error-text"> <i class="ri-check-line"></i> ${message}</div>`,
-                '</div>'
-            ].join('')
-
-            alertPlaceholder.append(wrapper)
-        }
-
-        const alertTrigger = document.getElementById('liveAlertBtn-success')
-        if (alertTrigger) {
-            alertTrigger.addEventListener('click', () => {
-                alert('Item Successfully Added', 'success')
-            })
-        }
-    </script>
 </body>
 
 </html>
