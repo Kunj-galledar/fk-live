@@ -51,7 +51,7 @@
             <ul class="right-right">
                 <li>
                     <a href="javascript:void(0)" id="heart-box">
-                        <i class="ri-heart-3-line"></i>
+                        <i class="ri-heart-3-line" id="test"></i>
                     </a>
                 </li>
                 <li>
@@ -661,14 +661,28 @@
     <script src="../assets/js/theme-setting.js"></script>
 
     <script>
-        const btn = document.getElementById('heart-box');
-        const para = document.querySelectorAll('.ri-heart-3-line');
+        // const btn = document.getElementById('heart-box');
+        // const para = document.querySelectorAll('.ri-heart-3-line');
 
-        btn.addEventListener('click', () => {
-            para.forEach(el => {
-                el.classList.toggle('ri-heart-3-fill');
-            })
-        })
+        // btn.addEventListener('click', () => {
+        //     para.forEach(el => {
+        //         el.classList.toggle('ri-heart-3-fill');
+        //     })
+        // })
+
+
+        var test = $("#test");
+
+        test.click(function () {
+            if (test.is(".ri-heart-3-line")) {
+                $(this).removeClass("ri-heart-3-line");
+                $(this).addClass("ri-heart-3-fill");
+            } else {
+                $(this).removeClass("ri-heart-3-fill");
+                $(this).addClass("ri-heart-3-line");
+            }
+            return false;
+        });
     </script>
 </body>
 
