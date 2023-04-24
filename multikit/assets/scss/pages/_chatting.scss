@@ -65,6 +65,10 @@
     border-radius: 20px 20px 0px 0px;
     padding: 18px 0 100px;
 
+    [class="dark"] & {
+        background-color: #1f2937;
+    }
+
     .chatting-title {
         @include flex_common ($dis: flex, $align: center, $justify: space-between);
         color: rgba(var(--title), 1);
@@ -386,6 +390,10 @@
     position: relative;
     z-index: 0;
 
+    [class="dark"] & {
+        background-color: #1f2937;
+    }
+
     &::after {
         @include pos;
         top: 0;
@@ -497,6 +505,10 @@
     padding: 18px 0 100px;
     overflow: hidden auto;
 
+    [class="dark"] & {
+        background-color: #1f2937;
+    }
+
     .msger {
         display: flex;
         flex-flow: column wrap;
@@ -518,6 +530,10 @@
         position: relative;
         border-radius: 15px;
         background: var(--left-msg-bg);
+
+        [class="dark"] & {
+            background-color: #374151;
+        }
 
         .msg-text {
             font-weight: 400;
@@ -573,13 +589,17 @@
     }
 
     .right-msg .msg-bubble {
-        background: var(--right-msg-bg);
+        background-color: var(--right-msg-bg);
         color: rgba(var(--white), 1);
         border-bottom-right-radius: 0;
 
         [dir="rtl"] & {
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 0;
+        }
+
+        [class="dark"] & {
+            background: #374151;
         }
     }
 
@@ -608,6 +628,11 @@
         padding: 16px 54px 16px 48px;
         border-radius: 50px;
 
+        [class="dark"] & {
+            background-color: #374151;
+            color: #ddd;
+        }
+
         [dir="rtl"] & {
             padding: 16px 48px 16px 54px;
         }
@@ -627,6 +652,10 @@
         [dir="rtl"] & {
             right: unset;
             left: 8px;
+        }
+
+        [class="dark"] & {
+            background-color: #1f2a36;
         }
 
         svg {
@@ -669,6 +698,10 @@
     position: relative;
     overflow: auto;
 
+    [class="dark"] & {
+        background-color: #1f2937;
+    }
+
     .user-profile-box {
         text-align: center;
 
@@ -706,6 +739,10 @@
                         color: rgba(var(--title), 1);
                         font-size: 16px;
                         @include flex_common;
+
+                        [class="dark"] & {
+                            background-color: #374151;
+                        }
                     }
                 }
             }
@@ -717,6 +754,10 @@
             margin-bottom: 19px;
             padding: 14px;
             border-radius: 8px;
+
+            [class="dark"] & {
+                background-color: #374151;
+            }
 
             img {
                 @include pseudowh;
@@ -847,6 +888,10 @@
     height: 100vh;
     border-radius: 20px 20px 0px 0px;
     padding: 18px 0;
+
+    [class="dark"] & {
+        background-color: #1f2937;
+    }
 }
 
 .new-chat-section {
@@ -1168,6 +1213,10 @@
     border-radius: 20px 20px 0px 0px;
     padding: 18px 0 100px;
 
+    [class="dark"] & {
+        background-color: #1f2a36;
+    }
+
     .chat-setting-list {
         display: flex;
         flex-wrap: wrap;
@@ -1429,6 +1478,10 @@
     height: 100vh;
     border-radius: 20px 20px 0px 0px;
     padding: 18px 0 100px;
+
+    [class="dark"] & {
+        background-color: #1f2a36;
+    }
 
     .help-list {
         li {

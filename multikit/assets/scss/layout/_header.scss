@@ -229,6 +229,11 @@ header {
             @include pseudowh($width: 30px, $height: 30px);
             @include flex_common;
             margin-right: 4px;
+            color: rgba(var(--title), 1);
+
+            [class="dark"] & {
+                color: #1f2937;
+            }
 
             [dir="rtl"] & {
                 margin-right: unset;
@@ -240,6 +245,11 @@ header {
             align-items: center;
             @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
             margin-left: auto;
+            color: rgba(var(--title), 1);
+
+            [class="dark"] & {
+                color: #1f2937;
+            }
 
             [dir="rtl"] & {
                 margin-left: unset;
@@ -268,12 +278,21 @@ header {
             i {
                 font-size: 23px;
                 color: rgba(var(--title), 1);
+
+                [class="dark"] & {
+                    color: #1f2a36;
+                }
             }
         }
 
         .header-profile {
             @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
             align-items: center;
+            color: rgba(var(--title), 1);
+
+            [class="dark"] & {
+                color: #1f2a36;
+            }
 
             .profile-image {
                 @include pseudowh($width: 52px, $height: 52px);
@@ -319,6 +338,10 @@ header {
                 padding: 0;
                 color: rgba(var(--title), 1);
                 line-height: 1;
+
+                [class="dark"] & {
+                    color: #1f2a36;
+                }
             }
 
             i {
@@ -366,6 +389,10 @@ header {
             border: none;
             padding: 0;
 
+            [class="dark"] & {
+                background-color: #272d34;
+            }
+
             @include mq-max(md) {
                 @include pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))), $height: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))));
                 border-radius: calc(8px + (12 - 8) * ((100vw - 320px) / (600 - 320)));
@@ -386,6 +413,11 @@ header {
                     color: rgba(var(--title), 1);
                     font-weight: 400;
                     font-size: 16px;
+
+                    [class="dark"] & {
+                        background-color: #272d33;
+                        box-shadow: 2px 3px 6px rgba(192, 192, 192, 0.08);
+                    }
 
                     [dir="rtl"] & {
                         padding: 13px 48px 13px 20px;
@@ -627,6 +659,10 @@ header {
         border-radius: 50px;
         padding: 9px calc(39px + (54 - 39) * ((100vw - 320px) / (600 - 320)));
         @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+        [class="dark"] & {
+            background-color: #374151;
+        }
 
         li {
             a {
@@ -1531,7 +1567,8 @@ header {
 .fitness-fix-header {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     max-width: 600px;
     background: linear-gradient(180deg, #000000 0%, #000000 0.01%, rgba(0, 0, 0, 0) 100%);

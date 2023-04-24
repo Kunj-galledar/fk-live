@@ -344,8 +344,19 @@
             border-bottom: 1px solid rgba(var(--content), 1);
             border-radius: 0;
 
+            [class="dark"] & {
+                color: #1f2937;
+            }
+
             &:focus {
                 box-shadow: none;
+            }
+
+            option {
+                [class="dark"] & {
+                    background-color: #1f2937;
+                    color: #fff;
+                }
             }
         }
     }
@@ -368,6 +379,10 @@
             background-position: right 5px center;
             border-bottom: 1px solid rgba(var(--content), 1);
             border-radius: 0;
+
+            [class="dark"] & {
+                color: #1f2937;
+            }
 
             &:focus {
                 box-shadow: none;
@@ -409,6 +424,11 @@
             text-align: right;
         }
 
+        [class="dark"] & {
+            background-color: #272d34;
+            border-color: #272d34;
+        }
+
         @include mq-max(md) {
             font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
             padding: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320))) calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320)));
@@ -424,6 +444,11 @@
             color: rgba(var(--content), 1);
             font-weight: 400;
         }
+    }
+
+    textarea {
+        padding: 15px 21px;
+        margin-bottom: 0;
     }
 
     i {
@@ -615,6 +640,11 @@
                 background: rgba(var(--white), 1);
                 border-radius: 6px;
                 transition: all .3s ease-in-out;
+
+                [class="dark"] & {
+                    background-color: #272d34;
+                    border-color: #272d34;
+                }
 
                 [dir="rtl"] & {
                     left: unset;

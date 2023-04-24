@@ -879,6 +879,10 @@
                         align-items: center;
                         @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
 
+                        [class="dark"] & {
+                            border-color: #272d34;
+                        }
+
                         @include mq-max(md) {
                             border-radius: calc(11px + (18 - 11) * ((100vw - 320px) / (767 - 320)));
                             padding: calc(11px + (14 - 11) * ((100vw - 320px) / (767 - 320))) calc(17px + (21 - 17) * ((100vw - 320px) / (767 - 320)));
@@ -1685,6 +1689,10 @@
 .theme-modal {
     .modal-content {
         border: none;
+
+        [class="dark"] & {
+            background-color: #1f2937;
+        }
 
         .modal-header {
             padding-bottom: 0;

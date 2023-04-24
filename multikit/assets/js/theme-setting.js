@@ -52,13 +52,9 @@ themeBtnParent?.addEventListener("click", function (e) {
 });
 
 // Rtl
-rtlBtn.id = localStorage.getItem("rtlBtnId")
-  ? localStorage.getItem("rtlBtnId")
-  : "rtl-btn";
+rtlBtn.id = localStorage.getItem("rtlBtnId")?localStorage.getItem("rtlBtnId"): "rtl-btn";
 html.setAttribute("dir", localStorage.getItem("dir"));
-rtlLink.href = localStorage.getItem("rtlcss")
-  ? localStorage.getItem("rtlcss")
-  : "../assets/css/vendors/bootstrap.css";
+rtlLink.href = localStorage.getItem("rtlcss")?localStorage.getItem("rtlcss"): "../assets/css/vendors/bootstrap.css";
 
 // Dark
 darkBtn.id = localStorage.getItem("darkId")

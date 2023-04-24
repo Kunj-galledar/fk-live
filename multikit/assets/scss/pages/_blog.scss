@@ -35,6 +35,10 @@
                     .blog-button {
                         background-color: rgba(var(--title), 1);
                         color: rgba(var(--white), 1);
+
+                        [class="dark"] & {
+                            background-color: #121316;
+                        }
                     }
                 }
 
@@ -48,6 +52,10 @@
                     @include flex_common;
                     gap: 10px;
                     line-height: 1;
+
+                    [class="dark"] & {
+                        background-color: #121316;
+                    }
 
                     svg {
                         @include pseudowh($width: 20px, $height: 20px);
@@ -166,6 +174,10 @@
             padding: 6px;
             color: rgba(var(--title), 1);
 
+            [class="dark"] & {
+                background-color: #27282f;
+            }
+
             .last-reading-image {
                 @include pseudowh($width: 70px, $height: 70px);
                 display: block;
@@ -187,9 +199,17 @@
                     height: 5px;
                     border-radius: 100px;
 
+                    [class="dark"] & {
+                        background-color: #121316;
+                    }
+
                     .progress-bar {
                         background-color: rgba(var(--theme-color), 1);
                         border-radius: 100px;
+
+                        // [class="dark"] & {
+                        //     background-color: #121316;
+                        // }
                     }
                 }
             }
@@ -500,6 +520,10 @@
             padding: 13px 17px;
             font-weight: 400;
             font-size: 14px;
+
+            [class="dark"] & {
+                background-color: rgba(63, 69, 80, 0.1);
+            }
         }
 
         i {
@@ -531,8 +555,12 @@
             background-color: rgb(245, 249, 250);
             font-weight: 400;
             font-size: 14px;
-            color: rgb(27, 27, 62);
+            color: rgba(var(--title), 1);
             display: block;
+
+            [class="dark"] & {
+                background-color: #27282f;
+            }
         }
     }
 }
@@ -626,6 +654,10 @@
                 background-color: rgb(251, 251, 251);
                 padding: 13px;
                 border-radius: 6px;
+
+                [class="dark"] & {
+                    background-color: #18181a;
+                }
 
                 .notification-image {
                     @include pseudowh($width: 70px, $height: 70px);
@@ -728,6 +760,10 @@
         +li {
             border-left: 1px solid rgba(var(--grey), 1);
 
+            [class="dark"] & {
+                border-left-color: #525252;
+            }
+
             [dir="rtl"] & {
                 border-left: unset;
                 border-right: 1px solid rgba(var(--grey), 1);
@@ -764,6 +800,10 @@
                 text-align: center;
                 color: rgba(var(--title), 1);
 
+                [class="dark"] & {
+                    background-color: #27282f;
+                }
+
                 i {
                     font-size: 26px;
                     margin-bottom: 9px;
@@ -785,25 +825,37 @@
 
 /* ---------- Discover People CSS ---------- */
 .discover-people-section {
-    @include pseudowh($width: 100%, $height: 100vh);
-    display: flex;
-    align-items: center;
+    height: 100vh;
+    padding-bottom: 105px;
 
     .topic-title {
-        margin-bottom: 33px;
+        padding-top: 8px;
+        padding-bottom: 19px;
 
         h1 {
             font-weight: 500;
-            font-size: 35px;
+            font-size: 28px;
         }
     }
 
-    .next-button {
+    .next-button-box {
         position: fixed;
+        padding-inline: 15px;
         margin: 00;
         max-width: calc(600px - 30px);
-        text-align: center;
         bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+
+        .next-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            transform: unset;
+            max-width: unset;
+        }
     }
 }
 
@@ -852,6 +904,10 @@
                     border-radius: 100px;
                     border: 1px solid transparent;
 
+                    [class="dark"] & {
+                        background-color: #27282f;
+                    }
+
                     &.follow-outline-button {
                         background-color: rgba(var(--white), 1);
                         color: rgba(var(--title), 1);
@@ -860,28 +916,6 @@
                 }
             }
         }
-    }
-}
-
-.next-button-box {
-    position: fixed;
-    padding-inline: 15px;
-    margin: 00;
-    max-width: calc(600px - 30px);
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-
-    .next-button {
-        display: block;
-        width: 100%;
-        text-align: center;
-        bottom: 15px;
-        position: relative;
-        left: unset;
-        transform: unset;
-        max-width: unset;
     }
 }
 

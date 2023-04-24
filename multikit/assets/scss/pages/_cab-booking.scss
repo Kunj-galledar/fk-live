@@ -61,6 +61,7 @@
         padding: 17px;
         font-weight: 500;
         font-size: 18px;
+        border: none;
     }
 }
 
@@ -78,6 +79,10 @@
     width: 100%;
     max-width: 600px;
 
+    [class="dark"] & {
+        background-color: #22272c;
+    }
+
     @include mq-max(md) {
         padding-top: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)));
         padding-bottom: calc(43px + (63 - 43) * ((100vw - 320px) / (600 - 320)));
@@ -89,6 +94,10 @@
         background-color: rgb(233, 233, 233);
         top: 14px;
         @include center(horizontal);
+
+        [class="dark"] & {
+            background-color: rgba(233, 233, 233, 0.11);
+        }
     }
 
     .cab-drive-box {
@@ -266,6 +275,10 @@
     width: 100%;
     max-width: 600px;
 
+    [class="dark"] & {
+        background-color: #22272c;
+    }
+
     @include mq-max(md) {
         padding-top: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)));
         padding-bottom: calc(43px + (63 - 43) * ((100vw - 320px) / (600 - 320)));
@@ -277,6 +290,10 @@
         background-color: rgb(233, 233, 233);
         top: 14px;
         @include center(horizontal);
+
+        [class="dark"] & {
+            background-color: rgba(233, 233, 233, 0.11);
+        }
     }
 
     .choose-ride-box {
@@ -299,6 +316,10 @@
 
                     &.active {
                         box-shadow: $shadow2;
+
+                        [class="dark"] & {
+                            box-shadow: 2px 3px 6px rgba(192, 192, 192, 0.05);
+                        }
                     }
 
                     .cab-image {
@@ -358,6 +379,10 @@
     width: 100%;
     max-width: 600px;
 
+    [class="dark"] & {
+        background-color: #22272c;
+    }
+
     @include mq-max(md) {
         padding-top: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)));
         padding-bottom: calc(43px + (63 - 43) * ((100vw - 320px) / (600 - 320)));
@@ -369,6 +394,10 @@
         background-color: rgb(233, 233, 233);
         top: 14px;
         @include center(horizontal);
+
+        [class="dark"] & {
+            background-color: #414a51;
+        }
     }
 
     .ride-details-box {
@@ -452,6 +481,10 @@
                 &.last-box {
                     border-bottom: 1px dashed rgba(var(--border-color), 1);
                     padding-bottom: 14px;
+
+                    [class="dark"] & {
+                        border-bottom-color: #272d34;
+                    }
                 }
 
                 .cab-price-box {
@@ -503,9 +536,15 @@
 
             .wallet-box {
                 border: 1px solid rgb(243, 243, 243);
-                filter: drop-shadow($shadow2);
+                box-shadow: $shadow2;
                 border-radius: 18px;
                 padding: 16px 24px;
+
+                [class="dark"] & {
+                    border-color: #272d34;
+                    box-shadow: 2px 3px 6px rgba(192, 192, 192, 0.08);
+                    background-color: #272d34;
+                }
 
                 @include mq-max(md) {
                     padding: calc(13px + (16 - 13) * ((100vw - 320px) / (600 - 320))) calc(17px + (24 - 17) * ((100vw - 320px) / (600 - 320)));
@@ -553,6 +592,10 @@
                             @include center(vertical);
                             border-radius: 10px;
                             transition: background-color .3s linear;
+
+                            [class="dark"] & {
+                                background-color: #22272c;
+                            }
                         }
 
                         &:after {
@@ -593,6 +636,11 @@
     padding-bottom: 15px;
     padding-top: 15px;
 
+    [class="dark"] & {
+        box-shadow: 2px 3px 6px rgba(192, 192, 192, 0.08);
+        background-color: #272d34;
+    }
+
     .cab-pay-box {
         .cab-name {
             align-items: center;
@@ -600,6 +648,10 @@
             border-bottom: 1px dashed rgba(var(--content), 1);
             padding-bottom: 14px;
             margin-bottom: 20px;
+
+            [class="dark"] & {
+                border-bottom-color: #22272c;
+            }
 
             @include mq-max(md) {
                 padding-bottom: calc(8px + (14 - 8) * ((100vw - 320px) / (600 - 320)));
@@ -671,6 +723,10 @@
     bottom: 0;
     max-width: 600px;
 
+    [class="dark"] & {
+        background-color: #22272c;
+    }
+
     @include mq-max(md) {
         padding-top: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)));
         padding-bottom: calc(19px + (39 - 19) * ((100vw - 320px) / (600 - 320)));
@@ -696,6 +752,10 @@
         left: 0;
         width: -webkit-fill-available;
         margin-inline: 15px;
+
+        [class="dark"] & {
+            background-color: #22272c;
+        }
 
         @include mq-max(md) {
             padding: calc(10px + (17 - 10) * ((100vw - 320px) / (600 - 320)));
@@ -741,6 +801,10 @@
                         a {
                             background-color: rgba(var(--theme-color), 1);
                             color: rgba(var(--white), 1);
+
+                            [class="dark"] & {
+                                background-color: rgba(var(--theme-color), 1);
+                            }
                         }
                     }
 
@@ -750,6 +814,10 @@
                         background-color: rgb(249, 249, 249);
                         border-radius: 4px;
                         color: rgba(var(--title), 1);
+
+                        [class="dark"] & {
+                            background-color: #272d34;
+                        }
 
                         @include mq-max(md) {
                             @include pseudowh($width: calc(30px + (35 - 30) * ((100vw - 320px) / (600 - 320))), $height: calc(30px + (35 - 30) * ((100vw - 320px) / (600 - 320))));
@@ -834,6 +902,10 @@
                 border-radius: 50px;
                 background-color: rgba(var(--light-bg), 1);
 
+                [class="dark"] & {
+                    background-color: #272d34;
+                }
+
                 @include mq-max(md) {
                     padding: calc(6px + (8 - 6) * ((100vw - 320px) / (600 - 320))) calc(12px + (20 - 12) * ((100vw - 320px) / (600 - 320)));
                 }
@@ -863,6 +935,7 @@
             }
 
             .btn {
+                border: none;
                 font-weight: 500;
                 font-size: 18px;
                 padding: 13px;
@@ -938,6 +1011,10 @@
                     align-items: center;
                     padding-bottom: 12px;
 
+                    [class="dark"] & {
+                        border-bottom-color: #272d34;
+                    }
+
                     .menu-icon {
                         @include pseudowh($width: 20px, $height: 20px);
                         font-size: 20px;
@@ -977,11 +1054,20 @@
                 box-shadow: $shadow2;
                 color: rgba(var(--title), 1);
 
+                [class="dark"] & {
+                    background-color: #272d33;
+                    box-shadow: 2px 3px 6px rgba(192, 192, 192, 0.08);
+                }
+
                 .box-top {
                     @include flex_common ($dis: flex, $align: flex-start, $justify: space-between);
                     border-bottom: 1px solid rgba(var(--border-color), 0.4);
                     padding-bottom: 9px;
                     margin-bottom: 9px;
+
+                    [class="dark"] & {
+                        border-bottom-color: #22272c;
+                    }
 
                     .ride-from-to {
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);
@@ -1180,6 +1266,11 @@
                 background-color: rgba(var(--border-color), 0.15);
                 color: rgba(var(--title), 1);
 
+                [class="dark"] & {
+                    background-color: #272d34;
+                    box-shadow: 1px 3px 8px rgba(var(--border-color), 0.08);
+                }
+
                 @include mq-max(md) {
                     padding: calc(10px + (19 - 10) * ((100vw - 320px) / (600 - 320)));
                 }
@@ -1190,6 +1281,10 @@
                     background-color: rgba(var(--white), 1);
                     border-radius: 5px;
                     font-size: 18px;
+
+                    [class="dark"] & {
+                        background-color: #22272c;
+                    }
                 }
 
                 .notification-content {
@@ -1425,6 +1520,15 @@
         box-shadow: 0px 0px 6px rgba(192, 192, 192, 0.19);
         border-radius: 0;
         padding: 15px;
+
+        [class="dark"] & {
+            background-color: #272d34;
+            border-color: #272d34;
+        }
+
+        .find-button {
+            border: none;
+        }
     }
 }
 
@@ -1461,21 +1565,22 @@
                 }
 
                 h5 {
-                    color: #3E3E3E;
+                    color: rgba(var(--title), 1);
                     margin-bottom: 4px;
                 }
 
                 h6 {
-                    color: #BCBCBC;
+                    color: rgba(var(--content), 1);
                     font-weight: 400;
                 }
             }
 
             .invite-btn {
+                border: none;
                 background: linear-gradient(180deg, #232526 0%, #414345 100%);
                 border-radius: 100px;
                 width: auto;
-                color: #fff;
+                color: rgba(var(--white), 1);
                 padding: 7px 14px;
                 line-height: 1;
                 font-size: 13px;
