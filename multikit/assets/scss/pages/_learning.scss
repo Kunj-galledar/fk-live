@@ -25,7 +25,10 @@
             background-color: rgba(var(--white), 1);
             z-index: 0;
 
-
+            [class="dark"] & {
+                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.09);
+                background-color: #060D18;
+            }
 
             .reading-detail {
                 @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
@@ -58,6 +61,10 @@
                     height: 3px;
                     border-radius: 50px;
 
+                    [class="dark"] & {
+                        background-color: rgba(0, 0, 0, 0.09);
+                    }
+
                     .progress-bar {
                         width: 50%;
                         background-color: rgba(var(--theme-color), 1);
@@ -66,6 +73,10 @@
 
                 h6 {
                     margin-top: 6px;
+
+                    [class="dark"] & {
+                        color: #ddd;
+                    }
                 }
             }
         }
@@ -76,6 +87,7 @@
 .category-section {
     .category-box {
         display: block;
+        padding-block: 3px;
 
         >li {
             +li {
@@ -98,6 +110,11 @@
                         position: relative;
                         color: rgba(var(--title), 1.0);
                         display: block;
+
+                        [class="dark"] & {
+                            background-color: #060D18;
+                            box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.08);
+                        }
                     }
                 }
             }
@@ -129,6 +146,10 @@
                     background: var(--gradient);
                     z-index: -1;
                     opacity: 0.05;
+
+                    [class="dark"] & {
+                        background: #fff;
+                    }
                 }
 
                 .feature-image {
@@ -190,6 +211,10 @@
             background: var(--gradient);
             opacity: 0.05;
             z-index: -1;
+
+            [class="dark"] & {
+                background: #fff;
+            }
         }
 
         .popular-image {
@@ -231,6 +256,10 @@
 
                 >li {
                     font-size: 12px;
+
+                    [class="dark"] & {
+                        color: #ddd;
+                    }
 
                     .rating {
                         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
@@ -307,6 +336,10 @@
                     top: 5px;
                     right: 5px;
 
+                    [class="dark"] & {
+                        background-color: #121924;
+                    }
+
                     [dir="rtl"] & {
                         right: unset;
                         left: 5px;
@@ -366,6 +399,10 @@
         color: rgba(var(--title), 1);
         position: relative;
 
+        [class="dark"] & {
+            background-color: #121924;
+        }
+
         &::before {
             @include pos;
             bottom: -5px;
@@ -424,6 +461,7 @@
                 }
 
                 td {
+                    color: rgba(var(--title), 1);
                     padding: 6px 0;
                     border: none;
 
@@ -483,6 +521,10 @@
     background-color: rgba(var(--white), 1);
     z-index: 9;
 
+    [class="dark"] & {
+        background-color: #121924;
+    }
+
     a {
         background: var(--gradient);
         box-shadow: 0px 0px 4px rgba(var(--black), 0.09);
@@ -541,6 +583,10 @@
     box-shadow: 0px 0px 4px rgba(var(--black), 0.09);
     background-color: rgba(var(--white), 1);
     z-index: 9;
+
+    [class="dark"] & {
+        background-color: #121924;
+    }
 
     a {
         background: var(--gradient);
@@ -759,6 +805,10 @@
             color: rgba(var(--title), 1);
             border: none;
             padding: 0;
+
+            [class="dark"] & {
+                background: transparent;
+            }
         }
     }
 }
@@ -833,6 +883,10 @@
                 margin: 0;
 
                 a {
+                    [class="dark"] & {
+                        color: #ddd;
+                    }
+
                     &:hover {
                         color: rgba(var(--theme-color), 1);
                     }
@@ -855,6 +909,10 @@
 
                     a {
                         color: rgba(var(--theme-color2), 1);
+
+                        [class="dark"] & {
+                            color: #ddd;
+                        }
                     }
                 }
             }
@@ -949,6 +1007,10 @@
                                 background-color: rgba(var(--content), 1);
                                 transition: .4s;
 
+                                [class="dark"] & {
+                                    background-color: #121924;
+                                }
+
                                 &::before {
                                     background-color: rgba(var(--white), 1);
                                     bottom: 3px;
@@ -1004,6 +1066,10 @@
                 box-shadow: 0 0 10px 0 rgba(var(--black), 0.1);
                 border-radius: 100px;
                 z-index: 0;
+
+                [class="dark"] & {
+                    border-color: #121924;
+                }
             }
 
             .-label {

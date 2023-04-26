@@ -9,6 +9,16 @@
     height: 12px;
     margin-top: 25px;
     margin-bottom: 22px;
+
+    @include mq-max(md) {
+        height: calc(7px + (12 - 7) * ((100vw - 320px) / (600 - 320)));
+        margin-top: calc(19px + (25 - 19) * ((100vw - 320px) / (600 - 320)));
+        margin-bottom: calc(16px + (22 - 16) * ((100vw - 320px) / (600 - 320)));
+    }
+
+    [class="dark"] & {
+        background-color: #212332;
+    }
 }
 
 /* ---------- Step Line Css ---------- */
@@ -46,6 +56,10 @@
         align-items: center;
         justify-content: center;
 
+        [class="dark"] & {
+            background-color: #212332;
+        }
+
         &.active {
             background-color: #4466F2;
             color: white;
@@ -58,14 +72,23 @@
         padding: 0;
         min-height: unset;
         margin-bottom: 0;
+        display: flex;
 
         +.form-check {
             margin-top: 17px;
+
+            @include mq-max(md) {
+                font-size: calc(14px + (17 - 14) * ((100vw - 320px) / (600 - 320)));
+            }
         }
 
         .form-check-label {
             font-weight: 500;
             font-size: 16px;
+
+            @include mq-max(md) {
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+            }
         }
     }
 
@@ -104,8 +127,7 @@
         }
 
         &:after {
-            content: "";
-            position: absolute;
+            @include pos;
             width: 20px;
             height: 20px;
             top: 0;
@@ -114,6 +136,10 @@
             background-color: rgba(var(--grey), 1);
             border-color: transparent;
             cursor: pointer;
+
+            [class="dark"] & {
+                background-color: #212332;
+            }
 
             [dir="rtl"] & {
                 left: unset;
@@ -148,6 +174,10 @@
     max-width: 600px;
     width: 100%;
     padding-inline: 15px;
+
+    @include mq-max(md) {
+        bottom: calc(22px + (40 - 22) * ((100vw - 320px) / (600 - 320)));
+    }
 }
 
 .fitness-radio-box {
@@ -186,8 +216,16 @@
             transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
             pointer-events: none;
 
+            [class="dark"] & {
+                background-color: #212332;
+            }
+
             &:checked {
                 background-color: rgba(var(--grey), 1);
+
+                [class="dark"] & {
+                    background-color: #212332;
+                }
 
                 &[type="radio"] {
                     background-image: url(../images/fitness/dots.svg);
@@ -224,6 +262,11 @@
                 text-align: right;
             }
 
+            [class="dark"] & {
+                background-color: #212332;
+                color: #fff;
+            }
+
             &:focus-within {
                 box-shadow: none;
             }
@@ -242,6 +285,10 @@
                     left: 16px;
                 }
             }
+
+            &.show {
+                border: none;
+            }
         }
 
         .dropdown-menu {
@@ -251,6 +298,10 @@
             width: 100%;
             margin-top: 5px !important;
             border: none;
+
+            [class="dark"] & {
+                background-color: #212332;
+            }
 
             li {
                 +li {
@@ -262,6 +313,10 @@
                     font-weight: 400;
                     font-size: 16px;
                     color: rgba(var(--dark-gray), 1);
+
+                    [class="dark"] & {
+                        color: #ddd;
+                    }
 
                     &:hover,
                     &:active {
@@ -311,6 +366,16 @@
             font-size: 18px;
             color: rgba(var(--content), 1);
             position: relative;
+
+            @include mq-max(md) {
+                font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
+            }
+
+            [class="dark"] & {
+                background-color: #212332;
+                box-shadow: 2px 3px 6px rgba(213, 213, 213, 0.04);
+                color: #fff;
+            }
 
             &::before {
                 @include pos;
@@ -378,7 +443,7 @@
                 .daily-dropdown-btn {
                     background-color: rgba(var(--white), 1);
                     border-radius: 6px;
-                    color: #777777;
+                    color: rgb(119, 119, 119);
                     font-size: 13px;
                     font-weight: 400;
                     padding: 5px 11px;
@@ -416,6 +481,10 @@
     margin-block: 25px;
     border-top: 1px solid rgb(230, 230, 230);
     opacity: 1;
+
+    [class="dark"] & {
+        border-top-color: rgba(119, 119, 119, 0.15);
+    }
 }
 
 /* ---------- Category Css ---------- */
@@ -445,6 +514,10 @@
                 background-color: rgb(249, 249, 249);
                 border-radius: 5px;
                 @include flex_common;
+
+                [class="dark"] & {
+                    background-color: #212332;
+                }
 
                 svg {
                     width: 34px;
@@ -520,13 +593,27 @@
             box-shadow: 0px 0px 6px rgba(213, 213, 213, 0.38);
             border-radius: 13px;
             background-color: rgba(var(--white), 1);
-            color: #222;
+            color: rgba(var(--title), 1);
+
+            @include mq-max(md) {
+                padding: calc(6px + (11 - 6) * ((100vw - 320px) / (600 - 320)));
+                border-radius: calc(7px + (13 - 7) * ((100vw - 320px) / (600 - 320)));
+            }
+
+            [class="dark"] & {
+                box-shadow: 0px 0px 6px rgba(213, 213, 213, 0.15);
+                background-color: #212332;
+            }
 
             .boost-image {
                 border-radius: 10px;
                 overflow: hidden;
                 width: 92px;
                 height: 73px;
+
+                @include mq-max(md) {
+                    border-radius: calc(6px + (10 - 6) * ((100vw - 320px) / (600 - 320)));
+                }
             }
 
             .boost-content {
@@ -535,7 +622,7 @@
                 .time-kg {
                     display: flex;
                     flex-wrap: wrap;
-                    color: #777777;
+                    color: rgba(var(--dark-gray), 1);
                     margin-top: 4px;
                     gap: 5px;
 
@@ -604,6 +691,10 @@
                     left: unset;
                     right: -22px;
                 }
+
+                [class="dark"] & {
+                    background-color: #181923;
+                }
             }
 
             &::after {
@@ -634,15 +725,25 @@
                     a {
                         width: 52px;
                         height: 52px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: #F9F9F9;
+                        @include flex_common;
+                        background-color: rgb(249, 249, 249);
                         border-radius: 100%;
                         font-weight: 500;
                         font-size: 18px;
-                        color: #777;
+                        color: rgba(var(--dark-gray), 1);
                         position: relative;
+                        line-height: 1;
+
+                        @include mq-max(md) {
+                            width: calc(40px + (52 - 40) * ((100vw - 320px) / (600 - 320)));
+                            height: calc(40px + (52 - 40) * ((100vw - 320px) / (600 - 320)));
+                            font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
+                        }
+
+                        [class="dark"] & {
+                            background-color: #212332;
+                            color: #fff;
+                        }
                     }
 
                     +li {
@@ -654,6 +755,10 @@
                             width: 100%;
                             transform: translateY(-50%);
                             z-index: -1;
+
+                            [class="dark"] & {
+                                border-top-color: rgba(235, 235, 235, 0.1);
+                            }
                         }
                     }
 
@@ -669,6 +774,11 @@
                             color: rgba(var(--theme-color), 1);
                             background-color: rgba(var(--white), 1);
                             z-index: 0;
+
+                            [class="dark"] & {
+                                background-color: #212332;
+                                color: #fff;
+                            }
 
                             &:before {
                                 @include pos;
@@ -706,13 +816,17 @@
             padding-top: 17px;
             margin-top: 17px;
             border-top: 1px solid #F2F2F2;
+
+            [class="dark"] & {
+                border-top-color: #212332;
+            }
         }
 
         .exercise-box {
             display: flex;
             align-items: center;
             gap: 18px;
-            color: #222;
+            color: rgba(var(--title), 1);
 
             .exercise-image {
                 width: 72px;
@@ -730,12 +844,21 @@
                     font-weight: 600;
                     font-size: 17px;
                     margin-bottom: 7px;
+                    color: rgba(var(--title), 1);
+
+                    @include mq-max(md) {
+                        font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
 
                 h6 {
                     font-weight: 400;
                     font-size: 17px;
-                    color: #777;
+                    color: rgba(var(--dark-gray), 1);
+
+                    @include mq-max(md) {
+                        font-size: calc(14px + (17 - 14) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
             }
         }
@@ -823,6 +946,10 @@
                 border-radius: 6px;
                 background-color: rgba(var(--white), 1);
                 color: rgba(var(--theme-color), 1);
+
+                [class="dark"] & {
+                    background-color: #181923;
+                }
             }
         }
     }
@@ -842,29 +969,51 @@
                 align-items: center;
                 gap: 19px;
 
+                @include mq-max(md) {
+                    gap: calc(13px + (19 - 13) * ((100vw - 320px) / (600 - 320)));
+                }
+
                 .fitness-menu-icon {
-                    background: #F9F9F9;
+                    background-color: #F9F9F9;
                     border-radius: 5px;
                     width: 42px;
                     height: 42px;
                     font-size: 20px;
                     @include flex_common;
+
+                    @include mq-max(md) {
+                        width: calc(37px + (42 - 37) * ((100vw - 320px) / (600 - 320)));
+                        height: calc(37px + (42 - 37) * ((100vw - 320px) / (600 - 320)));
+                        font-size: calc(17px + (20 - 17) * ((100vw - 320px) / (600 - 320)));
+                    }
+
+                    [class="dark"] & {
+                        background-color: #212332;
+                    }
                 }
 
                 .fitness-menu-name {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    width: calc(100% - 42px - 19px);
+                    width: calc(100% - calc(37px + (42 - 37) * ((100vw - 320px) / (600 - 320))) - calc(13px + (19 - 13) * ((100vw - 320px) / (600 - 320))));
 
                     h5 {
                         font-weight: 400;
                         font-size: 15px;
+
+                        @include mq-max(md) {
+                            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (600 - 320)));
+                        }
                     }
 
                     i {
                         font-size: 22px;
                         line-height: 1;
+
+                        @include mq-max(md) {
+                            font-size: calc(19px + (22 - 19) * ((100vw - 320px) / (600 - 320)));
+                        }
                     }
                 }
             }
@@ -888,6 +1037,10 @@
             border-radius: 9px;
             padding: 10px;
 
+            [class="dark"] & {
+                background-color: #212332;
+            }
+
             .workout-top-box {
                 display: flex;
                 align-items: center;
@@ -899,10 +1052,12 @@
                     height: 40px;
                     background-color: rgba(var(--white), 1);
                     border-radius: 6px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @include flex_common;
                     font-size: 24px;
+
+                    [class="dark"] & {
+                        background-color: rgba(119, 119, 119, 0.15);
+                    }
 
                     i {
                         background: linear-gradient(90.08deg, #1EA6EC 0.07%, #4466F2 91.07%);

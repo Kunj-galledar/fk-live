@@ -15,8 +15,16 @@
             font-size: 14px;
             color: rgba(var(--content), 1);
 
+            [class="dark"] & {
+                color: rgba(var(--content), 0.7);
+            }
+
             &.active {
                 color: rgba(var(--title), 1);
+
+                [class="dark"] & {
+                    background-color: transparent;
+                }
             }
         }
     }
@@ -36,6 +44,10 @@
                 border-radius: 7px;
                 padding: 17px 14px;
                 position: relative;
+
+                [class="dark"] & {
+                    background-color: #121924;
+                }
 
                 &::before {
                     @include pos;
@@ -77,6 +89,10 @@
                     @include flex_common;
                     font-size: 16px;
                     color: rgba(var(--white), 1);
+
+                    [class="dark"] & {
+                        background-color: rgba(var(--title), 0.1);
+                    }
 
                     [dir="rtl"] & {
                         margin-left: unset;
@@ -128,6 +144,10 @@
                         background-color: rgba(var(--white), 1);
                         color: rgba(var(--title), 1);
 
+                        [class="dark"] & {
+                            background-color: rgba(var(--title), 0.1);
+                        }
+
                         i {
                             &.play-icon {
                                 display: block;
@@ -168,6 +188,10 @@
                 position: relative;
                 width: 100%;
                 border: none;
+
+                [class="dark"] & {
+                    background-color: #121924;
+                }
 
                 &::before {
                     @include pos;

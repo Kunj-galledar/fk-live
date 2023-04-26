@@ -214,6 +214,10 @@
         color: $dark-green;
         font-size: 16px;
 
+        [class="dark"] & {
+            color: #fff;
+        }
+
         @include mq-max(md) {
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
         }
@@ -225,6 +229,12 @@
         padding: 13px 17px;
         box-shadow: 5px 6px 0px $border-color;
         font-size: 16px;
+        color: rgba(var(--title), 1);
+
+        [class="dark"] & {
+            box-shadow: 5px 6px 0px rgba(239, 239, 239, 0.08);
+            background-color: #121924 !important;
+        }
 
         [dir="rtl"] & {
             text-align: right;
@@ -246,6 +256,11 @@
         box-shadow: 5px 6px 0px $border-color;
         color: #9DACB1;
         font-size: 16px;
+
+        [class="dark"] & {
+            box-shadow: 5px 6px 0px rgba(239, 239, 239, 0.08);
+            background-color: #121924;
+        }
 
         [dir="rtl"] & {
             padding: 13px 17px;
@@ -700,6 +715,10 @@
             text-align: right;
         }
 
+        [class="dark"] & {
+            background-color: #171717;
+        }
+
         &::placeholder {
             color: rgba(var(--content), 1);
         }
@@ -773,6 +792,7 @@
             border: none;
             font-weight: 500;
             font-size: 15px;
+            color: rgba(var(--title), 1);
 
             &:focus {
                 box-shadow: none;
@@ -850,6 +870,10 @@
         margin-bottom: 21px;
         transition: all .3s ease-in-out;
 
+        [class="dark"] & {
+            border-color: #212325;
+        }
+
         [dir="rtl"] & {
             text-align: right;
         }
@@ -894,6 +918,10 @@
             background-color: rgba(var(--title), 1);
             left: 0;
             z-index: -1;
+
+            [class="dark"] & {
+                background-color: #212325;
+            }
         }
 
         span {
@@ -902,6 +930,10 @@
             color: rgba(var(--content), 1);
             background-color: rgba(var(--dark-bg), 1);
             padding-inline: 10px;
+
+            [class="dark"] & {
+                background-color: #14141b;
+            }
         }
     }
 

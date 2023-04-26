@@ -60,10 +60,18 @@
         overflow: hidden;
         height: auto;
 
+        [class="dark"] & {
+            background-color: #060D18;
+        }
+
         .offcanvas-header {
             display: block;
             padding: 20px 15px;
             background-color: rgba(var(--light-bg), 1);
+
+            [class="dark"] & {
+                background-color: #121924;
+            }
 
             h5 {
                 margin-top: -3px;
@@ -265,6 +273,10 @@
                             border-radius: 4px;
                             @include flex_common;
 
+                            [class="dark"] & {
+                                background-color: #121924;
+                            }
+
                             i {
                                 font-size: 16px;
                             }
@@ -273,10 +285,16 @@
                         .setting-name {
                             display: flex;
                             align-items: center;
+                            justify-content: space-between;
+                            width: calc(100% - 30px + 11px);
 
                             h4 {
                                 font-weight: 400;
+                            }
 
+                            i {
+                                font-size: 20px;
+                                line-height: 1;
                             }
                         }
 
@@ -659,6 +677,12 @@
                         box-shadow: 5px 6px 0px #efefef;
                         border: none;
                         padding: 13px 17px;
+
+                        [class="dark"] & {
+                            background-color: #121924;
+                            box-shadow: 5px 6px 0px rgba(239, 239, 239, 0.08);
+                            color: #fff;
+                        }
                     }
 
                     .btn {
@@ -726,6 +750,10 @@
                                     background-color: #f5f7f7;
                                     border-radius: 11px;
                                     position: relative;
+
+                                    [class="dark"] & {
+                                        background-color: #09111b;
+                                    }
 
                                     &.favorite-box {
                                         background-color: rgba(var(--yellow), 0.08);
@@ -1118,6 +1146,10 @@
         width: 100%;
         border: none;
 
+        [class="dark"] & {
+            background-color: #101214;
+        }
+
         .offcanvas-header {
             background: var(--gradient-color);
             box-shadow: 0px 4px 9px rgba(var(--black), 0.1);
@@ -1290,6 +1322,10 @@
     &.nationality-offcanvas {
         border: none;
 
+        [class="dark"] & {
+            background-color: #1f222b;
+        }
+
         .search-country {
             display: flex;
             align-items: center;
@@ -1329,6 +1365,10 @@
                 font-weight: 400;
                 line-height: 1.5;
                 width: calc(100% - 9px - 24px);
+
+                [class="dark"] & {
+                    color: #222;
+                }
             }
         }
 
@@ -1336,7 +1376,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
-            padding-left: 1rem;
+            padding-left: 2rem;
 
             li {
                 width: 100%;
@@ -1354,10 +1394,18 @@
         border-radius: 0;
         height: 100%;
 
+        [class="dark"] & {
+            background-color: #101214;
+        }
+
         .offcanvas-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            [class="dark"] & {
+                background-color: #1f222b;
+            }
 
             .btn-close {
                 padding: 0;
@@ -1369,6 +1417,7 @@
                 @include pseudowh($width: auto, $height: auto);
                 line-height: 1;
                 display: flex;
+                color: rgba(var(--title), 1);
 
                 i {
                     line-height: 1;
@@ -1385,12 +1434,24 @@
             background-color: rgba(var(--white), 1);
             box-shadow: 0px 0px 4px rgba(var(--black), 0.05);
             padding: 9px 18px;
+
+            [class="dark"] & {
+                background-color: #1f222b;
+            }
+
+            .reset-button {
+                color: rgba(var(--title), 1);
+            }
         }
     }
 
     &.ecommerce-sidebar {
         width: 320px;
         border: none;
+
+        [class="dark"] & {
+            background-color: #212325;
+        }
 
         @include mq-max(md) {
             width: calc(280px + (320 - 280) * ((100vw - 320px) / (600 - 320)));
@@ -1472,6 +1533,10 @@
                         margin-top: 18px;
                         padding-top: 18px;
                         border-top: 1px solid rgba(237, 239, 244, 0.6);
+
+                        [class="dark"] & {
+                            border-top-color: rgba(237, 239, 244, 0.05);
+                        }
 
                         @include mq-max(md) {
                             margin-top: calc(9px + (18 - 9) * ((100vw - 320px) / (600 - 320)));

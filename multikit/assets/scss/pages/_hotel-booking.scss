@@ -13,6 +13,12 @@
                 margin: 0 auto;
                 display: block;
 
+                img {
+                    [class="dark"] & {
+                        filter: invert(1) brightness(100);
+                    }
+                }
+
                 &:after {
                     @include pos;
                     top: 0;
@@ -21,12 +27,16 @@
                     background-color: #ebebeb;
                     border-radius: 50%;
                     z-index: -1;
+
+                    [class="dark"] & {
+                        background-color: #1f222b;
+                    }
                 }
             }
 
             h5 {
                 margin-top: 10px;
-                color: rgba(var(--title-color), 1);
+                color: rgba(var(--title), 1);
             }
         }
     }
@@ -197,18 +207,31 @@
                 border-radius: 5px;
                 transition: all 0.3s ease-in-out;
 
+                [class="dark"] & {
+                    background-color: #1f222b;
+                }
+
                 &.active {
                     background: var(--gradient-color);
                     color: rgba(var(--white), 1);
 
                     img {
                         filter: invert(1) brightness(100);
+
+                        [class="dark"] & {
+                            opacity: 1;
+                        }
                     }
                 }
 
                 img {
                     @include pseudowh($width: 28px, $height: 28px);
                     transition: all 0.3s ease-in-out;
+
+                    [class="dark"] & {
+                        filter: invert(1) brightness(100);
+                        opacity: 0.4;
+                    }
                 }
             }
         }
@@ -230,6 +253,10 @@
                 background-clip: padding-box;
                 border: solid 1px transparent;
                 color: rgba(var(--title), 1);
+
+                [class="dark"] & {
+                    background-color: #1f222b;
+                }
 
                 &::before {
                     @include pos;
@@ -267,6 +294,10 @@
         position: relative;
         height: 4px;
         background-color: #F8F8F8;
+
+        [class="dark"] & {
+            background-color: #1f222b;
+        }
 
         .progress {
             position: absolute;
@@ -334,6 +365,11 @@
                 border: none;
                 background: #F8F8F8;
                 border-radius: 3px;
+                color: rgba(var(--title), 1);
+
+                [class="dark"] & {
+                    background-color: #1f222b;
+                }
             }
         }
     }
@@ -371,6 +407,10 @@
                     [dir="rtl"] & {
                         right: unset;
                         left: 8px;
+                    }
+
+                    [class="dark"] & {
+                        background-color: #1f222b;
                     }
 
                     i {
@@ -422,6 +462,10 @@
         overflow: hidden;
         padding: 13px 10px;
         position: relative;
+
+        [class="dark"] & {
+            background-color: #1f2229;
+        }
 
         .hotel-image {
             width: 88px;
@@ -550,6 +594,10 @@
                 border: solid 1px transparent;
                 border-radius: 4px;
 
+                [class="dark"] & {
+                    background-color: #1f222b;
+                }
+
                 &:before {
                     @include pos;
                     top: 0;
@@ -639,6 +687,10 @@
         box-shadow: 0px 2px 7px rgba(var(--black), 0.04);
         padding: 60px 15px 15px;
 
+        [class="dark"] & {
+            background-color: #1f222a;
+        }
+
         .custom-nav-pills {
             justify-content: space-between;
 
@@ -648,6 +700,10 @@
                 height: 14px;
                 position: relative;
                 margin-top: 4px;
+
+                [class="dark"] & {
+                    background-color: rgba(var(--content), 0.1);
+                }
             }
 
             .nav-item {
@@ -682,6 +738,10 @@
         height: 1px;
         background-color: #d5d5d5;
         z-index: -1;
+
+        [class="dark"] & {
+            background-color: rgba(213, 213, 213, 0.2);
+        }
     }
 
     li {
@@ -790,6 +850,10 @@
                 height: 64px;
                 position: relative;
                 height: auto;
+
+                [class="dark"] & {
+                    background: transparent;
+                }
             }
         }
 
@@ -837,12 +901,20 @@
             box-shadow: 0px 2px 5px rgba(var(--black), 0.03);
             margin-bottom: 20px;
 
+            [class="dark"] & {
+                background-color: #1f2229;
+            }
+
             .vertical-line {
                 background-color: rgba(var(--content), 1);
                 width: 1px;
                 height: 14px;
                 position: relative;
                 margin-top: 4px;
+
+                [class="dark"] & {
+                    background-color: rgba(var(--content), 0.1);
+                }
             }
 
             .nav-item {
@@ -966,6 +1038,10 @@
                     .progress {
                         height: 6px;
                         border-radius: 0;
+
+                        [class="dark"] & {
+                            background-color: #1f2229;
+                        }
 
                         .progress-bar {
                             background: var(--gradient-color);
@@ -1195,6 +1271,12 @@
             padding: 14px;
             padding-left: 2rem;
             @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+
+            [class="dark"] & {
+                background-color: rgba(var(--light-bg), 1);
+            }
 
             [dir="rtl"] & {
                 padding-left: unset;
@@ -1224,6 +1306,10 @@
     display: flex;
     align-items: center;
 
+    [class="dark"] & {
+        background-color: #282d30;
+    }
+
     .review-price {
         width: 100%;
         color: rgba(var(--title), 1);
@@ -1246,6 +1332,10 @@
                 border-top: 1px dashed #EAEAEA;
                 margin-top: 16px;
                 padding-top: 16px;
+
+                [class="dark"] & {
+                    border-top-color: #1f222b;
+                }
             }
 
             .payment-box {
@@ -1413,6 +1503,10 @@
             margin-top: 17px;
             padding-top: 17px;
             border-top: 1px solid rgba(248, 248, 248, 1);
+
+            [class="dark"] & {
+                border-top-color: #1f222b;
+            }
         }
 
         .wishlist-box {
@@ -1445,7 +1539,7 @@
                 }
 
                 a {
-                    color: rgba(var(--title-color), 1);
+                    color: rgba(var(--title), 1);
 
                     h5 {
                         font-size: 15px;
@@ -1485,6 +1579,10 @@
                     color: rgba(var(--content), 1);
                     font-size: 16px;
 
+                    [class="dark"] & {
+                        color: #777;
+                    }
+
                     [dir="rtl"] & {
                         right: unset;
                         left: 0;
@@ -1512,6 +1610,10 @@
                 align-items: center;
                 overflow: hidden;
                 position: relative;
+
+                [class="dark"] & {
+                    background-color: #1f222b;
+                }
 
                 .hotel-image {
                     @include pseudowh($width: 126px, $height: 102px);
@@ -1604,6 +1706,11 @@
 
         .divider {
             height: 7px;
+
+            [class="dark"] & {
+                background-color: #1f222b;
+                box-shadow: inset 0px 4px 4px #1f222b;
+            }
         }
     }
 }
