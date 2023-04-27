@@ -6,11 +6,19 @@
         height: auto;
         border: none;
 
+        [class="dark"] & {
+            background-color: #363636;
+        }
+
         .btn-close {
             position: absolute;
             right: 20px;
             top: 20px;
             padding: 0;
+
+            [class="dark"] & {
+                filter: invert(1) brightness(100);
+            }
 
             [dir="rtl"] & {
                 left: 20px;
@@ -35,10 +43,18 @@
                     h3 {
                         font-weight: 600;
                         color: rgba(var(--title), 1);
+
+                        [class="dark"] & {
+                            color: #fff;
+                        }
                     }
 
                     a {
                         color: rgba(var(--content), 1);
+
+                        [class="dark"] & {
+                            color: #ddd;
+                        }
                     }
                 }
             }

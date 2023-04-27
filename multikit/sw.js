@@ -34,6 +34,8 @@ var filesToCache = [
   './assets/js/image-change.js',
   './assets/js/language-select.js',
   './assets/js/leaflet.js',
+  './assets/js/loader-2.js',
+  './assets/js/loader.js',
   './assets/js/map.js',
   './assets/js/map-2.js',
   './assets/js/messaging.js',
