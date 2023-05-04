@@ -23,7 +23,7 @@
     .loader-section {
         position: fixed;
         top: 0;
-        background-color: #FFF9EC;
+        background-color: #fff9ec;
         width: 51%;
         height: 100%;
         z-index: 1000;
@@ -66,7 +66,7 @@
         }
 
         &.grocery-color {
-            background-color: #3c8599;
+            background-color: rgba(var(--white), 1);
         }
 
         [class="dark"] & {
@@ -75,7 +75,7 @@
     }
 
     .loader-section.section-left {
-        left: 0
+        left: 0;
     }
 
     .loader-section.section-right {
@@ -88,17 +88,17 @@
     .min-loader-wrapper {
         visibility: hidden;
         transform: translateY(-100%);
-        transition: all .3s 1s ease-out;
+        transition: all 0.3s 1s ease-out;
 
         .loader-section {
             &.section-left {
                 transform: translateX(-100%);
-                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             }
 
             &.section-right {
                 transform: translateX(100%);
-                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             }
         }
     }
@@ -108,11 +108,6 @@
         transition: all 0.3s ease-out;
     }
 }
-
-
-
-
-
 
 // ------------------------------------------
 .hotel-loader-wrapper {
@@ -143,14 +138,14 @@
             width: 1em;
             height: 1.5em;
             left: 50%;
-            margin-left: -.5em;
+            margin-left: -0.5em;
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
         }
 
         .hotel-sign {
             animation: neon 3s ease infinite;
-            background: linear-gradient(180deg, #0363DA 0%, #5546CB 100%);
+            background: linear-gradient(180deg, #0363da 0%, #5546cb 100%);
             border-radius: 4px;
             box-shadow: inset 0 0 10px rgba(43, 43, 43, 0.1);
             content: " ";
@@ -169,15 +164,15 @@
 
         .window {
             background-color: white;
-            width: .5em;
+            width: 0.5em;
             height: 1em;
             float: left;
-            margin: 0 .5em .5em 0;
+            margin: 0 0.5em 0.5em 0;
             border-radius: 2px;
             animation: flicker 1s infinite ease;
 
             &:nth-of-type(5n) {
-                margin: 0 0 .5em 0;
+                margin: 0 0 0.5em 0;
             }
 
             &:nth-child(1) {

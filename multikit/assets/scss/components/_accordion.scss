@@ -7,7 +7,7 @@
             background-color: #14141b;
         }
 
-        +.accordion-item {
+        + .accordion-item {
             .accordion-header {
                 border-top: 1px solid rgba(var(--light-bg), 1);
                 padding-top: 16px;
@@ -51,7 +51,7 @@
                     @include center(vertical);
                     right: 0;
                     font-size: 20px;
-                    transition: all .3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
 
                     [dir="rtl"] & {
                         right: unset;
@@ -160,7 +160,7 @@
 
             .product-comment {
                 li {
-                    +li {
+                    + li {
                         margin-top: 18px;
                     }
 
@@ -306,7 +306,7 @@
                         background-color: #212325;
                     }
 
-                    +li {
+                    + li {
                         margin-top: 13px;
                     }
 
@@ -340,13 +340,13 @@
                         &:checked {
                             background-color: rgba(var(--theme-color), 1);
 
-                            &[type=radio] {
+                            &[type="radio"] {
                                 background-image: url(../svg/check.svg);
                                 background-size: 15px;
                             }
                         }
 
-                        &:checked~.minha-table {
+                        &:checked ~ .minha-table {
                             border-color: rgba(var(--theme-color), 1);
                         }
                     }
@@ -361,7 +361,8 @@
                         gap: 8px;
 
                         @include mq-max(md) {
-                            padding: calc(8px + (11 - 8) * ((100vw - 320px) / (600 - 320))) calc(13px + (24 - 13) * ((100vw - 320px) / (600 - 320)));
+                            padding: calc(8px + (11 - 8) * ((100vw - 320px) / (600 - 320)))
+                                calc(13px + (24 - 13) * ((100vw - 320px) / (600 - 320)));
                         }
 
                         &.active {
@@ -373,7 +374,10 @@
                             object-fit: contain;
 
                             @include mq-max(md) {
-                                @include pseudowh($width: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320))), $height: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320))));
+                                @include pseudowh(
+                                    $width: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320))),
+                                    $height: calc(30px + (39 - 30) * ((100vw - 320px) / (600 - 320)))
+                                );
                             }
                         }
 
@@ -395,7 +399,7 @@
                             &:checked {
                                 background-color: rgba(var(--theme-color), 1);
 
-                                &[type=radio] {
+                                &[type="radio"] {
                                     background-image: url(../svg/check.svg);
                                     background-size: 15px;
                                 }
@@ -422,7 +426,8 @@
                         position: relative;
 
                         @include mq-max(md) {
-                            padding: calc(8px + (11 - 8) * ((100vw - 320px) / (600 - 320))) calc(13px + (24 - 13) * ((100vw - 320px) / (600 - 320)));
+                            padding: calc(8px + (11 - 8) * ((100vw - 320px) / (600 - 320)))
+                                calc(13px + (24 - 13) * ((100vw - 320px) / (600 - 320)));
                             font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
                         }
 
@@ -451,7 +456,7 @@
     .accordion-item {
         border: none;
 
-        +.accordion-item {
+        + .accordion-item {
             margin-top: 22px;
         }
 
@@ -460,7 +465,7 @@
                 padding: 0;
                 font-weight: 400;
                 font-size: 14px;
-                color: #1B1B3E;
+                color: #1b1b3e;
                 background-color: transparent;
                 box-shadow: none;
 
@@ -483,14 +488,14 @@
 
         .accordion-collapse {
             .accordion-body {
-                padding: 0 5px;
+                padding: 0;
                 margin-top: 5px;
 
                 p {
                     margin: 0;
                     font-weight: 400;
-                    font-size: 12px;
-                    color: #8F8FB2;
+                    font-size: 14px;
+                    color: #8f8fb2;
                     line-height: 1.5;
                 }
             }
@@ -503,7 +508,7 @@
     .accordion-item {
         border: none;
 
-        +.accordion-item {
+        + .accordion-item {
             margin-top: 16px;
             padding-top: 16px;
             border-top: 1px solid rgba(143, 143, 178, 0.2);
@@ -545,12 +550,12 @@
                         display: flex;
                         position: relative;
                         align-items: center;
-                        background: rgba(var(--light-bg), 0.6);
+                        background: rgba(var(--light-bg), 0.8);
                         padding: 12px 20px;
                         gap: 13px;
                         border-radius: 5px;
 
-                        +.custom-checkbox {
+                        + .custom-checkbox {
                             margin-top: 13px;
                         }
 
@@ -574,7 +579,7 @@
                             background-color: rgba(var(--white), 1);
                             background-position: 50% 50%;
                             background-size: 0 0;
-                            transition: .3s ease;
+                            transition: 0.3s ease;
 
                             &:active {
                                 background-color: #ddd;
@@ -601,7 +606,7 @@
 
                         &:before {
                             content: "";
-                            transition: .5s ease;
+                            transition: 0.5s ease;
                             position: absolute;
                             border: 1px solid transparent;
                             pointer-events: none;

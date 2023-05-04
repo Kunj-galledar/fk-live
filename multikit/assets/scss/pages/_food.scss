@@ -173,14 +173,14 @@
 
 .option-section {
     .option-list {
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 12px);
         align-items: center;
         overflow: auto;
 
         li {
             .option-box {
                 background-color: rgba(var(--white), 1);
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
                 align-items: center;
                 padding: 10px 12px;
                 box-shadow: $shadow3;
@@ -230,13 +230,13 @@
 
 .restaurant-section {
     .restaurant-list {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 12px);
 
         .name-list {
             width: 100%;
 
             .restaurant-name {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
                 align-items: center;
                 box-shadow: $shadow3;
                 border-radius: 13px;
@@ -266,7 +266,7 @@
                     position: relative;
 
                     .restaurant-rating {
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 2px);
+                        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 2px);
                         align-items: center;
                         margin: 7px 0;
 
@@ -277,12 +277,12 @@
                         }
 
                         ul {
-                            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 2px);
+                            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 2px);
                             align-items: center;
 
                             li {
                                 i {
-                                    color: #E0E0E0;
+                                    color: #e0e0e0;
 
                                     &.fill {
                                         color: rgba(var(--primary), 1);
@@ -309,10 +309,10 @@
                         position: absolute;
                         top: 0;
                         right: 0;
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 4px);
                         align-items: center;
                         padding: 3px 8px;
-                        background-color: #FFF9EC;
+                        background-color: #fff9ec;
                         border-radius: 4px;
 
                         [class="dark"] & {
@@ -373,7 +373,7 @@
                 }
 
                 h6 {
-                    +h6 {
+                    + h6 {
                         margin-top: 5px;
                     }
 
@@ -411,7 +411,6 @@
                             font-size: 11px;
                             margin-top: -1px;
                         }
-
                     }
                 }
             }
@@ -421,7 +420,7 @@
             padding: 8px 11px;
 
             h5 {
-                font-size: 13px;
+                font-size: 14px;
                 color: rgba(var(--title), 1);
                 -webkit-line-clamp: 1;
                 -webkit-box-orient: vertical;
@@ -431,7 +430,7 @@
 
             h6 {
                 font-weight: 400;
-                font-size: 11px;
+                font-size: 13px;
                 margin: 3px 0 8px;
                 color: rgba(var(--content), 1);
             }
@@ -445,7 +444,7 @@
             }
 
             .offer-box {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 4px);
                 align-items: center;
                 margin-top: 11px;
 
@@ -456,7 +455,7 @@
 
                 h6 {
                     font-weight: 400;
-                    font-size: 11px;
+                    font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (600 - 320)));
                     color: rgba(var(--yellow), 1);
                     margin: 0;
                 }
@@ -467,13 +466,13 @@
 
 .recent-search-section {
     .recent-search-list {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
 
         li {
             width: 100%;
 
             .recent-box {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
                 align-items: center;
                 color: rgba(var(--content), 1);
 
@@ -490,7 +489,7 @@
 
                 .recent-name {
                     width: calc(100% - 18px - 9px);
-                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                    @include flex_common($dis: flex, $align: center, $justify: space-between);
 
                     h5 {
                         font-weight: 400;
@@ -510,7 +509,7 @@
 .address-section {
     .address-list-box {
         .address-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 15px);
 
             li {
                 width: 100%;
@@ -523,11 +522,11 @@
 
                     [class="dark"] & {
                         background-color: #171717;
-                        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+                        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
                     }
 
                     .address-header {
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+                        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 11px);
                         align-items: flex-start;
                         border-bottom: 1px solid #f9f9f9;
                         padding-bottom: 9px;
@@ -540,7 +539,7 @@
                         .address-icon {
                             width: 40px;
                             height: 40px;
-                            background-color: #F9F9F9;
+                            background-color: #f9f9f9;
                             border-radius: 6px;
                             @include flex_common;
                             font-size: 20px;
@@ -556,14 +555,14 @@
 
                             h5 {
                                 font-weight: 600;
-                                font-size: 14px;
+                                font-size: 15px;
                                 color: rgba(var(--title), 1);
                                 margin-bottom: 3px;
                             }
 
                             p {
                                 font-weight: 400;
-                                font-size: 12px;
+                                font-size: 14px;
                                 color: rgba(var(--content), 1);
                                 margin: 0;
                             }
@@ -572,7 +571,7 @@
 
                     .address-footer {
                         .button-group {
-                            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+                            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
                             align-items: center;
 
                             .edit-button {
@@ -609,7 +608,7 @@
 
 .edit-profile-section {
     .profile-box {
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 15px);
         align-items: center;
 
         .profile-image {
@@ -629,7 +628,7 @@
 
             h5 {
                 font-weight: 400;
-                font-size: 14px;
+                font-size: 15px;
                 color: rgba(var(--content), 1);
                 margin-bottom: 9px;
             }
@@ -651,12 +650,12 @@
             background-color: rgba(var(--white), 1);
             border-radius: 6px;
             padding: 18px 12px;
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 28px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 28px);
             align-items: center;
 
             [class="dark"] & {
                 background-color: #171717;
-                box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+                box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
             }
 
             li {
@@ -664,19 +663,19 @@
                 padding-inline: 15px;
                 position: relative;
 
-                +li {
+                + li {
                     &::after {
                         @include pos;
                         top: -14px;
                         left: 0;
                         width: 100%;
                         height: 1px;
-                        background-color: #F9F9F9;
+                        background-color: #f9f9f9;
                     }
                 }
 
                 .setting-box {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 16px);
+                    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 16px);
                     align-items: center;
 
                     .setting-image {
@@ -690,7 +689,7 @@
                     }
 
                     .setting-name {
-                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                        @include flex_common($dis: flex, $align: center, $justify: space-between);
                         width: calc(100% - 26px - 16px);
 
                         h4 {
@@ -714,7 +713,7 @@
 .order-section {
     .order-list {
         .delivered-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 20px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 20px);
 
             li {
                 width: 100%;
@@ -727,14 +726,14 @@
 
                     [class="dark"] & {
                         background-color: #171717;
-                        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+                        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
                     }
 
                     .order-header {
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+                        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
                         align-items: center;
                         position: relative;
-                        border-bottom: 1px solid #F9F9F9;
+                        border-bottom: 1px solid #ebebeb;
                         padding-bottom: 13px;
                         margin-bottom: 10px;
 
@@ -761,22 +760,29 @@
                             h5 {
                                 color: rgba(var(--title), 1);
                                 margin-bottom: 5px;
+                                width: 57%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 1;
+                                -webkit-box-orient: vertical;
                             }
 
                             h6 {
                                 font-weight: 400;
                                 color: rgba(var(--content), 1);
                                 margin-bottom: 10px;
+                                font-size: 14px;
                             }
 
                             .order-paid {
-                                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 7px);
+                                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 7px);
                                 align-items: center;
 
                                 li {
                                     width: auto;
                                     font-weight: 400;
-                                    font-size: 12px;
+                                    font-size: 13px;
                                     color: rgba(var(--title), 1);
                                 }
                             }
@@ -787,10 +793,10 @@
                             top: 0;
                             right: 0;
                             align-items: center;
-                            background-color: #F9F9F9;
+                            background-color: #f9f9f9;
                             border-radius: 4px;
                             padding: 6px 10px;
-                            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
+                            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
 
                             [class="dark"] & {
                                 background-color: #181818;
@@ -816,7 +822,7 @@
                     }
 
                     .order-quantity {
-                        border-bottom: 1px solid #F9F9F9;
+                        border-bottom: 1px solid #ebebeb;
                         padding-bottom: 12px;
                         margin-bottom: 7px;
 
@@ -825,7 +831,7 @@
                         }
 
                         .quantity-list {
-                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
+                            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
 
                             li {
                                 width: 100%;
@@ -837,7 +843,7 @@
                     }
 
                     .order-rate {
-                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                        @include flex_common($dis: flex, $align: center, $justify: space-between);
 
                         .rate-food {
                             display: flex;
@@ -849,7 +855,7 @@
                             }
 
                             ul {
-                                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 3px);
+                                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 3px);
                                 align-items: center;
                                 margin-left: 5px;
 
@@ -861,14 +867,14 @@
                                 li {
                                     i {
                                         font-size: 15px;
-                                        color: #E0E0E0;
+                                        color: #e0e0e0;
 
                                         [class="dark"] & {
                                             color: rgba(57, 44, 44, 0.19);
                                         }
 
                                         &.fill {
-                                            color: #FFBB12;
+                                            color: #ffbb12;
                                         }
                                     }
                                 }
@@ -878,7 +884,7 @@
                         .record-button {
                             width: auto;
                             padding: 6px 13px;
-                            background-color: #F9F9F9;
+                            background-color: #f9f9f9;
                             border-radius: 4px;
                             font-weight: 600;
                             font-size: 12px;
@@ -912,16 +918,16 @@
 
     [class="dark"] & {
         background-color: #171717;
-        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
     }
 
     .arriving-order-box {
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 14px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 14px);
         align-items: center;
         background-color: rgba(var(--white), 1);
         box-shadow: $shadow2;
         border-radius: 13px;
-        padding: 17px;
+        padding: calc(10px + (17 - 10) * ((100vw - 320px) / (600 - 320)));
         position: absolute;
         top: -110px;
         left: 0;
@@ -930,7 +936,7 @@
 
         [class="dark"] & {
             background-color: #171717;
-            box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+            box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
         }
 
         .order-image {
@@ -968,9 +974,9 @@
 
     .order-place-box {
         .order-drive-box {
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 12px);
             align-items: center;
-            border-bottom: 1px solid #F9F9F9;
+            border-bottom: 1px solid #f9f9f9;
             padding-bottom: 16px;
             margin-bottom: 21px;
 
@@ -991,7 +997,7 @@
             }
 
             .driver-name {
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                @include flex_common($dis: flex, $align: center, $justify: space-between);
                 width: calc(100% - 50px - 12px);
                 color: rgba(var(--title), 1);
 
@@ -1009,7 +1015,7 @@
                 }
 
                 .driver-contact {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
                     color: rgba(var(--title), 1);
 
                     li {
@@ -1017,7 +1023,7 @@
                             @include flex_common;
                             width: 35px;
                             height: 35px;
-                            background-color: #F9F9F9;
+                            background-color: #f9f9f9;
                             border-radius: 4px;
                             color: rgba(var(--title), 1);
 
@@ -1042,16 +1048,16 @@
         }
 
         .map-list {
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
             align-items: center;
 
             li {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
                 align-items: center;
                 color: rgba(var(--title), 1);
                 padding: 8px 20px;
                 border-radius: 50px;
-                background-color: #F8F8F8;
+                background-color: #f8f8f8;
 
                 i {
                     font-size: 16px;
@@ -1065,7 +1071,7 @@
 
         .button-group {
             margin-top: 18px;
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 15px);
 
             .btn {
                 font-weight: 500;
@@ -1087,7 +1093,7 @@
 
     .address-list-box {
         .address-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 25px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 25px);
             position: relative;
 
             &::before {
@@ -1096,7 +1102,7 @@
                 left: 19px;
                 width: 0;
                 height: 80%;
-                border-left: 1px dashed #F1F1F1;
+                border-left: 1px dashed #f1f1f1;
                 z-index: -1;
             }
 
@@ -1106,12 +1112,12 @@
                 .address-box {
                     color: rgba(var(--title), 1);
                     align-items: center;
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
 
                     .address-icon {
                         width: 39px;
                         height: 39px;
-                        background-color: #F9F9F9;
+                        background-color: #f9f9f9;
                         border-radius: 4px;
                         font-size: 21px;
                         @include flex_common;
@@ -1145,25 +1151,25 @@
             border-radius: 6px;
             padding: 18px 12px;
             align-items: center;
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 28px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 28px);
 
             [class="dark"] & {
                 background-color: #171717;
-                box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+                box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
             }
 
             li {
                 width: 100%;
                 position: relative;
 
-                +li {
+                + li {
                     &::after {
                         @include pos;
                         top: -14px;
                         left: 0;
                         width: 100%;
                         height: 1px;
-                        background-color: #F9F9F9;
+                        background-color: #f9f9f9;
 
                         [class="dark"] & {
                             background-color: rgba(249, 249, 249, 0.08);
@@ -1172,13 +1178,13 @@
                 }
 
                 .payment-box {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 16px);
+                    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 16px);
                     align-items: center;
 
                     .payment-image {
                         width: 66px;
                         height: 43px;
-                        background-color: #F9F9F9;
+                        background-color: #f9f9f9;
                         border-radius: 6px;
                         padding: 12px;
                         @include flex_common;
@@ -1190,7 +1196,7 @@
                     }
 
                     .payment-name {
-                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                        @include flex_common($dis: flex, $align: center, $justify: space-between);
                         width: calc(100% - 26px - 16px);
                         color: rgba(var(--title), 1);
 
@@ -1250,12 +1256,12 @@
 
             [class="dark"] & {
                 background-color: #171717;
-                box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+                box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
             }
 
             li {
-                +li {
-                    border-top: 1px solid #F9F9F9;
+                + li {
+                    border-top: 1px solid #f9f9f9;
                     margin-top: 10px;
                     padding-top: 10px;
 
@@ -1265,7 +1271,7 @@
                 }
 
                 .cart-box {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
                     align-items: center;
 
                     .items-image {
@@ -1282,8 +1288,13 @@
 
                     .items-name {
                         width: calc(100% - 9px - 78px);
-                        @include flex_common ($dis: flex, $align: flex-end, $justify: space-between);
+                        @include flex_common($dis: flex, $align: flex-end, $justify: space-between);
                         color: rgba(var(--title), 1);
+
+                        h5 {
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
 
                         h6 {
                             font-weight: 400;
@@ -1353,11 +1364,11 @@
     box-shadow: $shadow2;
     border-radius: 10px;
     padding: 14px 16px;
-    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
+    @include flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
 
     [class="dark"] & {
         background-color: #171717;
-        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
     }
 
     [dir="rtl"] & {
@@ -1373,7 +1384,7 @@
             gap: 10px;
 
             .form-check-label {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 4px);
                 align-items: center;
 
                 img {
@@ -1405,7 +1416,7 @@
 
     [class="dark"] & {
         background-color: #171717;
-        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
     }
 
     [dir="rtl"] & {
@@ -1414,11 +1425,11 @@
 
     li {
         width: 100%;
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
         font-weight: 400;
         color: rgba(var(--content), 1);
 
-        +li {
+        + li {
             margin-top: 12px;
         }
 
@@ -1450,12 +1461,12 @@
 
     [class="dark"] & {
         background-color: #171717;
-        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
     }
 
     .proceed-address-box {
         color: rgba(var(--title), 1);
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
         align-items: center;
         padding-bottom: 11px;
         margin-bottom: 11px;
@@ -1468,7 +1479,7 @@
         .address-icon {
             width: 40px;
             height: 40px;
-            background-color: #FFF9EC;
+            background-color: #fff9ec;
             border-radius: 6px;
             @include flex_common;
             font-size: 20px;
@@ -1479,7 +1490,7 @@
         }
 
         .address-box {
-            @include flex_common ($dis: flex, $align: flex-start, $justify: space-between);
+            @include flex_common($dis: flex, $align: flex-start, $justify: space-between);
             width: calc(100% - 40px - 8px);
 
             h5 {
@@ -1495,13 +1506,13 @@
             a {
                 font-weight: 600;
                 font-size: 14px;
-                color: #FEAF18;
+                color: #feaf18;
             }
         }
     }
 
     .amount-box {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
         margin-bottom: 10px;
 
         h3,
@@ -1532,7 +1543,7 @@
 .offer-section {
     .offer-list-box {
         .offer-list {
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 11px);
             overflow: auto hidden;
 
             li {
@@ -1546,11 +1557,11 @@
 
                     [class="dark"] & {
                         background-color: #171717;
-                        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+                        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
                     }
 
-                    >div {
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 6px);
+                    > div {
+                        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
                         align-items: center;
                     }
 
@@ -1603,7 +1614,6 @@
         &.hide {
             opacity: 0;
         }
-
 
         &:first-child {
             &:active {
@@ -1693,11 +1703,11 @@
 
     [class="dark"] & {
         background-color: #171717;
-        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
     }
 
     .view-price {
-        @include flex_common ($dis: flex, $align: flex-end, $justify: space-between);
+        @include flex_common($dis: flex, $align: flex-end, $justify: space-between);
 
         h5 {
             font-weight: 400;
@@ -1724,16 +1734,16 @@
 
             [class="dark"] & {
                 background-color: #171717;
-                box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+                box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
             }
 
             li {
                 width: 100%;
 
-                +li {
+                + li {
                     padding-top: 15px;
                     margin-top: 13px;
-                    border-top: 1px solid #F9F9F9;
+                    border-top: 1px solid #f9f9f9;
 
                     [class="dark"] & {
                         border-top-color: rgba(249, 249, 249, 0.04);
@@ -1741,7 +1751,7 @@
                 }
 
                 a {
-                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                    @include flex_common($dis: flex, $align: center, $justify: space-between);
                     color: rgba(var(--title), 1);
                     width: 100%;
 

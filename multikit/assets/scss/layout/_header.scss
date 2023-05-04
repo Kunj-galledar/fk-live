@@ -4,11 +4,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+    @include flex_common($dis: flex, $align: center, $justify: space-between);
     padding: 16px;
 
     .header-left {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 9px);
         align-items: center;
 
         a {
@@ -73,7 +73,7 @@ header {
         }
 
         .top-header {
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include flex_common($dis: flex, $align: center, $justify: space-between);
             position: absolute;
             top: 0;
             left: 0;
@@ -139,7 +139,7 @@ header {
 
         .header-bottom-account {
             align-items: flex-end;
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 13px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 13px);
             height: 120px;
             padding: 15px;
 
@@ -256,7 +256,7 @@ header {
 
         .add-member {
             align-items: center;
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 11px);
             margin-left: auto;
             color: rgba(var(--title), 1);
 
@@ -277,7 +277,7 @@ header {
         .calling-box {
             margin-left: auto;
             align-items: center;
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 15px);
 
             [dir="rtl"] & {
                 margin-left: unset;
@@ -299,7 +299,7 @@ header {
         }
 
         .header-profile {
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 11px);
             align-items: center;
             color: rgba(var(--title), 1);
 
@@ -317,7 +317,7 @@ header {
             .name-contact {
                 width: calc(100% - 52px - 3px);
                 align-items: center;
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
+                @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
 
                 h5,
                 h6 {
@@ -339,7 +339,7 @@ header {
         .right-header {
             margin-left: auto;
             align-items: center;
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 7px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 7px);
             color: rgba(var(--title), 1);
 
             [dir="rtl"] & {
@@ -389,7 +389,7 @@ header {
 
     .header-box {
         align-items: center;
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 10px);
 
         .header-left {
             @include pseudowh($width: 50px, $height: 50px);
@@ -407,7 +407,8 @@ header {
             }
 
             @include mq-max(md) {
-                @include pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))), $height: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))));
+                @include pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))),
+                    $height: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))));
                 border-radius: calc(8px + (12 - 8) * ((100vw - 320px) / (600 - 320)));
                 font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (600 - 320)));
             }
@@ -490,7 +491,7 @@ header {
 
         .left-box {
             align-items: center;
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 5px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 5px);
 
             .header-icon {
                 @include pseudowh($width: 28px, $height: 28px);
@@ -498,7 +499,7 @@ header {
                 transform: scaleX(-1);
 
                 i {
-                    background: linear-gradient(270deg, #FFA000 -5.38%, #FFD54F 100%);
+                    background: linear-gradient(270deg, #ffa000 -5.38%, #ffd54f 100%);
                     font-size: 20px;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
@@ -551,7 +552,7 @@ header {
     }
 
     .header-company-box {
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
         margin-top: 8px;
 
         .company-image {
@@ -586,21 +587,21 @@ header {
 
             p {
                 font-weight: 400;
-                color: #FFF4D9;
+                color: #fff4d9;
                 width: 70%;
                 margin-bottom: 10px;
             }
 
             .dollar-rating {
                 align-items: center;
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
 
                 @include mq-max(md) {
                     gap: calc(5px + (8 - 5) * ((100vw - 320px) / (600 - 320)));
                 }
 
                 li {
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 4px);
                     align-items: center;
                     font-weight: 400;
                     font-size: 13px;
@@ -629,7 +630,7 @@ header {
 
     .header-box-2 {
         align-items: center;
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 11px);
 
         .header-social {
             align-items: center;
@@ -664,7 +665,7 @@ header {
         }
 
         .header-title {
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include flex_common($dis: flex, $align: center, $justify: space-between);
             width: calc(100% - 30px - 11px);
 
             h3 {
@@ -703,7 +704,7 @@ header {
         background-color: rgba(var(--grey), 1);
         border-radius: 50px;
         padding: 9px calc(39px + (54 - 39) * ((100vw - 320px) / (600 - 320)));
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
 
         [class="dark"] & {
             background-color: #374151;
@@ -717,7 +718,7 @@ header {
 
                 &.end-call {
                     @include pseudowh($width: 44px, $height: 44px);
-                    background-color: #A72C2C;
+                    background-color: #a72c2c;
                     border-radius: 100%;
                     @include flex_common;
                     color: rgba(var(--white), 1);
@@ -757,7 +758,7 @@ header {
     position: relative;
 
     .header-left {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 8px);
         align-items: center;
 
         button {
@@ -806,7 +807,7 @@ header {
         border-radius: 0px 0px 15px 15px;
         color: rgba(var(--white), 1);
         padding: 31px 0 11px;
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
         position: absolute;
         top: 0;
         left: 0;
@@ -814,7 +815,7 @@ header {
 
         .left-header {
             align-items: center;
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
 
             a {
                 line-height: 1;
@@ -827,7 +828,7 @@ header {
             }
 
             .name-date {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
+                @include flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
                 align-items: center;
 
                 li {
@@ -861,7 +862,7 @@ header {
 
         .right-header {
             align-items: center;
-            @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 6px);
+            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
             color: rgba(var(--white), 1);
 
             i {
@@ -898,7 +899,7 @@ header {
 
                     [dir="rtl"] & {
                         border-right: 1px solid rgba(var(--content), 0.6);
-                        border-left: unset
+                        border-left: unset;
                     }
 
                     [class="dark"] & {
@@ -965,7 +966,7 @@ header {
     padding-top: 25px;
 
     .custom-container {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
 
         .left-header {
             a {
@@ -984,7 +985,7 @@ header {
         }
 
         .right-right {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 8px);
             align-items: center;
 
             li {
@@ -1023,7 +1024,7 @@ header {
     justify-content: space-between;
 
     .header-left {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 8px);
         align-items: center;
 
         button {
@@ -1050,7 +1051,7 @@ header {
     }
 
     .header-right {
-        @include flex_common ($dis: flex, $align: center, $justify: flex-end);
+        @include flex_common($dis: flex, $align: center, $justify: flex-end);
         gap: 15px;
 
         a {
@@ -1162,7 +1163,7 @@ header {
         }
 
         a {
-            width: 79px;
+            width: auto;
             height: auto;
         }
     }
@@ -1180,7 +1181,7 @@ header {
             align-items: center;
             font-weight: 400;
             font-size: 16px;
-            color: #8F8FB2;
+            color: #8f8fb2;
             gap: 6px;
 
             @include mq-max(md) {
@@ -1263,7 +1264,7 @@ header {
         .left-header {
             h2 {
                 font-weight: 500;
-                color: #FFFFFF;
+                color: #ffffff;
                 margin-bottom: 6px;
 
                 span {
@@ -1278,7 +1279,7 @@ header {
 
             h5 {
                 font-weight: 400;
-                color: #C4C4C4;
+                color: #c4c4c4;
             }
         }
 
@@ -1352,13 +1353,13 @@ header {
                     font-weight: 400;
                     font-size: 13px;
                     margin: 7px 0;
-                    color: #C4C4C4;
+                    color: #c4c4c4;
                 }
 
                 h6 {
                     font-weight: 400;
                     font-size: 13px;
-                    color: #C4C4C4;
+                    color: #c4c4c4;
                 }
             }
         }
@@ -1393,7 +1394,7 @@ header {
     z-index: 1;
 
     a {
-        color: #C4C4C4;
+        color: #c4c4c4;
         line-height: 1;
 
         &.close-icon {
@@ -1407,7 +1408,7 @@ header {
         border: none;
         background-color: transparent;
         font-size: 24px;
-        color: #C4C4C4;
+        color: #c4c4c4;
     }
 
     .flash-light {
@@ -1416,7 +1417,7 @@ header {
         border: none;
         background-color: transparent;
         font-size: 24px;
-        color: #C4C4C4;
+        color: #c4c4c4;
     }
 
     .right-box {
@@ -1470,7 +1471,7 @@ header {
             @include flex_common;
 
             i {
-                color: #C4C4C4;
+                color: #c4c4c4;
             }
         }
 
@@ -1495,7 +1496,7 @@ header {
 
                 h6 {
                     font-weight: 400;
-                    color: #C4C4C4;
+                    color: #c4c4c4;
                 }
             }
         }
@@ -1527,7 +1528,7 @@ header {
         .left-header {
             h2 {
                 font-weight: 500;
-                color: #FFFFFF;
+                color: #ffffff;
                 margin-bottom: 6px;
 
                 span {
@@ -1542,7 +1543,7 @@ header {
 
             h5 {
                 font-weight: 400;
-                color: #C4C4C4;
+                color: #c4c4c4;
             }
         }
 
@@ -1578,7 +1579,7 @@ header {
         left: 0;
         width: 100%;
         height: 104px;
-        background: linear-gradient(180deg, #2F2F2F 0%, rgba(78, 78, 78, 0) 100%);
+        background: linear-gradient(180deg, #2f2f2f 0%, rgba(78, 78, 78, 0) 100%);
         z-index: -1;
     }
 
@@ -1689,7 +1690,7 @@ header {
         width: calc(100% - 8px - 26px);
 
         .form-control {
-            background-color: #FAFAFA;
+            background-color: #fafafa;
             border-radius: 9px;
             width: 100%;
             border: none;
@@ -1713,7 +1714,7 @@ header {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            color: #AFAFAF;
+            color: #afafaf;
 
             &.search-icon {
                 left: 15px;

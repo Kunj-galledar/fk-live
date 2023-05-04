@@ -41,7 +41,7 @@ body {
 
 h1 {
   font-weight: 400;
-  font-size: 70px;
+  font-size: calc(28px + (69 - 28) * ((100vw - 320px) / (1920 - 320)));
   line-height: calc(35px + (80 - 35) * ((100vw - 320px) / (1920 - 320)));
   margin-bottom: 0;
 }
@@ -98,15 +98,16 @@ li {
     Button start
 ==========================*/
 .btn-solid {
-  padding: 11px 20px;
+  padding: calc(6px + (11 - 6) * ((100vw - 320px) / (1920 - 320))) calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
   background: linear-gradient(103.19deg, #FF9C42 0%, #FF8A1F 59.49%);
   display: flex;
   gap: 5px;
   border-radius: 5px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
   color: $white;
   margin-left: auto;
+  border: none;
 
   &:hover {
     color: $white;
@@ -163,19 +164,16 @@ header {
   .navbar-toggler {
     padding: 0;
     border: 0;
+    display: flex;
 
-    .navbar-toggler-icon {
-      width: auto;
-      height: auto;
-      color: rgba($white, 0.5);
-      border: 1px solid rgba($white, 0.5);
+    i {
+      color: $white;
       border-radius: 6px;
       margin-right: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
-      background-image: none;
 
-      i {
-        padding: 3px;
-      }
+      // i {
+      //   padding: 3px;
+      // }
     }
 
     &:focus {
@@ -213,13 +211,14 @@ header {
   position: relative;
   height: auto;
   z-index: 1;
-  padding: 0;
   background-image: url(../images/background/home-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 166px;
-  padding-bottom: 50px;
-  background-size: contain;
+  background-size: cover;
+  padding-top: 180px; // 43
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
 
   // @media (max-width: 992px) {
   //   padding-bottom: 35px;
@@ -244,10 +243,30 @@ header {
 
   .home-left-content {
     // padding-top: calc(60px + (155 - 60) * ((100vw - 320px) / (1920 - 320)));
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     h1 {
       text-transform: uppercase;
       color: $white;
+      margin-top: -16px;
+
+      @media (max-width: 1820px) {
+        font-size: 54px;
+      }
+
+      @media (max-width: 1500px) {
+        font-size: 48px;
+      }
+
+      @media (max-width: 1300px) {
+        font-size: 40px;
+      }
+
+      @media (max-width: 1199px) {
+        font-size: 34px;
+      }
 
       span {
         font-weight: 700;
@@ -258,12 +277,12 @@ header {
     }
 
     p {
-      line-height: calc(20px + (26 - 20) * ((100vw - 320px) / (1920 - 320)));
-      margin-top: 20px;
+      line-height: 1.5;
+      margin-top: calc(9px + (20 - 9) * ((100vw - 320px) / (1920 - 320)));
       margin-bottom: 37px;
       color: rgba(255, 255, 255, 0.8);
       font-weight: 500;
-      font-size: 16px;
+      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
       // @media (max-width: 1200px) {
       //   width: 100%;
@@ -273,17 +292,44 @@ header {
 
     .home-page-list {
       padding: 9px 0 9px 10px;
-      border-left: 3px solid #FFC700;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 24px 16px;
+      border-left: calc(1px + (3 - 1) * ((100vw - 320px) / (1920 - 320))) solid #FFC700;
+      display: flex;
+      gap: calc(13px + (24 - 13) * ((100vw - 991px) / (1920 - 991))) calc(10px + (16 - 10) * ((100vw - 991px) / (1920 - 991)));
+      flex-wrap: wrap;
+      width: 100%;
+
+      // @media (max-width: 1754px) {
+      //   grid-template-columns: 1fr 1fr 1fr;
+      // }
+
+      // @media (max-width: 1366px) {
+      //   grid-template-columns: 1fr 1fr;
+      // }
+
+      // @media (max-width: 991px) {
+      //   grid-template-columns: 1fr 1fr 1fr 1fr;
+      // }
+
+      // @media (max-width: 838px) {
+      //   grid-template-columns: 1fr 1fr 1fr;
+      // }
+
+      // @media (max-width: 632px) {
+      //   grid-template-columns: 1fr 1fr;
+      //   border: none;
+      //   padding: unset;
+      // }
+
+      // @media (max-width: 350px) {
+      //   grid-template-columns: 1fr;
+      // }
 
       li {
-        width: 100%;
-        display: block;
+        width: max-content;
+        display: inline-block;
 
         a {
-          padding: 10px 15px;
+          padding: 10px 25px;
           background: radial-gradient(48.75% 48.75% at 50% 58.25%, #20607F 0%, rgba(32, 96, 127, 0) 100%);
           box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
           border-radius: 5px;
@@ -291,15 +337,21 @@ header {
           align-items: center;
           gap: 6px;
 
+          @media (max-width: 1300px) {
+            padding: 10px 15px;
+          }
+
           img {
             width: 20px;
             height: 20px;
+            display: none;
           }
 
           span {
             font-weight: 500;
-            font-size: 15px;
+            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
             color: $white;
+            white-space: nowrap;
           }
         }
       }
@@ -307,12 +359,18 @@ header {
   }
 
   .home-right-container {
-    text-align: center;
+    // text-align: center;
     position: relative;
+    display: flex;
 
-    .main-image {
-      margin-left: 165px;
-      width: 290px;
+    @media (max-width: 991px) {
+      display: none;
+    }
+
+    iframe {
+      margin-left: 290px;
+      width: max-content;
+      height: 615px;
       padding: 7px;
       background: linear-gradient(144.14deg, rgba(255, 255, 255, 0.2) -30.27%, rgba(188, 196, 248, 0.076) 116.79%);
       box-shadow: 3.68666px 9.83109px 24.5777px rgba(33, 45, 119, 0.08);
@@ -320,6 +378,15 @@ header {
       border-radius: 12.2889px;
       z-index: 2;
       position: relative;
+
+      @media (max-width: 1648px) {
+        margin-left: 210px;
+      }
+
+      @media (max-width: 1199px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     .bg-image {
@@ -329,18 +396,46 @@ header {
       left: 131px;
       width: 600px;
       height: 516px;
+
+      @media (max-width: 1648px) {
+        left: 79px;
+      }
+
+      @media (max-width: 1422px) {
+        display: none;
+      }
     }
 
     .man-image {
       position: absolute;
       bottom: 96px;
       left: 64px;
+
+      @media (max-width: 1648px) {
+        left: -6px;
+      }
+
+      @media (max-width: 11199px) {
+        display: none;
+      }
     }
 
     .app-ui-image {
       position: absolute;
       top: -20px;
       right: -134px;
+      width: 236px;
+      height: auto;
+
+      @media (max-width: 1648px) {
+        width: 200px;
+        height: auto;
+        right: -113px;
+      }
+
+      @media (max-width: 1500px) {
+        display: none;
+      }
     }
   }
 

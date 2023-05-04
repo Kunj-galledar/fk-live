@@ -227,6 +227,10 @@
                         overflow: hidden;
                         font-weight: 400;
                         font-size: 14px;
+
+                        @include mq-max(md) {
+                            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                        }
                     }
                 }
 
