@@ -137,12 +137,20 @@ h4,
 .h4 {
     font-size: 16px;
     margin-bottom: 0;
+
+    @include mq-max(md) {
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+    }
 }
 
 h5,
 .h5 {
     font-size: 14px;
     margin-bottom: 0;
+
+    @include mq-max(md) {
+        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+    }
 }
 
 h6,

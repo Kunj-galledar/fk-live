@@ -63,51 +63,67 @@
     <!-- header End -->
 
     <!-- Main Product Section Start -->
-    <section>
-        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="../assets/images/grocery/product/16.png" class="img-fluid" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/images/grocery/product/17.png" class="img-fluid" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/images/grocery/product/18.png" class="img-fluid" alt="">
+    <section class="main-product-section">
+        <div class="slider-box">
+            <div class="custom-container">
+                <div class="product-slider-box d-flex">
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                        class="swiper main-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="main-product">
+                                    <img src="../assets/images/grocery/product/1.png" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main-product">
+                                    <img src="../assets/images/grocery/product/2.png" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main-product">
+                                    <img src="../assets/images/grocery/product/3.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div thumbsSlider="" class="swiper relative-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="thumbnail-image">
+                                    <img src="../assets/images/grocery/product/1.png" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="thumbnail-image">
+                                    <img src="../assets/images/grocery/product/2.png" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="thumbnail-image">
+                                    <img src="../assets/images/grocery/product/3.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="../assets/images/grocery/product/16.png" class="img-fluid" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/images/grocery/product/17.png" class="img-fluid" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="../assets/images/grocery/product/18.png" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-
         <div class="product-container px-15">
             <h4>Assorted Capsicum Combo - (Red, Yellow, Green)</h4>
             <div class="rating">
                 <ul>
                     <li>
-                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill fill"></i>
                     </li>
                     <li>
-                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill fill"></i>
                     </li>
                     <li>
-                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill fill"></i>
                     </li>
                     <li>
-                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill fill"></i>
                     </li>
                     <li>
                         <i class="ri-star-fill"></i>
@@ -317,11 +333,10 @@
     <!-- View Cart Bottom Box Start -->
     <div class="product-cart-box">
         <div class="left-qty">
-            <div class="add-quantity btn">
-                <span class="add-btn">+</span>
-                <span class="remove-minus count-decrease">-</span>
-                <input class="countdown-remove" type="number" value="0">
-                <span class="count-increase">+</span>
+            <div class="qty-box">
+                <input type="button" class="minusBtn" value="-">
+                <input type="text" size="25" value="1" class="count">
+                <input type="button" class="plusBtn" value="+">
             </div>
         </div>
         <div class="right-button">
@@ -372,28 +387,8 @@
     </div>
     <!-- Side Menu Offcanvas End -->
 
-    <!-- Location Modal Start -->
-    <div class="modal fade location-modal" id="locationModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Location Modal End -->
-
     <!-- Theme Option Setting Box Start -->
-    <div class="theme-setting-box">
+    <div class="theme-setting-box grocery-color">
         <div class="theme-box">
             <button class="theme-icon">
                 <i class="ri-menu-line"></i>
@@ -425,8 +420,10 @@
     <!-- swiper js -->
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/custom_swiper.js"></script>
+    <!-- <script src="../assets/js/grocery_custom_swiper.js"></script> -->
 
     <!-- quantity js -->
+    <script src="../assets/js/quantity.js"></script>
     <script src="../assets/js/quantity-3.js"></script>
 
     <!-- Loader Js -->
@@ -437,6 +434,34 @@
 
     <!-- Theme Settings js-->
     <script src="../assets/js/theme-setting.js"></script>
+
+    <script>
+
+        const swiper23 = new Swiper(".relative-slider", {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            fade: true,
+            direction: "vertical",
+            watchSlidesProgress: true,
+        });
+        const swiper24 = new Swiper(".main-slider", {
+            spaceBetween: 10,
+            // navigation: {
+            //     nextEl: ".swiper-button-next",
+            //     prevEl: ".swiper-button-prev",
+            // },
+            thumbs: {
+                swiper: swiper23,
+            },
+        });
+
+        const swiper25 = new Swiper(".slider-2-3", {
+            slidesPerView: 2.3,
+            spaceBetween: 11,
+        });
+    </script>
+
 </body>
 
 </html>

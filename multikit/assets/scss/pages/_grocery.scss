@@ -43,13 +43,17 @@
 
     .add-btn {
         line-height: 1;
-        padding: 4px 6px;
+        width: 22px;
+        height: 22px;
         color: rgba(var(--white), 1);
         background-color: rgba(var(--theme-color), 1);
         border-radius: 4px;
-        height: 100%;
-        display: flex;
-        align-items: center;
+        @include flex_common;
+        font-size: 18px;
+
+        i {
+            line-height: 1;
+        }
     }
 
     .countdown-remove {
@@ -104,6 +108,12 @@
 
 /* ---------- Banner CSS ---------- */
 .grocery-banner-section {
+    .banner-slider {
+        [dir="rtl"] & {
+            direction: ltr;
+        }
+    }
+
     .banner-box {
         border-radius: 10px;
         overflow: hidden;
@@ -147,7 +157,7 @@
 /* ---------- Lowest Price CSS ---------- */
 .product-slider {
     .product-box {
-        background: linear-gradient(180deg, #f5f9fa 61.46%, rgba(245, 249, 250, 0) 100%);
+        background: linear-gradient(180deg, rgba(var(--theme-color), 0.05) 61.46%, rgba(245, 249, 250, 0) 100%);
         border-radius: 6px;
 
         .product-image {
@@ -164,7 +174,7 @@
         .product-content {
             padding: 0 7px 10px;
 
-            > div {
+            >div {
                 position: relative;
             }
 
@@ -212,7 +222,7 @@
                         width: 22px;
                         height: 22px;
                         @include flex_common;
-                        border-radius: 100%;
+                        border-radius: 4px;
                     }
 
                     .countdown-remove {
@@ -273,7 +283,7 @@
 
         .product-box {
             height: 81px;
-            background-color: #f5f9fa;
+            background-color: rgba(var(--theme-color), 0.05);
             border-radius: 9px;
             padding: 8px 17px;
             display: flex;
@@ -288,6 +298,7 @@
             }
 
             .product-content {
+                height: 65px;
                 width: calc(100% - 55px - 12px);
                 display: flex;
                 align-items: flex-end;
@@ -298,6 +309,10 @@
                     font-size: 14px;
                     margin-bottom: 2px;
                     color: rgba(var(--title), 1);
+
+                    @include mq-max(md) {
+                        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
 
                 .category {
@@ -305,12 +320,20 @@
                     font-size: 13px;
                     color: #8f8fb2;
                     margin-bottom: 9px;
+
+                    @include mq-max(md) {
+                        font-size: calc(12px + (13 - 12) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
 
                 .price {
                     font-weight: 500;
                     font-size: 14px;
                     color: #1b1b3e;
+
+                    @include mq-max(md) {
+                        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                    }
 
                     span {
                         font-weight: 400;
@@ -425,6 +448,12 @@
     margin-bottom: 23px;
     padding-bottom: 29px;
 
+    @include mq-max(md) {
+        margin-bottom: calc(16px + (23 - 16) * ((100vw - 320px) / (600 - 320)));
+        padding-bottom: calc(14px + (29 - 14) * ((100vw - 320px) / (600 - 320)));
+        gap: calc(12px + (20 - 12) * ((100vw - 320px) / (600 - 320)));
+    }
+
     li {
         width: 100%;
 
@@ -445,7 +474,7 @@
                 .product-image {
                     width: 60px;
                     height: 60px;
-                    background-color: #f5f9fa;
+                    background-color: rgba(var(--theme-color), 0.05);
                     border-radius: 9px;
                     padding: 13px;
                     display: grid;
@@ -540,6 +569,10 @@
 .order-details-list {
     margin-top: 17px;
 
+    @include mq-max(md) {
+        margin-top: calc(8px + (17 - 8) * ((100vw - 320px) / (600 - 320)));
+    }
+
     li {
         font-weight: 400;
         font-size: 14px;
@@ -548,11 +581,15 @@
         align-items: center;
         justify-content: space-between;
 
+        @include mq-max(md) {
+            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+        }
+
         .success {
             color: #0baf9a;
         }
 
-        + li {
+        +li {
             margin-top: 6px;
         }
 
@@ -562,6 +599,11 @@
             border-top: 1px solid #f1f1f1;
             font-weight: 500;
             color: rgba(var(--title), 1);
+
+            @include mq-max(md) {
+                margin-top: calc(8px + (13 - 8) * ((100vw - 320px) / (600 - 320)));
+                padding-top: calc(6px + (11 - 6) * ((100vw - 320px) / (600 - 320)));
+            }
         }
     }
 }
@@ -583,12 +625,18 @@
             li {
                 font-size: 16px;
                 line-height: 1;
+
+                i {
+                    &.fill {
+                        color: rgba(var(--rating-color), 1);
+                    }
+                }
             }
         }
 
         span {
             font-weight: 400;
-            font-size: 10px;
+            font-size: 12px;
             color: rgba(var(--content), 1);
         }
     }
@@ -619,12 +667,14 @@
     gap: 15px;
     padding-bottom: 10px;
     margin-bottom: 9px;
+    flex-wrap: nowrap;
+    overflow: auto;
 
     @include mq-max(md) {
         gap: calc(10px + (15 - 10) * ((100vw - 320px) / (600 - 320)));
     }
 
-    > li {
+    >li {
         width: 100%;
 
         .dropdown-box {
@@ -643,6 +693,10 @@
                     content: "\EA4E";
                     @include remix_icon;
                 }
+
+                @include mq-max(md) {
+                    font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                }
             }
 
             .dropdown-menu {
@@ -652,7 +706,7 @@
                 border: none;
 
                 li {
-                    + li {
+                    +li {
                         .dropdown-item {
                             margin-top: 8px;
                         }
@@ -691,6 +745,10 @@
             font-size: 14px;
             color: #8f8fb2;
             line-height: 1.5;
+
+            @include mq-max(md) {
+                font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (600 - 320)));
+            }
         }
     }
 }
@@ -736,6 +794,11 @@
 
             .plusBtn {
                 right: 0;
+
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 0;
+                }
             }
 
             .count {
@@ -812,7 +875,7 @@
         overflow: auto;
 
         li {
-            + li {
+            +li {
                 margin-top: 14px;
                 padding-top: 14px;
                 border-top: 1px solid #e0e0e0;
@@ -840,6 +903,10 @@
                     font-size: 14px;
                     margin-bottom: 0;
                     color: rgba(var(--content), 1);
+
+                    @include mq-max(md) {
+                        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
             }
         }
@@ -903,7 +970,7 @@
     margin-bottom: 19px;
 
     li {
-        + li {
+        +li {
             margin-top: 18px;
             padding-top: 18px;
             border-top: 1px solid rgba(237, 239, 244, 0.6);
@@ -990,6 +1057,7 @@
         h5 {
             font-weight: 400;
             margin-bottom: 3px;
+            color: rgba(var(--white), 0.8);
         }
 
         h3 {
@@ -1109,8 +1177,7 @@
             }
 
             a {
-                padding: calc(9px + (11 - 9) * ((100vw - 320px) / (600 - 320)))
-                    calc(30px + (40 - 30) * ((100vw - 320px) / (600 - 320)));
+                padding: calc(9px + (11 - 9) * ((100vw - 320px) / (600 - 320))) calc(30px + (40 - 30) * ((100vw - 320px) / (600 - 320)));
                 font-weight: 500;
                 width: auto;
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
@@ -1135,7 +1202,7 @@
         font-weight: 400;
         color: rgba(var(--title), 1);
 
-        + li {
+        +li {
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px solid #f1f1f1;
@@ -1296,6 +1363,7 @@
 
             .content {
                 width: calc(100% - 46px - 12px);
+
                 h4 {
                     margin-bottom: 5px;
                     font-size: 15px;
@@ -1368,7 +1436,7 @@
             list-style-type: disc;
             text-align: justify;
 
-            + li {
+            +li {
                 margin-top: 10px;
             }
         }
@@ -1477,7 +1545,7 @@
             color: rgba(var(--content), 1);
         }
 
-        + li {
+        +li {
             margin-top: 12px;
         }
     }
@@ -1485,7 +1553,7 @@
 
 /* ---------- Term & Condition CSS ---------- */
 .term-condition-box {
-    + .term-condition-box {
+    +.term-condition-box {
         margin-top: 20px;
     }
 
@@ -1508,7 +1576,7 @@
             font-weight: 400;
             color: rgba(var(--content), 1);
 
-            + li {
+            +li {
                 margin-top: 5px;
             }
         }
@@ -1520,7 +1588,7 @@
     .accordion-item {
         border: none;
 
-        + .accordion-item {
+        +.accordion-item {
             border-top: 1px solid #f1f1f1;
         }
 
@@ -1568,4 +1636,99 @@
             }
         }
     }
+}
+
+/* ---------- Main Product CSS ---------- */
+.main-product-section {
+    .slider-box {
+        padding-top: 55px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 86%;
+            height: 100%;
+            background-color: rgba(var(--theme-color), 0.05);
+            border-radius: 0px 0px 15px 0px;
+
+            [dir="rtl"] & {
+                left: unset;
+                right: 0;
+                border-radius: 0 0 0 15px;
+            }
+        }
+
+        .product-slider-box {
+            margin-left: 65px;
+
+            [dir="rtl"] & {
+                margin-left: unset;
+                margin-right: 65px;
+            }
+
+            @include mq-max(md) {
+                margin-left: calc(8px + (65 - 8) * ((100vw - 320px) / (600 - 320)));
+
+                [dir="rtl"] & {
+                    margin-right: calc(8px + (65 - 8) * ((100vw - 320px) / (600 - 320)));
+                    margin-left: unset;
+                }
+            }
+
+            .main-slider {
+                .main-product {
+                    width: 248px;
+                    height: 198px;
+                    @include flex_common;
+                    margin: 0 auto;
+
+                    @include mq-max(md) {
+                        width: calc(163px + (248 - 163) * ((100vw - 320px) / (600 - 320)));
+                        height: calc(169px + (198 - 169) * ((100vw - 320px) / (600 - 320)));
+                    }
+                }
+            }
+
+            .relative-slider {
+                width: -webkit-fill-available;
+                text-align: right;
+
+                .swiper-wrapper {
+                    width: 50px;
+                    // margin-right: 36px;
+
+                    @include mq-max(md) {
+                        width: calc(25px + (50 - 25) * ((100vw - 320px) / (600 - 320)));
+                    }
+
+                    .swiper-slide {
+                        width: 50px;
+                        height: 50px !important;
+
+                        .thumbnail-image {
+                            @include flex_common;
+                            background: rgba(var(--white), 1);
+                            box-shadow: 0px -1px 17px rgba(var(--black), 0.05);
+                            border-radius: 6px;
+                            width: 50px;
+                            height: 50px;
+                            padding: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checkout-button-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 15px 17px;
+    width: 100%;
+    max-width: 600px;
 }

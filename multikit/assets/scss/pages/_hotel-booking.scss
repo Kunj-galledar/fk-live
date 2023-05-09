@@ -133,8 +133,6 @@
 
                 .hotel-image {
                     @include pseudowh($width: 126px, $height: 102px);
-                    width: 126px;
-                    height: 102px;
                 }
 
                 .hotel-details {
@@ -171,6 +169,10 @@
                         [dir="rtl"] & {
                             right: unset;
                             left: 11px;
+                        }
+
+                        [class="dark"] & {
+                            color: #fff;
                         }
 
                         span {
@@ -214,6 +216,10 @@
                 &.active {
                     background: var(--gradient-color);
                     color: rgba(var(--white), 1);
+
+                    [class="dark"] & {
+                        color: #fff;
+                    }
 
                     img {
                         filter: invert(1) brightness(100);
@@ -274,6 +280,10 @@
                 &.active {
                     color: rgba(var(--white), 1);
                     background: var(--gradient-color);
+
+                    [class="dark"] & {
+                        color: #fff;
+                    }
                 }
 
                 &-2 {
@@ -529,6 +539,10 @@
                 [dir="rtl"] & {
                     right: unset;
                     left: 11px;
+                }
+
+                [class="dark"] & {
+                    color: #fff;
                 }
 
                 span {
@@ -1617,13 +1631,15 @@
 
                 .hotel-image {
                     @include pseudowh($width: 126px, $height: 102px);
-                    width: 126px;
-                    height: 102px;
                 }
 
                 .hotel-details {
                     width: calc(100% - 126px - 9px);
                     padding: 14px 11px 14px 0;
+
+                    @include mq-max(md) {
+                        padding: calc(6px + (14 - 6) * ((100vw - 320px) / (600 - 320))) calc(5px + (11 - 5) * ((100vw - 320px) / (600 - 320))) calc(6px + (14 - 6) * ((100vw - 320px) / (600 - 320))) 0;
+                    }
 
                     h5 {
                         font-weight: 500;
@@ -1633,8 +1649,7 @@
 
                     h6 {
                         font-size: 13px;
-                        margin-top: 7px;
-                        margin-bottom: 7px;
+                        margin-block: 7px;
                         color: rgba(var(--content), 1);
                         @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
                         align-items: center;
@@ -1656,6 +1671,10 @@
                         [dir="rtl"] & {
                             right: unset;
                             left: 11px;
+                        }
+
+                        [class="dark"] & {
+                            color: #fff;
                         }
 
                         span {

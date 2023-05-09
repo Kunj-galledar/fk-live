@@ -104,7 +104,7 @@
                     a {
                         white-space: nowrap;
                         padding: 10px 21px;
-                        border-radius: 50px;
+                        border-radius: 100px;
                         background-color: rgba(var(--white), 1);
                         box-shadow: 0px 0px 6px rgba(var(--black), 0.06);
                         position: relative;
@@ -114,6 +114,11 @@
                         [class="dark"] & {
                             background-color: #060D18;
                             box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.08);
+                        }
+
+                        @include mq-max(md) {
+                            padding: calc(7px + (10 - 7) * ((100vw - 320px) / (600 - 320))) calc(13px + (21 - 13) * ((100vw - 320px) / (600 - 320)));
+                            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
                         }
                     }
                 }
@@ -128,6 +133,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
+
+        @include mq-max(md) {
+            gap: calc(9px + (16 - 9) * ((100vw - 320px) / (600 - 320)));
+        }
 
         li {
             .feature-box {
@@ -358,6 +367,8 @@
             align-items: center;
             white-space: nowrap;
             overflow: auto hidden;
+            flex-wrap: nowrap;
+            padding-bottom: 8px;
 
             li {
                 .instructors-contain {
@@ -560,6 +571,10 @@
             width: 100%;
             @include flex_common;
 
+            h4 {
+                line-height: 1;
+            }
+
             i {
                 font-size: 23px;
                 line-height: 1;
@@ -597,6 +612,10 @@
         display: flex;
         align-items: center;
 
+        [class="dark"] & {
+            color: #fff;
+        }
+
         .total-left {
             padding-right: 18px;
             border-right: 1px solid rgba(var(--content), 0.2);
@@ -615,10 +634,22 @@
                 line-height: 1;
                 @include pseudowh($width: 24px, $height: 24px);
                 @include flex_common;
+
+                @include mq-max(md) {
+                    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
+                }
+
+                [class="dark"] & {
+                    color: #fff;
+                }
             }
 
             h4 {
                 font-size: 15px;
+
+                @include mq-max(md) {
+                    font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (600 - 320)));
+                }
             }
         }
 
@@ -627,6 +658,10 @@
             flex-wrap: wrap;
             gap: 17px;
             @include flex_common;
+
+            @include mq-max(md) {
+                gap: calc(8px + (17 - 8) * ((100vw - 320px) / (600 - 320)));
+            }
 
             i {
                 font-size: 19px;
@@ -731,7 +766,11 @@
             font-size: 16px;
             color: rgba(var(--title), 1);
             margin-bottom: 5px;
-            width: 95%;
+            // width: 95%;
+
+            @include mq-max(md) {
+                font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (600 - 320)));
+            }
         }
 
         .course-number {
@@ -1116,6 +1155,7 @@
     }
 }
 
+/* ---------- Account name CSS ---------- */
 .account-name-section {
     .account-form-box {
         form {
@@ -1153,18 +1193,93 @@
     }
 }
 
-.theme-setting-box {
-    .theme-box {
-        .theme-icon {
-            background: var(--gradient);
-            color: rgba(var(--white), 1);
-        }
+/* ---------- Learning setting CSS ---------- */
+.setting-style-1 {
+    .menu-setting-list {
+        padding: 0 23px 0 15px;
 
-        .theme-option {
-            li {
-                .theme-setting-button {
-                    background: var(--gradient);
-                    color: rgba(var(--white), 1);
+        li {
+            +li {
+                margin-top: 15px;
+            }
+
+            .menu-setting-box {
+                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+                align-items: center;
+                color: rgba(var(--title), 1);
+
+                .setting-icon {
+                    @include pseudowh($width: 30px, $height: 30px);
+                    @include flex_common;
+                    background-color: rgba(var(--white), 1);
+                    box-shadow: 2px 1px 4px rgba(var(--black), 0.05);
+                    border-radius: 4px;
+
+                    [class="dark"] & {
+                        background-color: #121924;
+                    }
+
+                    i {
+                        font-size: 16px;
+                    }
+                }
+
+                .setting-name {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: calc(100% - 30px - 11px);
+
+                    h4 {
+                        font-weight: 400;
+                    }
+
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------- Poster CSS ---------- */
+.poster-section {
+    .poster-box {
+        position: relative;
+
+        .poster-detail {
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include pseudowh($width: 66%, $height: 100%);
+            padding: 0 30px;
+
+            >div {
+                h3 {
+                    font-weight: 600;
+                    font-size: 17px;
+
+                    @include mq-max(md) {
+                        font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (600 - 320)));
+                    }
+                }
+
+                button {
+                    display: inline-block;
+                    width: auto;
+                    margin-top: 12px;
+
+                    [class="dark"] & {
+                        background-color: #121924;
+                        border-color: transparent;
+
+                        &:hover {
+                            border-color: transparent !important;
+                            color: rgba(var(--white), 1) !important;
+                            background-color: #121924 !important;
+                        }
+                    }
                 }
             }
         }

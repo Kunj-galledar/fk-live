@@ -13,9 +13,19 @@
         .home-contain {
             color: rgba(var(--white), 1);
 
+            [class="dark"] & {
+                color: #fff;
+            }
+
             h2 {
                 margin-bottom: 6px;
                 font-size: 22px;
+            }
+
+            h5 {
+                [class="dark"] & {
+                    color: rgba(255, 255, 255, 0.62);
+                }
             }
         }
     }
@@ -613,6 +623,10 @@
         h3 {
             font-weight: 500;
             font-size: 20px;
+
+            @include mq-max(md) {
+                font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (600 - 320)));
+            }
         }
 
         p {
@@ -620,6 +634,10 @@
             font-size: 14px;
             margin-top: 5px;
             color: #848f8f;
+
+            @include mq-max(md) {
+                font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+            }
         }
     }
 

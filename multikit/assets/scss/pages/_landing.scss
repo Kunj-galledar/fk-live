@@ -27,6 +27,10 @@
             padding: 0;
             display: block;
 
+            @include mq-max(md) {
+                font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (600 - 320)));
+            }
+
             i {
                 line-height: 1;
             }
@@ -68,6 +72,10 @@
                 line-height: 0;
                 padding: 0;
                 display: block;
+
+                @include mq-max(md) {
+                    font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (600 - 320)));
+                }
 
                 i {
                     line-height: 1;
@@ -151,6 +159,10 @@
     padding-top: 22px;
     padding-bottom: 50px;
 
+    @include mq-max(md) {
+        padding-top: calc(12px + (22 - 12) * ((100vw - 320px) / (600 - 320)));
+    }
+
     &-2 {
         padding-block: 22px;
     }
@@ -173,6 +185,10 @@
             line-height: 1.5;
             margin: 0;
 
+            @include mq-max(md) {
+                font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (600 - 320)));
+            }
+
             [class="dark"] & {
                 color: #fff;
             }
@@ -188,6 +204,11 @@
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 17px);
         align-items: center;
 
+        @include mq-max(md) {
+            gap: calc(8px + (17 - 8) * ((100vw - 320px) / (600 - 320)));
+        }
+
+
         li {
             width: 100%;
 
@@ -201,6 +222,10 @@
                 overflow: hidden;
                 display: block;
                 color: rgba(var(--title), 1);
+
+                @include mq-max(md) {
+                    padding: calc(10px + (15 - 10) * ((100vw - 320px) / (600 - 320)));
+                }
 
                 [class="dark"] & {
                     background-color: #363636;
@@ -239,6 +264,7 @@
                     top: 0;
                     right: 0;
                     @include pseudowh($width: 134px, $height: 100%);
+                    text-align: right;
 
                     [dir="rtl"] & {
                         right: unset;
@@ -314,7 +340,6 @@
                         box-shadow: none;
 
                         [class="dark"] & {
-                            // background-color: #363636;
                             border-color: #555555;
                         }
                     }

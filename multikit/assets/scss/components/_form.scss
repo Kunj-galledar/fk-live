@@ -148,6 +148,15 @@
         transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
         pointer-events: none;
 
+        &:focus {
+            box-shadow: inset 0 0 0 1px #9f9f9f;
+        }
+
+        &:active {
+            box-shadow: inset 0 0 0 1px #9f9f9f;
+            filter: none;
+        }
+
         &:checked {
             box-shadow: inset 0 0 0 5px rgba(var(--theme-color), 1);
         }
@@ -205,7 +214,7 @@
         }
     }
 
-    + .learning-theme-form {
+    +.learning-theme-form {
         margin-top: 23px;
     }
 
@@ -270,12 +279,37 @@
         @include mq-max(md) {
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
         }
+
+        option {
+            color: rgba(var(--title), 1);
+            background-color: #f5f7f7;
+            border: none;
+            padding: 13px 17px;
+            box-shadow: 5px 6px 0px #efefef;
+            font-size: 16px;
+        }
     }
 
     .form-group {
         @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 10px);
         flex-wrap: nowrap;
-        gap: 10px;
+        // gap: 10px;
+        justify-content: space-between;
+
+        // @include mq-max(md) {
+        //     gap: calc(5px + (10 - 5) * ((100vw - 320px) / (600 - 320)));
+        // }
+
+        .form-control {
+            padding: 0;
+            width: 47px;
+            height: 47px;
+
+            @include mq-max(md) {
+                width: calc(38px + (47 - 38) * ((100vw - 320px) / (600 - 320)));
+                height: calc(38px + (47 - 38) * ((100vw - 320px) / (600 - 320)));
+            }
+        }
     }
 
     .learning-theme-dropdown {
@@ -322,6 +356,7 @@
 
             li {
                 .dropdown-item {
+
                     &:active,
                     &.active {
                         background-color: #f5f7f7;
@@ -415,7 +450,7 @@
 
 /* ---------- form style 3 ---------- */
 .form-style-3 {
-    > div {
+    >div {
         position: relative;
     }
 
@@ -445,14 +480,11 @@
 
         @include mq-max(md) {
             font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
-            padding: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)))
-                calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320)));
+            padding: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320))) calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320)));
             padding-right: 59px;
 
             [dir="rtl"] & {
-                padding: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)))
-                    calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320)))
-                    calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320))) 59px;
+                padding: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320))) calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320))) calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320))) 59px;
                 text-align: right;
             }
         }
@@ -501,10 +533,8 @@
             border-radius: 15px;
 
             @include mq-max(md) {
-                @include pseudowh(
-                    $width: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320))),
-                    $height: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320)))
-                );
+                @include pseudowh($width: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320))),
+                    $height: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320))));
                 font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
             }
 
@@ -592,7 +622,7 @@
                 width: 100%;
                 position: relative;
 
-                + li {
+                +li {
                     &::before {
                         @include pos;
                         top: -7px;
@@ -646,6 +676,10 @@
                 border: 2px solid rgba(var(--white), 1);
                 border-top-style: none;
                 border-right-style: none;
+
+                [class="dark"] & {
+                    border-color: #fff;
+                }
             }
 
             &:after {
@@ -781,6 +815,7 @@
     .form-flex {
         @include flex_common($dis: flex, $align: center, $justify: space-between);
         gap: 10px;
+
         @include mq-max(md) {
             gap: calc(5px + (10 - 5) * ((100vw - 320px) / (600 - 320)));
         }
@@ -789,6 +824,7 @@
             padding: 0;
             // width: 60px;
             height: 60px;
+
             @include mq-max(md) {
                 // @include pseudowh(
                 //     $width: calc(50px + (60 - 50) * ((100vw - 320px) / (600 - 320))),
@@ -837,20 +873,20 @@
                 font-size: 14px;
             }
 
-            > .form-control {
-                &:focus ~ label {
+            >.form-control {
+                &:focus~label {
                     opacity: 0.65;
                     transform: scale(0.87) translateY(-0.7rem) translateX(0.15rem);
                 }
 
-                &:not(:placeholder-shown) ~ label {
+                &:not(:placeholder-shown)~label {
                     opacity: 0.65;
                     transform: scale(0.87) translateY(-0.7rem) translateX(0.15rem);
                 }
             }
         }
 
-        > label {
+        >label {
             padding: 15px 10px;
             display: flex;
             align-items: center;
@@ -882,12 +918,16 @@
         padding: 14px 22px;
         font-weight: 400;
         font-size: 16px;
-        color: rgba(var(--content), 1);
+        color: rgba(var(--title), 1);
         border: 1px solid rgba(var(--title), 1);
         border-radius: 8px;
         background-color: transparent;
         margin-bottom: 21px;
         transition: all 0.3s ease-in-out;
+
+        &::placeholder {
+            color: rgba(var(--content), 1);
+        }
 
         [class="dark"] & {
             border-color: #212325;
@@ -900,8 +940,7 @@
         @include mq-max(md) {
             border-radius: calc(4px + (8 - 4) * ((100vw - 320px) / (600 - 320)));
             margin-bottom: calc(10px + (21 - 10) * ((100vw - 320px) / (600 - 320)));
-            padding: calc(10px + (14 - 10) * ((100vw - 320px) / (600 - 320)))
-                calc(16px + (22 - 16) * ((100vw - 320px) / (600 - 320)));
+            padding: calc(10px + (14 - 10) * ((100vw - 320px) / (600 - 320))) calc(16px + (22 - 16) * ((100vw - 320px) / (600 - 320)));
             font-size: calc(13px + (16 - 13) * ((100vw - 320px) / (600 - 320)));
         }
 
@@ -968,10 +1007,8 @@
             padding: 0;
 
             @include mq-max(md) {
-                @include pseudowh(
-                    $width: calc(59px + (63 - 59) * ((100vw - 320px) / (600 - 320))),
-                    $height: calc(52px + (63 - 52) * ((100vw - 320px) / (600 - 320)))
-                );
+                @include pseudowh($width: calc(59px + (63 - 59) * ((100vw - 320px) / (600 - 320))),
+                    $height: calc(52px + (63 - 52) * ((100vw - 320px) / (600 - 320))));
             }
         }
     }
@@ -1012,7 +1049,7 @@
             }
 
             &:focus {
-                ~ i {
+                ~i {
                     color: rgba(var(--title), 1);
                 }
             }
@@ -1172,13 +1209,14 @@
     .form-box {
         position: relative;
 
-        + .form-box {
+        +.form-box {
             .form-control {
                 border-top-width: 1px;
             }
         }
 
         &.one-form {
+
             &:first-child,
             &:last-child {
                 .form-control {
@@ -1211,10 +1249,7 @@
             }
 
             @include mq-max(md) {
-                padding: calc(14px + (21 - 14) * ((100vw - 320px) / (600 - 320)))
-                    calc(48px + (59 - 48) * ((100vw - 320px) / (600 - 320)))
-                    calc(13px + (21 - 13) * ((100vw - 320px) / (600 - 320)))
-                    calc(13px + (18 - 13) * ((100vw - 320px) / (600 - 320)));
+                padding: calc(14px + (21 - 14) * ((100vw - 320px) / (600 - 320))) calc(48px + (59 - 48) * ((100vw - 320px) / (600 - 320))) calc(13px + (21 - 13) * ((100vw - 320px) / (600 - 320))) calc(13px + (18 - 13) * ((100vw - 320px) / (600 - 320)));
                 font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
             }
 
@@ -1291,8 +1326,7 @@
                 border-radius: 22px 22px 0px 0px;
 
                 @include mq-max(md) {
-                    border-radius: calc(14px + (22 - 14) * ((100vw - 320px) / (600 - 320)))
-                        calc(14px + (22 - 14) * ((100vw - 320px) / (600 - 320))) 0 0;
+                    border-radius: calc(14px + (22 - 14) * ((100vw - 320px) / (600 - 320))) calc(14px + (22 - 14) * ((100vw - 320px) / (600 - 320))) 0 0;
                 }
             }
         }
@@ -1304,8 +1338,7 @@
                 border-radius: 0 0 22px 22px;
 
                 @include mq-max(md) {
-                    border-radius: 0 0 calc(14px + (22 - 14) * ((100vw - 320px) / (600 - 320)))
-                        calc(14px + (22 - 14) * ((100vw - 320px) / (600 - 320)));
+                    border-radius: 0 0 calc(14px + (22 - 14) * ((100vw - 320px) / (600 - 320))) calc(14px + (22 - 14) * ((100vw - 320px) / (600 - 320)));
                 }
             }
         }
@@ -1407,7 +1440,7 @@
     .form-box {
         position: relative;
 
-        + .form-box {
+        +.form-box {
             margin-top: 20px;
         }
 
@@ -1425,7 +1458,7 @@
             }
 
             &:focus {
-                ~ i {
+                ~i {
                     color: rgba(var(--title), 0.75);
                 }
             }
@@ -1436,8 +1469,7 @@
 
             @include mq-max(md) {
                 font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
-                padding: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)))
-                    calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320)));
+                padding: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320))) calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320)));
             }
 
             &::placeholder {
@@ -1492,7 +1524,7 @@
     font-family: $nunito;
 
     .form-box {
-        + .form-box {
+        +.form-box {
             margin-top: 15px;
         }
 
@@ -1539,22 +1571,22 @@
     font-family: $nunito;
 
     .form-box {
-        + .form-box {
+        +.form-box {
             margin-top: 15px;
         }
 
-        > .form-control {
+        >.form-control {
             padding: 25px 15px 10px 50px;
 
             &:focus {
-                ~ label {
+                ~label {
                     transform: translateY(-50%);
                     opacity: 1;
                 }
             }
 
             &:not(:placeholder-shown) {
-                ~ label {
+                ~label {
                     transform: scale(0.8) translateY(-28px) translateX(-4px);
                 }
             }
@@ -1580,7 +1612,7 @@
             }
         }
 
-        > label {
+        >label {
             left: 50px;
             width: auto;
             padding: 0;

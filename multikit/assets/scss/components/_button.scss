@@ -13,6 +13,7 @@
     font-size: 16px;
     font-weight: 500;
     width: 100%;
+    border: none;
 
     @include mq-max(md) {
         padding: calc(9px + (12 - 9) * ((100vw - 320px) / (600 - 320)));
@@ -23,6 +24,10 @@
     &-gradient-2 {
         color: rgba(var(--white), 1);
         background: var(--gradient);
+
+        [class="dark"] & {
+            color: #fff;
+        }
 
         &:hover {
             color: rgba(var(--white), 1) !important;
@@ -252,6 +257,10 @@
     color: rgba(var(--title), 1);
 
     @include mq-max(md) {
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+    }
+
+    @include mq-max(md) {
         font-size: calc(13px + (16 - 13) * ((100vw - 320px) / (600 - 320)));
     }
 
@@ -278,6 +287,10 @@
     border-radius: 18px;
 
     @include mq-max(md) {
+        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
+    }
+
+    @include mq-max(md) {
         padding: calc(14px + (17 - 14) * ((100vw - 320px) / (600 - 320)));
         font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
     }
@@ -285,6 +298,10 @@
     &-gradient {
         background: var(--gradient2);
         color: rgba(var(--white), 1);
+
+        [class="dark"] & {
+            color: #efefef;
+        }
 
         &:hover {
             color: rgba(var(--white), 1);
@@ -308,6 +325,14 @@
     padding: 17px;
     border: none;
 
+    [class="dark"] & {
+        color: #efefef;
+    }
+
+    @include mq-max(md) {
+        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
+    }
+
     @include mq-max(md) {
         font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
         margin-top: calc(19px + (30 - 19) * ((100vw - 320px) / (600 - 320)));
@@ -323,6 +348,10 @@
     border-radius: 6px;
     @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
     align-items: center;
+
+    @include mq-max(md) {
+        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+    }
 
     &:active {
         background-color: rgba(var(--primary), 1);
@@ -353,6 +382,10 @@
     width: 100%;
     display: block;
     text-align: center;
+
+    @include mq-max(md) {
+        font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (600 - 320)));
+    }
 
     &.white-btn {
         color: rgba(var(--theme-color), 1);
@@ -391,6 +424,11 @@
     display: block;
     text-align: center;
 
+    @include mq-max(md) {
+        font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (600 - 320)));
+        padding: calc(11px + (15 - 11) * ((100vw - 320px) / (600 - 320)));
+    }
+
     &:hover {
         color: rgba(var(--white), 1);
     }
@@ -401,7 +439,8 @@
     }
 
     &.border-btn {
-        border: 1px solid rgba(var(--white), 1);
+        border: 1px solid rgba(var(--white), 0.1);
+        background-color: rgba(var(--title), 1);
     }
 }
 
@@ -474,6 +513,7 @@
     padding: 16px;
     border: none;
     background-color: transparent;
+    line-height: 1;
 
     &.dark-btn {
         color: rgba(var(--white), 1);

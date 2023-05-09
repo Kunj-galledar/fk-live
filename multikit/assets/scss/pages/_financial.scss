@@ -97,6 +97,10 @@
             display: block;
             color: rgba(var(--white), 1);
 
+            @include mq-max(md) {
+                font-size: calc(7px + (12 - 7) * ((100vw - 320px) / (600 - 320))) calc(12px + (24 - 12) * ((100vw - 320px) / (600 - 320)));
+            }
+
             &.send {
                 box-shadow: 2px 2px 0px #001AFF;
             }

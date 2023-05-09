@@ -138,6 +138,10 @@
                     background-color: rgba(var(--light-bg), 1);
                     @include flex_common;
                     font-size: 20px;
+
+                    @include mq-max(md) {
+                        font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (600 - 320)));
+                    }
                 }
             }
         }
