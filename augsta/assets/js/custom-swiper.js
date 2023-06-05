@@ -317,3 +317,83 @@ var swiper = new Swiper(".banner-slider", {
         },
     },
 })
+
+var categoryBox1 = new Swiper(".category-slide-3", {
+    slidesPerView: 12,
+    spaceBetween: 10,
+    // breakpoints: {
+    // 0: {
+    // slidesPerView: 2,
+    // spaceBetween: 8,
+    // },
+    // 380: {
+    // slidesPerView: 2,
+    // spaceBetween: 8,
+    // },
+    // 490: {
+    // spaceBetween: 8,
+    // slidesPerView: 5,
+    // },
+    // 646: {
+    // spaceBetween: 8,
+    // slidesPerView: 6,
+    // },
+    // 812: {
+    // slidesPerView: 7,
+    // },
+    // 991: {
+    // slidesPerView: 8,
+    // },
+    // 1388: {
+    // slidesPerView: 9,
+    // },
+    // 1288: {
+    // slidesPerView: 10,
+    // },
+    // 1530: {
+    // slidesPerView: 13,
+    // },
+    // },
+});
+
+var swiper = new Swiper(".product-banner-slider", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 8,
+        },
+        // 380: {
+        // slidesPerView: 2,
+        // spaceBetween: 8,
+        // },
+        // 490: {
+        // spaceBetween: 8,
+        // slidesPerView: 5,
+        // },
+        // 646: {
+        // spaceBetween: 8,
+        // slidesPerView: 6,
+        // },
+        // 812: {
+        // slidesPerView: 7,
+        // },
+        // 991: {
+        // slidesPerView: 8,
+        // },
+        576: {
+            slidesPerView: 2,
+        },
+        991: {
+            slidesPerView: 3,
+        },
+        1400: {
+            slidesPerView: 4,
+        },
+    },
+});
