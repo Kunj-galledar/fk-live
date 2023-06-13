@@ -1,0 +1,294 @@
+/**=====================
+     Offcanvas scss
+==========================**/
+.offcanvas {
+    &.cart-offcanvas {
+        border: none;
+        width: 430px;
+
+        .offcanvas-header {
+            padding: 26px 32px 16px;
+            display: block;
+            background-color: #F2F3F8;
+            border-bottom: 1px solid rgba(94, 98, 120, 0.2);
+
+            .title-offcanvas {
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+                h4 {
+                    font-size: 22px;
+                    font-weight: 500;
+
+                    i {
+                        font-size: 23px;
+                        color: rgba(var(--title), 1);
+                    }
+                }
+
+                .close-btn {
+                    padding: 0;
+                    border: none;
+                    font-size: 22px;
+                    line-height: 1;
+                }
+            }
+        }
+
+        .offcanvas-body {
+            padding: 0;
+
+            .cart-product-box {
+                overflow-y: auto;
+                padding: 16px 16px 30px;
+                height: calc(100vh - 70px - 245px);
+
+                &::-webkit-scrollbar-track {
+                    border-radius: 100px;
+                    background-color: #f2f3f7;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                    background-color: #f2f3f7;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 100px;
+                    background-color: rgba(var(--dark-blue), 1);
+                }
+
+                .total-price-box {
+                    position: fixed;
+                    bottom: 0;
+                    right: 0;
+                    width: 430px;
+                    background-color: rgb(242, 243, 247);
+                    padding: 24px 32px;
+                    border-top: 1px solid rgba(94, 98, 120, 0.2);
+
+                    .free {
+                        color: rgba(var(--title), 0.9);
+                    }
+
+                    .progress {
+                        margin-top: 18px;
+                        height: 8px;
+                        background-color: #e6e7e9;
+                        border-radius: 100px;
+                        position: relative;
+                        overflow: unset;
+                        margin-bottom: 31px;
+
+                        .progress-bar {
+                            @include pseudowh($width: 75%, $height: 8px);
+                            background-color: rgba(var(--dark-yellow), 1);
+                            border-radius: 100px;
+
+                            .iconsax {
+                                position: absolute;
+                                @include center(vertical);
+                                right: 90px;
+                                @include pseudowh($width: 28px, $height: 28px);
+                                border-radius: 100%;
+                                @include flex_common;
+                                background-color: rgba(var(--dark-yellow), 1);
+                                --Icon-Color: rgba(var(--white), 1);
+                                --Icon-Size: 17px;
+                            }
+                        }
+                    }
+
+                    .tax-text {
+                        border-bottom: 1px solid rgba(var(--content), 0.15);
+                        padding-bottom: 11px;
+                        margin-bottom: 19px;
+                        margin-top: 3px;
+                        color: rgba(var(--title), 0.9);
+                        font-weight: 300;
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            padding-inline: 4px;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .sub-total {
+                        font-size: 18px;
+                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                        color: rgba(var(--title), 1);
+                        font-weight: 400;
+
+                        span {
+                            font-weight: 500;
+                            color: rgba(var(--title), 1);
+                        }
+                    }
+
+                    .cart-btn-group {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+
+                        .check-out-button {
+                            background-color: rgba(var(--dark-blue), 1);
+                            display: block;
+                            width: 100%;
+                            color: rgba(var(--white), 1);
+                            font-size: 16px;
+                            font-weight: 600;
+                            border: 1px solid transparent;
+                            padding: 8px;
+                        }
+
+                        .cart-button {
+                            border: 1px solid rgba(var(--dark-blue), 1);
+                            display: block;
+                            width: 100%;
+                            color: rgba(var(--dark-blue), 1);
+                            font-size: 16px;
+                            padding: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.wishlist-offcanvas {
+        .offcanvas-body {
+            .cart-product-box {
+                height: calc(100vh - 70px - 164px);
+
+                .total-price-box {
+                    .tax-text {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-box-list {
+    >li {
+        display: block;
+
+        +li {
+            .vertical-product-box {
+                margin-top: calc(5px + (11 - 5) * ((100vw - 320px) / (1920 - 320)));
+                border-top: 1px solid #dddddd52;
+                padding-top: calc(5px + (11 - 5) * ((100vw - 320px) / (1920 - 320)));
+            }
+        }
+
+    }
+
+    .vertical-product-box {
+        display: flex;
+        position: relative;
+
+        .close-button {
+            border: none;
+            padding: 0;
+            position: absolute;
+            top: 8px;
+            right: 0;
+            font-size: 19px;
+            color: rgba(var(--content), 1);
+        }
+
+        .product-image {
+            padding-block: calc(3px + (8 - 3) * ((100vw - 320px) / (1920 - 320)));
+            padding-left: 0;
+            @include pseudowh($width: calc(94px + (111 - 94) * ((100vw - 320px) / (1920 - 320))), $height: calc(94px + (111 - 94) * ((100vw - 320px) / (1920 - 320))));
+
+            img {
+                @extend %image-contain;
+            }
+        }
+
+        .product-content {
+            width: calc(100% - calc(94px + (111 - 94) * ((100vw - 320px) / (1920 - 320))));
+            padding-top: calc(0px + (11 - 0) * ((100vw - 320px) / (1920 - 320)));
+
+            a {
+                color: rgba(var(--title), 1);
+
+                .name {
+                    margin-bottom: calc(0px + (4 - 0) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 500;
+                }
+            }
+
+            .price {
+                margin-top: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
+                color: rgba(var(--success), 1);
+                font-weight: 500;
+
+                del {
+                    color: rgba(var(--content), 1);
+                    margin-left: 3px;
+                }
+            }
+
+            .quantity-box {
+                padding: 5px;
+                width: 80px;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                bottom: 8px;
+                right: 0;
+                background-color: rgba(var(--content), 0.05);
+
+                .btn {
+                    padding: 0;
+                    border: none;
+                    width: 100%;
+                }
+
+                span {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                }
+            }
+
+            .cart-btn {
+                padding: 7px 15px;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                bottom: 8px;
+                right: 0;
+                background-color: rgba(var(--content), 0.05);
+                font-size: 14px;
+                overflow: hidden;
+
+                @include mq-max(md) {
+                    padding: 7px 10px;
+                    line-height: 1;
+                }
+
+                &::before {
+                    @include pos;
+                    bottom: 0;
+                    left: 0;
+                    @include pseudowh($width: 0, $height: 2px);
+                    background-color: rgba(var(--content), 1);
+                    transition: .5s;
+                }
+
+                &:hover {
+                    color: rgba(var(--title), 1);
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
