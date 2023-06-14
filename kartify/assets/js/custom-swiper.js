@@ -1,3 +1,6 @@
+/*====================
+   Custom Swiper JS
+=======================*/
 var productSlider = new Swiper(".product-slider-7", {
     slidesPerView: 7,
     spaceBetween: 20,

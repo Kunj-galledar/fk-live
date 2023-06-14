@@ -1,10 +1,14 @@
 /**=====================
-     Offcanvas scss
+     Offcanvas CSS
 ==========================**/
 .offcanvas {
     &.cart-offcanvas {
         border: none;
         width: 430px;
+
+        @include mq-max(md) {
+            width: calc(305px + (320 - 305) * ((100vw - 320px) / (768 - 320)));
+        }
 
         .offcanvas-header {
             padding: 26px 32px 16px;
@@ -12,16 +16,31 @@
             background-color: #F2F3F8;
             border-bottom: 1px solid rgba(94, 98, 120, 0.2);
 
+            @include mq-max(md) {
+                padding: calc(16px + (26 - 16) * ((100vw - 320px) / (768 - 320))) calc(19px + (32 - 19) * ((100vw - 320px) / (768 - 320))) 16px;
+            }
+
             .title-offcanvas {
                 @include flex_common ($dis: flex, $align: center, $justify: space-between);
 
                 h4 {
                     font-size: 22px;
                     font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    @include mq-max(md) {
+                        font-size: calc(17px + (22 - 17) * ((100vw - 320px) / (768 - 320)));
+                    }
 
                     i {
                         font-size: 23px;
                         color: rgba(var(--title), 1);
+
+                        @include mq-max(md) {
+                            font-size: calc(18px + (23 - 18) * ((100vw - 320px) / (768 - 320)));
+                        }
                     }
                 }
 
@@ -29,6 +48,8 @@
                     padding: 0;
                     border: none;
                     font-size: 22px;
+                    width: unset;
+                    height: unset;
                     line-height: 1;
                 }
             }
@@ -40,7 +61,7 @@
             .cart-product-box {
                 overflow-y: auto;
                 padding: 16px 16px 30px;
-                height: calc(100vh - 70px - 245px);
+                height: calc(100vh - calc(57px + (70 - 57) * ((100vw - 320px) / (1920 - 320))) - calc(190px + (245 - 190) * ((100vw - 320px) / (1920 - 320))));
 
                 &::-webkit-scrollbar-track {
                     border-radius: 100px;
@@ -63,24 +84,28 @@
                     right: 0;
                     width: 430px;
                     background-color: rgb(242, 243, 247);
-                    padding: 24px 32px;
-                    border-top: 1px solid rgba(94, 98, 120, 0.2);
+                    padding: calc(11px + (24 - 11) * ((100vw - 320px) / (1920 - 320))) calc(11px + (32 - 11) * ((100vw - 320px) / (1920 - 320)));
+                    border-top: 1px solid rgba(var(--content), 0.2);
+
+                    @include mq-max(md) {
+                        width: calc(305px + (320 - 305) * ((100vw - 320px) / (768 - 320)));
+                    }
 
                     .free {
                         color: rgba(var(--title), 0.9);
                     }
 
                     .progress {
-                        margin-top: 18px;
-                        height: 8px;
+                        margin-top: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320)));
+                        height: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
                         background-color: #e6e7e9;
                         border-radius: 100px;
                         position: relative;
                         overflow: unset;
-                        margin-bottom: 31px;
+                        margin-bottom: calc(18px + (31 - 18) * ((100vw - 320px) / (1920 - 320)));
 
                         .progress-bar {
-                            @include pseudowh($width: 75%, $height: 8px);
+                            @include pseudowh($width: 75%, $height: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320))));
                             background-color: rgba(var(--dark-yellow), 1);
                             border-radius: 100px;
 
@@ -88,20 +113,24 @@
                                 position: absolute;
                                 @include center(vertical);
                                 right: 90px;
-                                @include pseudowh($width: 28px, $height: 28px);
+                                @include pseudowh($width: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))), $height: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))));
                                 border-radius: 100%;
                                 @include flex_common;
                                 background-color: rgba(var(--dark-yellow), 1);
                                 --Icon-Color: rgba(var(--white), 1);
-                                --Icon-Size: 17px;
+                                --Icon-Size: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+                                @include mq-max(md) {
+                                    right: 51px;
+                                }
                             }
                         }
                     }
 
                     .tax-text {
                         border-bottom: 1px solid rgba(var(--content), 0.15);
-                        padding-bottom: 11px;
-                        margin-bottom: 19px;
+                        padding-bottom: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
+                        margin-bottom: calc(13px + (19 - 13) * ((100vw - 320px) / (1920 - 320)));
                         margin-top: 3px;
                         color: rgba(var(--title), 0.9);
                         font-weight: 300;
@@ -115,7 +144,7 @@
                     }
 
                     .sub-total {
-                        font-size: 18px;
+                        font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
                         @include flex_common ($dis: flex, $align: center, $justify: space-between);
                         color: rgba(var(--title), 1);
                         font-weight: 400;
@@ -129,14 +158,14 @@
                     .cart-btn-group {
                         display: flex;
                         align-items: center;
-                        gap: 16px;
+                        gap: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
 
                         .check-out-button {
                             background-color: rgba(var(--dark-blue), 1);
                             display: block;
                             width: 100%;
                             color: rgba(var(--white), 1);
-                            font-size: 16px;
+                            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                             font-weight: 600;
                             border: 1px solid transparent;
                             padding: 8px;
@@ -147,7 +176,7 @@
                             display: block;
                             width: 100%;
                             color: rgba(var(--dark-blue), 1);
-                            font-size: 16px;
+                            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
                             padding: 8px;
                         }
                     }
@@ -159,7 +188,7 @@
     &.wishlist-offcanvas {
         .offcanvas-body {
             .cart-product-box {
-                height: calc(100vh - 70px - 164px);
+                height: calc(100vh - calc(58px + (70 - 58) * ((100vw - 320px) / (1920 - 320))) - calc(126px + (164 - 126) * ((100vw - 320px) / (1920 - 320))));
 
                 .total-price-box {
                     .tax-text {
@@ -169,6 +198,7 @@
             }
         }
     }
+
 }
 
 .product-box-list {
@@ -195,7 +225,7 @@
             position: absolute;
             top: 8px;
             right: 0;
-            font-size: 19px;
+            font-size: calc(16px + (19 - 16) * ((100vw - 320px) / (1920 - 320)));
             color: rgba(var(--content), 1);
         }
 
@@ -243,6 +273,10 @@
                 right: 0;
                 background-color: rgba(var(--content), 0.05);
 
+                @include mq-max(md) {
+                    display: none;
+                }
+
                 .btn {
                     padding: 0;
                     border: none;
@@ -286,6 +320,22 @@
 
                     &::before {
                         width: 100%;
+                    }
+                }
+
+                span {
+                    display: block;
+
+                    @include mq-max(md) {
+                        display: none;
+                    }
+                }
+
+                i {
+                    display: none;
+
+                    @include mq-max(md) {
+                        display: block;
                     }
                 }
             }

@@ -1,5 +1,5 @@
  /**=====================
-     Timer js
+     Timer 2 js
 ==========================**/
  /***** CALCULATE THE TIME REMAINING *****/
  function getTimeRemaining(endtime) {

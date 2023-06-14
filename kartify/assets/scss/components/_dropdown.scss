@@ -1,3 +1,6 @@
+/**=====================
+     Dropdown CSS
+==========================**/
 .dropdown-box {
     position: relative;
 
@@ -25,20 +28,6 @@
         opacity: 0;
         visibility: hidden;
 
-        // @include mq-max(md) {
-        //     position: fixed;
-        //     top: 0;
-        //     left: unset;
-        //     right: 0;
-        //     opacity: 1;
-        //     visibility: visible;
-        //     transform: unset;
-        //     margin: 0;
-        //     width: 320px;
-        //     height: 100vh;
-        //     border-radius: 0;
-        // }
-
         &::before {
             @include pos;
             top: -8px;
@@ -61,6 +50,7 @@
     .user-dropdown {
         @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
         align-items: center;
+        z-index: 2;
 
         li {
             @include flex_common;
@@ -95,7 +85,7 @@
         width: 420px;
         padding: 18px;
 
-        @include mq-max(md) {
+        @include mq-max(3xl) {
             position: fixed;
             top: 0;
             left: unset;
@@ -157,3 +147,19 @@
         }
     }
 }
+
+// .recent-product {
+//     @include mq-max(3xl) {
+//         position: fixed;
+//         top: 0;
+//         left: unset;
+//         right: 0;
+//         opacity: 1;
+//         visibility: visible;
+//         transform: unset;
+//         margin: 0;
+//         width: 320px;
+//         height: 100vh;
+//         border-radius: 0;
+//     }
+// }

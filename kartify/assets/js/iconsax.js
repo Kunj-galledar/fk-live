@@ -1,3 +1,7 @@
+/*====================
+   Iconsax Js
+=======================*/
+
 // not perfect, but it works
 // for details please visit: https://glenthemes.github.io/iconsax
 document.addEventListener("DOMContentLoaded", () => {

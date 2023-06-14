@@ -1,5 +1,15 @@
+/*-----------------------------------------------------------------------------------
+
+ Template Name: Kartify
+ Template URI: themes.pixelstrap.com/Kartify
+ Description: This is Ecommerce website
+ Author: Pixelstrap
+ Author URI: https://themeforest.net/user/pixelstrap
+
+ ----------------------------------------------------------------------------------- */
+
 /*====================
-   02. Ratio js
+   01. Ratio js
 =======================*/
 window.addEventListener('load', () => {
     const bgImg = document.querySelectorAll(".bg-img");
@@ -42,3 +52,21 @@ window.addEventListener('load', () => {
         `);
     }
 });
+
+/*====================
+   02. Ratio js
+=======================*/
+const div = document.getElementById('searchOffcanvas');
+const div2 = document.getElementById('overlay');
+const addBtn = document.getElementById('searchClick');
+const removeBtn = document.getElementById('close-btn');
+
+addBtn.addEventListener('click', () => {
+    div.classList.add('show');
+    div2.classList.add('show');
+})
+
+removeBtn.addEventListener('click', () => {
+    div.classList.remove('show');
+    div2.classList.remove('show');
+})

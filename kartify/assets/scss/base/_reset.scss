@@ -1,3 +1,6 @@
+/**=====================
+     Reset CSS
+==========================**/
 .custom-container {
     padding-inline: calc(15px + (160 - 15) * ((100vw - 320px) / (1920 - 320)));
 }
@@ -217,7 +220,7 @@
     @include pseudowh($width: 100vw, $height: 100vh);
     background-color: rgba(var(--title), 0.5);
     position: fixed;
-    z-index: 9;
+    z-index: 1;
     top: 0;
     opacity: 0;
     visibility: hidden;
@@ -230,5 +233,11 @@
 }
 
 .offcanvas-backdrop {
-    z-index: 1;
+    z-index: 2;
+}
+
+.btn-close {
+    &:focus {
+        box-shadow: none;
+    }
 }
