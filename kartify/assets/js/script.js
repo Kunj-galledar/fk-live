@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
 });
 
 /*====================
-   02. Ratio js
+   02. Open Search Bar js
 =======================*/
 const div = document.getElementById('searchOffcanvas');
 const div2 = document.getElementById('overlay');
