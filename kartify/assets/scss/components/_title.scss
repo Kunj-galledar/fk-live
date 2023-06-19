@@ -67,6 +67,10 @@
         @include mq-max(sm) {
             display: none;
         }
+
+        &.light-blue {
+            color: rgba(var(--light-blue), 1);
+        }
     }
 }
 
@@ -168,6 +172,23 @@
             }
         }
     }
+
+    &.theme-nav-color {
+        .nav-item {
+            .nav-link {
+                &:hover {
+                    &::before {
+                        background-color: rgba(var(--theme-color), 1);
+                    }
+                }
+
+                &.active {
+                    border-bottom: 2px solid rgba(var(--theme-color), 1);
+                    color: rgba(var(--theme-color), 1);
+                }
+            }
+        }
+    }
 }
 
 .title-slider-button {
@@ -185,7 +206,9 @@
     .swiper-btn-next,
     .swiper-btn-prev {
         position: relative;
+        z-index: 0;
         inset: unset;
+        border: none;
         @include pseudowh($width: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))));
         background-color: rgb(245, 246, 249);
         border-radius: calc(5px + (12 - 5) * ((100vw - 320px) / (1920 - 320)));
