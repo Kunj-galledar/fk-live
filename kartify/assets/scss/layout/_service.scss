@@ -2,7 +2,7 @@
      Service CSS
 ==========================**/
 .service-section {
-    background: rgba(var(--title), 1);
+    background-color: rgba(var(--title-color), 1);
     color: rgba(var(--white), 1);
 
     .service-list {
@@ -71,7 +71,7 @@
 
 .service-section-2 {
     background-color: #f4faf9;
-    color: rgba(var(--title), 1);
+    color: rgba(var(--title-color), 1);
     border-radius: 5px;
     padding: 25px 30px;
 
@@ -118,7 +118,7 @@
 
         svg {
             @include pseudowh($width: 37px, $height: 37px);
-            fill: rgba(var(--theme-color), 1);
+            fill: rgba(var(--theme-color3), 1);
             stroke: transparent;
         }
 
@@ -133,7 +133,7 @@
         }
 
         p {
-            color: rgba(var(--content), 0.8);
+            color: rgba(var(--content-color), 0.8);
             font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         }
     }
@@ -141,7 +141,7 @@
 
 .service-section-3 {
     background-color: rgb(245, 246, 249);
-    color: rgba(var(--title), 1);
+    color: rgba(var(--title-color), 1);
     padding: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320))) calc(12px + (30 - 12) * ((100vw - 320px) / (1920 - 320)));
 
     .service-box {
@@ -151,8 +151,7 @@
         text-align: center;
 
         svg {
-            width: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320)));
-            height: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320)));
+            @include pseudowh($width: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))), $height: calc(30px + (42 - 30) * ((100vw - 320px) / (1920 - 320))));
         }
 
         .service-content {
@@ -166,7 +165,7 @@
 
             h5 {
                 margin-top: calc(2px + (5 - 2) * ((100vw - 320px) / (1920 - 320)));
-                color: rgba(var(--content), 1);
+                color: rgba(var(--content-color), 1);
             }
         }
     }

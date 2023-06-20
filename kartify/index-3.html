@@ -35,10 +35,10 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
-<body class="demo-color-3">
+<body class="demo-3">
     <!-- Header Start -->
-    <header class="header-style-3">
-        <div class="top-header custom-container">
+    <header class="header-style-1">
+        <div class="top-header custom-container theme-header">
             <div class="left-header">
                 <div class="dropdown-box">
                     <ul>
@@ -128,8 +128,10 @@
                 <div class="middle-content">
                     <p>
                         <span class="slider-content">
-                            <span>FREE RETURNS.</span> STANDARD SHIPPING ORDERS <span>$99+</span> <br>
-                            <span>FREE RETURNS.</span> STANDARD SHIPPING ORDERS <span>$99+</span>
+                            <b class="theme-color">FREE RETURNS.</b> STANDARD SHIPPING ORDERS <b
+                                class="theme-color">$99+</b> <br>
+                            <b class="theme-color">FREE RETURNS.</b> STANDARD SHIPPING ORDERS <b
+                                class="theme-color">$99+</b>
                         </span>
                     </p>
                 </div>
@@ -159,14 +161,23 @@
             </div>
         </div>
 
-        <div class="main-header custom-container">
+        <div class="main-dark-header custom-container">
             <div class="left-header">
+                <button class="navbar-toggler d-xl-none d-inline navbar-menu-button" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+                    <span class="navbar-toggler-icon">
+                        <i class="ri-menu-line"></i>
+                    </span>
+                </button>
                 <a href="index.html" class="header-logo">
-                    <img src="./assets/images/logo/2-dark.svg" class="img-fluid" alt="">
+                    <img src="./assets/images/logo/1.svg" class="img-fluid" alt="">
                 </a>
             </div>
             <div class="middle-header">
-                <form class="search-form">
+                <form class="search-form-2" id="searchOffcanvas">
+                    <div class="close-icon">
+                        <i class="ri-close-fill" id="close-btn"></i>
+                    </div>
                     <div class="input-group">
                         <div class="input-group-text">
                             <select class="form-select">
@@ -184,7 +195,7 @@
                             </select>
                         </div>
                         <input type="search" class="form-control" placeholder="I'm searching for...">
-                        <button class="search-button btn">
+                        <button class="search-button btn search-light-color">
                             <i class="ri-search-line"></i>
                         </button>
                     </div>
@@ -194,8 +205,8 @@
             <div class="right-header">
                 <ul class="header-icon">
                     <li>
-                        <a href="#!">
-                            <i class="iconsax" icon-name="search-normal-2"></i>
+                        <a href="#!" id="searchClick">
+                            <i class="iconsax search-btn" icon-name="search-normal-2"></i>
                         </a>
                     </li>
                     <li class="contact-list">
@@ -208,7 +219,7 @@
                         </a>
                     </li>
                     <li class="dropdown-box">
-                        <a href="#!" class="content-color">
+                        <a href="#!">
                             <i class="iconsax" icon-name="user-2"></i>
                         </a>
                         <ul class="dropdown-list user-dropdown">
@@ -236,12 +247,16 @@
             </div>
         </div>
 
-        <div class="nav-header custom-container">
-            <div class="category-header">
-                <button class="btn category-button">
+        <div class="nav-light-header custom-container d-flex">
+            <div class="category-header d-sm-flex d-none">
+                <a data-bs-toggle="offcanvas" href="#categoryCanvas" class="btn category-button d-xxl-none d-block">
                     <i class="ri-menu-line"></i>
                     <span>Shop By Categories</span>
-                </button>
+                </a>
+                <a class="btn category-button d-xxl-block d-none">
+                    <i class="ri-menu-line"></i>
+                    <span>Shop By Categories</span>
+                </a>
             </div>
 
             <div class="header-nav-middle">
@@ -249,7 +264,9 @@
                     <div class="offcanvas offcanvas-collapse order-xl-2" id="primaryMenu">
                         <div class="offcanvas-header navbar-shadow">
                             <h5>Menu</h5>
-                            <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas"></button>
+                            <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas">
+                                <i class="ri-close-fill"></i>
+                            </button>
                         </div>
                         <div class="offcanvas-body">
                             <ul class="navbar-nav navbar-nav-dark">
@@ -391,7 +408,8 @@
                                                 <a class="dropdown-item" href="shop-left-sidebar.html">Herbs
                                                     & Sprouts</a>
 
-                                                <a href="demo-personal-portfolio.html" class="dropdown-item">Lettuce &
+                                                <a href="demo-personal-portfolio.html" class="dropdown-item">Lettuce
+                                                    &
                                                     Leafy</a>
                                             </div>
 
@@ -430,7 +448,8 @@
                                                 <a class="dropdown-item" href="shop-left-sidebar.html">Broccoli &
                                                     Zucchini</a>
 
-                                                <a class="dropdown-item" href="shop-left-sidebar.html">Celery, Fennel &
+                                                <a class="dropdown-item" href="shop-left-sidebar.html">Celery,
+                                                    Fennel &
                                                     Leeks</a>
 
                                                 <a class="dropdown-item" href="shop-left-sidebar.html">Chilies &
@@ -589,11 +608,11 @@
                 </div>
             </div>
 
-            <div class="recent-header">
+            <div class="recent-light-header d-sm-flex d-none">
                 <ul class="product-viwer">
                     <li class="recent-product dropdown-box">
-                        <a href="#!" class="product-link">Recent Viewer</a>
-                        <div class="dropdown-list review-dropdown">
+                        <a href="#recentViwerModal" class="product-link">Recent Viewer</a>
+                        <div class="dropdown-list review-dropdown" id="recentViwerModal">
                             <div class="dropdown-title">
                                 <h4>Recent view</h4>
                             </div>
@@ -626,7 +645,10 @@
                                                 </li>
                                             </ul>
                                             <h5 class="price">$239.00 <del>$250.00</del></h5>
-                                            <button class="btn cart-btn">Add to cart</button>
+                                            <button class="btn cart-btn">
+                                                <span class="d-md-block d-none">Add to cart</span>
+                                                <i class="ri-shopping-cart-line d-md-none d-block"></i>
+                                            </button>
                                         </div>
                                         <button onclick="hideProductBox(this)" class="btn close-button">
                                             <i class="ri-delete-bin-line"></i>
@@ -661,7 +683,10 @@
                                                 </li>
                                             </ul>
                                             <h5 class="price">$700.00 <del>$720.00</del></h5>
-                                            <button class="btn cart-btn">Add to cart</button>
+                                            <button class="btn cart-btn">
+                                                <span class="d-md-block d-none">Add to cart</span>
+                                                <i class="ri-shopping-cart-line d-md-none d-block"></i>
+                                            </button>
                                         </div>
                                         <button onclick="hideProductBox(this)" class="btn close-button">
                                             <i class="ri-delete-bin-line"></i>
@@ -696,7 +721,10 @@
                                                 </li>
                                             </ul>
                                             <h5 class="price">$199.00 <del>$200.00</del></h5>
-                                            <button class="btn cart-btn">Add to cart</button>
+                                            <button class="btn cart-btn">
+                                                <span class="d-md-block d-none">Add to cart</span>
+                                                <i class="ri-shopping-cart-line d-md-none d-block"></i>
+                                            </button>
                                         </div>
                                         <button onclick="hideProductBox(this)" class="btn close-button">
                                             <i class="ri-delete-bin-line"></i>
@@ -731,7 +759,10 @@
                                                 </li>
                                             </ul>
                                             <h5 class="price">$700.00 <del>$720.00</del></h5>
-                                            <button class="btn cart-btn">Add to cart</button>
+                                            <button class="btn cart-btn">
+                                                <span class="d-md-block d-none">Add to cart</span>
+                                                <i class="ri-shopping-cart-line d-md-none d-block"></i>
+                                            </button>
                                         </div>
                                         <button onclick="hideProductBox(this)" class="btn close-button">
                                             <i class="ri-delete-bin-line"></i>
@@ -766,7 +797,10 @@
                                                 </li>
                                             </ul>
                                             <h5 class="price">$199.00 <del>$200.00</del></h5>
-                                            <button class="btn cart-btn">Add to cart</button>
+                                            <button class="btn cart-btn">
+                                                <span class="d-md-block d-none">Add to cart</span>
+                                                <i class="ri-shopping-cart-line d-md-none d-block"></i>
+                                            </button>
                                         </div>
                                         <button onclick="hideProductBox(this)" class="btn close-button">
                                             <i class="ri-delete-bin-line"></i>
@@ -776,7 +810,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="order-tracking">
+                    <li class="order-tracking d-xxl-inline-block d-none">
                         <a href="order-tracking.html" class="product-link">Order Tracking</a>
                     </li>
                 </ul>
@@ -855,7 +889,7 @@
                                     <svg>
                                         <use xlink:href="./assets/svg/category.svg#trending"></use>
                                     </svg>
-                                    <h5>Now Trending <span class="danger-bg-color">Hot</span></h5>
+                                    <h5>Now Trending <span class="theme-bg-color2 text-white">Hot</span></h5>
                                 </a>
                             </li>
                         </ul>
@@ -1947,7 +1981,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Fresho Pineapple, 1 pc 800 g
+                                                            <h5 class="name">Fresho Pineapple, 1 pc 800 g
                                                                 -1000 g</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -1980,7 +2014,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Bakers King Golden Crown Red
+                                                            <h5 class="name">Bakers King Golden Crown Red
                                                                 Cherry</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2013,7 +2047,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Fresh Pomelo (Batabi Lebu), 400
+                                                            <h5 class="name">Fresh Pomelo (Batabi Lebu), 400
                                                                 g</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2046,7 +2080,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Neotea Fresh Fig Powder Ficus
+                                                            <h5 class="name">Neotea Fresh Fig Powder Ficus
                                                                 Religiosa, 300 G</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2087,7 +2121,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Fresho Pineapple, 1 pc 800 g
+                                                            <h5 class="name">Fresho Pineapple, 1 pc 800 g
                                                                 -1000 g</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2120,7 +2154,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Bakers King Golden Crown Red
+                                                            <h5 class="name">Bakers King Golden Crown Red
                                                                 Cherry</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2153,7 +2187,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Fresh Pomelo (Batabi Lebu), 400
+                                                            <h5 class="name">Fresh Pomelo (Batabi Lebu), 400
                                                                 g</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2186,7 +2220,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Neotea Fresh Fig Powder Ficus
+                                                            <h5 class="name">Neotea Fresh Fig Powder Ficus
                                                                 Religiosa, 300 G</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2227,7 +2261,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Fresho Pineapple, 1 pc 800 g
+                                                            <h5 class="name">Fresho Pineapple, 1 pc 800 g
                                                                 -1000 g</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2260,7 +2294,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Bakers King Golden Crown Red
+                                                            <h5 class="name">Bakers King Golden Crown Red
                                                                 Cherry</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2293,7 +2327,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Fresh Pomelo (Batabi Lebu), 400
+                                                            <h5 class="name">Fresh Pomelo (Batabi Lebu), 400
                                                                 g</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2326,7 +2360,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Neotea Fresh Fig Powder Ficus
+                                                            <h5 class="name">Neotea Fresh Fig Powder Ficus
                                                                 Religiosa, 300 G</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2367,7 +2401,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Fresho Pineapple, 1 pc 800 g
+                                                            <h5 class="name">Fresho Pineapple, 1 pc 800 g
                                                                 -1000 g</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2400,7 +2434,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Bakers King Golden Crown Red
+                                                            <h5 class="name">Bakers King Golden Crown Red
                                                                 Cherry</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2433,7 +2467,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Fresh Pomelo (Batabi Lebu), 400
+                                                            <h5 class="name">Fresh Pomelo (Batabi Lebu), 400
                                                                 g</h5>
                                                         </a>
                                                         <ul class="rating">
@@ -2466,7 +2500,7 @@
                                                     <div class="product-content">
                                                         <h6 class="mb-1 content-color text-capitalize">Fresho</h6>
                                                         <a href="product.html">
-                                                            <h5 class="name theme-color">Neotea Fresh Fig Powder Ficus
+                                                            <h5 class="name">Neotea Fresh Fig Powder Ficus
                                                                 Religiosa, 300 G</h5>
                                                         </a>
                                                         <ul class="rating">

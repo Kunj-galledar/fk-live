@@ -593,6 +593,12 @@ var brandSlider = new Swiper(".brand-slider", {
     },
 });
 
+var swiper = new Swiper(".top-category-swiper", {
+    slidesPerView: 7,
+    spaceBetween: 10,
+    grabCursor: true,
+});
+
 var product5Slider = new Swiper(".product-five-slider", {
     slidesPerView: 5,
     spaceBetween: 25,
@@ -686,5 +692,14 @@ var swiper = new Swiper(".recent-product-slider", {
         1776: {
             slidesPerView: 10,
         },
+    },
+});
+
+var dailySlider = new Swiper(".daily-deal-slider", {
+    slidesPerView: 1,
+    grabCursor: true,
+    navigation: {
+        nextEl: ".daily-deal-next",
+        prevEl: ".daily-deal-prev",
     },
 });

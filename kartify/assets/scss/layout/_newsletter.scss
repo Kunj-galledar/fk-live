@@ -54,7 +54,7 @@
 
             svg {
                 @include pseudowh($width: calc(40px + (48 - 40) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (36 - 28) * ((100vw - 320px) / (1920 - 320))));
-                fill: rgba(var(--dark-yellow), 1);
+                fill: rgba(var(--theme-color), 1);
 
                 @include mq-max(xs) {
                     margin-bottom: 8px;
@@ -98,12 +98,12 @@
                     line-height: 1;
                     font-size: 14px;
                     font-weight: 400;
-                    color: rgba(var(--title), 1);
+                    color: rgba(var(--title-color), 1);
                     background-color: rgba(var(--white), 1);
                     border-radius: 5px 0 0 5px;
 
                     &::placeholder {
-                        color: rgba(var(--content), 1);
+                        color: rgba(var(--content-color), 1);
                     }
 
                     @include mq-max(xs) {
@@ -119,7 +119,7 @@
                     padding: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320))) calc(18px + (34 - 18) * ((100vw - 320px) / (1920 - 320)));
                     line-height: 1;
                     color: rgba(var(--white), 1);
-                    background-color: rgba(var(--dark-yellow), 1);
+                    background-color: rgba(var(--theme-color), 1);
                     border-radius: 0px 5px 5px 0px;
                     font-size: 14px;
                     text-transform: uppercase;
@@ -165,7 +165,7 @@
 
 .newsletter-section-2 {
     padding: calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320))) calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
-    background: rgba(var(--sky-blue), 1);
+    background-color: rgba(var(--theme-color3), 1);
     color: rgba(var(--white), 1);
 
     .newsletter-box-list {
@@ -185,7 +185,7 @@
             +li {
                 margin-left: calc(12px + (28 - 12) * ((100vw - 320px) / (1920 - 320)));
                 padding-left: calc(12px + (28 - 12) * ((100vw - 320px) / (1920 - 320)));
-                border-left: 1px solid rgba(var(--grey), 0.3);
+                border-left: 1px solid rgba(217, 217, 217, 0.3);
 
                 @include mq-max(md) {
                     margin-left: unset;
@@ -245,12 +245,12 @@
                 line-height: 1;
                 font-size: 14px;
                 font-weight: 400;
-                color: rgba(var(--title), 1);
+                color: rgba(var(--title-color), 1);
                 background-color: rgba(var(--white), 1);
                 border-radius: 5px 0 0 5px;
 
                 &::placeholder {
-                    color: rgba(var(--content), 1);
+                    color: rgba(var(--content-color), 1);
                 }
 
                 @include mq-max(xs) {
@@ -265,7 +265,7 @@
             .newsletter-form-button {
                 padding: calc(13px + (20 - 13) * ((100vw - 320px) / (1920 - 320))) calc(18px + (34 - 18) * ((100vw - 320px) / (1920 - 320)));
                 line-height: 1;
-                color: rgba(var(--title), 1);
+                color: rgba(var(--title-color), 1);
                 background-color: rgba(var(--theme-color), 1);
                 border-radius: 0px 5px 5px 0px;
                 font-size: 14px;
@@ -315,43 +315,9 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        // background-color: rgb(35, 47, 62);
         position: relative;
         padding: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320))) calc(15px + (60 - 15) * ((100vw - 320px) / (1920 - 320)));
         overflow: hidden;
-
-        // img {
-
-        //     &.newsletter-1,
-        //     &.newsletter-2,
-        //     &.newsletter-3 {
-        //         position: absolute;
-        //         opacity: 0.2;
-        //         animation: plane-animation 5s linear infinite;
-
-        //         @include mq-max(md) {
-        //             display: none;
-        //         }
-        //     }
-
-        //     &.newsletter-1 {
-        //         top: 11px;
-        //         left: 10px;
-        //         animation-delay: 0.5s;
-        //     }
-
-        //     &.newsletter-2 {
-        //         top: 23px;
-        //         left: 37%;
-        //         animation-delay: 1s;
-        //     }
-
-        //     &.newsletter-3 {
-        //         bottom: -12px;
-        //         left: 11%;
-        //         animation-delay: 1.5s;
-        //     }
-        // }
 
         .newsletter-content {
             display: flex;
@@ -366,7 +332,7 @@
 
             svg {
                 @include pseudowh($width: calc(40px + (48 - 40) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (36 - 28) * ((100vw - 320px) / (1920 - 320))));
-                fill: rgba(var(--dark-yellow), 1);
+                fill: rgba(var(--theme-color), 1);
 
                 @include mq-max(xs) {
                     margin-bottom: 8px;
@@ -410,12 +376,12 @@
                     line-height: 1;
                     font-size: 14px;
                     font-weight: 400;
-                    color: rgba(var(--title), 1);
+                    color: rgba(var(--title-color), 1);
                     background-color: rgba(var(--white), 1);
                     border-radius: 5px 0 0 5px;
 
                     &::placeholder {
-                        color: rgba(var(--content), 1);
+                        color: rgba(var(--content-color), 1);
                     }
 
                     @include mq-max(xs) {
@@ -436,40 +402,6 @@
                     font-size: 14px;
                     text-transform: uppercase;
                 }
-
-                // &>:not(:first-child) {
-                //     &:not(.dropdown-menu) {
-                //         &:not(.valid-tooltip) {
-                //             &:not(.valid-feedback) {
-                //                 &:not(.invalid-tooltip) {
-                //                     &:not(.invalid-feedback) {
-                //                         @include mq-max(xs) {
-                //                             border-radius: 5px;
-                //                         }
-                //                     }
-                //                 }
-                //             }
-                //         }
-                //     }
-                // }
-
-                // &:not(.has-validation) {
-                //     >:not(:last-child) {
-                //         &:not(.dropdown-toggle) {
-                //             &:not(.dropdown-menu) {
-                //                 &:not(.form-floating) {
-                //                     @include mq-max(xs) {
-                //                         text-align: center;
-                //                         width: 100%;
-                //                         padding: 11px 10px;
-                //                         border-radius: 5px;
-                //                         margin-bottom: 7px;
-                //                     }
-                //                 }
-                //             }
-                //         }
-                //     }
-                // }
             }
         }
     }

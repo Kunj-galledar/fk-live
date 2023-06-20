@@ -6,7 +6,7 @@
 
     .main-footer {
         padding-block: calc(22px + (46 - 22) * ((100vw - 320px) / (1920 - 320))) calc(15px + (38 - 15) * ((100vw - 320px) / (1920 - 320)));
-        border-bottom: 1px solid rgba(var(--title), 0.2);
+        border-bottom: 1px solid rgba(var(--title-color), 0.2);
 
         .footer-title {
             margin-bottom: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320)));
@@ -27,14 +27,19 @@
 
                 &:first-child {
                     .content-box {
-                        color: rgba(var(--dark-yellow), 1);
+                        color: rgba(var(--theme-color), 1);
                         display: flex;
                         align-items: center;
                         gap: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
 
                         svg {
-                            fill: rgba(var(--dark-yellow), 1);
+                            fill: rgba(var(--theme-color), 1);
                             @include pseudowh($width: calc(24px + (29 - 24) * ((100vw - 320px) / (1920 - 320))), $height: calc(21px + (29 - 21) * ((100vw - 320px) / (1920 - 320))));
+
+                            &.svg-theme-color {
+                                fill: rgba(var(--theme-color3), 1);
+                                stroke: rgba(var(--theme-color3), 1);
+                            }
                         }
 
                         h4 {
@@ -46,7 +51,7 @@
                 }
 
                 .content-box {
-                    color: rgba(var(--content), 1);
+                    color: rgba(var(--content-color), 1);
                     display: flex;
                     align-items: center;
                     gap: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
@@ -87,12 +92,12 @@
                             @include center(vertical);
                             left: -2px;
                             @include pseudowh($width: 1px, $height: 14px);
-                            background-color: rgba(94, 98, 120, 0.2);
+                            background-color: rgba(var(--content-color), 0.2);
                         }
                     }
 
                     a {
-                        color: rgba(var(--content), 1);
+                        color: rgba(var(--content-color), 1);
                         font-size: 17px;
                         line-height: 1;
                     }
@@ -111,7 +116,7 @@
                     a {
                         &::before {
                             width: 100%;
-                            background-color: rgba(var(--title), 0.8);
+                            background-color: rgba(var(--title-color), 0.8);
                         }
                     }
                 }
@@ -119,7 +124,7 @@
                 a {
                     font-weight: 400;
                     font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-                    color: rgba(var(--content), 1);
+                    color: rgba(var(--content-color), 1);
                     position: relative;
                     display: inline-block;
                     transition: 0.3s ease-in-out;
@@ -128,18 +133,17 @@
                         @include pos;
                         bottom: 0;
                         left: 0;
-                        width: 0;
-                        height: 2px;
-                        background-color: rgba(var(--content), 1);
+                        @include pseudowh($width: 0, $height: 2px);
+                        background-color: rgba(var(--content-color), 1);
                         transition: 0.3s ease-in-out;
                     }
 
                     &:hover {
-                        color: rgba(var(--title), 1);
+                        color: rgba(var(--title-color), 1);
 
                         &::before {
                             width: 100%;
-                            background-color: rgba(var(--title), 0.8);
+                            background-color: rgba(var(--title-color), 0.8);
                         }
                     }
                 }
@@ -186,7 +190,7 @@
 }
 
 .footer-section-2 {
-    background-color: rgba(var(--dark), 1);
+    background-color: rgb(21, 21, 21);
 
     .main-footer {
         padding-block: calc(22px + (46 - 22) * ((100vw - 320px) / (1920 - 320))) calc(15px + (38 - 15) * ((100vw - 320px) / (1920 - 320)));
@@ -212,13 +216,13 @@
 
                 &:first-child {
                     .content-box {
-                        color: rgba(var(--sky-blue), 1);
+                        color: rgba(var(--theme-color3), 1);
                         display: flex;
                         align-items: center;
                         gap: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
 
                         svg {
-                            fill: rgba(var(--sky-blue), 1);
+                            fill: rgba(var(--theme-color3), 1);
                             @include pseudowh($width: calc(24px + (29 - 24) * ((100vw - 320px) / (1920 - 320))), $height: calc(21px + (29 - 21) * ((100vw - 320px) / (1920 - 320))));
                         }
 
