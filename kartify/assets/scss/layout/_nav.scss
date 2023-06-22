@@ -714,6 +714,10 @@ header {
         .simplebar-vertical {
             margin-right: 3px;
         }
+
+        @include mq-max(xl) {
+            padding: calc(13px + (20 - 13) * ((100vw - 320px) / (1199 - 320))) calc(15px + (24 - 15) * ((100vw - 320px) / (1199 - 320)));
+        }
     }
 
     .offcanvas-start {
@@ -1142,7 +1146,7 @@ header {
             .offcanvas-body {
                 .navbar-nav {
                     padding-top: 0;
-                    gap: 18px;
+                    gap: calc(9px + (18 - 9) * ((100vw - 320px) / (1199 - 320)));
 
                     .nav-item {
                         border-top: 0;
@@ -1244,7 +1248,8 @@ header {
                 transform: translateY(0);
                 margin-top: 0;
                 min-width: unset;
-                padding: 8px 0 !important;
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1199 - 320)));
+                padding: calc(0px + (8 - 0) * ((100vw - 320px) / (1199 - 320))) 0 !important;
                 width: 100%;
 
                 &.show {
@@ -1255,7 +1260,3 @@ header {
         }
     }
 }
-
-/**=====================
-     Navigation scss
-==========================**/

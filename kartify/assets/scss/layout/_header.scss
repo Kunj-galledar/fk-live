@@ -5,6 +5,10 @@
     position: relative;
     z-index: 2;
 
+    @include mq-max(md) {
+        z-index: 3;
+    }
+
     .top-header {
         background-color: rgba(var(--theme-blue-dark), 1);
         padding-block: 11px;
@@ -278,10 +282,10 @@
             align-items: center;
 
             .header-logo {
-                height: 50px;
+                height: calc(36px + (50 - 36) * ((100vw - 320px) / (1920 - 320)));
 
                 img {
-                    @extend %image-contain;
+                    @extend %img-contain;
                 }
             }
         }
@@ -479,18 +483,18 @@
                         gap: 12px;
                         position: relative;
 
-                        label {
+                        .label {
                             position: absolute;
                             padding-top: 1px;
                             top: -4px;
                             right: -6px;
                             color: rgba(var(--white), 1);
                             background-color: rgba(var(--theme-color2), 1);
-                            @include pseudowh($width: 18px, $height: 18px);
+                            @include pseudowh($width: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))), $height: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
                             @include flex_common;
-                            font-size: 13px;
-                            line-height: 1;
+                            font-size: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320)));
+                            // line-height: 1;
                             font-weight: 500;
                         }
 
@@ -553,7 +557,7 @@
                 height: 50px;
 
                 img {
-                    @extend %image-contain;
+                    @extend %img-contain;
                 }
             }
         }
@@ -942,9 +946,19 @@
 
         @include mq-max(sm) {
             height: 0;
+            z-index: 3;
+            position: relative;
         }
 
         .category-header {
+            &.category-space-header {
+                margin-block: 6px;
+
+                // @include mq-max(xl) {
+                //     margin-block: 0;
+                // }
+            }
+
             .category-button {
                 color: rgba(var(--white), 1);
                 font-weight: 400;
@@ -971,9 +985,16 @@
                 }
 
                 &-2 {
+                    gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
+
                     &::before {
                         content: none;
                     }
+                }
+
+                &.category-yellow-bg {
+                    color: rgba(var(--title-color), 1);
+                    background-color: rgba(var(--theme-yellow), 1);
                 }
 
                 i {
@@ -1463,7 +1484,7 @@
                 height: 50px;
 
                 img {
-                    @extend %image-contain;
+                    @extend %img-contain;
                 }
             }
         }

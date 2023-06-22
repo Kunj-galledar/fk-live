@@ -3,7 +3,9 @@
 // Rows contain your columns.
 
 :root {
-  @each $name, $value in $grid-breakpoints {
+
+  @each $name,
+  $value in $grid-breakpoints {
     --#{$prefix}breakpoint-#{$name}: #{$value};
   }
 }
@@ -12,7 +14,7 @@
   .row {
     @include make-row();
 
-    > * {
+    >* {
       @include make-col-ready();
     }
   }

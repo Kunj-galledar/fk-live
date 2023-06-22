@@ -14,7 +14,7 @@
      /***** OUTPUT THE CLOCK DATA AS A REUSABLE OBJECT *****/
      return {
          'total': t,
-         'days': days,
+         //  'days': days,
          'hours': hours,
          'minutes': minutes,
          'seconds': seconds

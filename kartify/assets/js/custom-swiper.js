@@ -402,6 +402,33 @@ var bannerSlider = new Swiper(".banner-slider", {
     },
 })
 
+var bannerSlider2 = new Swiper(".banner-slider2", {
+    // loop: true,
+    slidesPerView: 4,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: ".banner-two-next",
+        prevEl: ".banner-two-prev",
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 6,
+        },
+        590: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+        },
+        1356: {
+            slidesPerView: 4,
+        },
+    },
+})
+
 var productBanner = new Swiper(".product-banner-slider", {
     slidesPerView: 4,
     spaceBetween: 20,
@@ -597,6 +624,29 @@ var swiper = new Swiper(".top-category-swiper", {
     slidesPerView: 7,
     spaceBetween: 10,
     grabCursor: true,
+    autoplay: {
+        delay: 3000,
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 2,
+        },
+        422: {
+            slidesPerView: 3,
+        },
+        582: {
+            slidesPerView: 4,
+        },
+        830: {
+            slidesPerView: 5,
+        },
+        1000: {
+            slidesPerView: 6,
+        },
+        1200: {
+            slidesPerView: 7,
+        },
+    },
 });
 
 var product5Slider = new Swiper(".product-five-slider", {
@@ -697,9 +747,45 @@ var swiper = new Swiper(".recent-product-slider", {
 
 var dailySlider = new Swiper(".daily-deal-slider", {
     slidesPerView: 1,
-    grabCursor: true,
     navigation: {
         nextEl: ".daily-deal-next",
         prevEl: ".daily-deal-prev",
     },
+});
+
+var swiper = new Swiper(".electronic-category-slider", {
+    slidesPerView: 8,
+    spaceBetween: 15,
+    navigation: {
+        nextEl: ".electronic-category-next",
+        prevEl: ".electronic-category-prev",
+    },
+});
+
+var swiper = new Swiper(".best-seller-slider", {
+    slidesPerView: 1,
+    navigation: {
+        nextEl: ".best-seller-next",
+        prevEl: ".best-seller-prev",
+    },
+});
+
+var discoverProduct = new Swiper(".discover-product-slider", {
+    spaceBetween: 20,
+    slidesPerView: 8,
+    // autoplay: {
+    //     delay: 3000,
+    // },
+    navigation: {
+        nextEl: ".discover-product-next",
+        prevEl: ".discover-product-prev",
+    },
+    // breakpoints: {
+    //     0: {
+    //         direction: "horizontal",
+    //     },
+    //     376: {
+    //         direction: "vertical",
+    //     },
+    // },
 });
