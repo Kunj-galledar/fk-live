@@ -760,6 +760,44 @@ var swiper = new Swiper(".electronic-category-slider", {
         nextEl: ".electronic-category-next",
         prevEl: ".electronic-category-prev",
     },
+<<<<<<< Updated upstream
+=======
+    breakpoints: {
+        0: {
+            slidesPerView: 2,
+        },
+        400: {
+            slidesPerView: 3,
+        },
+        550: {
+            slidesPerView: 4,
+        },
+        685: {
+            slidesPerView: 5,
+        },
+        830: {
+            slidesPerView: 6,
+        },
+        975: {
+            slidesPerView: 7,
+        },
+        1130: {
+            slidesPerView: 8,
+        },
+        1399: {
+            slidesPerView: 9,
+        },
+        1400: {
+            slidesPerView: 6,
+        },
+        1590: {
+            slidesPerView: 7,
+        },
+        1770: {
+            slidesPerView: 8,
+        },
+    },
+>>>>>>> Stashed changes
 });
 
 var swiper = new Swiper(".best-seller-slider", {
@@ -772,14 +810,23 @@ var swiper = new Swiper(".best-seller-slider", {
 
 var discoverProduct = new Swiper(".discover-product-slider", {
     spaceBetween: 20,
+<<<<<<< Updated upstream
     slidesPerView: 8,
     // autoplay: {
     //     delay: 3000,
     // },
+=======
+    loop: true,
+    slidesPerView: 8,
+    autoplay: {
+        delay: 3000,
+    },
+>>>>>>> Stashed changes
     navigation: {
         nextEl: ".discover-product-next",
         prevEl: ".discover-product-prev",
     },
+<<<<<<< Updated upstream
     // breakpoints: {
     //     0: {
     //         direction: "horizontal",
@@ -788,4 +835,29 @@ var discoverProduct = new Swiper(".discover-product-slider", {
     //         direction: "vertical",
     //     },
     // },
+=======
+    breakpoints: {
+        0: {
+            slidesPerView: 2,
+        },
+        536: {
+            slidesPerView: 3,
+        },
+        760: {
+            slidesPerView: 4,
+        },
+        940: {
+            slidesPerView: 5,
+        },
+        1115: {
+            slidesPerView: 6,
+        },
+        1360: {
+            slidesPerView: 7,
+        },
+        1650: {
+            slidesPerView: 8,
+        },
+    },
+>>>>>>> Stashed changes
 });
