@@ -37,7 +37,7 @@
         box-shadow: 0 2px 10px -3px rgba(var(--title-color), 0.1);
         background-color: rgba(var(--white), 1);
         position: relative;
-        padding: calc(16px + (26 - 16) * ((100vw - 320px) / (768 - 320))) calc(19px + (32 - 19) * ((100vw - 320px) / (768 - 320))) 16px;
+        padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1400 - 320))) calc(19px + (32 - 19) * ((100vw - 320px) / (1400 - 320))) 16px;
         background-color: #F2F3F8;
         border-bottom: 1px solid rgba(var(--content-color), 0.2);
 
@@ -48,7 +48,7 @@
                 color: rgba(var(--title-color), 1);
                 font-weight: 500;
                 line-height: 1;
-                font-size: calc(17px + (22 - 17) * ((100vw - 320px) / (768 - 320)));
+                font-size: calc(17px + (22 - 17) * ((100vw - 320px) / (1400 - 320)));
             }
 
             .btn-close {
@@ -72,6 +72,17 @@
         @media (max-width: 1400px) {
             height: unset;
             border: none;
+        }
+
+        &.category-bg-color {
+            border-radius: 5px;
+            background-color: #E8F1F7;
+            border: none;
+        }
+
+        .category-title {
+            padding: 0 20px 20px;
+            font-weight: 600;
         }
 
         .top-menu-list {
@@ -124,9 +135,24 @@
                 padding-bottom: 14px;
                 margin-bottom: 14px;
 
+<<<<<<< Updated upstream
                 li {
                     +li {
                         margin-top: 15px;
+=======
+                @include mq-max(3xl) {
+                    padding-bottom: 18px;
+                    margin-bottom: 18px;
+                }
+
+                li {
+                    +li {
+                        margin-top: 15px;
+
+                        @include mq-max(3xl) {
+                            margin-top: 22px;
+                        }
+>>>>>>> Stashed changes
                     }
                 }
             }
@@ -204,6 +230,13 @@
             &-sm {
                 li {
                     padding-block: 8px;
+<<<<<<< Updated upstream
+=======
+
+                    @include mq-max(3xl) {
+                        padding-block: 11px;
+                    }
+>>>>>>> Stashed changes
                 }
             }
         }
