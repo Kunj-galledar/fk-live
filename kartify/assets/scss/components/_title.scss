@@ -196,6 +196,49 @@
     }
 }
 
+.title-nav-pills-2 {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: calc(7px + (20 - 7) * ((100vw - 320px) / (1920 - 320)));
+    overflow: auto;
+
+    .nav-item {
+        .nav-link {
+            background-color: transparent;
+            white-space: nowrap;
+            font-weight: 400;
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+            padding: 0 0 calc(3px + (6 - 3) * ((100vw - 320px) / (1920 - 320)));
+            color: rgba(var(--content-color), 1);
+            border-bottom: 2px solid transparent;
+            border-radius: 0;
+            position: relative;
+
+            &::before {
+                @include pos;
+                bottom: -2px;
+                left: 50%;
+                transform: translateX(-50%);
+                @include pseudowh($width: 0, $height: 2px);
+                background-color: rgba(var(--content-color), 1);
+                transition: 0.5s ease-in-out;
+            }
+
+            &:hover {
+                &::before {
+                    width: 85%;
+                    background-color: rgba(var(--theme-blue), 1);
+                }
+            }
+
+            &.active {
+                border-bottom: 2px solid rgba(var(--theme-blue), 1);
+                color: rgba(var(--theme-blue), 1);
+            }
+        }
+    }
+}
+
 .title-theme-nav {
     flex-wrap: nowrap;
     align-items: center;

@@ -760,8 +760,6 @@ var swiper = new Swiper(".electronic-category-slider", {
         nextEl: ".electronic-category-next",
         prevEl: ".electronic-category-prev",
     },
-<<<<<<< Updated upstream
-=======
     breakpoints: {
         0: {
             slidesPerView: 2,
@@ -797,7 +795,6 @@ var swiper = new Swiper(".electronic-category-slider", {
             slidesPerView: 8,
         },
     },
->>>>>>> Stashed changes
 });
 
 var swiper = new Swiper(".best-seller-slider", {
@@ -810,32 +807,15 @@ var swiper = new Swiper(".best-seller-slider", {
 
 var discoverProduct = new Swiper(".discover-product-slider", {
     spaceBetween: 20,
-<<<<<<< Updated upstream
-    slidesPerView: 8,
-    // autoplay: {
-    //     delay: 3000,
-    // },
-=======
     loop: true,
     slidesPerView: 8,
     autoplay: {
         delay: 3000,
     },
->>>>>>> Stashed changes
     navigation: {
         nextEl: ".discover-product-next",
         prevEl: ".discover-product-prev",
     },
-<<<<<<< Updated upstream
-    // breakpoints: {
-    //     0: {
-    //         direction: "horizontal",
-    //     },
-    //     376: {
-    //         direction: "vertical",
-    //     },
-    // },
-=======
     breakpoints: {
         0: {
             slidesPerView: 2,
@@ -859,5 +839,19 @@ var discoverProduct = new Swiper(".discover-product-slider", {
             slidesPerView: 8,
         },
     },
->>>>>>> Stashed changes
+});
+
+var arrivalsSlider = new Swiper(".arrivals-slider", {
+    slidesPerView: 8,
+    spaceBetween: 25,
+});
+
+var toyCollectionSlider = new Swiper(".toy-collection-slider", {
+    slidesPerView: 7,
+    spaceBetween: 25,
+});
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 9,
+    spaceBetween: 44,
 });

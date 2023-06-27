@@ -499,7 +499,6 @@
         &:nth-child(4n-7) {
             @include mq-max(lg) {
                 border-left: unset;
-                // background-color: red;
             }
 
             @include mq-max(sm) {
@@ -510,7 +509,6 @@
         &:nth-child(4n-4) {
             @include mq-max(lg) {
                 border-right: unset;
-                // background-color: red;
             }
 
             @include mq-max(md) {
@@ -972,12 +970,9 @@
 
         img {
             transition: all 0.3s ease-in-out;
-<<<<<<< Updated upstream
             @include pseudowh;
             object-fit: contain;
-=======
             @extend %img-contain;
->>>>>>> Stashed changes
         }
     }
 
@@ -1847,10 +1842,7 @@
             text-transform: capitalize;
             line-height: 1.4;
             margin-bottom: 7px;
-<<<<<<< Updated upstream
-=======
             font-size: calc(14px + (16 - 14) * ((100vw - 1400px) / (1920 - 1400)));
->>>>>>> Stashed changes
             color: rgba(var(--title-color), 1)
         }
 
@@ -1944,6 +1936,32 @@
 }
 
 .product-kid-box {
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: rgba(var(--white), 1);
+    box-shadow: 0px 4px 10px 0px transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        .product-image-box {
+            &::before {
+                background: rgba(var(--theme-blue), 1);
+            }
+
+            .product-option {
+                top: 3px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .p-shop-btn {
+                bottom: 10px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
     .product-image-box {
         padding: 2px;
         width: 100%;
@@ -1954,9 +1972,11 @@
         overflow: hidden;
         color: #ffd1de;
         background-color: #F0F9FE;
+        transition: all 0.3s ease-in-out;
 
         &::before {
             @include pos;
+            transition: all 0.3s ease-in-out;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%) rotate(26deg);
@@ -2000,9 +2020,13 @@
 
         .product-option {
             position: absolute;
-            top: 3px;
+            top: -67px;
             left: 50%;
             transform: translateX(-50%);
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            visibility: visible;
+            width: max-content;
 
             li {
                 position: relative;
@@ -2055,6 +2079,86 @@
                     }
                 }
             }
+        }
+
+        .p-shop-btn {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border: 1px solid #1CA3D1;
+            background: rgba(var(--white), 0.80);
+            backdrop-filter: blur(2px);
+            color: #1CA3D1;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            visibility: visible;
+
+            i {
+                font-size: 17px;
+                line-height: 1;
+            }
+        }
+    }
+
+    .product-content {
+        margin-top: 9px;
+
+        .name {
+            text-transform: capitalize;
+            margin-bottom: 4px;
+            @include line;
+
+            a {
+                color: rgba(var(--title-color), 1);
+            }
+        }
+
+        .price {
+            color: rgba(var(--theme-pink), 1);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+
+            del {
+                color: rgba(var(--content-color), 0.8);
+            }
+        }
+
+        .rating {
+            li {
+                i {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    &.product-s-box {
+        text-align: center;
+
+        .product-image-box {
+            height: 190px;
+
+            .image-box {
+                padding: 0;
+                overflow: hidden;
+
+                img {
+                    @extend %img-cover;
+                }
+            }
+        }
+
+        .product-content {
+            margin-top: 18px;
         }
     }
 }
