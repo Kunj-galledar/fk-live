@@ -1,3 +1,6 @@
+/*=====================
+    Password Show Hide Js
+==========================*/
 var password = document.getElementById("pass");
 var toggler = document.getElementById("toggler");
 

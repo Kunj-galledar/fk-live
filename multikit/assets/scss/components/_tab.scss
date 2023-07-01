@@ -1,5 +1,5 @@
 /*=====================
-    tab scss
+   3.11 Tab CSS
 ==========================*/
 /* ---------- tab style 1 scss ---------- */
 .tab-style-1 {
@@ -53,7 +53,7 @@
 
     [class="dark"] & {
         background-color: #171717;
-        box-shadow: 2px 3px 6px rgba(57, 44, 44, .19);
+        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
     }
 
     [dir="rtl"] & {
@@ -153,7 +153,7 @@
             font-weight: 400;
             font-size: 14px;
             margin: 0;
-            color: #afafaf;
+            color: #919191;
         }
     }
 }
@@ -181,6 +181,10 @@
             &.active {
                 color: rgba(var(--white), 1);
                 background-color: rgba(var(--theme-color), 1);
+
+                [class="dark"] & {
+                    color: #fff;
+                }
             }
 
             img {
@@ -201,7 +205,7 @@
         .nav-link {
             font-weight: 500;
             border: 1px solid transparent;
-            background-color: rgba(20, 20, 20, 0.6);
+            background-color: rgba(var(--title), 0.6);
             border-radius: 100px;
             color: rgba(var(--title), 0.6);
             font-size: 13px;
@@ -233,7 +237,7 @@
             border-radius: 100px;
             width: max-content;
             gap: 5px;
-            background-color: #FAFAFA;
+            background-color: #fafafa;
             color: rgba(var(--title), 1);
             font-size: 14px;
             line-height: 1;
@@ -242,6 +246,10 @@
             &.active {
                 color: rgba(var(--white), 1);
                 background-color: rgba(var(--title), 1);
+
+                [class="dark"] & {
+                    color: #fff;
+                }
             }
 
             img {
@@ -257,7 +265,7 @@
     align-items: center;
     gap: 5px;
     flex-wrap: nowrap;
-    border-bottom: 1px solid #EDEDED;
+    border-bottom: 1px solid #ededed;
     padding-bottom: 3px;
     margin-bottom: 18px;
 
@@ -284,11 +292,9 @@
                 left: 0;
                 width: 100%;
                 height: 1px;
-                border-top: 2px solid #FF9C42;
+                border-top: 2px solid #ff9c42;
                 opacity: 0;
-                transition: color 0.15s ease-in-out,
-                    background-color 0.15s ease-in-out,
-                    border-color 0.15s ease-in-out;
+                transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
             }
 
             &.active {

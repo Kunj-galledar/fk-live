@@ -1,5 +1,5 @@
 /*=====================
-    Learning Application CSS
+   5.12 Learning Application CSS
 ==========================*/
 /* ---------- Continue Reading CSS ---------- */
 .continue-reading-section {
@@ -27,11 +27,11 @@
 
             [class="dark"] & {
                 box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.09);
-                background-color: #060D18;
+                background-color: #060d18;
             }
 
             .reading-detail {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 12px);
                 align-items: center;
 
                 .reading-image {
@@ -95,7 +95,7 @@
             }
 
             .category-list {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 10px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 10px);
                 align-items: center;
 
                 li {
@@ -108,11 +108,11 @@
                         background-color: rgba(var(--white), 1);
                         box-shadow: 0px 0px 6px rgba(var(--black), 0.06);
                         position: relative;
-                        color: rgba(var(--title), 1.0);
+                        color: rgba(var(--title), 1);
                         display: block;
 
                         [class="dark"] & {
-                            background-color: #060D18;
+                            background-color: #060d18;
                             box-shadow: 0px 0px 6px rgba(255, 255, 255, 0.08);
                         }
 
@@ -165,6 +165,10 @@
                     display: block;
                     border-radius: 6px;
                     overflow: hidden;
+
+                    img {
+                        width: 100%;
+                    }
                 }
 
                 .feature-detail {
@@ -180,11 +184,11 @@
                     }
 
                     .rate-course {
-                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                        @include flex_common($dis: flex, $align: center, $justify: space-between);
                         margin-top: 8px;
 
                         li {
-                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
+                            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
                             align-items: center;
                             color: rgba(var(--title), 1);
 
@@ -207,7 +211,7 @@
         overflow: hidden;
         box-shadow: 0px 0px 5px rgba(var(--black), 0.08);
         border-radius: 9px;
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
         align-items: center;
         position: relative;
         z-index: 0;
@@ -245,7 +249,7 @@
             }
 
             .video-play {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
+                @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
                 margin: 4px 0;
                 color: rgba(var(--content), 1);
                 align-items: center;
@@ -261,7 +265,7 @@
             }
 
             .rating-box {
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                @include flex_common($dis: flex, $align: center, $justify: space-between);
 
                 >li {
                     font-size: 12px;
@@ -271,7 +275,7 @@
                     }
 
                     .rating {
-                        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
+                        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
                         align-items: center;
 
                         >li {
@@ -300,7 +304,7 @@
                 overflow: hidden;
                 box-shadow: 0px 0px 5px rgba(var(--black), 0.08);
                 border-radius: 9px;
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
                 align-items: center;
                 position: relative;
                 z-index: 0;
@@ -363,7 +367,7 @@
 .top-instructors-section {
     .instructors-box {
         .instructors-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
             align-items: center;
             white-space: nowrap;
             overflow: auto hidden;
@@ -402,7 +406,7 @@
 /* ---------- Coupon CSS ---------- */
 .coupon-section {
     .coupon-box {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
         align-items: center;
         padding: 15px;
         background-color: #f5f7f7;
@@ -678,7 +682,7 @@
 /* ---------- Payment CSS ---------- */
 .payment-section {
     .payment-box {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 9px);
 
         .accordion-item {
             border: none;
@@ -693,7 +697,7 @@
                     border-radius: calc(0.375rem - 1px);
 
                     .payment-box {
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+                        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 11px);
                         align-items: center;
 
                         .payment-icon {
@@ -732,7 +736,7 @@
 
             .accordion-body {
                 .net-banking-list {
-                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 6px);
+                    @include flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
                     align-items: center;
 
                     li {
@@ -766,7 +770,6 @@
             font-size: 16px;
             color: rgba(var(--title), 1);
             margin-bottom: 5px;
-            // width: 95%;
 
             @include mq-max(md) {
                 font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (600 - 320)));
@@ -774,7 +777,7 @@
         }
 
         .course-number {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 25px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 25px);
             align-items: center;
 
             li {
@@ -808,14 +811,14 @@
 
     .name-box {
         align-items: flex-end;
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 14px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 14px);
 
         .course-price {
             padding: 11px 8px;
             background-color: rgba(var(--content), 0.1);
             box-shadow: 0px 0px 0px rgba(var(--black), 0.25);
             border-radius: 6px;
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
             justify-content: center;
         }
     }
@@ -825,6 +828,7 @@
 .about-course-section {
     .about-detail {
         position: relative;
+        padding-bottom: 28px;
 
         p {
             font-weight: 400;
@@ -838,7 +842,7 @@
             }
 
             &.more {
-                padding-bottom: 28px;
+                display: none;
             }
         }
 
@@ -864,7 +868,7 @@
 .instructors-section {
     .instructors-box {
         align-items: center;
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 12px);
 
         .instructors-image {
             @include pseudowh($width: 104px, $height: 104px);
@@ -883,7 +887,7 @@
             }
 
             .review-list {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
+                @include flex_wrap($dis: flex, $wrap: wrap, $gap: 2px 8px);
                 align-items: center;
                 margin-bottom: 10px;
 
@@ -904,7 +908,7 @@
 
             .social-media {
                 align-items: center;
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 13px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 13px);
 
                 li {
                     font-size: 18px;
@@ -919,59 +923,17 @@
     }
 }
 
-/* ---------- Term & Condition CSS ---------- */
-.term-condition-section {
-    .term-condition-box {
-        .term-content {
-            p {
-                color: rgba(var(--content), 1);
-                line-height: 1.5;
-                font-size: 13px;
-                margin: 0;
-
-                a {
-                    [class="dark"] & {
-                        color: #ddd;
-                    }
-
-                    &:hover {
-                        color: rgba(var(--theme-color), 1);
-                    }
-                }
-            }
-
-            .social-media-list {
-                margin: 9px 0;
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 3px);
-                padding-left: 30px;
-
-                [dir="rtl"] & {
-                    padding-left: unset;
-                    padding-right: 30px;
-                }
-
-                li {
-                    width: 100%;
-                    list-style: disc;
-
-                    a {
-                        color: rgba(var(--theme-color2), 1);
-
-                        [class="dark"] & {
-                            color: #ddd;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 /* ---------- Account Security CSS ---------- */
 .account-security-section {
     .account-email-box {
         .email-box {
             position: relative;
+
+            &.with-icon {
+                .form-control {
+                    padding-right: 63px;
+                }
+            }
 
             .email-button {
                 position: absolute;
@@ -1007,10 +969,10 @@
             }
 
             .menu-list {
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                @include flex_common($dis: flex, $align: center, $justify: space-between);
 
                 .list-icon {
-                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
+                    @include flex_wrap($dis: flex, $wrap: wrap, $gap: 9px);
                     align-items: center;
 
                     i {
@@ -1052,7 +1014,7 @@
                                 right: 0;
                                 bottom: 0;
                                 background-color: rgba(var(--content), 1);
-                                transition: .4s;
+                                transition: 0.4s;
 
                                 [class="dark"] & {
                                     background-color: #121924;
@@ -1064,7 +1026,7 @@
                                     @include pos;
                                     @include pseudowh($width: 23px, $height: 23px);
                                     left: 3px;
-                                    transition: .4s;
+                                    transition: 0.4s;
                                 }
 
                                 &.round {
@@ -1133,7 +1095,7 @@
                 bottom: 5px;
                 @include center(horizontal);
                 z-index: 1;
-                color: #4A4A4A;
+                color: #4a4a4a;
                 display: flex;
                 align-items: center;
                 padding: 3px 7px;
@@ -1161,14 +1123,14 @@
         form {
             .select-gender {
                 .gender-list {
-                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 11px);
+                    @include flex_wrap($dis: flex, $wrap: wrap, $gap: 11px);
                     align-items: center;
 
                     li {
                         .form-check {
                             margin: 0;
                             align-items: center;
-                            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 4px);
+                            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
                             min-height: auto;
 
                             .form-check-label {
@@ -1185,7 +1147,7 @@
     }
 
     .gender-list {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 5px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 5px);
 
         li {
             width: 100%;
@@ -1204,7 +1166,7 @@
             }
 
             .menu-setting-box {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 11px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 11px);
                 align-items: center;
                 color: rgba(var(--title), 1);
 

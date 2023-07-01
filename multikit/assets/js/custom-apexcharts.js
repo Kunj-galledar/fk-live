@@ -1,3 +1,6 @@
+/*=====================
+    Custom Apex Chart js
+==========================*/
 var options = {
     series: [{
         name: 'series1',

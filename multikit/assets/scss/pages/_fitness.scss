@@ -1,5 +1,5 @@
 /*===================== 
-    Fitness Application Css
+   5.6 Fitness Application CSS
 ==========================*/
 /* ---------- Step Box Divider Css ---------- */
 .step-divider {
@@ -33,7 +33,7 @@
     p {
         font-weight: 500;
         font-size: 13px;
-        color: #848F8F;
+        color: #848f8f;
         margin: 0;
     }
 }
@@ -47,7 +47,7 @@
 
     span {
         appearance: none;
-        background-color: #E2E2E2;
+        background-color: #e2e2e2;
         border: none;
         border-radius: 100px;
         width: 100%;
@@ -61,7 +61,7 @@
         }
 
         &.active {
-            background-color: #4466F2;
+            background-color: #4466f2;
             color: white;
         }
     }
@@ -187,7 +187,7 @@
         margin: 0;
         min-height: auto;
         padding-left: unset;
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 6px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
         align-items: center;
 
         [dir="rtl"] & {
@@ -632,6 +632,10 @@
                         gap: 4px;
                         width: 100%;
 
+                        +li {
+                            margin-top: 3px;
+                        }
+
                         i {
                             font-size: 13px;
                             line-height: 1;
@@ -667,7 +671,7 @@
             left: 10px;
             width: 1px;
             height: 100%;
-            border-left: 1px solid rgb(201, 201, 201);
+            border-left: 1px solid #eee;
 
             [dir="rtl"] & {
                 right: 10px;
@@ -750,7 +754,7 @@
                         &:before {
                             @include pos;
                             left: -50%;
-                            border-top: 1px dashed #EBEBEB;
+                            border-top: 1px dashed #ebebeb;
                             top: 50%;
                             width: 100%;
                             transform: translateY(-50%);
@@ -785,7 +789,7 @@
                                 inset: 0;
                                 border-radius: 100%;
                                 padding: 1px;
-                                background: linear-gradient(90.08deg, #1EA6EC .07%, #4466F2 91.07%);
+                                background: linear-gradient(90.08deg, #1ea6ec 0.07%, #4466f2 91.07%);
                                 -webkit-mask-composite: xor;
                                 mask-composite: exclude;
                                 -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -815,7 +819,7 @@
         +li {
             padding-top: 17px;
             margin-top: 17px;
-            border-top: 1px solid #F2F2F2;
+            border-top: 1px solid #f2f2f2;
 
             [class="dark"] & {
                 border-top-color: #212332;
@@ -838,7 +842,7 @@
                 height: 72px;
                 @include flex_common;
                 padding: 3px 13px;
-                background: #F7F7F7;
+                background-color: rgba(var(--light-bg), 1);
                 border-radius: 6px;
 
                 @include mq-max(md) {
@@ -901,13 +905,17 @@
             display: block;
             overflow: hidden;
 
+            [class="dark"] & {
+                color: #fff;
+            }
+
             .gym-contain {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 104px;
-                background: linear-gradient(180deg, #2F2F2F 0%, rgba(78, 78, 78, 0) 100%);
+                background: linear-gradient(180deg, #2f2f2f 0%, rgba(78, 78, 78, 0) 100%);
                 padding: 14px 22px;
 
                 h5 {
@@ -984,7 +992,7 @@
                 }
 
                 .fitness-menu-icon {
-                    background-color: #F9F9F9;
+                    background-color: #f9f9f9;
                     border-radius: 5px;
                     width: 42px;
                     height: 42px;
@@ -1035,7 +1043,7 @@
 .workout-box-list {
     display: grid;
     gap: 18px;
-    grid-template-areas: 'myArea myArea';
+    grid-template-areas: "myArea myArea";
 
     li {
         &:last-child {
@@ -1043,7 +1051,7 @@
         }
 
         .workout-box {
-            background: #F9F9F9;
+            background: #f9f9f9;
             border-radius: 9px;
             padding: 10px;
 
@@ -1070,7 +1078,7 @@
                     }
 
                     i {
-                        background: linear-gradient(90.08deg, #1EA6EC 0.07%, #4466F2 91.07%);
+                        background: linear-gradient(90.08deg, #1ea6ec 0.07%, #4466f2 91.07%);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                     }
@@ -1105,6 +1113,10 @@
         max-width: 600px;
         padding-inline: 15px;
 
+        [class="dark"] & {
+            color: #fff;
+        }
+
         .music-row {
             margin-bottom: 16px;
 
@@ -1115,6 +1127,10 @@
                 border-radius: 100px;
                 position: relative;
 
+                [class="dark"] & {
+                    background-color: rgba(255, 255, 255, 0.31);
+                }
+
                 &::before {
                     @include pos;
                     top: 50%;
@@ -1124,6 +1140,10 @@
                     height: 18px;
                     background-color: rgba(var(--white), 1);
                     border-radius: 100%;
+
+                    [class="dark"] & {
+                        background-color: #fff;
+                    }
 
                     [dir="rtl"] & {
                         left: unset;
@@ -1151,8 +1171,16 @@
             @include flex_common;
             gap: 42px;
 
-            i {
-                font-size: 31px;
+            a {
+                color: rgba(var(--white), 1);
+
+                [class="dark"] & {
+                    color: #fff;
+                }
+
+                i {
+                    font-size: 31px;
+                }
             }
         }
     }

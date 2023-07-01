@@ -191,3 +191,23 @@ const swiper22 = new Swiper(".onboarding-content-slider", {
     disableOnInteraction: false,
   },
 });
+
+const swiper23 = new Swiper(".relative-slider", {
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  fade: true,
+  direction: "vertical",
+  watchSlidesProgress: true,
+});
+const swiper24 = new Swiper(".main-slider", {
+  spaceBetween: 10,
+  thumbs: {
+    swiper: swiper23,
+  },
+});
+
+const swiper25 = new Swiper(".slider-2-3", {
+  slidesPerView: 2.3,
+  spaceBetween: 11,
+});

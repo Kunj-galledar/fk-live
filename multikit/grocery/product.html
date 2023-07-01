@@ -19,32 +19,33 @@
     <link rel="icon" href="../assets/images/favicon/3.svg" type="image/x-icon">
     <link rel="shortcut icon" href="../" type="image/x-icon">
 
-    <!-- Google font -->
+    <!-- Google font css link  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
 
-    <!-- Bootstrap link -->
+    <!-- Bootstrap css -->
     <link id="rtl-link" rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
 
     <!-- Loader Normalize css -->
-    <link rel="stylesheet" href="../assets/css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/normalize.min.css">
 
     <!-- Swiper css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/swiper-bundle.min.css">
 
-    <!-- Remix Icon link -->
+    <!-- Remix Icon css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/remixicon.css">
 
-    <!-- Style Link -->
+    <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="../assets/css/style.css">
 
 </head>
 
 <body class="grocery-color public-san-body">
+
     <!-- Loader Box Start -->
     <div class="min-loader-wrapper">
-        <img src="../assets/images/loader/grocery.gif" class="img-fluid loader" alt="">
+        <img src="../assets/images/favicon/3.svg" class="img-fluid loader" alt="">
         <div class="loader-section grocery-color section-left"></div>
         <div class="loader-section grocery-color section-right"></div>
     </div>
@@ -56,7 +57,7 @@
             <i class="ri-arrow-left-s-line"></i>
         </a>
 
-        <a href="index.html" class="arrow-box">
+        <a href="#shareCourse" data-bs-toggle="offcanvas" class="arrow-box">
             <i class="ri-share-forward-line"></i>
         </a>
     </header>
@@ -333,10 +334,10 @@
     <!-- View Cart Bottom Box Start -->
     <div class="product-cart-box">
         <div class="left-qty">
-            <div class="qty-box">
-                <input type="button" class="minusBtn" value="-">
-                <input type="text" size="25" value="1" class="count">
-                <input type="button" class="plusBtn" value="+">
+            <div class="qty-box quantity-box">
+                <input type="button" class="minusBtn remove-minus count-decrease" value="-">
+                <input type="text" size="25" value="1" class="count countdown-remove">
+                <input type="button" class="plusBtn count-increase" value="+">
             </div>
         </div>
         <div class="right-button">
@@ -387,10 +388,82 @@
     </div>
     <!-- Side Menu Offcanvas End -->
 
+    <!-- share product offcanvas start -->
+    <div class="offcanvas share-modal theme-bottom-offcanvas offcanvas-bottom" tabindex="-1" id="shareCourse">
+        <div class="offcanvas-header">
+            <h5>Share the product</h5>
+        </div>
+        <div class="offcanvas-body">
+            <div class="product-detail-box">
+                <div class="share-detail">
+                    <div class="share-title">
+                        <p class="text-content">Share our page with the world, increase
+                            your page exposure with the world.</p>
+                    </div>
+
+                    <div class="copy-link">
+                        <ul class="social-media-share">
+                            <li>
+                                <a href="javascript:void(0)" class="fb">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                                <h6>Facebook</h6>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="twitter">
+                                    <i class="ri-twitter-fill"></i>
+                                </a>
+                                <h6>Twitter</h6>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="google">
+                                    <i class="ri-google-fill"></i>
+                                </a>
+                                <h6>Google</h6>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="link">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                                <h6>Linkedin</h6>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="mail">
+                                    <i class="ri-mail-line"></i>
+                                </a>
+                                <h6>Mail</h6>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="whatsapp">
+                                    <i class="ri-whatsapp-line"></i>
+                                </a>
+                                <h6>Whatsapp</h6>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="pint">
+                                    <i class="ri-pinterest-line"></i>
+                                </a>
+                                <h6>Pinterest</h6>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="more">
+                                    <i class="ri-more-fill"></i>
+                                </a>
+                                <h6>More</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- share product offcanvas end -->
+
+
     <!-- Theme Option Setting Box Start -->
-    <div class="theme-setting-box grocery-color">
+    <div class="theme-setting-box">
         <div class="theme-box">
-            <button class="theme-icon">
+            <button class="theme-icon text-white">
                 <i class="ri-menu-line"></i>
             </button>
             <ul class="theme-option">
@@ -415,18 +488,16 @@
     <!-- Theme Option Setting Box End -->
 
     <!-- Bootstrap js-->
-    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 
     <!-- swiper js -->
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/custom_swiper.js"></script>
-    <!-- <script src="../assets/js/grocery_custom_swiper.js"></script> -->
 
     <!-- quantity js -->
-    <script src="../assets/js/quantity.js"></script>
-    <script src="../assets/js/quantity-3.js"></script>
+    <script src="../assets/js/quantity-2.js"></script>
 
-    <!-- Loader Js -->
+    <!-- Loader js -->
     <script src="../assets/js/loader.js"></script>
 
     <!-- Theme js-->
@@ -434,33 +505,6 @@
 
     <!-- Theme Settings js-->
     <script src="../assets/js/theme-setting.js"></script>
-
-    <script>
-
-        const swiper23 = new Swiper(".relative-slider", {
-            spaceBetween: 10,
-            slidesPerView: 4,
-            freeMode: true,
-            fade: true,
-            direction: "vertical",
-            watchSlidesProgress: true,
-        });
-        const swiper24 = new Swiper(".main-slider", {
-            spaceBetween: 10,
-            // navigation: {
-            //     nextEl: ".swiper-button-next",
-            //     prevEl: ".swiper-button-prev",
-            // },
-            thumbs: {
-                swiper: swiper23,
-            },
-        });
-
-        const swiper25 = new Swiper(".slider-2-3", {
-            slidesPerView: 2.3,
-            spaceBetween: 11,
-        });
-    </script>
 
 </body>
 

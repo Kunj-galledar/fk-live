@@ -1,5 +1,5 @@
 /*=====================
-    Authentication Css
+    1.2 Authentication CSS
 ==========================*/
 /* ---------- learning authentication ---------- */
 .learning-auth {
@@ -173,7 +173,7 @@
         h4 {
             font-weight: 400;
             line-height: 1.4;
-            color: rgba(var(--content), 1);
+            color: rgba(132, 143, 143, 1);
             margin-bottom: 19px;
         }
     }
@@ -279,14 +279,24 @@
             font-size: 30px;
             color: rgba(var(--title), 1);
             margin-bottom: 10px;
+
+            [class="dark"] & {
+                color: #222;
+            }
         }
 
         h4 {
             font-weight: 300;
             font-size: 16px;
-            color: rgba(var(--content), 1);
+            color: rgba(132, 143, 143, 1);
             margin-bottom: 26px;
             line-height: 1.5;
+        }
+
+        button {
+            [class="dark"] & {
+                color: rgba(255, 255, 255, 1) !important;
+            }
         }
 
         h5 {
@@ -295,7 +305,7 @@
             margin-top: 13px;
 
             a {
-                color: rgba(var(--content), 1);
+                color: rgba(132, 143, 143, 1);
             }
         }
     }
@@ -399,6 +409,7 @@
             font-weight: 400;
             font-size: 18px;
             color: rgba(var(--content), 1);
+            line-height: 1.4;
 
             @include mq-max(md) {
                 font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
@@ -461,8 +472,9 @@
 
 /* ---------- Ecommerce authentication ---------- */
 .ecommerce-auth {
-    @include flex_common;
-    height: 100vh;
+    display: flex;
+    height: auto;
+    min-height: 100vh;
 
     .top-title {
         font-weight: 900;
@@ -474,6 +486,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
         word-wrap: break-word;
+        margin: 0;
+        padding-top: 67px;
 
         [class="dark"] & {
             color: rgba(33, 35, 37, 0.5);
@@ -541,6 +555,10 @@
             h4 {
                 font-weight: 600;
                 color: rgb(27, 27, 62);
+
+                [class="dark"] & {
+                    color: #fff;
+                }
             }
         }
     }
@@ -594,6 +612,7 @@
         h5 {
             font-weight: 400;
             color: rgba(var(--theme-gray), 1);
+            font-size: 14px;
         }
     }
 }

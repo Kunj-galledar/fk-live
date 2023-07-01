@@ -1,3 +1,6 @@
+/**=====================
+   4.1 Header CSS
+==========================**/
 /* ---------- Landing Header ---------- */
 .landing-header {
     position: absolute;
@@ -278,7 +281,7 @@ header {
             color: rgba(var(--title), 1);
 
             [class="dark"] & {
-                color: #1f2937;
+                color: #1f2937 !important;
             }
 
             [dir="rtl"] & {
@@ -294,7 +297,7 @@ header {
             color: rgba(var(--title), 1);
 
             [class="dark"] & {
-                color: #1f2937;
+                color: #1f2937 !important;
             }
 
             [dir="rtl"] & {
@@ -400,6 +403,52 @@ header {
                 }
             }
         }
+
+        .search-box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0);
+            transition: all 0.5s ease;
+            padding: 15px;
+
+            &.show {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+
+            .close-search {
+                position: absolute;
+                right: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 20px;
+                cursor: pointer;
+
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 20px;
+                }
+            }
+
+            .form-control {
+                border: none;
+                padding-right: 45px;
+
+                [class="dark"] & {
+                    background-color: #1f2937;
+                }
+
+                [dir="rtl"] & {
+                    padding-right: inherit;
+                    padding-left: 45px;
+                }
+            }
+        }
     }
 }
 
@@ -461,6 +510,10 @@ header {
                     font-weight: 400;
                     font-size: 16px;
 
+                    @include mq-max(md) {
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+                    }
+
                     [class="dark"] & {
                         background-color: #272d33;
                         box-shadow: 2px 3px 6px rgba(192, 192, 192, 0.08);
@@ -468,6 +521,7 @@ header {
 
                     [dir="rtl"] & {
                         padding: 13px 48px 13px 20px;
+                        text-align: right;
                     }
 
                     &::placeholder {
@@ -587,6 +641,7 @@ header {
     .header-company-box {
         @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
         margin-top: 8px;
+        align-items: center;
 
         .company-image {
             @include pseudowh($width: 75px, $height: 75px);
@@ -754,7 +809,7 @@ header {
                     background-color: #a72c2c;
                     border-radius: 100%;
                     @include flex_common;
-                    color: rgba(var(--white), 1);
+                    color: #ffffff;
 
                     i {
                         transform: rotate(135.84deg);
@@ -843,8 +898,9 @@ header {
         @include flex_common($dis: flex, $align: center, $justify: space-between);
         position: fixed;
         top: 0;
-        left: 0;
+        @include center(horizontal);
         width: 100%;
+        max-width: 600px;
 
         .left-header {
             align-items: center;
@@ -1148,13 +1204,18 @@ header {
     align-items: center;
     justify-content: space-between;
 
+    .right-icon {
+        color: rgba(var(--title), 1);
+        font-size: 20px;
+        line-height: 1;
+    }
+
     &.header-absolute {
         position: absolute;
         top: 0;
         left: 0;
         width: -webkit-fill-available;
         padding: 19px 15px 0;
-        // padding: 0;
         z-index: 1;
 
         .arrow-box {
@@ -1164,7 +1225,7 @@ header {
             border-radius: 100%;
             display: grid;
             place-items: center;
-            box-shadow: 0px -1px 17px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px -1px 17px rgba(var(--black), 0.05);
             color: rgba(var(--title), 1);
 
             i {
@@ -1180,6 +1241,12 @@ header {
         }
     }
 
+    .header-title-name {
+        h3 {
+            font-weight: 600;
+        }
+    }
+
     .header-title {
         display: flex;
         align-items: center;
@@ -1192,6 +1259,17 @@ header {
                 font-size: 22px;
                 line-height: 1;
             }
+        }
+    }
+
+    .icon-arrow {
+        font-size: 20px;
+        line-height: 1;
+        color: rgba(var(--title), 1);
+        display: inherit;
+
+        i {
+            line-height: 1;
         }
     }
 
@@ -1720,10 +1798,18 @@ header {
     justify-content: space-between;
     color: rgba(var(--white), 1);
 
+    [class="dark"] & {
+        color: #fff;
+    }
+
     a {
         font-size: 22px;
         color: rgba(var(--white), 1);
         line-height: 1;
+
+        [class="dark"] & {
+            color: #fff;
+        }
 
         i {
             line-height: 1;
@@ -1783,7 +1869,7 @@ header {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            color: #afafaf;
+            color: #919191;
 
             &.search-icon {
                 left: 15px;

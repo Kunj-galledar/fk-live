@@ -1,4 +1,6 @@
-// Input otp box
+/*=====================
+    OTP 5 Js
+==========================*/
 function getCodeBoxElement(index) {
     return document.getElementById('five' + index);
 }

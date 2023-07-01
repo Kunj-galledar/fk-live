@@ -1,5 +1,5 @@
 /*===================== 
-    Loader Css
+    4.3 Loader CSS
 ==========================*/
 /* ---------- Food Loader css ---------- */
 .min-loader-wrapper {
@@ -13,10 +13,13 @@
     .loader {
         display: block;
         position: relative;
-        width: 120px;
-        height: 120px;
+        @include pseudowh($width: 120px, $height: 120px);
         z-index: 1001;
         object-fit: contain;
+
+        @include mq-max(md) {
+            @include pseudowh($width: calc(95px + (120 - 95) * ((100vw - 320px) / (600 - 320))), $height: calc(95px + (120 - 95) * ((100vw - 320px) / (600 - 320))));
+        }
     }
 
     .loader-section {
@@ -65,7 +68,7 @@
         }
 
         &.grocery-color {
-            background-color: rgba(var(--white), 1);
+            background-color: #F5F9FA;
         }
 
         [class="dark"] & {
@@ -108,7 +111,7 @@
     }
 }
 
-// ------------------------------------------
+/* ------------------------------------------ */
 .hotel-loader-wrapper {
     background-color: rgba(var(--light-bg), 1);
     position: fixed;

@@ -1,4 +1,6 @@
-// Six Input otp box
+/*=====================
+    OTP Js
+==========================*/
 function getCodeBoxElement(index) {
     return document.getElementById('codeBox' + index);
 }

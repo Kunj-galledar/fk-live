@@ -1,3 +1,6 @@
+/*=====================
+    Loader 2 js
+==========================*/
 function startLoader() {
     const loader = document.querySelector(".hotel-loader-wrapper");
 

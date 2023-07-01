@@ -1,6 +1,101 @@
 /*===================== 
-    Ecommerce Application Css
+    5.4 Ecommerce Application CSS
 ==========================*/
+.add-icon {
+    background-color: rgba(var(--dark-bg), 0.8);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    @include flex_common;
+    border-radius: 100%;
+    font-size: 16px;
+    color: rgba(var(--white), 1);
+
+    [dir="rtl"] & {
+        right: unset;
+        left: 8px;
+    }
+
+    [class="dark"] & {
+        background-color: rgba(33, 35, 37, 0.8);
+        color: #fff;
+    }
+
+    @include mq-max(md) {
+        width: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
+        height: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
+    }
+
+    .wishlist-button {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+        @include flex_common;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &:active {
+            filter: none;
+        }
+
+        &:before {
+            @include pos($pos: relative, $content: "\ee0f");
+            @include remix_icon;
+            color: rgba(var(--white), 1);
+
+            [class="dark"] & {
+                color: #fff;
+            }
+        }
+
+        &:checked {
+            &::before {
+                content: "\ee0e";
+            }
+        }
+    }
+}
+
+.add-icon-list {
+    position: absolute;
+    bottom: 9px;
+    right: 9px;
+
+    [dir="rtl"] & {
+        right: unset;
+        left: 9px;
+    }
+
+    li {
+        +li {
+            margin-top: 5px;
+        }
+
+        a {
+            width: 24px;
+            height: 24px;
+            border-radius: 100%;
+            background-color: rgba(var(--dark-bg), 0.8);
+            @include flex_common;
+            color: rgba(var(--white), 1);
+            line-height: 1;
+
+            [class="dark"] & {
+                background-color: rgba(33, 35, 37, 0.8);
+                color: #fff;
+            }
+        }
+    }
+}
+
 /* ---------- Banner CSS ---------- */
 .ecommerce-banner {
     .banner-box {
@@ -8,8 +103,8 @@
 
         img {
             border-radius: 8px;
-            height: 192px;
-            width: -webkit-fill-available;
+            width: 100%;
+            object-fit: cover;
         }
 
         .banner-contain {
@@ -42,6 +137,7 @@
 
                     [class="dark"] & {
                         background-color: #373737;
+                        color: #fff;
                     }
 
                     &:last-child {
@@ -147,64 +243,6 @@
             overflow: hidden;
             margin-bottom: 12px;
             position: relative;
-
-            .add-icon {
-                background-color: rgba(var(--dark-bg), 0.8);
-                width: 30px;
-                height: 30px;
-                position: absolute;
-                bottom: 8px;
-                right: 8px;
-                @include flex_common;
-                border-radius: 100%;
-                font-size: 16px;
-                color: rgba(var(--white), 1);
-
-                [dir="rtl"] & {
-                    right: unset;
-                    left: 8px;
-                }
-
-                [class="dark"] & {
-                    background-color: #212325;
-                }
-
-                @include mq-max(md) {
-                    width: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
-                    height: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
-                }
-            }
-
-            .add-icon-list {
-                position: absolute;
-                bottom: 9px;
-                right: 9px;
-
-                [dir="rtl"] & {
-                    right: unset;
-                    left: 9px;
-                }
-
-                li {
-                    +li {
-                        margin-top: 5px;
-                    }
-
-                    a {
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 100%;
-                        background-color: rgba(var(--dark-bg), 0.8);
-                        @include flex_common;
-                        color: rgba(var(--white), 1);
-                        line-height: 1;
-
-                        [class="dark"] & {
-                            background-color: #212325;
-                        }
-                    }
-                }
-            }
         }
 
         .product-content {
@@ -293,6 +331,10 @@
             color: rgba(var(--title), 1);
             margin-top: 8px;
             line-height: 1.5;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            overflow: hidden;
         }
     }
 }
@@ -357,7 +399,7 @@
     }
 
     &.search-bg-list {
-        background-color: #F6F6F6;
+        background-color: #f6f6f6;
         border-radius: 6px;
         padding: 15px;
         gap: 13px;
@@ -388,6 +430,29 @@
         li {
             width: 100%;
 
+            &.active {
+                .address-box {
+                    background-color: rgba(255, 186, 70, 0.05);
+                    border: 1px solid rgba(var(--theme-color), 1);
+
+                    [class="dark"] & {
+                        background-color: rgba(255, 186, 70, 0.05);
+                        border: 1px solid rgba(var(--theme-color), 1);
+                    }
+
+                    .address-name {
+                        .address-icon {
+                            background-color: rgba(var(--theme-color), 1);
+
+                            [class="dark"] & {
+                                background-color: rgba(var(--theme-color), 1);
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
             .address-box {
                 padding: 16px 14px;
                 border: 1px solid rgba(var(--light-bg), 0.6);
@@ -397,21 +462,6 @@
                 [class="dark"] & {
                     border: 1px solid rgba(237, 239, 244, 0.05);
                     background-color: #212325;
-                }
-
-                &.newclass {
-                    background-color: rgba(255, 186, 70, 0.05);
-                    border: 1px solid rgba(var(--theme-color), 1);
-
-                    .address-name {
-                        .address-icon {
-                            background-color: rgba(var(--theme-color), 1);
-
-                            [class="dark"] & {
-                                background-color: rgba(var(--theme-color), 1);
-                            }
-                        }
-                    }
                 }
 
                 .address-name {
@@ -433,11 +483,13 @@
 
                         [class="dark"] & {
                             background-color: rgba(237, 239, 244, 0.05);
+                            color: #eee;
                         }
                     }
 
                     h5 {
                         color: rgba(var(--content), 1);
+                        font-size: 14px;
                     }
 
                     .edit-option {
@@ -452,6 +504,10 @@
 
                         .dropdown-button {
                             padding: 0;
+
+                            [class="dark"] & {
+                                color: #fff;
+                            }
 
                             &:active,
                             &.show {
@@ -499,6 +555,7 @@
                     h5 {
                         font-weight: 400;
                         color: rgba(var(--title), 1);
+                        font-size: 14px;
                     }
 
                     p {
@@ -507,11 +564,13 @@
                         line-height: 1.5;
                         margin-top: 6px;
                         margin-bottom: 8px;
+                        font-size: 14px;
                     }
 
                     h6 {
                         font-weight: 400;
                         color: rgba(var(--content), 1);
+                        font-size: 14px;
                     }
                 }
             }
@@ -547,8 +606,12 @@
 
     .left-box {
         h4 {
-            color: rgba(var(--content), 1);
+            color: rgba(var(--white), 0.6);
             margin-bottom: 3px;
+
+            [class="dark"] & {
+                color: #fff;
+            }
 
             @include mq-max(md) {
                 font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
@@ -730,6 +793,10 @@
         margin: 0;
 
         .swiper-wrapper {
+            [dir="rtl"] & {
+                justify-content: flex-end;
+            }
+
             .swiper-slide {
                 width: auto !important;
 
@@ -852,7 +919,7 @@
 
                 h5 {
                     @include mq-max(md) {
-                        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                        font-size: 14px;
                     }
 
                     &.name {
@@ -971,7 +1038,7 @@
     }
 
     .product-title {
-        margin-bottom: 14px;
+        margin-bottom: 10px;
 
         h4 {
             color: rgba(var(--title), 1);
@@ -994,7 +1061,7 @@
                 .order-price-box {
                     .name {
                         font-weight: 500;
-                        color: rgb(84, 84, 84);
+                        color: rgba(var(--title), 1);
 
                         [class="dark"] & {
                             color: #fff;
@@ -1018,7 +1085,7 @@
                     font-size: 15px;
 
                     @include mq-max(md) {
-                        font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (600 - 320)));
+                        font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (600 - 320)));
                     }
 
                     &.name {
@@ -1093,7 +1160,7 @@
 .order-summary-box {
     padding-top: 17px;
     margin-top: 26px;
-    border-top: 1px solid #F7F7F7;
+    border-top: 1px solid #f7f7f7;
 
     [class="dark"] & {
         border-top-color: rgba(237, 239, 244, 0.05);
@@ -1121,19 +1188,19 @@
                     width: calc(100% - 80px - 8px);
 
                     .name {
-                        color: #545454;
+                        color: rgba(var(--title), 1);
                     }
 
                     .qty {
                         font-weight: 400;
-                        color: #AFAFAF;
+                        color: #919191;
                         margin-top: 6px;
                         margin-bottom: 13px;
                     }
 
                     h4 {
                         font-weight: 600;
-                        color: #FFBA46;
+                        color: #ffba46;
                     }
                 }
             }
@@ -1293,6 +1360,9 @@
                 h6 {
                     font-weight: 400;
                     color: rgba(var(--content), 1);
+                    font-size: 14px;
+                    margin-top: 3px;
+                    display: inline-block;
                 }
             }
         }
@@ -1491,13 +1561,48 @@ footer {
                     }
 
                     [class="dark"] & {
-                        background-color: #212325;
+                        background-color: rgba(33, 35, 37, 0.8);
+                        color: #fff;
                     }
 
                     @include mq-max(md) {
-                        width: calc(24px + (30 - 24) * ((100vw - 320px) / (600 - 320)));
-                        height: calc(24px + (30 - 24) * ((100vw - 320px) / (600 - 320)));
-                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+                        width: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
+                        height: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
+                    }
+
+                    .wishlist-button {
+                        width: 16px;
+                        height: 16px;
+                        margin: 0;
+                        position: relative;
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        @include flex_common;
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+
+                        &:active {
+                            filter: none;
+                        }
+
+                        &:before {
+                            @include pos($pos: relative, $content: "\ee0f");
+                            @include remix_icon;
+                            color: rgba(var(--white), 1);
+
+                            [class="dark"] & {
+                                color: #fff;
+                            }
+                        }
+
+                        &:checked {
+                            &::before {
+                                content: "\ee0e";
+                            }
+                        }
                     }
                 }
             }
@@ -1585,41 +1690,6 @@ footer {
     }
 }
 
-/* ---------- Contact Us List CSS ---------- */
-.contact-list {
-    text-align: center;
-
-    li {
-        +li {
-            margin-top: 32px;
-
-            @include mq-max(md) {
-                margin-top: calc(20px + (32 - 20) * ((100vw - 320px) / (600 - 320)));
-            }
-        }
-
-        svg {
-            width: 50px;
-            height: 50px;
-            display: block;
-            fill: rgba(var(--theme-color), 1);
-            stroke: rgba(var(--theme-color), 1);
-            margin: 0 auto 15px;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 16px;
-
-            @include mq-max(md) {
-                margin-bottom: calc(7px + (16 - 7) * ((100vw - 320px) / (600 - 320)));
-                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
-            }
-        }
-    }
-}
-
 /* ---------- Empty Box CSS ---------- */
 .empty-box {
     width: 100%;
@@ -1628,6 +1698,11 @@ footer {
     text-align: center;
     padding-inline: 15px;
     color: rgba(var(--title), 1);
+
+    img {
+        width: 70px;
+        margin-bottom: 10px;
+    }
 
     h4 {
         line-height: 1.5;

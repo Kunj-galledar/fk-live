@@ -1,7 +1,12 @@
 /*=====================
-    Modal CSS Start
+    3.6 Modal CSS
 ==========================*/
 .offcanvas {
+    [class="dark"] & {
+        background-color: #171717;
+        box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
+    }
+
     &.addtohome-popup {
         height: auto;
         border: none;
@@ -21,10 +26,6 @@
             height: auto;
             line-height: 1;
             display: flex;
-
-            [class="dark"] & {
-                filter: invert(1) brightness(100);
-            }
 
             [dir="rtl"] & {
                 left: 20px;
@@ -373,6 +374,12 @@
                         border-right: 1px solid rgba(var(--border-color), 1);
                         @include flex_common;
 
+                        [class="dark"] & {
+                            border-top-color: #363636;
+                            border-right-color: #363636;
+                            background-color: #363636;
+                        }
+
                         [dir="rtl"] & {
                             border-left: 1px solid rgba(var(--border-color), 1);
                             border-right: unset;
@@ -420,6 +427,7 @@
                                 svg,
                                 i {
                                     color: rgba(var(--theme-color), 1);
+                                    stroke: rgba(var(--theme-color), 1);
                                 }
                             }
                         }
@@ -433,6 +441,10 @@
                         padding: 15px;
                         width: 100%;
                         border-radius: 6px;
+
+                        [class="dark"] & {
+                            border-color: #363636;
+                        }
 
                         i {
                             font-size: 16px;
@@ -452,35 +464,6 @@
                             color: rgba(var(--content), 1);
                         }
                     }
-
-                    // .check-box {
-                    //     position: absolute;
-                    //     top: 0;
-                    //     right: 0;
-                    //     @include pseudowh($width: 21px, $height: 21px);
-                    //     background-color: rgba(var(--theme-color), 1);
-                    //     color: rgba(var(--white), 1);
-                    //     font-weight: 700;
-                    //     display: none;
-                    // }
-
-                    // .filter-icon {
-                    //     font-size: 17px;
-                    //     color: rgba(var(--content), 1);
-                    //     line-height: 1;
-                    //     @include pseudowh($width: 21px, $height: 17px);
-                    //     @include flex_common;
-
-                    //     svg {
-                    //         @include pseudowh;
-                    //         stroke: rgba(var(--content), 1);
-                    //         fill: transparent;
-                    //     }
-                    // }
-
-                    // .filter-name {
-                    //     color: rgba(var(--content), 1);
-                    // }
                 }
 
                 .apply-button {
@@ -728,7 +711,6 @@
                             }
 
                             &:not(.collapsed) {
-                                // padding-top: 11px;
                                 box-shadow: none;
                             }
 
@@ -1034,12 +1016,20 @@
                             line-height: 1;
                             color: rgba(var(--title), 1);
                             @include pseudowh($width: 20px, $height: 20px);
+
+                            [class="dark"] & {
+                                color: #efefef;
+                            }
                         }
 
                         .menu-name {
                             @include flex_common($dis: flex, $align: center, $justify: space-between);
                             width: 100%;
                             color: rgba(var(--title), 1);
+
+                            [class="dark"] & {
+                                color: #efefef;
+                            }
 
                             i {
                                 font-size: 20px;
@@ -1153,7 +1143,7 @@
 
                         &::after {
                             top: 2px;
-                            left: 12px;
+                            left: 10px;
 
                             [dir="rtl"] & {
                                 left: 0;
@@ -1162,8 +1152,8 @@
                         }
 
                         &::before {
-                            left: 15px;
-                            top: 6px;
+                            left: 14px;
+                            top: 8px;
 
                             [dir="rtl"] & {
                                 left: 4px;
@@ -1644,6 +1634,7 @@
 
         .offcanvas-body {
             padding: 0 15px;
+            padding-bottom: 15px;
 
             .sidebar-list {
                 li {
@@ -1683,7 +1674,7 @@
 
                         h5 {
                             @include mq-max(md) {
-                                font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                                font-size: 14px;
                             }
                         }
                     }
@@ -1719,11 +1710,19 @@
                         text-transform: capitalize;
                         color: rgba(var(--white), 1);
                         margin-bottom: 8px;
+
+                        [class="dark"] & {
+                            color: #efefef;
+                        }
                     }
 
                     h5 {
                         font-weight: 400;
                         color: rgba(var(--white), 0.7);
+
+                        [class="dark"] & {
+                            color: rgba(239, 239, 239, 0.7);
+                        }
                     }
                 }
             }
@@ -1745,6 +1744,10 @@
                         display: flex;
                         align-items: center;
                         gap: 14px;
+
+                        [class="dark"] & {
+                            color: #efefef;
+                        }
 
                         i {
                             font-size: 18px;
@@ -1768,6 +1771,10 @@
         height: unset;
         border: none;
         border-radius: 20px 20px 0 0;
+
+        [class="dark"] & {
+            color: #efefef;
+        }
 
         .offcanvas-header {
             padding-bottom: 0;
@@ -1793,7 +1800,7 @@
                     border-style: solid;
                     border-color: rgba(var(--theme-light-gray), 0.5);
                     border-radius: 11px;
-                    background-color: rgba(20, 20, 20, 0.6);
+                    background-color: rgba(var(--title), 0.6);
                     backdrop-filter: blur(14px);
                     padding: 15px 59px 15px 12px;
                     font-weight: 400;
@@ -1818,9 +1825,9 @@
                     .form-control {
                         border-width: 1px;
                         border-style: solid;
-                        border-color: rgba(var(--theme-light-gray), 0.5);
+                        border-color: rgba(var(--theme-light-gray), 0.2);
                         border-radius: 11px;
-                        background-color: rgba(20, 20, 20, 0.6);
+                        background-color: rgba(var(--title), 0.6);
                         backdrop-filter: blur(14px);
                         padding: 15px 59px 15px 12px;
                         font-weight: 400;
@@ -1838,7 +1845,6 @@
                         transform: translateY(-50%);
                         right: 21px;
                         color: rgba(var(--white), 0.36);
-                        ;
                         font-size: 24px;
 
                         @include mq-max(md) {
@@ -1873,6 +1879,21 @@
                         border-color: rgba(var(--theme-light-gray), 0.5);
                     }
                 }
+            }
+        }
+    }
+
+    &.delete-modal-3 {
+        .offcanvas-header {
+            align-items: flex-start;
+
+            .btn-close {
+                width: unset;
+                height: unset;
+                color: rgba(var(--title), 1);
+                font-size: 25px;
+                opacity: 1;
+                background: unset;
             }
         }
     }
@@ -1940,6 +1961,10 @@
             text-align: center;
             border-radius: 15px;
 
+            [class="dark"] & {
+                background-color: #363636;
+            }
+
             .modal-body {
                 padding: 25px;
 
@@ -1961,6 +1986,10 @@
                     padding: 9px;
                     border-radius: 9px;
                     margin: 0;
+
+                    [class="dark"] & {
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -2006,13 +2035,6 @@
                 margin: 0;
             }
         }
-    }
-}
-
-.grocery-color {
-    .offcanvas-backdrop {
-        background-color: rgba(var(--white), 0.7);
-        backdrop-filter: blur(2px);
     }
 }
 

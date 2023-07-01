@@ -1,5 +1,5 @@
 /*===================== 
-    Hotel Booking Application Css
+   5.9 Hotel Booking Application CSS
 ==========================*/
 /* ---------- Hotel Search ---------- */
 .hotel-name-section {
@@ -118,7 +118,7 @@
 /* ---------- Hotel Place ---------- */
 .hotel-place-section {
     .hotel-place-list {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 14px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 14px);
 
         li {
             width: 100%;
@@ -126,7 +126,7 @@
             .hotel-place-box {
                 background-color: rgba(var(--light-bg), 1);
                 border-radius: 9px;
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
                 align-items: center;
                 overflow: hidden;
                 position: relative;
@@ -149,7 +149,7 @@
                         margin-top: 7px;
                         margin-bottom: 7px;
                         color: rgba(var(--content), 1);
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 4px);
                         align-items: center;
                     }
 
@@ -194,14 +194,14 @@
 /* ---------- Hotel Type ---------- */
 .hotel-type-section {
     .hotel-type-list {
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 12px);
         align-items: center;
         overflow-x: auto;
 
         li {
             a {
                 padding: 13px 26px;
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 8px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 8px);
                 align-items: center;
                 color: rgba(var(--title), 1);
                 background-color: rgba(var(--light-bg), 1);
@@ -274,7 +274,6 @@
                     margin: -1px;
                     border-radius: inherit;
                     background: var(--gradient-color);
-
                 }
 
                 &.active {
@@ -303,7 +302,7 @@
     .range-slider {
         position: relative;
         height: 4px;
-        background-color: #F8F8F8;
+        background-color: #f8f8f8;
 
         [class="dark"] & {
             background-color: #1f222b;
@@ -373,7 +372,7 @@
                 font-weight: 400;
                 font-size: 14px;
                 border: none;
-                background: #F8F8F8;
+                background: #f8f8f8;
                 border-radius: 3px;
                 color: rgba(var(--title), 1);
 
@@ -438,7 +437,7 @@
                 h6 {
                     font-weight: 400;
                     align-items: center;
-                    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 4px);
                     color: rgba(var(--content), 1);
                     margin: 6px 0 8px;
                     -webkit-line-clamp: 1;
@@ -468,7 +467,7 @@
         background-color: rgba(var(--white), 1);
         border-radius: 9px;
         align-items: center;
-        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
         overflow: hidden;
         padding: 13px 10px;
         position: relative;
@@ -504,7 +503,7 @@
                 margin-bottom: 7px;
                 color: rgba(var(--content), 1);
                 align-items: center;
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 4px);
             }
 
             .rating {
@@ -556,7 +555,7 @@
 
 /* ---------- Hotel Search Map ---------- */
 .hotel-search-map-section {
-    #hotel {
+    iframe {
         max-width: 600px;
         width: 100vw;
         height: 100vh;
@@ -585,7 +584,7 @@
 .room-view-section {
     .room-category-list {
         align-items: center;
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 8px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 8px);
         margin-bottom: 20px;
 
         li {
@@ -628,7 +627,7 @@
     }
 
     .hotel-price-button {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
         padding-bottom: 30px;
 
         li {
@@ -741,7 +740,7 @@
 /* ---------- Hotel Content ---------- */
 .booking-details-box {
     align-items: center;
-    @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 15px);
+    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 15px);
     position: relative;
     z-index: 0;
 
@@ -786,7 +785,7 @@
 }
 
 .amenities-list {
-    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+    @include flex_common($dis: flex, $align: center, $justify: space-between);
     text-align: center;
 
     &-2 {
@@ -827,7 +826,6 @@
                 -webkit-box-orient: vertical;
                 display: -webkit-box;
                 overflow: hidden;
-
             }
         }
     }
@@ -850,6 +848,10 @@
                 margin: 0;
                 color: rgba(var(--content), 1);
                 line-height: 1.5;
+
+                &.more {
+                    display: none;
+                }
             }
 
             .hide-show-button {
@@ -949,7 +951,7 @@
 
         .transport-tab {
             .transport-box-list {
-                @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 21px);
+                @include flex_wrap($dis: flex, $wrap: wrap, $gap: 21px);
                 align-items: center;
 
                 li {
@@ -972,7 +974,7 @@
                             color: rgba(var(--content), 1);
 
                             h5 {
-                                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                                @include flex_common($dis: flex, $align: center, $justify: space-between);
 
                                 +h5 {
                                     margin-top: 8px;
@@ -1006,7 +1008,7 @@
 
     .review-tab {
         .rating-review {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 10px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 10px);
             align-items: center;
             margin-bottom: 14px;
 
@@ -1036,7 +1038,7 @@
         }
 
         .progress-bar-review {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 15px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 15px);
             margin-bottom: 24px;
 
             li {
@@ -1044,7 +1046,7 @@
 
                 .hotel-review-progress {
                     h5 {
-                        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                        @include flex_common($dis: flex, $align: center, $justify: space-between);
                         margin-bottom: 5px;
                         color: rgba(var(--content), 1);
                     }
@@ -1121,7 +1123,7 @@
 /* ---------- Review Hotel ---------- */
 .review-hotel-section {
     .review-hotel-box {
-        @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
+        @include flex_wrap($dis: flex, $wrap: wrap, $gap: 9px);
 
         .review-image {
             width: 126px;
@@ -1180,7 +1182,7 @@
 /* ---------- Guest Detail ---------- */
 .guest-detail-section {
     .guest-detail-box {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
         flex-wrap: wrap;
         gap: 6px;
         color: rgba(var(--content), 1);
@@ -1209,7 +1211,7 @@
     .payment-details-list {
         li {
             color: rgba(var(--content), 1);
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include flex_common($dis: flex, $align: center, $justify: space-between);
             font-weight: 400;
             font-size: 14px;
 
@@ -1218,7 +1220,7 @@
             }
 
             hr {
-                border: 1px dashed #EAEAEA;
+                border: 1px dashed #eaeaea;
                 margin: 12px 0;
             }
 
@@ -1232,11 +1234,11 @@
                 font-size: 14px;
 
                 &.success {
-                    color: #008E1F;
+                    color: #008e1f;
                 }
 
                 &.danger {
-                    color: #BC0101;
+                    color: #bc0101;
                 }
             }
 
@@ -1284,7 +1286,7 @@
         .important-list {
             padding: 14px;
             padding-left: 2rem;
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 9px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 9px);
             border-bottom-right-radius: 8px;
             border-bottom-left-radius: 8px;
 
@@ -1343,7 +1345,7 @@
     .payment-method-list {
         li {
             +li {
-                border-top: 1px dashed #EAEAEA;
+                border-top: 1px dashed #eaeaea;
                 margin-top: 16px;
                 padding-top: 16px;
 
@@ -1353,13 +1355,13 @@
             }
 
             .payment-box {
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 12px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 12px);
                 align-items: center;
                 color: rgba(var(--title), 1);
 
                 .payment-image {
                     @include pseudowh($width: 66px, $height: 43px);
-                    background-color: #F8F8F8;
+                    background-color: #f8f8f8;
                     border-radius: 6px;
                     @include flex_common;
                     padding: 12px;
@@ -1372,7 +1374,7 @@
 
                 .payment-contact {
                     width: calc(100% - 66px - 12px);
-                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                    @include flex_common($dis: flex, $align: center, $justify: space-between);
 
                     h5 {
                         margin-bottom: 6px;
@@ -1406,6 +1408,12 @@
 
 /* ---------- Payment Successful ---------- */
 .payment-success-section {
+    .title-2 {
+        h3 {
+            line-height: 1.4;
+        }
+    }
+
     .success-payment-list {
         display: grid;
         grid-template-columns: auto auto;
@@ -1444,7 +1452,7 @@
         .sidemenu-header {
             padding-top: 21px;
             padding-bottom: 31px;
-            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+            @include flex_common($dis: flex, $align: center, $justify: space-between);
 
             img {
                 width: 107px;
@@ -1485,21 +1493,21 @@
         margin-top: 23px;
 
         .sidebar-menu-list {
-            @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 21px);
+            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 21px);
 
             li {
                 width: 100%;
 
                 &:last-child {
                     a {
-                        color: #0363DA;
+                        color: #0363da;
                     }
                 }
 
                 a {
                     color: rgba(var(--title), 1);
                     align-items: center;
-                    @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 12px);
+                    @include flex_wrap($dis: flex, $wrap: wrap, $gap: 12px);
 
                     i {
                         font-size: 20px;
@@ -1573,7 +1581,7 @@
                 h4 {
                     margin-top: 16px;
                     font-weight: 600;
-                    font-size: 17px;
+                    font-size: 15px;
                     color: rgba(var(--theme-color), 1);
                 }
 
@@ -1620,7 +1628,7 @@
             .hotel-history-box {
                 background-color: rgba(var(--light-bg), 1);
                 border-radius: 9px;
-                @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 9px);
+                @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
                 align-items: center;
                 overflow: hidden;
                 position: relative;
@@ -1651,7 +1659,7 @@
                         font-size: 13px;
                         margin-block: 7px;
                         color: rgba(var(--content), 1);
-                        @include flex_wrap ($dis: flex, $wrap: nowrap, $gap: 4px);
+                        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 4px);
                         align-items: center;
                     }
 
@@ -1724,7 +1732,7 @@
         }
 
         .divider {
-            height: 7px;
+            height: 18px;
 
             [class="dark"] & {
                 background-color: #1f222b;

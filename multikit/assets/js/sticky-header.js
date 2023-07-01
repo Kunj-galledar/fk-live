@@ -1,3 +1,6 @@
+/*=====================
+    Sticky Header Js
+==========================*/
 const header = document.querySelector(".js-header");
 const section = document.querySelector(".js-section");
 

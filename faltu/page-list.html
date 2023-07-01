@@ -160,3 +160,113 @@ https://sass-guidelin.es/#top
 
                                     https://www.google.com/search?q=tab+to+top+animation+css+codepen&rlz=1C1VDKB_enIN1000IN1001&oq=tab+to+top+animation+css+&aqs=chrome.1.69i57j33i160.16827j0j1&sourceid=chrome&ie=UTF-8
 
+
+
+
+
+
+
+
+
+
+<div class="right-header">
+                    <button class="search-button btn">
+                        <i class="ri-search-line"></i>
+                    </button>
+                    <div class="dropdown edit-option">
+                        <button class="btn dropdown-button" type="button" data-bs-toggle="dropdown">
+                            <i class="ri-more-2-line"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item d-flex gap-2" href="invite-friend.html">
+                                    <i class="ri-share-line"></i>
+                                    <span>Invite Friend</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item d-flex gap-2" href="chat-history.html">
+                                    <i class="ri-history-line"></i>
+                                    <span>Chat history</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="form-control" placeholder="Search here..">
+                    <i class="ri-close-line close-search"></i>
+                </div>
+
+
+
+
+
+
+    <!-- Search Open-Close js -->
+    <script src="../assets/js/search-open-close.js"></script>
+
+
+
+
+
+    .add-icon {
+                background-color: rgba(var(--dark-bg), 0.8);
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                bottom: 8px;
+                right: 8px;
+                @include flex_common;
+                border-radius: 100%;
+                font-size: 16px;
+                color: rgba(var(--white), 1);
+
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 8px;
+                }
+
+                [class="dark"] & {
+                    background-color: #212325;
+                }
+
+                @include mq-max(md) {
+                    width: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
+                    height: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
+                }
+
+                .wishlist-button {
+                    width: 16px;
+                    height: 16px;
+                    margin: 0;
+                    position: relative;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    @include flex_common;
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+
+                    &:active {
+                        filter: none;
+                    }
+
+                    &:before {
+                        content: "\ee0f";
+                        position: relative;
+                        font-family: remixicon;
+                        font-style: normal;
+                        -webkit-font-smoothing: antialiased;
+                        color: rgba(var(--white), 1);
+                    }
+
+                    &:checked {
+                        &::before {
+                            content: "\ee0e";
+                        }
+                    }
+                }
+            }

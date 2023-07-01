@@ -1,6 +1,6 @@
 /*==========================
- add to home screen popup js
- ==========================*/
+    Add To Home Screen Popup js
+==========================*/
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {

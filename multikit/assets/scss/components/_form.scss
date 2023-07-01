@@ -1,5 +1,5 @@
 /*=====================
-    Form Css
+    3.5 Form CSS
 ==========================*/
 /* ---------- Common Style ---------- */
 .checkbox_animated {
@@ -16,14 +16,14 @@
         left: 3px;
         top: 2px;
         z-index: 1;
-        border: 2px solid rgba(var(--title), 1);
+        border: 2px solid rgba(var(--primary), 1);
         border-top-style: none;
         border-right-style: none;
     }
 
     &:after {
         @include pos;
-        @include pseudowh($width: 18px, $height: 18px);
+        @include pseudowh($width: 20px, $height: 20px);
         top: -3px;
         left: -1px;
         background-color: rgba(var(--white), 1);
@@ -105,6 +105,10 @@
         padding-left: unset;
         @include flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
         align-items: center;
+
+        [dir="rtl"] & {
+            padding-right: unset;
+        }
 
         .form-check-input {
             vertical-align: middle;
@@ -293,12 +297,7 @@
     .form-group {
         @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 10px);
         flex-wrap: nowrap;
-        // gap: 10px;
         justify-content: space-between;
-
-        // @include mq-max(md) {
-        //     gap: calc(5px + (10 - 5) * ((100vw - 320px) / (600 - 320)));
-        // }
 
         .form-control {
             padding: 0;
@@ -735,7 +734,7 @@
         margin-bottom: 12px;
 
         @media (max-width: 767px) {
-            font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
+            font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (600 - 320)));
             margin-bottom: calc(5px + (12 - 5) * ((100vw - 320px) / (600 - 320)));
         }
     }
@@ -793,7 +792,7 @@
                     color: rgba(var(--black), 0);
                     opacity: 1;
                     display: block;
-                    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+                    background: url("https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png") no-repeat;
                     @include pseudowh($width: 20px, $height: 20px);
                     border-width: thin;
                 }
@@ -822,14 +821,9 @@
 
         .form-control {
             padding: 0;
-            // width: 60px;
             height: 60px;
 
             @include mq-max(md) {
-                // @include pseudowh(
-                //     $width: calc(50px + (60 - 50) * ((100vw - 320px) / (600 - 320))),
-                //     $height: calc(50px + (60 - 50) * ((100vw - 320px) / (600 - 320)))
-                // );
                 height: calc(50px + (60 - 50) * ((100vw - 320px) / (600 - 320)));
             }
         }
@@ -913,7 +907,8 @@
         }
     }
 
-    .form-control {
+    .form-control,
+    .form-select {
         background-color: rgba(var(--white), 1);
         padding: 14px 22px;
         font-weight: 400;
@@ -926,7 +921,7 @@
         transition: all 0.3s ease-in-out;
 
         &::placeholder {
-            color: rgba(var(--content), 1);
+            color: red;
         }
 
         [class="dark"] & {
@@ -954,7 +949,7 @@
         }
 
         &-2 {
-            border-color: rgba(var(--title), 0.7);
+            border-color: rgba(var(--title), 0.2);
 
             &:focus {
                 border-color: rgba(var(--title), 0.7);
@@ -1095,6 +1090,25 @@
             @include pseudowh($width: 45px, $height: 45px);
         }
     }
+
+    &.light-version {
+        .form-label {
+            color: rgba(var(--title), 1);
+        }
+
+        .form-control {
+            border: 1px solid #eee;
+        }
+
+        .form-select {
+            border: 1px solid #eee;
+
+            &:focus {
+                box-shadow: none;
+                border: 1px solid #eee;
+            }
+        }
+    }
 }
 
 /* ---------- form style 7 ---------- */
@@ -1133,6 +1147,10 @@
             font-size: 14px;
             font-weight: 400;
             color: rgba(var(--content), 1);
+
+            &:focus {
+                background: linear-gradient(180deg, rgba(var(--theme-color), 0.05) 61.46%, rgba(245, 249, 250, 0) 100%);
+            }
         }
 
         .mic-icon {
@@ -1146,6 +1164,12 @@
         }
     }
 
+    &.wo-icon {
+        .form-control {
+            padding: 14px !important;
+        }
+    }
+
     .form-control {
         border: 1px solid rgba(var(--border-color), 1);
         border-radius: 11px;
@@ -1153,6 +1177,12 @@
         padding-left: 47px;
         font-weight: 400;
         font-size: 14px;
+
+        [class="dark"] & {
+            background-color: #141416;
+            color: #fff;
+            border: 1px solid rgba(119, 119, 119, 0.35);
+        }
 
         [dir="rtl"] & {
             padding-left: 16px;
@@ -1220,9 +1250,7 @@
             &:first-child,
             &:last-child {
                 .form-control {
-                    border-width: 1px;
-                    border-style: solid;
-                    border-color: rgba(var(--title), 1);
+                    border: 1px solid rgba(var(--title), 1);
                     border-radius: 22px;
 
                     @include mq-max(md) {
@@ -1235,7 +1263,7 @@
         .form-control {
             border-width: 0 1px;
             border-color: rgba(var(--title), 1);
-            background: rgba(20, 20, 20, 0.6);
+            background-color: rgba(var(--title), 0.6);
             backdrop-filter: blur(14px);
             padding: 21px 59px 21px 18px;
             font-weight: 400;
@@ -1243,9 +1271,17 @@
             border-radius: 0;
             color: rgba(var(--theme-light-gray), 1);
 
+            @include mq-max(md) {
+                padding: 21px calc(41px + (59 - 41) * ((100vw - 320px) / (600 - 320))) 21px 18px;
+            }
+
             [dir="rtl"] & {
                 padding: 21px 18px 21px 59px;
                 text-align: right;
+
+                @include mq-max(md) {
+                    padding: 21px 18px 21px calc(41px + (59 - 41) * ((100vw - 320px) / (600 - 320)));
+                }
             }
 
             @include mq-max(md) {
@@ -1392,11 +1428,9 @@
         display: block;
 
         &::after {
-            content: "";
+            @include pos;
             z-index: -1;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            @include center(vertical);
             left: 0;
             width: 100%;
             height: 1px;
@@ -1451,7 +1485,7 @@
             font-weight: 400;
             font-size: 18px;
             padding: 18px 26px;
-            border-radius: 22px;
+            border-radius: calc(15px + (22 - 15) * ((100vw - 320px) / (600 - 320)));
 
             [dir="rtl"] & {
                 text-align: right;
@@ -1487,11 +1521,35 @@
 
             @include mq-max(md) {
                 font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (600 - 320)));
+                right: calc(15px + (25 - 15) * ((100vw - 320px) / (600 - 320)));
             }
 
             [dir="rtl"] & {
                 right: unset;
                 left: 25px;
+
+                @include mq-max(md) {
+                    left: calc(15px + (25 - 15) * ((100vw - 320px) / (600 - 320)));
+                }
+            }
+        }
+
+        &.with-icon {
+            .form-control {
+                padding-right: 59px;
+
+                @include mq-max(md) {
+                    padding-right: calc(45px + (59 - 45) * ((100vw - 320px) / (600 - 320)));
+                }
+
+                [dir="rtl"] & {
+                    padding-right: calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320)));
+                    padding-left: 59px;
+
+                    @include mq-max(md) {
+                        padding-left: calc(45px + (59 - 45) * ((100vw - 320px) / (600 - 320)));
+                    }
+                }
             }
         }
     }
@@ -1539,6 +1597,19 @@
             padding: 14px;
             z-index: 0;
             color: rgba(var(--white), 1);
+
+            [class="dark"] & {
+                color: #efefef;
+                background-color: rgba(255, 255, 255, 0.05);
+            }
+
+            &::placeholder {
+                color: rgba(var(--white), 0.5);
+
+                [class="dark"] & {
+                    color: #efefef;
+                }
+            }
 
             [dir="rtl"] & {
                 text-align: right;

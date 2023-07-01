@@ -70,3 +70,11 @@ removeBtn.addEventListener('click', () => {
     div.classList.remove('show');
     div2.classList.remove('show');
 })
+
+/*=====================
+    Remove box Js
+  ==========================*/
+function hideProductBox(button) {
+    var productBox = button.parentNode; // Get the parent element of the button (product box)
+    productBox.style.display = "none";
+}

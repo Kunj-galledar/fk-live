@@ -1,3 +1,6 @@
+/*=====================
+    Country Dropdown js
+==========================*/
 mobiscroll.setOptions({
     locale: mobiscroll
         .localeEn,

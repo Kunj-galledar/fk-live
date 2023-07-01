@@ -1,5 +1,5 @@
 /*===================== 
-    Food Application Css
+   5.7 Food Application CSS
 ==========================*/
 .new-card {
     &::after {
@@ -321,7 +321,7 @@
 
                         i {
                             font-size: 10px;
-                            color: rgba(var(--yellow), 1);
+                            color: rgba(var(--theme-color), 1);
                         }
 
                         h6 {
@@ -373,7 +373,7 @@
                 }
 
                 h6 {
-                    + h6 {
+                    +h6 {
                         margin-top: 5px;
                     }
 
@@ -402,7 +402,7 @@
                         }
 
                         i {
-                            color: rgba(var(--yellow), 1);
+                            color: rgba(var(--theme-color), 1);
                             line-height: 1;
                         }
 
@@ -455,8 +455,8 @@
 
                 h6 {
                     font-weight: 400;
-                    font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (600 - 320)));
-                    color: rgba(var(--yellow), 1);
+                    font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
+                    color: rgba(var(--theme-color), 1);
                     margin: 0;
                 }
             }
@@ -577,7 +577,7 @@
                             .edit-button {
                                 width: auto;
                                 padding: 8px 20px;
-                                background-color: rgba(var(--yellow), 1);
+                                background-color: rgba(var(--theme-color), 1);
                                 border-radius: 3px;
                                 color: rgba(var(--white), 1);
 
@@ -663,7 +663,7 @@
                 padding-inline: 15px;
                 position: relative;
 
-                + li {
+                +li {
                     &::after {
                         @include pos;
                         top: -14px;
@@ -671,6 +671,10 @@
                         width: 100%;
                         height: 1px;
                         background-color: #f9f9f9;
+
+                        [class="dark"] & {
+                            background-color: rgba(249, 249, 249, 0.11);
+                        }
                     }
                 }
 
@@ -799,7 +803,7 @@
                             @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
 
                             [class="dark"] & {
-                                background-color: #181818;
+                                background-color: #2b2b2b;
                             }
 
                             [dir="rtl"] & {
@@ -927,9 +931,9 @@
         background-color: rgba(var(--white), 1);
         box-shadow: $shadow2;
         border-radius: 13px;
-        padding: calc(10px + (17 - 10) * ((100vw - 320px) / (600 - 320)));
+        padding: 15px;
         position: absolute;
-        top: -110px;
+        top: -92px;
         left: 0;
         width: -webkit-fill-available;
         margin-inline: 15px;
@@ -944,6 +948,10 @@
             height: 52px;
             border-radius: 8px;
             overflow: hidden;
+
+            [class="dark"] & {
+                filter: invert(1) brightness(100);
+            }
 
             img {
                 @include pseudowh;
@@ -1104,6 +1112,11 @@
                 height: 80%;
                 border-left: 1px dashed #f1f1f1;
                 z-index: -1;
+
+                [dir="rtl"] & {
+                    left: unset;
+                    right: 19px;
+                }
             }
 
             li {
@@ -1162,7 +1175,7 @@
                 width: 100%;
                 position: relative;
 
-                + li {
+                +li {
                     &::after {
                         @include pos;
                         top: -14px;
@@ -1206,7 +1219,7 @@
 
                         h6 {
                             font-weight: 400;
-                            font-size: 13px;
+                            font-size: 14px;
                             color: rgba(var(--content), 1);
                         }
 
@@ -1260,7 +1273,7 @@
             }
 
             li {
-                + li {
+                +li {
                     border-top: 1px solid #f9f9f9;
                     margin-top: 10px;
                     padding-top: 10px;
@@ -1348,6 +1361,12 @@
                             font-weight: 600;
                             font-size: 14px;
 
+                            &::-webkit-outer-spin-button,
+                            &::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+
                             [class="dark"] & {
                                 color: #fff;
                             }
@@ -1429,7 +1448,7 @@
         font-weight: 400;
         color: rgba(var(--content), 1);
 
-        + li {
+        +li {
             margin-top: 12px;
         }
 
@@ -1560,7 +1579,7 @@
                         box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
                     }
 
-                    > div {
+                    >div {
                         @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
                         align-items: center;
                     }
@@ -1626,6 +1645,11 @@
         .add-icon {
             font-size: 18px;
             font-weight: 500;
+            position: relative;
+            inset: unset;
+            width: unset;
+            height: unset;
+            background-color: transparent;
 
             i {
                 font-size: 13px;
@@ -1718,57 +1742,6 @@
         h4 {
             font-weight: 600;
             color: rgba(var(--black), 1);
-        }
-    }
-}
-
-.language-section {
-    .language-setting-list {
-        .setting-list {
-            background-color: rgba(var(--white), 1);
-            border-radius: 6px;
-            padding: 18px 12px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-
-            [class="dark"] & {
-                background-color: #171717;
-                box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
-            }
-
-            li {
-                width: 100%;
-
-                + li {
-                    padding-top: 15px;
-                    margin-top: 13px;
-                    border-top: 1px solid #f9f9f9;
-
-                    [class="dark"] & {
-                        border-top-color: rgba(249, 249, 249, 0.04);
-                    }
-                }
-
-                a {
-                    @include flex_common($dis: flex, $align: center, $justify: space-between);
-                    color: rgba(var(--title), 1);
-                    width: 100%;
-
-                    &.active {
-                        i {
-                            display: block;
-                        }
-                    }
-
-                    i {
-                        display: none;
-                        font-size: 18px;
-                        line-height: 1;
-                        color: rgba(var(--primary), 1);
-                    }
-                }
-            }
         }
     }
 }

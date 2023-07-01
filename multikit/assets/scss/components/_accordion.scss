@@ -1,10 +1,13 @@
+/**=====================
+    1.1 Accordion css
+==========================**/
 /* ---------- Accordion Style Css ---------- */
 .accordion-style {
     .accordion-item {
         border: none;
 
         [class="dark"] & {
-            background-color: #14141b;
+            background-color: transparent;
         }
 
         +.accordion-item {
@@ -15,11 +18,6 @@
 
                 [class="dark"] & {
                     border-top-color: rgba(var(--light-bg), 0.05);
-                }
-
-                @include mq-max(md) {
-                    padding-top: calc(11px + (16 - 11) * ((100vw - 320px) / (600 - 320)));
-                    margin-top: calc(11px + (16 - 11) * ((100vw - 320px) / (600 - 320)));
                 }
             }
         }
@@ -66,9 +64,8 @@
         }
 
         .accordion-collapse {
-            &.show {
-                margin-top: 14px;
-            }
+            padding-top: 14px;
+            color: rgba(var(--content), 1);
 
             .product-review {
                 padding: 0;
@@ -456,6 +453,7 @@
 .accordion-style-1 {
     .accordion-item {
         border: none;
+        background-color: transparent;
 
         +.accordion-item {
             margin-top: 22px;
@@ -469,6 +467,10 @@
                 color: #1b1b3e;
                 background-color: transparent;
                 box-shadow: none;
+
+                [class="dark"] & {
+                    color: #fff;
+                }
 
                 &:not(.collapsed) {
                     &:after {
@@ -487,6 +489,19 @@
             }
         }
 
+        .card-form {
+            .form-box {
+                .form-control {
+                    padding-left: 16px;
+
+                    [dir="rtl"] & {
+                        padding-left: unset;
+                        padding-right: 16px;
+                    }
+                }
+            }
+        }
+
         .accordion-collapse {
             .accordion-body {
                 padding: 0;
@@ -498,6 +513,10 @@
                     font-size: 14px;
                     color: #8f8fb2;
                     line-height: 1.5;
+
+                    [class="dark"] & {
+                        color: #ddd;
+                    }
 
                     @include mq-max(md) {
                         font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (600 - 320)));
@@ -512,6 +531,7 @@
 .accordion-style-2 {
     .accordion-item {
         border: none;
+        background-color: transparent;
 
         +.accordion-item {
             margin-top: 16px;
@@ -550,15 +570,23 @@
                 padding: 0;
                 margin-top: 15px;
 
+                [class="dark"] & {
+                    color: #ddd;
+                }
+
                 .payment-form {
                     .custom-checkbox {
                         display: flex;
                         position: relative;
                         align-items: center;
-                        background: rgba(var(--light-bg), 0.8);
+                        background-color: rgba(var(--light-bg), 0.8);
                         padding: 12px 20px;
                         gap: 13px;
                         border-radius: 5px;
+
+                        [class="dark"] & {
+                            background-color: rgba(var(--theme-color), 0.05);
+                        }
 
                         +.custom-checkbox {
                             margin-top: 13px;
@@ -570,6 +598,10 @@
                             font-weight: 400;
                             font-size: 14px;
                             background-color: transparent;
+
+                            [class="dark"] & {
+                                color: #fff;
+                            }
                         }
 
                         input[type="radio"] {

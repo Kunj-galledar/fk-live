@@ -1,3 +1,6 @@
+/*=====================
+    OTP 4 Js
+==========================*/
 function getCodeBoxElement(index) {
     return document.getElementById('four' + index);
 }

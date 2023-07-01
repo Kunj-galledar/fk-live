@@ -1,5 +1,5 @@
 /*===================== 
-    Blog Application Css
+    5.1 Blog Application CSS
 ==========================*/
 /* ---------- Blog Onboarding ---------- */
 .starting-section {
@@ -38,6 +38,7 @@
 
                         [class="dark"] & {
                             background-color: #121316;
+                            color: #fff;
                         }
                     }
                 }
@@ -69,7 +70,7 @@
 
 /* ---------- Blog Onboarding ---------- */
 .choose-topic-section {
-    @include pseudowh($width: 100%, $height: 100vh);
+    @include pseudowh;
     display: flex;
     align-items: center;
 
@@ -77,11 +78,11 @@
         padding-bottom: 24%;
 
         .topic-title {
-            margin-bottom: 33px;
+            margin-bottom: 18px;
 
             h1 {
                 font-weight: 500;
-                font-size: 35px;
+                font-size: 28px;
             }
         }
     }
@@ -91,7 +92,21 @@
         grid-template-columns: auto auto;
         gap: 15px;
 
+        @include mq-max(md) {
+            gap: calc(10px + (15 - 10) * ((100vw - 320px) / (600 - 320)));
+        }
+
         li {
+            &.active {
+                .topic-box {
+                    background-color: rgba(var(--theme-color), 1);
+
+                    i {
+                        color: rgba(var(--title), 1);
+                    }
+                }
+            }
+
             .topic-box {
                 display: block;
                 padding: 15px;
@@ -100,14 +115,24 @@
                 color: rgba(var(--title), 1);
                 text-align: center;
 
-                i {
-                    font-size: 24px;
+                @include mq-max(md) {
+                    border-radius: calc(9px + (18 - 9) * ((100vw - 320px) / (600 - 320)));
                 }
+
+                [class="dark"] & {
+                    background-color: #27282f;
+                }
+
+                i {
+                    font-size: 30px;
+                    color: rgba(var(--border-color), 1);
+                }
+
 
                 h5 {
                     font-weight: 500;
                     font-size: 14px;
-                    margin-top: 9px;
+                    margin-top: 0;
                 }
             }
         }
@@ -116,7 +141,7 @@
     .next-button {
         display: block;
         text-align: center;
-        margin-top: 98px;
+        margin-top: 28px;
     }
 }
 
@@ -131,17 +156,96 @@
     .home-content {
         h5 {
             font-weight: 500;
-            font-size: 15px;
+            font-size: 16px;
             margin-bottom: 9px;
+            line-height: 1.4;
+        }
+    }
+}
+
+.privacy-setting-section {
+    .privacy-setting-form {
+        .form-switch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            min-height: unset;
+
+            +.form-switch {
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid #dddddd69;
+            }
+
+            .form-check-input {
+                margin: 0;
+                width: 39px;
+                height: 18px;
+                float: unset;
+                border-radius: 100px;
+                position: relative;
+                background: none;
+                border-color: #eee;
+
+                [class="dark"] & {
+                    border-color: rgba(255, 255, 255, 0.2);
+                }
+
+                &:focus {
+                    border-color: rgba(var(--black), 0.25);
+                    box-shadow: none;
+                    background-image: none;
+                }
+
+                &:active {
+                    filter: none;
+                }
+
+                &:checked {
+                    background-color: rgba(var(--theme-color), 1);
+                    border-color: rgba(var(--theme-color), 1);
+
+                    &:focus {
+                        background-image: none;
+                    }
+
+                    &::before {
+                        left: 22px;
+                        background-color: rgba(var(--white), 1);
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 13px;
+                    height: 13px;
+                    border-radius: 100%;
+                    background-color: rgba(var(--theme-color), 1);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 2px;
+                    transition: left 0.2s ease-in-out;
+                }
+            }
+
+            .form-check-label {
+                font-size: 14px;
+                font-weight: 500;
+                color: rgba(var(--content), 1);
+            }
         }
     }
 }
 
 .date-time-list {
-    @include flex_common ($dis: flex, $align: center, $justify: 10px);
+    @include flex_common($dis: flex, $align: center, $justify: 10px);
     color: rgba(var(--content-dark), 1);
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
+    gap: 10px;
 
     li {
         line-height: 1;
@@ -190,7 +294,7 @@
 
                 h6 {
                     font-weight: 400;
-                    font-size: 13px;
+                    font-size: 14px;
                     margin-bottom: 13px;
                     line-height: 1.5;
                 }
@@ -225,7 +329,6 @@
 
         .category-content-box {
             display: flex;
-            align-items: center;
             gap: 10px;
             border-radius: 8px;
 
@@ -241,7 +344,7 @@
 
                 .top-category {
                     font-weight: 400;
-                    font-size: 12px;
+                    font-size: 13px;
                     margin-bottom: 4px;
                     color: rgba(var(--content-dark), 1);
                     line-height: 1;
@@ -272,13 +375,12 @@
                                 gap: calc(1px + (5 - 1) * ((100vw - 320px) / (600 - 320)));
                             }
 
-
                             i {
                                 line-height: 1;
                             }
 
                             span {
-                                font-size: 12px;
+                                font-size: 13px;
                                 font-weight: 400;
                             }
                         }
@@ -290,8 +392,13 @@
 
                     h6 {
                         font-weight: 400;
-                        font-size: 13px;
+                        font-size: 14px;
                         line-height: 1.5;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
                     }
                 }
 
@@ -366,7 +473,11 @@
         top: 0;
         left: 0;
         @include pseudowh;
-        background: linear-gradient(359.1deg, rgba(var(--black), 0.51) 1.86%, rgba(153, 153, 153, 0.208528) 81.75%, rgba(186, 186, 186, 0.141915) 99.41%, rgba(217, 217, 217, 0) 99.42%);
+        background: linear-gradient(359.1deg,
+                rgba(var(--black), 0.51) 1.86%,
+                rgba(153, 153, 153, 0.208528) 81.75%,
+                rgba(186, 186, 186, 0.141915) 99.41%,
+                rgba(217, 217, 217, 0) 99.42%);
         display: flex;
         align-items: flex-end;
         padding: 0 15px 13px;
@@ -384,7 +495,7 @@
             }
 
             .profile-name {
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                @include flex_common($dis: flex, $align: center, $justify: space-between);
                 width: calc(100% - 44px - 6px);
 
                 .name {
@@ -417,7 +528,6 @@
 .single-blog-details {
     margin-top: 19px;
     margin-bottom: 18px;
-
 
     h4 {
         font-weight: 500;
@@ -544,7 +654,6 @@
                 right: unset;
                 left: 13px;
             }
-
         }
     }
 }
@@ -597,7 +706,7 @@
     }
 
     .post-bottom-box {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
 
         .left-button-list {
             display: flex;
@@ -631,7 +740,7 @@
     padding: 16px;
 
     .add-post-title {
-        @include flex_common ($dis: flex, $align: center, $justify: space-between);
+        @include flex_common($dis: flex, $align: center, $justify: space-between);
 
         a {
             color: rgba(var(--title), 1);
@@ -656,9 +765,13 @@
         li {
             width: 100%;
 
-            &:nth-child(-n+2) {
+            &:nth-child(-n + 2) {
                 .notification-box {
                     background-color: rgba(var(--content), 0.12);
+
+                    [class="dark"] & {
+                        background-color: rgba(var(--content), 0.12);
+                    }
                 }
             }
 
@@ -723,7 +836,7 @@
                         color: rgba(var(--title), 1);
 
                         h6 {
-                            font-weight: 400;
+                            font-weight: 500;
                             font-size: 14px;
                             line-height: 1.5;
                         }
@@ -840,7 +953,7 @@
 
 /* ---------- Discover People CSS ---------- */
 .discover-people-section {
-    height: 100vh;
+    height: auto;
     padding-bottom: 105px;
 
     .topic-title {
@@ -852,25 +965,25 @@
             font-size: 28px;
         }
     }
+}
 
-    .next-button-box {
-        position: fixed;
-        padding-inline: 15px;
-        margin: 00;
-        max-width: calc(600px - 30px);
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
+.next-button-box {
+    position: fixed;
+    padding-inline: 15px;
+    margin: 00;
+    max-width: calc(600px - 30px);
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    .next-button {
+        display: block;
         width: 100%;
-
-        .next-button {
-            display: block;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            transform: unset;
-            max-width: unset;
-        }
+        text-align: center;
+        position: relative;
+        transform: unset;
+        max-width: unset;
     }
 }
 
@@ -895,7 +1008,7 @@
             }
 
             .people-content {
-                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                @include flex_common($dis: flex, $align: center, $justify: space-between);
                 width: calc(100% - 50px - 10px);
 
                 h5 {
@@ -920,6 +1033,7 @@
                     border: 1px solid transparent;
 
                     [class="dark"] & {
+                        color: #eee;
                         background-color: #27282f;
                     }
 

@@ -73,12 +73,12 @@
     background-color: #f4faf9;
     color: rgba(var(--title-color), 1);
     border-radius: 5px;
-    padding: 25px 30px;
+    padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320))) calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320)));
 
     .service-list {
         display: grid;
         grid-template-columns: auto auto auto auto;
-        gap: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
+        gap: calc(14px + (36 - 14) * ((100vw - 320px) / (1920 - 320)));
 
         @media (max-width: 1770px) {
             grid-template-columns: auto auto;
@@ -90,7 +90,7 @@
 
         li {
             position: relative;
-            border-right: 1px solid rgba(var(--theme-color), 0.2);
+            border-right: 1px solid rgba(var(--theme-color3), 0.2);
             padding-right: calc(18px + (36 - 18) * ((100vw - 320px) / (1920 - 320)));
 
             &:nth-child(even) {
@@ -114,16 +114,16 @@
 
     .service-box {
         display: flex;
-        gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+        gap: calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320)));
 
         svg {
-            @include pseudowh($width: 37px, $height: 37px);
+            @include pseudowh($width: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))), $height: calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))));
             fill: rgba(var(--theme-color3), 1);
             stroke: transparent;
         }
 
         >div {
-            width: calc(100% - 29px - 10px);
+            width: calc(100% - calc(28px + (37 - 28) * ((100vw - 320px) / (1920 - 320))) - calc(7px + (10 - 7) * ((100vw - 320px) / (1920 - 320))));
         }
 
         h5 {

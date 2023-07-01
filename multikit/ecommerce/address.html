@@ -19,24 +19,24 @@
     <link rel="icon" href="../assets/images/favicon/2.svg" type="image/x-icon">
     <link rel="shortcut icon" href="../" type="image/x-icon">
 
-    <!-- Google font -->
+    <!-- Google font css link  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
 
-    <!-- Bootstrap link -->
+    <!-- Bootstrap css -->
     <link id="rtl-link" rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
 
     <!-- Loader Normalize css -->
-    <link rel="stylesheet" href="../assets/css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/normalize.min.css">
 
     <!-- Swiper css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/swiper-bundle.min.css">
 
-    <!-- Remix Icon link -->
+    <!-- Remix Icon css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/remixicon.css">
 
-    <!-- Style Link -->
+    <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 
@@ -58,7 +58,7 @@
             <h4 class="header-title">Delivery Address</h4>
         </div>
         <div class="header-right">
-            <a href="javascript:void(0)" class="notification">
+            <a href="notification.html" class="notification">
                 <i class="ri-notification-2-line"></i>
             </a>
             <a href="wishlist.html">
@@ -72,11 +72,11 @@
     <!-- header Section End -->
 
     <!-- Address Section Start -->
-    <section class="ecommerce-address-section">
+    <section class="ecommerce-address-section pb-3">
         <div class="custom-container">
-            <ul class="address-list">
-                <li>
-                    <div class="address-box newclass txt" onclick="activate()">
+            <ul class="address-list selectionUI">
+                <li class="active">
+                    <div class="address-box">
                         <div class="address-name">
                             <div class="address-icon">
                                 <i class="ri-home-3-line"></i>
@@ -111,7 +111,7 @@
                 </li>
 
                 <li>
-                    <div class="address-box txt" onclick="activate()">
+                    <div class="address-box">
                         <div class="address-name">
                             <div class="address-icon">
                                 <i class="ri-building-line"></i>
@@ -146,7 +146,7 @@
                 </li>
 
                 <li>
-                    <div class="address-box txt" onclick="activate()">
+                    <div class="address-box">
                         <div class="address-name">
                             <div class="address-icon">
                                 <i class="ri-building-line"></i>
@@ -228,7 +228,7 @@
         <div class="offcanvas-body">
             <ul class="sidebar-list">
                 <li>
-                    <a href="order.html">
+                    <a href="order-history.html">
                         <i class="ri-file-list-2-line"></i>
                         <h5>Orders</h5>
                     </a>
@@ -249,14 +249,14 @@
                 </li>
 
                 <li>
-                    <a href="save-address.html">
+                    <a href="address.html">
                         <i class="ri-map-pin-5-line"></i>
                         <h5>Saved Address</h5>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#!">
+                    <a href="language.html">
                         <i class="ri-earth-line"></i>
                         <h5>Language</h5>
                     </a>
@@ -342,9 +342,9 @@
     <!-- Edit Address Offcanvas End -->
 
     <!-- Theme Option Setting Box Start -->
-    <div class="theme-setting-box ecommerce-color">
+    <div class="theme-setting-box">
         <div class="theme-box">
-            <button class="theme-icon">
+            <button class="theme-icon text-white">
                 <i class="ri-menu-line"></i>
             </button>
             <ul class="theme-option">
@@ -369,14 +369,17 @@
     <!-- Theme Option Setting Box End -->
 
     <!-- Bootstrap js-->
-    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 
-    <!-- Loader Js -->
+    <!-- Loader js -->
     <script src="../assets/js/loader.js"></script>
 
     <!-- swiper js -->
     <script src="../assets/js/swiper-bundle.min.js"></script>
     <script src="../assets/js/custom_swiper.js"></script>
+
+    <!-- address selection js -->
+    <script src="../assets/js/active-selection.js"></script>
 
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
@@ -384,20 +387,6 @@
     <!-- Theme Settings js-->
     <script src="../assets/js/theme-setting.js"></script>
 
-    <script>
-        // First Step
-        function activate() {
-            var a = document.querySelector(".txt");
-            a.classList.add("newclass");
-        }
-
-        // Second Step
-        document.querySelector('.nav-toggle').onclick = function (e) {
-            var nav = document.querySelector('#mainnav');
-            nav.classList.toggle('show');
-            e.preventDefault();
-        }
-    </script>
 </body>
 
 </html>
