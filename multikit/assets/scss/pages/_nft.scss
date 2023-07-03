@@ -32,6 +32,10 @@
                 color: rgba(var(--white), 1);
                 line-height: 1.5;
                 margin-bottom: 16px;
+
+                [class="dark"] & {
+                    color: #fff;
+                }
             }
 
             .explore-btn {
@@ -40,7 +44,11 @@
                 background-color: rgba(var(--white), 1);
                 padding: 8px 16px;
                 border-radius: 6px;
-                color: rgb(70, 70, 70);
+                color: rgba(var(--title), 1);
+
+                [class="dark"] & {
+                    background-color: #efefef;
+                }
             }
         }
     }
@@ -60,11 +68,18 @@
                 display: block;
                 padding: 0;
 
-                img {
+                .category-image {
                     width: 60px;
                     height: 60px;
                     border-radius: 100%;
                     margin-bottom: 9px;
+
+                    img {
+                        border-radius: 100%;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
                 }
 
                 h5 {
@@ -124,10 +139,18 @@
 
                     &.danger {
                         color: #FF2626;
+
+                        [dir="rtl"] & {
+                            text-align: left;
+                        }
                     }
 
                     &.success {
                         color: #038800;
+
+                        [dir="rtl"] & {
+                            text-align: left;
+                        }
                     }
                 }
 
@@ -204,8 +227,12 @@
                 left: 50%;
                 transform: translateX(-50%);
                 border-radius: 5px;
-                color: rgb(70, 70, 70);
+                color: rgba(var(--title), 1);
                 gap: 4px;
+
+                [class="dark"] & {
+                    background-color: #fff;
+                }
 
                 h6 {
                     font-weight: 500;
@@ -243,6 +270,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 
+    @include mq-max(md) {
+        gap: calc(9px + (15 - 9) * ((100vw - 320px) / (600 - 320)));
+    }
+
     li {
         .collection-product-box {
             box-shadow: 0px 0px 6px rgba(213, 213, 213, 0.38);
@@ -250,6 +281,7 @@
             padding: 7px;
             display: block;
             color: rgba(var(--title), 1);
+            height: 100%;
 
             [class="dark"] & {
                 box-shadow: 0px 0px 6px rgba(60, 60, 60, 0.38);
@@ -373,22 +405,32 @@
         overflow: auto;
 
         li {
-            width: 100%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(var(--white), 1);
+            border-radius: 6px;
+
+            [class="dark"] & {
+                background-color: #151515;
+            }
 
             .wallet-money-box {
                 display: block;
                 text-align: center;
-                padding: 12px 24px;
-                background-color: rgba(var(--white), 1);
-                border-radius: 6px;
+                // background-color: rgba(var(--white), 1);
+                // padding: 12px;
+                // border-radius: 6px;
 
-                [class="dark"] & {
-                    background-color: #151515;
-                }
+                // [class="dark"] & {
+                //     background-color: #151515;
+                // }
 
                 i {
                     color: rgba(var(--theme-color), 1);
-                    font-size: 28px;
+                    font-size: 26px;
                     line-height: 1;
                 }
 
@@ -396,7 +438,7 @@
                     font-weight: 400;
                     font-size: 12px;
                     color: rgba(var(--title), 1);
-                    margin-top: 5px;
+                    line-height: 1;
                 }
             }
         }
@@ -672,6 +714,7 @@
 
                 [class="dark"] & {
                     background-color: #151515;
+                    color: #fff;
                 }
             }
 
@@ -762,6 +805,10 @@
                 width: 1px;
                 height: 80%;
                 border-left: 1px solid rgb(227, 227, 227);
+
+                [class="dark"] & {
+                    border-left: 1px solid rgba(227, 227, 227, 0.15);
+                }
             }
         }
 
