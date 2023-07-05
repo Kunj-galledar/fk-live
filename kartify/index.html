@@ -20,7 +20,7 @@
         rel="stylesheet">
 
     <!-- Bootstrap Link -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/vendors/bootsrap.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/vendors/bootstrap.css">
 
     <!-- Iconsax Icon Link -->
     <link rel="stylesheet" type="text/css" href="./assets/css/vendors/iconsax.css">
@@ -1079,7 +1079,8 @@
                                     <h5 class="sold">Sold : 4/12</h5>
                                 </div>
                                 <div class="compare-box">
-                                    <button class="btn cart-button">Add to cart</button>
+                                    <button class="btn cart-button" data-bs-toggle="modal"
+                                        data-bs-target="#addCartModal">Add to cart</button>
                                     <ul class="compare-list">
                                         <li>
                                             <a href="wishlist.html">
@@ -1130,7 +1131,8 @@
                                     <h5 class="sold">Sold : 4/12</h5>
                                 </div>
                                 <div class="compare-box">
-                                    <button class="btn cart-button">Add to cart</button>
+                                    <button class="btn cart-button" data-bs-toggle="modal"
+                                        data-bs-target="#addCartModal">Add to cart</button>
                                     <ul class="compare-list">
                                         <li>
                                             <a href="wishlist.html">
@@ -1181,7 +1183,8 @@
                                     <h5 class="sold">Sold : 4/12</h5>
                                 </div>
                                 <div class="compare-box">
-                                    <button class="btn cart-button">Add to cart</button>
+                                    <button class="btn cart-button" data-bs-toggle="modal"
+                                        data-bs-target="#addCartModal">Add to cart</button>
                                     <ul class="compare-list">
                                         <li>
                                             <a href="wishlist.html">
@@ -1232,7 +1235,8 @@
                                     <h5 class="sold">Sold : 4/12</h5>
                                 </div>
                                 <div class="compare-box">
-                                    <button class="btn cart-button">Add to cart</button>
+                                    <button class="btn cart-button" data-bs-toggle="modal"
+                                        data-bs-target="#addCartModal">Add to cart</button>
                                     <ul class="compare-list">
                                         <li>
                                             <a href="wishlist.html">
@@ -1283,7 +1287,8 @@
                                     <h5 class="sold">Sold : 4/12</h5>
                                 </div>
                                 <div class="compare-box">
-                                    <button class="btn cart-button">Add to cart</button>
+                                    <button class="btn cart-button" data-bs-toggle="modal"
+                                        data-bs-target="#addCartModal">Add to cart</button>
                                     <ul class="compare-list">
                                         <li>
                                             <a href="wishlist.html">
@@ -1334,7 +1339,8 @@
                                     <h5 class="sold">Sold : 4/12</h5>
                                 </div>
                                 <div class="compare-box">
-                                    <button class="btn cart-button">Add to cart</button>
+                                    <button class="btn cart-button" data-bs-toggle="modal"
+                                        data-bs-target="#addCartModal">Add to cart</button>
                                     <ul class="compare-list">
                                         <li>
                                             <a href="wishlist.html">
@@ -1385,7 +1391,8 @@
                                     <h5 class="sold">Sold : 4/12</h5>
                                 </div>
                                 <div class="compare-box">
-                                    <button class="btn cart-button">Add to cart</button>
+                                    <button class="btn cart-button" data-bs-toggle="modal"
+                                        data-bs-target="#addCartModal">Add to cart</button>
                                     <ul class="compare-list">
                                         <li>
                                             <a href="wishlist.html">
@@ -1417,7 +1424,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="light-bg-color">
                         <div class="title d-block">
-                            <h3>Top kitchen items</h3>
+                            <h3>Top Kitchen items</h3>
                         </div>
 
                         <div class="row g-3">
@@ -4147,6 +4154,66 @@
     </div>
     <!-- Wishlist Offcanvas End -->
 
+    <!-- Add To Cart Modal Start -->
+    <div class="modal theme-modal add-cart-modal fade" id="addCartModal">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="table-responsive">
+                                <table class="table add-to-cart-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <img src="./assets/images/product/1.png" alt=""
+                                                    class="img-fluid cart-image">
+                                            </td>
+                                            <td>
+                                                <div class="name">
+                                                    <h5>Apple Watch Series 3</h5>
+                                                    <h6>White</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h5 class="sub-total">$693.66 <del>$710.63</del></h5>
+                                            </td>
+                                            <td>
+                                                <div class="quantity-box">
+                                                    <button class="btn decrementButton">-</button>
+                                                    <span class="quantity">0</span>
+                                                    <button class="btn incrementButton">+</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4 class="total-price">$693.66</h4>
+                                            </td>
+                                            <td>
+                                                <i class="ri-delete-bin-5-line delete-box"></i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-6"></div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Add To Cart Modal End -->
+
     <!-- Bg Overlay Start -->
     <div class="bg-overlay" id="overlay"></div>
     <!-- Bg Overlay End -->
@@ -4172,6 +4239,29 @@
 
     <!-- Script js -->
     <script src="./assets/js/script.js"></script>
+
+    <script>
+        // Get the container, icon, and text elements
+        const container = document.getElementById('container');
+        const icon = document.getElementById('icon');
+        const text = document.getElementById('text');
+
+        // Define the click event handler function
+        function handleClick() {
+            if (icon.classList.contains('fa-plus')) {
+                // If the icon is a plus, change it to a minus and update the text
+                icon.classList.replace('fa-plus', 'fa-minus');
+                text.textContent = 'Remove';
+            } else {
+                // If the icon is a minus, change it to a plus and update the text
+                icon.classList.replace('fa-minus', 'fa-plus');
+                text.textContent = 'Add';
+            }
+        }
+
+        // Attach the click event listener to the container element
+        container.addEventListener('click', handleClick);
+    </script>
 </body>
 
 </html>

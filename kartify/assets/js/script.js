@@ -78,3 +78,16 @@ function hideProductBox(button) {
     var productBox = button.parentNode; // Get the parent element of the button (product box)
     productBox.style.display = "none";
 }
+
+/*=====================
+    Change Website Title Js
+  ==========================*/
+var title = document.title;
+
+window.addEventListener('focus', function () {
+    document.title = title;
+});
+
+window.addEventListener('blur', function () {
+    document.title = "Come Back :(";
+});

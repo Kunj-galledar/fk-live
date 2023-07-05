@@ -277,6 +277,7 @@
     background-color: rgb(245, 246, 249);
     transition: all 0.5s ease-in-out;
     position: relative;
+    height: 100%;
 
     +.product-box-4 {
         margin-top: 25px;
@@ -1647,6 +1648,7 @@
 
 .product-box-4-main {
     position: relative;
+    height: 100%;
 
     +.product-box-4-main {
         margin-top: 25px;
@@ -1658,20 +1660,22 @@
 
     .select-option-box {
         position: absolute;
-        top: 0;
-        left: 0;
-        @include pseudowh;
+        top: 50%;
+        left: 50%;
+        width: calc(100% - 15px);
+        height: calc(100% - 15px);
         padding: 10px;
         text-align: center;
         @include flex_common;
-        transform: scale(0);
+        transform: translate(-50%, -50%) scale(0);
         transition: 0.5s;
         opacity: 0;
         visibility: hidden;
+        background-color: rgba(var(--white), 1);
         z-index: 1;
 
         &.show {
-            transform: scale(1);
+            transform: translate(-50%, -50%) scale(1);
             opacity: 1;
             visibility: visible;
         }
@@ -1696,9 +1700,28 @@
                 margin-top: 5px;
 
                 li {
+                    &:first-child {
+                        a {
+                            background-color: #8fb4ff;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        a {
+                            background-color: #ebf1ff;
+                        }
+                    }
+
+                    &:last-child {
+                        a {
+                            background-color: #ff8f94;
+                        }
+                    }
+
                     a {
                         @include pseudowh($width: 25px, $height: 25px);
                         border-radius: 3px;
+
                     }
                 }
             }
@@ -1753,7 +1776,7 @@
     background-color: rgba(var(--white), 1);
     border: 1px solid rgba(var(--content-color), 0.2);
     height: 100%;
-    padding: 20px 30px;
+    padding: calc(11px + (20 - 11) * ((100vw - 320px) / (1920 - 320))) calc(11px + (30 - 11) * ((100vw - 320px) / (1920 - 320)));
 
     .product-thumbnail-box {
         margin-top: 15px;
@@ -1772,7 +1795,8 @@
                     margin-inline: auto;
 
                     @include mq-max(xl) {
-                        height: 100% !important;
+                        // height: 100% !important;
+                        padding: 5px 9px
                     }
 
                     img {
@@ -1794,6 +1818,10 @@
                 img {
                     @extend %img-contain;
                 }
+
+                @include mq-max(xl) {
+                    height: 151px;
+                }
             }
         }
     }
@@ -1804,14 +1832,19 @@
         align-items: center;
         margin-top: 10px;
 
+        @media (max-width: 729px) {
+            display: block;
+            text-align: center;
+        }
+
         .product-content {
             border-bottom: 1px solid rgba(var(--content-color), 0.2);
             padding-bottom: 14px;
             margin-bottom: 35px;
 
             @media (max-width: 1399px) {
-                padding-bottom: 7px;
-                margin-bottom: 19px;
+                padding-bottom: calc(0px + (7 - 0) * ((100vw - 320px) / (1399 - 320)));
+                margin-bottom: calc(9px + (19 - 9) * ((100vw - 320px) / (1399 - 320)));
             }
 
             h6 {
@@ -1829,6 +1862,10 @@
                 align-items: center;
                 margin-block: 1px 12px;
 
+                @media (max-width: 729px) {
+                    justify-content: center;
+                }
+
                 .rating {
                     li {
                         i {
@@ -1838,8 +1875,8 @@
                 }
 
                 h6 {
-                    padding-left: 8px;
-                    margin-left: 8px;
+                    padding-left: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+                    margin-left: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
                     border-left: 1px solid rgba(var(--content-color), 0.2);
                     color: rgba(var(--content-color), 0.8);
                     margin-bottom: 0;
@@ -1857,6 +1894,10 @@
                 align-items: center;
                 gap: 6px;
 
+                @media (max-width: 729px) {
+                    justify-content: center;
+                }
+
                 del {
                     font-size: 16px;
                     color: rgba(var(--content-color), 0.8);
@@ -1869,6 +1910,10 @@
                 display: flex;
                 align-items: center;
                 gap: 6px;
+
+                @media (max-width: 729px) {
+                    justify-content: center;
+                }
 
                 @include mq-max(xl) {
                     gap: calc(4px + (6 - 4) * ((100vw - 320px) / (1199 - 320)));
@@ -1893,6 +1938,11 @@
                             right: -7px;
                             background-color: rgba(var(--white), 1);
                             box-shadow: 0px 11px 20px rgba(49, 90, 152, 0.07);
+
+                            @include mq-max(xl) {
+                                bottom: calc(0px + (-7 - 0) * ((100vw - 320px) / (1199 - 320)));
+                                right: calc(0px + (-7 - 0) * ((100vw - 320px) / (1199 - 320)));
+                            }
                         }
                     }
 
@@ -1915,14 +1965,19 @@
                             margin-bottom: 2px;
                             color: #2242A3;
 
-                            @include mq-max(xl) {
-                                width: calc(20px + (30 - 20) * ((100vw - 320px) / (1199 - 320)));
+                            @media (max-width: 1199px) {
+                                font-size: calc(19px + (30 - 19) * ((100vw - 320px) / (1199 - 320)));
                             }
+
+                            // @include mq-max(xl) {
+                            //     width: calc(20px + (30 - 20) * ((100vw - 320px) / (1199 - 320)));
+                            // }
                         }
 
                         .smalltext {
                             color: rgba(var(--content-color), 1);
                             @include line;
+                            line-height: 1;
                         }
                     }
                 }
@@ -1936,11 +1991,20 @@
                 margin-top: 25px;
             }
 
+            @include mq-max(xl) {
+                margin-top: calc(11px + (25 - 11) * ((100vw - 320px) / (1199 - 320)));
+            }
+
             .progress {
                 height: 10px;
                 background-color: #F5F6F9;
                 border-radius: 0;
                 margin-bottom: 15px;
+
+                @include mq-max(xl) {
+                    height: calc(7px + (10 - 7) * ((100vw - 320px) / (1199 - 320)));
+                    margin-bottom: calc(9px + (15 - 9) * ((100vw - 320px) / (1199 - 320)));
+                }
 
                 .progress-bar {
                     width: 50%;

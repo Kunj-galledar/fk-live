@@ -70,7 +70,7 @@ var categoryBox = new Swiper(".category-box-slide", {
     },
 });
 
-var swiper = new Swiper(".category-slider", {
+var categorySlider = new Swiper(".category-slider", {
     slidesPerView: 6,
     spaceBetween: 20,
     breakpoints: {
@@ -621,7 +621,7 @@ var brandSlider = new Swiper(".brand-slider", {
     },
 });
 
-var swiper = new Swiper(".top-category-swiper", {
+var topCategorySlider = new Swiper(".top-category-swiper", {
     slidesPerView: 7,
     spaceBetween: 10,
     grabCursor: true,
@@ -657,10 +657,10 @@ var product5Slider = new Swiper(".product-five-slider", {
         nextEl: ".product-five-slider-next",
         prevEl: ".product-five-slider-prev",
     },
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-    },
+    // autoplay: {
+    //     delay: 3500,
+    //     disableOnInteraction: false,
+    // },
     breakpoints: {
         0: {
             slidesPerView: 1,
@@ -688,50 +688,7 @@ var product5Slider = new Swiper(".product-five-slider", {
     },
 });
 
-var swiper = new Swiper(".product-thumbnail-slider-2", {
-    spaceBetween: 10,
-    slidesPerView: 3,
-    freeMode: true,
-    watchSlidesProgress: true,
-    direction: "horizontal",
-    // breakpoints: {
-    //     // 0: {
-    //     //     slidesPerView: 1,
-    //     //     spaceBetween: 0,
-    //     // },
-    //     // 420: {
-    //     //     slidesPerView: 2,
-    //     //     spaceBetween: 14,
-    //     // },
-    //     // 660: {
-    //     //     slidesPerView: 3,
-    //     // },
-    //     // 980: {
-    //     //     slidesPerView: 4,
-    //     // },
-    //     // 1200: {
-    //     //     slidesPerView: 3,
-    //     // },
-    //     1199: {
-    //         direction: "vertical",
-    //     },
-    //     1400: {
-    //         direction: "horizontal",
-    //     },
-    // },
-});
-var swiper2 = new Swiper(".product-real-slider-2", {
-    spaceBetween: 10,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-        swiper: swiper,
-    },
-});
-
-var swiper = new Swiper(".recent-product-slider", {
+var recentProductSlider = new Swiper(".recent-product-slider", {
     slidesPerView: 10,
     spaceBetween: 30,
     freeMode: true,
@@ -780,7 +737,7 @@ var dailySlider = new Swiper(".daily-deal-slider", {
     },
 });
 
-var swiper = new Swiper(".electronic-category-slider", {
+var electronicCategorySlider = new Swiper(".electronic-category-slider", {
     slidesPerView: 8,
     spaceBetween: 15,
     navigation: {
@@ -824,7 +781,7 @@ var swiper = new Swiper(".electronic-category-slider", {
     },
 });
 
-var swiper = new Swiper(".best-seller-slider", {
+var bestSellerSlider = new Swiper(".best-seller-slider", {
     slidesPerView: 1,
     navigation: {
         nextEl: ".best-seller-next",
@@ -949,6 +906,7 @@ var bannerSlider3 = new Swiper(".banner-slider3", {
         },
     },
 });
+
 var brandSlider2 = new Swiper(".brand-slider2", {
     slidesPerView: 9,
     spaceBetween: 25,
@@ -976,6 +934,23 @@ var brandSlider2 = new Swiper(".brand-slider2", {
         },
         1650: {
             slidesPerView: 9,
+        },
+    },
+});
+
+var dealHotSlider = new Swiper(".deal-hot-slider", {
+    slidesPerView: 1,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+        },
+        730: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1200: {
+            slidesPerView: 1,
         },
     },
 });
