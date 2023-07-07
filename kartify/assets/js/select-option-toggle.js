@@ -8,7 +8,7 @@
 
 // var buttons = document.querySelectorAll('.select-btn');
 // var element = document.querySelector('.select-option-box');
-// var close = document.querySelector('.close-btn');
+// var closeBtn = document.querySelector('.close-btn');
 
 // buttons.forEach(function (button) {
 //     button.addEventListener('click', function () {
@@ -16,8 +16,8 @@
 //     });
 // });
 
-// buttons.forEach(function (button) {
-//     button.addEventListener('click', function () {
+// closeBtn.forEach(function (button) {
+//     button.removeEventListener('click', function () {
 //         element.classList.remove('show');
 //     });
 // });

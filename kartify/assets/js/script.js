@@ -91,3 +91,94 @@ window.addEventListener('focus', function () {
 window.addEventListener('blur', function () {
     document.title = "Come Back :(";
 });
+
+
+// var contentWidth = window.innerWidth;
+// if (contentWidth < 576) {
+//     var footerTitle = document.querySelectorAll(".footer-title");
+//     footerTitle.forEach(function (title) {
+//         var span = document.createElement("span");
+//         span.className = "according-menu float-end";
+//         span.innerHTML = '<i class="ri-arrow-down-s-line"></i>';
+//         title.querySelector("h4").appendChild(span);
+
+//         title.addEventListener("click", function () {
+//             footerTitle.forEach(function (item) {
+//                 item.classList.remove("active");
+//                 var span = item.querySelector("span");
+//                 span.innerHTML = '<i class="ri-arrow-down-s-line"></i>';
+//             });
+
+//             var footerContact = document.querySelector(".footer-list");
+//             var footerContain = document.querySelector(".footer-list");
+//             var nextElement = this.nextElementSibling;
+
+//             if (nextElement.style.display === "none" || nextElement.style.display === "") {
+//                 this.classList.add("active");
+//                 var span = this.querySelector("span");
+//                 span.innerHTML = '<i class="ri-arrow-up-s-line"></i>';
+//                 footerContact.style.display = "block";
+//                 footerContain.style.display = "block";
+//                 nextElement.style.display = "block";
+//             } else {
+//                 var span = this.querySelector("span");
+//                 span.innerHTML = '<i class="ri-arrow-down-s-line"></i>';
+//                 footerContact.style.display = "none";
+//                 footerContain.style.display = "none";
+//                 nextElement.style.display = "none";
+//             }
+//         });
+//     });
+
+//     var footerContact = document.querySelector(".footer-list");
+//     var footerContain = document.querySelector(".footer-list");
+//     footerContact.style.display = "none";
+//     footerContain.style.display = "none";
+// } else {
+//     var footerContact = document.querySelector(".footer-list");
+//     var footerContain = document.querySelector(".footer-list");
+//     footerContact.style.display = "block";
+//     footerContain.style.display = "block";
+// }
+
+var notifiWishlist = document.querySelector(".notifi-wishlist");
+notifiWishlist.addEventListener("click", function () {
+    var options = {
+        icon: "fa fa-check",
+        title: "Success!",
+        message: "Item Successfully added in wishlist",
+    };
+    var settings = {
+        element: "body",
+        position: null,
+        type: "info",
+        allow_dismiss: true,
+        newest_on_top: false,
+        showProgressbar: true,
+        placement: {
+            from: "top",
+            align: "right",
+        },
+        offset: 20,
+        spacing: 10,
+        z_index: 1031,
+        delay: 5000,
+        animate: {
+            enter: "animated fadeInDown",
+            exit: "animated fadeOutUp",
+        },
+        icon_type: "class",
+        template: '<div data-notify="container" class="col-xxl-3 col-lg-5 col-md-6 col-sm-7 col-12 alert alert-{0}" role="alert">' +
+            '<button type="button" aria-hidden="true" class="btn-close" data-notify="dismiss"></button>' +
+            '<span data-notify="icon"></span> ' +
+            '<span data-notify="title">{1}</span> ' +
+            '<span data-notify="message">{2}</span>' +
+            '<div class="progress" data-notify="progressbar">' +
+            '<div class="progress-bar progress-bar-info progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+            "</div>" +
+            '<a href="{3}" target="{4}" data-notify="url"></a>' +
+            "</div>",
+    };
+
+    $.notify(options, settings);
+});

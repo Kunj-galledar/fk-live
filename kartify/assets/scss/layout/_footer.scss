@@ -8,10 +8,17 @@
         padding-block: calc(22px + (46 - 22) * ((100vw - 320px) / (1920 - 320))) calc(15px + (38 - 15) * ((100vw - 320px) / (1920 - 320)));
         border-bottom: 1px solid rgba(var(--title-color), 0.2);
 
-
-
         .footer-title {
             margin-bottom: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320)));
+
+            @include mq-max(sm) {
+                cursor: pointer;
+                margin-bottom: 0;
+
+                &.active {
+                    margin-bottom: calc(8px + (18 - 8) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
 
             h4 {
                 font-weight: 500;

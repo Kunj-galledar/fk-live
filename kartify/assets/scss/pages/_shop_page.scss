@@ -77,7 +77,6 @@
 
           @include mq-max(md) {
                width: 80%;
-               // background: var(--white);
                background: linear-gradient(90deg, rgba(var(--white), 0.4) 0%, rgba(246, 246, 246, 0) 100%);
           }
 
@@ -171,7 +170,7 @@
      }
 }
 
-// ========== Price Range Slider =============
+/* ========== Price Range Slider ============= */
 .wrapper {
      .price-input {
           width: 100%;
@@ -193,9 +192,6 @@
           border-bottom: 1px solid rgba(var(--content-color), 0.3);
           background-color: transparent;
           outline: none;
-
-          // &:focus-visible {
-          // }
      }
 
      input[type="number"]::-webkit-outer-spin-button,
@@ -261,17 +257,11 @@
      }
 }
 
-// ========== Price Range Slider =============
+/* ========== Price Range Slider ============= */
 .shop-section {
      .left-box {
           position: sticky;
           top: 0;
-          // border-right: 1px solid rgba(var(--content-color), 0.3);
-
-          // [dir="rtl"] & {
-          //      border-right: unset;
-          //      border-left: 1px solid rgba(var(--content-color), 0.3);
-          // }
 
           @include mq-max(lg) {
                @include pseudowh($width: 300px, $height: 100%);
@@ -335,21 +325,6 @@
           }
 
           .shop-left-sidebar {
-               // padding-right: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
-
-               // [dir="rtl"] & {
-               //      padding-right: unset;
-               //      padding-left: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
-               // }
-
-               // @include mq-max(lg) {
-               //      padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
-
-               //      [dir="rtl"] & {
-               //           padding: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
-               //      }
-               // }
-
                &.shop-right-sidebar {
                     padding-left: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
                     padding-right: unset;
@@ -475,9 +450,8 @@
 
                          li {
                               padding: 9px 34px 9px 11px;
-                              background-color: #f5f6f9;
+                              background-color: rgba(var(--content-color), 0.05);
                               position: relative;
-                              border-radius: 4px;
 
                               &:before {
                                    @include pos($pos: absolute, $content: "\eb99");
@@ -499,7 +473,7 @@
                     @include flex_wrap ($dis: flex, $wrap: wrap, $gap: 22px);
 
                     .accordion-item {
-                         background-color: #F5F6F9;
+                         background-color: rgba(var(--content-color), 0.05);
                          border: none;
                          width: 100%;
                          border-radius: 0;
@@ -508,10 +482,8 @@
                          .accordion-header {
                               .accordion-button {
                                    font-size: 18px;
-                                   // padding: 0 0 8px 0;
                                    padding: 0;
                                    font-weight: 600;
-                                   // margin-bottom: 9px;
                                    margin: 0;
                                    background-color: transparent;
                                    justify-content: space-between;
@@ -539,8 +511,6 @@
                                         @include font;
                                         @include pseudowh($width: 26px, $height: 26px);
                                         @include flex_common;
-                                        // top: 0;
-                                        // right: 5px;
                                         background-color: rgba(var(--white), 1);
                                         font-size: 15px;
                                         border-radius: 100%;
@@ -557,18 +527,6 @@
                                         background-color: transparent;
                                         box-shadow: none;
                                    }
-
-                                   // span {
-                                   //      position: relative;
-
-                                   //      &::before {
-                                   //           @include pos;
-                                   //           @include pseudowh($width: 100%, $height: 1px);
-                                   //           bottom: -8px;
-                                   //           left: 0;
-                                   //           background-color: rgba(var(--theme-color), 1);
-                                   //      }
-                                   // }
                               }
                          }
 
@@ -716,7 +674,7 @@
                .sidebar-filter-menu {
                     a {
                          border: none;
-                         background-color: #f5f6f9;
+                         background-color: rgba(var(--light-gray), 1);
                          font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                          padding: calc(9px + (10 - 9) * ((100vw - 320px) / (1920 - 320))) 15px;
                          border-radius: 5px;
@@ -745,7 +703,7 @@
                          .dropdown-toggle {
                               @include flex_common;
                               border: none;
-                              background-color: #f5f6f9;
+                              background-color: rgba(var(--light-gray), 1);
                               font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                               padding: calc(9px + (10 - 9) * ((100vw - 320px) / (1920 - 320))) 15px;
                               border-radius: 5px;
@@ -804,7 +762,7 @@
                          li {
                               @include pseudowh($width: 35px, $height: 35px);
                               border-radius: 5px;
-                              background: linear-gradient(149.8deg, #f5f6f9 17.21%, #FBFAF9 79.21%);
+                              background: linear-gradient(149.8deg, rgba(var(--light-gray), 1) 17.21%, #FBFAF9 79.21%);
 
                               a {
                                    @include flex_common;
@@ -849,7 +807,7 @@
                          .dropdown-toggle {
                               @include flex_common;
                               border: none;
-                              background-color: #f5f6f9;
+                              background-color: rgba(var(--content-color), 0.05);
                               font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
                               padding: calc(9px + (10 - 9) * ((100vw - 320px) / (1920 - 320))) 15px;
                               border-radius: 5px;
@@ -868,7 +826,7 @@
                          }
 
                          .dropdown-menu {
-                              background-color: #f5f6f9;
+                              background-color: rgba(var(--light-gray), 1);
                               border: none;
 
                               li {
@@ -906,7 +864,7 @@
                          li {
                               @include pseudowh($width: 35px, $height: 35px);
                               border-radius: 5px;
-                              background: linear-gradient(149.8deg, #f5f6f9 17.21%, #FBFAF9 79.21%);
+                              background: linear-gradient(149.8deg, rgba(var(--light-gray), 1) 17.21%, #FBFAF9 79.21%);
 
                               a {
                                    @include flex_common;
@@ -939,7 +897,7 @@
 
                     li {
                          padding: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) calc(28px + (34 - 28) * ((100vw - 320px) / (1920 - 320))) calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
-                         background-color: #f5f6f9;
+                         background-color: rgba(var(--light-gray), 1);
                          position: relative;
                          border-radius: 4px;
 
@@ -1011,7 +969,7 @@
 .category-slider-section {
      .category-contain {
           .category-contain-image {
-               background: linear-gradient(149.8deg, #f5f6f9 17.21%, #FBFAF9 79.21%);
+               background: linear-gradient(149.8deg, rgba(var(--light-gray), 1) 17.21%, #FBFAF9 79.21%);
                padding: 22px;
                border-radius: 8px;
 
@@ -1049,10 +1007,6 @@
                width: 100%;
 
                .product-box-4-main {
-                    // display: flex;
-                    // align-items: center;
-                    // padding: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
-
                     .product-box-4 {
                          display: flex;
                          align-items: center;
