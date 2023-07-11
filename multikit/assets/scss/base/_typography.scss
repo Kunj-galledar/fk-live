@@ -7,6 +7,20 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #110c13;
+    border-radius: 0;
+    border: none;
+}
+
 body {
     font-family: $montserrat;
     position: relative;
@@ -66,6 +80,14 @@ body {
         bottom: 84px;
         @include pseudowh($width: 182px, $height: 182px);
         z-index: -1;
+    }
+
+    & {
+        scrollbar-width: none;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0px;
     }
 }
 

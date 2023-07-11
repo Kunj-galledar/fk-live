@@ -91,6 +91,10 @@
             @include pseudowh($width: 50%, $height: 100%);
             padding: 20px 14px;
 
+            @include mq-max(md) {
+                padding: calc(10px + (20 - 10) * ((100vw - 320px) / (600 - 320))) calc(8px + (14 - 8) * ((100vw - 320px) / (600 - 320)));
+            }
+
             [dir="rtl"] & {
                 text-align: left;
             }
@@ -664,6 +668,10 @@
             border-radius: 10px;
             color: rgba(var(--white), 1);
 
+            [class="dark"] & {
+                color: #fff;
+            }
+
             .hotel-name {
                 display: flex;
                 align-items: center;
@@ -1020,6 +1028,10 @@
                 height: 46px;
                 color: rgba(var(--white), 1);
 
+                [class="dark"] & {
+                    color: #fff;
+                }
+
                 h3 {
                     font-weight: 600;
                 }
@@ -1100,6 +1112,10 @@
                             font-weight: 600;
                             font-size: 12px;
                             color: rgba(var(--white), 1);
+
+                            [class="dark"] & {
+                                color: #fff;
+                            }
                         }
                     }
                 }
@@ -1281,6 +1297,10 @@
             background: var(--gradient-color);
             color: rgba(var(--white), 1);
             border-radius: 8px 8px 0px 0px;
+
+            [class="dark"] & {
+                color: #fff;
+            }
         }
 
         .important-list {
@@ -1336,6 +1356,12 @@
             span {
                 color: rgba(var(--content), 1);
             }
+        }
+    }
+
+    .continue-button {
+        @include mq-max(md) {
+            font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (600 - 320)));
         }
     }
 }

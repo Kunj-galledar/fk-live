@@ -42,7 +42,6 @@ var filesToCache = [
   './assets/js/homescreen-popup.js',
   './assets/js/image-change.js',
   './assets/js/leaflet.js',
-  './assets/js/loader-2.js',
   './assets/js/loader.js',
   './assets/js/messaging-2.js',
   './assets/js/messaging.js',

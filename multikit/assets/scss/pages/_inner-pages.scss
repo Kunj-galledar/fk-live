@@ -112,6 +112,10 @@
                 margin-top: 8px;
                 padding-top: 8px;
                 border-top: 1px solid #f1f1f1;
+
+                [class="dark"] & {
+                    border-color: rgba(119, 119, 119, 0.35);
+                }
             }
 
             .form-check-input {
@@ -160,15 +164,28 @@
                 padding-left: 21px;
                 width: 100%;
 
+                [dir="rtl"] & {
+                    padding-left: unset;
+                    padding-right: 21px;
+                }
+
                 &::before {
-                    content: "";
-                    position: absolute;
+                    @include pos;
                     top: 50%;
                     left: 7px;
                     width: 4px;
                     height: 4px;
                     border-radius: 100%;
                     background-color: rgba(var(--title), 1);
+
+                    [dir="rtl"] & {
+                        left: unset;
+                        right: 0;
+                    }
+
+                    [class="dark"] & {
+                        background-color: rgba(119, 119, 119, 0.35);
+                    }
                 }
             }
         }

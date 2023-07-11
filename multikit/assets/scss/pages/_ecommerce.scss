@@ -629,7 +629,11 @@
     .continue-button {
         padding: 0;
         font-size: 16px;
-        color: #fff;
+        color: rgba(var(--white), 1);
+
+        @include mq-max(md) {
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+        }
     }
 }
 

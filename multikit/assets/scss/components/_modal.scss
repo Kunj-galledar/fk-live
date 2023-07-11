@@ -154,7 +154,7 @@
         .offcanvas-body {
             .sidebar-menu {
                 li {
-                    +li {
+                    + li {
                         border-top: 1px solid rgba(var(--title), 0.1);
                         padding-top: 9px;
                         margin-top: 9px;
@@ -189,7 +189,7 @@
                                         opacity: 0;
                                         @include pseudowh($width: 0, $height: 0);
 
-                                        &:checked+.slider {
+                                        &:checked + .slider {
                                             background-color: rgba(var(--theme-color), 1);
 
                                             &:before {
@@ -287,7 +287,7 @@
                 }
 
                 li {
-                    +li {
+                    + li {
                         margin-top: 15px;
                     }
 
@@ -357,7 +357,7 @@
                     position: relative;
                     overflow: hidden;
 
-                    +.filter-box {
+                    + .filter-box {
                         margin-top: 13px;
                     }
 
@@ -374,18 +374,18 @@
                         border-right: 1px solid rgba(var(--border-color), 1);
                         @include flex_common;
 
-                        [class="dark"] & {
-                            border-top-color: #363636;
-                            border-right-color: #363636;
-                            background-color: #363636;
-                        }
-
                         [dir="rtl"] & {
                             border-left: 1px solid rgba(var(--border-color), 1);
                             border-right: unset;
                             right: unset;
                             left: 0;
                             border-radius: 6px 0 0 0;
+                        }
+
+                        [class="dark"] & {
+                            border-color: #363636;
+                            border-right-color: #363636;
+                            background-color: #363636;
                         }
 
                         &::before {
@@ -418,9 +418,13 @@
                             &:before {
                                 content: "\eb7b";
                                 color: rgba(var(--white), 1);
+
+                                [class="dark"] & {
+                                    color: #fff;
+                                }
                             }
 
-                            ~.form-check-label {
+                            ~ .form-check-label {
                                 border: 1px solid rgba(var(--theme-color), 1);
 
                                 span,
@@ -512,7 +516,7 @@
                 margin-top: 23px;
 
                 li {
-                    +li {
+                    + li {
                         border-top: 1px solid rgba(var(--content), 0.2);
                         margin-top: 11px;
                         padding-top: 24px;
@@ -1008,7 +1012,8 @@
 
                         @include mq-max(md) {
                             border-radius: calc(11px + (18 - 11) * ((100vw - 320px) / (767 - 320)));
-                            padding: calc(11px + (14 - 11) * ((100vw - 320px) / (767 - 320))) calc(17px + (21 - 17) * ((100vw - 320px) / (767 - 320)));
+                            padding: calc(11px + (14 - 11) * ((100vw - 320px) / (767 - 320)))
+                                calc(17px + (21 - 17) * ((100vw - 320px) / (767 - 320)));
                         }
 
                         .menu-icon {
@@ -1483,7 +1488,12 @@
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
-            padding-left: 2rem;
+            padding-left: 20px;
+
+            [dir="rtl"] & {
+                padding-left: unset;
+                padding-right: 20px;
+            }
 
             li {
                 width: 100%;
@@ -1576,12 +1586,14 @@
             font-size: 26px;
             position: absolute;
             top: 0;
-            left: 280px;
+            left: 320px;
             line-height: 1;
 
             @include mq-max(md) {
-                @include pseudowh($width: calc(33px + (38 - 33) * ((100vw - 320px) / (600 - 320))),
-                    $height: calc(33px + (38 - 33) * ((100vw - 320px) / (600 - 320))));
+                @include pseudowh(
+                    $width: calc(33px + (38 - 33) * ((100vw - 320px) / (600 - 320))),
+                    $height: calc(33px + (38 - 33) * ((100vw - 320px) / (600 - 320)))
+                );
                 left: calc(280px + (320 - 280) * ((100vw - 320px) / (600 - 320)));
                 font-size: calc(21px + (26 - 21) * ((100vw - 320px) / (600 - 320)));
             }
@@ -1638,7 +1650,7 @@
 
             .sidebar-list {
                 li {
-                    +li {
+                    + li {
                         margin-top: 18px;
                         padding-top: 18px;
                         border-top: 1px solid rgba(237, 239, 244, 0.6);

@@ -25,6 +25,10 @@
             background-color: rgba(var(--white), 1);
             z-index: 0;
 
+            [dir="rtl"] & {
+                direction: rtl;
+            }
+
             [class="dark"] & {
                 box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.09);
                 background-color: #060d18;
@@ -89,8 +93,8 @@
         display: block;
         padding-block: 3px;
 
-        >li {
-            +li {
+        > li {
+            + li {
                 margin-top: 11px;
             }
 
@@ -117,7 +121,8 @@
                         }
 
                         @include mq-max(md) {
-                            padding: calc(7px + (10 - 7) * ((100vw - 320px) / (600 - 320))) calc(13px + (21 - 13) * ((100vw - 320px) / (600 - 320)));
+                            padding: calc(7px + (10 - 7) * ((100vw - 320px) / (600 - 320)))
+                                calc(13px + (21 - 13) * ((100vw - 320px) / (600 - 320)));
                             font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
                         }
                     }
@@ -267,7 +272,7 @@
             .rating-box {
                 @include flex_common($dis: flex, $align: center, $justify: space-between);
 
-                >li {
+                > li {
                     font-size: 12px;
 
                     [class="dark"] & {
@@ -278,7 +283,7 @@
                         @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
                         align-items: center;
 
-                        >li {
+                        > li {
                             line-height: 1;
                             font-size: 12px;
 
@@ -294,7 +299,7 @@
 
     .popular-course-list {
         li {
-            +li {
+            + li {
                 margin-top: 16px;
             }
 
@@ -549,6 +554,10 @@
         display: flex;
         align-items: center;
 
+        [class="dark"] & {
+            color: #fff;
+        }
+
         .total-left {
             padding-right: calc(7px + (21 - 7) * ((100vw - 320px) / (1920 - 320)));
             border-right: 1px solid rgba(var(--content), 0.2);
@@ -583,8 +592,18 @@
                 font-size: 23px;
                 line-height: 1;
 
+                &:nth-child(2) {
+                    [dir="rtl"] & {
+                        margin-left: -16px;
+                    }
+                }
+
                 &:last-child {
                     margin-left: -16px;
+
+                    [dir="rtl"] & {
+                        margin-left: unset;
+                    }
                 }
             }
         }
@@ -687,6 +706,7 @@
         .accordion-item {
             border: none;
             width: 100%;
+            background-color: transparent;
 
             .accordion-header {
                 .accordion-button {
@@ -790,7 +810,7 @@
                     font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
                 }
 
-                +li {
+                + li {
                     &::before {
                         @include pos;
                         @include center(vertical);
@@ -932,6 +952,11 @@
             &.with-icon {
                 .form-control {
                     padding-right: 63px;
+
+                    [dir="rtl"] & {
+                        padding-right: 17px;
+                        padding-left: 63px;
+                    }
                 }
             }
 
@@ -962,7 +987,7 @@
 .app-setting-section {
     .sidebar-menu {
         li {
-            +li {
+            + li {
                 border-top: 1px solid rgba(var(--title), 0.1);
                 padding-top: 9px;
                 margin-top: 9px;
@@ -997,7 +1022,7 @@
                                 opacity: 0;
                                 @include pseudowh($width: 0, $height: 0);
 
-                                &:checked+.slider {
+                                &:checked + .slider {
                                     background-color: rgba(var(--theme-color), 1);
 
                                     &:before {
@@ -1161,7 +1186,7 @@
         padding: 0 23px 0 15px;
 
         li {
-            +li {
+            + li {
                 margin-top: 15px;
             }
 
@@ -1217,7 +1242,7 @@
             @include pseudowh($width: 66%, $height: 100%);
             padding: 0 30px;
 
-            >div {
+            > div {
                 h3 {
                     font-weight: 600;
                     font-size: 17px;
