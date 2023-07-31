@@ -248,6 +248,40 @@ var categorySlider3 = new Swiper(".category-slider-3", {
     },
 });
 
+var categorySlider3_1 = new Swiper(".category-slider-3-1", {
+    spaceBetween: 15,
+    slidesPerView: 5,
+    freeMode: true,
+    navigation: {
+        nextEl: ".electronic-category-next",
+        prevEl: ".electronic-category-prev",
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 8,
+        },
+        730: {
+            slidesPerView: 3,
+        },
+        992: {
+            slidesPerView: 4,
+        },
+        1200: {
+            slidesPerView: 5,
+        },
+        1410: {
+            slidesPerView: 6,
+        },
+        1680: {
+            slidesPerView: 5,
+        },
+    },
+});
+
 var recommendationsSlider = new Swiper(".recommendations-slider", {
     slidesPerView: 3,
     spaceBetween: 11,

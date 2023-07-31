@@ -24,16 +24,14 @@ document.querySelector(".grid-option .list-btn").addEventListener("click", funct
 document.querySelector('.three-grid').addEventListener('click', function (e) {
     var productSection = document.querySelector(".product-list-section");
     productSection.classList.remove("row-cols-xxl-5", "row-cols-xxl-4", "row-cols-xl-3",
-        "row-cols-lg-2",
-        "row-cols-md-3", "row-cols-2", "list-style");
+        "row-cols-lg-2", "row-cols-md-3", "row-cols-2", "list-style");
     productSection.classList.add("row-cols-xl-3", "row-cols-lg-2", "row-cols-md-3", "row-cols-2");
 });
 
 document.querySelector('.grid-btn').addEventListener('click', function (e) {
     var productSection = document.querySelector(".product-list-section");
     productSection.classList.remove("row-cols-xxl-5", "row-cols-xxl-4", "row-cols-xl-3",
-        "row-cols-lg-2",
-        "row-cols-md-3", "row-cols-2", "list-style");
+        "row-cols-lg-2", "row-cols-md-3", "row-cols-2", "list-style");
     productSection.classList.add("row-cols-xxl-4", "row-cols-xl-3", "row-cols-lg-2", "row-cols-md-3",
         "row-cols-2");
 });
