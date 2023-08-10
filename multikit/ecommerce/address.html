@@ -123,13 +123,13 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="javascript:void(0)">
+                                        <a class="dropdown-item" href="#editModal" data-bs-toggle="offcanvas">
                                             <i class="ri-edit-box-line"></i>
                                             <span>Edit</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="javascript:void(0)">
+                                        <a class="dropdown-item" href="#deleteModal" data-bs-toggle="modal">
                                             <i class="ri-delete-bin-line"></i>
                                             <span>Delete</span>
                                         </a>
@@ -158,13 +158,13 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="javascript:void(0)">
+                                        <a class="dropdown-item" href="#editModal" data-bs-toggle="offcanvas">
                                             <i class="ri-edit-box-line"></i>
                                             <span>Edit</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="javascript:void(0)">
+                                        <a class="dropdown-item" href="#deleteModal" data-bs-toggle="modal">
                                             <i class="ri-delete-bin-line"></i>
                                             <span>Delete</span>
                                         </a>
@@ -181,8 +181,8 @@
                 </li>
 
                 <li>
-                    <a href="#newAddress" data-bs-toggle="offcanvas" class="btn ecommerce-btn theme-border mt-3">+ Add
-                        new Address</a>
+                    <a href="#newAddress" data-bs-toggle="offcanvas"
+                        class="btn theme-color theme-bg-color mt-3 text-light">+ Add new Address</a>
                 </li>
             </ul>
         </div>
@@ -300,13 +300,15 @@
                 </div>
                 <div>
                     <label for="fname1" class="form-label">Address</label>
-                    <textarea type="text" class="form-control form-control-2" id="fname1"
-                        placeholder="3501 Malory Court, East Elmhurst, New York City, NY 11369"></textarea>
+                    <textarea class="form-control form-control-2"
+                        id="fname1">3501 Malory Court, East Elmhurst, New York City, NY 11369</textarea>
                 </div>
                 <div>
                     <label for="lname1" class="form-label">Number</label>
                     <input type="text" class="form-control form-control-2" id="lname1" placeholder="903-239-1284">
                 </div>
+                <button type="button" class="btn theme-bg-color text-light mt-2"
+                    data-bs-dismiss="offcanvas">Change</button>
             </form>
         </div>
     </div>
@@ -315,27 +317,29 @@
     <!-- Edit Address Offcanvas Start -->
     <div class="offcanvas offcanvas-bottom theme-bottom-offcanvas" tabindex="-1" id="newAddress">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Add New Address</h5>
+            <h5 class="offcanvas-title">Add New Address</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
             <form class="form-style-6">
                 <div>
-                    <label for="fname" class="form-label">First Name</label>
-                    <input type="tel" class="form-control form-control-2" id="fname">
+                    <label for="fname2" class="form-label">First Name</label>
+                    <input type="tel" class="form-control form-control-2" id="fname2">
                 </div>
                 <div>
-                    <label for="lname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control form-control-2" id="lname">
+                    <label for="lname2" class="form-label">Last Name</label>
+                    <input type="text" class="form-control form-control-2" id="lname2">
                 </div>
                 <div>
-                    <label for="fname1" class="form-label">Address</label>
-                    <textarea type="text" class="form-control form-control-2" id="fname1"></textarea>
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control form-control-2" id="address"></textarea>
                 </div>
                 <div>
-                    <label for="lname1" class="form-label">Number</label>
-                    <input type="text" class="form-control form-control-2" id="lname1">
+                    <label for="number" class="form-label">Number</label>
+                    <input type="number" class="form-control form-control-2" id="number">
                 </div>
+                <button type="button" class="btn theme-bg-color text-light mt-2" data-bs-dismiss="offcanvas">Save
+                </button>
             </form>
         </div>
     </div>
