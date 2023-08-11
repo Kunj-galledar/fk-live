@@ -270,11 +270,11 @@
                         color: rgb(237, 239, 244);
 
                         [class="dark"] & {
-                            color: #212325;
+                            color: rgb(54, 57, 60);
                         }
 
                         &.fill {
-                            color: rgb(255, 186, 73);
+                            color: rgba(var(--theme-color), 1);
                         }
                     }
                 }
@@ -520,11 +520,19 @@
                             border: none;
                             box-shadow: 2px 2px 8px rgba(var(--black), 0.05);
 
+                            [class="dark"] & {
+                                background-color: #2b2d2f;
+                            }
+
                             li {
                                 +li {
                                     padding-top: 6px;
                                     margin-top: 6px;
                                     border-top: 1px solid rgba(237, 239, 244, 0.6);
+
+                                    [class="dark"] & {
+                                        border-color: rgba(237, 239, 244, 0.05);
+                                    }
                                 }
 
                                 .dropdown-item {
@@ -1518,7 +1526,7 @@ footer {
         }
 
         [class="dark"] & {
-            border-right-color: rgba(var(--title), 0.1);
+            border-color: rgba(var(--title), 0.1);
         }
     }
 }
@@ -1527,7 +1535,7 @@ footer {
 .shop-list-list-2 {
     li {
         +li {
-            margin-top: 16px;
+            margin-top: 18px;
         }
 
         .summary-product {
@@ -1616,6 +1624,7 @@ footer {
 
                 .name {
                     color: rgba(var(--title), 1);
+                    font-size: 15px;
                 }
 
                 .content {
@@ -1706,9 +1715,101 @@ footer {
     img {
         width: 70px;
         margin-bottom: 10px;
+
+        [class="dark"] & {
+            filter: invert(1) brightness(100);
+        }
     }
 
     h4 {
         line-height: 1.5;
+    }
+}
+
+.ecommerce-next-step {
+    background-color: rgba(var(--dark-bg), 1);
+    position: fixed;
+    bottom: 0;
+    @include center(horizontal);
+    max-width: 600px;
+    width: 100%;
+    padding: 12px 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+
+    [class="dark"] & {
+        background-color: #2b2e31;
+    }
+
+    >div {
+        width: auto;
+    }
+
+    .continue-button {
+        [class="dark"] & {
+            color: #fff;
+        }
+    }
+
+    .left-box {
+        h4 {
+            color: rgba(var(--white), 0.6);
+            margin-bottom: 3px;
+
+            [class="dark"] & {
+                color: #fff;
+            }
+
+            @include mq-max(md) {
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+            }
+        }
+
+        h6 {
+            a {
+                color: rgba(var(--content), 1);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .continue-button {
+        padding: 0;
+        font-size: 16px;
+        color: rgba(var(--white), 1);
+
+        @include mq-max(md) {
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+        }
+    }
+}
+
+/* ---------- Ecommerce Setting CSS ---------- */
+.ecommerce-setting-section {
+    .ecommerce-form {
+        .form-control {
+            background-color: rgb(246, 246, 246);
+            padding: 14px 22px;
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(var(--title), 1);
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 21px;
+            transition: all 0.3s ease-in-out;
+
+            [class="dark"] & {
+                background-color: #212325;
+            }
+
+            @include mq-max(md) {
+                border-radius: calc(4px + (8 - 4) * ((100vw - 320px) / (600 - 320)));
+                margin-bottom: calc(10px + (21 - 10) * ((100vw - 320px) / (600 - 320)));
+                padding: calc(10px + (14 - 10) * ((100vw - 320px) / (600 - 320))) calc(16px + (22 - 16) * ((100vw - 320px) / (600 - 320)));
+                font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (600 - 320)));
+            }
+        }
     }
 }
