@@ -223,7 +223,7 @@
     }
 
     .form-label {
-        font-weight: 400;
+        font-weight: 500;
         color: $dark-green;
         font-size: 16px;
 
@@ -232,7 +232,7 @@
         }
 
         @include mq-max(md) {
-            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+            font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (600 - 320)));
         }
     }
 
@@ -509,6 +509,18 @@
             [dir="rtl"] & {
                 padding: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320))) calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320))) calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320))) 59px;
                 text-align: right;
+            }
+        }
+
+        &.wo-icon {
+            padding-right: 26px;
+
+            @include mq-max(md) {
+                padding-inline: calc(20px + (26 - 20) * ((100vw - 320px) / (600 - 320)));
+
+                [dir="rtl"] & {
+                    text-align: right;
+                }
             }
         }
 
@@ -1334,7 +1346,7 @@
                 &::after {
                     content: "\EB27";
                     position: absolute;
-                    @include remix_icon;
+                    @include font;
                     padding: 0 5px;
                     top: 50%;
                     transform: translateY(-50%);

@@ -167,15 +167,32 @@
 
                     &.delivered-message {
                         .chatting-content {
-                            >div {
-                                &.chatting-message {
-                                    span {
-                                        display: flex;
+                            // >div {
+                            //     &.chatting-message {
+                            //         >span {
+                            //             span {
+                            //                 display: none;
+                            //             }
+                            //         }
 
-                                        i {
-                                            &.delivered-icon {
-                                                display: flex;
-                                            }
+                            //         span {
+                            //             i {
+                            //                 &.delivered-icon {
+                            //                     display: flex;
+                            //                 }
+                            //             }
+                            //         }
+                            //     }
+                            // }
+
+                            .chatting-message {
+                                span {
+                                    display: flex;
+                                    justify-content: flex-end;
+
+                                    i {
+                                        &.delivered-icon {
+                                            display: flex;
                                         }
                                     }
                                 }
@@ -185,16 +202,14 @@
 
                     &.read-message {
                         .chatting-content {
-                            >div {
-                                &.chatting-message {
-                                    span {
-                                        display: flex;
-                                        gap: 5px;
+                            .chatting-message {
+                                span {
+                                    display: flex;
+                                    gap: 5px;
 
-                                        i {
-                                            &.read-icon {
-                                                display: block;
-                                            }
+                                    i {
+                                        &.read-icon {
+                                            display: block;
                                         }
                                     }
                                 }
@@ -226,6 +241,7 @@
                             h5 {
                                 color: rgba(var(--title), 1);
                                 width: 100%;
+                                font-size: 15px;
                             }
 
                             h6 {
@@ -236,6 +252,8 @@
                                 -webkit-box-orient: vertical;
                                 display: -webkit-box;
                                 overflow: hidden;
+                                font-size: 14px;
+                                margin-top: 2px;
                             }
                         }
 
@@ -253,6 +271,12 @@
                                 font-weight: 400;
                                 color: rgba(var(--content), 1);
                                 width: 100%;
+                                font-size: 13px;
+                            }
+
+                            >span {
+                                display: flex;
+                                justify-content: flex-end;
                             }
 
                             span {
@@ -372,6 +396,7 @@
                             h5 {
                                 color: rgba(var(--title), 1);
                                 width: 100%;
+                                font-size: 15px;
                             }
 
                             h6 {
@@ -379,6 +404,7 @@
                                 align-items: center;
                                 font-weight: 400;
                                 color: rgba(var(--content), 1);
+                                font-size: 13px;
 
                                 i {
                                     display: none;
@@ -1072,6 +1098,7 @@
                         h5 {
                             color: rgba(var(--title), 1);
                             width: 100%;
+                            font-size: 14px;
                         }
 
                         h6 {
@@ -1082,6 +1109,7 @@
                             -webkit-box-orient: vertical;
                             display: -webkit-box;
                             overflow: hidden;
+                            font-size: 13px;
                         }
                     }
 
@@ -1259,7 +1287,7 @@
             width: 100%;
 
             +li {
-                border-top: 1px solid rgba(var(--border-color), 0.2);
+                border-top: 1px solid rgba(var(--border-color), 1);
                 margin-top: 12px;
                 padding-top: 12px;
             }
@@ -1279,12 +1307,14 @@
 
                     h5 {
                         color: rgba(var(--title), 1);
+                        font-size: 15px;
                     }
 
                     h6 {
                         color: rgba(var(--content), 1);
                         font-weight: 400;
-                        margin-top: 1px;
+                        margin-top: 4px;
+                        font-size: 14px;
                     }
                 }
             }
@@ -1322,12 +1352,14 @@
         margin-top: 10px;
 
         .chat-list {
+            margin-top: 30px;
+
             li {
                 width: 100%;
 
                 +li {
-                    margin-top: 12px;
-                    padding-top: 12px;
+                    margin-top: 16px;
+                    padding-top: 16px;
                     border-top: 1px solid rgba(var(--content), 0.1);
                 }
 
@@ -1356,9 +1388,10 @@
 .chat-backup-section {
     margin-top: 12px;
     background-color: rgba(var(--white), 1);
-    height: 100vh;
+    height: calc(100vh - 57px);
     border-radius: 20px 20px 0px 0px;
     padding: 18px 0;
+    overflow: auto;
 
     [class="dark"] & {
         background-color: #1f2937;
@@ -1379,7 +1412,7 @@
 
             h5 {
                 color: rgba(var(--title), 1);
-                font-size: 14px;
+                font-size: 16px;
                 margin-top: 3px;
             }
 
@@ -1387,7 +1420,7 @@
                 margin-top: 7px;
                 margin-bottom: 0;
                 line-height: 1.5;
-                font-size: 13px;
+                font-size: 14px;
             }
         }
     }
@@ -1404,7 +1437,7 @@
 
         li {
             width: 100%;
-            font-size: 13px;
+            font-size: 14px;
             color: rgba(var(--title), 1);
         }
     }
@@ -1445,14 +1478,14 @@
                 color: rgba(var(--title), 1);
 
                 h5 {
-                    font-size: 14px;
+                    font-size: 15px;
                 }
 
                 h6 {
                     color: rgba(var(--content), 1);
                     margin-top: 9px;
                     font-weight: 400;
-                    font-size: 14px;
+                    font-size: 15px;
                 }
             }
         }
@@ -1474,10 +1507,12 @@
 
         .form-check-label {
             margin-top: 3px;
+            width: calc(100% - 19px - 10px);
         }
 
         .form-check-input {
-            width: 22px;
+            width: 19px;
+            height: 19px;
             float: unset;
             margin: 0;
             border: none;
@@ -1518,10 +1553,10 @@
             }
 
             .second {
-                font-size: 13px;
+                font-size: 14px;
                 color: rgba(var(--content), 1);
                 font-weight: 400;
-                line-height: 1.2;
+                line-height: 1.4;
             }
         }
     }

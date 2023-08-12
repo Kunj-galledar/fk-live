@@ -16,11 +16,11 @@ themeBtnParent?.addEventListener("click", function (e) {
   if (clicked === "rtl-btn") {
     rtlBtn.id = "ltr-btn";
     html.setAttribute("dir", "rtl");
-    rtlLink.href = "../assets/css/vendors/bootstrap.rtl.min.css";
+    rtlLink.href = "../assets/css/vendors/bootstrap.rtl.css";
     rtlBtn.classList.add("rtlBtnEl");
     localStorage.setItem(
       "rtlcss",
-      "../assets/css/vendors/bootstrap.rtl.min.css"
+      "../assets/css/vendors/bootstrap.rtl.css"
     );
     localStorage.setItem("dir", "rtl");
     localStorage.setItem("rtlBtnId", "ltr-btn");

@@ -496,7 +496,7 @@
 
     h2 {
         margin-bottom: 23px;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 28px;
         color: rgba(var(--light-bg), 1);
 
@@ -509,8 +509,9 @@
 
     .para {
         color: rgba(var(--content), 1);
-        line-height: 1.5;
+        line-height: 1.6;
         margin-bottom: 23px;
+        font-size: 14px;
     }
 
     .auth-permission {
@@ -525,6 +526,18 @@
     .form-style-6 {
         .form-control {
             color: rgba(var(--white), 1);
+
+            [class="dark"] & {
+                color: #fff;
+
+                &:focus {
+                    border-color: rgba(255, 255, 255, 0.1);
+                }
+
+                &::placeholder {
+                    color: rgba(132, 148, 160, 1);
+                }
+            }
         }
     }
 }

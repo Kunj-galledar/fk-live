@@ -365,6 +365,19 @@ header {
                     font-size: 10px;
                 }
             }
+
+            .name-content {
+                h5 {
+                    margin-bottom: 4px;
+                    font-size: 15px;
+                }
+
+                h6 {
+                    font-weight: 400;
+                    color: rgba(var(--content), 1);
+                    font-size: 13px;
+                }
+            }
         }
 
         .left-header {
@@ -402,6 +415,31 @@ header {
                     font-size: 20px;
                 }
             }
+
+            .edit-option {
+                .dropdown-menu {
+                    border: none;
+
+                    [class="dark"] & {
+                        background-color: #1f2a36;
+                    }
+
+                    li {
+                        .dropdown-item {
+
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                background-color: transparent;
+                            }
+
+                            [class="dark"] & {
+                                color: #fafafa;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .search-box {
@@ -413,7 +451,7 @@ header {
             visibility: hidden;
             transform: scale(0);
             transition: all 0.5s ease;
-            padding: 15px;
+            padding: 10px 15px;
 
             &.show {
                 opacity: 1;
@@ -438,9 +476,11 @@ header {
             .form-control {
                 border: none;
                 padding-right: 45px;
+                padding-block: 9px;
 
                 [class="dark"] & {
                     background-color: #1f2937;
+                    color: #fafafa;
                 }
 
                 [dir="rtl"] & {
@@ -489,8 +529,10 @@ header {
             }
 
             @include mq-max(md) {
-                @include pseudowh($width: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))),
-                    $height: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))));
+                @include pseudowh(
+                    $width: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320))),
+                    $height: calc(38px + (50 - 38) * ((100vw - 320px) / (600 - 320)))
+                );
                 border-radius: calc(8px + (12 - 8) * ((100vw - 320px) / (600 - 320)));
                 font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (600 - 320)));
             }
@@ -953,7 +995,7 @@ header {
             }
 
             &-2 {
-                >div {
+                > div {
                     h4 {
                         font-weight: 500;
                         font-size: 16px;
@@ -1007,7 +1049,7 @@ header {
                 width: 100%;
                 text-align: center;
 
-                +li {
+                + li {
                     border-left: 1px solid rgba(var(--content), 0.6);
 
                     [dir="rtl"] & {
@@ -1025,9 +1067,21 @@ header {
                     gap: 5px;
                     color: rgba(var(--title), 1);
 
+                    h4 {
+                        margin-top: 3px;
+
+                        @include mq-max(md) {
+                            font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (600 - 320)));
+                        }
+                    }
+
                     i {
                         font-size: 19px;
                         line-height: 1;
+
+                        @include mq-max(md) {
+                            font-size: calc(16px + (19 - 16) * ((100vw - 320px) / (600 - 320)));
+                        }
                     }
                 }
             }
@@ -1234,7 +1288,7 @@ header {
 
             i {
                 line-height: 1;
-                font-size: 20px;
+                font-size: 16px;
             }
         }
 
@@ -1299,7 +1353,13 @@ header {
 
         a {
             width: auto;
-            height: auto;
+            height: 30px;
+            display: flex;
+            align-items: center;
+
+            img {
+                @include pseudowh;
+            }
         }
     }
 
@@ -1610,7 +1670,7 @@ header {
             @include flex_common;
 
             i {
-                color: #c4c4c4;
+                color: #ffffff;
             }
         }
 
@@ -1631,6 +1691,7 @@ header {
                 h5 {
                     color: rgba(var(--white), 1);
                     margin-bottom: 4px;
+                    font-size: 15px;
                 }
 
                 h6 {

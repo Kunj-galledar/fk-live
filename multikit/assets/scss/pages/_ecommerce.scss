@@ -48,7 +48,7 @@
 
         &:before {
             @include pos($pos: relative, $content: "\ee0f");
-            @include remix_icon;
+            @include font;
             color: rgba(var(--white), 1);
 
             [class="dark"] & {
@@ -126,13 +126,11 @@
                 display: inline-block;
                 line-height: 1.5;
                 font-weight: 600;
-                color: rgba(var(--white), 1);
+                color: rgba(var(--title-color), 1);
 
                 span {
-                    background-color: rgba(var(--dark-bg), 1);
                     border-radius: 3px 3px 0px 0px;
                     display: inline-block;
-                    padding-inline: 8px;
                     line-height: 1.8;
 
                     [class="dark"] & {
@@ -150,7 +148,7 @@
                 font-weight: 600;
                 font-size: 13px;
                 color: rgba(var(--white), 1);
-                margin-top: 10px;
+                margin-top: 0;
                 margin-bottom: 7px;
             }
 
@@ -168,6 +166,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
 
         li {
             .category-box {
@@ -282,7 +282,7 @@
 
             h6 {
                 font-weight: 500;
-                font-size: 13px;
+                font-size: 14px;
                 color: rgba(var(--title), 1);
 
                 span {
@@ -317,8 +317,12 @@
         text-align: center;
 
         img {
-            width: 49px;
-            height: 35px;
+            width: 58px;
+            height: 45px;
+            object-fit: contain;
+            background-color: #f9f9f9;
+            padding: 5px;
+            border-radius: 10px;
 
             [class="dark"] & {
                 filter: brightness(0) invert(1);
@@ -327,7 +331,7 @@
 
         h6 {
             font-weight: 400;
-            font-size: 13px;
+            font-size: 14px;
             color: rgba(var(--title), 1);
             margin-top: 8px;
             line-height: 1.5;
@@ -363,12 +367,8 @@
 
             h5 {
                 font-weight: 500;
-                font-size: 13px;
+                font-size: 14px;
                 color: rgba(var(--content), 1);
-
-                @include mq-max(md) {
-                    font-size: calc(12px + (13 - 12) * ((100vw - 320px) / (600 - 320)));
-                }
             }
         }
     }
@@ -390,6 +390,10 @@
             color: rgba(var(--content), 1);
             font-size: 14px;
             font-weight: 400;
+
+            h5 {
+                font-size: 14px;
+            }
 
             i {
                 font-size: 16px;
@@ -561,7 +565,7 @@
 
                 .address-detail {
                     h5 {
-                        font-weight: 400;
+                        font-weight: 500;
                         color: rgba(var(--title), 1);
                         font-size: 14px;
                     }
@@ -1161,6 +1165,7 @@
             color: rgba(var(--content), 1);
             line-height: 1.5;
             margin: 0;
+            font-size: 14px;
 
             [class="dark"] & {
                 border-top-color: rgba(237, 239, 244, 0.05);
@@ -1201,6 +1206,7 @@
 
                     .name {
                         color: rgba(var(--title), 1);
+                        font-size: 14px;
                     }
 
                     .qty {
@@ -1208,6 +1214,7 @@
                         color: #919191;
                         margin-top: 6px;
                         margin-bottom: 13px;
+                        font-size: 14px;
                     }
 
                     h4 {
@@ -1278,6 +1285,10 @@
                 align-items: center;
                 flex-wrap: nowrap;
                 gap: 14px;
+
+                h5 {
+                    font-size: 16px;
+                }
 
                 i {
                     font-size: 20px;
@@ -1602,7 +1613,7 @@ footer {
 
                         &:before {
                             @include pos($pos: relative, $content: "\ee0f");
-                            @include remix_icon;
+                            @include font;
                             color: rgba(var(--white), 1);
 
                             [class="dark"] & {
@@ -1645,6 +1656,7 @@ footer {
                 h4 {
                     font-weight: 600;
                     color: rgba(var(--theme-color), 1);
+                    font-size: 15px;
                 }
 
                 .product-rating {
@@ -1686,7 +1698,7 @@ footer {
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
-                                border: 1px solid rgba(var(--light-bg), 1);
+                                border: 1px solid rgba(var(--border-color), 1);
                                 font-size: 11px;
                                 font-weight: 500;
                                 color: rgba(var(--title), 1);
@@ -1809,6 +1821,43 @@ footer {
                 margin-bottom: calc(10px + (21 - 10) * ((100vw - 320px) / (600 - 320)));
                 padding: calc(10px + (14 - 10) * ((100vw - 320px) / (600 - 320))) calc(16px + (22 - 16) * ((100vw - 320px) / (600 - 320)));
                 font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (600 - 320)));
+            }
+        }
+    }
+}
+
+.ecommerce-about-section {
+    .ecommerce-about-list {
+        padding-left: 17px;
+
+        li {
+            list-style: auto;
+
+            +li {
+                margin-top: 16px;
+            }
+
+            &::marker {
+                font-weight: 600;
+            }
+
+            .ecommerce-about-box {
+                h4 {
+                    font-weight: 600;
+                    font-size: 17px;
+                    margin-bottom: 4px;
+
+                    @include mq-max(md) {
+                        font-size: calc(15px + (17 - 15) * ((100vw - 320px) / (600 - 320)));
+                    }
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 13px;
+                    line-height: 1.6;
+                    color: rgba(var(--content), 1);
+                }
             }
         }
     }

@@ -74,7 +74,7 @@
         position: relative;
         border-radius: 8px;
         overflow: hidden;
-        height: 200px;
+        height: 170px;
 
         .banner-image {
             width: 100%;
@@ -88,7 +88,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            padding: 27px 11px;
+            padding: 27px 0 27px 21px;
 
             .title {
                 font-weight: 600;
@@ -205,6 +205,7 @@
                 h5 {
                     color: rgba(var(--title), 1);
                     white-space: nowrap;
+                    font-size: 14px;
                 }
             }
         }
@@ -373,7 +374,7 @@
                 }
 
                 h6 {
-                    +h6 {
+                    + h6 {
                         margin-top: 5px;
                     }
 
@@ -530,7 +531,7 @@
                         align-items: flex-start;
                         border-bottom: 1px solid #f9f9f9;
                         padding-bottom: 9px;
-                        margin-bottom: 19px;
+                        margin-bottom: 12px;
 
                         [class="dark"] & {
                             border-bottom-color: rgba(249, 249, 249, 0.08);
@@ -555,14 +556,14 @@
 
                             h5 {
                                 font-weight: 600;
-                                font-size: 15px;
+                                font-size: 16px;
                                 color: rgba(var(--title), 1);
                                 margin-bottom: 3px;
                             }
 
                             p {
                                 font-weight: 400;
-                                font-size: 14px;
+                                font-size: 15px;
                                 color: rgba(var(--content), 1);
                                 margin: 0;
                             }
@@ -663,7 +664,7 @@
                 padding-inline: 15px;
                 position: relative;
 
-                +li {
+                + li {
                     &::after {
                         @include pos;
                         top: -14px;
@@ -1179,7 +1180,7 @@
                 width: 100%;
                 position: relative;
 
-                +li {
+                + li {
                     &::after {
                         @include pos;
                         top: -14px;
@@ -1277,7 +1278,7 @@
             }
 
             li {
-                +li {
+                + li {
                     border-top: 1px solid #f9f9f9;
                     margin-top: 10px;
                     padding-top: 10px;
@@ -1416,9 +1417,9 @@
                 }
 
                 span {
-                    font-weight: 400;
+                    font-weight: 500;
                     font-size: 14px;
-                    color: rgba(var(--content), 1);
+                    color: rgba(var(--title), 1);
 
                     [class="dark"] & {
                         color: #fff;
@@ -1452,7 +1453,11 @@
         font-weight: 400;
         color: rgba(var(--content), 1);
 
-        +li {
+        h5 {
+            font-size: 15px;
+        }
+
+        + li {
             margin-top: 12px;
         }
 
@@ -1519,11 +1524,15 @@
             h5 {
                 font-weight: 600;
                 margin-bottom: 3px;
+                font-size: 16px;
             }
 
             h6 {
                 font-weight: 400;
                 color: #bcbcbc;
+                font-size: 14px;
+                margin-top: 6px;
+                display: block;
             }
 
             a {
@@ -1583,7 +1592,7 @@
                         box-shadow: 2px 3px 6px rgba(57, 44, 44, 0.19);
                     }
 
-                    >div {
+                    > div {
                         @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
                         align-items: center;
                     }

@@ -51,86 +51,63 @@
     <header class="cab-header-2 position-relative top-0 pt-3">
         <div class="custom-container">
             <div class="header-box">
-                <a href="booking-ride.html" class="header-left btn">
+                <a href="setting.html" class="header-left btn">
                     <i class="ri-arrow-left-s-line"></i>
                 </a>
                 <div class="header-search-box">
-                    <h3 class="header-title-text title-color">Cancel Cab</h3>
+                    <h3 class="header-title-text title-color">Edit account</h3>
                 </div>
             </div>
         </div>
     </header>
     <!-- Header End -->
 
-    <!-- Cancel Ride Section Start -->
-    <section class="section-t-space-3 cancel-cab-section">
+    <!-- Edit Profile Section Start -->
+    <section class="section-t-space cab-profile-section">
         <div class="custom-container">
-            <div class="cab-title title">
-                <h5>Please choose a cancellation reason.</h5>
-            </div>
-
-            <form class="form-style-3 cancel-cab-form">
-                <div class="form-check mb-3">
-                    <input class="form-check-input checkbox_animated" type="checkbox" value="" id="01">
-                    <label class="form-check-label" for="01">
-                        I'm awaiting log time.
-                    </label>
+            <div class="edit-image">
+                <div class="profile-pic">
+                    <img src="../assets/images/cab-booking/profile.jpg" id="output" alt="">
+                    <div class="change-image-button">
+                        <button class="btn btn-gradient">Choose Image</button>
+                        <input id="file" type="file" onchange="loadFile(event)">
+                    </div>
                 </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input checkbox_animated" type="checkbox" value="" id="02">
-                    <label class="form-check-label" for="02">
-                        No way to reach the driver
-                    </label>
-                </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input checkbox_animated" type="checkbox" value="" id="03">
-                    <label class="form-check-label" for="03">
-                        Driving to the destination is forbidden
-                    </label>
-                </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input checkbox_animated" type="checkbox" value="" id="04">
-                    <label class="form-check-label" for="04">
-                        Driver declined to pick up passengers
-                    </label>
-                </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input checkbox_animated" type="checkbox" value="" id="05">
-                    <label class="form-check-label" for="05">
-                        Displayed the wrong address
-                    </label>
-                </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input checkbox_animated" type="checkbox" value="" id="06">
-                    <label class="form-check-label" for="06">
-                        The pricing is not fair.
-                    </label>
-                </div>
-                <div class="form-check mb-3 d-block">
-                    <label class="form-check-label ms-0 mb-2" for="07">Other</label>
-                    <textarea class="form-control wo-icon" placeholder="Another Explanation" id="07"></textarea>
-                </div>
-            </form>
-            <div class="submit-box">
-                <a href="#exampleModal" data-bs-toggle="modal" class="btn find-button btn mt-0">Submit</a>
             </div>
         </div>
     </section>
-    <!-- Cancel Ride Section End -->
+    <!-- Edit Profile Section End -->
 
-    <!-- Cancel Modal Start -->
-    <div class="modal fade cancel-modal" id="exampleModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h4>Your cancellation has left us in tears.</h4>
-                    <p>During each subsequent visit, we'll keep working to enhance our service and satisfy you.</p>
-                    <a href="index.html" class="btn find-button cancel-button">Close</a>
+    <!-- account name section start -->
+    <section class="section-t-space section-b-space cab-account-section">
+        <div class="custom-container">
+            <form class="cab-account-form">
+                <div class="form-box">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" placeholder="First Name" id="fname" value="Joseph">
                 </div>
-            </div>
+                <div class="form-box">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last Name" id="lname" value="Feliz">
+                </div>
+                <div class="form-box">
+                    <label for="mail" class="form-label">Email </label>
+                    <input type="email" class="form-control" placeholder="Last Name" id="mail"
+                        value="joseph-feliz@yahoo.com">
+                </div>
+                <div class="form-box">
+                    <label for="pass" class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Last Name" id="pass" value="wc8iYUD7">
+                </div>
+                <div class="form-box">
+                    <label for="number" class="form-label">Number</label>
+                    <input type="number" class="form-control" placeholder="Last Name" id="number" value="0986543210">
+                </div>
+                <a href="account.html" class="btn btn-gradient mt-3">Save Setting</a>
+            </form>
         </div>
-    </div>
-    <!-- Cancel Modal End -->
+    </section>
+    <!-- account name section end -->
 
     <!-- Theme Option Setting Box Start -->
     <div class="theme-setting-box">
@@ -164,6 +141,9 @@
 
     <!-- Loader js -->
     <script src="../assets/js/loader.js"></script>
+
+    <!-- image change js -->
+    <script src="../assets/js/image-change.js"></script>
 
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>

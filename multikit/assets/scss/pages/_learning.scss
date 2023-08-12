@@ -54,6 +54,7 @@
                         -webkit-box-orient: vertical;
                         display: -webkit-box;
                         overflow: hidden;
+                        font-size: 14px;
                     }
                 }
             }
@@ -66,7 +67,7 @@
                     border-radius: 50px;
 
                     [class="dark"] & {
-                        background-color: rgba(0, 0, 0, 0.09);
+                        background-color: rgba(255, 255, 255, 0.08);
                     }
 
                     .progress-bar {
@@ -93,8 +94,8 @@
         display: block;
         padding-block: 3px;
 
-        > li {
-            + li {
+        >li {
+            +li {
                 margin-top: 11px;
             }
 
@@ -121,8 +122,7 @@
                         }
 
                         @include mq-max(md) {
-                            padding: calc(7px + (10 - 7) * ((100vw - 320px) / (600 - 320)))
-                                calc(13px + (21 - 13) * ((100vw - 320px) / (600 - 320)));
+                            padding: calc(7px + (10 - 7) * ((100vw - 320px) / (600 - 320))) calc(13px + (21 - 13) * ((100vw - 320px) / (600 - 320)));
                             font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
                         }
                     }
@@ -180,12 +180,14 @@
                     margin-top: 6px;
 
                     h6 {
+                        font-size: 13px;
                         color: rgba(var(--title), 1);
                         line-height: 1.4;
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
                         display: -webkit-box;
                         overflow: hidden;
+                        font-weight: 600;
                     }
 
                     .rate-course {
@@ -196,6 +198,7 @@
                             @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
                             align-items: center;
                             color: rgba(var(--title), 1);
+                            font-size: 13px;
 
                             i {
                                 color: rgba(var(--yellow), 1);
@@ -239,12 +242,26 @@
             border-radius: 8px;
             overflow: hidden;
             @include pseudowh($width: 117px, $height: 84px);
+
+            @include mq-max(md) {
+                width: calc(105px + (117 - 105) * ((100vw - 320px) / (600 - 320)));
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         .popular-detail {
             width: calc(100% - 117px - 9px);
 
-            h6 {
+            @include mq-max(md) {
+                width: calc(100% - calc(105px + (117 - 105) * ((100vw - 320px) / (600 - 320))) - 9px);
+            }
+
+            h5 {
                 color: rgba(var(--title), 1);
                 line-height: 1.4;
                 -webkit-line-clamp: 2;
@@ -255,7 +272,7 @@
 
             .video-play {
                 @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
-                margin: 4px 0;
+                margin: 4px 0 10px;
                 color: rgba(var(--content), 1);
                 align-items: center;
 
@@ -272,7 +289,8 @@
             .rating-box {
                 @include flex_common($dis: flex, $align: center, $justify: space-between);
 
-                > li {
+                >li {
+                    line-height: 1;
                     font-size: 12px;
 
                     [class="dark"] & {
@@ -283,7 +301,7 @@
                         @include flex_wrap($dis: flex, $wrap: wrap, $gap: 3px);
                         align-items: center;
 
-                        > li {
+                        >li {
                             line-height: 1;
                             font-size: 12px;
 
@@ -299,7 +317,7 @@
 
     .popular-course-list {
         li {
-            + li {
+            +li {
                 margin-top: 16px;
             }
 
@@ -333,7 +351,15 @@
                 .popular-detail {
                     width: calc(100% - 96px - 9px);
 
-                    h6 {
+                    a {
+                        h5 {
+                            font-size: 15px;
+                            font-weight: 600;
+                        }
+                    }
+
+                    h5 {
+                        font-size: 13px;
                         color: rgba(var(--title), 1);
                         line-height: 1.4;
                         -webkit-line-clamp: 2;
@@ -716,6 +742,10 @@
                     padding: 12px;
                     border-radius: calc(0.375rem - 1px);
 
+                    @include mq-max(md) {
+                        padding: calc(8px + (12 - 8) * ((100vw - 320px) / (600 - 320)));
+                    }
+
                     .payment-box {
                         @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 11px);
                         align-items: center;
@@ -726,6 +756,11 @@
                             background-color: rgba(var(--white), 1);
                             box-shadow: 2px 1px 4px rgba(var(--black), 0.05);
                             border-radius: 4px;
+
+                            [class="dark"] & {
+                                background-color: #060d17;
+                                box-shadow: 2px 1px 4px rgba(255, 255, 255, 0.02);
+                            }
                         }
 
                         .payment-name {
@@ -745,7 +780,46 @@
                                         font-weight: 400;
                                         font-size: 14px;
                                         color: rgba(var(--title), 1);
-                                        width: 100%;
+                                        width: calc(100% - 18px);
+                                    }
+
+                                    .form-check-input {
+                                        margin: 0;
+                                        padding: 0;
+                                        float: unset;
+                                        background-image: unset;
+                                        width: 18px;
+                                        height: 18px;
+                                        position: relative;
+                                        background-color: rgba(var(--content), 0.2);
+                                        box-shadow: none;
+                                        border: 1px solid transparent;
+                                        transition: all 0.3s ease-in-out;
+
+                                        &::after {
+                                            @include pos;
+                                            width: 10px;
+                                            height: 10px;
+                                            background-color: rgba(var(--theme-color), 1);
+                                            border-radius: 100%;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%) scale(0);
+                                            transition: all 0.3s ease-in-out;
+
+                                            [class="dark"] & {
+                                                background-color: #c5c5c5;
+                                            }
+                                        }
+
+                                        &:checked {
+                                            border-color: rgba(var(--theme-color), 1);
+                                            background-color: rgba(var(--white), 1);
+
+                                            &::after {
+                                                transform: translate(-50%, -50%) scale(1);
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -755,6 +829,10 @@
             }
 
             .accordion-body {
+                @include mq-max(md) {
+                    padding: calc(12px + (16 - 12) * ((100vw - 320px) / (600 - 320))) calc(12px + (20 - 12) * ((100vw - 320px) / (600 - 320)));
+                }
+
                 .net-banking-list {
                     @include flex_wrap($dis: flex, $wrap: wrap, $gap: 6px);
                     align-items: center;
@@ -764,8 +842,67 @@
                         width: 100%;
 
                         .form-check {
+                            padding: 0;
+
+                            .form-check-input {
+                                margin: 0;
+                                padding: 0;
+                                float: unset;
+                                background-image: unset;
+                                width: 18px;
+                                height: 18px;
+                                position: relative;
+                                background-color: rgba(var(--content), 0.2);
+                                box-shadow: none;
+                                border: 1px solid transparent;
+                                transition: all 0.3s ease-in-out;
+
+                                &::after {
+                                    @include pos;
+                                    width: 10px;
+                                    height: 10px;
+                                    background-color: rgba(var(--theme-color), 1);
+                                    border-radius: 100%;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%) scale(0);
+                                    transition: all 0.3s ease-in-out;
+
+                                    [class="dark"] & {
+                                        background-color: #c5c5c5;
+                                    }
+                                }
+
+                                &:checked {
+                                    border-color: rgba(var(--theme-color), 1);
+                                    background-color: rgba(var(--white), 1);
+
+                                    &::after {
+                                        transform: translate(-50%, -50%) scale(1);
+                                    }
+                                }
+                            }
+
                             .form-check-label {
                                 margin-left: 10px;
+
+                                [dir="rtl"] & {
+                                    margin-left: unset;
+                                    margin-right: 10px;
+                                }
+
+                                @include mq-max(md) {
+                                    margin-left: calc(6px + (10 - 6) * ((100vw - 320px) / (600 - 320)));
+
+                                    [dir="rtl"] & {
+                                        margin-left: unset;
+                                        margin-right: calc(6px + (10 - 6) * ((100vw - 320px) / (600 - 320)));
+                                    }
+                                }
+
+                                [class="dark"] & {
+                                    color: #f5f7f7;
+                                }
                             }
                         }
                     }
@@ -810,7 +947,7 @@
                     font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
                 }
 
-                + li {
+                +li {
                     &::before {
                         @include pos;
                         @include center(vertical);
@@ -987,7 +1124,7 @@
 .app-setting-section {
     .sidebar-menu {
         li {
-            + li {
+            +li {
                 border-top: 1px solid rgba(var(--title), 0.1);
                 padding-top: 9px;
                 margin-top: 9px;
@@ -1011,55 +1148,68 @@
                     }
                 }
 
-                .list-option {
-                    .grid-item {
-                        .switch {
-                            display: inline-block;
-                            position: relative;
-                            @include pseudowh($width: 56px, $height: 28px);
+                .form-switch {
+                    padding: 0;
+                    min-height: unset;
+                    margin: 0;
 
-                            input {
-                                opacity: 0;
-                                @include pseudowh($width: 0, $height: 0);
+                    .form-check-input {
+                        width: 56px;
+                        height: 28px;
+                        background-color: rgba(var(--content), 1);
+                        border: none;
+                        background-image: unset;
+                        position: relative;
+                        margin: 0;
+                        float: unset;
+                        border-radius: 100px;
+                        transition: 0.4s;
 
-                                &:checked + .slider {
-                                    background-color: rgba(var(--theme-color), 1);
+                        @include mq-max(md) {
+                            @include pseudowh($width: calc(45px + (56 - 45) * ((100vw - 320px) / (600 - 320))), $height: calc(22px + (28 - 22) * ((100vw - 320px) / (600 - 320))));
+                        }
 
-                                    &:before {
-                                        transform: translateX(27px);
-                                    }
-                                }
+                        &:active {
+                            filter: unset;
+                        }
+
+                        &:focus {
+                            box-shadow: unset;
+                        }
+
+                        &::after {
+                            @include pos;
+                            background-color: rgba(var(--white), 1);
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 23px;
+                            height: 23px;
+                            left: 3px;
+                            border-radius: 100%;
+                            transition: 0.4s;
+
+                            [dir="rtl"] & {
+                                background-color: rgba(221, 221, 221, 1);
                             }
 
-                            .slider {
-                                position: absolute;
-                                cursor: pointer;
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                background-color: rgba(var(--content), 1);
-                                transition: 0.4s;
+                            @include mq-max(md) {
+                                @include pseudowh($width: calc(19px + (23 - 19) * ((100vw - 320px) / (600 - 320))), $height: calc(19px + (23 - 19) * ((100vw - 320px) / (600 - 320))));
+                                left: calc(2px + (3 - 2) * ((100vw - 320px) / (600 - 320)));
+                            }
+                        }
 
-                                [class="dark"] & {
-                                    background-color: #121924;
+                        &:checked {
+                            background-color: rgba(var(--theme-color), 1);
+
+                            &::after {
+                                transform: translateX(27px) translateY(-50%);
+
+                                [dir="rtl"] & {
+                                    background-color: rgba(221, 221, 221, 1);
                                 }
 
-                                &::before {
-                                    background-color: rgba(var(--white), 1);
-                                    bottom: 3px;
-                                    @include pos;
-                                    @include pseudowh($width: 23px, $height: 23px);
-                                    left: 3px;
-                                    transition: 0.4s;
-                                }
-
-                                &.round {
-                                    border-radius: 34px;
-
-                                    &:before {
-                                        border-radius: 50%;
-                                    }
+                                @include mq-max(md) {
+                                    transform: translateX(calc(22px + (27 - 22) * ((100vw - 320px) / (600 - 320)))) translateY(-50%);
                                 }
                             }
                         }
@@ -1186,7 +1336,7 @@
         padding: 0 23px 0 15px;
 
         li {
-            + li {
+            +li {
                 margin-top: 15px;
             }
 
@@ -1237,12 +1387,12 @@
 
         .poster-detail {
             position: absolute;
-            top: 0;
+            bottom: 0;
             right: 0;
-            @include pseudowh($width: 66%, $height: 100%);
+            @include pseudowh($width: 66%, $height: calc(100% - 18px));
             padding: 0 30px;
 
-            > div {
+            >div {
                 h3 {
                     font-weight: 600;
                     font-size: 17px;
@@ -1262,9 +1412,9 @@
                         border-color: transparent;
 
                         &:hover {
-                            border-color: transparent !important;
-                            color: rgba(var(--white), 1) !important;
-                            background-color: #121924 !important;
+                            border-color: transparent;
+                            color: #fff;
+                            background-color: #121924;
                         }
                     }
                 }
