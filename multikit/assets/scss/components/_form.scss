@@ -764,18 +764,19 @@
 /* ---------- form style 4 ---------- */
 .form-style-4 {
     .form-label {
-        font-weight: 400;
+        font-weight: 600;
         font-size: 18px;
         color: rgba(var(--title), 1);
         margin-bottom: 12px;
 
         @media (max-width: 767px) {
-            font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (600 - 320)));
+            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
             margin-bottom: calc(5px + (12 - 5) * ((100vw - 320px) / (600 - 320)));
         }
     }
 
-    .form-control {
+    .form-control,
+    .form-select {
         background-color: rgba(var(--white), 1);
         border: none;
         padding: 16px 18px;
@@ -784,6 +785,10 @@
         font-size: 15px;
         color: rgba(var(--title), 1);
         border-radius: 11px;
+
+        @include mq-max(md) {
+            padding: calc(13px + (16 - 13) * ((100vw - 320px) / (600 - 320))) calc(13px + (18 - 13) * ((100vw - 320px) / (600 - 320)));
+        }
 
         [dir="rtl"] & {
             text-align: right;
@@ -831,6 +836,10 @@
                     background: url("https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png") no-repeat;
                     @include pseudowh($width: 20px, $height: 20px);
                     border-width: thin;
+
+                    @include mq-max(md) {
+                        @include pseudowh($width: calc(16px + (20 - 16) * ((100vw - 320px) / (600 - 320))), $height: calc(16px + (20 - 16) * ((100vw - 320px) / (600 - 320))));
+                    }
                 }
             }
         }
@@ -1150,6 +1159,10 @@
 .form-style-7 {
     .mb-19 {
         margin-bottom: 19px;
+    }
+
+    h5 {
+        font-size: 14px;
     }
 
     .form-box {
