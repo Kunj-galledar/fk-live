@@ -376,6 +376,10 @@ header {
                     font-weight: 400;
                     color: rgba(var(--content), 1);
                     font-size: 13px;
+
+                    [class="dark"] & {
+                        color: #545454;
+                    }
                 }
             }
         }
@@ -556,7 +560,6 @@ header {
 
                     [class="dark"] & {
                         background-color: #272d33;
-                        // box-shadow: 2px 3px 6px rgba(55, 65, 81, 0.3);
                     }
 
                     [dir="rtl"] & {
@@ -676,6 +679,11 @@ header {
         background-size: cover;
         background-position: bottom center;
         padding-top: 23px;
+
+        @include mq-max(md) {
+            height: calc(63px + (70 - 63) * ((100vw - 320px) / (600 - 320)));
+            padding-top: calc(14px + (23 - 14) * ((100vw - 320px) / (600 - 320)));
+        }
     }
 
     .header-company-box {
@@ -1724,50 +1732,6 @@ header {
 
             .arrow-box {
                 font-size: 18px;
-            }
-        }
-    }
-}
-
-/* ---------- Header Style 7 ---------- */
-.header-style-7 {
-    margin-bottom: 28px;
-
-    .header-box {
-        display: flex;
-        align-items: center;
-        padding-top: 23px;
-        justify-content: space-between;
-
-        .left-header {
-            h2 {
-                font-weight: 500;
-                color: #ffffff;
-                margin-bottom: 6px;
-
-                span {
-                    font-size: 19px;
-                    line-height: 1;
-                    transform-origin: 70% 70%;
-                    animation-name: wave-animation;
-                    animation-duration: 2.5s;
-                    animation-iteration-count: infinite;
-                }
-            }
-
-            h5 {
-                font-weight: 400;
-                color: #c4c4c4;
-            }
-        }
-
-        .right-header {
-            a {
-                width: 46px;
-                height: 46px;
-                border-radius: 100%;
-                overflow: hidden;
-                display: block;
             }
         }
     }

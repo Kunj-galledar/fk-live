@@ -39,13 +39,18 @@ var sliderOne = new Swiper(".slider1", {
   breakpoints: {
     0: {
       slidesPerView: 2,
+      spaceBetween: 15,
     },
+
     576: {
       slidesPerView: 3,
+      spaceBetween: 15,
     },
+
     991: {
       slidesPerView: 4,
     },
+
     1199: {
       slidesPerView: 5,
     },
@@ -57,15 +62,5 @@ var sliderOne = new Swiper(".slider1", {
     1640: {
       slidesPerView: 7,
     },
-  },
-
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: false,
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
   },
 });

@@ -70,7 +70,6 @@ var swiper8 = new Swiper(".slider-4", {
 });
 
 var swiper9 = new Swiper(".hotel-slider", {
-  effect: "fade",
   pagination: {
     el: ".swiper-pagination",
   },

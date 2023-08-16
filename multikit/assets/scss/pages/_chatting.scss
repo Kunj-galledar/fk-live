@@ -70,10 +70,10 @@
 .chatting-section {
     margin-top: 12px;
     background-color: rgba(var(--white), 1);
-    height: 100%;
+    height: calc(100vh - 57px);
     border-radius: 20px 20px 0px 0px;
-    padding: 18px 0 115px;
-    min-height: calc(100vh - 46px);
+    padding: 18px 0;
+    overflow: auto;
 
     [class="dark"] & {
         background-color: #1f2937;
@@ -167,24 +167,6 @@
 
                     &.delivered-message {
                         .chatting-content {
-                            // >div {
-                            //     &.chatting-message {
-                            //         >span {
-                            //             span {
-                            //                 display: none;
-                            //             }
-                            //         }
-
-                            //         span {
-                            //             i {
-                            //                 &.delivered-icon {
-                            //                     display: flex;
-                            //                 }
-                            //             }
-                            //         }
-                            //     }
-                            // }
-
                             .chatting-message {
                                 span {
                                     display: flex;
@@ -663,6 +645,7 @@
     }
 
     .msger-inputarea {
+        backdrop-filter: blur(3.5px);
         position: fixed;
         bottom: 0;
         @include center(horizontal);
@@ -1290,6 +1273,10 @@
                 border-top: 1px solid rgba(var(--border-color), 1);
                 margin-top: 12px;
                 padding-top: 12px;
+
+                [class="dark"] & {
+                    border-color: rgba(var(--content), 0.1);
+                }
             }
 
             .chat-box {
@@ -1511,6 +1498,7 @@
         }
 
         .form-check-input {
+            background-color: transparent;
             width: 19px;
             height: 19px;
             float: unset;
@@ -1531,7 +1519,7 @@
                 top: 6px;
 
                 [dir="rtl"] & {
-                    left: 8px;
+                    left: 6px;
                 }
             }
 

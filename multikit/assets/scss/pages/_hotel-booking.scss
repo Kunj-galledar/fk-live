@@ -588,11 +588,6 @@
                 color: rgba(var(--white), 1);
                 padding: 3px 5px;
 
-                [dir="rtl"] & {
-                    right: unset;
-                    left: 11px;
-                }
-
                 [class="dark"] & {
                     color: #fff;
                 }
@@ -1051,6 +1046,11 @@
         .attraction-tab {
             .attraction-list {
                 padding-left: 22px;
+
+                [dir="rtl"] & {
+                    padding-left: unset;
+                    padding-right: 22px;
+                }
 
                 li {
                     list-style: disc;
@@ -1720,7 +1720,6 @@
                 background-color: rgba(var(--light-bg), 1);
                 border-radius: 9px;
                 @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
-                // align-items: center;
                 overflow: hidden;
                 position: relative;
 

@@ -367,11 +367,19 @@
 
             li {
                 .dropdown-item {
+                    @include mq-max(md) {
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (600 - 320)));
+                    }
 
                     &:active,
                     &.active {
                         background-color: #f5f7f7;
                         color: rgba(var(--title), 1);
+                    }
+
+                    &:hover,
+                    &:focus {
+                        background-color: transparent;
                     }
 
                     [class="dark"] & {
@@ -1173,6 +1181,11 @@
         .mic-icon {
             right: 17px;
             left: unset;
+
+            [dir="rtl"] & {
+                right: unset;
+                left: 17px;
+            }
         }
 
         .form-control {
@@ -1621,7 +1634,7 @@
         margin: 11px 0 31px;
         display: block;
         text-align: right;
-        color: rgba(var(--title), 1);
+        color: rgba(var(--white), 1);
     }
 }
 

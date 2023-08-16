@@ -85,6 +85,11 @@
     padding-bottom: 3px;
     padding-right: 2px;
 
+    [dir="rtl"] & {
+        padding-right: unset;
+        padding-left: 2px;
+    }
+
     li {
         width: 100%;
 
@@ -99,18 +104,34 @@
 
             &.send {
                 box-shadow: 2px 2px 0px #001aff;
+
+                [dir="rtl"] & {
+                    box-shadow: -2px 2px 0px #001aff;
+                }
             }
 
             &.receive {
                 box-shadow: 2px 2px 0px #2629af;
+
+                [dir="rtl"] & {
+                    box-shadow: -2px 2px 0px #2629af;
+                }
             }
 
             &.exchange {
                 box-shadow: 2px 2px 0px #57addd;
+
+                [dir="rtl"] & {
+                    box-shadow: -2px 2px 0px #57addd;
+                }
             }
 
             &.scan {
                 box-shadow: 2px 2px 0px #61c58b;
+
+                [dir="rtl"] & {
+                    box-shadow: -2px 2px 0px #61c58b;
+                }
             }
 
             i {
@@ -302,8 +323,7 @@
         }
 
         .card-details-box {
-            padding: calc(15px + (19 - 15) * ((100vw - 320px) / (1920 - 320)))
-                calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
+            padding: calc(15px + (19 - 15) * ((100vw - 320px) / (1920 - 320))) calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
             background-color: rgba(var(--theme-maroon), 1);
             border-radius: 10px;
             position: relative;
@@ -892,8 +912,7 @@
 
             @include mq-max(md) {
                 border-radius: calc(9px + (16 - 9) * ((100vw - 320px) / (600 - 320)));
-                padding: calc(13px + (16 - 13) * ((100vw - 320px) / (600 - 320)))
-                    calc(15px + (20 - 15) * ((100vw - 320px) / (600 - 320)));
+                padding: calc(13px + (16 - 13) * ((100vw - 320px) / (600 - 320))) calc(15px + (20 - 15) * ((100vw - 320px) / (600 - 320)));
                 font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
             }
 
@@ -1059,7 +1078,7 @@
             display: flex;
             gap: 16px;
 
-            > div {
+            >div {
                 width: 100%;
             }
         }
@@ -1220,7 +1239,7 @@
                 border-radius: 13px;
                 padding: 16px;
 
-                + .accordion-item {
+                +.accordion-item {
                     margin-top: 15px;
                 }
 
@@ -1282,6 +1301,7 @@
             }
         }
     }
+
     .offcanvas-body {
         background-color: rgba(var(--dark-gray), 1);
     }
