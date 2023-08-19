@@ -159,8 +159,7 @@
 
                     img {
                         object-fit: cover;
-                        width: 100%;
-                        height: 100%;
+                        @include pseudowh;
                     }
                 }
 
@@ -356,8 +355,7 @@
         input {
             &[type="range"] {
                 position: absolute;
-                width: 100%;
-                height: 10px;
+                @include pseudowh($width: 100%, $height: 10px);
                 appearance: none;
                 pointer-events: none;
                 background: none;
@@ -370,10 +368,8 @@
             &::-webkit-slider-thumb {
                 pointer-events: auto;
                 appearance: none;
-                width: 17px;
-                height: 17px;
-                top: 50%;
-                transform: translateY(-50%);
+                @include pseudowh($width: 17px, $height: 17px);
+                @include center(vertical);
                 background-color: rgba(var(--theme-color), 1);
                 border-radius: 20px;
                 opacity: 1;
@@ -384,10 +380,8 @@
             &::-webkit-slider-thumb {
                 pointer-events: auto;
                 appearance: none;
-                width: 17px;
-                height: 17px;
-                top: 50%;
-                transform: translateY(-50%);
+                @include pseudowh($width: 17px, $height: 17px);
+                @include center(vertical);
                 background: rgba(var(--theme-color), 1);
                 border-radius: 20px;
                 opacity: 1;
@@ -529,14 +523,12 @@
         }
 
         .hotel-image {
-            width: 88px;
-            height: 88px;
+            @include pseudowh($width: 88px, $height: 88px);
             border-radius: 10px;
             overflow: hidden;
 
             img {
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 object-fit: cover;
             }
         }
@@ -605,8 +597,7 @@
 .hotel-search-map-section {
     iframe {
         max-width: 600px;
-        width: 100vw;
-        height: 100vh;
+        @include pseudowh($width: 100vw, $height: 100vh);
     }
 }
 
@@ -635,6 +626,10 @@
         @include flex_wrap($dis: flex, $wrap: wrap, $gap: 8px);
         margin-bottom: 20px;
 
+        @include mq-max(md) {
+            gap: calc(6px + (8 - 6) * ((100vw - 320px) / (600 - 320)));
+        }
+
         li {
             &.active {
                 a {
@@ -648,12 +643,16 @@
                 font-weight: 500;
                 font-size: 13px;
                 position: relative;
-                padding: 6px 7px;
+                padding: 8px 19px;
                 color: rgba(var(--title), 1);
                 background-color: rgba(var(--white), 1);
                 background-clip: padding-box;
                 border: solid 1px transparent;
                 border-radius: 4px;
+
+                @include mq-max(md) {
+                    padding: calc(6px + (8 - 6) * ((100vw - 320px) / (600 - 320))) calc(13px + (19 - 13) * ((100vw - 320px) / (600 - 320)));
+                }
 
                 [class="dark"] & {
                     background-color: #1f222b;
@@ -661,10 +660,7 @@
 
                 &:before {
                     @include pos;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
+                    inset: 0;
                     z-index: -1;
                     margin: -1px;
                     border-radius: inherit;
@@ -762,8 +758,7 @@
 
             .vertical-line {
                 background-color: rgba(var(--content), 1);
-                width: 1px;
-                height: 14px;
+                @include pseudowh($width: 1px, $height: 14px);
                 position: relative;
                 margin-top: 4px;
 
@@ -800,8 +795,7 @@
     &::after {
         @include pos;
         @include center(both);
-        width: 80%;
-        height: 1px;
+        @include pseudowh($width: 80%, $height: 1px);
         background-color: #d5d5d5;
         z-index: -1;
 
@@ -858,15 +852,13 @@
             .amenities-icon {
                 background-color: rgba(var(--light-bg), 1);
                 border-radius: 10px;
-                width: 45px;
-                height: 45px;
+                @include pseudowh($width: 45px, $height: 45px);
                 @include flex_common;
                 font-size: 20px;
                 margin: 0 auto 8px;
 
                 svg {
-                    width: 24px;
-                    height: 24px;
+                    @include pseudowh($width: 24px, $height: 24px);
                     fill: transparent;
                     stroke: rgba(var(--title), 1);
                 }
@@ -954,13 +946,11 @@
                     background-color: rgba(var(--white), 1);
                     margin: 5px !important;
                     border-radius: 4px !important;
-                    height: 30px !important;
-                    width: 30px !important;
+                    @include pseudowh($width: 30px !important, $height: 30px !important);
                     box-shadow: none !important;
 
                     >img {
-                        width: 12px !important;
-                        height: 12px !important;
+                        @include pseudowh($width: 12px !important, $height: 12px !important);
                     }
                 }
             }
@@ -980,8 +970,7 @@
 
             .vertical-line {
                 background-color: rgba(var(--content), 1);
-                width: 1px;
-                height: 14px;
+                @include pseudowh($width: 1px, $height: 14px);
                 position: relative;
                 margin-top: 4px;
 
@@ -1078,8 +1067,7 @@
                 @include flex_common;
                 background: var(--gradient-color);
                 border-radius: 5px;
-                width: 46px;
-                height: 46px;
+                @include pseudowh($width: 46px, $height: 46px);
                 color: rgba(var(--white), 1);
 
                 [class="dark"] & {
@@ -1157,8 +1145,7 @@
                         @include flex_common;
                         background: var(--gradient-color);
                         border-radius: 5px;
-                        width: 30px;
-                        height: 30px;
+                        @include pseudowh($width: 30px, $height: 30px);
                         position: absolute;
                         top: 0;
                         right: 0;
@@ -1198,14 +1185,12 @@
         @include flex_wrap($dis: flex, $wrap: wrap, $gap: 9px);
 
         .review-image {
-            width: 126px;
-            height: 102px;
+            @include pseudowh($width: 126px, $height: 102px);
             border-radius: 8px;
             overflow: hidden;
 
             img {
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 object-fit: cover;
             }
         }
@@ -1549,8 +1534,7 @@
             }
 
             .btn-close {
-                width: 26px;
-                height: 26px;
+                @include pseudowh($width: 26px, $height: 26px);
                 background-color: rgba(var(--white), 0.2);
                 border-radius: 4px;
                 font-size: 14px;
@@ -1566,8 +1550,7 @@
             text-align: center;
 
             .profile-image {
-                width: 80px;
-                height: 80px;
+                @include pseudowh($width: 80px, $height: 80px);
                 margin: 0 auto;
                 border-radius: 22px;
                 overflow: hidden;
@@ -1731,12 +1714,11 @@
                     @include pseudowh($width: 126px, $height: 102px);
 
                     @include mq-max(md) {
-                        width: calc(96px + (126 - 96) * ((100vw - 320px) / (600 - 320)));
+                        @include pseudowh($width: calc(96px + (126 - 96) * ((100vw - 320px) / (600 - 320))), $height: 102px);
                     }
 
                     img {
-                        width: 100%;
-                        height: 100%;
+                        @include pseudowh;
                         object-fit: cover;
                     }
                 }

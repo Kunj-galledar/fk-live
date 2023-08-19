@@ -126,6 +126,10 @@
                         .chatting-image {
                             img {
                                 border: 2px solid rgba(var(--content), 1);
+
+                                [class="dark"] & {
+                                    border-color: #374250;
+                                }
                             }
                         }
                     }
@@ -626,7 +630,7 @@
     }
 
     .right-msg .msg-bubble {
-        background-color: #848f8f;
+        background-color: rgba(var(--title), 0.6);
         color: rgba(var(--white), 1);
         border-bottom-right-radius: 0;
 
@@ -697,8 +701,7 @@
         }
 
         svg {
-            width: 20px;
-            height: 20px;
+            @include pseudowh($width: 20px, $height: 20px);
             stroke: rgba(var(--white), 1);
             fill: none;
 
@@ -710,8 +713,7 @@
 
     .emoji-button {
         padding: 0;
-        width: 24px;
-        height: 24px;
+        @include pseudowh($width: 24px, $height: 24px);
         position: absolute;
         @include center(vertical);
         left: 16px;
@@ -724,8 +726,7 @@
         .emoji-icon {
             stroke: rgba(var(--content), 1);
             fill: transparent;
-            width: 24px;
-            height: 24px;
+            @include pseudowh($width: 24px, $height: 24px);
         }
     }
 }
@@ -774,8 +775,7 @@
 
                 li {
                     a {
-                        width: 34px;
-                        height: 34px;
+                        @include pseudowh($width: 34px, $height: 34px);
                         background-color: rgba(var(--theme-color), 1);
                         border-radius: 4px;
                         color: rgba(var(--title), 1);
@@ -827,7 +827,6 @@
                 background-color: rgba(var(--black), 1);
             }
 
-            /* Modal Content (image) */
             .modal-content {
                 margin: auto;
                 display: block;
@@ -837,7 +836,6 @@
                 object-fit: contain;
             }
 
-            /* Caption of Modal Image */
             .modal-caption {
                 margin: auto;
                 display: block;
@@ -850,14 +848,12 @@
                 margin-top: 32px;
             }
 
-            /* Add Animation */
             .modal-content,
             .modal-caption {
                 animation-name: zoom;
                 animation-duration: 0.6s;
             }
 
-            /* The Close Button */
             .modal-close {
                 position: absolute;
                 top: 15px;
@@ -865,10 +861,9 @@
                 color: rgba(var(--white), 1);
                 font-size: 20px;
                 font-weight: bold;
-                width: 40px;
+                @include pseudowh($width: 40px, $height: 40px);
                 transition: 0.3s;
                 z-index: 1;
-                height: 40px;
                 background-color: rgba(var(--title), 1);
                 @include flex_common;
                 border-radius: 5px;
@@ -913,8 +908,7 @@
 .user-image {
     @include flex_common;
     position: relative;
-    width: 86px;
-    height: 86px;
+    @include pseudowh($width: 86px, $height: 86px);
     margin: -50px auto 0px;
     overflow: hidden;
     border-radius: 100%;
@@ -950,8 +944,7 @@
                 align-items: center;
 
                 .new-chat-icon {
-                    width: 32px;
-                    height: 32px;
+                    @include pseudowh($width: 32px, $height: 32px);
                     background-color: rgba(var(--theme-color), 1);
                     border-radius: 100%;
                     @include flex_common;
@@ -995,8 +988,7 @@
                             @include pos;
                             bottom: 5px;
                             right: 2px;
-                            width: 10px;
-                            height: 10px;
+                            @include pseudowh($width: 10px, $height: 10px);
                             background-color: rgba(var(--theme-color), 1);
                             border-radius: 100%;
                         }
@@ -1056,14 +1048,12 @@
                 }
 
                 .chatting-image {
-                    width: 52px;
-                    height: 52px;
+                    @include pseudowh($width: 52px, $height: 52px);
                     position: relative;
 
                     img {
                         border-radius: 100%;
-                        width: 52px;
-                        height: 52px;
+                        @include pseudowh($width: 52px, $height: 52px);
                         object-fit: cover;
                     }
                 }
@@ -1114,8 +1104,7 @@
 
                             label {
                                 display: none;
-                                width: 18px;
-                                height: 18px;
+                                @include pseudowh($width: 18px, $height: 18px);
                                 border-radius: 100%;
                                 background-color: rgba(var(--theme-color), 1);
                                 color: rgba(var(--title), 1);
@@ -1195,14 +1184,12 @@
                 }
 
                 .chatting-image {
-                    width: 52px;
-                    height: 52px;
+                    @include pseudowh($width: 52px, $height: 52px);
                     position: relative;
 
                     img {
                         border-radius: 100%;
-                        width: 52px;
-                        height: 52px;
+                        @include pseudowh($width: 52px, $height: 52px);
                         object-fit: cover;
                     }
                 }
@@ -1499,22 +1486,19 @@
 
         .form-check-input {
             background-color: transparent;
-            width: 19px;
-            height: 19px;
+            @include pseudowh($width: 19px, $height: 19px);
             float: unset;
             margin: 0;
             border: none;
 
             &:after {
-                width: 19px;
-                height: 19px;
+                @include pseudowh($width: 19px, $height: 19px);
                 top: 0;
                 left: 0;
             }
 
             &::before {
-                width: 8px;
-                height: 5px;
+                @include pseudowh($width: 8px, $height: 5px);
                 left: 6px;
                 top: 6px;
 
@@ -1597,12 +1581,10 @@
 
 /* ----------- Story slide ----------- */
 .story-slide {
-    width: 100vw;
-    height: 100vh;
+    @include pseudowh($width: 100vw, $height: 100vh);
     overflow: hidden;
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     top: 0;
     z-index: 9;
     display: none;
@@ -1631,8 +1613,7 @@
 
         img {
             object-fit: cover;
-            height: 100vh;
-            width: 100%;
+            @include pseudowh($width: 100%, $height: 100vh);
         }
 
         >* {

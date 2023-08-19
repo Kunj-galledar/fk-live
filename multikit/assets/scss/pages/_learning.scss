@@ -220,17 +220,15 @@
                     background-color: rgba(var(--white), 1);
                     padding: 0;
                     line-height: 1;
-                    width: 26px;
-                    height: 26px;
+                    @include pseudowh($width: 26px, $height: 26px);
                     font-size: 16px;
                     border-radius: 100%;
                     @include flex_common;
 
                     @include mq-max(md) {
+                        @include pseudowh($width: calc(22px + (26 - 22) * ((100vw - 320px) / (600 - 320))), $height: calc(22px + (26 - 22) * ((100vw - 320px) / (600 - 320))));
                         top: calc(12px + (16 - 12) * ((100vw - 320px) / (600 - 320)));
                         right: calc(12px + (16 - 12) * ((100vw - 320px) / (600 - 320)));
-                        width: calc(22px + (26 - 22) * ((100vw - 320px) / (600 - 320)));
-                        height: calc(22px + (26 - 22) * ((100vw - 320px) / (600 - 320)));
                         font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (600 - 320)));
                     }
                 }
@@ -276,8 +274,7 @@
             }
 
             img {
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 object-fit: cover;
             }
         }
@@ -676,8 +673,7 @@
 .total-box-2 {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     padding: 15px 18px;
     width: 100%;
     max-width: 600px;
@@ -788,8 +784,7 @@
                         background: unset;
                         color: rgba(var(--title), 1);
                         font-size: 21px;
-                        width: unset;
-                        height: unset;
+                        @include pseudowh($width: unset, $height: unset);
                     }
 
                     @include mq-max(md) {
@@ -844,8 +839,7 @@
                                 padding: 0;
                                 float: unset;
                                 background-image: unset;
-                                width: 18px;
-                                height: 18px;
+                                @include pseudowh($width: 18px, $height: 18px);
                                 position: relative;
                                 background-color: rgba(var(--content), 0.2);
                                 box-shadow: none;
@@ -854,8 +848,7 @@
 
                                 &::after {
                                     @include pos;
-                                    width: 10px;
-                                    height: 10px;
+                                    @include pseudowh($width: 10px, $height: 10px);
                                     background-color: rgba(var(--theme-color), 1);
                                     border-radius: 100%;
                                     top: 50%;
@@ -1145,8 +1138,7 @@
                     margin: 0;
 
                     .form-check-input {
-                        width: 56px;
-                        height: 28px;
+                        @include pseudowh($width: 56px, $height: 28px);
                         background-color: rgba(var(--content), 1);
                         border: none;
                         background-image: unset;
@@ -1171,10 +1163,8 @@
                         &::after {
                             @include pos;
                             background-color: rgba(var(--white), 1);
-                            top: 50%;
-                            transform: translateY(-50%);
-                            width: 23px;
-                            height: 23px;
+                            @include center(vertical);
+                            @include pseudowh($width: 23px, $height: 23px);
                             left: 3px;
                             border-radius: 100%;
                             transition: 0.4s;
@@ -1262,11 +1252,9 @@
                 @include center(horizontal);
                 z-index: 1;
                 color: #4a4a4a;
-                display: flex;
-                align-items: center;
+                @include flex_common;
                 padding: 3px 7px;
                 border-radius: 4px;
-                justify-content: center;
                 gap: 6px;
                 background-color: #fff;
                 box-shadow: 0 0 8px #ddd;

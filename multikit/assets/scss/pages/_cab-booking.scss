@@ -82,8 +82,7 @@
     border-radius: 25px 25px 0 0;
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     max-width: 600px;
 
@@ -280,8 +279,7 @@
     border-radius: 25px 25px 0 0;
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     max-width: 600px;
 
@@ -383,8 +381,7 @@
     border-radius: 25px 25px 0 0;
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     max-width: 600px;
 
@@ -657,8 +654,7 @@
 .cab-pay-section {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     max-width: 600px;
     width: 100%;
     background-color: rgba(var(--white), 1);
@@ -1100,6 +1096,7 @@
 
                 [class="dark"] & {
                     background-color: #272d33;
+                    box-shadow: 2px 2px 6px rgba(192, 192, 192, 0.06);
                 }
 
                 .box-top {
@@ -1310,7 +1307,7 @@
         display: block;
         text-align: right;
         margin-top: 17px;
-        color: rgba(var(--title), 0.8);
+        color: rgba(var(--theme-color), 1);
         text-decoration: underline;
         padding: 0;
         font-weight: 400;
@@ -1345,9 +1342,10 @@
                 .notification-icon {
                     @include flex_common;
                     @include pseudowh($width: 42px, $height: 42px);
-                    background-color: rgba(var(--white), 1);
+                    background-color: rgba(var(--content), 0.03);
                     border-radius: 5px;
                     font-size: 18px;
+                    color: rgba(var(--theme-color), 1);
 
                     [class="dark"] & {
                         background-color: #22272c;
@@ -1616,8 +1614,7 @@
     .submit-box {
         position: fixed;
         bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        @include center(horizontal);
         max-width: 600px;
         width: 100%;
         background-color: rgba(var(--white), 1);
@@ -1681,7 +1678,6 @@
                 h6 {
                     color: rgba(var(--content), 1);
                     font-weight: 400;
-                    font-size: 14px;
                 }
             }
 
@@ -1741,6 +1737,8 @@
 
             h5 {
                 font-size: 16px;
+                font-weight: 400;
+                color: rgba(var(--content), 1);
             }
 
             a {
@@ -1795,8 +1793,7 @@
                 &::after {
                     content: "\ea4e";
                     @include font;
-                    width: unset;
-                    height: unset;
+                    @include pseudowh($width: unset, $height: unset);
                     background: unset;
                     font-size: 18px;
                     line-height: 1;
@@ -1868,18 +1865,19 @@
             display: inline-block;
 
             &::before {
-                content: "";
-                position: absolute;
+                @include pos;
                 @include center(both);
-                width: 110%;
-                height: 110%;
+                @include pseudowh($width: 110%, $height: 110%);
                 background-color: #f4f4f4;
                 border-radius: 100%;
+
+                [class="dark"] & {
+                    background-color: #272d34;
+                }
             }
 
             img {
-                height: 115px;
-                width: 115px;
+                @include pseudowh($width: 115px, $height: 115px);
                 object-fit: cover;
                 overflow: hidden;
                 border-radius: 100%;
@@ -1896,17 +1894,23 @@
                 bottom: 0;
                 right: 0;
 
+                [dir="rtl"] & {
+                    right: unset;
+                    left: 0;
+                }
+
                 button {
                     background: #f4f4f4;
                     color: rgba(var(--title), 1);
-                    width: 40px;
-                    height: 40px;
+                    @include pseudowh($width: 40px, $height: 40px);
                     padding: 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @include flex_common;
                     font-size: 20px;
                     border-radius: 100%;
+
+                    [class="dark"] & {
+                        background-color: #272d34;
+                    }
                 }
 
                 input {

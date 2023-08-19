@@ -42,8 +42,7 @@
         gap: 4px;
 
         &.dots {
-            width: 4px;
-            height: 4px;
+            @include pseudowh($width: 4px, $height: 4px);
             border-radius: 100%;
             background-color: rgba(var(--content), 1);
         }
@@ -77,8 +76,7 @@
         height: 170px;
 
         .banner-image {
-            width: 100%;
-            height: 100%;
+            @include pseudowh;
             object-fit: cover;
         }
 
@@ -86,9 +84,12 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            @include pseudowh($width: 100%, $height: 100%);
             padding: 27px 0 27px 21px;
+
+            @include mq-max(md) {
+                padding-left: calc(15px + (21 - 15) * ((100vw - 320px) / (600 - 320)));
+            }
 
             .title {
                 font-weight: 600;
@@ -104,16 +105,14 @@
             .offer-box {
                 position: relative;
                 margin-bottom: 12px;
-                width: 141px;
-                height: 38px;
+                @include pseudowh($width: 141px, $height: 38px);
 
                 [dir="rtl"] & {
                     margin-right: auto;
                 }
 
                 @include mq-max(md) {
-                    width: calc(110px + (141 - 110) * ((100vw - 320px) / (600 - 320)));
-                    height: 100%;
+                    @include pseudowh($width: calc(110px + (141 - 110) * ((100vw - 320px) / (600 - 320))), $height: 100%);
                 }
 
                 h4 {
@@ -192,12 +191,10 @@
                 }
 
                 .option-image {
-                    width: 28px;
-                    height: 20px;
+                    @include pseudowh($width: 28px, $height: 20px);
 
                     img {
-                        width: 100%;
-                        height: 100%;
+                        @include pseudowh;
                         object-fit: contain;
                     }
                 }
@@ -250,14 +247,12 @@
                 }
 
                 .food-image {
-                    width: 73px;
-                    height: 73px;
+                    @include pseudowh($width: 73px, $height: 73px);
                     border-radius: 10px;
                     overflow: hidden;
 
                     img {
-                        width: 100%;
-                        height: 100%;
+                        @include pseudowh;
                         object-fit: cover;
                     }
                 }
@@ -284,6 +279,10 @@
                             li {
                                 i {
                                     color: #e0e0e0;
+
+                                    [class="dark"] & {
+                                        color: rgba(57, 44, 44, 0.19);
+                                    }
 
                                     &.fill {
                                         color: rgba(var(--primary), 1);
@@ -350,14 +349,12 @@
 
         .feature-head {
             position: relative;
-            width: 100%;
-            height: 102px;
+            @include pseudowh($width: 100%, $height: 102px);
             overflow: hidden;
             display: block;
 
             img {
-                width: 100%;
-                height: 100%;
+                @include pseudowh;
                 object-fit: cover;
             }
 
@@ -450,8 +447,7 @@
                 margin-top: 11px;
 
                 img {
-                    width: 14px;
-                    height: 14px;
+                    @include pseudowh($width: 14px, $height: 14px);
                 }
 
                 h6 {
@@ -478,8 +474,7 @@
                 color: rgba(var(--content), 1);
 
                 .recent-icon {
-                    width: 18px;
-                    height: 18px;
+                    @include pseudowh($width: 18px, $height: 18px);
                     font-size: 18px;
                     @include flex_common;
 
@@ -538,8 +533,7 @@
                         }
 
                         .address-icon {
-                            width: 40px;
-                            height: 40px;
+                            @include pseudowh($width: 40px, $height: 40px);
                             background-color: #f9f9f9;
                             border-radius: 6px;
                             @include flex_common;
@@ -614,8 +608,7 @@
         align-items: center;
 
         .profile-image {
-            width: 80px;
-            height: 80px;
+            @include pseudowh($width: 80px, $height: 80px);
             border-radius: 22px;
             overflow: hidden;
         }
@@ -652,7 +645,8 @@
             background-color: rgba(var(--white), 1);
             border-radius: 6px;
             padding: 18px 12px;
-            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 28px);
+            display: flex;
+            flex-wrap: wrap;
             align-items: center;
 
             [class="dark"] & {
@@ -665,18 +659,17 @@
                 padding-inline: 15px;
                 position: relative;
 
-                +li {
-                    &::after {
-                        @include pos;
-                        top: -14px;
-                        left: 0;
-                        width: 100%;
-                        height: 1px;
-                        background-color: #f9f9f9;
+                @include mq-max(md) {
+                    padding-inline: calc(5px + (15 - 5) * ((100vw - 320px) / (600 - 320)));
+                }
 
-                        [class="dark"] & {
-                            background-color: rgba(249, 249, 249, 0.11);
-                        }
+                +li {
+                    margin-top: 14px;
+                    padding-top: 14px;
+                    border-top: 1px solid #f9f9f9;
+
+                    [class="dark"] & {
+                        border-color: rgba(249, 249, 249, 0.11);
                     }
                 }
 
@@ -685,8 +678,7 @@
                     align-items: center;
 
                     .setting-image {
-                        width: 26px;
-                        height: 26px;
+                        @include pseudowh($width: 26px, $height: 26px);
 
                         img {
                             @include pseudowh;
@@ -725,7 +717,7 @@
                 gap: calc(11px + (20 - 11) * ((100vw - 320px) / (600 - 320)));
             }
 
-            li {
+            >li {
                 width: 100%;
 
                 .order-box {
@@ -752,14 +744,12 @@
                         }
 
                         .order-image {
-                            width: 63px;
-                            height: 63px;
+                            @include pseudowh($width: 63px, $height: 63px);
                             overflow: hidden;
                             border-radius: 6px;
 
                             img {
-                                width: 100%;
-                                height: 100%;
+                                @include pseudowh;
                                 object-fit: cover;
                             }
                         }
@@ -767,16 +757,53 @@
                         .order-name {
                             width: calc(100% - 63px - 8px);
 
-                            h5 {
-                                color: rgba(var(--title), 1);
-                                margin-bottom: 5px;
-                                width: 57%;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                display: -webkit-box;
-                                -webkit-line-clamp: 1;
-                                -webkit-box-orient: vertical;
-                                font-size: 14px;
+                            a {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 4px;
+                                margin-bottom: 2px;
+
+                                h5 {
+                                    color: rgba(var(--title), 1);
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 1;
+                                    -webkit-box-orient: vertical;
+                                    font-size: 14px;
+                                }
+
+                                .delivered-box {
+                                    position: relative;
+                                    inset: unset;
+                                    align-items: center;
+                                    background-color: #f9f9f9;
+                                    border-radius: 4px;
+                                    padding: 6px 10px;
+                                    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
+
+                                    [class="dark"] & {
+                                        background-color: #2b2b2b;
+                                    }
+
+                                    [dir="rtl"] & {
+                                        right: unset;
+                                        left: 0;
+                                    }
+
+                                    img {
+                                        @include pseudowh($width: 14px, $height: 14px);
+                                    }
+
+                                    h6 {
+                                        font-weight: 500;
+                                        font-size: 12px;
+                                        margin: 0;
+                                        line-height: 1;
+                                        color: rgba(var(--title), 1);
+                                    }
+                                }
                             }
 
                             h6 {
@@ -795,39 +822,11 @@
                                     font-weight: 400;
                                     font-size: 14px;
                                     color: rgba(var(--title), 1);
+
+                                    @include mq-max(md) {
+                                        font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                                    }
                                 }
-                            }
-                        }
-
-                        .delivered-box {
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            align-items: center;
-                            background-color: #f9f9f9;
-                            border-radius: 4px;
-                            padding: 6px 10px;
-                            @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 6px);
-
-                            [class="dark"] & {
-                                background-color: #2b2b2b;
-                            }
-
-                            [dir="rtl"] & {
-                                right: unset;
-                                left: 0;
-                            }
-
-                            img {
-                                width: 14px;
-                                height: 14px;
-                            }
-
-                            h6 {
-                                font-weight: 500;
-                                font-size: 10px;
-                                line-height: 1;
-                                color: rgba(var(--title), 1);
                             }
                         }
                     }
@@ -842,13 +841,14 @@
                         }
 
                         .quantity-list {
-                            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 4px);
+                            @include flex_wrap($dis: flex, $wrap: wrap, $gap: 8px);
 
                             li {
                                 width: 100%;
                                 font-weight: 400;
                                 font-size: 14px;
                                 color: rgba(var(--content), 1);
+                                line-height: 1;
                             }
                         }
                     }
@@ -920,8 +920,7 @@
     z-index: 1;
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     max-width: 600px;
     border-top-left-radius: 25px;
@@ -951,8 +950,7 @@
         }
 
         .order-image {
-            width: 52px;
-            height: 52px;
+            @include pseudowh($width: 52px, $height: 52px);
             border-radius: 8px;
             overflow: hidden;
 
@@ -1000,8 +998,7 @@
             }
 
             .driver-image {
-                width: 50px;
-                height: 45px;
+                @include pseudowh($width: 50px, $height: 45px);
                 border-radius: 8px;
                 overflow: hidden;
 
@@ -1036,8 +1033,7 @@
                     li {
                         a {
                             @include flex_common;
-                            width: 35px;
-                            height: 35px;
+                            @include pseudowh($width: 35px, $height: 35px);
                             background-color: #f9f9f9;
                             border-radius: 4px;
                             color: rgba(var(--title), 1);
@@ -1115,8 +1111,7 @@
                 @include pos;
                 @include center(vertical);
                 left: 19px;
-                width: 0;
-                height: 80%;
+                @include pseudowh($width: 0, $height: 80%);
                 border-left: 1px dashed #f1f1f1;
                 z-index: -1;
 
@@ -1135,8 +1130,7 @@
                     @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 9px);
 
                     .address-icon {
-                        width: 39px;
-                        height: 39px;
+                        @include pseudowh($width: 39px, $height: 39px);
                         background-color: #f9f9f9;
                         border-radius: 4px;
                         font-size: 21px;
@@ -1187,8 +1181,7 @@
                         @include pos;
                         top: -14px;
                         left: 0;
-                        width: 100%;
-                        height: 1px;
+                        @include pseudowh($width: 100%, $height: 1px);
                         background-color: #f9f9f9;
 
                         [class="dark"] & {
@@ -1202,8 +1195,7 @@
                     align-items: center;
 
                     .payment-image {
-                        width: 66px;
-                        height: 43px;
+                        @include pseudowh($width: 66px, $height: 43px);
                         background-color: #f9f9f9;
                         border-radius: 6px;
                         padding: 12px;
@@ -1295,8 +1287,7 @@
                     align-items: center;
 
                     .items-image {
-                        width: 78px;
-                        height: 78px;
+                        @include pseudowh($width: 78px, $height: 78px);
                         border-radius: 6px;
                         overflow: hidden;
 
@@ -1386,7 +1377,7 @@
     }
 }
 
-.instrucations-list {
+.instructions-list {
     background-color: rgba(var(--white), 1);
     box-shadow: $shadow2;
     border-radius: 10px;
@@ -1405,7 +1396,7 @@
     li {
         width: 100%;
 
-        .instrucations-box {
+        .instructions-box {
             align-items: center;
             flex-wrap: nowrap;
             gap: 10px;
@@ -1415,8 +1406,7 @@
                 align-items: center;
 
                 img {
-                    width: 18px;
-                    height: 18px;
+                    @include pseudowh($width: 18px, $height: 18px);
                 }
 
                 span {
@@ -1508,8 +1498,7 @@
         }
 
         .address-icon {
-            width: 40px;
-            height: 40px;
+            @include pseudowh($width: 40px, $height: 40px);
             background-color: #fff9ec;
             border-radius: 6px;
             @include flex_common;
@@ -1596,8 +1585,7 @@
                     }
 
                     .offer-icon {
-                        width: 26px;
-                        height: 26px;
+                        @include pseudowh($width: 26px, $height: 26px);
                     }
 
                     .offer-contain {
@@ -1624,8 +1612,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 63px;
-    height: 25px;
+    @include pseudowh($width: 63px, $height: 25px);
 
     &.hide {
         background-color: transparent;
@@ -1658,8 +1645,7 @@
             font-weight: 500;
             position: relative;
             inset: unset;
-            width: unset;
-            height: unset;
+            @include pseudowh($width: unset, $height: unset);
             background-color: transparent;
 
             i {
@@ -1669,8 +1655,7 @@
     }
 
     .qty-box {
-        width: 76px;
-        height: 25px;
+        @include pseudowh($width: 76px, $height: 25px);
         position: absolute;
         bottom: 0;
         right: 0;
@@ -1702,7 +1687,7 @@
 
                 i {
                     font-size: 13px;
-                    color: var(--theme-color);
+                    color: rgba(var(--theme-color), 1);
                     margin-top: 1px;
                 }
 

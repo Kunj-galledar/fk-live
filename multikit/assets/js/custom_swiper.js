@@ -116,6 +116,7 @@ var swiper14 = new Swiper(".top-reviewer-slider", {
 
 var swiper15 = new Swiper(".brand-slider", {
   slidesPerView: 3,
+  spaceBetween: 10,
   centeredSlides: true,
   speed: 6000,
   autoplay: {
@@ -201,4 +202,9 @@ var swiper24 = new Swiper(".main-slider2", {
   thumbs: {
     swiper: swiper23,
   },
+});
+
+var swiper25 = new Swiper(".grocery-category-slider", {
+  slidesPerView: "auto",
+  spaceBetween: 7,
 });

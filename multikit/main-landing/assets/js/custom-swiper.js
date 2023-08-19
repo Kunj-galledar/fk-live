@@ -35,16 +35,13 @@ var sliderThree = new Swiper(".mySwiper", {
 
 var sliderOne = new Swiper(".slider1", {
   slidesPerView: 7,
-  spaceBetween: 22,
   breakpoints: {
     0: {
       slidesPerView: 2,
-      spaceBetween: 15,
     },
 
     576: {
       slidesPerView: 3,
-      spaceBetween: 15,
     },
 
     991: {

@@ -3,8 +3,7 @@
 ==========================*/
 .add-icon {
     background-color: rgba(var(--dark-bg), 0.8);
-    width: 30px;
-    height: 30px;
+    @include pseudowh($width: 30px, $height: 30px);
     position: absolute;
     bottom: 8px;
     right: 8px;
@@ -24,13 +23,11 @@
     }
 
     @include mq-max(md) {
-        width: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
-        height: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
+        @include pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320))));
     }
 
     .wishlist-button {
-        width: 16px;
-        height: 16px;
+        @include pseudowh($width: 16px, $height: 16px);
         margin: 0;
         position: relative;
         background: none;
@@ -54,6 +51,10 @@
             [class="dark"] & {
                 color: #fff;
             }
+        }
+
+        &:checked[type=checkbox] {
+            background: unset;
         }
 
         &:checked {
@@ -80,8 +81,7 @@
         }
 
         a {
-            width: 24px;
-            height: 24px;
+            @include pseudowh($width: 24px, $height: 24px);
             border-radius: 100%;
             background-color: rgba(var(--dark-bg), 0.8);
             @include flex_common;
@@ -111,8 +111,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            @include pseudowh;
             padding: 12px;
             display: flex;
             align-items: center;
@@ -175,14 +174,12 @@
                 text-align: center;
 
                 img {
-                    width: 58px;
-                    height: 58px;
+                    @include pseudowh($width: 58px, $height: 58px);
                     border-radius: 100%;
                     margin-bottom: 10px;
 
                     @include mq-max(md) {
-                        width: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320)));
-                        height: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320)));
+                        @include pseudowh($width: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320))), $height: calc(49px + (58 - 49) * ((100vw - 320px) / (600 - 320))));
                     }
                 }
 
@@ -212,8 +209,7 @@
     align-items: center;
 
     a {
-        width: 30px;
-        height: 30px;
+        @include pseudowh($width: 30px, $height: 30px);
         border-radius: 5px;
         background-color: #f7f7f7;
         font-size: 16px;
@@ -304,6 +300,8 @@
 
     .brand-image {
         text-align: center;
+        padding: 5px 8px;
+        background-color: #f8f8f8;
     }
 }
 
@@ -317,8 +315,7 @@
         text-align: center;
 
         img {
-            width: 58px;
-            height: 45px;
+            @include pseudowh($width: 58px, $height: 45px);
             object-fit: contain;
             background-color: #f9f9f9;
             padding: 5px;
@@ -351,17 +348,18 @@
 
     li {
         .category-box {
+            overflow: unset;
             display: block;
             text-align: center;
+            padding: 0;
 
             img {
-                width: 96px;
-                height: 96px;
+                @include pseudowh($width: 96px, $height: 96px);
                 border-radius: 100%;
                 margin-bottom: 10px;
 
                 @include mq-max(md) {
-                    height: calc(86px + (96 - 86) * ((100vw - 320px) / (600 - 320)));
+                    @include pseudowh($width: calc(80px + (96 - 80) * ((100vw - 320px) / (600 - 320))), $height: calc(80px + (96 - 80) * ((100vw - 320px) / (600 - 320))));
                 }
             }
 
@@ -369,6 +367,10 @@
                 font-weight: 500;
                 font-size: 14px;
                 color: rgba(var(--content), 1);
+
+                @include mq-max(md) {
+                    font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (600 - 320)));
+                }
             }
         }
     }
@@ -479,8 +481,7 @@
                     .address-icon {
                         background-color: rgba(var(--title), 0.5);
                         border-radius: 4px;
-                        width: 28px;
-                        height: 28px;
+                        @include pseudowh($width: 28px, $height: 28px);
                         @include flex_common;
                         color: rgba(var(--white), 1);
                         font-size: 18px;
@@ -654,8 +655,7 @@
     .swiper-pagination {
         background-color: rgba(var(--white), 1);
         border-radius: 13px;
-        width: auto;
-        height: 12px;
+        @include pseudowh($width: auto, $height: 12px);
         @include center(horizontal);
         @include flex_common;
         width: 52px;
@@ -667,8 +667,7 @@
         .swiper-pagination-bullet {
             background-color: rgba(var(--white), 1);
             border-radius: 100px;
-            width: 6px;
-            height: 6px;
+            @include pseudowh($width: 6px, $height: 6px);
             margin-inline: 2px;
             border: 1px solid rgba(var(--title), 1);
             opacity: 1;
@@ -682,8 +681,7 @@
             &-active {
                 background: var(--theme-gradient-color);
                 border-radius: 100px;
-                width: 25px;
-                height: 6px;
+                @include pseudowh($width: 25px, $height: 6px);
                 margin-inline: 2px;
                 border-color: transparent;
             }
@@ -817,16 +815,15 @@
                 width: auto !important;
 
                 img {
-                    width: 75px;
-                    height: 75px;
+                    @include pseudowh($width: 75px, $height: 75px);
                     border: 2px solid transparent;
                     border-radius: 5px;
                     object-fit: cover;
                     opacity: 0.5;
+                    transition: 0.3s ease;
 
                     @include mq-max(md) {
-                        width: calc(55px + (75 - 55) * ((100vw - 320px) / (600 - 320)));
-                        height: calc(55px + (75 - 55) * ((100vw - 320px) / (600 - 320)));
+                        @include pseudowh($width: calc(55px + (75 - 55) * ((100vw - 320px) / (600 - 320))), $height: calc(55px + (75 - 55) * ((100vw - 320px) / (600 - 320))));
                     }
                 }
 
@@ -874,8 +871,7 @@
             }
 
             a {
-                width: 40px;
-                height: 40px;
+                @include pseudowh($width: 40px, $height: 40px);
                 background-color: rgba(var(--light-bg), 1);
                 border-radius: 5px;
                 @include flex_common;
@@ -888,8 +884,7 @@
                 }
 
                 @include mq-max(md) {
-                    width: calc(33px + (40 - 33) * ((100vw - 320px) / (600 - 320)));
-                    height: calc(33px + (40 - 33) * ((100vw - 320px) / (600 - 320)));
+                    @include pseudowh($width: calc(33px + (40 - 33) * ((100vw - 320px) / (600 - 320))), $height: calc(33px + (40 - 33) * ((100vw - 320px) / (600 - 320))));
                     font-size: calc(13px + (15 - 13) * ((100vw - 320px) / (600 - 320)));
                 }
             }
@@ -916,8 +911,7 @@
             }
 
             .product-image {
-                width: 80px;
-                height: 80px;
+                @include pseudowh($width: 80px, $height: 80px);
                 border-radius: 5px;
                 overflow: hidden;
             }
@@ -1085,7 +1079,7 @@
                     }
 
                     .price {
-                        font-weight: 500;
+                        font-weight: 600;
                         color: rgba(var(--theme-color), 1);
                     }
                 }
@@ -1099,10 +1093,6 @@
                 h4 {
                     font-weight: 400;
                     font-size: 15px;
-
-                    @include mq-max(md) {
-                        font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (600 - 320)));
-                    }
 
                     &.name {
                         color: rgba(var(--content), 1);
@@ -1127,8 +1117,7 @@
     text-align: center;
 
     .order-success-image {
-        width: 106px;
-        height: 106px;
+        @include pseudowh($width: 106px, $height: 106px);
         margin: 0 auto 16px;
     }
 
@@ -1195,8 +1184,7 @@
                 gap: 8px;
 
                 .product-image {
-                    width: 80px;
-                    height: 80px;
+                    @include pseudowh($width: 80px, $height: 80px);
                     border-radius: 5px;
                     overflow: hidden;
                 }
@@ -1237,8 +1225,7 @@
             margin-bottom: 30px;
 
             .profile-image {
-                width: 92px;
-                height: 92px;
+                @include pseudowh($width: 92px, $height: 92px);
                 border-radius: 100%;
                 overflow: hidden;
                 margin-inline: auto;
@@ -1337,22 +1324,19 @@
             }
 
             .left-icon {
-                width: 38px;
-                height: 38px;
+                @include pseudowh($width: 38px, $height: 38px);
                 background-color: rgba(var(--theme-color), 1);
                 border-radius: 100%;
                 @include flex_common;
 
                 @include mq-max(md) {
-                    width: calc(31px + (38 - 31) * ((100vw - 320px) / (600 - 320)));
-                    height: calc(31px + (38 - 31) * ((100vw - 320px) / (600 - 320)));
+                    @include pseudowh($width: calc(31px + (38 - 31) * ((100vw - 320px) / (600 - 320))), $height: calc(31px + (38 - 31) * ((100vw - 320px) / (600 - 320))));
                 }
 
                 &:after {
                     @include pos;
                     top: 0;
-                    height: 100%;
-                    width: 1px;
+                    @include pseudowh($width: 1px, $height: 100%);
                     border-left: 1px dashed rgba(var(--content), 1);
                     z-index: -1;
                 }
@@ -1420,8 +1404,7 @@ footer {
                 @include flex_common;
                 color: rgba(var(--title), 1);
                 font-size: 20px;
-                width: 22px;
-                height: 22px;
+                @include pseudowh($width: 22px, $height: 22px);
             }
         }
     }
@@ -1554,22 +1537,19 @@ footer {
             gap: 8px;
 
             .product-image {
-                width: 100px;
-                height: 133px;
+                @include pseudowh($width: 100px, $height: 133px);
                 border-radius: 5px;
                 overflow: hidden;
                 position: relative;
 
                 img {
-                    width: 100%;
-                    height: 100%;
+                    @include pseudowh;
                     object-fit: cover;
                 }
 
                 .add-icon {
                     background-color: rgba(var(--dark-bg), 0.8);
-                    width: 30px;
-                    height: 30px;
+                    @include pseudowh($width: 30px, $height: 30px);
                     position: absolute;
                     bottom: 8px;
                     right: 8px;
@@ -1577,6 +1557,10 @@ footer {
                     border-radius: 100%;
                     font-size: 16px;
                     color: rgba(var(--white), 1);
+
+                    @include mq-max(md) {
+                        @include pseudowh($width: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320))), $height: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320))));
+                    }
 
                     [dir="rtl"] & {
                         right: unset;
@@ -1588,14 +1572,8 @@ footer {
                         color: #fff;
                     }
 
-                    @include mq-max(md) {
-                        width: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
-                        height: calc(26px + (30 - 26) * ((100vw - 320px) / (600 - 320)));
-                    }
-
                     .wishlist-button {
-                        width: 16px;
-                        height: 16px;
+                        @include pseudowh($width: 16px, $height: 16px);
                         margin: 0;
                         position: relative;
                         background: none;
@@ -1692,12 +1670,9 @@ footer {
                             }
 
                             a {
-                                width: 24px;
-                                height: 24px;
+                                @include pseudowh($width: 24px, $height: 24px);
                                 border-radius: 100%;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
+                                @include flex_common;
                                 border: 1px solid rgba(var(--border-color), 1);
                                 font-size: 11px;
                                 font-weight: 500;
@@ -1717,8 +1692,7 @@ footer {
 
 /* ---------- Empty Box CSS ---------- */
 .empty-box {
-    width: 100%;
-    height: calc(100vh - 50px - 65px);
+    @include pseudowh($width: 100%, $height: calc(100vh - 50px - 65px));
     @include flex_common;
     text-align: center;
     padding-inline: 15px;

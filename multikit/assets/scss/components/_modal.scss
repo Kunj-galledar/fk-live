@@ -22,8 +22,7 @@
             padding: 0;
             background: none;
             font-size: 20px;
-            width: auto;
-            height: auto;
+            @include pseudowh($width: auto, $height: auto);
             line-height: 1;
             display: flex;
 
@@ -133,7 +132,7 @@
                     }
 
                     h5 {
-                        color: var(--theme-color);
+                        color: rgba(var(--theme-color), 1);
                         margin-bottom: 2px;
                         font-weight: 600;
                     }
@@ -363,8 +362,7 @@
                     }
 
                     .form-check-input {
-                        width: 21px;
-                        height: 21px;
+                        @include pseudowh($width: 21px, $height: 21px);
                         position: absolute;
                         top: 0;
                         right: 0;
@@ -390,9 +388,7 @@
 
                         &::before {
                             content: none;
-                            font-family: remixicon;
-                            font-style: normal;
-                            -webkit-font-smoothing: antialiased;
+                            @include font;
                             line-height: 1;
                         }
 
@@ -456,8 +452,7 @@
                         }
 
                         svg {
-                            width: 21px;
-                            height: 21px;
+                            @include pseudowh($width: 21px, $height: 21px);
                             fill: none;
                             stroke: rgba(var(--content), 1);
                         }
@@ -1720,8 +1715,7 @@
                 margin-top: 50px;
 
                 .profile-img {
-                    width: 92px;
-                    height: 92px;
+                    @include pseudowh($width: 92px, $height: 92px);
                     border-radius: 100%;
                     overflow: hidden;
                     margin: 0 auto 11px;
@@ -1833,8 +1827,7 @@
 
                 i {
                     position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    @include center(vertical);
                     right: 21px;
                     color: rgba(var(--white), 0.36);
                     font-size: 24px;
@@ -1864,8 +1857,7 @@
 
                     i {
                         position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
+                        @include center(vertical);
                         right: 21px;
                         color: rgba(var(--white), 0.36);
                         font-size: 24px;
@@ -1911,8 +1903,7 @@
             align-items: flex-start;
 
             .btn-close {
-                width: unset;
-                height: unset;
+                @include pseudowh($width: unset, $height: unset);
                 color: rgba(var(--title), 1);
                 font-size: 25px;
                 opacity: 1;
@@ -1940,8 +1931,7 @@
             .btn-close {
                 padding: 0;
                 margin: 0;
-                width: unset;
-                height: unset;
+                @include pseudowh($width: unset, $height: unset);
                 background: unset;
                 opacity: 1;
                 font-size: 21px;

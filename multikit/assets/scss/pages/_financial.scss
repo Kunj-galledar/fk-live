@@ -170,8 +170,7 @@
                 border: 1px solid rgba(var(--title), 1);
                 box-shadow: 0px 0px 13px rgba(var(--black), 0.04);
                 border-radius: 6px;
-                width: 60px;
-                height: 60px;
+                @include pseudowh($width: 60px, $height: 60px);
                 font-size: 30px;
                 display: grid;
                 place-items: center;
@@ -207,8 +206,7 @@
             text-align: center;
 
             .people-image {
-                width: 58px;
-                height: 58px;
+                @include pseudowh($width: 58px, $height: 58px);
                 border-radius: 100%;
                 overflow: hidden;
                 filter: grayscale(1);
@@ -218,6 +216,7 @@
                 margin-top: 10px;
                 color: rgba(var(--theme-light-gray), 1);
                 font-weight: 400;
+                font-size: 13px;
             }
         }
     }
@@ -250,8 +249,7 @@
             }
 
             .transactions-image {
-                width: 43px;
-                height: 46px;
+                @include pseudowh($width: 43px, $height: 46px);
                 background-color: rgb(87, 173, 221);
                 border-radius: 10px;
                 color: rgba(var(--white), 1);
@@ -278,19 +276,15 @@
                 color: rgba(var(--theme-light-gray), 1);
 
                 h5 {
-                    font-weight: 400;
+                    font-weight: 500;
                     margin-bottom: 6px;
-                    font-size: 14px;
+                    font-size: 15px;
                 }
 
                 h6 {
                     font-weight: 400;
                     color: rgba(var(--content), 1);
-                    font-size: 14px;
-                }
-
-                h4 {
-                    font-weight: 400;
+                    font-size: 13px;
                 }
             }
         }
@@ -612,8 +606,7 @@
     }
 
     .add-bank-btn {
-        width: 30px;
-        height: 30px;
+        @include pseudowh($width: 30px, $height: 30px);
         font-size: 17px;
         color: rgba(var(--white), 1);
         background: rgba(var(--theme-maroon), 1);
@@ -649,8 +642,7 @@
                 }
 
                 img {
-                    width: 18px;
-                    height: 18px;
+                    @include pseudowh($width: 18px, $height: 18px);
                     object-fit: contain;
                 }
 
@@ -665,14 +657,12 @@
 
 /* ---------- QR Code Scan box Css ---------- */
 .qr-code-scan-box {
-    width: 100%;
-    height: 100vh;
+    @include pseudowh($width: 100%, $height: 100vh);
     @include flex_common;
 
     svg {
         fill: transparent;
-        width: 230px;
-        height: 224px;
+        @include pseudowh($width: 230px, $height: 224px);
     }
 
     .camera-box {
@@ -697,8 +687,7 @@
 /* ---------- Chatting Css ---------- */
 .pay-chatting-box {
     margin-top: 13px;
-    width: 100%;
-    height: calc(100vh - 13px - 66px);
+    @include pseudowh($width: 100%, $height: calc(100vh - 13px - 66px));
     padding-bottom: 84px;
     overflow: auto;
 
@@ -873,8 +862,7 @@
 
     .emoji-button {
         padding: 0;
-        width: 24px;
-        height: 24px;
+        @include pseudowh($width: 24px, $height: 24px);
         position: absolute;
         @include center(vertical);
         left: 16px;
@@ -882,8 +870,7 @@
         .emoji-icon {
             stroke: rgba(var(--content), 1);
             fill: transparent;
-            width: 24px;
-            height: 24px;
+            @include pseudowh($width: 24px, $height: 24px);
         }
     }
 }
@@ -962,8 +949,7 @@
 
             .friend-image {
                 border-radius: 10px;
-                width: 43px;
-                height: 43px;
+                @include pseudowh($width: 43px, $height: 43px);
                 overflow: hidden;
             }
 
@@ -1027,8 +1013,7 @@
 
             img {
                 object-fit: cover;
-                width: 100px;
-                height: 100px;
+                @include pseudowh($width: 100px, $height: 100px);
                 border: 3px solid rgba(var(--theme-maroon), 1);
                 z-index: 0;
                 box-shadow: 0px 4px 4px rgba(var(--black), 0.25);
@@ -1110,13 +1095,11 @@
                 position: relative;
 
                 &::after {
-                    content: "\EB27";
-                    position: absolute;
+                    @include pos($pos: absolute, $content: "\EB27");
                     @include font;
                     color: rgba(var(--border-color), 1);
                     padding: 0 5px;
-                    top: 50%;
-                    transform: translateY(-50%);
+                    @include center(vertical);
                     right: 20px;
 
                     [dir="rtl"] & {
@@ -1131,8 +1114,7 @@
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    width: auto;
-                    height: auto;
+                    @include pseudowh($width: auto, $height: auto);
                     color: transparent;
                     background: transparent;
                 }
@@ -1168,8 +1150,7 @@
                 float: unset;
                 margin: 0;
                 border-radius: 100px;
-                width: 42px;
-                height: 21px;
+                @include pseudowh($width: 42px, $height: 21px);
                 padding: 0;
                 background-color: rgba(var(--title), 1);
                 background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
@@ -1264,8 +1245,7 @@
                             @include font;
                             background: none;
                             font-size: 21px;
-                            width: auto;
-                            height: auto;
+                            @include pseudowh($width: auto, $height: auto);
                             line-height: 1;
                         }
                     }

@@ -5,8 +5,7 @@
 .step-divider {
     background-color: rgb(248, 248, 248);
     box-shadow: inset 0px 2px 7px rgba(var(--black), 0.08);
-    width: 100%;
-    height: 12px;
+    @include pseudowh($width: 100%, $height: 12px);
     margin-top: 25px;
     margin-bottom: 22px;
 
@@ -33,7 +32,7 @@
     p {
         font-weight: 500;
         font-size: 15px;
-        color: #848f8f;
+        color: rgba(var(--title), 0.6);
         margin: 0;
     }
 }
@@ -50,11 +49,8 @@
         background-color: #e2e2e2;
         border: none;
         border-radius: 100px;
-        width: 100%;
-        height: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include pseudowh($width: 100%, $height: 5px);
+        @include flex_common;
 
         [class="dark"] & {
             background-color: #212332;
@@ -91,11 +87,10 @@
     .checkbox_animated {
         cursor: pointer;
         position: relative;
-        height: 100%;
+        @include pseudowh($width: 20px, $height: 100%);
         float: unset;
         margin: 0;
         border: none;
-        width: 20px;
         margin-top: 2px;
         margin-right: 13px;
 
@@ -106,8 +101,7 @@
 
         &:before {
             @include pos;
-            width: 9px;
-            height: 5px;
+            @include pseudowh($width: 9px, $height: 5px);
             transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
             transform: rotate(-45deg) scale(0, 0);
             left: 4px;
@@ -124,8 +118,7 @@
 
         &:after {
             @include pos;
-            width: 20px;
-            height: 20px;
+            @include pseudowh($width: 20px, $height: 20px);
             top: 0;
             left: -1px;
             border-radius: 3px;
@@ -165,8 +158,7 @@
 .fitness-next-step-button {
     position: fixed;
     bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     max-width: 600px;
     width: 100%;
     padding-inline: 15px;
@@ -269,11 +261,9 @@
 
             &::before {
                 right: 16px;
-                content: "\EA4E";
+                @include pos($pos: absolute, $content: "\EA4E");
                 @include font;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
+                @include center(vertical);
                 font-size: 24px;
 
                 [dir="rtl"] & {
@@ -355,8 +345,7 @@
             display: block;
             box-shadow: 2px 3px 6px rgba(213, 213, 213, 0.42);
             border-radius: 5px;
-            width: 42px;
-            height: 42px;
+            @include pseudowh($width: 42px, $height: 42px);
             @include flex_common;
             font-weight: 400;
             font-size: 18px;
@@ -377,8 +366,7 @@
                 @include pos;
                 top: 6px;
                 right: 6px;
-                width: 4px;
-                height: 4px;
+                @include pseudowh($width: 4px, $height: 4px);
                 border-radius: 100%;
                 background: var(--gradient-color);
                 opacity: 0;
@@ -412,11 +400,8 @@
                 background-color: rgba(var(--white), 1);
                 box-shadow: 0px 3px 4px rgba(51, 131, 239, 0.21);
                 border-radius: 6px;
-                width: 36px;
-                height: 36px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include pseudowh($width: 36px, $height: 36px);
+                @include flex_common;
             }
 
             .step-contain {
@@ -516,8 +501,7 @@
                 }
 
                 svg {
-                    width: 34px;
-                    height: 34px;
+                    @include pseudowh($width: 34px, $height: 34px);
                     fill: transparent;
                     stroke: rgba(var(--title), 1);
                     opacity: 0.7;
@@ -604,8 +588,7 @@
             .boost-image {
                 border-radius: 10px;
                 overflow: hidden;
-                width: 92px;
-                height: 73px;
+                @include pseudowh($width: 92px, $height: 73px);
 
                 @include mq-max(md) {
                     border-radius: calc(6px + (10 - 6) * ((100vw - 320px) / (600 - 320)));
@@ -665,8 +648,7 @@
             @include pos;
             top: 0;
             left: 10px;
-            width: 1px;
-            height: 100%;
+            @include pseudowh($width: 1px, $height: 100%);
             border-left: 1px solid #eee;
 
             [dir="rtl"] & {
@@ -686,8 +668,7 @@
                 @include pos;
                 top: -3px;
                 left: -22px;
-                width: 19px;
-                height: 19px;
+                @include pseudowh($width: 19px, $height: 19px);
                 background-color: rgba(var(--white), 1);
                 border-radius: 100%;
 
@@ -705,8 +686,7 @@
                 @include pos;
                 top: 3px;
                 left: -19px;
-                width: 12px;
-                height: 12px;
+                @include pseudowh($width: 12px, $height: 12px);
                 background-color: rgb(160, 160, 160);
                 border-radius: 100%;
 
@@ -731,8 +711,7 @@
                     position: relative;
 
                     a {
-                        width: 52px;
-                        height: 52px;
+                        @include pseudowh($width: 52px, $height: 52px);
                         @include flex_common;
                         background-color: rgb(249, 249, 249);
                         border-radius: 100%;
@@ -743,8 +722,7 @@
                         line-height: 1;
 
                         @include mq-max(md) {
-                            width: calc(40px + (52 - 40) * ((100vw - 320px) / (600 - 320)));
-                            height: calc(40px + (52 - 40) * ((100vw - 320px) / (600 - 320)));
+                            @include pseudowh($width: calc(40px + (52 - 40) * ((100vw - 320px) / (600 - 320))), $height: calc(40px + (52 - 40) * ((100vw - 320px) / (600 - 320))));
                             font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (600 - 320)));
                         }
 
@@ -759,9 +737,8 @@
                             @include pos;
                             left: -50%;
                             border-top: 1px dashed #ebebeb;
-                            top: 50%;
+                            @include center(vertical);
                             width: 100%;
-                            transform: translateY(-50%);
                             z-index: -1;
 
                             [class="dark"] & {
@@ -812,8 +789,7 @@
 .start-button {
     position: fixed;
     bottom: 17px;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     max-width: 600px;
     padding-inline: 15px;
@@ -844,16 +820,14 @@
             color: rgba(var(--title), 1);
 
             .exercise-image {
-                width: 72px;
-                height: 72px;
+                @include pseudowh($width: 72px, $height: 72px);
                 @include flex_common;
                 padding: 3px 13px;
                 background-color: rgba(var(--light-bg), 1);
                 border-radius: 6px;
 
                 @include mq-max(md) {
-                    width: calc(60px + (72 - 60) * ((100vw - 320px) / (600 - 320)));
-                    height: calc(60px + (72 - 60) * ((100vw - 320px) / (600 - 320)));
+                    @include pseudowh($width: calc(60px + (72 - 60) * ((100vw - 320px) / (600 - 320))), $height: calc(60px + (72 - 60) * ((100vw - 320px) / (600 - 320))));
                 }
             }
 
@@ -891,8 +865,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100%;
-    height: 100vh;
+    @include pseudowh($width: 100%, $height: 100vh);
 }
 
 /* ---------- Gym Category Css ---------- */
@@ -919,8 +892,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 104px;
+                @include pseudowh($width: 100%, $height: 104px);
                 background: linear-gradient(180deg, #2f2f2f 0%, rgba(78, 78, 78, 0) 100%);
                 padding: 14px 22px;
 
@@ -941,8 +913,7 @@
         text-align: center;
 
         .profile-image {
-            width: 80px;
-            height: 80px;
+            @include pseudowh($width: 80px, $height: 80px);
             border-radius: 100%;
             overflow: hidden;
             margin: 0 auto 5px;
@@ -1002,8 +973,7 @@
                 .fitness-menu-icon {
                     background-color: #f9f9f9;
                     border-radius: 5px;
-                    width: 45px;
-                    height: 45px;
+                    @include pseudowh($width: 45px, $height: 45px);
                     font-size: 20px;
                     @include flex_common;
 
@@ -1073,8 +1043,7 @@
                 }
 
                 .workout-icon {
-                    width: 40px;
-                    height: 40px;
+                    @include pseudowh($width: 40px, $height: 40px);
                     background-color: rgba(var(--white), 1);
                     border-radius: 6px;
                     @include flex_common;
@@ -1104,16 +1073,14 @@
 /* ---------- Music Control Css ---------- */
 .music-control-section {
     .bg-image {
-        width: 100%;
-        height: 100vh;
+        @include pseudowh($width: 100%, $height: 100vh);
         object-fit: cover;
     }
 
     .music-control-box {
         position: fixed;
         bottom: 66px;
-        left: 50%;
-        transform: translateX(-50%);
+        @include center(horizontal);
         z-index: 1;
         width: 100%;
         color: rgba(var(--white), 1);
@@ -1129,8 +1096,7 @@
 
             span {
                 background-color: rgba(var(--white), 0.31);
-                width: 100%;
-                height: 4px;
+                @include pseudowh($width: 100%, $height: 4px);
                 border-radius: 100px;
                 position: relative;
 
@@ -1140,11 +1106,9 @@
 
                 &::before {
                     @include pos;
-                    top: 50%;
+                    @include center(vertical);
                     left: 50px;
-                    transform: translateY(-50%);
-                    width: 18px;
-                    height: 18px;
+                    @include pseudowh($width: 18px, $height: 18px);
                     background-color: rgba(var(--white), 1);
                     border-radius: 100%;
 

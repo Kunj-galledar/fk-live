@@ -32,6 +32,7 @@ var filesToCache = [
   // Apex Chart
   './assets/js/vendors/apexcharts.min.js',
   // Main
+  './assets/js/active-class.js',
   './assets/js/active-selection.js',
   './assets/js/country-dropdown.js',
   './assets/js/custom_swiper.js',

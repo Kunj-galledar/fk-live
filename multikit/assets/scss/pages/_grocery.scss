@@ -17,8 +17,7 @@
 
     .remove-minus {
         display: none;
-        width: 18px;
-        height: 18px;
+        @include pseudowh($width: 18px, $height: 18px);
         border: none;
         border-radius: 100%;
         background-color: rgba(var(--white), 1);
@@ -34,8 +33,7 @@
     }
 
     .count-increase {
-        width: 18px;
-        height: 18px;
+        @include pseudowh($width: 18px, $height: 18px);
         border: none;
         border-radius: 100%;
         background-color: rgba(var(--white), 1);
@@ -51,8 +49,7 @@
 
     .add-btn {
         line-height: 1;
-        width: 24px;
-        height: 24px;
+        @include pseudowh($width: 24px, $height: 24px);
         color: rgba(var(--white), 1);
         background-color: rgba(var(--theme-color), 1);
         border-radius: 4px;
@@ -72,8 +69,7 @@
         display: none;
         border: none;
         background-color: transparent;
-        width: 18px;
-        height: 29px;
+        @include pseudowh($width: 18px, $height: 29px);
         text-align: center;
         font-weight: 400;
         font-size: 16px;
@@ -90,34 +86,35 @@
 }
 
 /* ---------- Category CSS ---------- */
-.category-box {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    overflow: auto;
+.grocery-category-box {
+    // display: flex;
+    // align-items: center;
+    // gap: 7px;
+    // overflow: auto;
     padding-bottom: 5px;
 
-    li {
-        a {
-            background-color: rgba(var(--theme-color), 0.05);
-            border-radius: 100px;
-            padding: 11px 21px;
-            color: rgba(var(--title), 1);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            width: max-content;
+    .swiper-slide {
+        width: auto;
+    }
 
-            img {
-                width: 25px;
-                height: 17px;
-            }
+    a {
+        background-color: rgba(var(--theme-color), 0.05);
+        border-radius: 100px;
+        padding: 11px 21px;
+        color: rgba(var(--title), 1);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: max-content;
 
-            span {
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 1;
-            }
+        img {
+            @include pseudowh($width: 25px, $height: 17px);
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1;
         }
     }
 }
@@ -135,6 +132,11 @@
         overflow: hidden;
         position: relative;
 
+        img {
+            @include pseudowh;
+            object-fit: cover;
+        }
+
         .banner-content {
             padding: 15px;
             position: absolute;
@@ -150,6 +152,10 @@
                 color: rgba(var(--title), 1);
                 margin-bottom: 4px;
                 font-size: 18px;
+
+                @include mq-max(md) {
+                    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (600 - 320)));
+                }
 
                 [class="dark"] & {
                     color: #222;
@@ -176,7 +182,7 @@
                 display: inline-block;
 
                 [class="dark"] & {
-                    color: #222;
+                    color: #222 !important;
                 }
             }
         }
@@ -195,8 +201,7 @@
             display: block;
 
             img {
-                width: 76px;
-                height: 51px;
+                @include pseudowh($width: 76px, $height: 51px);
             }
         }
 
@@ -247,13 +252,11 @@
                     right: unset;
                     background-color: transparent;
                     justify-content: flex-end;
-                    width: unset;
-                    height: unset;
+                    @include pseudowh($width: unset, $height: unset);
 
                     .add-btn {
                         font-size: 20px;
-                        height: 24px;
-                        width: 24px;
+                        @include pseudowh($width: 24px, $height: 24px);
                         @include flex_common;
                         border-radius: 4px;
                     }
@@ -274,8 +277,7 @@
 
                     .remove-minus,
                     .count-increase {
-                        width: 22px;
-                        height: 22px;
+                        @include pseudowh($width: 22px, $height: 22px);
                         color: rgba(var(--title), 1);
                         font-size: 16px;
 
@@ -287,8 +289,7 @@
             }
 
             .add-cart {
-                width: 22px;
-                height: 22px;
+                @include pseudowh($width: 22px, $height: 22px);
                 position: absolute;
                 bottom: 0;
                 right: 0;
@@ -329,15 +330,13 @@
             gap: 12px;
 
             .product-image {
-                width: 55px;
-                height: 55px;
+                @include pseudowh($width: 55px, $height: 55px);
                 display: grid;
                 place-items: center;
             }
 
             .product-content {
-                height: 65px;
-                width: calc(100% - 55px - 12px);
+                @include pseudowh($width: calc(100% - 55px - 12px), $height: 65px);
                 display: flex;
                 align-items: flex-end;
                 justify-content: space-between;
@@ -405,8 +404,7 @@
                 }
 
                 img {
-                    width: 79px;
-                    height: 55px;
+                    @include pseudowh($width: 79px, $height: 55px);
                     object-fit: contain;
 
                     @include mq-max(md) {
@@ -522,8 +520,7 @@
                 }
 
                 .product-image {
-                    width: 60px;
-                    height: 60px;
+                    @include pseudowh($width: 60px, $height: 60px);
                     background-color: rgba(var(--theme-color), 0.05);
                     border-radius: 9px;
                     padding: 13px;
@@ -551,13 +548,6 @@
                 }
             }
 
-
-            /*   
-            food
-            learning
-            nft
-            */
-
             .cart-right-box {
                 display: flex;
                 align-items: center;
@@ -573,8 +563,7 @@
                 }
 
                 .remove-button {
-                    width: 32px;
-                    height: 32px;
+                    @include pseudowh($width: 32px, $height: 32px);
                     background-color: rgba(var(--white), 1);
                     box-shadow: 0px -1px 17px rgba(0, 0, 0, 0.05);
                     border-radius: 5px;
@@ -856,8 +845,7 @@
         .qty-box {
             display: flex;
             align-items: center;
-            width: 109px;
-            height: 34px;
+            @include pseudowh($width: 109px, $height: 34px);
             border-radius: 5px;
             overflow: hidden;
             position: relative;
@@ -873,8 +861,7 @@
                 background-color: rgba(var(--white), 1);
                 padding: 0 10px;
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
+                @include center(vertical);
                 font-size: 17px;
                 height: 100%;
 
@@ -927,8 +914,7 @@
 .grocery-location-box {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     max-width: 600px;
     background-color: rgba(var(--white), 1);
@@ -947,8 +933,7 @@
         margin-bottom: 26px;
 
         .icon {
-            width: 28px;
-            height: 28px;
+            @include pseudowh($width: 28px, $height: 28px);
             background-color: rgba(var(--theme-color), 1);
             border-radius: 4px;
             color: rgba(var(--white), 1);
@@ -1052,15 +1037,13 @@
         margin-bottom: 30px;
 
         .profile-image {
-            width: 92px;
-            height: 92px;
+            @include pseudowh($width: 92px, $height: 92px);
             border-radius: 100%;
             overflow: hidden;
             margin: 0 auto 11px;
 
             @include mq-max(md) {
-                width: calc(79px + (92 - 79) * ((100vw - 320px) / (600 - 320)));
-                height: calc(79px + (92 - 79) * ((100vw - 320px) / (600 - 320)));
+                @include pseudowh($width: calc(79px + (92 - 79) * ((100vw - 320px) / (600 - 320))), $height: calc(79px + (92 - 79) * ((100vw - 320px) / (600 - 320))));
             }
         }
 
@@ -1110,16 +1093,14 @@
             color: rgba(var(--title), 1);
 
             img {
-                width: 20px;
-                height: 20px;
+                @include pseudowh($width: 20px, $height: 20px);
                 object-fit: contain;
             }
 
             i {
                 line-height: 1;
                 font-size: 20px;
-                height: 20px;
-                width: 20px;
+                @include pseudowh($width: 20px, $height: 20px);
                 color: rgba(var(--title), 1);
             }
 
@@ -1183,8 +1164,7 @@
 
     .order-icon {
         svg {
-            width: 36px;
-            height: 36px;
+            @include pseudowh($width: 36px, $height: 36px);
             fill: transparent;
             stroke: rgba(var(--white), 1);
 
@@ -1231,16 +1211,14 @@
                 gap: 14px;
 
                 .item-image {
-                    width: 60px;
-                    height: 60px;
+                    @include pseudowh($width: 60px, $height: 60px);
                     background-color: rgba(var(--theme-color), 0.05);
                     border-radius: 9px;
                     display: grid;
                     place-items: center;
 
                     img {
-                        width: 35px;
-                        height: 33px;
+                        @include pseudowh($width: 35px, $height: 35px);
                         object-fit: contain;
                     }
                 }
@@ -1284,8 +1262,7 @@
     gap: 9px;
 
     img {
-        width: 39px;
-        height: 26px;
+        @include pseudowh($width: 39px, $height: 26px);
         object-fit: contain;
     }
 
@@ -1298,8 +1275,7 @@
 
 /* ---------- Order Success Box CSS ---------- */
 .order-success-section {
-    width: 100%;
-    height: calc(100vh - 55px - 82px);
+    @include pseudowh($width: 100%, $height: calc(100vh - 55px - 82px));
     @include flex_common;
 
     .success-order-box {
@@ -1338,16 +1314,14 @@
 /* ---------- 404 CSS ---------- */
 .error-page {
     @include flex_common;
-    width: 100%;
-    height: auto;
+    @include pseudowh($width: 100%, $height: auto);
     padding: 80px 0 150px;
 
     .error-box {
         text-align: center;
 
         .error-image {
-            width: 239px;
-            height: 193px;
+            @include pseudowh($width: 239px, $height: 193px);
             margin: 0 auto;
             margin-bottom: 18px;
         }
@@ -1470,8 +1444,7 @@
             }
 
             .icon {
-                width: 46px;
-                height: 46px;
+                @include pseudowh($width: 46px, $height: 46px);
                 border-radius: 5px;
                 display: grid;
                 place-items: center;
@@ -1531,8 +1504,7 @@
         margin-bottom: 14px;
 
         .icon {
-            width: 46px;
-            height: 46px;
+            @include pseudowh($width: 46px, $height: 46px);
             border-radius: 5px;
             display: grid;
             place-items: center;
@@ -1626,9 +1598,7 @@
         padding: 10px;
         margin-top: 11px;
         width: 133px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex_common;
         gap: 6px;
 
         i {
@@ -1774,8 +1744,7 @@
                     background: none;
                     font-size: 22px;
                     color: rgba(var(--title), 1);
-                    width: unset;
-                    height: unset;
+                    @include pseudowh($width: unset, $height: unset);
                 }
             }
         }
@@ -1801,12 +1770,10 @@
         position: relative;
 
         &::before {
-            content: "";
-            position: absolute;
+            @include pos;
             top: 0;
             left: 0;
-            width: 86%;
-            height: 100%;
+            @include pseudowh($width: 86%, $height: 100%);
             background-color: rgba(var(--theme-color), 0.05);
             border-radius: 0px 0px 15px 0px;
 
@@ -1836,14 +1803,12 @@
 
             .main-slider {
                 .main-product {
-                    width: 248px;
-                    height: 198px;
+                    @include pseudowh($width: 248px, $height: 198px);
                     @include flex_common;
                     margin: 0 auto;
 
                     @include mq-max(md) {
-                        width: calc(163px + (248 - 163) * ((100vw - 320px) / (600 - 320)));
-                        height: calc(169px + (198 - 169) * ((100vw - 320px) / (600 - 320)));
+                        @include pseudowh($width: calc(163px + (248 - 163) * ((100vw - 320px) / (600 - 320))), $height: calc(163px + (248 - 163) * ((100vw - 320px) / (600 - 320))));
                     }
                 }
             }
@@ -1856,16 +1821,14 @@
                     width: 50px;
 
                     .swiper-slide {
-                        width: 50px;
-                        height: 50px !important;
+                        @include pseudowh($width: 50px, $height: 50px !important);
 
                         .thumbnail-image {
                             @include flex_common;
                             background: rgba(var(--white), 1);
                             box-shadow: 0px -1px 17px rgba(var(--black), 0.05);
                             border-radius: 6px;
-                            width: 50px;
-                            height: 50px;
+                            @include pseudowh($width: 50px, $height: 50px);
                             padding: 8px;
                         }
                     }
@@ -1878,9 +1841,8 @@
 .checkout-button-box {
     position: fixed;
     bottom: 0;
-    left: 50%;
+    @include center(horizontal);
     padding: 0 15px 17px;
     width: 100%;
     max-width: 600px;
-    transform: translateX(-50%);
 }

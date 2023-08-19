@@ -106,7 +106,7 @@
                 }
 
                 .mobile-box {
-                    color: var(--theme-color);
+                    color: rgba(var(--theme-color), 1);
                 }
             }
         }
@@ -119,10 +119,14 @@
     bottom: 0;
     @include center(horizontal);
     width: 100%;
-    padding: 20px 15px 20px;
+    padding: 20px 15px;
     max-width: 600px;
     z-index: 1;
     background-color: rgba(var(--white), 1);
+
+    @include mq-max(md) {
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (600 - 320))) 15px;
+    }
 
     [class="dark"] & {
         background-color: #1f2a36;
@@ -188,8 +192,7 @@
 .mobile-style-3 {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     width: 100%;
     padding: 0 20px 15px;
     max-width: 600px;
@@ -236,6 +239,10 @@
 
                     &::before {
                         opacity: 1;
+                    }
+
+                    svg {
+                        stroke: rgba(var(--title), 1);
                     }
                 }
             }
@@ -338,7 +345,6 @@
     position: fixed;
     bottom: 0;
     @include center(horizontal);
-    width: 100%;
     max-width: 600px;
     background-color: rgba(var(--dark-bg), 1);
     z-index: 9;
@@ -410,8 +416,7 @@
 .mobile-style-6 {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     background-color: rgba(var(--theme-color), 1);
     width: 100%;
     max-width: 600px;
@@ -460,8 +465,7 @@
 .mobile-style-7 {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     background-color: rgb(3, 3, 3);
     border: 1px solid rgb(21, 21, 21);
     width: 100%;
@@ -496,12 +500,10 @@
                 text-align: center;
 
                 &::after {
-                    content: "";
-                    position: absolute;
+                    @include pos;
                     top: -10px;
                     left: 0;
-                    width: 100%;
-                    height: 2px;
+                    @include pseudowh($width: 100%, $height: 2px);
                     background-color: rgba(var(--theme-maroon), 1);
                     opacity: 0;
                 }
@@ -523,8 +525,7 @@
         align-items: center;
         position: absolute;
         top: -66px;
-        left: 50%;
-        transform: translateX(-50%);
+        @include center(horizontal);
         padding: 13px 22px;
         background-color: rgba(var(--theme-maroon), 0.3);
         border: 1px solid rgba(var(--theme-maroon), 0.6);
@@ -538,6 +539,7 @@
         }
 
         h5 {
+            white-space: nowrap;
             line-height: 1;
         }
     }
@@ -547,8 +549,7 @@
 .mobile-style-8 {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     background-color: rgba(var(--white), 1);
     width: 100%;
     max-width: 600px;
@@ -557,7 +558,7 @@
 
     [class="dark"] & {
         background-color: #18181a;
-        border-top-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.1);
     }
 
     ul {
@@ -577,7 +578,7 @@
         li {
             &.active {
                 a {
-                    color: rgba(var(--theme-maroon), 1);
+                    color: rgba(var(--theme-color), 1);
 
                     &::after {
                         opacity: 1;
@@ -599,9 +600,8 @@
                     @include pos;
                     top: -10px;
                     left: 0;
-                    width: 100%;
-                    height: 2px;
-                    background-color: rgba(var(--title), 1);
+                    @include pseudowh($width: 100%, $height: 2px);
+                    background-color: rgba(var(--theme-color), 1);
                     opacity: 0;
                 }
 
@@ -615,7 +615,7 @@
 
                 h6 {
                     font-weight: 400;
-                    font-size: 12px;
+                    font-size: 14px;
                 }
             }
         }
@@ -626,8 +626,7 @@
         align-items: center;
         position: absolute;
         top: -66px;
-        left: 50%;
-        transform: translateX(-50%);
+        @include center(horizontal);
         padding: 13px 22px;
         background-color: rgba(var(--theme-maroon), 0.3);
         border: 1px solid rgba(var(--theme-maroon), 0.6);
@@ -650,8 +649,7 @@
 .mobile-style-9 {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     background-color: rgba(var(--white), 1);
     width: 100%;
     max-width: 600px;
@@ -693,8 +691,7 @@
 
             &.cart-button {
                 a {
-                    width: 41px;
-                    height: 41px;
+                    @include pseudowh($width: 41px, $height: 41px);
                     background-color: rgba(var(--theme-color), 1);
                     color: rgba(var(--white), 1);
                     border-radius: 100%;
@@ -714,8 +711,7 @@
 .mobile-style-10 {
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center(horizontal);
     background-color: rgba(var(--white), 1);
     width: 100%;
     max-width: 600px;
@@ -753,13 +749,10 @@
                 position: relative;
 
                 &:before {
-                    content: "";
-                    position: absolute;
+                    @include pos;
                     top: -7px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 4px;
-                    height: 4px;
+                    @include center(horizontal);
+                    @include pseudowh($width: 4px, $height: 4px);
                     background: var(--gradient-color);
                     border-radius: 100%;
                     opacity: 0;
@@ -768,8 +761,7 @@
                 svg {
                     fill: transparent;
                     stroke: #a0a0a0;
-                    width: 24px;
-                    height: 24px;
+                    @include pseudowh($width: 24px, $height: 24px);
                 }
 
                 h6 {
