@@ -41,6 +41,8 @@
     text-overflow: ellipsis; 
     word-wrap: break-word;
 
+    g-3 g-sm-4 product-list-section row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-2
+
 
     <!-- 600 calc width -->
     calc(16px + (20 - 16) * ((100vw - 320px) / (600 - 320)))
@@ -160,3 +162,18 @@ https://sass-guidelin.es/#top
                                     https://www.google.com/search?q=tab+to+top+animation+css+codepen&rlz=1C1VDKB_enIN1000IN1001&oq=tab+to+top+animation+css+&aqs=chrome.1.69i57j33i160.16827j0j1&sourceid=chrome&ie=UTF-8
 
                                     https://we.tl/t-mqmoELykcs
+
+                                    <select2 
+                            class="custom-select intl-tel-input" 
+                            [templates]="template" 
+                            [data]="codes"
+                            formControlName="country_code">
+                            <ng-template #template let-data="data">
+                                <div class="country">
+                                    <div class="flag-box">
+                                        <div class="iti-flag {{data?.class}}"></div>
+                                    </div>
+                                    <span class="dial-code">{{data.code}}</span>
+                                </div>
+                            </ng-template>
+                        </select2>
