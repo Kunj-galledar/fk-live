@@ -1,0 +1,107 @@
+{% extends 'pages/pages/pages-base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% load custom_templatetags %}
+{% load mathfilters %}
+{% block components %}
+
+<!-- Cart Section Start -->
+<section class="wish-list-section section-b-space">
+    <div class="container">
+        <div class="row">
+            {% if totalWishlistProducts|to_int == 0|to_int %}     
+                <!-- Order Success Section Start -->
+                <section class="pt-0">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 p-0">    
+                                <div class="empty-product-box success-icon">
+                                    <img loading="lazy" src="{% static 'assets/images/cartEmpty.png' %}" class="img-fluid"  alt="">
+                                    <div class="success-contain">
+                                        <h4>Your shopping wishlist is empty. Let's add something to it</h4>
+                                    </div>
+                                    <div>
+                                        <a href="{% url 'index_default' %}" class="btn btn-solid-default btn fw-bold mb-0 ms-0">
+                                            <i class="fas fa-arrow-left"></i> Add Products</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Order Success Section End -->
+            {% else %}
+                
+            <div class="col-sm-12 table-responsive">
+                <table class="table cart-table wishlist-table">
+                    <thead>
+                        <tr class="table-head">
+                            <th scope="col">image</th>
+                            <th scope="col">product name</th>
+                            <th scope="col">price</th>
+                            <th scope="col">availability</th>
+                            <th scope="col">action</th>
+                        </tr>
+                    </thead>
+                    {% for product in wishlist_products %}
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="{% url 'shop_left_slidebar' %}">
+                                    <img loading="lazy" src="{{product.variantProduct.productImageFront}}" class=" blur-up lazyload"
+                                        alt="">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'shop_left_slidebar' %}" class="font-light">{{product.variantProduct.productName}}</a>
+                                <div class="mobile-cart-content row">
+                                    <div class="col">
+                                        <p>{{product.productVariantStockStatus}}</p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="fw-bold">{{""|return_currency_wise_symbol:request}}{{product.productVariantFinalPrice|return_currency_wise_ammount:request}}</p>
+                                    </div>
+                                    <div class="col">
+                                        <h2 class="td-color">
+                                            <a href="{% url 'delete_wishlist_product' product.id %}" class="icon">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </h2>
+                                        <h2 class="td-color">
+                                            {% comment %} {% url 'add_to_cart' banner.bannerProduct.variantProduct.id|return_first_product_variant 1 %} {% endcomment %}
+                                            {% comment %} <a href="{% url 'add_to_cart' product.id 1 %}" class="icon"> {% endcomment %}
+                                                <a href="{% url 'add_to_cart_from_wishlist' product.id 1 %}" class="icon">
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="fw-bold">{{""|return_currency_wise_symbol:request}}{{product.productVariantFinalPrice|return_currency_wise_ammount:request}}.00</p>
+                            </td>
+                            <td>
+                                <p>{{product.productVariantStockStatus}}</p>
+                            </td>
+                            <td>
+                                <a href="{% url 'delete_wishlist_product' product.id %}" class="icon">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                                {% comment %} <a href="{% url 'add_to_cart' product.id 1 %}" class="icon"> {% endcomment %}
+                                <a href="{% url 'add_to_cart_from_wishlist' product.id 1 %}" class="icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                   
+                </table>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<!-- Cart Section End -->
+
+{% endblock components %}

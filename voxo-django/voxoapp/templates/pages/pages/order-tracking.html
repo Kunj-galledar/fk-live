@@ -1,0 +1,158 @@
+{% extends 'pages/pages/pages-base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% load custom_templatetags %}
+{% load mathfilters %}
+{% block components %}
+
+    <!-- Order Track Section Start -->
+    <section class="section-b-space">
+        <div class="container">
+            <div class="row">
+                {% for products in productOrders %}
+                    <div class="col-12 overflow-hidden">
+                        <div class="order-left-image ratio_asos">
+                            <div class="tracking-product-image">
+                                <img loading="lazy" src="{{product.productOrderedProducts.variantProduct.productImageFront}}" class="img-fluid bg-img blur-up lazyload"
+                                    alt="">
+                            </div>
+
+                            <div class="order-image-contain">
+                                <h4>{{products.getProducts}}</h4>
+
+                                <div class="tracker-number">
+                                    {% comment %} productOrderOrderId {% endcomment %}
+                                    <p class="font-light">Order Number : <span>{{products.id}}</span></p>
+                                    {% comment %} <p class="font-light">Brand : <span>Display brand here</span></p> {% endcomment %}
+                                    <p class="font-light mb-0">Order Placed : <span>{{products.trackingCreatedAt}}</span></p>
+                                </div>
+                                {% comment %} {{product.productOrderTracking.trackingOrderStatus} {% endcomment %}
+                                {% if products.trackingOrderStatus|to_str == 'Order Processing' %}
+                                <ol class="progtrckr">
+                                    <li class="progtrckr-done">
+                                        <h5>Order Processing</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>Pre-Production</h5>
+                                        <h6>Processing</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>In Production</h5>
+                                        <h6>Pending</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>Shipped</h5>
+                                        <h6>Pending</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>Delivered</h5>
+                                        <h6>Pending</h6>
+                                    </li>
+                                </ol>
+                                {% elif products.trackingOrderStatus|to_str == 'Pre-Production' %}
+                                <ol class="progtrckr">
+                                    <li class="progtrckr-done">
+                                        <h5>Order Processing</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>Pre-Production</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>In Production</h5>
+                                        <h6>Processing</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>Shipped</h5>
+                                        <h6>Pending</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>Delivered</h5>
+                                        <h6>Pending</h6>
+                                    </li>
+                                </ol>
+                                {% elif products.trackingOrderStatus|to_str == 'In Production' %}
+                                <ol class="progtrckr">
+                                    <li class="progtrckr-done">
+                                        <h5>Order Processing</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>Pre-Production</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>In Production</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>Shipped</h5>
+                                        <h6>Processing</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>Delivered</h5>
+                                        <h6>Pending</h6>
+                                    </li>
+                                </ol>
+                                {% elif products.trackingOrderStatus|to_str == 'Shipped' %}
+                                <ol class="progtrckr">
+                                    <li class="progtrckr-done">
+                                        <h5>Order Processing</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>Pre-Production</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>In Production</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>Shipped</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-todo">
+                                        <h5>Delivered</h5>
+                                        <h6>Processing</h6>
+                                    </li>
+                                </ol>
+                                {% else %}
+                                <ol class="progtrckr">
+                                    <li class="progtrckr-done">
+                                        <h5>Order Processing</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>Pre-Production</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>In Production</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>Shipped</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                    <li class="progtrckr-done">
+                                        <h5>Delivered</h5>
+                                        <h6>{{products.trackingModifiedAt}}</h6>
+                                    </li>
+                                </ol>   
+                                {% endif %}
+                                <h5 class="font-light">Your items is on the way. Tracking information will be available
+                                    within 24 hours.</h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+               
+            </div>
+        </div>
+    </section>
+    <!-- Order Track Section End -->
+
+{% endblock components %}

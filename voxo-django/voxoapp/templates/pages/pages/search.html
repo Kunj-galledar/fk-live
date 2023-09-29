@@ -1,0 +1,216 @@
+{% extends 'pages/pages/pages-base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% load custom_templatetags %}
+{% load mathfilters %}
+ 
+
+{% block components %}
+
+
+<!-- Search bar section start -->
+
+<section class="search-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title title1 text-center">
+                    <h2>Search For Products </h2>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <div class="search-bar">
+                    <form id="search-form" action="{% url 'search_bar_with_params' 'params' %}" method='GET'>
+                        <div class="input-group search-bar w-100">
+                            <input type="search" name="search" class="form-control" placeholder="Search">
+                            <button class="input-group-text" id="basic-addon3">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Search bar section end -->
+
+<!-- product section start -->
+<section class="ratio_asos section-b-space">
+    <div class="container">
+        <div class="product-wrapper product-style-2 slide-4 p-0 light-arrow bottom-space">
+            {% if page_obj %}
+            {% for product in page_obj %}      
+            <div> 
+                <div class="product-box">
+                    <div class="img-wrapper">
+                        <div class="front">
+                            <a href="{% url 'left_slidebar' product.variantProduct.id %}">
+                                <img loading="lazy" src="{{product.variantProduct.productImageFront.url}}" class="bg-img blur-up lazyload"
+                                    alt="">
+                            </a>
+                        </div>
+                        <div class="back">
+                            <a href="{% url 'left_slidebar' product.variantProduct.id %}">
+                                <img loading="lazy" src="{{product.variantProduct.productImageBack.url}}" class="bg-img blur-up lazyload"
+                                    alt="">
+                            </a>
+                        </div>
+                        <div class="cart-wrap">
+                            <ul>
+                                <li>
+                                    <a href="{% url 'add_to_cart' product.variantProduct.id|return_first_product_variant 1 %}"
+                                        class="addtocart-btn">
+                                        <i data-feather="shopping-bag"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a onclick="handleQuickView({'productId':'{{product.variantProduct.id}}','productVariantId':'{{product.variantProduct.id|return_first_product_variant}}'})"
+                                        data-bs-toggle="modal" href="#quick-view">
+                                        <i data-feather="eye"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'compare_products' product.variantProduct.id|return_first_product_variant %}" class="add-to-compare-list">
+                                        <i data-feather="refresh-cw"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'add_to_wishlist' product.variantProduct.id|return_first_product_variant %}" class="wishlist">
+                                        <i data-feather="heart"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <div class="rating-details">
+                            <span class="font-light grid-content">{{product.variantProduct.proCategory}}</span>
+                            <ul class="rating mt-0">
+                                <!-- ------------------------------------------------------------------- -->
+                             {% if product.variantProduct.productFinalRating|to_int < 5|to_int %}
+
+                             {% for x in product.variantProduct.productFinalRating|times %}
+                             <li>
+                                 <i class="fas fa-star theme-color"></i>
+                             </li>
+                             {% endfor %}
+
+                             {% with number1=5|to_int number2=product.variantProduct.productFinalRating|to_int %}
+                             {% with number3=number1|sub:number2 %}
+
+
+                             {% for x in number3|times %}
+                             <li>
+                                 <i class="fas fa-star"></i>
+                             </li>
+                             {% endfor %}
+
+                             {% endwith %}
+                             {% endwith %}
+
+                             {% else %}
+
+                             <li>
+                                 <i class="fas fa-star theme-color"></i>
+                             </li>
+                             <li>
+                                 <i class="fas fa-star theme-color"></i>
+                             </li>
+                             <li>
+                                 <i class="fas fa-star theme-color"></i>
+                             </li>
+                             <li>
+                                 <i class="fas fa-star theme-color"></i>
+                             </li>
+                             <li>
+                                 <i class="fas fa-star theme-color"></i>
+                             </li>
+                             {% endif %}
+                             <!-- ------------------------------------------------------------------- -->
+                            </ul>
+                        </div>
+                        <div class="main-price">
+                            <a href="{% url 'left_slidebar' product.variantProduct.id %}" class="font-default">
+                                <h5>{{product.variantProduct.productName}}</h5>
+                            </a>
+                            <div class="listing-content">
+                                <span class="font-light">Regular Fit</span>
+                                <p class="font-light">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Sit, deserunt? Asperiores aliquam voluptatum culpa aliquid ab
+                                    ducimus eaque illum, quibusdam reiciendis id ad consectetur quis, animi
+                                    qui, minus quidem eveniet! Dolorum magnam numquam, asperiores
+                                    accusantium architecto placeat quam officia, tempore repellendus.</p>
+                            </div>
+                            {% if product.variantProduct.productType == "Simple" %}
+                            <h3 class="theme-color">{{""|return_currency_wise_symbol:request}}{{product.variantProduct.product_price_range|return_currency_wise_ammount:request}}</h3>
+                            {% else %}
+                            <h3 class="theme-color">{{product.variantProduct.product_price_range|return_currency_wise_ammount_range:request}}</h3>
+                            {% endif %}
+
+                            <button onclick="location.href = '{% url 'add_to_cart' product.variantProduct.id|return_first_product_variant 1 %}';" class="btn listing-content">Add
+                                To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+            
+        {% if page_obj.has_other_pages %}
+        <div class="page-section">
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+                <a href="{{page_obj.previous_page_number|update_url_parameters:request}}" class="previous">Previous</a>
+            {% endif %}
+            
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <span class="current-page">{{ num }}</span>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a href="{{num|update_url_parameters:request}}" class="page">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+            
+            {% if page_obj.has_next %}
+            <a href="{{page_obj.next_page_number|update_url_parameters:request}}" class="next">Next</a>
+            {% endif %}
+        </div>
+        </div>
+        {% endif %}
+
+        {% else %}
+        <div class="success-icon">
+            <img src="{% static 'assets/images/noproductsfound.png' %}" alt="">
+        </div>
+        {% endif %}  
+    </div>
+</section>
+<!-- product section end -->
+
+<!-- Subscribe Section Start -->
+<section class="subscribe-section section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-6">
+                <div class="subscribe-details">
+                    <h2 class="mb-3">Subscribe Our News</h2>
+                    <h6 class="font-light">Subscribe and receive our newsletters to follow the news about our fresh
+                        and fantastic Products.</h6>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
+                <div class="subsribe-input">
+                    <div class="input-group">
+                        <input type="text" class="form-control subscribe-input" placeholder="Your Email Address">
+                        <button class="btn btn-solid-default" type="button">Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Subscribe Section End -->
+
+{% endblock components %}

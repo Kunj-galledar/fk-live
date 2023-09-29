@@ -1,0 +1,10 @@
+<a onclick="handleQuickView({'productId':'{{product.id}}',
+                             'productVariantId':'{{product.id|return_first_product_variant}}',
+                             'attributeNameList': [
+                                                  {% for attr_id in product.id|return_product_attribute_div_ids %}
+                                                      '{{ attr_id }}',
+                                                  {% endfor %}
+                                                  ]
+                            })" data-bs-toggle="modal" href="#quick-view">
+    <i data-feather="eye"></i>
+</a>

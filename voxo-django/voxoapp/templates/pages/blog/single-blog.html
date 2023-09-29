@@ -1,0 +1,57 @@
+{% load static %}
+{% load sass_tags %}
+{% load custom_templatetags %}
+{% load mathfilters %}
+
+{% if page_obj %}
+    {% for obj in page_obj %}
+        <div class="col-lg-4 col-md-6">
+            <div class="card blog-categority">
+                <a href="{% url 'blog_details' obj.id %}" class="blog-img">
+                    <img loading="lazy" src="{{obj.blogImage}}" alt=""
+                        class="card-img-top blur-up lazyload bg-img">
+                </a>
+                <div class="card-body">
+                    <h5>{{obj.blogSubTitle}}</h5>
+                    <a href="{% url 'blog_details' obj.id %}">
+                        <h2 class="card-title">{{obj.blogTitle}}</h2>
+                    </a>
+                    <div class="blog-profile">
+                        <div class="image-name">
+                            <h3>{{obj.blogAuthor.username}}</h3>
+                            <h6>{{obj.createdAt|date:"d M Y"}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+<div>
+    <h2 style="text-align:center"> No Blogs Yet</h2>
+</div>
+{% endif %}
+
+{% comment %} {% if page_obj.has_other_pages %}
+ <div class="page-section">
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="previous">Previous</a>
+        {% endif %}
+                    
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <span class="current-page">{{ num }}</span>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a href="?page={{ num }}" class="page">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+                    
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="next">Next</a>
+        {% endif %}
+    </div>
+    </div>
+{% endif %}
+
+{% endif %} {% endcomment %}

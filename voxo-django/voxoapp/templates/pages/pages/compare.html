@@ -1,0 +1,227 @@
+{% extends 'pages/pages/pages-base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% load custom_templatetags %}
+{% load mathfilters %}
+{% block components %}
+
+<!-- Compare Section Start -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="comparemodal-body">
+                    <div class="table-wrapper table-responsive ratio_asos">
+                        {% include 'includes/alerts.html' %}
+
+                        <table class="table table-striped-1">
+                            {% if compare_products %}
+
+                            <tbody>
+                                {% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr class="table-product-details">
+                                    <td></td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    <td>
+                                        <div class="product-box">
+                                            <div class="product-image">
+                                                <a class="w-100 blur-up lazyload" href="{% url 'left_slidebar' product.variantProduct.id %}">
+                                                    <img loading="lazy" src="{{product.variantProduct.productImageFront}}"
+                                                        class="img-fluid bg-img blur-up lazyload" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-details">
+                                                <div>
+                                                    <a href="{% url 'left_slidebar' product.variantProduct.id %}">
+                                                        <h6 class="fw-bold">{{product.variantProduct.productName}}</h6>
+                                                    </a>
+                                                </div>
+
+                                                <div class="price-details mt-2">
+                                                    <h6 class="font-green">{{""|return_currency_wise_symbol:request}}{{product.productVariantFinalPrice|return_currency_wise_ammount:request}}
+                                                        <span class="font-light mx-2"><del id="actualPrice">{{""|return_currency_wise_symbol:request}}{{product.productVariantPrice|return_currency_wise_ammount:request}}</del></span>
+                                                        <span class="theme-color">{{product.productVariantDiscount}}% off</span>
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    {% endfor %}
+                                    
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                        
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr class="table-cart-button">
+                                    <td></td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    <td>
+                                        <a href="{% url 'add_to_cart_from_compare' product.id 1 %}" class="btn btn-solid-blue">+ Add to cart</a>
+
+                                    </td> 
+                                    {% endfor %}
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr>
+                                    <td>Customer Rating</td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    <td>
+                                        <div class="d-flex align-items-center my0">
+                                            <ul class="rating my-0">
+                                                {% comment %} ----------------- {% endcomment %}
+                                                  
+                                                {% if product.variantProduct.productFinalRating|to_int < 5|to_int %}
+
+                                                
+                                                {% for x in product.variantProduct.productFinalRating|times %}
+                                                <li>
+                                                    <i class="fas fa-star theme-color"></i>
+                                                </li>
+                                                {% endfor %}
+
+                                                {% with number1=5|to_int number2=product.variantProduct.productFinalRating|to_int %}
+                                                {% with number3=number1|sub:number2 %}
+                                            
+
+                                                {% for x in number3|times %}
+                                                <li>
+                                                    <i class="fas fa-star"></i>
+                                                </li>
+                                                {% endfor %}
+
+                                                {% endwith %}
+                                                {% endwith %}
+
+                                                {% else %}
+
+                                                <li>
+                                                    <i class="fas fa-star theme-color"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star theme-color"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star theme-color"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star theme-color"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star theme-color"></i>
+                                                </li>
+                                                {% endif %}
+                                                {% comment %} ----------------- {% endcomment %}
+                                            </ul>
+
+                                            <span class="font-light ms-2">( {{product.variantProduct.productNoOfReview}} Review )</span>
+                                        </div>
+                                    </td>
+                                    {% endfor %}
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                        
+
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr>
+                                    <td>BRAND</td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    <td>{{product.variantProduct.productBrand}}</td>    
+                                    {% endfor %}
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+
+
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr>
+                                    <td>Generic Name</td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    <td>{{product.variantProduct.proCategory}}</td>
+                                    {% endfor %}   
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr>
+                                    <td>Department</td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    <td>Men</td>
+                                    {% endfor %}   
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr>
+                                    <td>Vendor</td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    <td>{{product.variantProduct.productVendor.username}}</td>
+                                    {% endfor %}   
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}    
+
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr>
+                                    <td>Attribute</td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    {% if product %}
+                                        {% comment %} {% for attribute in product.productVariantAttribute.all %} {% endcomment %}
+                                    {% comment %} <td>{{product.productVariantAttribute.all}}</td> {% endcomment %}
+                                        {% comment %} <td>{{ attribute }}</td> {% endcomment %}
+                                        {% comment %} {% if not forloop.last %}-{% endif %} {% endcomment %}
+                                        {% comment %} {% endfor %}    {% endcomment %}
+                                        <td>{{product.productVariantAttribute.all|join:" , " }}</td>
+                                        
+                                        {% else %}
+                                        {% comment %} <td>Simple</td> {% endcomment %}
+                                        <td>{{product.productVariantAttribute.all|join:" , " }}</td>
+
+                                        {% endif %}
+                                        {% endfor %}   
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                                <tr>
+                                    <td>Date First Available</td>
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+                                    {% for product in compare_products %}
+                                    <td>{{product.variantProduct.productCreatedAt}}</td>
+                                    {% endfor %}   
+                                    {% comment %} ------------------------------------------------------ {% endcomment %}
+
+                                </tr>
+{% comment %} ------------------------------------------------------------------------------------------ {% endcomment %}
+                            </tbody>
+                                
+                            {% else %}
+                            <div class="empty-product-box success-icon">
+                                <img loading="lazy" src="{% static 'assets/images/compare.png' %}" alt="">
+                                <div class="success-contain">
+                                    <h4>Your compare list is empty. Let's add something to it</h4>
+                                </div>
+                                <div>
+                                    <a href="{% url 'index_default' %}" class="btn btn-solid-default btn fw-bold mb-0 ms-0">
+                                        <i class="fas fa-arrow-left"></i> Add Product</a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </table>
+                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Compare Section End -->
+
+{% endblock components %}

@@ -1,0 +1,183 @@
+{% extends 'pages/shop/shop-base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% load custom_templatetags %}
+{% load mathfilters %}
+{% block components %}
+
+
+<!-- Blog Section Start -->
+<section id="portfolio" class="left-sidebar-section masonary-blog-section section-b-space">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-9 col-md-7 order-md-1 ratio3_2">
+                <div class="row g-4">
+                    {% if page_obj %}
+                    {% for obj in page_obj %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card blog-categority">
+                            <a href="{% url 'blog_details' obj.id %}" class="blog-img">
+                                <img loading="lazy" src="/{{obj.blogImage}}" alt=""
+                                    class="card-img-top blur-up lazyload bg-img">
+                            </a>
+                            <div class="card-body">
+                                <h5>{{obj.blogSubTitle}}</h5>
+                                <a href="{% url 'blog_details' obj.id %}">
+                                    <h2 class="card-title">{{obj.blogTitle}}</h2>
+                                </a>
+                                <div class="blog-profile">
+                                    <div class="image-name">
+                                        <h3>{{obj.blogAuthor.username}}</h3>
+                                        <h6>{{obj.createdAt|date:"M d, Y"}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% if page_obj.has_other_pages %}
+                    <div class="page-section">
+                        <div class="pagination">
+                            {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" class="previous">Previous</a>
+                            {% endif %}
+
+                            {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                            <span class="current-page">{{ num }}</span>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <a href="?page={{ num }}" class="page">{{ num }}</a>
+                            {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="next">Next</a>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    <div>
+                        <h2 style="text-align:center"> No Blogs Yet </h2>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="col-lg-3 col-md-5">
+                    <div class="left-side">
+                        <!-- Search Bar Start -->
+                        <div class="search-section">
+                            <div class="input-group search-bar">
+                                <input type="search" class="form-control search-input" placeholder="Search">
+                                <button class="input-group-text search-button" id="basic-addon2">
+                                    <i class="fas fa-search text-color"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Search Bar End -->
+    
+                        <!-- Popular Post Start -->
+                        <div class="popular-post mt-4">
+    
+                            <div class="popular-title">
+                                <h3>Popular Posts</h3>
+                            </div>
+    
+                            <div class="popular-image">
+                                <div class="popular-number">
+                                    <h4 class="theme-color">01</h4>
+                                </div>
+                                <div class="popular-contain">
+                                    <h3>Lorem Ipsum is simply dummy text of the printing.</h3>
+                                    <p class="font-light mb-1"><span>King Monster</span> in <span>News</span></p>
+                                    <div class="review-box">
+                                        <span class="font-light clock-time"><i data-feather="clock"></i>15m ago</span>
+                                        <span class="font-light eye-icon"><i data-feather="eye"></i>8641</span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="popular-image">
+                                <div class="popular-number">
+                                    <h4 class="theme-color">02</h4>
+                                </div>
+                                <div class="popular-contain">
+                                    <h3>Lorem Ipsum is simply dummy text of the printing.</h3>
+                                    <p class="font-light mb-1"><span>King Monster</span> in <span>News</span></p>
+                                    <div class="review-box">
+                                        <span class="font-light clock-time"><i data-feather="clock"></i>15m ago</span>
+                                        <span class="font-light eye-icon"><i data-feather="eye"></i>8641</span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="popular-image">
+                                <div class="popular-number">
+                                    <h4 class="theme-color">03</h4>
+                                </div>
+                                <div class="popular-contain">
+                                    <h3>Lorem Ipsum is simply dummy text of the printing.</h3>
+                                    <p class="font-light mb-1"><span>King Monster</span> in <span>News</span></p>
+                                    <div class="review-box">
+                                        <span class="font-light clock-time"><i data-feather="clock"></i>15m ago</span>
+                                        <span class="font-light eye-icon"><i data-feather="eye"></i>8641</span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="popular-image">
+                                <div class="popular-number">
+                                    <h4 class="theme-color">04</h4>
+                                </div>
+                                <div class="popular-contain">
+                                    <h3>Lorem Ipsum is simply dummy text of the printing.</h3>
+                                    <p class="font-light mb-1"><span>King Monster</span> in <span>News</span></p>
+                                    <div class="review-box">
+                                        <span class="font-light clock-time"><i data-feather="clock"></i>15m ago</span>
+                                        <span class="font-light eye-icon"><i data-feather="eye"></i>8641</span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <!-- Popular Post End -->
+    
+                        <!-- Category section Start -->
+                        <div class="category-section popular-post mt-4">
+                            <div class="popular-title">
+                                <h3>Category</h3>
+                            </div>
+                            <ul>
+                                {% for category in blogCategories %}
+                                <li class="category-box">
+                                    <a href="{% url 'left_sidebar_for_selected_category' category.id %}">
+                                        <div class="category-product">
+                                            <div class="cate-shape">
+                                                {% comment %} <i src="{{category.categoryImage}}"
+                                                    class="fas fa-globe text-color"></i> {% endcomment %}
+                                                <img loading="lazy" src="/{{category.categoryImage}}"
+                                                    class="img-rounded img-fluid" alt="Cinque Terre">
+                                            </div>
+    
+                                            <div class="cate-contain">
+                                                <h5 class="text-color">{{category.categoryName}}</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                {% endfor %}
+    
+                            </ul>
+                        </div>
+                        <!-- Category section End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Section End -->
+
+
+
+{% endblock components %}

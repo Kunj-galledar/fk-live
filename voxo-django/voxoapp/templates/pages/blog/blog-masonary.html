@@ -1,0 +1,82 @@
+{% extends 'pages/shop/shop-base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% load custom_templatetags %}
+{% load mathfilters %}
+{% block components %}
+
+<!-- Masonary Blog Section Start -->
+<section class="masonary-blog-section section-b-space">
+    <div class="container">
+        <div class="row g-4 filter-gallery mt-3 grid">
+            {% if page_obj %}
+            {% for obj in page_obj %}
+
+            <div class="grid-item col-lg-3 col-md-4 col-sm-6">
+                <div class="card masonary-blog">
+                    <a href="{% url 'blog_details' obj.id %}">
+                        <img loading="lazy" src="/{{obj.blogImage}}" alt="" class="card-img-top blur-up lazyload">
+                    </a>
+                    <div class="card-body">
+                        <a href="{% url 'blog_details' obj.id %}">
+                            <h2 class="card-title">{{obj.blogTitle}}</h2>
+                        </a>
+                        <p class="font-light">{{obj.blogDescription|safe}}</p>
+                        <div class="blog-profile">
+                            <div class="image-profile">
+                                <img loading="lazy" src="/{{obj.blogAuthor.profilePicture}}"
+                                    class="img-fluid blur-up lazyload" alt="">
+                            </div>
+                            <div class="image-name">
+                                <h3>{{obj.blogAuthor.username}}</h3>
+                                <h6>{{obj.createdAt|date:"M d, Y"}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% if page_obj.has_other_pages %}
+            <div class="page-section">
+                <div class="pagination">
+                    {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="previous">Previous</a>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                    <span class="current-page">{{ num }}</span>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a href="?page={{ num }}" class="page">{{ num }}</a>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="next">Next</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            {% else %}
+            <div>
+                <h2 style="text-align:center"> No Blogs Yet </h2>
+            </div>
+            {% endif %}
+
+            
+        </div>
+    </div>
+</section>
+<!-- Masonary Blog Section End -->
+
+{% endblock components %}
+
+
+{% block script %}
+
+<!-- masonary js -->
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/portfolio.js' %}"></script>
+
+{% endblock script %}
