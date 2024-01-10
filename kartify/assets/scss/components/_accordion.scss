@@ -1,0 +1,28 @@
+.custom-accordion {
+    display: grid;
+    gap: 13px;
+
+    .accordion-item {
+        border-radius: 0;
+        border: 1px solid rgba(var(--content-color), 0.1);
+
+        .accordion-header {
+            .accordion-button {
+                background-color: rgba(var(--base-gray), 1);
+                box-shadow: unset;
+                padding: 14px 21px;
+                font-size: 20px;
+                color: rgba(var(--title-color), 1);
+
+                &::after {
+                    content: "\ea4e";
+                    @include font;
+                    background: unset;
+                    width: auto;
+                    height: unset;
+                    color: rgba(var(--title-color), 0.8);
+                }
+            }
+        }
+    }
+}

@@ -182,3 +182,49 @@ notifiWishlist.addEventListener("click", function () {
 
     $.notify(options, settings);
 });
+
+/*=====================
+    header Dropdown Js
+==========================*/
+// document.querySelectorAll(".dropdown-menu li a").forEach(function (link) {
+//     link.addEventListener("click", function () {
+//         var a = this.closest("a");
+//         var getSampling = a.textContent.trim();
+//         // var getImage = a.querySelector('img').getAttribute('src');
+
+//         var dropdownToggle = this.closest(".dropdown-menu").previousElementSibling;
+//         dropdownToggle.querySelector('span').textContent = getSampling;
+//         // dropdownToggle.querySelector('img').setAttribute("src", getImage);
+//     });
+// });
+
+/*=====================
+    Switch Authentication Js
+==========================*/ 
+let myPopup = document.querySelector(".login-box");
+let btnClose = document.querySelector(".next-button");
+let myPopup2 = document.querySelector(".signup-box");
+let btnClose2 = document.querySelector(".next-button2");
+
+setTimeout(poPup, 2000);
+setTimeout(poPup2, 2000);
+
+function poPup() {
+    myPopup.style.display = "block";
+    myPopup2.style.display = "none";
+}
+
+btnClose.onclick = function () {
+    myPopup.style.display = "none";
+    myPopup2.style.display = "block";
+};
+
+function poPup2() {
+    myPopup.style.display = "block";
+    myPopup2.style.display = "none";
+}
+
+btnClose2.onclick = function () {
+    myPopup.style.display = "block";
+    myPopup2.style.display = "none";
+};

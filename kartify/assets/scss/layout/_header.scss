@@ -503,11 +503,11 @@
                         }
 
                         .iconsax {
-                            --Icon-Size: 25px;
-                            --Icon-Color: rgba(var(--white), 1);
+                            --size: 25px;
+                            --Color: rgba(var(--white), 1);
 
                             @include mq-max(lg) {
-                                --Icon-Size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
+                                --size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
                             }
                         }
 
@@ -746,50 +746,50 @@
                     }
 
                     .form-control {
-                        border: 1px solid rgba(var(--content-color), 0.2);
+                        border: 1px solid rgba(var(--content-color), 0.1);
                         border-left: unset;
                         border-right: unset;
                         padding: 15px;
                         font-weight: 400;
                         font-size: 14px;
                         color: rgba(var(--content-color), 1);
-                        width: 780px;
+                        // width: 580px;
+                        width: calc(260px + (580 - 260) * ((100vw - 992px) / (1920 - 992)));
                         z-index: 0;
 
-                        @media (max-width: 1667px) {
-                            width: 690px;
-                        }
+                        // @media (max-width: 1667px) {
+                        //     width: 690px;
+                        // }
 
-                        @media (max-width: 1550px) {
-                            width: 590px;
-                        }
+                        // @media (max-width: 1550px) {
+                        //     width: 590px;
+                        // }
 
-                        @media (max-width: 1420px) {
-                            width: 450px;
-                        }
+                        // @media (max-width: 1420px) {
+                        //     width: 450px;
+                        // }
 
-                        @media (max-width: 1254px) {
-                            width: 290px;
-                        }
+                        // @media (max-width: 1254px) {
+                        //     width: calc(260px + (290 - 260) * ((100vw - 992px) / (1254 - 992)));
+                        // }
 
                         @media (max-width: 1061px) {
-                            border-radius: 0 6px 6px 0 !important;
-                            padding-right: 45px;
-                            border: 1px solid rgba(var(--content-color), 0.2);
+                            // border-radius: 0 6px 6px 0 !important;
+                            // padding-right: 45px;
+                            // border: 1px solid rgba(var(--content-color), 0.2);
                             border-left: unset;
                         }
 
-                        @media (max-width: 992px) {
-                            width: 100%;
-                            background-color: #F2F3F6;
-                            border-radius: 0 5px 5px 0 !important;
-                        }
+                        // @media (max-width: 992px) {
+                        //     width: 100%;
+                        //     background-color: #F2F3F6;
+                        //     border-radius: 0 5px 5px 0 !important;
+                        // }
                     }
 
                     .input-group-text {
                         padding: 0;
-                        border: none;
-                        background-color: #e6e7e9;
+                        background-color: rgba(var(--base-gray), 1);
                         border-radius: 5px 0 0 5px !important;
                         border: 1px solid transparent;
 
@@ -806,7 +806,7 @@
 
                     .search-button {
                         background-color: rgba(var(--theme-color), 1);
-                        border: 1px solid rgba(var(--content-color), 0.2);
+                        border: 1px solid rgba(var(--content-color), 0.1);
                         padding: 14px 15px 14px 0;
                         border-left: unset;
                         line-height: 1;
@@ -815,13 +815,13 @@
                         color: rgba(var(--content-color), 1);
                         z-index: 1;
 
-                        @media (max-width: 1061px) {
-                            position: absolute;
-                            @include center(vertical);
-                            right: 0;
-                            border: none;
-                            height: 100%;
-                        }
+                        // @media (max-width: 1061px) {
+                        //     position: absolute;
+                        //     @include center(vertical);
+                        //     right: 0;
+                        //     border: none;
+                        //     height: 100%;
+                        // }
 
                         @include mq-max(lg) {
                             display: none;
@@ -907,11 +907,11 @@
                         }
 
                         .iconsax {
-                            --Icon-Size: 25px;
-                            --Icon-Color: rgba(var(--title-color), 1);
+                            --size: 25px;
+                            --Color: rgba(var(--title-color), 1);
 
                             @include mq-max(lg) {
-                                --Icon-Size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
+                                --size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
                             }
                         }
 
@@ -940,8 +940,9 @@
                             @include pseudowh($width: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))), $height: calc(13px + (18 - 13) * ((100vw - 320px) / (1920 - 320))));
                             border-radius: 100%;
                             @include flex_common;
-                            font-size: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320)));
+                            font-size: calc(11px + (12 - 11) * ((100vw - 320px) / (1920 - 320)));
                             font-weight: 500;
+                            line-height: 1;
                         }
                     }
                 }
@@ -1025,7 +1026,7 @@
         }
 
         .category-header {
-            padding-block: 6px;
+            padding-block: 12px;
 
             .category-button {
                 background-color: rgba(var(--theme-color3), 1);
@@ -1068,7 +1069,7 @@
                         @include center(vertical);
                         left: 0;
                         @include pseudowh($width: 1px, $height: 20px);
-                        background-color: rgba(var(--white), 0.4);
+                        background-color: rgba(var(--white), 0.2);
                     }
                 }
 
@@ -1115,7 +1116,7 @@
                         @include center(vertical);
                         @include pseudowh($width: 1px, $height: 20px);
                         left: 0;
-                        background-color: rgba(var(--title-color), 0.4);
+                        background-color: rgba(var(--title-color), 0.2);
                     }
                 }
 
@@ -1218,8 +1219,7 @@
             left: 0;
             bottom: -11px;
             background-image: url(../svg/header-shape.svg);
-            height: 11px;
-            width: 100%;
+            @include pseudowh($width: 100%, $height: 11px);
             z-index: -1;
         }
 
@@ -1704,11 +1704,11 @@
                         }
 
                         .iconsax {
-                            --Icon-Size: 25px;
-                            --Icon-Color: rgba(var(--title-color), 1);
+                            --size: 25px;
+                            --Color: rgba(var(--title-color), 1);
 
                             @include mq-max(lg) {
-                                --Icon-Size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
+                                --size: calc(17px + (25 - 17) * ((100vw - 320px) / (991 - 320)));
                             }
                         }
 

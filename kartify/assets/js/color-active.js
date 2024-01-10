@@ -5,16 +5,16 @@ document.querySelectorAll(".color-box-list li a").forEach(function (button) {
 });
 
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     document.querySelectorAll('.option-box .select-btn').forEach(function (button) {
-//         button.addEventListener("click", function () {
-//             document.querySelector('.select-option-box').classList.add("show");
-//         });
-//     });
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.option-box .select-btn').forEach(function (button) {
+        button.addEventListener("click", function () {
+            document.querySelector('.select-option-box').classList.add("show");
+        });
+    });
 
-//     document.querySelectorAll('.close-btn').forEach(function (closeBtn) {
-//         closeBtn.addEventListener("click", function () {
-//             document.querySelector('.select-option-box').classList.remove("show");
-//         });
-//     });
-// });
+    document.querySelectorAll('.close-btn').forEach(function (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+            document.querySelector('.select-option-box').classList.remove("show");
+        });
+    });
+});

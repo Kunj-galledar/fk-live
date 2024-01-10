@@ -3,6 +3,9 @@
 ==========================**/
 .custom-pagination {
     margin-top: calc(22px + (35 - 22) * ((100vw - 320px) / (1920 - 320)));
+    padding: 10px;
+    background-color: rgba(var(--white), 1);
+    border-radius: 5px;
 
     .pagination {
         flex-wrap: wrap;
@@ -33,6 +36,7 @@
                     background-color: rgba(var(--theme-color), 1);
                     border-color: rgba(var(--theme-color), 1);
                     color: rgba(var(--white), 1);
+                    --Color: rgba(var(--white), 1);
                 }
             }
 
@@ -48,10 +52,11 @@
                 border: 1px solid transparent;
                 border-radius: 5px;
                 z-index: 0;
-                width: 40px;
-                height: 40px;
+                @include pseudowh($width: 40px, $height: 40px);
                 @include flex_common;
                 background-color: rgba(var(--light-gray), 1);
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                --size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
 
                 &:hover {
                     border: 1px solid rgba(var(--theme-color), 1);

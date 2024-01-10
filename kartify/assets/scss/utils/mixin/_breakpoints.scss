@@ -1,7 +1,7 @@
 /**=====================
     breakpoint mixins css start
 ==========================**/
-// min width
+/* min width */
 @mixin mq-min($breakpoint) {
     @if map-has-key($min-breakpoints, $breakpoint) {
         $breakpoint-value: map-get($min-breakpoints, $breakpoint);
@@ -16,7 +16,7 @@
     }
 }
 
-// max width
+/* max width */
 @mixin mq-max($breakpoint) {
     @if map-has-key($max-breakpoints, $breakpoint) {
         $breakpoint-value: map-get($max-breakpoints, $breakpoint);
@@ -31,7 +31,7 @@
     }
 }
 
-// min and max
+/* min and max */
 @mixin mq-between($lower, $upper) {
     @if map-has-key($max-breakpoints, $lower) and map-has-key($min-breakpoints, $upper) {
         $lower-breakpoint: map-get($max-breakpoints, $lower);
