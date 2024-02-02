@@ -10,6 +10,27 @@
 
 /*======= Font Awesome Font Family And Weight End  ======= */
 
+/*======= Position Start  ======= */
+@mixin position ($width: 100%, $height: 100%, $pos: absolute, $content: "") {
+    content: $content;
+    position: $pos;
+    width: $width;
+    height: $height;
+    top: 0;
+    left: 0;
+}
+
+/*======= Position End  ======= */
+
+/*======= Breakpoint Start  ======= */
+@mixin break($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+
+/*======= Breakpoint End  ======= */
+
 /*======= position css starts  ======= */
 @mixin pos($pos: absolute, $content: "") {
     content: $content;

@@ -1,15 +1,15 @@
 .form-floating {
   position: relative;
 
-  > .form-control,
-  > .form-control-plaintext,
-  > .form-select {
+  >.form-control,
+  >.form-control-plaintext,
+  >.form-select {
     height: $form-floating-height;
     min-height: $form-floating-height;
     line-height: $form-floating-line-height;
   }
 
-  > label {
+  >label {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,8 +26,8 @@
     @include transition($form-floating-transition);
   }
 
-  > .form-control,
-  > .form-control-plaintext {
+  >.form-control,
+  >.form-control-plaintext {
     padding: $form-floating-padding-y $form-floating-padding-x;
 
     &::placeholder {
@@ -39,6 +39,7 @@
       padding-top: $form-floating-input-padding-t;
       padding-bottom: $form-floating-input-padding-b;
     }
+
     // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
     &:-webkit-autofill {
       padding-top: $form-floating-input-padding-t;
@@ -46,16 +47,16 @@
     }
   }
 
-  > .form-select {
+  >.form-select {
     padding-top: $form-floating-input-padding-t;
     padding-bottom: $form-floating-input-padding-b;
   }
 
-  > .form-control:focus,
-  > .form-control:not(:placeholder-shown),
-  > .form-control-plaintext,
-  > .form-select {
-    ~ label {
+  >.form-control:focus,
+  >.form-control:not(:placeholder-shown),
+  >.form-control-plaintext,
+  >.form-select {
+    ~label {
       color: rgba(var(--#{$prefix}body-color-rgb), #{$form-floating-label-opacity});
       transform: $form-floating-label-transform;
 
@@ -70,22 +71,24 @@
       }
     }
   }
+
   // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
-  > .form-control:-webkit-autofill {
-    ~ label {
+  >.form-control:-webkit-autofill {
+    ~label {
       color: rgba(var(--#{$prefix}body-color-rgb), #{$form-floating-label-opacity});
       transform: $form-floating-label-transform;
     }
   }
 
-  > .form-control-plaintext {
-    ~ label {
+  >.form-control-plaintext {
+    ~label {
       border-width: $input-border-width 0; // Required to properly position label text - as explained above
     }
   }
 
-  > :disabled ~ label,
-  > .form-control:disabled ~ label { // Required for `.form-control`s because of specificity
+  > :disabled~label,
+  >.form-control:disabled~label {
+    // Required for `.form-control`s because of specificity
     color: $form-floating-label-disabled-color;
 
     &::after {
