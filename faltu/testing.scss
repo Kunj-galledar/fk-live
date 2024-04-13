@@ -1,0 +1,234 @@
+/**=====================
+     Seller Grid Scss
+==========================**/
+.seller-grid-box {
+  background-color: $light-gray;
+  padding: calc(12px + (25 - 12) * ((100vw - 320px) / (1920 - 320)));
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 0 10px rgba($title-color, 0.05);
+  display: block;
+
+  .grid-contain {
+    .seller-contact-details {
+      @include flex_wrap($dis: flex, $wrap: wrap, $gap: 7px);
+      margin-bottom: 25px;
+
+      .saller-contact {
+        @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 5px);
+        align-items: flex-start;
+        width: 100%;
+
+        .seller-icon {
+          i {
+            @include flex_common;
+            @include pseudowh($width: 25px, $height: 25px);
+            font-size: 16px;
+            color: var(--theme-color);
+          }
+        }
+
+        .contact-detail {
+          h5 {
+            line-height: 1.6;
+            color: $title-color;
+
+            span {
+              color: $content-color;
+            }
+          }
+        }
+      }
+    }
+
+    .contain-name {
+      @include flex_common($dis: flex, $align: flex-end, $justify: space-between);
+
+      h6 {
+        color: $content-color;
+        margin-left: 4px;
+
+        body.rtl & {
+          margin-left: unset;
+          margin-right: 4px;
+        }
+      }
+
+      h3 {
+        font-size: calc(19px + (23 - 19) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 600;
+        margin-bottom: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
+        color: $title-color;
+      }
+
+      .product-rating {
+        margin-bottom: calc(14px + (19 - 14) * ((100vw - 320px) / (1920 - 320)));
+      }
+
+      .product-label {
+        padding: 5px 10px;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        border-radius: 4px;
+        color: var(--theme-color);
+        position: relative;
+        z-index: 0;
+
+        &:after {
+          @include pos;
+          @include pseudowh;
+          background-color: var(--theme-color);
+          opacity: 0.1;
+          left: 0;
+          top: 0;
+          z-index: -1;
+        }
+      }
+
+      .grid-image {
+        @include pseudowh($width: calc(67px + (100 - 67) * ((100vw - 320px) / (1920 - 320))),
+          $height: calc(67px + (100 - 67) * ((100vw - 320px) / (1920 - 320))));
+        @include flex_common;
+        background: $white;
+        padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)));
+        border-radius: calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
+        box-shadow: 0 0 8px rgba($title-color, 0.07);
+
+        h1 {
+          color: $content-color;
+          line-height: 1;
+          font-size: calc(43px + (70 - 43) * ((100vw - 320px) / (1920 - 320)));
+        }
+      }
+    }
+  }
+}
+
+.seller-grid-box-1 {
+  .grid-image {
+    @include flex_wrap($dis: flex, $wrap: nowrap, $gap: 18px);
+    align-items: center;
+    margin-bottom: 20px;
+
+    .image {
+      @include pseudowh($width: 66px, $height: 66px);
+      border-radius: 11px;
+    }
+
+    .contain-name {
+      width: calc(100% - 66px - 18px);
+      position: relative;
+
+      .since-number {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        background-color: $light-gray;
+        right: 0;
+        padding-left: 5px;
+
+        body.rtl & {
+          right: unset;
+          left: 0;
+        }
+
+        @include mq-max(xs) {
+          display: block;
+        }
+
+        h6 {
+          color: $content-color;
+        }
+
+        .product-rating {
+          display: block;
+          text-align: right;
+
+          body.rtl & {
+            text-align: left;
+          }
+
+          @include mq-max(xs) {
+            margin-top: 2px;
+          }
+        }
+      }
+
+      h3 {
+        font-size: calc(19px + (23 - 19) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: $title-color;
+        width: 50%;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+      }
+
+      .product-label {
+        padding: 5px 10px;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        border-radius: 4px;
+        color: var(--theme-color);
+        position: relative;
+        z-index: 0;
+
+        &:after {
+          @include pos($pos: absolute, $content: "");
+          background-color: var(--theme-color);
+          opacity: 0.1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  .grid-contain {
+    .seller-category {
+      @include flex_common($dis: flex, $align: center, $justify: space-between);
+
+      .product-image {
+        display: flex;
+        flex-wrap: nowrap;
+
+        li {
+          @include pseudowh($width: calc(35px + (40 - 35) * ((100vw - 320px) / (1920 - 320))),
+            $height: calc(35px + (40 - 35) * ((100vw - 320px) / (1920 - 320))));
+          @include flex_common;
+          background: $white;
+          border-radius: 100%;
+          padding: 4px;
+          box-shadow: 0 0 2px rgba($title-color, 0.2);
+          color: $content-color;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1) translateY(-7px);
+          }
+
+          &:last-child {
+            line-height: 1;
+            font-weight: 600;
+            font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320)));
+          }
+
+          +li {
+            margin-left: calc(-19px + (-14 - -19) * ((100vw - 320px) / (1920 - 320)));
+
+            body.rtl & {
+              margin-right: calc(-19px + (-14 - -19) * ((100vw - 320px) / (1920 - 320)));
+              margin-left: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
