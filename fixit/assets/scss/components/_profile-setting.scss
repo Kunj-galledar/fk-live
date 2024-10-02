@@ -1,0 +1,673 @@
+/**=====================
+     Profile Setting scss
+==========================**/
+
+.profile-body-wrapper {
+    .profile-wrapper {
+        background-color: $primary-color;
+        border-radius: 15px;
+        padding: 20px;
+        position: sticky;
+        top: 100px;
+        transition: all .15s ease-in-out;
+
+        @include mq-max(xl) {
+            position: fixed;
+            top: 0;
+            left: -350px;
+            width: 350px;
+            height: 100vh;
+            overflow: auto;
+            padding: 0;
+            border-radius: 0;
+            z-index: 4;
+            background-color: $white;
+
+            &.open {
+                left: 0;
+            }
+        }
+
+        .close-box {
+            border-radius: 0;
+            color: $white;
+            justify-content: space-between;
+            padding: 14px;
+            border: none;
+            font-size: 19px;
+            background-color: #1d2537;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            i {
+                --Iconsax-Color: #fff;
+                transform: rotate(45deg);
+            }
+        }
+
+        .profile {
+            padding: 20px 0 40px;
+
+            @include mq-max(xl) {
+                display: flex;
+                align-items: center;
+                gap: 11px;
+                padding: 18px 15px;
+                background-color: rgba($primary-color, 0.10);
+            }
+
+            .profile-img {
+                text-align: center;
+                margin-bottom: -40px;
+
+                @include mq-max(xl) {
+                    margin: 0;
+                }
+
+                img {
+                    border-radius: 100%;
+                    border: 2px solid $white;
+                    height: 80px;
+                    width: 80px;
+
+                    @include mq-max(xl) {
+                        height: 58px;
+                        width: 58px;
+                        border-radius: 6px;
+                        border: none;
+                    }
+                }
+            }
+
+            .profile-detail {
+                padding: 20px;
+                border-radius: 12px;
+                background-image: url(../../assets/images/Base.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 120px;
+                color: $white;
+                @include flex_common ($dis: flex, $align: center, $justify: end);
+                flex-direction: column;
+
+                @include mq-max(xl) {
+                    color: var(--theme-color);
+                    height: unset;
+                    background: none;
+                    padding: 0;
+                    text-align: unset;
+                    width: calc(100% - 70px - 11px);
+                    display: block;
+                }
+
+                h5 {
+                    font-weight: 500;
+                    line-height: 20px;
+                    margin-bottom: 4px;
+
+                    @include mq-max(xl) {
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-top: 0;
+                        color: #222;
+                        margin-bottom: 6px;
+                    }
+                }
+
+                p {
+                    @include flex_common ($dis: flex, $align: center, $justify: center);
+                    margin: 0;
+                    gap: 4px;
+                    line-height: 18px;
+
+                    @include mq-max(xl) {
+                        justify-content: unset;
+                        color: #808B97;
+                        font-size: 15px;
+                    }
+
+                    i {
+                        --Iconsax-Size: 16px;
+                        --Iconsax-Color: white;
+
+                        @include mq-max(xl) {
+                            --Iconsax-Color: #808B97;
+                        }
+                    }
+                }
+            }
+        }
+
+        .profile-settings {
+            overflow: auto;
+            height: 527px;
+
+            @include mq-max(xl) {
+                background-color: #f5f6f7;
+            }
+
+            .navbar {
+                .navbar-collapse {
+                    .menu-panel {
+                        width: 100%;
+
+                        .menu-wrapper {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 16px;
+                            margin: 0 8px;
+                            border-bottom: unset;
+
+                            @include mq-max(xl) {
+                                padding: 15px 18px;
+                                background-color: #f5f6f7;
+                                margin: 0;
+                                border-top: 1px solid #E5E8EA;
+                                display: block;
+                            }
+
+                            li {
+                                display: block;
+
+                                .nav-link {
+                                    @include flex_common_1 ($dis: flex, $align: center);
+                                    border-radius: 8px;
+                                    gap: 16px;
+                                    border: none;
+                                    transition: all 0.5s ease;
+                                    outline: none;
+                                    width: 100%;
+                                    padding: 14px 16px;
+                                    white-space: nowrap;
+
+                                    i {
+                                        --Iconsax-Size: 24px;
+                                        --Iconsax-Color: white;
+                                    }
+
+                                    span {
+                                        color: $white;
+                                        font-size: 16px;
+                                    }
+
+                                    .active-icon {
+                                        display: none;
+                                        width: 24px;
+                                        height: 24px;
+                                    }
+
+                                    .deactivate-icon {
+                                        display: block;
+                                    }
+
+                                    &.active {
+                                        background-color: $white;
+
+                                        @include mq-max(xl) {
+                                            background-color: var(--theme-color);
+                                            color: $white;
+                                        }
+
+                                        span {
+                                            color: var(--theme-color);
+                                            font-weight: 500;
+
+                                            @include mq-max(xl) {
+                                                color: $white;
+                                            }
+                                        }
+
+                                        .active-icon {
+                                            display: block;
+
+                                            @include mq-max(xl) {
+                                                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(117deg) brightness(103%) contrast(102%);
+                                            }
+                                        }
+
+                                        .deactivate-icon {
+                                            display: none;
+                                        }
+
+                                        &:hover {
+                                            background-color: $white;
+
+                                            @include mq-max(xl) {
+                                                background-color: var(--theme-color);
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+
+                                    &:hover {
+                                        background-color: rgba($white, 0.10);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .profile-logout {
+            margin: 0 8px;
+
+            @include mq-max(xl) {
+                position: sticky;
+                bottom: 0;
+                left: 0;
+                margin: 0;
+                background-color: #E5E8EA;
+            }
+
+            .nav-link {
+                @include flex_common_1 ($dis: flex, $align: center);
+                border-radius: 8px;
+                gap: 16px;
+                border: none;
+                transition: all 0.5s ease;
+                outline: none;
+                width: 100%;
+                padding: 14px 16px;
+
+                @include mq-max(xl) {
+                    gap: 10px;
+                }
+
+                i {
+                    --Iconsax-Size: 24px;
+                    --Iconsax-Color: white;
+
+                    @include mq-max(xl) {
+                        --Iconsax-Color: #1d2537;
+                    }
+                }
+
+                span {
+                    color: $white;
+                    font-size: 16px;
+
+                    @include mq-max(xl) {
+                        font-size: 18px;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba($white, 0.10);
+
+                }
+            }
+        }
+
+    }
+
+    .profile-main {
+        .card {
+            background-color: $section-bg;
+            border: none;
+            border-radius: 10px;
+
+            .card-header {
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                gap: 4px;
+                padding: 25px;
+                background-color: transparent;
+                border-radius: 0;
+                border-bottom: 1px solid $gray-color;
+
+                .title-3 {
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: -25px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-color: $primary-color;
+                        height: 35px;
+                        width: 4px;
+                    }
+
+                    h3 {
+                        font-weight: 700;
+                        line-height: 26px;
+                    }
+                }
+
+                a,
+                button {
+                    font-weight: 500;
+                    @include flex_common_1 ($dis: flex, $align: center);
+                    gap: 4px;
+                    font-size: 18px;
+
+                    i {
+                        --Iconsax-Size: 20px;
+                        --Iconsax-Color: var(--theme-color);
+                    }
+                }
+            }
+
+            .card-body {
+                padding: 25px;
+
+                &.service-booking {
+                    min-height: 760px;
+                }
+
+                .widgets {
+                    .card {
+                        border: 1px solid $gray-color;
+                        padding: 20px;
+                        border-radius: 10px;
+                        background-color: $white;
+
+                        .widget-data {
+                            @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                            gap: 4px;
+
+                            .data {
+                                h5 {
+                                    line-height: 20px;
+                                    color: $light-color;
+                                    margin-bottom: 4px;
+                                }
+
+                                h3 {
+                                    font-weight: 700;
+                                    line-height: 26px;
+                                }
+                            }
+
+                            .data-icon {
+                                position: relative;
+                                padding-right: 10px;
+
+                                .dot {
+                                    background-color: rgba($primary-color, 0.10);
+                                    border-radius: 100%;
+                                    height: 30px;
+                                    width: 30px;
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                }
+
+                                i {
+                                    --Iconsax-Size: 38px;
+                                    --Iconsax-Color: var(--theme-color);
+                                    padding-top: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .profile-data {
+                    h3 {
+                        line-height: 26px;
+                    }
+
+                    .card {
+                        border: 1px solid $gray-color;
+                        padding: 20px;
+                        border-radius: 10px;
+                        background-color: $white;
+                        margin: 0;
+
+                        .profile-setting-img {
+                            background-color: $section-bg;
+                            border-radius: 8px;
+                            height: 100%;
+                            @include flex_common ($dis: flex, $align: center, $justify: center);
+                            background-image: url(../../assets/images/setting.png);
+                            background-position: top;
+                            background-repeat: no-repeat;
+                            background-size: auto;
+                            z-index: 0;
+                            position: relative;
+
+                            .girl-on-chair {
+                                height: 400px;
+                                width: auto;
+                            }
+
+                        }
+
+                        .form-group {
+                            .value {
+                                font-size: 18px;
+                                font-weight: 500;
+                                line-height: 23px;
+                                margin: 0;
+                            }
+
+                            &:last-child {
+                                margin: 0;
+                            }
+                        }
+
+                        .login-detail {
+                            h4 {
+                                color: $primary-color;
+                                font-weight: 500;
+                                line-height: 23px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .card-footer {
+                padding: 25px;
+                border-top: 1px solid $gray-color;
+                gap: 16px;
+                justify-content: start;
+
+                .btn {
+                    width: max-content;
+                    padding: 10px 30px;
+                }
+            }
+        }
+
+        .review-main {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .review-list {
+                @include flex_common ($dis: flex, $align: start, $justify: space-between);
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid $gray-color;
+                padding: 20px;
+                background-color: $white;
+
+                .review {
+                    @include flex_common_1 ($dis: flex, $align: start);
+                    gap: 16px;
+
+                    .review-img {
+                        img {
+                            height: 45px;
+                            width: 45px;
+                            border-radius: 100%;
+                        }
+                    }
+
+                    .review-note {
+                        .name-date {
+                            @include flex_common_1 ($dis: flex, $align: center);
+                            gap: 14px;
+
+                            span {
+                                font-weight: 500;
+                            }
+
+                            small {
+                                color: $light-color;
+                            }
+                        }
+
+                        h5 {
+                            color: $light-color;
+                            line-height: 20px;
+                        }
+
+                        p {
+                            font-size: 16px;
+                            margin: 0;
+                            color: $title-color;
+                            line-height: 20px;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+
+                .notify-time {
+                    .rate {
+                        justify-content: end;
+                        margin-bottom: 16px;
+                        margin-top: 0;
+
+                        img {
+                            width: 13px;
+                            height: 13px;
+                        }
+
+                        span {
+                            font-weight: 500;
+                        }
+                    }
+
+                    button {
+                        background: unset;
+                        border: none;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.edit-modal {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba($primary-color, 0.10);
+
+    i {
+        --Iconsax-Size: 20px;
+        --Iconsax-Color: var(--theme-color);
+    }
+}
+
+.col-img {
+    @include flex_common ($dis: flex, $align: center, $justify: center);
+
+    img {
+        height: 594px;
+    }
+}
+
+.notifications {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $gray-color;
+    background-color: $white;
+    border-radius: 10px;
+
+    .notification-list {
+        border-bottom: 1px solid $gray-color;
+        padding: 20px;
+        @include flex_common ($dis: flex, $align: start, $justify: space-between);
+        gap: 12px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .notify {
+            @include flex_common_1 ($dis: flex, $align: start);
+            gap: 14px;
+
+            .notify-icon {
+                height: 40px;
+                width: 40px;
+                min-width: 40px;
+                border-radius: 100%;
+                background-color: $section-bg;
+                @include flex_common ($dis: flex, $align: center, $justify: center);
+
+                i {
+                    --Iconsax-Size: 20px;
+                    --Iconsax-Color: #808B97;
+                }
+            }
+
+            .notify-note {
+                h5 {
+                    font-weight: 500;
+                    color: $light-color;
+                    line-height: 20px;
+                    margin-bottom: 8px;
+                }
+
+                p {
+                    margin: 0;
+                    color: $light-color;
+                    line-height: 19px;
+                    margin-bottom: 0;
+                }
+
+                .notify-img {
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 4px;
+                    overflow: hidden;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .notify-time {
+            min-width: 70px;
+            text-align: end;
+
+            span {
+                color: $light-color;
+            }
+        }
+
+        &.unread {
+            .notify {
+                .notify-note {
+
+                    h5,
+                    p {
+                        color: $title-color;
+                    }
+                }
+
+                .notify-icon {
+                    i {
+                        --Iconsax-Color: #00162E;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fixit">
+    <meta name="keywords" content="Fixit">
+    <meta name="author" content="Fixit">
+    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
+    <title>Cart Page</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap/bootstrap.css">
+
+    <!-- Iconsax css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconsax/iconsax.css">
+
+    <!-- Template css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body class="notLoaded">
+
+    <!-- Loader Section Start -->
+    <div class="page-loader" id="loader">
+        <div class="page-loader-wrapper">
+            <img src="assets/images/gif/loader.gif" alt="">
+        </div>
+    </div>
+    <!-- Loader Section End -->
+
+
+    <!-- Header Section Start -->
+    <header>
+        <div class="top-header">
+            <div class="container-fluid-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar custom-navbar navbar-expand-xl navbar-light justify-xl-content-start">
+                            <div class="logo-content">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <a class="navbar-brand" href="./index.html">
+                                    <img src="assets/images/logo/dark-logo.png" alt="">
+                                </a>
+                                <div class="dropdown location-dropdown d-md-flex d-none">
+                                    <button id="locationSelected" class="location-btn">
+                                        <span>
+                                            <i class="iconsax location-svg" icon-name="location"></i>
+                                            <span>Adajan - Surat, Gujarat</span>
+                                        </span>
+                                        <i class="iconsax arrow" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="navbar-header d-xl-none d-flex">
+                                    <h4>Menu</h4>
+                                    <button class="btn-close" type="button"></button>
+                                </div>
+                                <ul class="navbar-nav mx-auto custom-scroll">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="category.html">Category</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="service-list.html">Service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="booking-list.html">Bookings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="blog.html">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="nav-right">
+                                <li class="icon nav-item-right">
+                                    <a href="cart.html">
+                                        <i class="iconsax" icon-name="shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown currency-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="unitSelected" class="currency-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">USD
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="currency">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">USD
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">EUR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">INR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">CNY
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown language-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="languageSelected" class="language-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">EN
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="lang">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">EN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">IN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">NZ
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">ZA
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown profile-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="profileSelected" class="profile-btn">
+                                        <span>
+                                            <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
+                                            Laila
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="profile">
+                                            <a href="profile-setting.html">
+                                                <i class="iconsax" icon-name="user-1-square"></i>Edit Profile
+                                            </a>
+                                        </li>
+                                        <li class="profile">
+                                            <a href="login.html">
+                                                <i class="iconsax" icon-name="logout-1"></i>Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Section Start -->
+    <section class="breadcrumb-section ratio_18">
+        <img src="assets/images/bg.jpg" alt="bg" class="bg-img" />
+        <div class="container-fluid-lg h-100">
+            <div class="breadcrumb-contain">
+                <div>
+                    <h2><span>My Cart</span></h2>
+                    <p>Select a service from the below category list that correlates with your needs. It includes
+                        15+ categories with 560+ different services in various sector.</p>
+                    <nav class="breadcrumb breadcrumb-icon">
+                        <a class="breadcrumb-item" href="index.html">Home</a>
+                        <span class="breadcrumb-item active">My cart</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Service List Section Start -->
+    <section class="section-b-space">
+        <div class="container-fluid-lg">
+            <div class="row">
+                <div class="col-xxl-8 col-xl-7 col-12">
+                    <div class="cart br-10 br-br-0 br-bl-0">
+                        <div class="cart-header">
+                            <h3 class="mb-0 f-w-600">Added service details</h3>
+                            <span>2 service in cart</span>
+                        </div>
+                        <div class="cart-body">
+                            <div class="cart-itmes">
+                                <div class="cart-item">
+                                    <div class="cart-heading">
+                                        <div class="cart-title">
+                                            <img src="assets/images/avatar/1.png" alt="feature" class="img-45">
+                                            <div>
+                                                <p class="mb-1">Darlene Robertson</p>
+                                                <div class="rate">
+                                                    <img src="assets/images/svg/star.svg" alt="star"
+                                                        class="img-fluid star">
+                                                    <small>3.0</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cart-action">
+                                            <button type="button" data-bs-toggle="modal"
+                                                data-bs-target="#bookServiceModal">
+                                                <i class="iconsax edit" icon-name="edit-2"></i>
+                                            </button>
+                                            <button type="button" data-bs-toggle="modal"
+                                                data-bs-target="#deleteCartModel">
+                                                <i class="iconsax delete" icon-name="trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="cart-detail">
+                                        <div class="selected-service">
+                                            <img src="assets/images/avatar/11.png" alt="service"
+                                                class="br-10 selected-img">
+                                            <div class="service-info">
+                                                <div
+                                                    class="d-flex flex-xxl-row flex-column align-items-xxl-center align-items-start justify-content-between gap-1">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <h3>Ac cleaning service</h3>
+                                                        <small class="discount">(10% off)</small>
+                                                    </div>
+                                                    <span class="price">$12.00</span>
+                                                </div>
+                                                <div class="d-flex align-items-center flex-wrap gap-2 mt-2">
+                                                    <p>Date & time :</p>
+                                                    <ul class="date">
+                                                        <li class="d-flex align-items-center gap-1">
+                                                            <i class="iconsax" icon-name="calendar-1"></i>
+                                                            <span>6 May, 2024</span>
+                                                        </li>
+                                                        <li class="d-flex align-items-center gap-1">
+                                                            <i class="iconsax" icon-name="clock"></i>
+                                                            <span>6:00 PM</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <ul class="date-time pt-3">
+                                                    <li class="w-100 lh-1">
+                                                        <span>Selected servicemen :</span>
+                                                        <small class="text-primary">2 servicemen</small>
+                                                    </li>
+                                                </ul>
+                                                <div class="dashed-border mt-3"></div>
+                                                <div class="note m-0">
+                                                    <p>
+                                                        Note: As you select earlier that the app will select your
+                                                        servicemen.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-item">
+                                    <div class="cart-heading">
+                                        <div class="cart-title">
+                                            <img src="assets/images/avatar/2.png" alt="feature" class="img-45">
+                                            <div>
+                                                <p class="mb-1">Darlene Rubbi</p>
+                                                <div class="rate">
+                                                    <img src="assets/images/svg/star.svg" alt="star"
+                                                        class="img-fluid star">
+                                                    <small>3.0</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cart-action">
+                                            <button type="button" data-bs-toggle="modal"
+                                                data-bs-target="#bookServiceModal">
+                                                <i class="iconsax edit" icon-name="edit-2"></i>
+                                            </button>
+                                            <button type="button" data-bs-toggle="modal"
+                                                data-bs-target="#deleteCartModel">
+                                                <i class="iconsax delete" icon-name="trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="cart-detail">
+                                        <div class="selected-service">
+                                            <img src="assets/images/avatar/8.png" alt="service"
+                                                class="br-10 selected-img">
+                                            <div class="service-info">
+                                                <div
+                                                    class="d-flex flex-xxl-row flex-column align-items-xxl-center align-items-start justify-content-between gap-1">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <h3>Furnishing & carpentry</h3>
+                                                        <small class="discount">(10% off)</small>
+                                                    </div>
+                                                    <span class="price">$15.23</span>
+                                                </div>
+                                                <div class="d-flex align-items-center flex-wrap gap-2 mt-2">
+                                                    <p>Date & time :</p>
+                                                    <ul class="date">
+                                                        <li class="d-flex align-items-center gap-1">
+                                                            <i class="iconsax" icon-name="calendar-1"></i>
+                                                            <span>6 May, 2024</span>
+                                                        </li>
+                                                        <li class="d-flex align-items-center gap-1">
+                                                            <i class="iconsax" icon-name="clock"></i>
+                                                            <span>6:00 PM</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <ul class="date-time pt-3">
+                                                    <li class="w-100 lh-1">
+                                                        <span>Selected servicemen :</span>
+                                                        <small class="text-primary">2 servicemen</small>
+                                                    </li>
+                                                </ul>
+                                                <div class="dashed-border mt-3"></div>
+                                                <div class="d-flex align-items-center gap-3 flex-wrap">
+                                                    <div class="servicemen-list-item">
+                                                        <div class="list">
+                                                            <img src="assets/images/avatar/1.png" alt="feature"
+                                                                class="img-45">
+                                                            <div>
+                                                                <p>Servicemen</p>
+                                                                <ul>
+                                                                    <li>
+                                                                        <h5>Stella Milevski</h5>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="rate">
+                                                                            <img src="assets/images/svg/star.svg"
+                                                                                alt="star" class="img-fluid star">
+                                                                            <small>3.0</small>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-xl-5 col-12">
+                    <div class="position-sticky mb-0">
+                        <div class="cart br-10 br-br-0 br-bl-0">
+                            <div class="cart-header">
+                                <h3 class="mb-0 f-w-600">Payment summary</h3>
+                                <span>2 service added</span>
+                            </div>
+                            <div class="cart-body">
+                                <h5 class="mb-2">Applied discount</h5>
+                                <div class="input-group">
+                                    <input type="button" placeholder="Enter code" value="Enter code"
+                                        data-bs-toggle="modal" data-bs-target="#couponModal"
+                                        class="form-control form-control-white text-start text-muted">
+                                    <button type="button" class="pattern-btn" disabled>Apply</button>
+                                </div>
+
+                                <div class="bill-summary mt-3">
+                                    <ul class="charge">
+                                        <li>
+                                            <p>Ac service
+                                                <button type="button" class="service-info-modal" data-bs-toggle="modal"
+                                                    data-bs-target="#serviceCharge">
+                                                    <i class="iconsax" icon-name="info-circle"></i>
+                                                </button>
+                                            </p>
+                                            <span>$12.00</span>
+                                        </li>
+                                        <li>
+                                            <p>Furnishing</p>
+                                            <span>$15.23</span>
+                                        </li>
+                                        <li>
+                                            <p>Subtotal</p>
+                                            <span>$52.26</span>
+                                        </li>
+                                        <li>
+                                            <p>Tax <span>(2%)</span></p>
+                                            <span class="text-success">+$2.65</span>
+                                        </li>
+                                        <li>
+                                            <p>Platform fees</p>
+                                            <span class="text-success">+$2.65</span>
+                                        </li>
+                                    </ul>
+                                    <ul class="total">
+                                        <li>
+                                            <p>Total Amount</p>
+                                            <span>+$8.36</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="dashed-border"></div>
+                                <div class="note">
+                                    <label>*Disclaimer</label>
+                                    <p class="text-danger m-0">Once you click the "proceed to checkout" button, you can
+                                        not change your servicemen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="view">
+                            <div class="d-flex align-items-center justify-content-between gap-1">
+                                <span>Sub total</span>
+                                <small class="value">$50.46</small>
+                            </div>
+                            <a href="payment.html" class="btn btn-solid mt-3">
+                                Proceed to checkout
+                                <i class="iconsax" icon-name="chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Service List Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer-section nav-folderized">
+        <div class="container-fluid-lg">
+            <div class="copyright">
+                <a class="footer-logo" href="salon-end/index.html" target="_blank">
+                    <img src="assets/images/logo/dark-logo.png" alt="">
+                </a>
+                <p><i class="iconsax" icon-name="copyright"></i>2024. All copyright reserved.</p>
+            </div>
+            <div class="row gy-3 gy-md-4 gy-xl-0">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Links
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="index.html">Home </a></li>
+                            <li><a class="nav-link" href="category.html">Categories </a></li>
+                            <li><a class="nav-link" href="service-list.html">Services near you </a></li>
+                            <li><a class="nav-link" href="provider-list.html">Providers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Policy
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="privacy-policy.html">Privacy policy </a></li>
+                            <li><a class="nav-link" href="terms-conditions.html">Terms & conditions </a></li>
+                            <li><a class="nav-link" href="#!">Cancellation policy</a></li>
+                            <li><a class="nav-link" href="#!">Refund policy </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Other
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="contact-us.html">Contact us </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="about-us.html">About us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#!">Apps</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Become a provider
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>Earn more and deliver your service to worldwide.</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-solid">Register now
+                            <i class="iconsax" icon-name="arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Coupon modal -->
+    <div class="modal fade coupon-modal" id="couponModal" tabindex="-1" aria-labelledby="couponModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="couponModalLabel">Coupon List</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="coupon-list custom-scroll">
+                        <div class="coupon-item">
+                            <div class="coupon-content">
+                                <div>
+                                    <h5>Master Card</h5>
+                                    <p>Use code <span>#A125</span> to save 30% of real price</p>
+                                </div>
+                                <span class="percent">
+                                    30% OFF
+                                </span>
+                            </div>
+                            <div class="circle"></div>
+                            <div class="coupon-footer">
+                                <p>Valid till <span>13th June, 2024</span></p>
+                                <a href="cart-1.html" class="use-code">
+                                    Use code
+                                    <i class="iconsax" icon-name="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="coupon-item">
+                            <div class="coupon-content">
+                                <div>
+                                    <h5>Master Card</h5>
+                                    <p>Use code <span>#A125</span> to save 30% of real price</p>
+                                </div>
+                                <span class="percent">
+                                    30% OFF
+                                </span>
+                            </div>
+                            <div class="circle"></div>
+                            <div class="coupon-footer">
+                                <p>Valid till <span>13th June, 2024</span></p>
+                                <a href="cart-1.html" class="use-code">
+                                    Use code
+                                    <i class="iconsax" icon-name="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="coupon-item">
+                            <div class="coupon-content">
+                                <div>
+                                    <h5>Master Card</h5>
+                                    <p>Use code <span>#A125</span> to save 30% of real price</p>
+                                </div>
+                                <span class="percent">
+                                    30% OFF
+                                </span>
+                            </div>
+                            <div class="circle"></div>
+                            <div class="coupon-footer">
+                                <p>Valid till <span>13th June, 2024</span></p>
+                                <a href="cart-1.html" class="use-code">
+                                    Use code
+                                    <i class="iconsax" icon-name="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="coupon-item">
+                            <div class="coupon-content">
+                                <div>
+                                    <h5>Master Card</h5>
+                                    <p>Use code <span>#A125</span> to save 30% of real price</p>
+                                </div>
+                                <span class="percent">
+                                    30% OFF
+                                </span>
+                            </div>
+                            <div class="circle"></div>
+                            <div class="coupon-footer">
+                                <p>Valid till <span>13th June, 2024</span></p>
+                                <a href="cart-1.html" class="use-code">
+                                    Use code
+                                    <i class="iconsax" icon-name="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="coupon-item">
+                            <div class="coupon-content">
+                                <div>
+                                    <h5>Master Card</h5>
+                                    <p>Use code <span>#A125</span> to save 30% of real price</p>
+                                </div>
+                                <span class="percent">
+                                    30% OFF
+                                </span>
+                            </div>
+                            <div class="circle"></div>
+                            <div class="coupon-footer">
+                                <p>Valid till <span>13th June, 2024</span></p>
+                                <a href="cart-1.html" class="use-code">
+                                    Use code
+                                    <i class="iconsax" icon-name="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="coupon-item">
+                            <div class="coupon-content">
+                                <div>
+                                    <h5>Master Card</h5>
+                                    <p>Use code <span>#A125</span> to save 30% of real price</p>
+                                </div>
+                                <span class="percent">
+                                    30% OFF
+                                </span>
+                            </div>
+                            <div class="circle"></div>
+                            <div class="coupon-footer">
+                                <p>Valid till <span>13th June, 2024</span></p>
+                                <a href="cart-1.html" class="use-code">
+                                    Use code
+                                    <i class="iconsax" icon-name="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- service info modal -->
+    <div class="modal fade service-charge-modal" id="serviceCharge" tabindex="-1" aria-labelledby="serviceChargeLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="serviceChargeLabel">Ac service charges</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="bill-summary">
+                        <ul class="charge">
+
+                            <li>
+                                <p>Per servicemen charge</p>
+                                <span>$11.00</span>
+                            </li>
+                            <li>
+                                <p>2 servicemen <span>($11.00*2)</span></p>
+                                <span>$22.00</span>
+                            </li>
+                        </ul>
+                        <ul class="total">
+                            <li>
+                                <p>Total Amount</p>
+                                <span>$22.00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book Service Modal -->
+    <div class="modal fade book-service" id="bookServiceModal" tabindex="-1" aria-labelledby="bookServiceModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="bookServiceModalLabel">Book your service</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="services">
+                        <div class="service mb-3">
+                            <img src="assets/images/avatar/11.png" alt="service" class="br-10">
+                            <div>
+                                <h3>Ac cleaning service</h3>
+                                <span>$12.00</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label>Add required person</label>
+                            <div class="select-servicemen">
+                                <p>How many person required to do this service ?</p>
+                                <div class="plus-minus">
+                                    <i class="iconsax sub" icon-name="minus"></i>
+                                    <input id="quantityInput" type="number" value="1" min="1" max="10" />
+                                    <i class="iconsax add" icon-name="add"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Choose one of below</label>
+                            <div class="select-option">
+                                <div class="form-check">
+                                    <input type="radio" id="optionone" name="service-select" class="form-radio-input"
+                                        checked>
+                                    <label for="">Let app choose servicemen for you</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="optiontwo" name="service-select" class="form-radio-input">
+                                    <label for="">Select servicemen as per my choice</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a href="" target="_blank" onclick='changeBooking()' id="linkid" class="btn btn-solid">Book now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Cart modal -->
+    <div class="modal fade delete-modal" id="deleteCartModel" tabindex="-1" aria-labelledby="deleteCartModelLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="deleteCartModelLabel">Remove service from cart</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="modal-body-content">
+                        <img src="assets/images/delete-cart.png" alt="success">
+                    </div>
+                    <p class="w-75 mx-auto">Are your sure you want to delete this service from cart ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" data-bs-dismiss="modal" aria-label="Close">No</button>
+                    <button type="button" class="btn btn-solid" data-bs-toggle="modal"
+                        data-bs-target="#successfullyDeleteCartModel">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Successfully Delete Cart modal -->
+    <div class="modal fade delete-modal" id="successfullyDeleteCartModel" tabindex="-1"
+        aria-labelledby="successfullyDeleteCartModelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="successfullyDeleteCartModelLabel">Successfully delete</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="modal-body-content">
+                        <img src="assets/images/gif/success.gif" alt="success">
+                    </div>
+                    <p class="w-75 mx-auto">Your cart is removed Successfully</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-solid" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- jquery ui-->
+    <script src="assets/js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+
+    <!-- Plus minus js -->
+    <script src="assets/js/plus-minus.js"></script>
+
+    <!-- Iconsax js -->
+    <script src="assets/js/iconsax/iconsax.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

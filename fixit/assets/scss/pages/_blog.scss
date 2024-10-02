@@ -1,0 +1,149 @@
+/**=====================
+    Blog scss
+==========================**/
+.blog-section {
+    .blog-content {
+        background-color: $section-bg;
+        padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+        border-radius: 6px;
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-main {
+            +.blog-main {
+                border-left: 1px solid $gray-color;
+            }
+
+            &:nth-child(3n+4) {
+                border: none;
+            }
+
+            @include mq-max(md) {
+                border: none;
+                padding: 0 10px;
+            }
+        }
+
+        .card {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            margin-bottom: 0;
+
+            &:hover {
+                .card-img {
+                    transform: scale(1.1) rotate(2deg);
+                }
+            }
+
+            .card-img {
+                overflow: hidden;
+            }
+
+            .card-body {
+                padding: 0;
+                color: $light-color;
+
+                h4 {
+                    margin-top: 20px;
+                    font-size: calc(19px + (22 - 19) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 500;
+                    line-height: 28px;
+                    color: $title-color;
+                    white-space: nowrap;
+                    width: 100%;
+                    overflow: hidden;
+
+                    a {
+                        color: $title-color;
+                    }
+
+                    &:hover {
+                        a {
+                            color: $primary-color;
+                        }
+                    }
+                }
+
+
+
+                i {
+                    --Iconsax-Size: 20px;
+                    --Iconsax-Color: #808B97;
+                }
+
+                .blog-footer {
+                    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+                    gap: 4px;
+                    margin-top: 25px;
+                    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+        }
+    }
+
+    .blog-detail {
+        line-height: 1;
+        margin-top: 2px;
+        color: $light-color;
+        @include flex_common_1 ($dis: flex, $align: center);
+        flex-wrap: wrap;
+        gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+
+        li {
+            font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+            border-right: 2px solid rgba($title-color, 0.4);
+            padding-right: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+                border: none;
+            }
+
+            [dir="rtl"] & {
+                padding-left: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                padding-right: unset;
+
+                &:first-child {
+                    padding-left: unset;
+                    padding-right: 0;
+                }
+
+                &:last-child {
+                    padding-right: unset;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    h4 {
+        font-size: calc(19px + (22 - 19) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 500;
+        line-height: 28px;
+        color: $title-color;
+        white-space: wrap;
+    }
+
+    .detail-sec {
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+        border-radius: 10px;
+
+        label {
+            font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .overview-list {
+            padding-left: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.w-portfolio-planner {
+    .portfolio-item {
+        column-count: 3;
+        column-gap: 10px;
+    }
+
+    .portfolio-box {
+        position: relative;
+
+        &:hover {
+            .portfolio-info {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+
+        .portfolio-img {
+            margin-top: 10px;
+        }
+
+        .portfolio-info {
+            position: absolute;
+            top: calc(15px + (30 - 15) * ((100vw - 767px) / (1920 - 767)));
+            left: calc(15px + (30 - 15) * ((100vw - 767px) / (1920 - 767)));
+            width: calc(100% - calc(30px + (60 - 30) * ((100vw - 767px) / (1920 - 767))));
+            height: calc(100% - calc(30px + (60 - 30) * ((100vw - 767px) / (1920 - 767))));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(var(--white), 1);
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s ease;
+            transform: scale(0);
+
+            h4 {
+                margin-top: 15px;
+                color: rgba(var(--theme-color), 1);
+            }
+
+            h5 {
+                margin: 6px 0 15px 0;
+                color: rgba(var(--theme-color), 0.75);
+                font-weight: 400;
+            }
+        }
+    }
+}

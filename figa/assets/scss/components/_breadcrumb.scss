@@ -1,0 +1,58 @@
+.inner-pages-bg {
+    background: url(../images/design_agency/bg-effect/home-bg.png);
+}
+
+.breadcrumbs {
+    padding-block: calc(35px + (60 - 35) * ((100vw - 320px) / (1920 - 320)));
+    text-align: center;
+
+    h2 {
+        text-transform: capitalize;
+        color: #fff;
+        margin-bottom: 8px;
+        font-size: calc(20px + (35 - 20) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 500;
+    }
+
+    .breadcrumbs-list {
+        li {
+            font-size: 400;
+            color: rgba(var(--theme-color), 1);
+            text-transform: capitalize;
+
+            +li {
+                &::before {
+                    float: left;
+                    content: "\f2e5";
+                    color: #fff;
+                    font-family: 'remixicon' !important;
+                    font-style: normal;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    margin-inline: 10px;
+
+                    [dir="rtl"] & {
+                        float: right;
+                        transform: scale(-1);
+                    }
+                }
+            }
+
+            &:first-child {
+                a {
+                    color: #fff;
+                    font-weight: 400;
+                }
+            }
+
+            i {
+                color: #fff;
+                margin-inline: 10px;
+
+                [dir="rtl"] & {
+                    transform: scale(-1);
+                }
+            }
+        }
+    }
+}

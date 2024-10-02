@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fixit">
+    <meta name="keywords" content="Fixit">
+    <meta name="author" content="Fixit">
+    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
+    <title>Profile Setting Page</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+
+    <!-- Swiper Slider css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/swiper-bundle.min.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap/bootstrap.css">
+
+    <!-- Flatpicker css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/flatpickr/flatpickr.min.css">
+
+    <!-- Range Slider css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/range-slider.css">
+
+    <!-- Iconsax css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconsax/iconsax.css">
+
+    <!-- Template css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body class="notLoaded">
+
+    <!-- Loader Section Start -->
+    <div class="page-loader" id="loader">
+        <div class="page-loader-wrapper">
+            <img src="assets/images/gif/loader.gif" alt="">
+        </div>
+    </div>
+    <!-- Loader Section End -->
+
+
+    <!-- Header Section Start -->
+    <header>
+        <div class="top-header">
+            <div class="container-fluid-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar custom-navbar navbar-expand-xl navbar-light justify-xl-content-start">
+                            <div class="logo-content">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <a class="navbar-brand" href="./index.html">
+                                    <img src="assets/images/logo/dark-logo.png" alt="">
+                                </a>
+                                <div class="dropdown location-dropdown d-md-flex d-none">
+                                    <button id="locationSelected" class="location-btn">
+                                        <span>
+                                            <i class="iconsax location-svg" icon-name="location"></i>
+                                            <span>Adajan - Surat, Gujarat</span>
+                                        </span>
+                                        <i class="iconsax arrow" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="navbar-header d-xl-none d-flex">
+                                    <h4>Menu</h4>
+                                    <button class="btn-close" type="button"></button>
+                                </div>
+                                <ul class="navbar-nav mx-auto custom-scroll">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="category.html">Category</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="service-list.html">Service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="booking-list.html">Bookings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="blog.html">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="nav-right">
+                                <li class="icon nav-item-right">
+                                    <a href="cart.html">
+                                        <i class="iconsax" icon-name="shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown currency-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="unitSelected" class="currency-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">USD
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="currency">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">USD
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">EUR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">INR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">CNY
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown language-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="languageSelected" class="language-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">EN
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="lang">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">EN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">IN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">NZ
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">ZA
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown profile-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="profileSelected" class="profile-btn">
+                                        <span>
+                                            <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
+                                            Laila
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="profile">
+                                            <a href="profile-setting.html">
+                                                <i class="iconsax" icon-name="user-1-square"></i>Edit Profile
+                                            </a>
+                                        </li>
+                                        <li class="profile">
+                                            <a href="login.html">
+                                                <i class="iconsax" icon-name="logout-1"></i>Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Home Section Start -->
+    <section class="home-section ratio_18">
+        <div class="container-fluid-lg">
+            <img src="assets/images/bg.jpg" alt="bg" class="bg-img">
+            <div class="row">
+                <div class="col-12">
+                    <div class="home-contain">
+                        <h2><span>Profile Setting</span></h2>
+                        <p>Select a service from the below category list that correlates with your needs. It includes
+                            15+ categories with 560+ different services in various sector.</p>
+                        <nav class="breadcrumb breadcrumb-icon">
+                            <a class="breadcrumb-item" href="index.html">Home</a>
+                            <span class="breadcrumb-item active">Profile</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+    <!-- Service List Section Start -->
+    <section class="section-b-space">
+        <div class="container-fluid-md">
+            <div class="profile-body-wrapper">
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-4">
+                        <div class="profile-wrapper filter">
+                            <button class="close-box btn d-xl-none d-flex">
+                                <span>Close</span>
+                                <i class="iconsax" icon-name="add"></i>
+                            </button>
+                            <div class="profile">
+                                <div class="profile-img">
+                                    <img src="assets/images/avatar/10.png" alt="feature" class="img-fluid">
+                                </div>
+                                <div class="profile-detail">
+                                    <h5>Zain Dorwart</h5>
+                                    <p>
+                                        <i class="iconsax" icon-name="mail"></i>
+                                        zaindorwart12@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="profile-settings custom-scroll">
+                                <nav class="navbar navbar-expand-md p-0">
+                                    <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#mainnavbarNav">
+                                        <i class="iconsax" icon-name="mail"></i>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="mainnavbarNav">
+                                        <div class="menu-panel">
+                                            <button data-bs-toggle="collapse" data-bs-target="#mainnavbarNav"
+                                                class="mainnav-close d-block d-md-none">
+                                                </i>
+                                            </button>
+                                            <ul class="nav nav-tabs menu-wrapper" id="myTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link active" data-bs-toggle="tab"
+                                                        data-bs-target="#dashboard">
+                                                        <i class="iconsax deactivate-icon" icon-name="home-1"></i>
+                                                        <img src="assets/images/svg/home-1.svg" class="active-icon"
+                                                            alt="home">
+                                                        <span>Dashboard</span>
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" data-bs-toggle="tab"
+                                                        data-bs-target="#notification">
+                                                        <i class="iconsax deactivate-icon" icon-name="bell-1"></i>
+                                                        <img src="assets/images/svg/notification.svg"
+                                                            class="active-icon" alt="notification">
+                                                        <span>Notification</span>
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" data-bs-toggle="tab"
+                                                        data-bs-target="#wallet">
+                                                        <i class="iconsax deactivate-icon" icon-name="wallet-3"></i>
+                                                        <img src="assets/images/svg/wallet-3.svg" class="active-icon"
+                                                            alt="wallet">
+                                                        <span>My wallet</span>
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" data-bs-toggle="tab"
+                                                        data-bs-target="#address">
+                                                        <i class="iconsax deactivate-icon" icon-name="location"></i>
+                                                        <img src="assets/images/svg/location.svg" class="active-icon"
+                                                            alt="location">
+                                                        <span>Saved address</span>
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" data-bs-toggle="tab"
+                                                        data-bs-target="#password">
+                                                        <i class="iconsax deactivate-icon" icon-name="lock-2"></i>
+                                                        <img src="assets/images/svg/lock.svg" class="active-icon"
+                                                            alt="lock">
+                                                        <span>Change password</span>
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link" data-bs-toggle="tab"
+                                                        data-bs-target="#review">
+                                                        <i class="iconsax deactivate-icon" icon-name="star"></i>
+                                                        <img src="assets/images/svg/star-rate.svg" class="active-icon"
+                                                            alt="star">
+                                                        <span>My reviews</span>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+
+                            </div>
+                            <div class="profile-logout">
+                                <a href="index.html" class="nav-link">
+                                    <i class="iconsax" icon-name="logout-1"></i>
+                                    <span>Log out</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-9 col-xl-8">
+                        <button
+                            class="filter-btn btn theme-bg-color text-white w-max d-xl-none d-inline-block mb-3">Show
+                            Menu</button>
+                        <div class="tab-content m-0">
+                            <div class="tab-pane fade show active" id="dashboard">
+                                <div class="profile-main">
+                                    <div class="card m-0">
+                                        <div class="card-header">
+                                            <div class="title-3">
+                                                <h3>Dashboard</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="widgets">
+                                                <div class="row g-4">
+                                                    <div class="col-4">
+                                                        <div class="card">
+                                                            <div class="widget-data">
+                                                                <div class="data">
+                                                                    <h5>Wallet balance</h5>
+                                                                    <h3>$562.23</h3>
+                                                                </div>
+                                                                <div class="data-icon">
+                                                                    <div class="dot"></div>
+                                                                    <i class="iconsax" icon-name="wallet-3"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="card">
+                                                            <div class="widget-data">
+                                                                <div class="data">
+                                                                    <h5>Pending service</h5>
+                                                                    <h3>3 service</h3>
+                                                                </div>
+                                                                <div class="data-icon">
+                                                                    <div class="dot"></div>
+                                                                    <i class="iconsax" icon-name="receipt-list"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="card">
+                                                            <div class="widget-data">
+                                                                <div class="data">
+                                                                    <h5>Completed services</h5>
+                                                                    <h3>$562.23</h3>
+                                                                </div>
+                                                                <div class="data-icon">
+                                                                    <div class="dot"></div>
+                                                                    <i class="iconsax" icon-name="tick-circle"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-data">
+                                                <h3 class="mb-3">
+                                                    Profile setting
+                                                </h3>
+                                                <div class="card">
+                                                    <div class="card-body p-2">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-12">
+                                                                <div class="personal-detail">
+                                                                    <div
+                                                                        class="d-flex align-items-center gap-1 justify-content-between">
+                                                                        <div class="form-group">
+                                                                            <label for="name">Name</label>
+                                                                            <p class="value">Zain Dorwart</p>
+                                                                        </div>
+                                                                        <button type="button" class="edit-modal"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#personalDetailModal">
+                                                                            <i class="iconsax" icon-name="edit-2"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="phone">Phone</label>
+                                                                        <p class="value">+72 25369 12563</p>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="email">Email</label>
+                                                                        <p class="value">zaindorwart12@gmail.com</p>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="address">Address</label>
+                                                                        <p class="value">26, Starts Hollow Colony
+                                                                            Denver, Colorado, United States 80014</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dashed-border my-3"></div>
+                                                                <div class="login-detail-main">
+                                                                    <div class="login-detail">
+                                                                        <div
+                                                                            class="mb-3 d-flex align-items-center gap-1 justify-content-between">
+                                                                            <h4>
+                                                                                Login details
+                                                                            </h4>
+
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="loginId">Login ID</label>
+                                                                            <p class="value">zaindorwart12@gmail.com</p>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="phone">Password</label>
+                                                                            <p class="value">********</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-12">
+                                                                <div class="profile-setting-img">
+                                                                    <img src="assets/images/girl-on-chair.png"
+                                                                        alt="girl" class="girl-on-chair">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="notification">
+                                <div class="profile-main">
+                                    <div class="card m-0">
+                                        <div class="card-header">
+                                            <div class="title-3">
+                                                <h3>Notifications</h3>
+                                            </div>
+                                            <a href="#!">
+                                                <i class="iconsax" icon-name="task-list"></i>
+                                                Mark as all read
+                                            </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="notifications">
+                                                <li class="notification-list unread">
+                                                    <div class="notify">
+                                                        <div class="notify-icon">
+                                                            <i class="iconsax" icon-name="clock"></i>
+                                                        </div>
+                                                        <div class="notify-note">
+                                                            <h5>Reminder !</h5>
+                                                            <p>You have booked plumber service today at 6:30 p.m.
+                                                                You can change your booking location and date time until
+                                                                provider's accept list.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <span>1 min</span>
+                                                    </div>
+                                                </li>
+                                                <li class="notification-list">
+                                                    <div class="notify">
+                                                        <div class="notify-icon">
+                                                            <i class="iconsax" icon-name="clock"></i>
+                                                        </div>
+                                                        <div class="notify-note">
+                                                            <h5>Reminder !</h5>
+                                                            <p>Booking status has been changed from Pending Approval to
+                                                                Completed.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <span>1 min</span>
+                                                    </div>
+                                                </li>
+                                                <li class="notification-list">
+                                                    <div class="notify">
+                                                        <div class="notify-icon">
+                                                            <i class="iconsax" icon-name="receipt-4"></i>
+                                                        </div>
+                                                        <div class="notify-note">
+                                                            <h5>Service start</h5>
+                                                            <p>Booking status has been changed from Pending to Accepted.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <span>1 min</span>
+                                                    </div>
+                                                </li>
+                                                <li class="notification-list">
+                                                    <div class="notify">
+                                                        <div class="notify-icon">
+                                                            <i class="iconsax" icon-name="receipt-4"></i>
+                                                        </div>
+                                                        <div class="notify-note">
+                                                            <h5>Service start</h5>
+                                                            <p>Add a new carpenter & furnishing category service
+                                                                picture. Get check it.</p>
+                                                            <div class="mt-3">
+                                                                <div class="notify-img">
+                                                                    <img src="assets/images/feature/2.png" alt="amg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <span>1 min</span>
+                                                    </div>
+                                                </li>
+                                                <li class="notification-list">
+                                                    <div class="notify">
+                                                        <div class="notify-icon">
+                                                            <i class="iconsax" icon-name="wallet-open"></i>
+                                                        </div>
+                                                        <div class="notify-note">
+                                                            <h5>Payment update</h5>
+                                                            <p>You have booked plumber service today at 6:30 p.m.
+                                                                You can change your booking location and date time until
+                                                                provider’s accept list.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <span>1 min</span>
+                                                    </div>
+                                                </li>
+                                                <li class="notification-list">
+                                                    <div class="notify">
+                                                        <div class="notify-icon">
+                                                            <i class="iconsax" icon-name="wallet-open"></i>
+                                                        </div>
+                                                        <div class="notify-note">
+                                                            <h5>Update status</h5>
+                                                            <p>Booking status has been changed from pending to accepted.
+                                                                Servicemen will arrived at your home on mentioned date
+                                                                and time for your service.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <span>1 min</span>
+                                                    </div>
+                                                </li>
+                                                <li class="notification-list">
+                                                    <div class="notify">
+                                                        <div class="notify-icon">
+                                                            <i class="iconsax" icon-name="wallet-open"></i>
+                                                        </div>
+                                                        <div class="notify-note">
+                                                            <h5>Update status</h5>
+                                                            <p>Booking status has been changed from pending to accepted.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <span>1 min</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="wallet">
+                                <div class="profile-main">
+                                    <div class="card payment m-0">
+                                        <div class="card-header">
+                                            <div class="title-3">
+                                                <h3>My wallet : <span class="text-success">$156.23</span></h3>
+                                            </div>
+                                            <button type="button" class="edit-option" data-bs-toggle="modal"
+                                                data-bs-target="#walletModal">
+                                                + Add balance
+                                            </button>
+                                        </div>
+                                        <div class="card-body wallet-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="select-date">
+                                                        <h4>Transaction history</h4>
+                                                        <div class="date-pick">
+                                                            <label>Date range</label>
+                                                            <div class="input-group flatpicker-calender">
+                                                                <input class="form-control form-control-white"
+                                                                    id="range-date" type="text" readonly="readonly"
+                                                                    placeholder="Select Date">
+                                                                <i class="iconsax input-icon"
+                                                                    icon-name="calendar-1"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="wallet-data">
+                                                        <div class="table-responsive">
+                                                            <table class="table wallet-table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Booking ID</th>
+                                                                        <th scope="col">Date</th>
+                                                                        <th scope="col">Amount</th>
+                                                                        <th scope="col">Particular</th>
+                                                                        <th scope="col">Status</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="id">#1267</td>
+                                                                        <td class="date">30 Jan 2024 02:13 PM</td>
+                                                                        <td class="balance">$256.23</td>
+                                                                        <td class="particular">Painting cancelled</td>
+                                                                        <td class="credit">Credit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1266</td>
+                                                                        <td class="date">30 Jan 2024 02:13 PM</td>
+                                                                        <td class="balance">$225</td>
+                                                                        <td class="particular">Commercial laundry</td>
+                                                                        <td class="debit">Debit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1265</td>
+                                                                        <td class="date">29 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$523.3</td>
+                                                                        <td class="particular">Display wiring</td>
+                                                                        <td class="debit">Debit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1264</td>
+                                                                        <td class="date">29 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$15.26</td>
+                                                                        <td class="particular">Ac installation</td>
+                                                                        <td class="credit">Credit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1264</td>
+                                                                        <td class="date">29 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$78.98</td>
+                                                                        <td class="particular">Cashback</td>
+                                                                        <td class="debit">Debit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1263</td>
+                                                                        <td class="date">29 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$64.25</td>
+                                                                        <td class="particular">Ac cleaning cancelled
+                                                                        </td>
+                                                                        <td class="credit">Credit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1262</td>
+                                                                        <td class="date">29 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$241.63</td>
+                                                                        <td class="particular">Painting cancelled</td>
+                                                                        <td class="credit">Credit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1261</td>
+                                                                        <td class="date">29 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$412.88</td>
+                                                                        <td class="particular">Cashback</td>
+                                                                        <td class="debit">Debit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1260</td>
+                                                                        <td class="date">27 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$136</td>
+                                                                        <td class="particular">Commercial laundry</td>
+                                                                        <td class="debit">Debit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1259</td>
+                                                                        <td class="date">27 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$49.26</td>
+                                                                        <td class="particular">Display wiring</td>
+                                                                        <td class="credit">Credit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1258</td>
+                                                                        <td class="date">25 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$54.15</td>
+                                                                        <td class="particular">Ac cleaning cancelled
+                                                                        </td>
+                                                                        <td class="debit">Debit</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="id">#1260</td>
+                                                                        <td class="date">25 March 2024 02:13 PM</td>
+                                                                        <td class="balance">$136</td>
+                                                                        <td class="particular">Commercial laundry</td>
+                                                                        <td class="debit">Debit</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="address" role="tabpanel">
+                                <div class="profile-main">
+                                    <div class="card m-0">
+                                        <div class="card-header">
+                                            <div class="title-3">
+                                                <h3>Saved address</h3>
+                                            </div>
+                                            <button type="button" class="edit-option" data-bs-toggle="modal"
+                                                data-bs-target="#locationModal">
+                                                + Add new address
+                                            </button>
+                                        </div>
+                                        <div class="card-body service-booking">
+                                            <div class="row g-4">
+                                                <div class="col-xxl-4 col-lg-6 col-12">
+                                                    <div class="card delivery-location">
+                                                        <div class="location-header">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <div class="location-icon">
+                                                                    <img src="assets/images/svg/home.svg" alt="home">
+                                                                </div>
+                                                                <div class="name">
+                                                                    <h4>Kristin Watson</h4>
+                                                                    <span>(406) 555-0120</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="badge primary-light-badge">Home</span>
+                                                        </div>
+                                                        <div class="address">
+                                                            <label>
+                                                                Address :
+                                                            </label>
+                                                            <p>3891 Ranchview Dr. Richardson, California - 62639,
+                                                                USA.</p>
+                                                        </div>
+                                                        <div class="action">
+                                                            <button type="button" class="btn btn-outline"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#editlocationModal">
+                                                                Edit
+                                                            </button>
+                                                            <button type="button" class="btn btn-fill"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteaddressModel">
+                                                                Delete
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-4 col-lg-6 col-12">
+                                                    <div class="card delivery-location">
+                                                        <div class="location-header">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <div class="location-icon">
+                                                                    <img src="assets/images/svg/briefcase.svg"
+                                                                        alt="home">
+                                                                </div>
+                                                                <div class="name">
+                                                                    <h4>Kristin Watson</h4>
+                                                                    <span>(406) 555-0120</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="badge primary-light-badge">Work</span>
+                                                        </div>
+                                                        <div class="address">
+                                                            <label>
+                                                                Address :
+                                                            </label>
+                                                            <p>3891 Ranchview Dr. Richardson, California - 62639,
+                                                                USA.</p>
+
+                                                        </div>
+                                                        <div class="action">
+                                                            <button type="button" class="btn btn-outline"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#editlocationModal">
+                                                                Edit
+                                                            </button>
+                                                            <button type="button" class="btn btn-fill"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteaddressModel">
+                                                                Delete
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-4 col-lg-6 col-12">
+                                                    <div class="card delivery-location">
+                                                        <div class="location-header">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <div class="location-icon">
+                                                                    <img src="assets/images/svg/briefcase.svg"
+                                                                        alt="home">
+                                                                </div>
+                                                                <div class="name">
+                                                                    <h4>Kristin Watson</h4>
+                                                                    <span>(406) 555-0120</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="badge primary-light-badge">Work</span>
+                                                        </div>
+                                                        <div class="address">
+                                                            <label>
+                                                                Address :
+                                                            </label>
+                                                            <p>3891 Ranchview Dr. Richardson, California - 62639,
+                                                                USA.</p>
+
+                                                        </div>
+                                                        <div class="action">
+                                                            <button type="button" class="btn btn-outline"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#editlocationModal">
+                                                                Edit
+                                                            </button>
+                                                            <button type="button" class="btn btn-fill"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteaddressModel">
+                                                                Delete
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-4 col-lg-6 col-12">
+                                                    <div class="card delivery-location">
+                                                        <div class="location-header">
+                                                            <div class="d-flex align-items-center gap-3">
+
+                                                                <div class="active-icon">
+                                                                    <img src="assets/images/svg/tick.svg" alt="tick">
+                                                                </div>
+                                                                <div class="name">
+                                                                    <h4>Kristin Watson</h4>
+                                                                    <span>(406) 555-0120</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="badge primary-light-badge">Home</span>
+                                                        </div>
+                                                        <div class="address">
+                                                            <label>
+                                                                Address :
+                                                            </label>
+                                                            <p>3891 Ranchview Dr. Richardson, California - 62639,
+                                                                USA.</p>
+                                                        </div>
+                                                        <div class="action">
+                                                            <button type="button" class="btn btn-outline"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#editlocationModal">
+                                                                Edit
+                                                            </button>
+                                                            <button type="button" class="btn btn-fill"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#deleteaddressModel">
+                                                                Delete
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="password" role="tabpanel">
+                                <div class="profile-main">
+                                    <div class="card m-0">
+                                        <div class="card-header">
+                                            <div class="title-3">
+                                                <h3>Change password</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-12">
+                                                    <div class="update-detail">
+                                                        <div class="form-group">
+                                                            <label for="password1">Current Password</label>
+                                                            <i class="iconsax" icon-name="lock-2"></i>
+                                                            <input class="form-control form-control-white"
+                                                                id="password1" placeholder="Enter current password"
+                                                                name="password" type="password">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="password2">New Password</label>
+                                                            <i class="iconsax" icon-name="lock-2"></i>
+                                                            <div class="position-relative">
+                                                                <input class="form-control form-control-white"
+                                                                    id="password2" placeholder="john@ |" name="password"
+                                                                    type="password">
+                                                                <div class="toggle-password">
+                                                                    <i class="iconsax eye" icon-name="eye"></i>
+                                                                    <i class="iconsax eye-slash"
+                                                                        icon-name="eye-slash"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="password3">Confirm Password</label>
+                                                            <i class="iconsax" icon-name="lock-2"></i>
+                                                            <div class="position-relative">
+                                                                <input class="form-control form-control-white"
+                                                                    id="password3" placeholder="********"
+                                                                    name="password" type="password">
+                                                                <div class="toggle-password">
+                                                                    <i class="iconsax eye" icon-name="eye"></i>
+                                                                    <i class="iconsax eye-slash"
+                                                                        icon-name="eye-slash"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-12">
+                                                    <div class="col-img">
+                                                        <img src="assets/images/Illustrator.png" alt="girl" class="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button type="button" class="btn btn-solid">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="review" role="tabpanel">
+                                <div class="profile-main">
+                                    <div class="card m-0">
+                                        <div class="card-header">
+                                            <div class="title-3">
+                                                <h3>My reviews</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="review-main">
+                                                <li class="review-list">
+                                                    <div class="review">
+                                                        <div class="review-img">
+                                                            <img src="assets/images/avatar/6.png" alt="amg">
+                                                        </div>
+                                                        <div class="review-note">
+                                                            <div class="name-date">
+                                                                <span>Devon Lane</span>
+                                                                <small>12 min ago</small>
+                                                            </div>
+                                                            <h5>Ac deep cleaning</h5>
+                                                            <p>“I just love their service & the staff nature for work,
+                                                                I’d like to hire them again”</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <div class="rate">
+                                                            <img src="assets/images/svg/star.svg" alt="star"
+                                                                class="img-fluid star">
+                                                            <small>4.0</small>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#editReviewModal">
+                                                                <i class="iconsax edit" icon-name="edit-2"></i>
+                                                            </button>
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#deleteReviewModel">
+                                                                <i class="iconsax delete" icon-name="trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="review-list">
+                                                    <div class="review">
+                                                        <div class="review-img">
+                                                            <img src="assets/images/avatar/8.png" alt="amg">
+                                                        </div>
+                                                        <div class="review-note">
+                                                            <div class="name-date">
+                                                                <span>April Curtis</span>
+                                                                <small>12 min ago</small>
+                                                            </div>
+                                                            <h5>Ac deep cleaning</h5>
+                                                            <p>“I just love their service & the staff nature for work,
+                                                                I’d like to hire them again”</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <div class="rate">
+                                                            <img src="assets/images/svg/star.svg" alt="star"
+                                                                class="img-fluid star">
+                                                            <small>4.0</small>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#editReviewModal">
+                                                                <i class="iconsax edit" icon-name="edit-2"></i>
+                                                            </button>
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#deleteReviewModel">
+                                                                <i class="iconsax delete" icon-name="trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="review-list">
+                                                    <div class="review">
+                                                        <div class="review-img">
+                                                            <img src="assets/images/avatar/9.png" alt="amg">
+                                                        </div>
+                                                        <div class="review-note">
+                                                            <div class="name-date">
+                                                                <span>Thomas Magnum</span>
+                                                                <small>12 min ago</small>
+                                                            </div>
+                                                            <h5>Ac deep cleaning</h5>
+                                                            <p>“I just love their service & the staff nature for work,
+                                                                I’d like to hire them again”</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <div class="rate">
+                                                            <img src="assets/images/svg/star.svg" alt="star"
+                                                                class="img-fluid star">
+                                                            <small>4.0</small>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#editReviewModal">
+                                                                <i class="iconsax edit" icon-name="edit-2"></i>
+                                                            </button>
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#deleteReviewModel">
+                                                                <i class="iconsax delete" icon-name="trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="review-list">
+                                                    <div class="review">
+                                                        <div class="review-img">
+                                                            <img src="assets/images/avatar/10.png" alt="amg">
+                                                        </div>
+                                                        <div class="review-note">
+                                                            <div class="name-date">
+                                                                <span>Angela Bower</span>
+                                                                <small>12 min ago</small>
+                                                            </div>
+                                                            <h5>Ac deep cleaning</h5>
+                                                            <p>“I just love their service & the staff nature for work,
+                                                                I’d like to hire them again”</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <div class="rate">
+                                                            <img src="assets/images/svg/star.svg" alt="star"
+                                                                class="img-fluid star">
+                                                            <small>4.0</small>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#editReviewModal">
+                                                                <i class="iconsax edit" icon-name="edit-2"></i>
+                                                            </button>
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#deleteReviewModel">
+                                                                <i class="iconsax delete" icon-name="trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="review-list">
+                                                    <div class="review">
+                                                        <div class="review-img">
+                                                            <img src="assets/images/avatar/4.png" alt="amg">
+                                                        </div>
+                                                        <div class="review-note">
+                                                            <div class="name-date">
+                                                                <span>Dori Doreau</span>
+                                                                <small>12 min ago</small>
+                                                            </div>
+                                                            <h5>Ac deep cleaning</h5>
+                                                            <p>“I just love their service & the staff nature for work,
+                                                                I’d like to hire them again”</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <div class="rate">
+                                                            <img src="assets/images/svg/star.svg" alt="star"
+                                                                class="img-fluid star">
+                                                            <small>4.0</small>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#editReviewModal">
+                                                                <i class="iconsax edit" icon-name="edit-2"></i>
+                                                            </button>
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#deleteReviewModel">
+                                                                <i class="iconsax delete" icon-name="trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="review-list">
+                                                    <div class="review">
+                                                        <div class="review-img">
+                                                            <img src="assets/images/avatar/2.png" alt="amg">
+                                                        </div>
+                                                        <div class="review-note">
+                                                            <div class="name-date">
+                                                                <span>Capt. Trunk</span>
+                                                                <small>12 min ago</small>
+                                                            </div>
+                                                            <h5>Ac deep cleaning</h5>
+                                                            <p>“I just love their service & the staff nature for work,
+                                                                I’d like to hire them again”</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="notify-time">
+                                                        <div class="rate">
+                                                            <img src="assets/images/svg/star.svg" alt="star"
+                                                                class="img-fluid star">
+                                                            <small>4.0</small>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#editReviewModal">
+                                                                <i class="iconsax edit" icon-name="edit-2"></i>
+                                                            </button>
+                                                            <button type="button" data-bs-toggle="modal"
+                                                                data-bs-target="#deleteReviewModel">
+                                                                <i class="iconsax delete" icon-name="trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service List Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer-section nav-folderized">
+        <div class="container-fluid-lg">
+            <div class="copyright">
+                <a class="footer-logo" href="salon-end/index.html" target="_blank">
+                    <img src="assets/images/logo/dark-logo.png" alt="">
+                </a>
+                <p><i class="iconsax" icon-name="copyright"></i>2024. All copyright reserved.</p>
+            </div>
+            <div class="row gy-3 gy-md-4 gy-xl-0">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Links
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="index.html">Home </a></li>
+                            <li><a class="nav-link" href="category.html">Categories </a></li>
+                            <li><a class="nav-link" href="service-list.html">Services near you </a></li>
+                            <li><a class="nav-link" href="provider-list.html">Providers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Policy
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="privacy-policy.html">Privacy policy </a></li>
+                            <li><a class="nav-link" href="terms-conditions.html">Terms & conditions </a></li>
+                            <li><a class="nav-link" href="#!">Cancellation policy</a></li>
+                            <li><a class="nav-link" href="#!">Refund policy </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Other
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="contact-us.html">Contact us </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="about-us.html">About us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#!">Apps</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Become a provider
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>Earn more and deliver your service to worldwide.</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-solid">Register now
+                            <i class="iconsax" icon-name="arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- update personal detail modal -->
+    <div class="modal fade profile-update-modal" id="personalDetailModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="personalDetailModalLabel">Update profile</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="update-img">
+                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+
+                        <label class="custom-file-upload">
+                            <input type="file" />
+                            <i class="iconsax update-profile" icon-name="edit-2"></i>
+                        </label>
+                    </div>
+
+                    <div class="update-detail">
+                        <div class="form-group">
+                            <label for="name">User name</label>
+                            <i class="iconsax" icon-name="user-1"></i>
+                            <input class="form-control form-control-white" id="name" placeholder="Zain Dorwart"
+                                name="name" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <i class="iconsax" icon-name="mail"></i>
+                            <input class="form-control form-control-white" id="email"
+                                placeholder="zaindorwart12@gmail.com" name="email" type="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone no.</label>
+                            <i class="iconsax" icon-name="phone"></i>
+                            <input class="form-control form-control-white" id="phone" placeholder="+72 25369 12563"
+                                name="phone" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-solid" data-bs-dismiss="modal">Update
+                        profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- add money modal -->
+    <div class="modal fade wallet-modal" id="walletModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="walletModalLabel">Add money</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="add-money">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="mb-2">Add from</label>
+                                <div class="position-relative">
+                                    <i class="iconsax input-icon" icon-name="wallet-open"></i>
+                                    <select class="form-select form-select-white">
+                                        <option selected>Select payment gateway</option>
+                                        <option value="1">Mastercard/Visa</option>
+                                        <option value="2">Razer pay</option>
+                                        <option value="3">Stripe</option>
+                                        <option value="4">Pay on hand</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="mb-2">Amount</label>
+                                <div class="input-group">
+                                    <input type="number" name="street" placeholder="Enter amount"
+                                        class="form-control form-control-white">
+                                    <i class="iconsax input-icon" icon-name="money-in"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-solid" data-bs-dismiss="modal">Add
+                        money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit location modal -->
+    <div class="modal fade location-modal" id="editlocationModal">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="editlocationModalLabel">Edit location</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row location-map">
+                        <div class="col-6 p-0 d-xl-flex d-none">
+                            <div class="map">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6512737.034182728!2d-124.59233685302426!3d37.1515728954513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sin!4v1705376293670!5m2!1sen!2sin"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 px-0">
+                            <div class="location-detail">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="mb-2">Select category</label>
+                                        <div class="category">
+                                            <div class="form-check">
+                                                <input type="radio" id="test1" name="category" class="form-radio-input"
+                                                    checked>
+                                                <label>Home</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="radio" id="test2" name="category" class="form-radio-input">
+                                                <label>Work</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="radio" id="test3" name="category" class="form-radio-input">
+                                                <label>Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Street</label>
+                                        <div class="input-group">
+                                            <input type="text" name="street" placeholder="Street"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="location"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">Country</label>
+                                        <div class="position-relative">
+                                            <i class="iconsax input-icon" icon-name="globe"></i>
+                                            <select class="form-select form-select-white">
+                                                <option selected>India</option>
+                                                <option value="1">India</option>
+                                                <option value="2">India</option>
+                                                <option value="3">India</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">State</label>
+                                        <div class="position-relative">
+                                            <i class="iconsax input-icon" icon-name="courthouse"></i>
+                                            <select class="form-select form-select-white">
+                                                <option selected>Gujarat</option>
+                                                <option value="1">Gujarat</option>
+                                                <option value="2">Gujarat</option>
+                                                <option value="3">Gujarat</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">City</label>
+                                        <div class="input-group">
+                                            <input type="text" name="city" placeholder="City"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="building-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">Zip code</label>
+                                        <div class="input-group">
+                                            <input type="text" name="zip code" value="36584"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="message-dots-notif"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Person name</label>
+                                        <div class="input-group">
+                                            <input type="text" name="person" placeholder="Joseph"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="user-1"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Contact</label>
+                                        <div class="row g-2">
+                                            <div class="col-lg-3 col-sm-4">
+                                                <div class="phone-field">
+                                                    <div class="dropdown select-dropdown-div">
+                                                        <button href="#" role="button" data-value="" class="select-btn">
+                                                            <span>
+                                                                <img src="assets/images/flags/IN.png" alt=""
+                                                                    class="img-fluid">+91
+                                                            </span>
+                                                            <i class="iconsax" icon-name="chevron-down"></i>
+                                                        </button>
+                                                        <ul class="select-show-div">
+                                                            <li data-value="4" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/IN.png" alt=""
+                                                                        class="img-fluid">+91</span>
+                                                            </li>
+                                                            <li data-value="1" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/CA.png" alt=""
+                                                                        class="img-fluid">+1</span>
+                                                            </li>
+                                                            <li data-value="2" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/US.png" alt=""
+                                                                        class="img-fluid">+1</span>
+                                                            </li>
+                                                            <li data-value="3" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/TH.png" alt=""
+                                                                        class="img-fluid">+66</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-9 col-sm-8">
+                                                <input type="text" id="mobile_code" name="contact"
+                                                    placeholder="Enter phone no."
+                                                    class="form-control form-control-white">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check ps-4">
+                                            <input type="checkbox" class="form-check-input" checked>
+                                            <p class="m-0">Set as a primary location</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="service-booking.html" class="btn btn-solid">Add location</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- location modal -->
+    <div class="modal fade location-modal" id="locationModal">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="locationModalLabel">Add new location</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row location-map">
+                        <div class="col-6 p-0 d-xl-flex d-none">
+                            <div class="map">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6512737.034182728!2d-124.59233685302426!3d37.1515728954513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sin!4v1705376293670!5m2!1sen!2sin"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 px-0">
+                            <div class="location-detail">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="mb-2">Select category</label>
+                                        <div class="category">
+                                            <div class="form-check">
+                                                <input type="radio" id="test1" name="category" class="form-radio-input"
+                                                    checked>
+                                                <label>Home</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="radio" id="test2" name="category" class="form-radio-input">
+                                                <label>Work</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="radio" id="test3" name="category" class="form-radio-input">
+                                                <label>Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Street</label>
+                                        <div class="input-group">
+                                            <input type="text" name="street" placeholder="Street"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="location"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">Country</label>
+                                        <div class="position-relative">
+                                            <i class="iconsax input-icon" icon-name="globe"></i>
+                                            <select class="form-select form-select-white">
+                                                <option selected>India</option>
+                                                <option value="1">India</option>
+                                                <option value="2">India</option>
+                                                <option value="3">India</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">State</label>
+                                        <div class="position-relative">
+                                            <i class="iconsax input-icon" icon-name="courthouse"></i>
+                                            <select class="form-select form-select-white">
+                                                <option selected>Gujarat</option>
+                                                <option value="1">Gujarat</option>
+                                                <option value="2">Gujarat</option>
+                                                <option value="3">Gujarat</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">City</label>
+                                        <div class="input-group">
+                                            <input type="text" name="city" placeholder="City"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="building-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">Zip code</label>
+                                        <div class="input-group">
+                                            <input type="text" name="zip code" placeholder="Zip"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="message-dots-notif"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Person name</label>
+                                        <div class="input-group">
+                                            <input type="text" name="person" placeholder="Person name"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="user-1"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Contact</label>
+                                        <div class="row g-2">
+                                            <div class="col-lg-3 col-sm-4">
+                                                <div class="phone-field">
+                                                    <div class="dropdown select-dropdown-div">
+                                                        <button href="#" role="button" data-value="" class="select-btn">
+                                                            <span>
+                                                                <img src="assets/images/flags/IN.png" alt=""
+                                                                    class="img-fluid">+91
+                                                            </span>
+                                                            <i class="iconsax" icon-name="chevron-down"></i>
+                                                        </button>
+                                                        <ul class="select-show-div">
+                                                            <li data-value="4" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/IN.png" alt=""
+                                                                        class="img-fluid">+91</span>
+                                                            </li>
+                                                            <li data-value="1" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/CA.png" alt=""
+                                                                        class="img-fluid">+1</span>
+                                                            </li>
+                                                            <li data-value="2" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/US.png" alt=""
+                                                                        class="img-fluid">+1</span>
+                                                            </li>
+                                                            <li data-value="3" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/TH.png" alt=""
+                                                                        class="img-fluid">+66</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-sm-8">
+                                                <input type="text" id="mobile_code" name="contact"
+                                                    placeholder="Enter phone no."
+                                                    class="form-control form-control-white">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check ps-4">
+                                            <input type="checkbox" class="form-check-input">
+                                            <p class="m-0">Set as a primary location</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="service-booking.html" class="btn btn-solid">Add location</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit review modal -->
+    <div class="modal fade review-modal" id="editReviewModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="editReviewModalLabel">Edit reviews</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="rate-content">
+                        <p>What do you think of the service provided by our workers and this app?</p>
+                        <div class="border-dashed my-3"></div>
+                        <div class="form-group">
+                            <label>Explain in emoji</label>
+                            <ul class="emoji-tab">
+                                <li class="emoji-icon">
+                                    <div class="emojis">
+                                        <img src="assets/images/svg/Bad-1.svg" alt="" class="emoji deactivate">
+                                        <img src="assets/images/svg/Bad.svg" alt="" class="emoji active">
+                                    </div>
+                                    <h4>Bad</h4>
+                                </li>
+                                <li class="emoji-icon">
+                                    <div class="emojis">
+                                        <img src="assets/images/svg/okay-1.svg" alt="" class="emoji deactivate">
+                                        <img src="assets/images/svg/okay.svg" alt="" class="emoji active">
+                                    </div>
+                                    <h4>Okay</h4>
+                                </li>
+                                <li class="emoji-icon">
+                                    <div class="emojis">
+                                        <img src="assets/images/svg/good-1.svg" alt="" class="emoji deactivate">
+                                        <img src="assets/images/svg/good.svg" alt="" class="emoji active">
+                                    </div>
+                                    <h4>Good</h4>
+                                </li>
+                                <li class="emoji-icon">
+                                    <div class="emojis">
+                                        <img src="assets/images/svg/amazing-1.svg" alt="" class="emoji deactivate">
+                                        <img src="assets/images/svg/amazing.svg" alt="" class="emoji active">
+                                    </div>
+                                    <h4>Amazing</h4>
+                                </li>
+                                <li class="emoji-icon">
+                                    <div class="emojis">
+                                        <img src="assets/images/svg/excellent-1.svg" alt="" class="emoji deactivate">
+                                        <img src="assets/images/svg/excellent.svg" alt="" class="emoji active">
+                                    </div>
+                                    <h4>Excellent</h4>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <label for="rating">Say something more</label>
+                            <textarea name="rate" id="rating" rows="5" class="form-control form-control-white">
+                            I just love their service & the staff nature for work, I’d like to hire them again.</textarea>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-solid" data-bs-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Cart modal -->
+    <div class="modal fade delete-modal" id="deleteReviewModel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="deleteReviewModelLabel">Remove Review</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="modal-body-content">
+                        <img src="assets/images/delete-cart.png" alt="success">
+                    </div>
+                    <p class="w-75 mx-auto">Are your sure you want to delete this Review ?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="profile-setting.html" class="btn btn-outline">No</a>
+                    <button type="button" class="btn btn-solid" data-bs-toggle="modal"
+                        data-bs-target="#successfullyDeleteCartModel">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Cart modal -->
+    <div class="modal fade delete-modal" id="deleteaddressModel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="deleteaddressModelLabel">Remove address</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="modal-body-content">
+                        <img src="assets/images/delete-location.png" alt="success">
+                    </div>
+                    <p class="w-75 mx-auto">Are your sure you want to delete this address ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-solid" data-bs-toggle="modal"
+                        data-bs-target="#successfullyDeleteaddressModel">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Successfully Delete Cart modal -->
+    <div class="modal fade delete-modal" id="successfullyDeleteaddressModel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="successfullyDeleteAddressModelLabel">Successfully delete</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="modal-body-content">
+                        <img src="assets/images/gif/success.gif" alt="success">
+                    </div>
+                    <p class="w-75 mx-auto">Your address is removed Successfully</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-solid" data-bs-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Successfully Delete Cart modal -->
+    <div class="modal fade delete-modal" id="successfullyDeleteAddressModel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="successfullyDeleteAddressModelLabel">Successfully delete</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="modal-body-content">
+                        <img src="assets/images/gif/success.gif" alt="success">
+                    </div>
+                    <p class="w-75 mx-auto">Your review is removed Successfully</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-solid" data-bs-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- jquery ui-->
+    <script src="assets/js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+
+    <!-- Flat-picker js -->
+    <script src="assets/js/flat-pickr/flatpickr.js"></script>
+    <script src="assets/js/flat-pickr/custom-flatpickr.js"></script>
+
+    <!-- Iconsax js -->
+    <script src="assets/js/iconsax/iconsax.js"></script>
+
+    <!-- Filter Menu Toggle JS -->
+    <script src="assets/js/filter-menu.js"></script>
+
+    <!-- Password hide show js -->
+    <script src="assets/js/password-hide-show.js"></script>
+
+    <!-- Emoji js -->
+    <script src="assets/js/emoji-rate.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

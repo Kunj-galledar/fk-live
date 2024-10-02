@@ -1,0 +1,444 @@
+/**=====================
+    Calendar scss
+==========================**/
+
+.flatpickr-calendar {
+    z-index: 3;
+    width: 324.875px;
+    padding: 16px;
+
+    &.open {
+        z-index: 6;
+    }
+
+    &:before,
+    &:after {
+        display: none;
+    }
+
+    .flatpickr-innerContainer {
+        font-size: 14px;
+        background-color: $section-bg;
+        border-radius: 8px;
+        @include flex_common ($dis: flex, $align: center, $justify: center);
+    }
+
+    .flatpickr-weekdays {
+        padding: 16px 0 0;
+
+        @include mq-max(xs) {
+            padding-bottom: 16px;
+        }
+
+        .flatpickr-weekdaycontainer {
+            .flatpickr-weekday {
+                color: $primary-color;
+                font-size: 16px;
+
+                @include mq-max(xs) {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .flatpickr-day {
+        max-width: 37px;
+        height: 35px;
+        line-height: 35px;
+        color: $title-color;
+        font-size: 16px;
+
+        @include mq-max(xs) {
+            font-size: 13px;
+            max-width: 33px;
+            height: 32px;
+            line-height: 32px;
+        }
+
+        &:hover {
+            background-color: rgba($primary-color, 0.10);
+            color: $primary-color;
+            font-weight: 600;
+        }
+
+        &.today {
+            background-color: $primary-color;
+            color: $white;
+            border: none;
+        }
+
+        &.selected {
+            color: $white;
+            background-color: $primary-color;
+        }
+
+        &.prevMonthDay,
+        &.flatpickr-disabled,
+        &.flatpickr-disabled:hover,
+        &.nextMonthDay,
+        &.notAllowed,
+        &.notAllowed.prevMonthDay,
+        &.notAllowed.nextMonthDay {
+            color: $light-color;
+        }
+
+        &.inRange {
+            background-color: rgba($primary-color, 0.10);
+            box-shadow: none;
+
+            &.today {
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    .dayContainer {
+        padding: 16px;
+
+        @include mq-max(xs) {
+            padding: 0;
+        }
+    }
+
+    .flatpickr-months {
+        margin-bottom: 16px;
+
+        .flatpickr-month {
+            color: $title-color;
+
+            @include mq-max(xs) {
+                height: 77px;
+            }
+        }
+
+        .flatpickr-current-month {
+            padding: 0;
+            gap: 10px;
+            @include flex_common ($dis: flex, $align: center, $justify: center);
+
+            @include mq-max(xs) {
+                flex-direction: column;
+                height: 77px;
+            }
+
+            input {
+                &.cur-year {
+                    font-size: 16px;
+
+                    @include mq-max(xs) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .flatpickr-prev-month,
+        .flatpickr-next-month {
+            background-color: $section-bg;
+            border-radius: 100%;
+            padding: 8px;
+            height: 30px;
+            width: 30px;
+            top: 18px;
+            @include flex_common ($dis: flex, $align: center, $justify: center);
+
+            &:hover {
+                svg {
+                    fill: $title-color;
+                }
+            }
+
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        .flatpickr-prev-month {
+            left: 16px !important;
+        }
+
+        .flatpickr-next-month {
+            right: 16px !important;
+        }
+
+        .flatpickr-monthDropdown-months {
+            background-color: $section-bg;
+            border-radius: 6px;
+            font-size: 16px;
+            padding: 6px 12px;
+
+            @include mq-max(xs) {
+                font-size: 14px;
+            }
+
+        }
+
+        .numInputWrapper {
+            background-color: $section-bg;
+            border-radius: 6px;
+            font-size: 14px;
+            padding: 6px 12px;
+            width: 80px;
+        }
+    }
+
+    .numInputWrapper {
+        &:hover {
+            span {
+                border: none;
+            }
+        }
+
+        span {
+            &:hover {
+                background-color: unset;
+                border: none;
+            }
+
+            &.arrowUp {
+                &:after {
+                    top: 55%;
+                }
+            }
+
+            &.arrowDown {
+                &:after {
+                    top: 20%;
+                }
+            }
+        }
+    }
+
+    &.hasTime {
+        .flatpickr-time {
+            border: none;
+            line-height: unset;
+            height: 70px !important;
+            max-height: 70px !important;
+            gap: 10px;
+
+            &:after {
+                display: none;
+            }
+
+            .numInputWrapper {
+                height: 100%;
+                position: relative;
+                background: url(../../assets/images/time.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                z-index: 0;
+                width: 30%;
+
+                input {
+
+                    &:hover,
+                    &:focus {
+                        background: transparent;
+
+                    }
+                }
+
+                span {
+                    right: 16px;
+
+                    &.arrowUp {
+                        &:after {
+                            border-bottom-color: $primary-color;
+                            border-width: 5px;
+                            top: unset;
+                            bottom: 13%;
+                        }
+                    }
+
+                    &.arrowDown {
+                        &:after {
+                            border-top-color: $primary-color;
+                            border-width: 5px;
+                            top: 13%;
+                        }
+                    }
+                }
+            }
+
+            input {
+                text-align: left;
+                padding-left: 20px;
+                font-size: 18px;
+                color: $primary-color;
+                font-weight: 500;
+
+            }
+
+            .flatpickr-time-separator {
+                width: 2%;
+                color: $primary-color;
+                font-size: 24px;
+                @include flex_common ($dis: flex, $align: center, $justify: center);
+            }
+
+            .flatpickr-am-pm {
+                height: 100%;
+                position: relative;
+                background: url(../../assets/images/time.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                z-index: 0;
+                width: 29%;
+                font-size: 18px;
+                color: $primary-color;
+                @include flex_common ($dis: flex, $align: center, $justify: center);
+            }
+        }
+
+    }
+}
+
+.main-inline-calender {
+    &.input-group {
+        flex-direction: column;
+
+        .form-control {
+            width: 100%;
+            border-radius: 6px !important;
+            color: $primary-color;
+            padding: 0;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 23px;
+
+            &:focus {
+                border: none;
+            }
+
+            &:focus,
+            &:disabled {
+                box-shadow: unset;
+                border: none;
+                background-color: unset;
+            }
+        }
+
+        .form-control[readonly] {
+            box-shadow: unset;
+            border: none;
+            background-color: unset;
+        }
+
+        .flatpickr-calendar {
+            &.inline {
+                width: 100%;
+                border-radius: 6px !important;
+
+                @include mq-max(sm) {
+                    max-width: 410px;
+                    min-width: 400px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                @include mq-max(xs) {
+                    min-width: 310px;
+                    max-width: min-content;
+                }
+
+                @include mq-max(2xs) {
+                    min-width: 270px;
+                    max-width: min-content;
+                }
+            }
+        }
+
+        .flatpickr-innerContainer {
+            display: block;
+        }
+
+        .flatpickr-rContainer {
+            display: block;
+
+            .flatpickr-weekdays {
+                width: 100%;
+            }
+
+            .flatpickr-days {
+                width: 100%;
+
+                .dayContainer {
+                    width: 100%;
+                    max-width: none;
+                    min-width: unset;
+                    gap: 20px;
+
+                    @include mq-max(sm) {
+                        gap: 14px;
+                    }
+
+                    @include mq-max(xs) {
+                        gap: 3px;
+                        padding: 4px;
+                    }
+
+                    @include mq-max(2xs) {
+                        gap: 0;
+                    }
+
+
+                    .flatpickr-day {
+                        border-radius: 100%;
+                        width: 100%;
+                        color: $title-color;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
+
+                        &.selected,
+                        &.today {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.inline-time-picker {
+    @include mq-max(sm) {
+        max-width: 410px;
+        min-width: 400px;
+        margin-inline: auto;
+    }
+
+    @include mq-max(xs) {
+        min-width: 310px;
+        max-width: min-content;
+    }
+
+    @include mq-max(2xs) {
+        min-width: 270px;
+        max-width: min-content;
+    }
+}
+
+.inline-picker-btn {
+    @include mq-max(sm) {
+        max-width: 410px;
+        min-width: 400px;
+        margin-inline: auto;
+    }
+
+    @include mq-max(xs) {
+        min-width: 310px;
+        max-width: min-content;
+    }
+
+    @include mq-max(2xs) {
+        min-width: 270px;
+        max-width: min-content;
+    }
+}

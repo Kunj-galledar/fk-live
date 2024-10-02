@@ -1,0 +1,438 @@
+/**=====================
+    Auth scss
+==========================**/
+
+.log-in-section {
+    width: 100%;
+    margin: 0 auto;
+    overflow: auto;
+    position: relative;
+    height: 100vh;
+
+    .login-content {
+        height: 100%;
+    }
+}
+
+.image-contain {
+    background-color: $primary-color;
+    padding: 50px;
+    text-align: center;
+    flex-direction: column;
+    @include flex_common ($dis: flex, $align: center, $justify: center);
+    height: 100%;
+
+    .logo {
+        height: 50px;
+        margin: 0 auto;
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .auth-image {
+        width: 40%;
+    }
+
+    .auth-content {
+        color: $white;
+        margin-top: 50px;
+
+        h2 {
+            line-height: 1.4;
+            font-weight: 700;
+            font-size: calc(36px + (41 - 36) * ((100vw - 1199px) / (1920 - 1199)));
+            text-transform: none;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 20px;
+            width: 60%;
+            margin: auto;
+
+            @media (max-width: 1324px) {
+                width: 75%;
+            }
+        }
+
+        .app-install {
+            margin-top: 30px;
+            @include flex_common ($dis: flex, $align: center, $justify: center);
+            gap: 16px;
+
+            img {
+                height: 50px;
+            }
+        }
+    }
+}
+
+.login-main {
+    background-color: $section-bg;
+    height: 100%;
+    position: relative;
+    @include flex_common ($dis: flex, $align: center, $justify: center);
+
+    .language-dropdown {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        @include flex_common ($dis: flex, $align: center, $justify: end);
+        gap: 6px;
+        padding: 5px 8px;
+        border-radius: 30px;
+        border: 1px solid rgba($title-color, 0.10%);
+        background-color: $white;
+        margin-bottom: 30px;
+        width: max-content;
+        margin-left: auto;
+
+        img {
+            width: 24px;
+            height: 24px;
+            border-radius: 100%;
+        }
+
+        i {
+            --Iconsax-Size: 18px;
+            --Iconsax-Color: #00162E;
+        }
+
+        .language-btn {
+            background: transparent;
+            color: $title-color;
+            border: none;
+            line-height: 1;
+            padding: 0;
+            @include flex_common_1 ($dis: flex, $align: center);
+            gap: 12px;
+
+            span {
+                @include flex_common_1 ($dis: inline-flex, $align: center);
+                gap: 6px;
+                line-height: 1;
+                font-size: 16px;
+            }
+        }
+
+        .onhover-show-div {
+            min-width: 120px;
+            transition: all 0.3s linear;
+            position: absolute;
+            z-index: 3;
+            border: 1px solid rgba($title-color, 0.10%);
+            background-color: $white;
+            opacity: 0;
+            visibility: hidden;
+            transform: translate3d(0, -5%, 0);
+            top: 37px;
+            right: 0;
+            padding: 15px;
+            border-radius: 4px;
+
+
+            [dir="rtl"] & {
+                left: 0;
+                right: unset;
+            }
+
+            .lang {
+                cursor: pointer;
+                transition: all 0.3s;
+                @include flex_common_1 ($dis: flex, $align: center);
+                border: none;
+                color: $title-color;
+                background-color: transparent;
+                gap: 8px;
+                font-size: 13px;
+                padding: 0;
+
+                img {
+                    border-radius: 0 !important;
+                    width: auto !important;
+                    height: auto !important;
+                }
+
+                &:hover {
+                    color: var(--theme-color);
+                    transform: translateX(5px);
+
+                    [dir="rtl"] & {
+                        transform: translateX(-5px);
+                    }
+                }
+
+                +li {
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        &:hover {
+            .onhover-show-div {
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+            }
+        }
+    }
+
+    .login-card {
+        width: 100%;
+        @include flex_common ($dis: flex, $align: center, $justify: center);
+        flex-direction: column;
+        background-color: white;
+        width: $login-card;
+        border-radius: $login-br;
+        margin: 20px auto;
+
+        .login-title {
+            width: 100%;
+            border-bottom: 1px dashed $gray-color;
+            padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320)));
+            text-align: center;
+
+            h2 {
+                font-weight: 700;
+                line-height: 33px;
+            }
+
+            p {
+                color: $light-color;
+                padding-top: 6px;
+                font-size: 16px;
+                margin: 0;
+                line-height: 1.4;
+
+                span {
+                    color: var(--theme-color);
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .login-detail {
+            background-color: $section-bg;
+            border-radius: 10px;
+            width: calc(100% - 80px);
+            margin: calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320))) 0;
+            padding: calc(19px + (30 - 19) * ((100vw - 320px) / (1920 - 320))) calc(11px + (30 - 11) * ((100vw - 320px) / (1920 - 320)));
+
+            @include mq-max(xl) {
+                width: calc(100% - calc(30px + (80 - 30) * ((100vw - 320px) / (1200 - 320))));
+            }
+
+            @include mq-max(sm) {
+                margin-bottom: calc(15px + (30 - 15) * ((100vw - 320px) / (576 - 320)));
+            }
+
+            .form-group {
+                position: relative;
+                margin-bottom: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+
+                i {
+                    --Iconsax-Size: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+                    --Iconsax-Color: #808B97;
+                    position: absolute;
+                    top: calc(42px + (45 - 42) * ((100vw - 320px) / (1920 - 320)));
+                    left: 15px;
+
+                }
+
+                .toggle-password {
+                    position: absolute;
+                    top: calc(42px + (45 - 42) * ((100vw - 320px) / (1920 - 320)));
+                    right: 15px;
+                    left: unset;
+                    cursor: pointer;
+
+                    i {
+                        position: static;
+                    }
+
+                    .eye-slash {
+                        display: none;
+                    }
+
+                    &.eye {
+                        i.eye {
+                            display: block;
+                        }
+
+                        i.eye-slash {
+                            display: none;
+                        }
+                    }
+
+                    &.eye-slash {
+                        i.eye-slash {
+                            display: block;
+                        }
+
+                        i.eye {
+                            display: none;
+                        }
+                    }
+                }
+
+                label {
+                    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 500;
+                    line-height: 23px;
+                    margin-bottom: 8px;
+                    position: relative;
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        background-color: $primary-color;
+                        height: calc(23px + (30 - 23) * ((100vw - 320px) / (1920 - 320)));
+                        width: calc(3px + (4 - 3) * ((100vw - 320px) / (1920 - 320)));
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: calc(-11px + (-30 - -11) * ((100vw - 320px) / (1920 - 320)));
+                        border-radius: 100px;
+                    }
+                }
+
+                .form-control {
+                    border-radius: 8px;
+                    padding: calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))) calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))) calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320))) 45px;
+                    background-color: $white;
+                    color: rgba($title-color, 0.8);
+                    border: none;
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            .forgot-pass {
+                margin-top: 12px;
+                text-align: end;
+
+                a {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+
+            .btn {
+                margin-top: calc(12px + (40 - 12) * ((100vw - 320px) / (1920 - 320)));
+                border-radius: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
+                width: 100%;
+                justify-content: center;
+                font-size: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .not-member {
+                text-align: center;
+                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+                font-weight: 400;
+                color: $light-color;
+                line-height: 20px;
+                padding-top: 10px;
+
+                small {
+                    color: $primary-color;
+                    font-weight: 500;
+                }
+
+                a {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .other-options {
+            width: 100%;
+            margin: 30px 40px 40px;
+            position: relative;
+
+            @include mq-max(xl) {
+                margin: 20px calc(15px + (40 - 15) * ((100vw - 320px) / (1200 - 320))) calc(20px + (40 - 20) * ((100vw - 320px) / (1200 - 320)));
+            }
+        }
+
+        .options {
+            position: relative;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            margin: 0 auto;
+            color: $light-color;
+            font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+
+
+            &:before {
+                @include pos;
+                @include center(both);
+                @include pseudowh($width: 80%, $height: 1px);
+                background-color: rgba($light-color, 0.212);
+            }
+
+            span {
+                position: relative;
+                background-color: $white;
+                padding-inline: 10px;
+            }
+        }
+
+        .social-media {
+            @include flex_common ($dis: flex, $align: center, $justify: center);
+            gap: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+            margin-top: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+            .social-icon {
+                background-color: $section-bg;
+                border-radius: 100%;
+                border: 1px solid rgba($title-color, 0.1);
+                height: calc(42px + (70 - 42) * ((100vw - 320px) / (1920 - 320)));
+                width: calc(42px + (70 - 42) * ((100vw - 320px) / (1920 - 320)));
+                @include flex_common ($dis: flex, $align: center, $justify: center);
+
+                img {
+                    width: calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 320)));
+                    height: calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+        }
+
+        @include mq-max(sm) {
+            width: calc(100% - calc(30px + (60 - 30) * ((100vw - 320px) / (576 - 320))));
+        }
+    }
+
+}
+
+.terms {
+    p {
+        margin: 0;
+        color: $light-color;
+    }
+}
+
+.login-img {
+    width: calc(190px + (250 - 190) * ((100vw - 320px) / (1920 - 320)));
+    padding-block: 30px calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.otp-field {
+    @include flex_common ($dis: flex, $align: center, $justify: space-between);
+    gap: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320)));
+
+    input {
+        width: 100%;
+        height: calc(42px + (50 - 42) * ((100vw - 320px) / (1920 - 320)));
+        border: none;
+        background-color: $white;
+        border-radius: calc(5px + (8 - 5) * ((100vw - 320px) / (1920 - 320)));
+        text-align: center;
+    }
+}

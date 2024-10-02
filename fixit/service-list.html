@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fixit">
+    <meta name="keywords" content="Fixit">
+    <meta name="author" content="Fixit">
+    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
+    <title>Service List Page</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+
+    <!-- Swiper Slider css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/swiper-bundle.min.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap/bootstrap.css">
+
+    <!-- Range Slider css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/range-slider.css">
+
+    <!-- Iconsax css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconsax/iconsax.css">
+
+    <!-- Template css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body class="notLoaded">
+
+    <!-- Loader Section Start -->
+    <div class="page-loader" id="loader">
+        <div class="page-loader-wrapper">
+            <img src="assets/images/gif/loader.gif" alt="">
+        </div>
+    </div>
+    <!-- Loader Section End -->
+
+
+    <!-- Header Section Start -->
+    <header>
+        <div class="top-header">
+            <div class="container-fluid-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar custom-navbar navbar-expand-xl navbar-light justify-xl-content-start">
+                            <div class="logo-content">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <a class="navbar-brand" href="./index.html">
+                                    <img src="assets/images/logo/dark-logo.png" alt="">
+                                </a>
+                                <div class="dropdown location-dropdown d-md-flex d-none">
+                                    <button id="locationSelected" class="location-btn">
+                                        <span>
+                                            <i class="iconsax location-svg" icon-name="location"></i>
+                                            <span>Adajan - Surat, Gujarat</span>
+                                        </span>
+                                        <i class="iconsax arrow" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="navbar-header d-xl-none d-flex">
+                                    <h4>Menu</h4>
+                                    <button class="btn-close" type="button"></button>
+                                </div>
+                                <ul class="navbar-nav mx-auto custom-scroll">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="category.html">Category</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="service-list.html">Service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="booking-list.html">Bookings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="blog.html">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="nav-right">
+                                <li class="icon nav-item-right">
+                                    <a href="cart.html">
+                                        <i class="iconsax" icon-name="shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown currency-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="unitSelected" class="currency-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">USD
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="currency">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">USD
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">EUR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">INR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">CNY
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown language-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="languageSelected" class="language-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">EN
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="lang">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">EN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">IN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">NZ
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">ZA
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown profile-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="profileSelected" class="profile-btn">
+                                        <span>
+                                            <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
+                                            Laila
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="profile">
+                                            <a href="profile-setting.html">
+                                                <i class="iconsax" icon-name="user-1-square"></i>Edit Profile
+                                            </a>
+                                        </li>
+                                        <li class="profile">
+                                            <a href="login.html">
+                                                <i class="iconsax" icon-name="logout-1"></i>Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Home Section Start -->
+    <section class="home-section ratio_18">
+        <div class="container-fluid-lg">
+            <img src="assets/images/bg.jpg" alt="bg" class="bg-img">
+            <div class="row">
+                <div class="col-12">
+                    <div class="home-contain">
+                        <h2><span>Service List</span></h2>
+                        <p>Select a service from the below category list that correlates with your needs. It includes
+                            15+ categories with 560+ different services in various sector.</p>
+                        <nav class="breadcrumb breadcrumb-icon">
+                            <a class="breadcrumb-item" href="index.html">Home</a>
+                            <a class="breadcrumb-item" href="category.html">All categories</a>
+                            <span class="breadcrumb-item active">Service list</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+    <!-- Service List Section Start -->
+    <section class="service-list-section">
+        <div class="container-fluid-lg">
+            <div class="row service-list-content">
+                <div class="col-custom-3">
+                    <div class="filter p-sticky">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="mb-0 f-w-600">Filter by</h3>
+                                <a href="#!">Clear All</a>
+                            </div>
+                            <div class="card-body custom-scroll">
+                                <div class="accordion" id="provider">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="providerItem">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseProvider">Ac repair service</button>
+                                        </h2>
+
+                                        <div id="collapseProvider" class="accordion-collapse collapse show"
+                                            data-bs-parent="#provider">
+                                            <div class="accordion-body">
+                                                <div class="filter-body">
+                                                    <div class="service">
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="form-check">
+                                                                <input type="radio" id="test1" name="radio-group"
+                                                                    class="form-radio-input">
+                                                                <label>Highest exp.</label>
+                                                            </div>
+
+                                                            <div class="form-check">
+                                                                <input type="radio" id="test3" name="radio-group"
+                                                                    class="form-radio-input">
+                                                                <label>Highest Served</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="form-check">
+                                                                <input type="radio" id="test2" name="radio-group"
+                                                                    class="form-radio-input">
+                                                                <label>Lowest exp.</label>
+                                                            </div>
+
+                                                            <div class="form-check">
+                                                                <input type="radio" id="test4" name="radio-group"
+                                                                    class="form-radio-input" checked>
+                                                                <label>Lowest Served</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="search-provider">
+                                                        <div class="accordion mb-0" id="search-provider">
+                                                            <div class="accordion-item" id="search-providerItem">
+                                                                <div class="search-div">
+                                                                    <div class="form-group">
+                                                                        <i class="iconsax" icon-name="user-1"></i>
+                                                                        <input type="search" id="accordion_search_bar"
+                                                                            placeholder="Search" />
+                                                                    </div>
+                                                                    <button class="accordion-button" type="button"
+                                                                        data-bs-toggle="collapse"
+                                                                        data-bs-target="#collapsesearch-provider"></button>
+                                                                </div>
+
+                                                                <div id="collapsesearch-provider"
+                                                                    class="accordion-collapse collapse show"
+                                                                    data-bs-parent="#search-provider">
+                                                                    <div class="accordion-body mb-0 pb-0">
+                                                                        <div class="search-body custom-scroll">
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox"
+                                                                                    class="form-check-input" checked>
+                                                                                <ul>
+                                                                                    <li class="name">Kate Tanner</li>
+                                                                                    <li class="served">105 Served</li>
+                                                                                    <li class="year">2 years</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox"
+                                                                                    class="form-check-input" checked>
+                                                                                <ul>
+                                                                                    <li class="name">Roderick Decker
+                                                                                    </li>
+                                                                                    <li class="served">105 Served</li>
+                                                                                    <li class="year">2 years</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox"
+                                                                                    class="form-check-input" checked>
+                                                                                <ul>
+                                                                                    <li class="name">Angus Mac</li>
+                                                                                    <li class="served">105 Served</li>
+                                                                                    <li class="year">2 years</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox"
+                                                                                    class="form-check-input" checked>
+                                                                                <ul>
+                                                                                    <li class="name">Tony Danza</li>
+                                                                                    <li class="served">105 Served</li>
+                                                                                    <li class="year">2 years</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox"
+                                                                                    class="form-check-input" checked>
+                                                                                <ul>
+                                                                                    <li class="name">Mike Torello</li>
+                                                                                    <li class="served">105 Served</li>
+                                                                                    <li class="year">2 years</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox"
+                                                                                    class="form-check-input" checked>
+                                                                                <ul>
+                                                                                    <li class="name">Kate Tanner</li>
+                                                                                    <li class="served">105 Served</li>
+                                                                                    <li class="year">2 years</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion" id="range">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="rangeItem">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapserange">
+                                                Price range
+                                            </button>
+                                        </h2>
+                                        <div id="collapserange" class="accordion-collapse collapse show"
+                                            data-bs-parent="#range">
+                                            <div class="accordion-body">
+                                                <input id="price-range" type="text" class="range-slider">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion" id="rating">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="ratingItem">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapserating">
+                                                Ac repair service
+                                            </button>
+                                        </h2>
+                                        <div id="collapserating" class="accordion-collapse collapse show"
+                                            data-bs-parent="#rating">
+                                            <div class="accordion-body">
+                                                <div class="star-rating">
+                                                    <input type="radio" id="5-stars" name="rating" value="5" />
+                                                    <label for="5-stars" class="star"><i class="iconsax"
+                                                            icon-name="star"></i>5</label>
+                                                    <input type="radio" id="4-stars" name="rating" value="4" />
+                                                    <label for="4-stars" class="star"><i class="iconsax"
+                                                            icon-name="star"></i>4</label>
+                                                    <input type="radio" id="3-stars" name="rating" value="3" />
+                                                    <label for="3-stars" class="star"><i class="iconsax"
+                                                            icon-name="star"></i>3</label>
+                                                    <input type="radio" id="2-stars" name="rating" value="2" />
+                                                    <label for="2-stars" class="star"><i class="iconsax"
+                                                            icon-name="star"></i>2</label>
+                                                    <input type="radio" id="1-star" name="rating" value="1" />
+                                                    <label for="1-star" class="star"><i class="iconsax"
+                                                            icon-name="star"></i>1</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion" id="distance">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="distanceItem">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapsedistance">
+                                                Distance
+                                            </button>
+                                        </h2>
+                                        <div id="collapsedistance" class="accordion-collapse collapse show"
+                                            data-bs-parent="#distance">
+                                            <div class="accordion-body">
+                                                <div class="distance">
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <input type="radio" id="test1" name="distance"
+                                                                class="form-radio-input solid" checked>
+                                                            <label>Nearby location</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="form-check">
+                                                            <input type="radio" id="test2" name="distance"
+                                                                class="form-radio-input solid">
+                                                            <label>Distance location</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input id="distance-slider" type="text" class="range-slider1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-solid">Submit</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-custom-9">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="select-dropdown">
+                                <div class="filter-div">
+                                    <div class="d-xl-none d-block">
+                                        <a href="#!" class="btn btn-solid filter-btn w-max">
+                                            Filter
+                                        </a>
+                                    </div>
+                                    <select class="form-select">
+                                        <option selected>Surat, India</option>
+                                        <option value="1">Surat, India</option>
+                                        <option value="2">Surat, India</option>
+                                        <option value="3">Surat, India</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service">Category:</label>
+                                    <select class="form-select" id="service">
+                                        <option selected>Ac repair</option>
+                                        <option value="1">Ac repair</option>
+                                        <option value="2">Cleaning</option>
+                                        <option value="3">Painting</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-2 row-cols-xxl-3 g-4">
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/1.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/2.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/3.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/1.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/2.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/3.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/1.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/2.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col ratio3_2">
+                            <div class="card">
+                                <div class="discount-tag">10%</div>
+                                <div class="card-img">
+                                    <img src="assets/images/feature/3.png" alt="feature" class="bg-img">
+                                </div>
+                                <div class="card-body">
+                                    <div class="service-title">
+                                        <h4>Curtain washing</h4>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <del>$40.56</del>
+                                            <small>$30</small>
+                                        </div>
+                                    </div>
+                                    <div class="service-detail mt-1">
+                                        <ul>
+                                            <li class="time">
+                                                <i class="iconsax" icon-name="clock"></i>
+                                                <span>30mins</span>
+                                            </li>
+                                            <li>Min 2 servicemen required</li>
+                                        </ul>
+                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="footer-detail">
+                                        <img src="assets/images/avatar/1.png" alt="feature" class="img-fluid">
+                                        <div>
+                                            <p>Darlene Robertson</p>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>3.0</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="service-detail.html" class="btn btn-outline">
+                                        <i class="iconsax" icon-name="add"></i>
+                                        Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="pagination-main section-b-space">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#!"><span>
+                                        <i class="iconsax" icon-name="chevron-left"></i>
+                                    </span></a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#!">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">...</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">10</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!"><span>
+                                        <i class="iconsax" icon-name="chevron-right"></i>
+                                    </span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service List Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer-section nav-folderized">
+        <div class="container-fluid-lg">
+            <div class="copyright">
+                <a class="footer-logo" href="salon-end/index.html" target="_blank">
+                    <img src="assets/images/logo/dark-logo.png" alt="">
+                </a>
+                <p><i class="iconsax" icon-name="copyright"></i>2024. All copyright reserved.</p>
+            </div>
+            <div class="row gy-3 gy-md-4 gy-xl-0">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Links
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="index.html">Home </a></li>
+                            <li><a class="nav-link" href="category.html">Categories </a></li>
+                            <li><a class="nav-link" href="service-list.html">Services near you </a></li>
+                            <li><a class="nav-link" href="provider-list.html">Providers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Policy
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="privacy-policy.html">Privacy policy </a></li>
+                            <li><a class="nav-link" href="terms-conditions.html">Terms & conditions </a></li>
+                            <li><a class="nav-link" href="#!">Cancellation policy</a></li>
+                            <li><a class="nav-link" href="#!">Refund policy </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Other
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="contact-us.html">Contact us </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="about-us.html">About us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#!">Apps</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Become a provider
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>Earn more and deliver your service to worldwide.</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-solid">Register now
+                            <i class="iconsax" icon-name="arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- jquery ui-->
+    <script src="assets/js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+
+    <!-- Swiper slider js -->
+    <script src="assets/js/swiper-slider/swiper-bundle.min.js"></script>
+
+    <!-- Range slider js -->
+    <script src="assets/js/range-slider/ion.rangeSlider.min.js"></script>
+    <script src="assets/js/range-slider/rangeslider-script.js"></script>
+
+    <!-- Iconsax js -->
+    <script src="assets/js/iconsax/iconsax.js"></script>
+
+    <!-- Swiper js -->
+    <script src="assets/js/swiper.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

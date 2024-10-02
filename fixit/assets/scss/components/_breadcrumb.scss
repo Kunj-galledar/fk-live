@@ -1,0 +1,129 @@
+/**=====================
+    Breadcrumb scss
+==========================**/
+
+.breadcrumb {
+    @include flex_common ($dis: flex, $align: center, $justify: center);
+    margin: 0;
+    margin-top: 10px;
+
+    .breadcrumb-item {
+        font-size: calc(13px + (16 - 13) * ((100vw - 320px) / (1920 - 320)));
+        color: $white;
+        text-transform: capitalize;
+
+        +.breadcrumb-item {
+            &:before {
+                color: $white;
+            }
+        }
+    }
+}
+
+.breadcrumb-icon {
+    --bs-breadcrumb-divider: '>';
+
+    li {
+        display: inline-block;
+    }
+}
+
+.breadcrumb-section {
+    height: calc(299px + (382 - 299) * ((100vw - 767px) / (1920 - 767)));
+    padding-top: 80px;
+
+    @include mq-max(md) {
+        height: 209px;
+        padding-top: 67px;
+    }
+
+    .breadcrumb-contain {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+
+        h2 {
+            font-size: calc(20px + (42 - 20) * ((100vw - 320px) / (1920 - 320)));
+            font-weight: 700;
+            background: linear-gradient(to right,
+                    rgba(251, 64, 64, 1) 20%, rgba(255, 84, 156, 1) 30%, rgba(114, 94, 254, 1) 50%, rgba(36, 119, 255, 1) 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            background-size: 150% auto;
+            width: max-content;
+            margin: 0 auto;
+            position: relative;
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: "";
+                background-color: $primary-color;
+                height: calc(14px + (34 - 14) * ((100vw - 320px) / (1920 - 320)));
+                width: 4px;
+                border-radius: 6px;
+                top: 4px;
+
+                @include mq-max(2xl) {
+                    top: 7px;
+                }
+            }
+
+            &:before {
+                left: calc(-25px + ((-40) - (-25)) * ((100vw - 320px) / (1920 - 320)));
+            }
+
+            &:after {
+                right: calc(-25px + ((-40) - (-25)) * ((100vw - 320px) / (1920 - 320)));
+
+            }
+
+            span {
+
+                &:before,
+                &:after {
+                    position: absolute;
+                    content: "";
+                    background-color: $primary-color;
+                    height: calc(28px + (58 - 28) * ((100vw - 320px) / (1920 - 320)));
+                    width: 4px;
+                    border-radius: 6px;
+                    top: -8px;
+
+                    @include mq-max(2xl) {
+                        top: -3px;
+                    }
+                }
+
+                &:before {
+                    left: calc(-15px + ((-30) - (-15)) * ((100vw - 320px) / (1920 - 320)));
+
+                }
+
+                &:after {
+                    right: calc(-15px + ((-30) - (-15)) * ((100vw - 320px) / (1920 - 320)))
+                }
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            max-width: 680px;
+            width: 90%;
+            padding-top: calc(20px + (30 - 20)*((100vw - 991px) /(1920 - 991)));
+            color: $light-color;
+            margin: 0 auto;
+
+            @include mq-max(md) {
+                display: none;
+            }
+        }
+    }
+}

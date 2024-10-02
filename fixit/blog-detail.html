@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fixit">
+    <meta name="keywords" content="Fixit">
+    <meta name="author" content="Fixit">
+    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
+    <title>Blog Detail Page</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+
+    <!-- Swiper Slider css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/swiper-bundle.min.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap/bootstrap.css">
+
+    <!-- Iconsax css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconsax/iconsax.css">
+
+    <!-- Template css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body class="notLoaded">
+
+    <!-- Loader Section Start -->
+    <div class="page-loader" id="loader">
+        <div class="page-loader-wrapper">
+            <img src="assets/images/gif/loader.gif" alt="">
+        </div>
+    </div>
+    <!-- Loader Section End -->
+
+
+    <!-- Header Section Start -->
+    <header>
+        <div class="top-header">
+            <div class="container-fluid-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar custom-navbar navbar-expand-xl navbar-light justify-xl-content-start">
+                            <div class="logo-content">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <a class="navbar-brand" href="./index.html">
+                                    <img src="assets/images/logo/dark-logo.png" alt="">
+                                </a>
+                                <div class="dropdown location-dropdown d-md-flex d-none">
+                                    <button id="locationSelected" class="location-btn">
+                                        <span>
+                                            <i class="iconsax location-svg" icon-name="location"></i>
+                                            <span>Adajan - Surat, Gujarat</span>
+                                        </span>
+                                        <i class="iconsax arrow" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="navbar-header d-xl-none d-flex">
+                                    <h4>Menu</h4>
+                                    <button class="btn-close" type="button"></button>
+                                </div>
+                                <ul class="navbar-nav mx-auto custom-scroll">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="category.html">Category</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="service-list.html">Service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="booking-list.html">Bookings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="blog.html">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="nav-right">
+                                <li class="icon nav-item-right">
+                                    <a href="cart.html">
+                                        <i class="iconsax" icon-name="shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown currency-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="unitSelected" class="currency-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">USD
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="currency">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">USD
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">EUR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">INR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">CNY
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown language-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="languageSelected" class="language-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">EN
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="lang">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">EN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">IN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">NZ
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">ZA
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown profile-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="profileSelected" class="profile-btn">
+                                        <span>
+                                            <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
+                                            Laila
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="profile">
+                                            <a href="profile-setting.html">
+                                                <i class="iconsax" icon-name="user-1-square"></i>Edit Profile
+                                            </a>
+                                        </li>
+                                        <li class="profile">
+                                            <a href="login.html">
+                                                <i class="iconsax" icon-name="logout-1"></i>Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Home Section Start -->
+    <section class="home-section ratio_18">
+        <div class="container-fluid-lg">
+            <img src="assets/images/bg.jpg" alt="bg" class="bg-img">
+            <div class="row">
+                <div class="col-12">
+                    <div class="home-contain">
+                        <h2><span>Blog Detail</span></h2>
+                        <p>Select a service from the below category list that correlates with your needs. It includes
+                            15+ categories with 560+ different services in various sector.</p>
+                        <nav class="breadcrumb breadcrumb-icon">
+                            <a class="breadcrumb-item" href="index.html">Home</a>
+                            <a class="breadcrumb-item" href="blog.html">Blog</a>
+                            <span class="breadcrumb-item active">Blog detail</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+    <!-- Blog List Section Start -->
+    <section class="blog-section">
+        <div class="container-fluid-sm">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ratio_40">
+                        <div class="br-12">
+                            <img src="assets/images/banner/2.png" alt="blog" class="bg-img">
+                        </div>
+                    </div>
+                    <div class="detail-content">
+                        <div class="title">
+                            <h4>Switchboard an a electrical issue</h4>
+                            <span class="badge primary-light-badge d-sm-flex d-none">
+                                Company
+                            </span>
+                        </div>
+                        <div
+                            class="d-flex align-items-sm-center align-items-start gap-1 justify-content-between flex-sm-row flex-column mb-4">
+                            <ul class="blog-detail">
+                                <li>Wooden partition</li>
+                                <li>25 Jan, 2024</li>
+                            </ul>
+                            <span class="text-light">
+                                - By admin
+                            </span>
+                        </div>
+                        <div class="detail-sec">
+                            <label class="text-dark">Description</label>
+                            <ul class="overview-list">
+                                <li>Expert technicians will thoroughly clean and disinfect your cssac air conditioning
+                                    system, ensuring optimal. Disinfect your air conditioning system, ensuring optimal.
+                                    Disinfect your air conditioning system, ensuring optimal.</li>
+                                <li>Our expert technicians will thoroughly clean and disinfect your air conditioning
+                                    system, ensuring optimal. Disinfect your ac.</li>
+                                <li>Expert technicians will thoroughly clean and disinfect your cssac air conditioning
+                                    system, ensuring optimal. Disinfect your air conditioning system, ensuring optimal.
+                                    Disinfect your air conditioning system, ensuring optimal.</li>
+                                <li>Our expert technicians will thoroughly clean and disinfect your air conditioning
+                                    system, ensuring optimal. Disinfect your ac.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Blog List Section End -->
+
+    <!-- Review Section Start -->
+    <section class="review-section">
+        <div class="container-fluid-sm">
+            <div class="title">
+                <h2>Comments (4)</h2>
+            </div>
+            <ul class="review-content">
+                <li class="review-card">
+                    <div class="review-detail">
+                        <div class="review-image-box">
+                            <img src="assets/images/avatar/3.png" alt="feature" class="img-fluid">
+                            <div>
+                                <h4>Darlene Robertson</h4>
+                                <span>Commented on 8h ago</span>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <p>“Buyers can discover local services in a click! through our Google Map
+                                integration which. “Buyers can discover local services in a click! through
+                                our Google.”
+                            </p>
+                            <textarea class="form-control form-control-white mt-3" placeholder="Reply" name="review"
+                                rows="1"></textarea>
+                        </div>
+
+                        <div class="favorite">
+                            <i class="iconsax nolike" icon-name="heart"></i>
+                            <img src="assets/images/svg/heart-fill.svg" alt="heart" class="like">
+                        </div>
+                    </div>
+                    <ul>
+                        <li class="review-card">
+                            <div class="review-detail">
+                                <div class="review-image-box">
+                                    <img src="assets/images/avatar/3.png" alt="feature" class="img-fluid">
+                                    <div>
+                                        <h4>Darlene Robertson</h4>
+                                        <span>Commented on 8h ago</span>
+                                    </div>
+                                </div>
+                                <div class="review">
+                                    <p>“Buyers can discover local services in a click! through our Google Map
+                                        integration which. “Buyers can discover local services in a click! through
+                                        our Google.”
+                                    </p>
+                                    <textarea class="form-control form-control-white mt-3" placeholder="Reply"
+                                        name="review" rows="1"></textarea>
+                                </div>
+
+                                <div class="favorite">
+                                    <i class="iconsax nolike" icon-name="heart"></i>
+                                    <img src="assets/images/svg/heart-fill.svg" alt="heart" class="like">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="review-card">
+                    <div class="review-detail">
+                        <div class="review-image-box">
+                            <img src="assets/images/avatar/3.png" alt="feature" class="img-fluid">
+                            <div>
+                                <h4>Darlene Robertson</h4>
+                                <span>Commented on 8h ago</span>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <p>“Buyers can discover local services in a click! through our Google Map
+                                integration which. “Buyers can discover local services in a click! through
+                                our Google.”
+                            </p>
+                            <textarea class="form-control form-control-white mt-3" placeholder="Reply" name="review"
+                                rows="1"></textarea>
+                        </div>
+
+                        <div class="favorite">
+                            <i class="iconsax nolike" icon-name="heart"></i>
+                            <img src="assets/images/svg/heart-fill.svg" alt="heart" class="like">
+                        </div>
+                    </div>
+                </li>
+                <li class="review-card">
+                    <div class="review-detail">
+                        <div class="review-image-box">
+                            <img src="assets/images/avatar/3.png" alt="feature" class="img-fluid">
+                            <div>
+                                <h4>Darlene Robertson</h4>
+                                <span>Commented on 8h ago</span>
+                            </div>
+                        </div>
+                        <div class="review">
+                            <p>“Buyers can discover local services in a click! through our Google Map
+                                integration which. “Buyers can discover local services in a click! through
+                                our Google.”
+                            </p>
+                            <textarea class="form-control form-control-white mt-3" placeholder="Reply" name="review"
+                                rows="1"></textarea>
+                        </div>
+
+                        <div class="favorite">
+                            <i class="iconsax nolike" icon-name="heart"></i>
+                            <img src="assets/images/svg/heart-fill.svg" alt="heart" class="like">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Review Section End -->
+
+    <!-- Comments Section Start -->
+    <section class="comment-section">
+        <div class="container-fluid-sm">
+            <div class="title">
+                <h2>Leave A Comment</h2>
+            </div>
+            <form action="" class="">
+                <div class="row g-md-4 g-sm-2 g-1">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <i class="iconsax" icon-name="user"></i>
+                            <input class="form-control form-control-white" id="name" placeholder="Enter name"
+                                name="name" type="text">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <i class="iconsax" icon-name="mail"></i>
+                            <input class="form-control form-control-white" id="email" placeholder="Enter mail"
+                                name="email" type="email">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="email">Message</label>
+                            <i class="iconsax" icon-name="mail"></i>
+                            <textarea class="form-control form-control-white" id="message"
+                                placeholder="Enter message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-solid mt-2"> Post Comment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Comments Section End -->
+
+    <!-- Recent Blog Section Start -->
+    <section class="blog-section section-b-space">
+        <div class="container-fluid-sm">
+            <div class="title">
+                <h2>Recent Blogs</h2>
+                <a class="view-all" href="blog.html">
+                    View all
+                    <i class="iconsax" icon-name="arrow-right"></i>
+                </a>
+            </div>
+            <div class="blog-content ratio2_1">
+                <div class="row row-cols-1 row-cols-md-3 g-5">
+                    <div class="col blog-main">
+                        <div class="card">
+                            <div class="overflow-hidden b-r-5">
+                                <a href="blog-detail.html" class="card-img">
+                                    <img src="assets/images/blog/1.png" alt="blog" class="bg-img">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="text-truncate d-inline-block">
+                                    <a href="blog-detail.html">Style Sanctuary: Unveiling the Artistry... of Pre... mier
+                                        Salon Services</a>
+                                </h4>
+                                <ul class="blog-detail">
+                                    <li>Wooden partition</li>
+                                    <li>25 Jan, 2024</li>
+                                </ul>
+                                <div class="blog-footer">
+                                    <div>
+                                        <i class="iconsax" icon-name="message-dots"></i>
+                                        <span>23</span>
+                                    </div>
+                                    <span>
+                                        - By admin
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col blog-main">
+                        <div class="card">
+                            <div class="overflow-hidden b-r-5">
+                                <a href="blog-detail.html" class="card-img">
+                                    <img src="assets/images/blog/2.png" alt="blog" class="bg-img">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="text-truncate d-inline-block">
+                                    <a href="blog-detail.html">Style Sanctuary: Unveiling the Artistry... of Pre... mier
+                                        Salon Services</a>
+                                </h4>
+                                <ul class="blog-detail">
+                                    <li>Wooden partition</li>
+                                    <li>25 Jan, 2024</li>
+                                </ul>
+                                <div class="blog-footer">
+                                    <div>
+                                        <i class="iconsax" icon-name="message-dots"></i>
+                                        <span>23</span>
+                                    </div>
+                                    <span>
+                                        - By admin
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col blog-main">
+                        <div class="card">
+                            <div class="overflow-hidden b-r-5">
+                                <a href="blog-detail.html" class="card-img">
+                                    <img src="assets/images/blog/3.png" alt="blog" class="bg-img">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="text-truncate d-inline-block">
+                                    <a href="blog-detail.html">Style Sanctuary: Unveiling the Artistry... of Pre... mier
+                                        Salon Services</a>
+                                </h4>
+                                <ul class="blog-detail">
+                                    <li>Wooden partition</li>
+                                    <li>25 Jan, 2024</li>
+                                </ul>
+                                <div class="blog-footer">
+                                    <div>
+                                        <i class="iconsax" icon-name="message-dots"></i>
+                                        <span>23</span>
+                                    </div>
+                                    <span>
+                                        - By admin
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Recent Blog Section End -->
+
+
+    <!-- Footer Section Start -->
+    <footer class="footer-section nav-folderized">
+        <div class="container-fluid-lg">
+            <div class="copyright">
+                <a class="footer-logo" href="salon-end/index.html" target="_blank">
+                    <img src="assets/images/logo/dark-logo.png" alt="">
+                </a>
+                <p><i class="iconsax" icon-name="copyright"></i>2024. All copyright reserved.</p>
+            </div>
+            <div class="row gy-3 gy-md-4 gy-xl-0">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Links
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="index.html">Home </a></li>
+                            <li><a class="nav-link" href="category.html">Categories </a></li>
+                            <li><a class="nav-link" href="service-list.html">Services near you </a></li>
+                            <li><a class="nav-link" href="provider-list.html">Providers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Policy
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="privacy-policy.html">Privacy policy </a></li>
+                            <li><a class="nav-link" href="terms-conditions.html">Terms & conditions </a></li>
+                            <li><a class="nav-link" href="#!">Cancellation policy</a></li>
+                            <li><a class="nav-link" href="#!">Refund policy </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Other
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="contact-us.html">Contact us </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="about-us.html">About us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#!">Apps</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Become a provider
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>Earn more and deliver your service to worldwide.</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-solid">Register now
+                            <i class="iconsax" icon-name="arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- jquery ui-->
+    <script src="assets/js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+
+    <!-- Iconsax js -->
+    <script src="assets/js/iconsax/iconsax.js"></script>
+
+    <!-- favorite js -->
+    <script src="assets/js/add-favorite.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+/**=====================
+    Table scss
+==========================**/
+
+.table-responsive{
+    border: 1px solid $gray-color;
+    border-radius: 12px;
+    .table{
+        overflow: hidden;
+        border: none;
+        margin: 0;
+        --bs-table-bg: unset;
+        thead{
+            background-color: $section-bg;
+            tr{
+                th{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $light-color;   
+                    padding: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+                    line-height: 18px;
+                }
+            }
+        }
+        tbody{
+            tr{
+                border-bottom: 1px dashed $gray-color;
+                
+                &:last-child{
+                    border-bottom: none;
+                }
+
+                td{
+                    vertical-align: middle;
+                    padding: calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320))) calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+            }
+        }
+        >:not(:first-child), 
+        >:not(caption)>*>*{
+            border: none;
+        }
+        &.wallet-table{
+            thead{
+                background-color: $primary-color;
+                tr{
+                    th{
+                        color: $white;   
+                    }
+                }
+            }
+            tbody{
+                background-color: $white;
+                tr{
+                    .id{
+                        color: $primary-color;
+                        font-weight: 500;
+                    }
+                    .date{
+                        color: $light-color;
+                    }
+                    .balance{
+                        color: $title-color;
+                        font-weight: 500;
+                    }
+                    .particular{
+                        color: $title-color;
+                    }
+
+                    .credit{
+                        font-weight: 500;
+                        color: $success-color;
+                    }
+                    .debit{
+                        font-weight: 500;
+                        color: $danger-color;
+                    }
+                }
+            }
+        }
+        &.booking-table{
+            thead{
+                tr{
+                    th{
+                        &:nth-child(1){
+                            min-width: 130px;
+                        }
+                        &:nth-child(2){
+                            min-width: 250px;
+                        }
+                        &:nth-child(3){
+                            min-width: 130px;
+                        }&:nth-child(4){
+                            min-width: 130px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

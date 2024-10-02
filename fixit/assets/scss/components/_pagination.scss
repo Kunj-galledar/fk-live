@@ -1,0 +1,63 @@
+/**=====================
+     Pagination scss
+==========================**/
+
+.pagination-main {
+    // border-top: 1px solid $gray-color;
+    padding-top: 20px;
+    @include flex_common ($dis: flex, $align: center, $justify: center);
+
+    @include mq-max(sm) {
+        justify-content: center;
+    }
+
+    label {
+        color: $light-color;
+
+        @include mq-max(sm) {
+            display: none;
+        }
+    }
+
+    i {
+        --Iconsax-Size: 18px;
+        --Iconsax-Color: #00162E;
+    }
+
+    .pagination {
+        @include flex_common_1 ($dis: flex, $align: center);
+        gap: calc(8px + (12 - 8) * ((100vw - 320px) / (1200 - 320)));
+
+        .page-item {
+            .page-link {
+                @include flex_common ($dis: flex, $align: center, $justify: center);
+                color: $light-color;
+                width: calc(32px + (38 - 32) * ((100vw - 320px) / (1200 - 320)));
+                height: calc(32px + (38 - 32) * ((100vw - 320px) / (1200 - 320)));
+                border: none;
+                border-radius: 4px;
+                padding: 0;
+                background-color: $section-bg;
+                border: 1px solid $gray-color;
+
+                &:focus {
+                    border: 1px solid $gray-color;
+                    outline: none;
+                    box-shadow: none;
+                }
+
+                span {
+                    line-height: 1;
+                }
+            }
+
+            &.active {
+                .page-link {
+                    background-color: $primary-color;
+                    color: $white;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

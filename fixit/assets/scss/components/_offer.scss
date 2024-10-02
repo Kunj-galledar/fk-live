@@ -1,0 +1,80 @@
+/**=====================
+Offer scss
+==========================**/
+.offer-section {
+    .offer-contain-box {
+        overflow: hidden;
+        border-radius: 10px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            .offer-img {
+                transform: rotate(2deg) scale(1.05);
+            }
+
+            .offer-detail {
+                .btn {
+                    &.btn-outline {
+                        background-color: $title-color;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .offer-content {
+        .sale-tag {
+            position: absolute;
+            top: 25px;
+            left: 0;
+            z-index: 1;
+            background-color: $danger-color;
+            padding: 4px 36px 4px 16px;
+            color: white;
+            clip-path: polygon(0 0, 28% 0%, 67% -24%, 83% 7%, 84% 14%, 84% 27%, 84% 0%, 84% 32%, 82% 41%, 81% 49%, 81% 78%, 81% 74%, 80% 44%, 84% 65%, 84% 74%, 84% 77%, 82% 93%, 79% 100%, 84% 100%, 68% 100%, 0 100%);
+
+        }
+
+        .offer-img {
+            min-height: 240px;
+            max-height: 250px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .offer-detail {
+            position: absolute;
+            top: 75px;
+            left: 20px;
+
+            h3 {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 33px;
+            }
+
+            p {
+                color: rgba($title-color, 0.5);
+                line-height: 20px;
+                width: 70%;
+                margin-top: 4px;
+
+            }
+
+            .btn {
+                padding: 10px 20px;
+                line-height: 1;
+                width: max-content;
+                color: $title-color;
+
+                &.btn-outline {
+                    margin-top: 24px;
+                    border: 2px solid $title-color;
+                    border-radius: 30px;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

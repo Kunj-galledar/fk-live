@@ -1,0 +1,299 @@
+.reuse-title {
+  h2 {
+    width: 34%;
+    margin-top: 0;
+
+    @media (max-width: 992px) {
+      width: 54%;
+    }
+
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+
+    &::before {
+      margin-inline: auto;
+    }
+  }
+}
+
+.about-page-section {
+  .about-pages-img {
+    display: flex;
+    align-items: flex-start;
+
+    .about-profile {
+      display: flex;
+      align-items: flex-start;
+      justify-content: end;
+      gap: calc(10px + (15 - 10) * ((100vw - 1400px) / (1920 - 1400)));
+      margin-right: calc(22px + (30 - 22) * ((100vw - 1400px) / (1920 - 1400)));
+
+      [dir="rtl"] & {
+        margin-left: calc(22px + (30 - 22) * ((100vw - 1400px) / (1920 - 1400)));
+        margin-right: unset;
+      }
+
+      &.about-bottom-profile {
+        justify-content: flex-start;
+        margin-right: 0;
+        margin-left: calc(22px + (30 - 22) * ((100vw - 1400px) / (1920 - 1400)));
+        align-items: flex-end;
+
+        [dir="rtl"] & {
+          margin-right: calc(22px + (30 - 22) * ((100vw - 1400px) / (1920 - 1400)));
+          margin-left: 0;
+        }
+
+        img {
+          transform: rotate(180deg);
+
+          [dir="rtl"] & {
+            transform: rotate(180deg) scalex(-1);
+          }
+        }
+      }
+
+      img {
+        position: relative;
+
+        [dir="rtl"] & {
+          transform: scaleX(-1);
+        }
+      }
+
+      h3 {
+        font-weight: 700;
+        padding-bottom: 2px;
+      }
+
+      h5 {
+        font-weight: 400;
+        color: rgba(var(--content-color), 1);
+      }
+    }
+
+    .about-bottom-page-img {
+      margin-left: -50px;
+    }
+
+    .about-top-img {
+      margin-bottom: -30px;
+    }
+
+    .about-bottom-img {
+      border: 15px solid rgba(var(--white), 1);
+      margin-top: -30px;
+    }
+  }
+
+  .about-page-content {
+    .title-style-8 {
+      margin-bottom: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+      h2 {
+        margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .about-page-list {
+      li {
+        background: rgba(var(--theme-color), 0.1);
+        display: flex;
+        align-items: center;
+        gap: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+        position: relative;
+        transition: 0.4s ease;
+        width: max-content;
+
+        @media (max-width: 476px) {
+          width: auto;
+        }
+
+        &:hover {
+          background: rgba(var(--theme-color), 1);
+
+          &::before {
+            background: rgba(255, 255, 255, 0.4);
+          }
+
+          h4 {
+            color: #fff;
+          }
+
+          .about-icon {
+            &::after {
+              background: #fff;
+            }
+
+            .white-icon {
+              display: block;
+            }
+
+            .theme-icon {
+              display: none;
+            }
+          }
+        }
+
+        +li {
+          margin-top: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 5px;
+          background: rgba(var(--theme-color), 0.4);
+          transition: 0.4s ease;
+
+          [dir="rtl"] & {
+            right: 0;
+            left: unset;
+          }
+        }
+      }
+
+      h4 {
+        color: rgba(var(--theme-color), 1);
+        font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 600;
+        transition: 0.4s ease;
+
+        @media (max-width: 476px) {
+          width: calc(100% - calc(25px + (31 - 25) * ((100vw - 320px) / (1920 - 320))) - calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320))));
+        }
+      }
+
+      .about-icon {
+        display: flex;
+        align-items: center;
+        gap: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320)));
+
+        img {
+          width: calc(25px + (31 - 25) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        &::after {
+          content: "";
+          position: relative;
+          width: 1px;
+          height: 22px;
+          background: rgba(var(--theme-color), 1);
+          display: inline-block;
+          transition: 0.4s ease;
+        }
+
+        .white-icon {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.about-page-team {
+  .margin-top-40 {
+    margin-top: 40px;
+  }
+
+  .team-content {
+    ul {
+      li {
+        h4 {
+          color: rgba(var(--content-color), 1);
+        }
+      }
+    }
+  }
+}
+
+.about-2-page {
+  .team-box {
+    .team-img {
+      background: rgba(var(--bg-color), 0.1);
+    }
+
+    .team-profile {
+      &::before {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  .about-charity {
+    background: rgba(var(--bg-color), 1);
+
+    .about-content {
+      padding: calc(0px + (80 - 0) * ((100vw - 320px) / (1920 - 320))) calc(0px + (50 - 0) * ((100vw - 320px) / (1920 - 320))) calc(0px + (80 - 0) * ((100vw - 320px) / (1920 - 320))) calc(0px + (50 - 0) * ((100vw - 320px) / (1920 - 320)));
+    }
+  }
+
+  .seo-service-section {
+    border: none;
+    background: rgba(var(--white), 1);
+
+    .service-box {
+      background: rgba(var(--bg-color), 1);
+
+      &:hover {
+        background: rgba(var(--theme-color), 1);
+
+        .box-line {
+          filter: brightness(1);
+        }
+
+        h5 {
+          color: #fff;
+
+          &::after {
+            background: #fff;
+          }
+        }
+
+        p {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .marketing-blog-section {
+    .title-style-8 {
+      p {
+        width: 60%;
+        margin-inline: auto;
+        padding-top: 10px;
+
+        @media (max-width: 576px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.about-3-page {
+  .portfolio-logo-section {
+    background: rgba(var(--bg-color), 1);
+    border-color: rgba(var(--bg-color), 1);
+  }
+
+  .design-about-section {
+    .about-img {
+      padding-bottom: calc(0px + (80 - 0) * ((100vw - 320px) / (1920 - 320)));
+
+      .about-first-img {
+        bottom: 0;
+      }
+    }
+  }
+}

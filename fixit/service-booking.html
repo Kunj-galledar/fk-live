@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fixit">
+    <meta name="keywords" content="Fixit">
+    <meta name="author" content="Fixit">
+    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
+    <title>Service Booking Page</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap/bootstrap.css">
+
+    <!-- Flatpicker css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/flatpickr/flatpickr.min.css">
+
+    <!-- Iconsax css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconsax/iconsax.css">
+
+    <!-- Template css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body class="notLoaded">
+
+    <!-- Loader Section Start -->
+    <div class="page-loader" id="loader">
+        <div class="page-loader-wrapper">
+            <img src="assets/images/gif/loader.gif" alt="">
+        </div>
+    </div>
+    <!-- Loader Section End -->
+
+
+    <!-- Header Section Start -->
+    <header>
+        <div class="top-header">
+            <div class="container-fluid-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar custom-navbar navbar-expand-xl navbar-light justify-xl-content-start">
+                            <div class="logo-content">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <a class="navbar-brand" href="./index.html">
+                                    <img src="assets/images/logo/dark-logo.png" alt="">
+                                </a>
+                                <div class="dropdown location-dropdown d-md-flex d-none">
+                                    <button id="locationSelected" class="location-btn">
+                                        <span>
+                                            <i class="iconsax location-svg" icon-name="location"></i>
+                                            <span>Adajan - Surat, Gujarat</span>
+                                        </span>
+                                        <i class="iconsax arrow" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="navbar-header d-xl-none d-flex">
+                                    <h4>Menu</h4>
+                                    <button class="btn-close" type="button"></button>
+                                </div>
+                                <ul class="navbar-nav mx-auto custom-scroll">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="category.html">Category</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="service-list.html">Service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="booking-list.html">Bookings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="blog.html">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="nav-right">
+                                <li class="icon nav-item-right">
+                                    <a href="cart.html">
+                                        <i class="iconsax" icon-name="shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown currency-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="unitSelected" class="currency-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">USD
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="currency">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">USD
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">EUR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">INR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">CNY
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown language-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="languageSelected" class="language-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">EN
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="lang">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">EN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">IN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">NZ
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">ZA
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown profile-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="profileSelected" class="profile-btn">
+                                        <span>
+                                            <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
+                                            Laila
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="profile">
+                                            <a href="profile-setting.html">
+                                                <i class="iconsax" icon-name="user-1-square"></i>Edit Profile
+                                            </a>
+                                        </li>
+                                        <li class="profile">
+                                            <a href="login.html">
+                                                <i class="iconsax" icon-name="logout-1"></i>Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Home Section Start -->
+    <section class="home-section ratio_18">
+        <div class="container-fluid-lg">
+            <img src="assets/images/bg.jpg" alt="bg" class="bg-img">
+            <div class="row">
+                <div class="col-12">
+                    <div class="home-contain">
+                        <h2><span>Service Booking</span></h2>
+                        <p>Select a service from the below category list that correlates with your needs. It includes
+                            15+ categories with 560+ different services in various sector.</p>
+                        <nav class="breadcrumb breadcrumb-icon">
+                            <a class="breadcrumb-item" href="index.html">Home</a>
+                            <a class="breadcrumb-item" href="category.html">All categories</a>
+                            <a class="breadcrumb-item" href="service-list.html">Service list</a>
+                            <a class="breadcrumb-item" href="service-detail.html">Service detail page</a>
+                            <span class="breadcrumb-item active">Booking flow</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+    <!-- Service List Section Start -->
+    <section class="section-b-space">
+        <div class="container-fluid-lg">
+            <div class="row g-4">
+                <div class="col-xxl-8 col-xl-7 col-12">
+                    <div class="cart basic-wizard important-validation br-10">
+                        <div class="stepper-horizontal" id="stepper1">
+                            <div class="stepper-one stepper step editing active">
+                                <div class="step-circle"><span>01</span></div>
+                                <div class="step-title">Book date and time</div>
+                            </div>
+                            <div class="stepper-two step">
+                                <div class="step-circle"><span>02</span></div>
+                                <div class="step-title">Bill summary</div>
+                            </div>
+                        </div>
+                        <div id="msform">
+                            <form class="stepper-one needs-validation custom-input" novalidate="">
+                                <div class="py-0 service-booking">
+                                    <ul>
+                                        <li class="d-flex align-items-start booking-list">
+                                            <div class="activity-dot"></div>
+                                            <div class="booking-data">
+                                                <h3>Select a service delivery location</h3>
+                                                <div class="row g-4">
+                                                    <div class="col-xxl-6 col-xl-12 col-lg-6 col-12">
+                                                        <label class="card delivery-location">
+                                                            <div class="location-card">
+                                                                <div class="location-header">
+                                                                    <div class="d-flex align-items-center gap-3">
+                                                                        <div class="location-icon">
+                                                                            <img src="assets/images/svg/home.svg"
+                                                                                alt="home">
+                                                                        </div>
+                                                                        <div class="name">
+                                                                            <h4>Kristin Watson</h4>
+                                                                            <span>(406) 555-0120</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="badge primary-light-badge">Home</span>
+                                                                </div>
+                                                                <div class="address">
+                                                                    <label>
+                                                                        Address :
+                                                                    </label>
+                                                                    <p>3891 Ranchview Dr. Richardson, California -
+                                                                        62639,
+                                                                        USA.</p>
+
+                                                                </div>
+                                                                <div class="action">
+                                                                    <input name="location" class="radio" type="radio"
+                                                                        checked>
+                                                                    <button class="btn btn-outline">Select this</button>
+                                                                </div>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-xxl-6 col-xl-12 col-lg-6 col-12">
+                                                        <label class="card delivery-location">
+                                                            <div class="location-card">
+                                                                <div class="location-header">
+                                                                    <div class="d-flex align-items-center gap-3">
+                                                                        <div class="location-icon">
+                                                                            <img src="assets/images/svg/briefcase.svg"
+                                                                                alt="home">
+                                                                        </div>
+                                                                        <div class="name">
+                                                                            <h4>Kristin Watson</h4>
+                                                                            <span>(406) 555-0120</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="badge primary-light-badge">Work</span>
+                                                                </div>
+                                                                <div class="address">
+                                                                    <label>
+                                                                        Address :
+                                                                    </label>
+                                                                    <p>3891 Ranchview Dr. Richardson, California -
+                                                                        62639,
+                                                                        USA.</p>
+
+                                                                </div>
+                                                                <div class="action">
+                                                                    <input name="location" class="radio" type="radio">
+                                                                    <button class="btn btn-outline">Select this</button>
+                                                                </div>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="add-location mt-2" data-bs-toggle="modal"
+                                                    data-bs-target="#locationModal">
+                                                    + Add new location
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-start booking-list">
+                                            <div class="activity-dot"></div>
+                                            <div class="booking-data">
+                                                <h3 class="m-0">Date and time</h3>
+                                                <p class="text-light mb-2">This service will take around 45min</p>
+
+                                                <div class="date-time-picket-sec">
+                                                    <div class="select-option">
+                                                        <div class="form-check">
+                                                            <input type="radio" id="" name="service-select"
+                                                                class="form-radio-input" checked>
+                                                            <label for="">Custom date & time</label>
+                                                        </div>
+
+                                                        <div class="d-flex align-items-start gap-sm-3 gap-2">
+                                                            <div class="form-check">
+                                                                <button type="button" class="time-slot"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#datetimeModal">
+                                                                    <input type="radio" id="" name="service-select"
+                                                                        class="form-radio-input">
+                                                                </button>
+                                                            </div>
+                                                            <label for="">As per provider time slot</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="date-time-picker">
+                                                        <div class="input-group flatpicker-calender">
+                                                            <input class="form-control form-control-gray"
+                                                                id="datetime-local" type="text" readonly="readonly"
+                                                                placeholder="Select Date">
+                                                            <i class="iconsax input-icon" icon-name="calendar-1"></i>
+                                                        </div>
+                                                        <div class="input-group">
+                                                            <input class="form-control form-control-gray"
+                                                                id="time-picker" type="time" placeholder="Select time">
+                                                            <i class="iconsax input-icon" icon-name="clock"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-start booking-list">
+                                            <div class="activity-dot"></div>
+                                            <div class="booking-data">
+                                                <h3>Add required person</h3>
+                                                <div class="select-servicemen">
+                                                    <p>How many person required to do this service ?</p>
+                                                    <div class="plus-minus">
+                                                        <i class="iconsax sub" icon-name="minus"></i>
+                                                        <input id="quantityInput" type="number" value="1" min="1"
+                                                            max="10" />
+                                                        <i class="iconsax add" icon-name="add"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-start booking-list">
+                                            <div class="activity-dot"></div>
+                                            <div class="booking-data">
+                                                <h3>Custom message</h3>
+                                                <textarea class="form-control form-control-white"
+                                                    placeholder="Write here.." rows="3"></textarea>
+
+                                                <p class="mb-4 mt-2 text-light">*Add any extras you might like to this
+                                                    service.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                            <form class="stepper-two needs-validation custom-input" novalidate="">
+                                <div class="py-0 service-booking">
+                                    <ul>
+                                        <li class="d-flex align-items-start booking-list">
+                                            <div class="activity-dot"></div>
+                                            <div class="booking-data">
+                                                <h3>Select a service delivery location</h3>
+                                                <div class="input-group">
+                                                    <input class="form-control form-control-white"
+                                                        value="As you previously said, the app will select your servicemen."
+                                                        type="text">
+                                                    <i class="iconsax input-icon" icon-name="info-circle"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-start booking-list">
+                                            <div class="activity-dot"></div>
+                                            <div class="booking-data">
+                                                <h3 class="m-0">Date and time</h3>
+                                                <p class="text-light mb-2">This service will take around 45min</p>
+
+                                                <div class="date-time-picket-sec">
+                                                    <div class="select-option">
+                                                        <div class="form-check">
+                                                            <input type="radio" id="" name="service-select"
+                                                                class="form-radio-input" checked>
+                                                            <label for="">Custom date & time</label>
+                                                        </div>
+
+                                                        <div class="d-flex align-items-start gap-sm-3 gap-2">
+                                                            <div class="form-check">
+                                                                <button type="button" class="time-slot"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#datetimeModal">
+                                                                    <input type="radio" id="" name="service-select"
+                                                                        class="form-radio-input">
+                                                                </button>
+                                                            </div>
+                                                            <label for="">As per provider time slot</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="date-time-picker">
+                                                        <div class="input-group flatpicker-calender">
+                                                            <input class="form-control form-control-gray"
+                                                                id="datetime-local" type="text" readonly="readonly"
+                                                                placeholder="Select Date">
+                                                            <i class="iconsax input-icon" icon-name="calendar-1"></i>
+                                                        </div>
+
+                                                        <div class="input-group">
+                                                            <input class="form-control form-control-gray"
+                                                                id="time-picker" type="time" placeholder="Select time">
+                                                            <i class="iconsax input-icon" icon-name="clock"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="d-flex align-items-start booking-list">
+                                            <div class="activity-dot"></div>
+                                            <div class="booking-data">
+                                                <div class="d-flex align-items-center justify-content-between gap-1">
+                                                    <h3>Bill summary</h3>
+                                                    <span class="text-success">Wallet
+                                                        <small>
+                                                            : $689.03
+                                                        </small>
+                                                    </span>
+                                                </div>
+                                                <div class="bill-summary">
+                                                    <ul class="charge">
+                                                        <li>
+                                                            <p>Per servicemen charge</p>
+                                                            <span>$12.00</span>
+                                                        </li>
+                                                        <li>
+                                                            <p>2 servicemen ($12.00*2)</p>
+                                                            <span>$24.00</span>
+                                                        </li>
+                                                        <li>
+                                                            <p>Tax (2%)</p>
+                                                            <span>Cost at checkout</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="total">
+                                                        <li>
+                                                            <p>Total Amount</p>
+                                                            <span>$33.03</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="dashed-border"></div>
+                                                <div class="danger-note">
+                                                    <h3>Cancellation policy*</h3>
+                                                    <p class="m-0">Once you click the "proceed to checkout" button, you
+                                                        can not change your servicemen.</p>
+                                                </div>
+
+                                                <div class="note">
+                                                    <label>*Disclaimer</label>
+                                                    <p>Once you click the "proceed to checkout" button, you can not
+                                                        change your servicemen.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="wizard-footer">
+                            <button class="btn btn-outline" id="backbtn" onclick="backStep()"> Back</button>
+                            <button class="btn btn-solid" id="nextbtn" onclick="nextStep()">Next step</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-xl-5 col-12">
+                    <div class="position-sticky mb-0">
+                        <div class="cart br-10">
+                            <div class="cart-header">
+                                <h3 class="mb-0 f-w-600">Your Cart</h3>
+                                <span>(0 item added)</span>
+                            </div>
+                            <div class="cart-body">
+                                <div class="text-center">
+                                    <div class="cart-img my-5">
+                                        <img src="assets/images/cart/1.png" alt="no cart">
+                                    </div>
+                                    <p>Oops ! Nothing is added</p>
+                                    <p class="text-light">There is nothing in the basket, therefore explore the service
+                                        and
+                                        book your required one.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Service List Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer-section nav-folderized">
+        <div class="container-fluid-lg">
+            <div class="copyright">
+                <a class="footer-logo" href="salon-end/index.html" target="_blank">
+                    <img src="assets/images/logo/dark-logo.png" alt="">
+                </a>
+                <p><i class="iconsax" icon-name="copyright"></i>2024. All copyright reserved.</p>
+            </div>
+            <div class="row gy-3 gy-md-4 gy-xl-0">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Links
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="index.html">Home </a></li>
+                            <li><a class="nav-link" href="category.html">Categories </a></li>
+                            <li><a class="nav-link" href="service-list.html">Services near you </a></li>
+                            <li><a class="nav-link" href="provider-list.html">Providers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Policy
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="privacy-policy.html">Privacy policy </a></li>
+                            <li><a class="nav-link" href="terms-conditions.html">Terms & conditions </a></li>
+                            <li><a class="nav-link" href="#!">Cancellation policy</a></li>
+                            <li><a class="nav-link" href="#!">Refund policy </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Other
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="contact-us.html">Contact us </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="about-us.html">About us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#!">Apps</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Become a provider
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>Earn more and deliver your service to worldwide.</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-solid">Register now
+                            <i class="iconsax" icon-name="arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- location modal -->
+    <div class="modal fade location-modal" id="locationModal">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="locationModalLabel">Add new location</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row location-map">
+                        <div class="col-6 p-0 d-xl-flex d-none">
+                            <div class="map">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6512737.034182728!2d-124.59233685302426!3d37.1515728954513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sin!4v1705376293670!5m2!1sen!2sin"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 px-0">
+                            <div class="location-detail">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="mb-2">Select category</label>
+                                        <div class="category">
+                                            <div class="form-check">
+                                                <input type="radio" id="test1" name="category" class="form-radio-input"
+                                                    checked>
+                                                <label for="test1">Home</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="radio" id="test2" name="category" class="form-radio-input">
+                                                <label for="test2">Work</label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input type="radio" id="test3" name="category" class="form-radio-input">
+                                                <label for="test3">Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Street</label>
+                                        <div class="input-group">
+                                            <input type="text" name="street" placeholder="Street"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="location"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">Country</label>
+                                        <div class="position-relative">
+                                            <i class="iconsax input-icon" icon-name="globe"></i>
+                                            <select class="form-select form-select-white">
+                                                <option selected>India</option>
+                                                <option value="1">Russia</option>
+                                                <option value="2">United States</option>
+                                                <option value="3">Canada</option>
+                                                <option value="4">China</option>
+                                                <option value="5">Brazil</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">State</label>
+                                        <div class="position-relative">
+                                            <i class="iconsax input-icon" icon-name="courthouse"></i>
+                                            <select class="form-select form-select-white">
+                                                <option selected>Gujarat</option>
+                                                <option value="1">Rajasthan</option>
+                                                <option value="2">Uttar Pradesh</option>
+                                                <option value="3">Maharashtra</option>
+                                                <option value="4">Andhra Pradesh</option>
+                                                <option value="5">Chhattisgarh</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">City</label>
+                                        <div class="input-group">
+                                            <input type="text" name="city" placeholder="City"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="building-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="mb-2">Zip code</label>
+                                        <div class="input-group">
+                                            <input type="number" name="zip code" placeholder="Zip"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="message-dots-notif"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Person name</label>
+                                        <div class="input-group">
+                                            <input type="text" name="person" placeholder="Person name"
+                                                class="form-control form-control-white">
+                                            <i class="iconsax input-icon" icon-name="user-1"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="mb-2">Contact</label>
+                                        <div class="row g-2">
+                                            <div class="col-lg-3 col-sm-4">
+                                                <div class="phone-field">
+                                                    <div class="dropdown select-dropdown-div">
+                                                        <button data-value="" class="select-btn">
+                                                            <span>
+                                                                <img src="assets/images/flags/IN.png" alt=""
+                                                                    class="img-fluid">+91
+                                                            </span>
+                                                            <i class="iconsax" icon-name="chevron-down"></i>
+                                                        </button>
+                                                        <ul class="select-show-div">
+                                                            <li data-value="4" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/IN.png" alt=""
+                                                                        class="img-fluid">+91</span>
+                                                            </li>
+                                                            <li data-value="1" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/CA.png" alt=""
+                                                                        class="img-fluid">+1</span>
+                                                            </li>
+                                                            <li data-value="2" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/US.png" alt=""
+                                                                        class="img-fluid">+1</span>
+                                                            </li>
+                                                            <li data-value="3" class="select-show-div-item">
+                                                                <span><img src="assets/images/flags/TH.png" alt=""
+                                                                        class="img-fluid">+66</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-9 col-sm-8">
+                                                <input type="number" id="mobile_code" name="contact"
+                                                    placeholder="Enter phone no."
+                                                    class="form-control form-control-white">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check ps-4">
+                                            <input type="checkbox" class="form-check-input" id="pare">
+                                            <label for="pare" class="m-0">Set as a primary location</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-solid" data-bs-toggle="modal"
+                                            data-bs-target="#quicklocationModal">Add location</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Date Time modal -->
+    <div class="modal fade date-time-modal" id="datetimeModal" tabindex="-1" aria-labelledby="datetimeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="datetimeModalLabel">Edit date & time</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="input-group main-inline-calender">
+                                <input class="form-control mb-2" id="inline-calender" type="date">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="inline-time-picker">
+                                <p class="mb-2">Time</p>
+                                <input class="form-control form-control-gray" id="time-picker" type="time"
+                                    placeholder="Select time">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="inline-picker-btn">
+                        <a href="booking-list.html" class="btn btn-solid">Done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- jquery ui-->
+    <script src="assets/js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+
+    <!-- Iconsax js -->
+    <script src="assets/js/iconsax/iconsax.js"></script>
+
+    <!-- Booking Form js -->
+    <script src="assets/js/form-wizard.js/booking-form.js"></script>
+
+    <!-- Plus minus js -->
+    <script src="assets/js/plus-minus.js"></script>
+
+    <!-- Flat-picker js -->
+    <script src="assets/js/flat-pickr/flatpickr.js"></script>
+    <script src="assets/js/flat-pickr/custom-flatpickr.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

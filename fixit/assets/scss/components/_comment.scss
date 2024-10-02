@@ -1,0 +1,131 @@
+/**=====================
+    Comment scss
+==========================**/
+
+.review-section {
+    .review-content {
+        .review-card {
+            border: 1px solid $gray-color;
+            padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+            border-radius: 8px;
+            background-color: $section-bg;
+
+            +.review-card {
+                margin-top: 20px;
+            }
+
+            .review-detail {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 8px;
+                position: relative;
+
+                .review-image-box {
+                    display: flex;
+                    align-items: start;
+                    gap: calc(8px + (16 - 8) * ((100vw - 320px) / (1920 - 320)));
+                    width: 90%;
+
+                    h4 {
+                        font-weight: 600;
+                        font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    }
+
+                    span {
+                        color: $light-color;
+                        font-weight: 500;
+                    }
+
+                    h4,
+                    span {
+                        width: 100%;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        text-overflow: ellipsis;
+                        word-break: break-all;
+
+                    }
+                }
+            }
+
+            img {
+                border-radius: 100%;
+                height: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+                width: calc(30px + (40 - 30) * ((100vw - 320px) / (1920 - 320)));
+            }
+
+            .review {
+                padding-left: calc(41px + (48 - 41) * ((100vw - 576px) / (1920 - 576)));
+
+                p {
+                    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                    color: $light-color;
+                    line-height: 1.6;
+                }
+
+                @include mq-max(sm) {
+                    padding-left: 0;
+                }
+            }
+
+            .favorite {
+                top: 0;
+                right: calc((-3px) + (15 - (-3)) * ((100vw - 320px) / (1920 - 320)));
+                left: unset;
+                padding: 0;
+                width: 38px;
+                height: 38px;
+                background-color: $white;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .nolike {
+                    --Iconsax-Size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    --Iconsax-Color: #808B97;
+
+                    &.hide {
+                        display: none;
+                    }
+                }
+
+                .like {
+                    height: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320))) !important;
+                    width: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320))) !important;
+                    display: none;
+
+                    &.show {
+                        display: block;
+                    }
+                }
+            }
+
+            .review-card {
+                border: unset;
+                padding: 0;
+                border-radius: unset;
+                background-color: unset;
+                margin-left: calc(15px + (55 - 15) * ((100vw - 320px) / (1920 - 320)));
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+.comment-section {
+    form {
+        border: 1px solid $gray-color;
+        padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+        border-radius: 8px;
+        background-color: $section-bg;
+
+        .btn {
+            width: max-content;
+
+        }
+    }
+}

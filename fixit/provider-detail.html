@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fixit">
+    <meta name="keywords" content="Fixit">
+    <meta name="author" content="Fixit">
+    <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon">
+    <title>Provider Detail Page</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap/bootstrap.css">
+
+    <!-- Iconsax css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconsax/iconsax.css">
+
+    <!-- Template css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body class="notLoaded">
+
+    <!-- Loader Section Start -->
+    <div class="page-loader" id="loader">
+        <div class="page-loader-wrapper">
+            <img src="assets/images/gif/loader.gif" alt="">
+        </div>
+    </div>
+    <!-- Loader Section End -->
+
+
+    <!-- Header Section Start -->
+    <header>
+        <div class="top-header">
+            <div class="container-fluid-xl">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar custom-navbar navbar-expand-xl navbar-light justify-xl-content-start">
+                            <div class="logo-content">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <a class="navbar-brand" href="./index.html">
+                                    <img src="assets/images/logo/dark-logo.png" alt="">
+                                </a>
+                                <div class="dropdown location-dropdown d-md-flex d-none">
+                                    <button id="locationSelected" class="location-btn">
+                                        <span>
+                                            <i class="iconsax location-svg" icon-name="location"></i>
+                                            <span>Adajan - Surat, Gujarat</span>
+                                        </span>
+                                        <i class="iconsax arrow" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                        <li class="location">
+                                            <i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="navbar-header d-xl-none d-flex">
+                                    <h4>Menu</h4>
+                                    <button class="btn-close" type="button"></button>
+                                </div>
+                                <ul class="navbar-nav mx-auto custom-scroll">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="category.html">Category</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="service-list.html">Service</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="booking-list.html">Bookings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="blog.html">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="nav-right">
+                                <li class="icon nav-item-right">
+                                    <a href="cart.html">
+                                        <i class="iconsax" icon-name="shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown currency-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="unitSelected" class="currency-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">USD
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="currency">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">USD
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">EUR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">INR
+                                        </li>
+                                        <li class="currency">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">CNY
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown language-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="languageSelected" class="language-btn">
+                                        <span>
+                                            <img src="assets/images/flags/EG.png" alt="" class="img-fluid">EN
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="lang">
+                                            <img src="assets/images/flags/US.png" alt="" class="img-fluid">EN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/IN.png" alt="" class="img-fluid">IN
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/NZ.png" alt="" class="img-fluid">NZ
+                                        </li>
+                                        <li class="lang">
+                                            <img src="assets/images/flags/ZA.png" alt="" class="img-fluid">ZA
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown profile-dropdown nav-item-right d-xxl-flex d-none">
+                                    <button id="profileSelected" class="profile-btn">
+                                        <span>
+                                            <img src="assets/images/avatar/1.png" alt="" class="img-fluid">
+                                            Laila
+                                        </span>
+                                        <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                                    </button>
+                                    <ul class="onhover-show-div">
+                                        <li class="profile">
+                                            <a href="profile-setting.html">
+                                                <i class="iconsax" icon-name="user-1-square"></i>Edit Profile
+                                            </a>
+                                        </li>
+                                        <li class="profile">
+                                            <a href="login.html">
+                                                <i class="iconsax" icon-name="logout-1"></i>Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Home Section Start -->
+    <section class="home-section ratio_18">
+        <div class="container-fluid-lg">
+            <img src="assets/images/bg.jpg" alt="bg" class="bg-img">
+            <div class="row">
+                <div class="col-12">
+                    <div class="home-contain">
+                        <h2><span>Provider Detail</span></h2>
+                        <p>Select a service from the below category list that correlates with your needs. It includes
+                            15+ categories with 560+ different services in various sector.</p>
+                        <nav class="breadcrumb breadcrumb-icon">
+                            <a class="breadcrumb-item" href="index.html">Home</a>
+                            <a class="breadcrumb-item" href="provider-list.html">Provider</a>
+                            <span class="breadcrumb-item active">Provider detail</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+    <!-- Service List Section Start -->
+    <section>
+        <div class="container-fluid-lg">
+            <div class="row g-4">
+                <div class="col-custom-3">
+                    <div class="filter position-sticky">
+                        <div class="provider-card">
+                            <div class="provider-detail">
+                                <div class="favorite">
+                                    <i class="iconsax nolike" icon-name="heart"></i>
+                                    <img src="assets/images/svg/heart.svg" alt="heart" class="like">
+                                </div>
+                                <div class="provider-content">
+                                    <div class="profile-bg"></div>
+                                    <div class="profile">
+                                        <img src="assets/images/avatar/1.png" alt="girl" class="img">
+                                        <div class="d-flex align-content-center gap-2 mt-2">
+                                            <h3>Esto Howard</h3>
+                                            <div class="rate">
+                                                <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                                <small>4.0</small>
+                                            </div>
+                                        </div>
+                                        <div class="location mt-2">
+                                            <i class="iconsax" icon-name="location"></i>
+                                            <h5>Toronto-Canada</h5>
+                                        </div>
+                                        <div class="delivered">
+                                            <span>Services delivered :</span>
+                                            <small>250</small>
+                                        </div>
+                                    </div>
+                                    <div class="profile-detail">
+                                        <label class="mb-2">Details of Provider</label>
+                                        <p>This business was founded in 2021 by Kurt. Working well together, he and his
+                                            staff.</p>
+                                    </div>
+                                    <label class="mt-3 mb-2">Details of Provider</label>
+                                    <div class="profile-info">
+                                        <div class="mb-3">
+                                            <label>
+                                                <i class="iconsax" icon-name="mail"></i>
+                                                Mail
+                                            </label>
+                                            <p>kurtbatespersonal1256@gmail.com</p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>
+                                                <i class="iconsax" icon-name="phone"></i>
+                                                Call
+                                            </label>
+                                            <p>+1 236 236 5653</p>
+                                        </div>
+                                        <div>
+                                            <label>
+                                                <i class="iconsax" icon-name="globe"></i>
+                                                Known languages
+                                            </label>
+                                            <div class="d-flex align-content-center gap-3 mt-2">
+                                                <button class="btn btn-solid-gray">English</button>
+                                                <button class="btn btn-solid-gray">Spanish</button>
+                                                <button class="btn btn-solid-gray">Chinese</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-bars mt-4">
+                                        <div class="rating-bar">
+                                            <div class="left">5 star</div>
+                                            <div class="bar">
+                                                <div class="bar-item bar-item-5"></div>
+                                            </div>
+                                            <div class="right">84%</div>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <div class="left">4 star</div>
+                                            <div class="bar">
+                                                <div class="bar-item bar-item-4"></div>
+                                            </div>
+                                            <div class="right">30%</div>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <div class="left">3 star</div>
+                                            <div class="bar">
+                                                <div class="bar-item bar-item-3"></div>
+                                            </div>
+                                            <div class="right">12%</div>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <div class="left">2 star</div>
+                                            <div class="bar">
+                                                <div class="bar-item bar-item-2"></div>
+                                            </div>
+                                            <div class="right">6%</div>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <div class="left">1 star</div>
+                                            <div class="bar">
+                                                <div class="bar-item bar-item-1"></div>
+                                            </div>
+                                            <div class="right">3%</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="provider-detail-tab mt-4">
+                                        <ul class="nav nav-tabs" id="providerDetailTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="provider-service-tab"
+                                                    data-bs-toggle="tab" data-bs-target="#provider-service"
+                                                    type="button" role="tab" aria-controls="provider-service"
+                                                    aria-selected="false">Services</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="provider-review-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#provider-review" type="button" role="tab"
+                                                    aria-controls="provider-review"
+                                                    aria-selected="true">Reviews</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-custom-9">
+                    <div class="tab-content m-0" id="providerDetailTabContent">
+                        <div class="tab-pane fade show active" id="provider-service" role="tabpanel"
+                            aria-labelledby="provider-service-tab">
+                            <ul class="nav nav-tabs provider-service-tab" id="providerServiceDetailTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="salon-service-tab" data-bs-toggle="tab"
+                                        data-bs-target="#salon-service" type="button" role="tab"
+                                        aria-controls="salon-service" aria-selected="false">Salon</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="ac-repair-service-tab" data-bs-toggle="tab"
+                                        data-bs-target="#ac-repair-service" type="button" role="tab"
+                                        aria-controls="ac-repair-service" aria-selected="true">Ac Repair</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="cleaning-service-tab" data-bs-toggle="tab"
+                                        data-bs-target="#cleaning-service" type="button" role="tab"
+                                        aria-controls="cleaning-service" aria-selected="true">Cleaning</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="carpenter-service-tab" data-bs-toggle="tab"
+                                        data-bs-target="#carpenter-service" type="button" role="tab"
+                                        aria-controls="carpenter-service" aria-selected="true">Carpenter</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="cooking-service-tab" data-bs-toggle="tab"
+                                        data-bs-target="#cooking-service" type="button" role="tab"
+                                        aria-controls="cooking-service" aria-selected="true">Cooking</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-3" id="providerServiceDetailTab">
+                                <div class="tab-pane fade show active" id="salon-service" role="tabpanel"
+                                    aria-labelledby="salon-service-tab">
+                                    <div class="row row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 g-4">
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/1.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/2.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/3.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/4.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/5.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/1.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/2.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/3.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/salon/4.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="ac-repair-service" role="tabpanel"
+                                    aria-labelledby="ac-repair-service-tab">
+                                    <div class="row row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 g-4">
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/1.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/2.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/3.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/4.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/5.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/1.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/2.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/3.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/ac/4.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="cleaning-service" role="tabpanel"
+                                    aria-labelledby="cleaning-service-tab">
+                                    <div class="row row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 g-4">
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/1.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/2.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/3.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/4.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/5.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/1.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/2.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/3.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cleaning/4.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="carpenter-service" role="tabpanel"
+                                    aria-labelledby="carpenter-service-tab">
+                                    <div class="row row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 g-4">
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/1.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/2.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/3.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/4.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/5.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/1.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/2.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/3.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/carpenter/4.jpg" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="cooking-service" role="tabpanel"
+                                    aria-labelledby="cooking-service-tab">
+                                    <div class="row row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 g-4">
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/1.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/2.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/3.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/4.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/5.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/1.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/2.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/3.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col ratio3_2">
+                                            <div class="card">
+                                                <div class="discount-tag">10%</div>
+                                                <div class="card-img">
+                                                    <img src="assets/images/categories/cooking/4.png" alt="feature"
+                                                        class="bg-img">
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="service-title">
+                                                        <h4>Curtain washing</h4>
+                                                        <div class="d-flex align-items-center gap-1">
+                                                            <del>$40.56</del>
+                                                            <small>$30</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="service-detail mt-1">
+                                                        <ul>
+                                                            <li class="time">
+                                                                <i class="iconsax" icon-name="clock"></i>
+                                                                <span>30mins</span>
+                                                            </li>
+                                                            <li>Min 2 servicemen required</li>
+                                                        </ul>
+                                                        <p>Foamjet technology removes dust 2x deeper.</p>
+                                                    </div>
+                                                    <a href="service-detail.html" class="btn btn-outline mt-4">
+                                                        <i class="iconsax" icon-name="add"></i>
+                                                        Add
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="provider-review" role="tabpanel"
+                            aria-labelledby="provider-review-tab">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="select-dropdown mb-3 pb-3">
+                                        <label for="service">Sort by</label>
+                                        <div>
+                                            <select class="form-select">
+                                                <option selected>Highest rate</option>
+                                                <option value="1">Low rate</option>
+                                                <option value="2">Highest rate</option>
+                                                <option value="3">Low rate</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reviews-main">
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/1.jpg" alt="feature">
+                                        <div>
+                                            <h6>Devon Lane</h6>
+                                            <p>“I just love their service & the staff nature for work, I’d like to hire
+                                                them again”</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/2.jpg" alt="feature">
+                                        <div>
+                                            <h6>Michael Knight</h6>
+                                            <p>“I love their work with ease, Thank you !”</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/3.jpg" alt="feature">
+                                        <div>
+                                            <h6>Devon Miles</h6>
+                                            <p>“I just love their service & the staff nature for work, I’d like to hire
+                                                them again”</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/4.jpg" alt="feature">
+                                        <div>
+                                            <h6>Jonathan Higgins</h6>
+                                            <p>"This provider has the best staff who assist us until the service is
+                                                complete. Thank you!"</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/5.jpg" alt="feature">
+                                        <div>
+                                            <h6>Templeton Peck</h6>
+                                            <p>“This is amazing service i have ever get”</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/6.jpg" alt="feature">
+                                        <div>
+                                            <h6>B.A. Baracus</h6>
+                                            <p>“I just love their service & the staff nature for work, I’d like to hire
+                                                them again”</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/7.jpg" alt="feature">
+                                        <div>
+                                            <h6>Jonathan Higgins</h6>
+                                            <p>"This provider has the best staff who assist us until the service is
+                                                complete. Thank you!"</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/8.jpg" alt="feature">
+                                        <div>
+                                            <h6>Templeton Peck</h6>
+                                            <p>“This is amazing service i have ever get”</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="reviews">
+                                    <div class="person-detail">
+                                        <img src="assets/images/avatar/9.jpg" alt="feature">
+                                        <div>
+                                            <h6>Darlene Robertson</h6>
+                                            <p>“I just love their service & the staff nature for work, I’d like to hire
+                                                them again”</p>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rate">
+                                            <img src="assets/images/svg/star.svg" alt="star" class="img-fluid star">
+                                            <small>3.0</small>
+                                        </div>
+                                        <ul class="overview-list">
+                                            <li>12 min ago</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="col-12">
+                    <div class="pagination-main section-b-space">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#!" aria-label="Previous"><span aria-hidden="true">
+                                        <i class="iconsax" icon-name="chevron-left"></i>
+                                    </span></a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#!">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">...</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!">10</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#!" aria-label="Next"><span aria-hidden="true">
+                                        <i class="iconsax" icon-name="chevron-right"></i>
+                                    </span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Service List Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer-section nav-folderized">
+        <div class="container-fluid-lg">
+            <div class="copyright">
+                <a class="footer-logo" href="salon-end/index.html" target="_blank">
+                    <img src="assets/images/logo/dark-logo.png" alt="">
+                </a>
+                <p><i class="iconsax" icon-name="copyright"></i>2024. All copyright reserved.</p>
+            </div>
+            <div class="row gy-3 gy-md-4 gy-xl-0">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Links
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="index.html">Home </a></li>
+                            <li><a class="nav-link" href="category.html">Categories </a></li>
+                            <li><a class="nav-link" href="service-list.html">Services near you </a></li>
+                            <li><a class="nav-link" href="provider-list.html">Providers</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Policy
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li><a class="nav-link" href="privacy-policy.html">Privacy policy </a></li>
+                            <li><a class="nav-link" href="terms-conditions.html">Terms & conditions </a></li>
+                            <li><a class="nav-link" href="#!">Cancellation policy</a></li>
+                            <li><a class="nav-link" href="#!">Refund policy </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Other
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="contact-us.html">Contact us </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="about-us.html">About us</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#!">Apps</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="nav d-block">
+                        <h3 class="heading-footer">
+                            <img src="assets/images/footer-line.svg" alt="">Become a provider
+                            <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+                        </h3>
+                        <ul>
+                            <li>Earn more and deliver your service to worldwide.</li>
+                        </ul>
+                        <a href="register.html" class="btn btn-solid">Register now
+                            <i class="iconsax" icon-name="arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- jquery ui-->
+    <script src="assets/js/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+
+    <!-- Iconsax js -->
+    <script src="assets/js/iconsax/iconsax.js"></script>
+
+    <!-- Add favorite js -->
+    <script src="assets/js/add-favorite.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

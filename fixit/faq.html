@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fixit" />
+  <meta name="keywords" content="Fixit" />
+  <meta name="author" content="Fixit" />
+  <link rel="icon" href="assets/images/favicon/1.png" type="image/x-icon" />
+  <title>FAQ Page</title>
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap"
+    rel="stylesheet" />
+
+  <!-- Swiper Slider css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/swiper-bundle.min.css" />
+
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/bootstrap/bootstrap.css" />
+
+  <!-- Iconsax css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconsax/iconsax.css" />
+
+  <!-- Template css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body class="notLoaded">
+  <!-- Loader Section Start -->
+  <div class="page-loader" id="loader">
+    <div class="page-loader-wrapper">
+      <img src="assets/images/gif/loader.gif" alt="" />
+    </div>
+  </div>
+  <!-- Loader Section End -->
+
+  <!-- Header Section Start -->
+  <header>
+    <div class="top-header">
+      <div class="container-fluid-xl">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar custom-navbar navbar-expand-xl navbar-light justify-xl-content-start">
+              <div class="logo-content">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html">
+                  <img src="assets/images/logo/dark-logo.png" alt="" />
+                </a>
+                <div class="dropdown location-dropdown d-md-flex d-none">
+                  <button id="locationSelected" class="location-btn">
+                    <span>
+                      <i class="iconsax location-svg" icon-name="location"></i>
+                      <span>Adajan - Surat, Gujarat</span>
+                    </span>
+                    <i class="iconsax arrow" icon-name="chevron-down"></i>
+                  </button>
+                  <ul class="onhover-show-div">
+                    <li class="location"><i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat</li>
+                    <li class="location"><i class="iconsax" icon-name="location"></i>Adajan - Surat, Gujarat</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-header d-xl-none d-flex">
+                  <h4>Menu</h4>
+                  <button class="btn-close" type="button"></button>
+                </div>
+                <ul class="navbar-nav mx-auto custom-scroll">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="category.html">Category</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="service-list.html">Service</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="booking-list.html">Bookings</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                  </li>
+                </ul>
+              </div>
+
+              <ul class="nav-right">
+                <li class="icon nav-item-right">
+                  <i class="iconsax" icon-name="shopping-cart"></i>
+                </li>
+                <li class="dropdown currency-dropdown nav-item-right d-xxl-flex d-none">
+                  <button id="unitSelected" class="currency-btn">
+                    <span> <img src="assets/images/flags/EG.png" alt="" class="img-fluid" />USD </span>
+                    <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                  </button>
+                  <ul class="onhover-show-div">
+                    <li class="currency"><img src="assets/images/flags/US.png" alt="" class="img-fluid" />USD</li>
+                    <li class="currency"><img src="assets/images/flags/IN.png" alt="" class="img-fluid" />EUR</li>
+                    <li class="currency"><img src="assets/images/flags/NZ.png" alt="" class="img-fluid" />INR</li>
+                    <li class="currency"><img src="assets/images/flags/ZA.png" alt="" class="img-fluid" />CNY</li>
+                  </ul>
+                </li>
+                <li class="dropdown language-dropdown nav-item-right d-xxl-flex d-none">
+                  <button id="languageSelected" class="language-btn">
+                    <span> <img src="assets/images/flags/EG.png" alt="" class="img-fluid" />EN </span>
+                    <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                  </button>
+                  <ul class="onhover-show-div">
+                    <li class="lang"><img src="assets/images/flags/US.png" alt="" class="img-fluid" />EN</li>
+                    <li class="lang"><img src="assets/images/flags/IN.png" alt="" class="img-fluid" />IN</li>
+                    <li class="lang"><img src="assets/images/flags/NZ.png" alt="" class="img-fluid" />NZ</li>
+                    <li class="lang"><img src="assets/images/flags/ZA.png" alt="" class="img-fluid" />ZA</li>
+                  </ul>
+                </li>
+                <li class="dropdown profile-dropdown nav-item-right d-xxl-flex d-none">
+                  <button id="profileSelected" class="profile-btn">
+                    <span>
+                      <img src="assets/images/avatar/1.png" alt="" class="img-fluid" />
+                      Laila
+                    </span>
+                    <i class="iconsax ps-2" icon-name="chevron-down"></i>
+                  </button>
+                  <ul class="onhover-show-div">
+                    <li class="profile">
+                      <a href="profile-setting.html"> <i class="iconsax" icon-name="user-1-square"></i>Edit
+                        Profile </a>
+                    </li>
+                    <li class="profile">
+                      <a href="login.html"> <i class="iconsax" icon-name="logout-1"></i>Log Out </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Section End -->
+
+  <!-- Home Section Start -->
+  <section class="home-section ratio_18">
+    <div class="container-fluid-lg">
+      <img src="assets/images/bg.jpg" alt="bg" class="bg-img" />
+      <div class="row">
+        <div class="col-12">
+          <div class="home-contain">
+            <h2><span>FAQ's</span></h2>
+            <nav class="breadcrumb breadcrumb-icon">
+              <a class="breadcrumb-item" href="index.html">Home</a>
+              <span class="breadcrumb-item active">FAQ's</span>
+            </nav>
+            <h3>How can we help you?</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Home Section End -->
+
+  <!-- Recent FAQ Section Start -->
+  <section class="faq-section section-b-space section-bg">
+    <div class="container-fluid-lg">
+      <div class="faq-content">
+        <div class="row">
+          <div class="col-lg-4 d-lg-block d-none">
+            <div class="up-down-image">
+              <img src="assets/images/categories/electrician/6.png" alt="electrician" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="accordion" id="faqExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
+                    Which services do you provide?
+                    <i class="iconsax add" icon-name="add"></i>
+                    <i class="iconsax minus" icon-name="minus"></i>
+                  </button>
+                </h2>
+                <div id="faqCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Services offerings are a collection of certain people, processes, information, tools,
+                        technology and other resources that help consumers. This concept refers to the systematic
+                        capabilities a company can have and offer to clients.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                    Which payment options do you accept?
+                    <i class="iconsax add" icon-name="add"></i>
+                    <i class="iconsax minus" icon-name="minus"></i>
+                  </button>
+                </h2>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Services offerings are a collection of certain people, processes, information, tools,
+                        technology and other resources that help consumers. This concept refers to the systematic
+                        capabilities a company can have and offer to clients.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                    What is the duration of the process?
+                    <i class="iconsax add" icon-name="add"></i>
+                    <i class="iconsax minus" icon-name="minus"></i>
+                  </button>
+                </h2>
+                <div id="faqCollapseThree" class="accordion-collapse collapse" data-bs-parent="#faqExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Services offerings are a collection of certain people, processes, information, tools,
+                        technology and other resources that help consumers. This concept refers to the systematic
+                        capabilities a company can have and offer to clients.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                    What time do you usually take off?
+                    <i class="iconsax add" icon-name="add"></i>
+                    <i class="iconsax minus" icon-name="minus"></i>
+                  </button>
+                </h2>
+                <div id="faqCollapseFour" class="accordion-collapse collapse" data-bs-parent="#faqExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Services offerings are a collection of certain people, processes, information, tools,
+                        technology and other resources that help consumers. This concept refers to the systematic
+                        capabilities a company can have and offer to clients.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                    What is the cancellation process?
+                    <i class="iconsax add" icon-name="add"></i>
+                    <i class="iconsax minus" icon-name="minus"></i>
+                  </button>
+                </h2>
+                <div id="faqCollapseFive" class="accordion-collapse collapse" data-bs-parent="#faqExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Services offerings are a collection of certain people, processes, information, tools,
+                        technology and other resources that help consumers. This concept refers to the systematic
+                        capabilities a company can have and offer to clients.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
+                    How does billing work?
+                    <i class="iconsax add" icon-name="add"></i>
+                    <i class="iconsax minus" icon-name="minus"></i>
+                  </button>
+                </h2>
+                <div id="faqCollapseSix" class="accordion-collapse collapse" data-bs-parent="#faqExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Services offerings are a collection of certain people, processes, information, tools,
+                        technology and other resources that help consumers. This concept refers to the systematic
+                        capabilities a company can have and offer to clients.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Recent FAQ Section End -->
+
+  <!-- Feature Section Start -->
+  <section class="feature-section section-b-space section-bg pt-0">
+    <div class="container-fluid-lg">
+      <div class="feature-content text-center">
+        <div class="feature-box">
+          <i class="iconsax" icon-name="messages-2"></i>
+        </div>
+        <h2>We'd love to hear from you</h2>
+        <p>Here's what some of our satisfied clients have to say about our work</p>
+        <div class="feature-list">
+          <div class="list-item">
+            <i class="iconsax" icon-name="clock"></i>
+            <span>24/7 Assistance</span>
+          </div>
+          <div class="list-item">
+            <i class="iconsax" icon-name="flash"></i>
+            <span>Quick Change Resolution</span>
+          </div>
+          <div class="list-item">
+            <i class="iconsax" icon-name="star"></i>
+            <span>Flexible Working hours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Feature Section End -->
+
+  <!-- Still Query Section Start -->
+  <section class="more-section section-b-space">
+    <div class="container-fluid-lg">
+      <div class="more-content text-center">
+        <div class="avatar-group">
+          <div class="avatar">
+            <img src="assets/images/avatar/6.png" alt="avatar" />
+          </div>
+          <div class="avatar">
+            <img src="assets/images/avatar/7.png" alt="avatar" />
+          </div>
+          <div class="avatar">
+            <img src="assets/images/avatar/10.png" alt="avatar" />
+          </div>
+        </div>
+        <h3>Still you have questions?</h3>
+        <p>Can't find the answer you're looking for?</p>
+        <a href="contact-us.html" class="btn btn-solid w-max mx-auto mt-4">Contact Us.</a>
+      </div>
+    </div>
+  </section>
+  <!-- Still Query Section End -->
+
+  <!-- Footer Section Start -->
+  <footer class="footer-section nav-folderized">
+    <div class="container-fluid-lg">
+      <div class="copyright">
+        <a class="footer-logo" href="salon-end/index.html" target="_blank">
+          <img src="assets/images/logo/dark-logo.png" alt="" />
+        </a>
+        <p><i class="iconsax" icon-name="copyright"></i>2024. All copyright reserved.</p>
+      </div>
+      <div class="row gy-3 gy-md-4 gy-xl-0">
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="nav d-block">
+            <h3 class="heading-footer">
+              <img src="assets/images/footer-line.svg" alt="">Links
+              <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+            </h3>
+            <ul>
+              <li><a class="nav-link" href="index.html">Home </a></li>
+              <li><a class="nav-link" href="category.html">Categories </a></li>
+              <li><a class="nav-link" href="service-list.html">Services near you </a></li>
+              <li><a class="nav-link" href="provider-list.html">Providers</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="nav d-block">
+            <h3 class="heading-footer">
+              <img src="assets/images/footer-line.svg" alt="">Policy
+              <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+            </h3>
+            <ul>
+              <li><a class="nav-link" href="privacy-policy">Privacy policy </a></li>
+              <li><a class="nav-link" href="terms-condition">Terms & conditions </a></li>
+              <li><a class="nav-link" href="cancellation">Cancellation policy</a></li>
+              <li><a class="nav-link" href="refund-policy">Refund policy </a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="nav d-block">
+            <h3 class="heading-footer">
+              <img src="assets/images/footer-line.svg" alt="">Other
+              <i class="iconsax d-sm-none d-inline-block down-arrow" icon-name="chevron-down"></i>
+            </h3>
+            <ul>
+              <li><a class="nav-link" href="blog.html">Blog </a></li>
+              <li><a class="nav-link" href="contact-us.html">Contact us </a></li>
+              <li><a class="nav-link" href="about-us.html">About us</a></li>
+              <li><a class="nav-link" href="#!">Apps</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+          <div class="nav d-block">
+            <h3 class="heading-footer"><img src="assets/images/footer-line.svg" alt="">Become a provider</h3>
+            <ul>
+              <li>Earn more and deliver your service to worldwide.</li>
+            </ul>
+            <a href="register.html" class="btn btn-solid">Register now
+              <i class="iconsax" icon-name="arrow-circle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- latest jquery-->
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+  <!-- jquery ui-->
+  <script src="assets/js/jquery-ui.min.js"></script>
+
+  <!-- Bootstrap js-->
+  <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
+  <script src="assets/js/bootstrap/popper.min.js"></script>
+
+  <!-- Iconsax js -->
+  <script src="assets/js/iconsax/iconsax.js"></script>
+
+  <!-- favorite js -->
+  <script src="assets/js/add-favorite.js"></script>
+
+  <!-- script js -->
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

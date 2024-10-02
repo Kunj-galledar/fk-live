@@ -1,0 +1,150 @@
+/**=====================
+    Button scss
+==========================**/
+
+.btn {
+    font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+    padding: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320))) calc(12px + (16 - 12) * ((100vw - 320px) / (1920 - 320)));
+    letter-spacing: 1px;
+    line-height: 26px;
+    gap: 4px;
+    white-space: nowrap;
+    width: 100%;
+    border-radius: 12px;
+    @include flex_common ($dis: flex, $align: center, $justify: center);
+
+    &.btn-solid,
+    &.btn-solid:active {
+        background-color: var(--theme-color);
+        color: $white;
+        border-color: var(--theme-color);
+
+        i {
+            --Iconsax-Size: 20px;
+            --Iconsax-Color: white;
+        }
+    }
+
+    &.btn-outline {
+        border: 1px solid $primary-color;
+        color: $primary-color;
+
+        i {
+            --Iconsax-Size: 20px;
+            --Iconsax-Color: #0019ff;
+        }
+
+        &:hover {
+            background-color: var(--theme-color);
+            color: $white;
+            border-color: transparent;
+        }
+    }
+
+    &.btn-fill {
+        background-color: var(--theme-color);
+        color: $white;
+        border-color: transparent;
+
+        &:hover {
+            background-color: $white;
+            border-color: var(--theme-color);
+            color: var(--theme-color);
+        }
+    }
+
+    &.btn-solid-gray {
+        background-color: $section-bg;
+        color: $title-color;
+
+    }
+
+    &.btn-dark-solid {
+        background-color: $title-color;
+        color: $white;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &.disabled {
+        background-color: $gray-color;
+        color: $light-color;
+        font-weight: 500;
+    }
+
+    &.btn-solid-danger {
+        background-color: $danger-color;
+        color: $white;
+
+        i {
+            --Iconsax-Size: 20px;
+            --Iconsax-Color: white;
+        }
+    }
+
+    &.btn-solid-success {
+        background-color: $success-color;
+        color: $white;
+
+        i {
+            --Iconsax-Size: 20px;
+            --Iconsax-Color: white;
+        }
+    }
+}
+
+.badge {
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+// outline buttons//
+@each $text-name,
+$text-color in (primary, $primary-color),
+(secondary, $secondary-color),
+(success, $success-color),
+(danger, $danger-color),
+(info, $info-color),
+(light, $light-color),
+(title, $title-color),
+(warning, $warning-color) {
+    .text-#{$text-name} {
+        color: $text-color !important;
+    }
+}
+
+
+// badge background//
+@each $badge-name,
+$badge-color in (primary, $primary-color),
+(secondary, $secondary-color),
+(success, $success-color),
+(danger, $danger-color),
+(info, $info-color),
+(light, $light-color),
+(title, $title-color),
+(warning, $warning-color) {
+    .#{$badge-name}-badge {
+        color: $white !important;
+        background-color: $badge-color !important;
+    }
+}
+
+// badge light background//
+@each $badge-name,
+$badge-color in (primary, $primary-color),
+(secondary, $secondary-color),
+(success, $success-color),
+(danger, $danger-color),
+(info, $info-color),
+(light, $light-color),
+(title, $title-color),
+(warning, $warning-color) {
+    .#{$badge-name}-light-badge {
+        color: $badge-color !important;
+        background-color: rgba($badge-color, 0.10) !important;
+    }
+}
