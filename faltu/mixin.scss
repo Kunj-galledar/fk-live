@@ -1,0 +1,151 @@
+$btn-width: 200px;
+$border-radius: 10px;
+$border-radius--hover: 3px;
+$blur: 50px;
+$transition: all 0.5s ease;
+
+@mixin flex($dir, $just, $align) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $just;
+  align-items: $align;
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+.container {
+  @include flex(column, center, center);
+  @include size(100%, 100vh);
+  position: relative;
+  background: url('https://images.pexels.com/photos/1341279/pexels-photo-1341279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: cover;
+  
+  &__background-gradient {
+    @include size(100%, 100vh);
+    background: linear-gradient(to bottom, #833ab4, #fd1d1d);
+    position: absolute;
+    top: 0;
+    opacity: 0.22;
+    mix-blend-mode: screen;
+  }
+}
+
+span {
+  display: block;
+}
+
+button {
+  @include flex(row, center, center);
+  @include size($btn-width, $btn-width / 2);
+  position: relative;
+  border: 0;
+  border-radius: $border-radius;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  outline: 0;
+  background: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  transition: $transition;
+  
+  &:focus,
+  &:focus-within,
+  &:hover {
+    
+    .btn__background {
+      
+      &::before {
+        filter: blur($blur) hue-rotate(270deg);
+      }
+
+      &::after {
+        filter: blur($blur) hue-rotate(160deg);
+      }
+    }
+    
+    .btn__inner {
+      transform: scale(0.96);
+      
+       .fa-fire {
+          transform: scale(0.3);
+          opacity: 0;
+        }
+
+      .fa-fire-extinguisher {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.btn {
+  
+  &__background {
+    @include flex(column, center, center);
+    @include size(200%, $btn-width * 2);
+    position: absolute;
+    top: -75%;
+    left: -50%;
+    animation: spin 8s linear infinite;
+    transition: $transition;
+    
+    &::before,
+    &::after {
+      @include size(100%, 50%);
+      content: '';
+      filter: blur($blur);
+      transition: all 1s ease;
+    }
+    
+    &::before {
+      background: linear-gradient(55deg, #833ab4, #fd1d1d);
+    }
+    
+    &::after {
+      background: linear-gradient(85deg, #fc7234, #fcb045);
+    }
+  }
+  
+  &__inner {
+    @include flex(row, center, center);
+    @include size(calc(100% - 20px), calc(100% - 20px));
+    background: white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: $border-radius;
+    transition: $transition;
+    mix-blend-mode: screen;
+  }
+}
+
+.icon {
+  position: absolute;
+  font-size: 2.2rem;
+}
+
+.fa-fire {
+  transform: scale(1);
+  transition: $transition;
+  opacity: 1;
+}
+
+.fa-fire-extinguisher {
+  transform: scale(0.3);
+  transition: $transition;
+  opacity: 0;
+}
+
+svg {
+  fill: #000;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}

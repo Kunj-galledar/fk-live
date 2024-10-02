@@ -1,0 +1,135 @@
+let categorySlider = {
+  0: {
+    slidesPerView: 2
+  },
+  450: {
+    slidesPerView: 3,
+  },
+  590: {
+    slidesPerView: 4,
+  },
+  770: {
+    slidesPerView: 5,
+  },
+  1025: {
+    slidesPerView: 6
+  },
+  1200: {
+    slidesPerView: 5
+  },
+  1300: {
+    slidesPerView: 5
+  },
+  1399: {
+    slidesPerView: 6
+  },
+  1540: {
+    slidesPerView: 7
+  }
+}
+
+
+
+<swiper :breakpoints="categorySlider" :loop="true" class="banner-slider" :slides-per-view="7" :space-between="10">
+      <swiper-slide v-for="category in categories" :key="category">
+        <div v-if="theme == 'paris'">
+          <a href="javascript:void(0)" @click="redirectToCollection(category.slug)" class="category-box category-dark"
+            :class="{ 'active': selectedCategorySlug.length && selectedCategorySlug.includes(!category.slug) }">
+            <img :src="image ? image : '/images/vegetable/shape.png'" class="background-image" alt="">
+            <img :src="category?.category_icon ? category?.category_icon?.original_url : '/images/category.png'"
+              :alt="category?.name">
+            <h5>{{ category.name }}</h5>
+          </a>
+        </div>
+        <div v-if="theme == 'madrid'">
+          <div class="category-box-list">
+            <a href="javascript:void(0)" @click="redirectToCollection(category.slug)" class="category-name">
+              <h4>{{ category.name }}</h4>
+              <h6>{{ category.products_count }} {{ 'items' }}</h6>
+            </a>
+            <div class="category-box-view">
+              <a href="javascript:void(0)" @click="redirectToCollection(category.slug)">
+                <img
+                  :src="category?.category_image ? category?.category_image?.original_url : 'assets/images/category.png'"
+                  class="img-fluid" :alt="category?.name">
+              </a>
+              <!-- <app-button :class="'btn shop-button'" [id]="'shop_now_btn'" [spinner]="false"> -->
+              <!-- <span>{{ 'shop_now' }}</span> -->
+              <!-- <i class="ri-arrow-right-s-line"></i> -->
+              <!-- </app-button> -->
+            </div>
+          </div>
+        </div>
+        <div v-if="theme == 'rome'">
+          <div class="shop-category-box border-0">
+            <a href="javascript:void(0)" @click="redirectToCollection(category.slug)" class="circle-1">
+              <img :src="category?.category_image ? category?.category_image?.original_url : '/images/category.png'"
+                :alt="category?.name">
+            </a>
+            <div class="category-name">
+              <h6>{{ category.name }}</h6>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper>
+
+<!-- Script -->
+import { Autoplay } from "swiper";
+let modules = [Autoplay];
+
+<!-- HTML -->
+:modules="modules"
+:autoplay="{ delay: 1200, disableOnInteraction: true }"
+
+
+
+
+
+
+
+
+
+
+
+Fastkart vue issue:
+responsive issue
+- check all items responsive in slider & row/col
+
+Other issue
+- https://prnt.sc/XRn7AAGn8PwS
+- 
+- 
+- 
+- 
+- 
+
+- 
+- 
+- 
+- 
+
+- https://prnt.sc/X7zhYVzAVDHH
+- 
+- 
+- 
+- 
+- 
+- 
+- about-us == compare with angular 
+
+
+
+
+
+
+Developer issue List:
+- https://prnt.sc/OYwz4hqIRG2W
+- https://prnt.sc/i7DnBtypY3id
+- https://prnt.sc/mwGwGDb7jlBc
+- https://prnt.sc/NmNW22Xoy7gM = add sale-banner class
+- https://prnt.sc/ORzAFJKXMtKS = add sale-banner class - check with angular
+- https://prnt.sc/qKOV1xasjyeQ
+- https://prnt.sc/K25uEwEwtqna
+- https://prnt.sc/wLkIecFGua3q
+- https://prnt.sc/xFTsgoVjFmDf
