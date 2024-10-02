@@ -1,0 +1,95 @@
+@mixin home_1 {
+    .home-section {
+        background-image: url(../images/vegetable/home/bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@mixin home_2 {
+    .home-section-2 {
+        .home-contain {
+            position: relative;
+
+            .circle-image {
+                .circle-1 {
+                    position: absolute;
+                    @include center(vertical);
+                    right: 8%;
+                }
+
+                .circle-2 {
+                    position: absolute;
+                    @include center(vertical);
+                    right: 10%;
+                }
+            }
+
+            .home-detail {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include pseudowh;
+                padding: 20px calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+                @include mq-max(md) {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    padding: 20px calc(10px + (130 - 10) * ((100vw - 320px) / (1920 - 320)));
+                    background-color: $white;
+                    text-align: center;
+                    display: block;
+
+                    &::before {
+                        @include pos;
+                        @include pseudowh;
+                        top: 0;
+                        left: 0;
+                        background-color: var(--theme-color);
+                        opacity: .05;
+                    }
+
+                    h3 {
+                        margin: 7px 0;
+                    }
+
+                    h5 {
+                        margin-bottom: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+
+                        @include mq-max(xs) {
+                            display: none;
+                        }
+                    }
+                }
+
+                h2 {
+                    font-size: calc(22px + (50 - 22) * ((100vw - 320px) / (1920 - 320)));
+                    margin: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320))) 0 calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                h3 {
+                    font-size: calc(18px + (40 - 19) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 300;
+                }
+
+                h5 {
+                    margin-top: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                h6 {
+                    @include mq-max(xs) {
+                        letter-spacing: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin home_3 {
+    .home-section-3 {
+        background-image: unset;
+    }
+}

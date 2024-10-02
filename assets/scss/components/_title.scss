@@ -1,0 +1,188 @@
+/**=====================
+     title css start
+==========================**/
+.title {
+    margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+    &-4 {
+        margin-bottom: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    h2 {
+        font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
+        color: $title-color;
+    }
+
+    &-border {
+        border-bottom: 1px solid $border-color;
+        padding-bottom: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+        margin-bottom: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    &-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mq-max(lg) {
+            display: block;
+        }
+
+        .button-group {
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+
+            @include mq-max(lg) {
+                margin-top: 10px;
+                padding-bottom: 12px;
+            }
+
+            li {
+                +li {
+                    margin-left: 10px;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        margin-right: 8px;
+                    }
+
+                    span {
+                        font-weight: 500;
+                        font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.title-2 {
+    margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+    text-align: center;
+
+    &.title-timer {
+        @include flex_common;
+
+        @include mq-max(sm) {
+            display: block;
+        }
+
+        h2 {
+            .shape-box {
+                position: absolute;
+                background-color: $white;
+                bottom: -6px;
+                @include center(horizontal);
+                width: 40px;
+                height: 15px;
+
+                span {
+                    background: var(--theme-color);
+                    width: 15px;
+                    height: 15px;
+                    transform: rotate(45deg) translateX(-50%);
+                    position: absolute;
+                    bottom: -5px;
+                    left: 44%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    h2 {
+        font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
+        padding-bottom: 14px;
+        margin-bottom: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+        display: inline-block;
+        position: relative;
+
+        .shape-box {
+            position: absolute;
+            background-color: $white;
+            bottom: -6px;
+            @include center(horizontal);
+            width: 40px;
+            height: 15px;
+
+            span {
+                background: var(--theme-color);
+                width: 15px;
+                height: 15px;
+                transform: rotate(45deg) translateX(-50%);
+                position: absolute;
+                bottom: -5px;
+                left: 44%;
+                margin: 0 auto;
+            }
+        }
+
+        &::before {
+            @include pos;
+            @include center(horizontal);
+            bottom: 0;
+            width: 60%;
+            height: 1px;
+            background-color: var(--theme-color);
+        }
+    }
+}
+
+.title-3 {
+    margin-bottom: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+    text-align: center;
+
+    &.title-timer {
+        @include flex_common;
+
+        @include mq-max(sm) {
+            display: block;
+        }
+    }
+
+    h2 {
+        font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1920 - 320)));
+        padding-bottom: 20px;
+        margin-bottom: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+        display: inline-block;
+        position: relative;
+
+        .shape-box {
+            @include flex_common;
+            @include center(horizontal);
+            position: absolute;
+            bottom: -5px;
+            background-color: $white;
+            width: calc(52px + (72 - 52) * ((100vw - 320px) / (1920 - 320)));
+
+            .fas {
+                color: var(--theme-color);
+                font-size: 12px;
+                margin: 0 3px;
+                transform: rotate(45deg);
+
+                &:nth-child(odd) {
+                    font-size: 8px;
+                }
+            }
+        }
+
+        &::before {
+            @include pos;
+            @include center(horizontal);
+            bottom: 0;
+            width: calc(150px + (220 - 150) * ((100vw - 320px) / (1920 - 320)));
+            height: 3px;
+            background-color: var(--theme-color);
+            border-radius: 100%;
+        }
+    }
+}
