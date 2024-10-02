@@ -1,0 +1,164 @@
+/**=====================
+     header css start
+==========================**/
+@mixin header_common {
+    header {
+        .nav-about {
+            padding: 10px 0;
+
+            .header-top {
+                @include flex_common ($dis: flex, $align: center, $justify: space-between);
+
+                .about-list {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        // line-height: 1.6;
+
+                        i {
+                            font-size: 18px;
+                            margin-right: 5px;
+                        }
+
+                        span {
+                            margin-top: 1px;
+                            font-weight: 500;
+                        }
+
+                        +li {
+                            margin-left: 25px;
+                            position: relative;
+
+                            &::after {
+                                @include pos;
+                                top: 0;
+                                left: -13px;
+                                // width: 2px;
+                                // height: 90%;
+                                @include pseudowh($width: 2px, $height: 90%);
+                                background-color: rgba($white, .3);
+                            }
+                        }
+
+                        .theme-form-select {
+                            padding: 0;
+                            background-color: transparent;
+                            color: $white;
+                            border: none;
+                            background-image: none;
+                            width: 70px;
+                            position: relative;
+
+                            &::before {
+                                // position: absolute;
+                                // content: "\f107";
+                                @include pos($pos: absolute, $content: "\f107");
+                                @include font;
+                                @include pseudowh;
+                                @include center(vertical);
+                                right: 0;
+                                // background-color: red;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mobile menu
+.mobile-menu {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--theme-color);
+    z-index: 3;
+    overflow: hidden;
+    box-shadow: 0 -3px 10px 0px rgba($black, .08);
+
+    [dir="rtl"] & {
+        left: 0;
+    }
+
+    ul {
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+
+        @include mq-max(md) {
+            width: 80%;
+        }
+
+        @include mq-max(xs) {
+            width: 95%;
+        }
+
+        @include mq-max(2xs) {
+            width: 100%;
+        }
+
+        [dir="rtl"] & {
+            padding: 0;
+        }
+
+        li {
+            width: 100%;
+            text-align: center;
+
+            &.active {
+                transition: .3s ease;
+                position: relative;
+
+                &::before {
+                    @include pos;
+                    bottom: -15px;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(45deg);
+                    // width: 10px;
+                    // height: 10px;
+                    @include pseudowh($width: 10px, $height: 10px);
+                    background-color: $white;
+                    border-radius: 100%;
+                }
+            }
+
+            a {
+                img {
+                    display: block;
+                    margin: 0px auto;
+                }
+
+                &.active,
+                &:hover {
+                    color: $title-color;
+                }
+
+                @include mq-max(2xs) {
+                    font-size: 13px;
+                }
+
+                .icli {
+                    display: inline-block;
+                    margin: 0 auto;
+                    font-size: 22px;
+                    color: $white;
+                }
+
+                @include mq-max(2xs) {
+                    height: 20px;
+                }
+
+                span {
+                    display: block;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+/**=====================
+     form scss
+  ==========================**/
+form {
+    .form-check-input {
+        outline: 0;
+
+        &:active {
+            filter: unset;
+        }
+
+        &:focus {
+            box-shadow: unset;
+        }
+
+        &:checked {
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
+}
+
+.checkbox_animated {
+    cursor: pointer;
+    position: relative;
+    margin-right: 16px;
+    height: 100%;
+
+    [dir="rtl"] & {
+        margin-right: unset;
+        margin-left: 16px;
+    }
+
+    &:before {
+        @include pos;
+        @include pseudowh($width: 10px, $height: 5px);
+        transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        transform: rotate(-45deg) scale(0, 0);
+        left: 4px;
+        top: 5px;
+        z-index: 1;
+        border: 2px solid rgba(var(--theme-color), 1);
+        border-top-style: none;
+        border-right-style: none;
+
+        [dir="rtl"] & {
+            left: unset;
+            right: 4px;
+        }
+    }
+
+    &:after {
+        @include pos;
+        @include pseudowh($width: 18px, $height: 18px);
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(var(--content-color), 0.3);
+        cursor: pointer;
+        background-color: rgba(var(--white), 1);
+
+        [dir="rtl"] & {
+            left: unset;
+            right: 0;
+        }
+    }
+
+    &:checked {
+        background-color: transparent;
+
+        &:before {
+            transform: rotate(-45deg) scale(1, 1);
+        }
+    }
+}

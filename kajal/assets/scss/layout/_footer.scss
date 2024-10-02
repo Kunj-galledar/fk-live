@@ -1,0 +1,394 @@
+/**=====================
+     footer css start
+==========================**/
+@mixin common_footer {
+    footer {
+        background-color: $grey-light;
+
+        .download-image {
+            margin-top: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+        }
+
+        &.footer-color-2 {
+            background-color: $dark-color;
+        }
+
+        .main-footer {
+            padding-bottom: 50px;
+
+            .foot-logo {
+                font-size: 35px;
+                font-weight: bolder;
+                font-family: $public-sans;
+                margin-top: -14px;
+                display: block;
+
+                span {
+                    color: $title-color;
+                }
+            }
+
+            .information-text {
+                margin-bottom: 0;
+                margin-top: 20px;
+                color: $content-color;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.7;
+            }
+
+            .social-icon {
+                margin: 10px -5px 0;
+
+                li {
+                    // width: 40px;
+                    // height: 40px;
+                    @include pseudowh($width: 40px, $height: 40px);
+                    border-radius: 50%;
+                    margin: 0 5px;
+                    position: relative;
+
+                    &::after {
+                        @include pos;
+                        @include pseudowh;
+                        left: 0;
+                        top: 0;
+                        background-color: var(--theme-color);
+                        opacity: .06;
+                        border-radius: 50%;
+                    }
+
+
+                    @include mq-max(2xs) {
+                        margin: 0 2px;
+                    }
+
+                    a {
+                        @include pseudowh;
+                        @include flex_common;
+                        color: $content-color;
+                    }
+                }
+            }
+
+            .download-app {
+                margin-top: 20px;
+
+                span {
+                    margin-bottom: 0;
+                    margin-top: 20px;
+                    color: $content-color;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+
+                img {
+                    width: 110px;
+                    margin-left: 8px;
+                }
+            }
+
+            .footer-title {
+                margin-bottom: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
+                font-size: calc(18px + (22 - 18) * ((100vw - 320px) / (1920 - 320)));
+                font-family: $public-sans;
+                font-weight: 600;
+                position: relative;
+                padding-bottom: calc(5px + (12 - 5) * ((100vw - 320px) / (1920 - 320)));
+
+                &::after {
+                    @include pos;
+                    bottom: -5px;
+                    left: 0;
+                    // width: 20%;
+                    // height: 3px;
+                    @include pseudowh($width: 20%, $height: 3px);
+                    background-color: var(--theme-color);
+                }
+
+                @include mq-max(sm) {
+                    &::before {
+                        // content: "\f107";
+                        // position: absolute;
+                        @include pos($pos: absolute, $content: "\f107");
+                        @include font;
+                        @include center(vertical);
+                        right: 0;
+                        font-size: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+                        color: $content-color;
+                    }
+                }
+            }
+
+            .footer-list {
+                li {
+                    display: block;
+                    margin-bottom: 16px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    a {
+                        color: $content-color;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        font-size: 16px;
+
+                        &:hover {
+                            color: var(--theme-color);
+                            padding-left: 6px;
+
+                            &::before {
+                                left: 0;
+                                opacity: 1;
+                            }
+                        }
+
+                        &:before {
+                            // content: "\f105";
+                            // position: absolute;
+                            @include font;
+                            @include pos($pos: absolute, $content: "\f105");
+                            top: 0;
+                            left: -20px;
+                            border-radius: 100%;
+                            opacity: 0;
+                            transition: all .3s ease-in-out;
+                        }
+
+                        i {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+            .footer-address {
+                li {
+                    margin-bottom: 16px;
+                    display: flex;
+                    align-items: center;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    a {
+                        color: $content-color;
+                        position: relative;
+                        font-size: 16px;
+                        display: block;
+                        width: 100%;
+
+                        .inform-box {
+                            display: flex;
+                            align-items: center;
+
+                            &.flex-start-box {
+                                align-items: flex-start;
+                            }
+
+                            .feather {
+                                margin-right: 10px;
+                                width: 20px;
+                            }
+
+                            p {
+                                margin: -3px 0 0;
+                                width: calc(100% + (64 - 100) * ((100vw - 320px) / (1920 - 320)));
+                                font-size: 16px;
+                                line-height: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sub-footer {
+            border-top: 1px solid $border-color;
+            padding: 30px 0;
+
+            &-lite {
+                border-top: 1px solid rgba($border-color, $alpha: .2) !important;
+            }
+
+            p {
+                margin-bottom: 0;
+                font-size: 15px;
+                color: $content-color;
+                text-transform: capitalize;
+            }
+
+            .left-footer {
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                @include mq-max(md) {
+                    justify-content: center;
+                }
+            }
+
+            .right-footer {
+                text-align: right;
+
+                .payment-box {
+                    @include flex_common ($dis: flex, $align: center, $justify: flex-end);
+
+                    @include mq-max(md) {
+                        justify-content: center;
+                        margin-top: 10px;
+                    }
+
+                    li {
+                        margin: 0 5px;
+
+                        img {
+                            width: 40px;
+                            margin-bottom: -6px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin footer_1 {
+    footer {
+        background-color: $dark-color;
+        color: $white;
+
+        .main-footer {
+            .foot-logo {
+                span {
+                    color: $white;
+                }
+            }
+
+            .footer-address {
+                li {
+                    a {
+                        .inform-box {
+                            .feather {
+                                stroke: $light-color;
+                            }
+
+                            p {
+                                color: $light-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer-list {
+                li {
+                    a {
+                        color: $light-color;
+                    }
+                }
+            }
+
+            .social-icon {
+                li {
+                    background-color: rgba($white, 0.9);
+                }
+            }
+
+            .information-text {
+                color: $light-color;
+            }
+
+            .download-app {
+                span {
+                    color: $light-color;
+                }
+            }
+        }
+
+        .sub-footer {
+            border-color: rgba($border-color, $alpha: .3);
+
+            p {
+                color: $light-color;
+            }
+        }
+    }
+}
+
+@mixin footer_2 {
+    footer {
+        background-color: $dark-red2;
+        color: $white;
+
+        .main-footer {
+            .footer-title {
+                padding-bottom: unset;
+
+                &::after {
+                    content: unset;
+                }
+            }
+
+            .foot-logo {
+                color: $white;
+            }
+
+            .footer-list {
+                li {
+                    a {
+                        color: $light-color;
+
+                        &:hover {
+                            color: $grey-light;
+                        }
+                    }
+                }
+            }
+
+            .information-text {
+                color: $light-color;
+            }
+
+            .footer-address {
+                li {
+                    a {
+                        .inform-box {
+                            .feather {
+                                color: $light-color;
+                            }
+
+                            p {
+                                color: $light-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .social-icon {
+                li {
+                    background-color: $dark-gray;
+
+                    &::after {
+                        content: unset;
+                    }
+                }
+            }
+        }
+
+        .sub-footer {
+            border-top: 1px solid rgba($border-color, $alpha: .8);
+
+            p {
+                color: $light-color;
+            }
+        }
+    }
+}

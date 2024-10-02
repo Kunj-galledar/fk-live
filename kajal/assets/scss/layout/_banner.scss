@@ -1,0 +1,162 @@
+/**=====================
+     Banner css start
+==========================**/
+@mixin banner_common {
+    .banner-contain {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        .banner-detail {
+            position: absolute;
+            top: 0%;
+            left: 0;
+            @include pseudowh;
+            padding: calc(20px + (50 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+            &.banner-p-sm {
+                padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320))) !important;
+            }
+
+            h2 {
+                font-size: calc(25px + (45 - 25) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 10px;
+
+                &.sale-name {
+                    font-size: calc(25px + (38 - 25) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+
+            h3 {
+                font-size: calc(18px + (32 - 18) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 10px;
+            }
+
+            h4 {
+                font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 5px;
+            }
+
+            h5 {
+                font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+                letter-spacing: 1px;
+            }
+
+            h6 {
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+            }
+
+            p {
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+                margin-bottom: 0;
+                line-height: 1.5;
+                color: $content-color;
+                letter-spacing: .8px;
+            }
+
+            .shop-now-button {
+                @include flex_common;
+                padding: 0;
+                color: var(--theme-color);
+                font-size: 15px;
+
+                i {
+                    font-size: 17px;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}
+
+@mixin offer_banner {
+    .offer-banner {
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+
+        .banner-detail {
+            position: absolute;
+            top: calc(12px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+            left: calc(12px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+            background-color: $white;
+            padding: 10px 26px 10px 15px;
+            border-radius: 5px 30px 30px 5px;
+            box-shadow: 0px 3px 4px rgba($black, .14);
+
+            h5 {
+                letter-spacing: 0.6px;
+                margin-bottom: 3px;
+                font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+            }
+
+            h6 {
+                letter-spacing: 1.7px;
+                color: $content-color;
+            }
+        }
+
+        .offer-box {
+            position: absolute;
+            bottom: 18px;
+            right: 18px;
+            background-color: var(--theme-color);
+            border-radius: 50px;
+
+            a {
+                color: $white;
+                padding: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320))) calc(15px + (21 - 15) * ((100vw - 320px) / (1920 - 320)));
+                display: block;
+
+                span {
+                    letter-spacing: 1.5px;
+                    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@mixin banner_1 {
+    .banner-section {
+        .banner-contain {
+            position: relative;
+
+            .banner-detail {
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include pseudowh;
+                padding: 20px calc(20px + (130 - 20) * ((100vw - 320px) / (1920 - 320)));
+
+                h2 {
+                    font-size: calc(22px + (50 - 22) * ((100vw - 320px) / (1920 - 320)));
+                    margin: calc(8px + (20 - 8) * ((100vw - 320px) / (1920 - 320))) 0 calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+                }
+
+                h3 {
+                    font-size: calc(18px + (40 - 18) * ((100vw - 320px) / (1920 - 320)));
+                    font-weight: 300;
+
+                    &.banner-title {
+                        font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+                        font-weight: bold;
+                        margin-bottom: calc(4px + (16 - 4) * ((100vw - 320px) / (1920 - 320)));
+                    }
+                }
+
+                h5 {
+                    margin-top: calc(4px + (8 - 4) * ((100vw - 320px) / (1920 - 320)));
+                }
+            }
+        }
+    }
+}
+
+@mixin banner_2 {
+    .banner-box {
+        margin-top: calc(30px + (73 - 30) * ((100vw - 320px) / (1920 - 320)));
+    }
+}

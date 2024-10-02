@@ -1,0 +1,28 @@
+/**=====================
+     alert css start
+==========================**/
+@mixin service_common {
+    .service-contain {
+        display: flex;
+        align-items: center;
+        padding: calc(14px + (25 - 14) * ((100vw - 320px) / (1920 - 320)));
+        border-radius: 5px;
+        background-color: rgba($light-color, $alpha: .2);
+
+        svg {
+            width: 42px;
+            height: 42px;
+            @include pseudowh($width: 42px, $height: 42px);
+        }
+
+        .service-detail {
+            margin-left: 25px;
+
+            h3 {
+                letter-spacing: 0.8px;
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+        }
+    }
+}

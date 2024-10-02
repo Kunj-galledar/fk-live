@@ -1,0 +1,315 @@
+/**=====================
+     Reset CSS
+==========================**/
+.custom-container {
+    padding-inline: calc(15px + (160 - 15) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.theme-color-2 {
+    color: rgba(var(--theme-color2), 1) !important;
+}
+
+.danger-text {
+    color: rgba(var(--theme-color2), 1) !important;
+}
+
+.content-color {
+    color: rgba(var(--content-color), 1) !important;
+}
+
+.theme-color {
+    color: rgba(var(--theme-color), 1) !important;
+}
+
+.danger-bg-color {
+    background-color: rgba(var(--theme-color2), 1);
+    color: rgba(var(--white), 1);
+}
+
+.success-bg-color {
+    background-color: rgba(var(--theme-green), 1);
+}
+
+.transparent-bg {
+    background-color: transparent !important;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.section-t-space-2 {
+    padding-top: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.section-t-space {
+    padding-top: calc(15px + (40 - 15) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.section-b-space {
+    padding-bottom: calc(15px + (40 - 15) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.section-block-space {
+    padding-block: calc(15px + (40 - 15) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.light-bg-color {
+    padding: calc(13px + (25 - 13) * ((100vw - 320px) / (1920 - 320)));
+    background-color: rgba(var(--white), 1);
+    height: 100%;
+    z-index: 0;
+    position: relative;
+
+    &.light-sm-box {
+        padding: 15px;
+        height: auto;
+    }
+}
+
+.light-bg-color-2 {
+    padding: calc(17px + (27 - 17) * ((100vw - 320px) / (1920 - 320))) calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
+    background-color: rgba(var(--base-gray), 0.3);
+    height: 100%;
+}
+
+.light-bg-color-3 {
+    padding: calc(17px + (27 - 17) * ((100vw - 320px) / (1920 - 320))) calc(8px + (15 - 8) * ((100vw - 320px) / (1920 - 320)));
+    height: 100%;
+    position: relative;
+
+    &::before {
+        @include pos;
+        @include pseudowh($width: 100%, $height: 70%);
+        top: 0;
+        left: 0;
+        background-color: rgba(var(--base-gray), 0.3);
+    }
+}
+
+.title-color {
+    color: rgba(var(--title-color), 1) !important;
+}
+
+.col-xxl-3-1 {
+    @media (min-width: 1400px) {
+        width: 25.65%;
+    }
+
+    @media (min-width: 1200px) {
+        width: 30%;
+    }
+}
+
+.custom-row {
+    .custom-xxl-2 {
+        @include mq-min(3xl) {
+            width: 17.6%;
+        }
+    }
+
+    .custom-xxl-7 {
+        @include mq-min(3xl) {
+            width: calc(100% - 17.6% - 24%);
+        }
+    }
+
+    .custom-xxl-3 {
+        @include mq-min(3xl) {
+            width: 24%;
+        }
+    }
+}
+
+.custom-row2 {
+    .custom-col-xxl-3 {
+        @include mq-min(3xl) {
+            flex: 0 0 auto;
+            width: 17.75%;
+        }
+    }
+
+    .custom-col-xxl-9 {
+        @include mq-min(3xl) {
+            flex: 0 0 auto;
+            width: calc(100% - 17.75%);
+        }
+    }
+
+    .custom-col-xxl-6 {
+        @include mq-min(3xl) {
+            flex: 0 0 auto;
+            width: calc(100% - 17.75% - 17.75%);
+        }
+    }
+}
+
+.custom-row3 {
+    .custom-col-xxl-3 {
+        @include mq-min(3xl) {
+            width: 21.2%;
+        }
+    }
+
+    .custom-col-xxl-6 {
+        @include mq-min(3xl) {
+            width: calc(100% - 21.2% - 21.2%);
+        }
+    }
+
+    .custom-col-xxl-9 {
+        @include mq-min(3xl) {
+            width: calc(100% - 21.2%);
+        }
+    }
+}
+
+.base-bg-color {
+    background-color: rgba(var(--base-gray), 1) !important;
+}
+
+.mb-14 {
+    margin-bottom: 14px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.col-xxl-8-1 {
+    @media (min-width: 1400px) {
+        width: 74.35%;
+    }
+
+    @media (min-width: 1200px) {
+        width: 70%;
+    }
+}
+
+.hover-effect {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        @include pos;
+        top: 0;
+        left: -75%;
+        z-index: 2;
+        display: block;
+        @include pseudowh($width: 50%, $height: 100%);
+        background: linear-gradient(-90deg, rgba(var(--white), 0) 0%, rgba(var(--white), 0.035) 50%, rgba(var(--white), 0) 100%);
+        transform: skewX(-25deg);
+        border-radius: 0;
+    }
+
+    &:hover {
+        &::after {
+            animation: shine 1s;
+        }
+    }
+}
+
+.p-center {
+    @include flex_common;
+}
+
+.bg-overlay {
+    @include pseudowh($width: 100vw, $height: 100vh);
+    background-color: rgba(var(--title-color), 0.5);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+
+    &.show {
+        visibility: visible;
+        opacity: 0.5;
+    }
+}
+
+.offcanvas-backdrop {
+    z-index: 1;
+}
+
+.btn-close {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.col-xxl-7-1 {
+    @media (min-width: 1400px) {
+        width: 14.286%;
+        flex: 0 0 14.285%;
+    }
+}
+
+.custom-row4 {
+    .custom-col-xxl-4 {
+        @media (min-width: 1400px) {
+            width: 34.2%;
+        }
+    }
+
+    .custom-col-xxl-8 {
+        @media (min-width: 1400px) {
+            width: calc(100% - 34.2%);
+        }
+    }
+}
+
+.custom-row5 {
+    .custom-col-xxl-7 {
+        @media (min-width: 1400px) {
+            width: 62.5%;
+        }
+    }
+
+    .custom-col-xxl-3 {
+        @media (min-width: 1400px) {
+            width: calc(100% - 62.5%)
+        }
+    }
+}
+
+.custom-row6 {
+    .custom-col-xxl-5 {
+        @media (min-width: 1400px) {
+            width: 37.6%;
+        }
+    }
+
+    .custom-col-xxl-2 {
+        @media (min-width: 1400px) {
+            width: calc(100% - 37.6% - 37.6%);
+        }
+    }
+}
+
+.custom-row7 {
+    .custom-col-xxl-2 {
+        @media (min-width: 1400px) {
+            width: 17.8%;
+        }
+    }
+
+    .custom-col-xxl-10 {
+        @media (min-width: 1400px) {
+            width: calc(100% - 17.8%);
+        }
+    }
+}
+
+input {
+    &[type=number] {
+        appearance: textfield;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+    }
+}
